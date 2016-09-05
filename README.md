@@ -39,8 +39,6 @@ Configuration file: /home/fernando/workspaces/wollok-dev/wollok/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-// TODO
-
 # Troubleshooting
 
 If you see an error like "cannot load such file -- bundler (LoadError)" you should see which rake is missing, and do
