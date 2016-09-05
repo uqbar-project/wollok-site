@@ -1,0 +1,32 @@
+# Dependencies
+markdown:         kramdown
+
+#highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Wollok
+tagline:          'Objetos de este siglo'
+en_tagline:       'Fun with objects!'
+description:      'Un lenguaje y entorno de aprendizaje de Programación Orientada a Objetos.'
+en_description:   'An OOP learning language & environment'
+url:              http://github.org/uqbar-project/wollok
+logo:             /images/WollokLogo.png
+
+author:
+  name:           'Javier Fernandes'
+  url:            https://ar.linkedin.com/in/javier-fernandes-0144414
+
+#paginate:         5
+
+# Custom vars
+version:          1.5.0
+
+github:
+  repo:           http://github.org/uqbar-project/wollok
+
+gems: 
+  - jekyll-paginate
+  - jekyll-watch
