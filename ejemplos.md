@@ -48,6 +48,6 @@ lang: 'es'
 &nbsp;&nbsp;Ejercicios</h1>
 
 <p>Tenés organizadas 
-<a href="http://pdep-utn.mumuki.io/chapters/24-programacion-con-objetos">guías de ejercitación práctica en Mumuki</a> (¿conocés el <a href="http://mumuki.org">Proyecto Mumuki</a>?)</p>
+<a href="http://wollok.mumuki.io/">guías de ejercitación práctica en Mumuki</a> (¿conocés el <a href="http://mumuki.org">Proyecto Mumuki</a>?)</p>
 
 

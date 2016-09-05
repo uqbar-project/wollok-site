@@ -46,4 +46,4 @@ lang: 'en'
 &nbsp;&nbsp;Exercises</h1>
 
 <p>You can try 
-<a href="http://pdep-utn.mumuki.io/chapters/24-programacion-con-objetos">Mumuki guides</a> (from <a href="http://mumuki.org">Mumuki Project</a>)</p>
+<a href="http://wollok.mumuki.io/">Mumuki guides</a> (from <a href="http://mumuki.org">Mumuki Project</a>)</p>
