@@ -157,3 +157,8 @@
 .language {
   font-size: small;
 }
+
+.center-content {
+    display: flex;
+    justify-content: center;
+}
