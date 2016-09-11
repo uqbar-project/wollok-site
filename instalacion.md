@@ -50,6 +50,22 @@ Si en el entorno Wollok ingresás a esta configuración: Windows > Preferences >
 * Add  > Standard VM > next 
 * Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)
 
+
+## Ubuntu 16.04
+
+Hay un [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) de Eclipse en Ubuntu 16.04 que causa problemas al querer crear un projecto. Para solucionarlo basta con agregar un par de líneas en el archivo `wollok.ini` que se encuentra en donde hayas instalado Wollok, el archivo debería quedar así:
+```
+-startup
+plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
+--launcher.GTK_version
+2
+-vmargs
+-XX:PermSize=64M
+-XX:MaxPermSize=128M"
+```
+
 <hr> 
 
 # Instalación desde el Update Site
