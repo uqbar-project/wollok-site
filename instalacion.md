@@ -69,7 +69,7 @@ plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
 -XX:MaxPermSize=128M
 ```
 
-## No levanta la aplicación
+## No levanta la aplicación (exit code 13)
 Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguiente:
 
 <div class="slide">
@@ -98,7 +98,7 @@ En máquinas Mac aparece un extraño cartel que indica que instalemos la versió
 	<img src="/images/troubleshooting/java6.png"/>
 </div>
 
-Esto no es cierto, hay que instalar JDK 1.8 y luego el entorno Wollok. A futuro solucionaremos este tema que puede prestar a confusión.
+Esto no es cierto, hay que instalar JDK 1.8. A futuro solucionaremos este tema que puede prestar a confusión.
 
 <hr> 
 

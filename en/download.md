@@ -23,21 +23,6 @@ As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip
 * Mac [32](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip)
 * Windows [32](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip)
 
-## Ubuntu 16.04
-
-There is a known [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) for Eclipse in Ubuntu 16.04 when you try to create a new project. To solve it look for `wollok.ini` file located in same path of Wollok installation and add these lines:
-
-```bash
--startup
-plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
---launcher.library
-plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
---launcher.GTK_version
-2
--vmargs
--XX:PermSize=64M
--XX:MaxPermSize=128M
-```
 
 <hr> 
 
@@ -64,6 +49,54 @@ Check this configuration: Windows > Preferences > java > Installed JREs. If you 
 
 * Add  > Standard VM > next 
 * Choose a JDK 1.8 installation directory. Eg: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home
+
+## Ubuntu 16.04
+
+There is a known [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) for Eclipse in Ubuntu 16.04 when you try to create a new project. To solve it look for `wollok.ini` file located in same path of Wollok installation and add these lines:
+
+```bash
+-startup
+plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
+--launcher.GTK_version
+2
+-vmargs
+-XX:PermSize=64M
+-XX:MaxPermSize=128M
+```
+
+
+## Wollok does not start (exit code 13)
+If trying to start Wollok IDE you get an error like this:
+
+<div class="slide">
+	<img src="/images/troubleshooting/exit-code-13.png"/>
+</div>
+
+problem could be because
+
+* you are pointing to an unexistent JDK in wollok.ini (check -vm parameter)
+* you invoke "Java Updates" application. This is a [known problem](http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13). In this case, solution should be a) uninstall current JDK, b) install new JDK as show in this page, and c) start Wollok normally.
+
+
+## Missing dependency org.uqbar.project.wollok.launch while executing a file
+
+<div class="slide">
+	<img src="/images/troubleshooting/wollok-launch.png" style="width: 95%"/>
+</div>
+
+It is certainly a non-descriptive message (we'll work on it). Problem is you are trying to execute a test, program or Wollok file that is not located in a source folder of your Wollok project. By default a standard Wollok project has a "src" source folder. If you create a file outside this folder, it won't be recognized as an executable one (this could also happen if you checkout a SVN project pointing to root repository instead of trunk folder). To solve this you have to move the conflicting file to src or any other source folder. 
+
+
+## Java 6 is required (only for Mac)
+In Mac operating systems there is a weird message advising us to install Java 6
+
+<div class="slide">
+	<img src="/images/troubleshooting/java6.png"/>
+</div>
+
+Well, that's not true, you have to install JDK 1.8. Message will be replaced for a better one.
 
 <hr> 
 
