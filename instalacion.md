@@ -17,6 +17,7 @@ Algunas aclaraciones:
 
 * Tiene que ser Java **1.8** (no puede ser una versión anterior)
 * Tiene que ser una **JDK** (Java Development Kit), que viene con el compilador de Java. Una JRE (Java Runtime Environment) no te va a funcionar correctamente.
+* Si ya estás usando Eclipse con Java 1.8, no hace falta que la descargues otra vez.
 
 Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir):
 
@@ -29,6 +30,7 @@ Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el 
 # Problemas comunes al instalar Wollok
 
 Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok está apuntando a una JDK que además sea de Java 8 ó superior. Una JDK viene con el compilador, mientras que una JRE solo trae la versión "runtime" o de ejecución de los programas Java compilados previamente (los archivos _.class_).
+
 
 ## Variable de entorno JAVA_HOME
 
@@ -53,8 +55,9 @@ Si en el entorno Wollok ingresás a esta configuración: Windows > Preferences >
 
 ## Ubuntu 16.04
 
-Hay un [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) de Eclipse en Ubuntu 16.04 que causa problemas al querer crear un projecto. Para solucionarlo basta con agregar un par de líneas en el archivo `wollok.ini` que se encuentra en donde hayas instalado Wollok, el archivo debería quedar así:
-```
+Hay un [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) de Eclipse en Ubuntu 16.04 que causa problemas al querer crear un proyecto. Para solucionarlo basta con agregar un par de líneas en el archivo `wollok.ini` que se encuentra en donde hayas instalado Wollok, el archivo debería quedar así:
+
+```bash
 -startup
 plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
 --launcher.library
@@ -63,8 +66,39 @@ plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
 2
 -vmargs
 -XX:PermSize=64M
--XX:MaxPermSize=128M"
+-XX:MaxPermSize=128M
 ```
+
+## No levanta la aplicación
+Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguiente:
+
+<div class="slide">
+	<img src="/images/troubleshooting/exit-code-13.png"/>
+</div>
+
+el problema puede darse porque 
+
+* estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm)
+* utilizaste la aplicación "Java Updates" en lugar de descargarlo de la página del JDK, como está documentado [en este link](http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13). En ese caso la solución es desinstalar la JDK actual, instalar la JDK según se sugiere en esta página y levantar el Wollok normalmente.
+
+
+## Falta la dependencia a org.uqbar.project.wollok.launch al ejecutar un archivo
+
+<div class="slide">
+	<img src="/images/troubleshooting/wollok-launch.png" style="width: 95%"/>
+</div>
+
+Aunque el error no es muy descriptivo -y trabajaremos para mejorar eso- el problema es que estás tratando de ejecutar un test, programa o archivo Wollok que no está en el source folder del proyecto. Por defecto el source folder de cualquier proyecto Wollok es "src", así que si creás un archivo fuera de esa carpeta no te lo va a reconocer como ejecutable (esto también te puede pasar si descargás un proyecto del svn apuntando al repositorio raíz en lugar de hacerlo a la carpeta trunk). La solución es mover el archivo a la carpeta src, o cualquier otra carpeta que definas como "Source Folder".
+
+
+## Me pide que instale Java 6 (solo en Mac)
+En máquinas Mac aparece un extraño cartel que indica que instalemos la versión de Java 6
+
+<div class="slide">
+	<img src="/images/troubleshooting/java6.png"/>
+</div>
+
+Esto no es cierto, hay que instalar JDK 1.8 y luego el entorno Wollok. A futuro solucionaremos este tema que puede prestar a confusión.
 
 <hr> 
 

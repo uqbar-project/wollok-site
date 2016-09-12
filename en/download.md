@@ -15,12 +15,29 @@ You need to install previously a Java Virtual Machine 1.8. [Click here to instal
 
 * It must be Java **1.8** (not 1.7<)
 * It has to be a **JDK** (Java Development Kit), with javac compiler program. A JRE (Java Runtime Environment) won't work.
+* If you are already using Eclipse with Java 1.8, this step is not necessary.
 
 As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip / Tar.Gz file (depending on your OS platform):
 
 * Linux: [32](http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip)
 * Mac [32](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip)
 * Windows [32](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip)
+
+## Ubuntu 16.04
+
+There is a known [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) for Eclipse in Ubuntu 16.04 when you try to create a new project. To solve it look for `wollok.ini` file located in same path of Wollok installation and add these lines:
+
+```bash
+-startup
+plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
+--launcher.GTK_version
+2
+-vmargs
+-XX:PermSize=64M
+-XX:MaxPermSize=128M
+```
 
 <hr> 
 
