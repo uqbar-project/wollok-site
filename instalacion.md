@@ -113,6 +113,16 @@ El Update Site requiere instalarse en una instalación de JDT de Eclipse (o sea 
 
 <img src="/images/screencasts/Wollok-UpdateSite.gif" width="100%"/>
 
+<hr> 
+
+# Configuración en inglés
+
+Si querés configurar Wollok para que levante el IDE en inglés, es necesario agregar una **nueva línea al final** del archivo de configuración `wollok.ini`, localizado en el mismo directorio donde descargaste Wollok, con la siguiente instrucción:
+
+```bash
+-Duser.language=en
+```
+
 <hr>
 
 <div>
