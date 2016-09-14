@@ -111,6 +111,16 @@ Update Site requires a JDT Eclipse Installation (since it is a Java-based platfo
 
 <img src="/images/screencasts/Wollok-UpdateSite.gif" width="100%"/>
 
+<hr> 
+
+# English settings
+
+If you would like to run Wollok IDE in the english version, it is necessary to add the following instruction as a **new line at the end** of `wollok.ini`, located in the same path where you downloaded Wollok:
+
+```bash
+-Duser.language=en
+```
+
 <hr>
 
 <div>
