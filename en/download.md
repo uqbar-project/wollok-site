@@ -20,7 +20,7 @@ You need to install previously a Java Virtual Machine 1.8. [Click here to instal
 As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip / Tar.Gz file (depending on your OS platform):
 
 * Linux: [32](http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip)
-* Mac [32](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip)
+* Mac [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip)
 * Windows [32](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip)
 
 
