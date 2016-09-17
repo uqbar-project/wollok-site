@@ -13,16 +13,16 @@ lang: 'es'
 <p>A continuación presentamos una serie de capítulos que integran los principales conceptos de Wollok:
 </p>
 
-* [Objetos. Mensajes. Métodos.](https://docs.google.com/document/d/1RBfNmKZFKZ90XvfQsN7zhtuUPV2Mvj7t-iyZiL2bClQ/edit?usp=drive_web)
-* [Referencias. Estado. Compartir objetos. Identidad.](https://docs.google.com/document/d/14092iRsXDXih8-q_0UEXIGRSQmGtxL9pay1VXX4ceJg/edit?usp=drive_web)
-* [Polimorfismo. Manejo básico de colecciones.](https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit?usp=drive_web)
-* [Clases. Method lookup y polimorfismo con clases.](https://docs.google.com/document/d/1Dgq_PfCbJHO1M7dXe-vGXtj4mbEUWlYhfvQ2i0RWOsk/edit#)
-* [Herencia. Self, super. Redefinición.](https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web)
-* [Colecciones. Bloques de código.](https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit?usp=drive_web)
-* [Manejo de errores](https://docs.google.com/document/d/1T87tmdXv_39RoE_zR7alVFK8TUl-KJYOhdoIsoVTRb4/edit?usp=drive_web)
-* [Constructores. Mutabilidad. Igualdad e identidad. Elementos de Diseño.](https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#)
-* [Testing](https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#)
-* [Tutorial de SVN para Wollok](https://docs.google.com/document/d/1uisxrnkFdC2uBexBChSKpxYohjd90-tejALOSAVZodo/edit?usp=sharing) 
+* <a href="https://docs.google.com/document/d/1RBfNmKZFKZ90XvfQsN7zhtuUPV2Mvj7t-iyZiL2bClQ/edit?usp=drive_web" target="_blank">Objetos. Mensajes. Métodos.</a>
+* <a href="https://docs.google.com/document/d/14092iRsXDXih8-q_0UEXIGRSQmGtxL9pay1VXX4ceJg/edit?usp=drive_web" target="_blank">Referencias. Estado. Compartir objetos. Identidad.</a>
+* <a href="https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit?usp=drive_web" target="_blank">Polimorfismo. Manejo básico de colecciones.</a>
+* <a href="https://docs.google.com/document/d/1Dgq_PfCbJHO1M7dXe-vGXtj4mbEUWlYhfvQ2i0RWOsk/edit#" target="_blank">Clases. Method lookup y polimorfismo con clases.</a>
+* <a href="https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web" target="_blank">Herencia. Self, super. Redefinición.</a>
+* <a href="https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit?usp=drive_web" target="_blank">Colecciones. Bloques de código.</a>
+* <a href="https://docs.google.com/document/d/1T87tmdXv_39RoE_zR7alVFK8TUl-KJYOhdoIsoVTRb4/edit?usp=drive_web" target="_blank">Manejo de errores</a>
+* <a href="https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#" target="_blank">Constructores. Mutabilidad. Igualdad e identidad. Elementos de Diseño.</a>
+* <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#" target="_blank">Testing</a>
+* <a href="https://docs.google.com/document/d/1uisxrnkFdC2uBexBChSKpxYohjd90-tejALOSAVZodo/edit?usp=sharing" target="_blank">Tutorial de SVN para Wollok</a>
 
 <hr>
 

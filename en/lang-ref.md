@@ -13,16 +13,16 @@ lang: 'en'
 <p>This set of chapters introduce you to the main concepts of Wollok programming language (they are all written in spanish):
 </p>
 
-* [Objects. Messages. Methods.](https://docs.google.com/document/d/1RBfNmKZFKZ90XvfQsN7zhtuUPV2Mvj7t-iyZiL2bClQ/edit?usp=drive_web)
-* [References. Internal state. Sharing objects. Identity.](https://docs.google.com/document/d/14092iRsXDXih8-q_0UEXIGRSQmGtxL9pay1VXX4ceJg/edit?usp=drive_web)
-* [Polymorphism. Introducing Collections.](https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit?usp=drive_web)
-* [Classes. Method lookup & polymorphism with classes.](https://docs.google.com/document/d/1Dgq_PfCbJHO1M7dXe-vGXtj4mbEUWlYhfvQ2i0RWOsk/edit#)
-* [Inheritance. Self, super. Overriding.](https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web)
-* [Collections. Closures.](https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit?usp=drive_web)
-* [Error handling.](https://docs.google.com/document/d/1T87tmdXv_39RoE_zR7alVFK8TUl-KJYOhdoIsoVTRb4/edit?usp=drive_web)
-* [Constructors. Mutability. Equality & Identity. Design principles.](https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#)
-* [Testing](https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#)
-* [SVN + Wollok Tutorial](https://docs.google.com/document/d/1uisxrnkFdC2uBexBChSKpxYohjd90-tejALOSAVZodo/edit?usp=sharing) 
+* <a href="https://docs.google.com/document/d/1RBfNmKZFKZ90XvfQsN7zhtuUPV2Mvj7t-iyZiL2bClQ/edit?usp=drive_web" target="_blank">Objects. Messages. Methods.</a>
+* <a href="https://docs.google.com/document/d/14092iRsXDXih8-q_0UEXIGRSQmGtxL9pay1VXX4ceJg/edit?usp=drive_web" target="_blank">References. Internal state. Sharing objects. Identity.</a>
+* <a href="https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit?usp=drive_web" target="_blank">Polymorphism. Introducing Collections.</a>
+* <a href="https://docs.google.com/document/d/1Dgq_PfCbJHO1M7dXe-vGXtj4mbEUWlYhfvQ2i0RWOsk/edit#" target="_blank">Classes. Method lookup & polymorphism with classes.</a>
+* <a href="https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web" target="_blank">Inheritance. Self, super. Overriding.</a>
+* <a href="https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit?usp=drive_web" target="_blank">Collections. Closures.</a>
+* <a href="https://docs.google.com/document/d/1T87tmdXv_39RoE_zR7alVFK8TUl-KJYOhdoIsoVTRb4/edit?usp=drive_web" target="_blank">Error handling.</a>
+* <a href="https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#" target="_blank">Constructors. Mutability. Equality & Identity. Design principles.</a>
+* <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#" target="_blank">Testing</a>
+* <a href="https://docs.google.com/document/d/1uisxrnkFdC2uBexBChSKpxYohjd90-tejALOSAVZodo/edit?usp=sharing" target="_blank">SVN + Wollok Tutorial</a> 
 
 <hr>
 
