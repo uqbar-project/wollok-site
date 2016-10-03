@@ -29,31 +29,25 @@ Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el 
 
 # Problemas comunes al instalar Wollok
 
-Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok está apuntando a una JDK que además sea de Java 8 ó superior. Una JDK viene con el compilador, mientras que una JRE solo trae la versión "runtime" o de ejecución de los programas Java compilados previamente (los archivos _.class_).
+* [El IDE muestra una pantalla de bienvenida y no levanta](#el-ide-muestra-la-pantalla-de-bienvenida-y-no-levanta)
+* [No puedo crear un proyecto Wollok](#no-puedo-crear-un-proyecto-wollok)
+* [Error al crear un proyecto Wollok en Ubuntu 16.04](#error-al-crear-un-proyecto-wollok-en-ubuntu)
+* [No levanta el IDE (exit code 13)](#no-levanta-el-ide-con-exit-code-13)
+* [Falta la dependencia a plugins de Wollok (org.uqbar.project.wollok.launch) al ejecutar un archivo](#falta-la-dependencia-a-plugins-de-wollok-al-ejecutar-un-archivo)
+* [Cartel de advertencia para instalar Java 6 (solo en Mac)](#cartel-de-advertencia-para-instalar-java-6-en-mac)
+* [Chequeos de la JDK](#chequeos-de-la-jdk)
 
+<hr> 
 
-## Variable de entorno JAVA_HOME
+## El IDE muestra la pantalla de bienvenida y no levanta ##
 
-A veces pese a instalar correctamente la JDK 1.8, el sistema operativo sigue utilizando por defecto otra instalación de Java, basado en la variable del entorno JAVA_HOME (y por ende, también la variable PATH). Para chequear esto, abrí una línea de comandos y revisá adónde apunta dicha variable:
+Si el IDE se queda trabado en la pantalla de bienvenida, puede ser que no estés apuntando a una instalación de JDK 1.8 correcta. En ese caso o [apuntás la JDK correcta en tu entorno](#apuntando-la-jdk-correcta-en-tu-entorno) o [debés apuntar la JDK correcta en el archivo ini de Wollok](#apuntando-la-jdk-correcta-en-ini-de-wollok).
 
-```bash
-$ env | grep JAVA   // Linux & Mac
+## No puedo crear un proyecto Wollok ##
 
-> SET JAVA_HOME     // Windows
-```
+Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok está apuntando a una JDK que además sea de Java 8 ó superior. Una JDK viene con el compilador, mientras que una JRE solo trae la versión "runtime" o de ejecución de los programas Java compilados previamente (los archivos _.class_). Una vez más o [apuntás la JDK correcta en tu entorno](#apuntando-la-jdk-correcta-en-tu-entorno) o [debés apuntar la JDK correcta en el archivo ini de Wollok](#apuntando-la-jdk-correcta-en-ini-de-wollok).
 
-La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo [estos instructivos](https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html)
-
-
-## Configuración de la JDK desde Eclipse
-
-Si en el entorno Wollok ingresás a esta configuración: Windows > Preferences > java > Installed JREs y no ves ninguna JDK o bien una JDK que no es 1.8, podés cambiarla de la siguiente manera:
-
-* Add  > Standard VM > next 
-* Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)
-
-
-## Ubuntu 16.04
+## Error al crear un proyecto Wollok en Ubuntu ##
 
 Hay un [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) de Eclipse en Ubuntu 16.04 que causa problemas al querer crear un proyecto. Para solucionarlo basta con agregar un par de líneas en el archivo `wollok.ini` que se encuentra en donde hayas instalado Wollok, el archivo debería quedar así:
 
@@ -69,7 +63,7 @@ plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
 -XX:MaxPermSize=128M
 ```
 
-## No levanta la aplicación (exit code 13)
+## No levanta el IDE con exit code 13 ##
 Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguiente:
 
 <div class="slide">
@@ -78,20 +72,20 @@ Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguie
 
 el problema puede darse porque 
 
-* estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm)
+* estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo [seguí estos pasos](#apuntando-la-jdk-correcta-en-ini-de-wollok).
 * utilizaste la aplicación "Java Updates" en lugar de descargarlo de la página del JDK, como está documentado [en este link](http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13). En ese caso la solución es desinstalar la JDK actual, instalar la JDK según se sugiere en esta página y levantar el Wollok normalmente.
 
 
-## Falta la dependencia a org.uqbar.project.wollok.launch al ejecutar un archivo
+## Falta la dependencia a plugins de Wollok al ejecutar un archivo ##
 
 <div class="slide">
 	<img src="/images/troubleshooting/wollok-launch.png" style="width: 95%"/>
 </div>
 
-Aunque el error no es muy descriptivo -y trabajaremos para mejorar eso- el problema es que estás tratando de ejecutar un test, programa o archivo Wollok que no está en el source folder del proyecto. Por defecto el source folder de cualquier proyecto Wollok es "src", así que si creás un archivo fuera de esa carpeta no te lo va a reconocer como ejecutable (esto también te puede pasar si descargás un proyecto del svn apuntando al repositorio raíz en lugar de hacerlo a la carpeta trunk). La solución es mover el archivo a la carpeta src, o cualquier otra carpeta que definas como "Source Folder".
+Aunque el error no es muy descriptivo -y trabajaremos para mejorar eso- el problema es que estás tratando de ejecutar un test, programa o archivo Wollok que no está en el source folder del proyecto. Por defecto el source folder de cualquier proyecto Wollok es "src", así que si creás un archivo fuera de esa carpeta no te lo va a reconocer como ejecutable (esto también te puede pasar si descargás un proyecto del svn apuntando al repositorio raíz en lugar de hacerlo a la carpeta trunk). La solución es mover el archivo a la carpeta src.
 
 
-## Me pide que instale Java 6 (solo en Mac)
+## Cartel de advertencia para instalar Java 6 en Mac ##
 En máquinas Mac aparece un extraño cartel que indica que instalemos la versión de Java 6
 
 <div class="slide">
@@ -99,6 +93,42 @@ En máquinas Mac aparece un extraño cartel que indica que instalemos la versió
 </div>
 
 Esto no es cierto, hay que instalar JDK 1.8. A futuro solucionaremos este tema que puede prestar a confusión.
+
+<hr>
+
+## Chequeos de la JDK
+
+### Apuntando la JDK correcta en tu entorno
+
+A veces pese a instalar correctamente la JDK 1.8, el sistema operativo sigue utilizando por defecto otra instalación de Java, basado en la variable del entorno JAVA_HOME (y por ende, también la variable PATH). Para chequear esto, abrí una línea de comandos y revisá adónde apunta dicha variable:
+
+```bash
+$ env | grep JAVA   // Linux & Mac
+
+> SET JAVA_HOME     // Windows
+```
+
+La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo [estos instructivos](https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html)
+
+### Apuntando la JDK correcta en ini de Wollok ###
+
+Ingresá al directorio de instalación de Wollok y abrir en un editor de texto el archivo wollok.ini. Entonces especificá el directorio de la JDK 1.8 mediante el parámetro -vm, por ejemplo:
+
+```
+-vm
+D:\java8\bin\javaw.exe
+```
+
+Es importante que no agregues un espacio ni un enter de más en el .ini, porque de lo contrario no van a funcionar los updates de versiones posteriores de Wollok (da un error al parsear el .ini)
+
+## Configuración de la JDK desde Eclipse
+
+Si en el entorno Wollok ingresás a esta configuración: Windows > Preferences > java > Installed JREs y no ves ninguna JDK o bien una JDK que no es 1.8, podés cambiarla de la siguiente manera:
+
+* Add  > Standard VM > next 
+* Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)
+
+
 
 <hr> 
 
