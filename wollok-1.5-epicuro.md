@@ -7,8 +7,25 @@ lang: 'es'
 
 <div>
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;¡Salió Wollok 1.5 Epicuro!</h1>
+
+<h1>&nbsp;&nbsp;¡Estamos preparando lo que se viene!</h1>
 </div>
+
+## Hackatones 2017
+
+Muy pronto sale el nuevo release de Wollok 1.6 (Freire). Mucho antes, para definir nuestra hoja de ruta, funcionalidades nuevas y corrección de errores, armamos un equipo de
+trabajo y nos juntamos una vez por mes para contarnos novedades, hacer sociales y 
+aprender del trabajo de los demás. Si te interesa participar ¡<a href="/comunidad/index.html">contactanos</a>!
+
+<div style="float: left;" class="slideLeft">
+<img src="/images/WollokMeeting2017_1.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_2.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_3.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_4.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+</div>
+
+
+<h1>&nbsp;&nbsp;¡Salió Wollok 1.5 Epicuro!</h1>
 
 ## Lo nuevo
 ¡Se incorporaron muchas clases nuevas!

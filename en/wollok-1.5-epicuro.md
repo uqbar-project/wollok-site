@@ -7,8 +7,26 @@ lang: 'en'
 
 <div>
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1 style="padding: 5px;">&nbsp;&nbsp;Wollok 1.5 Epicuro Released!</h1>
+<h1>&nbsp;&nbsp;Ready, set...</h1>
 </div>
+
+## 2017 Hackatons
+
+<p>Coming soon, new "Freire" Wollok Release 1.6. But on the very beginning of this year,
+we had to define our roadmap, new features and bug fixing. So, we decided to meet once a
+month, to catch up with every development (and also to have our good conversations). If you want to be part of the team, <a href="/en/community/index.html">just join us</a>!
+</p>
+
+<div style="float: left;" class="slideLeft">
+<img src="/images/WollokMeeting2017_1.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_2.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_3.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/WollokMeeting2017_4.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+</div>
+
+
+
+<h1 style="padding: 5px;">&nbsp;&nbsp;Wollok 1.5 Epicuro Released!</h1>
 
 <hr>
 
