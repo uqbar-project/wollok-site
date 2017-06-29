@@ -1,0 +1,62 @@
+/* Shared style applied to all pages */
+/* trick to get desired scroll bar behavior on all browsers */ 
+html {
+	overflow:auto;
+	border:0px;
+	height:100%;
+}
+
+	
+body {	
+	margin-left:14px;
+	margin-top:10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color:#000000;
+	background-image:url("../images/welcomeBackground2.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 95%;
+} 
+	
+h1 {
+	font-size: 2.8em;
+	font-weight: bold;
+} 
+
+h2 {
+	font-size: 2.1em;
+}
+
+a {
+	display:block;
+	font-size: 12px;
+	color:#000000;
+	font-weight:normal;
+	padding-bottom:20px;
+}
+	
+p {
+	padding-left:14px;
+}
+
+img {
+	margin: auto;
+	display: block;
+	padding-top: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	height: 150px;
+	width: 150px;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+link {
+	font-size: 16px;	
+}
