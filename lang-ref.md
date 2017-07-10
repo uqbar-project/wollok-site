@@ -170,7 +170,7 @@ b = b % 2       // resto
 b = b ** 3      // elevado a (3 en este caso)
 5.between(2, 7) // preguntamos si 5 está entre 2 y 7 ==> sí
 3.min(6)        // el menor número entre 3 y 6 ==> 3
-3.max(6)        // el menor número entre 3 y 6 ==> 6
+3.max(6)        // el mayor número entre 3 y 6 ==> 6
 (3.1416).truncate(0)  // la parte entera de 3.1416 ==> 3 -- (3.1416).truncate(2) = 3.14
 (3.1416).roundUp(0)   // el primer entero mayor a 3.1416 ==> 4  -- (3.1416).roundUp(2) = 3.15
 ```
@@ -188,7 +188,7 @@ b %= 2          // b = b % 2
 b /= 2          // b = b / 2
 ```
 
-## Valores Booleanos ##
+## Booleanos ##
 
 Hay dos objetos booleanos representados con los literales "true" y "false". Al igual que los números también son objetos inmutables, la expresión ```(true || false)``` devuelve un nuevo objeto true.
 
