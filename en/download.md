@@ -11,11 +11,17 @@ lang: 'en'
 
 # IDE
 
+## Prerequisite : Install JDK 1.8
+
 You need to install previously a Java Virtual Machine 1.8. [Click here to install it](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 * It must be Java **1.8** (not 1.7<)
 * It has to be a **JDK** (Java Development Kit), with javac compiler program. A JRE (Java Runtime Environment) won't work.
 * If you are already using Eclipse with Java 1.8, this step is not necessary.
+
+> **IMPORTANT**: Don't install Java with Java Updates tool, use above link instead.
+
+## Uncompressing Wollok environment
 
 As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip / Tar.Gz file (depending on your OS platform):
 
@@ -30,7 +36,6 @@ As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip
 
 * [IDE shows splash screen but does not start](#ide-shows-splash-screen-but-does-not-start)
 * [Cannot create a Wollok project](#cannot-create-a-wollok-project)
-* [Error while creating a Wollok project in Ubuntu 16.04](#error-while-creating-a-wollok-project-in-ubuntu)
 * [IDE does not start (exit code 13)](#ide-does-not-start-with-exit-code-13)
 * [Missing dependencies to Wollok plugins (org.uqbar.project.wollok.launch) while executing a file](#missing-dependencies-to-wollok-plugins-while-executing-a-file)
 * [Warning message: Install Java 6 for Mac users](#warning-message-install-java-6-for-mac-users)
@@ -45,23 +50,6 @@ If splash screen is shown but IDE doesn't start, maybe you are not pointing to t
 ## Cannot create a Wollok project ##
 
 If your installed IDE doesn't allow you to create a Wollok project / Wollok class, maybe your Wollok environment is pointing to a non-Java 1.8 version, or just a JRE, so it can't compile wollok sources. Once again, check JDK configuration in your [environment](#pointing-to-the-right-jdk-in-your-environment) and [Wollok ini file](#pointing-to-the-right-jdk-in-wollok-ini-file).
-
-
-## Error while creating a Wollok project in Ubuntu
-
-There is a known [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) for Eclipse in Ubuntu 16.04 when you try to create a new project. To solve it look for `wollok.ini` file located in same path of Wollok installation and add these lines:
-
-```bash
--startup
-plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
---launcher.library
-plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
---launcher.GTK_version
-2
--vmargs
--XX:PermSize=64M
--XX:MaxPermSize=128M
-```
 
 
 ## IDE does not start with exit code 13 ##

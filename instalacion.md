@@ -11,13 +11,19 @@ lang: 'es'
 
 # Entorno de Programación
 
-Wollok está implementado dentro de la plataforma Eclipse y necesita instalar una Máquina Virtual de Java 1.8. La misma se puede descargar [aquí](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+## Prerrequisito: JDK 1.8
+
+Wollok está implementado dentro de la plataforma Eclipse y necesita instalar una Máquina Virtual de Java 1.8. La misma se puede descargar [aquí](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). 
+
+> **IMPORTANTE:** No uses la herramienta Java Updates sino el link de arriba.
 
 Algunas aclaraciones:
 
 * Tiene que ser Java **1.8** (no puede ser una versión anterior)
 * Tiene que ser una **JDK** (Java Development Kit), que viene con el compilador de Java. Una JRE (Java Runtime Environment) no te va a funcionar correctamente.
 * Si ya estás usando Eclipse con Java 1.8, no hace falta que la descargues otra vez.
+
+## Bajarse el entorno Wollok
 
 Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir):
 
@@ -31,7 +37,6 @@ Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el 
 
 * [El IDE muestra una pantalla de bienvenida y no levanta](#el-ide-muestra-la-pantalla-de-bienvenida-y-no-levanta)
 * [No puedo crear un proyecto Wollok](#no-puedo-crear-un-proyecto-wollok)
-* [Error al crear un proyecto Wollok en Ubuntu 16.04](#error-al-crear-un-proyecto-wollok-en-ubuntu)
 * [No levanta el IDE (exit code 13)](#no-levanta-el-ide-con-exit-code-13)
 * [Falta la dependencia a plugins de Wollok (org.uqbar.project.wollok.launch) al ejecutar un archivo](#falta-la-dependencia-a-plugins-de-wollok-al-ejecutar-un-archivo)
 * [Cartel de advertencia para instalar Java 6 (solo en Mac)](#cartel-de-advertencia-para-instalar-java-6-en-mac)
@@ -46,22 +51,6 @@ Si el IDE se queda trabado en la pantalla de bienvenida, puede ser que no estés
 ## No puedo crear un proyecto Wollok ##
 
 Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok está apuntando a una JDK que además sea de Java 8 ó superior. Una JDK viene con el compilador, mientras que una JRE solo trae la versión "runtime" o de ejecución de los programas Java compilados previamente (los archivos _.class_). Una vez más o [apuntás la JDK correcta en tu entorno](#apuntando-la-jdk-correcta-en-tu-entorno) o [debés apuntar la JDK correcta en el archivo ini de Wollok](#apuntando-la-jdk-correcta-en-ini-de-wollok).
-
-## Error al crear un proyecto Wollok en Ubuntu ##
-
-Hay un [bug](https://bugs.launchpad.net/ubuntu/+source/java-common/+bug/1552764) de Eclipse en Ubuntu 16.04 que causa problemas al querer crear un proyecto. Para solucionarlo basta con agregar un par de líneas en el archivo `wollok.ini` que se encuentra en donde hayas instalado Wollok, el archivo debería quedar así:
-
-```bash
--startup
-plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
---launcher.library
-plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417
---launcher.GTK_version
-2
--vmargs
--XX:PermSize=64M
--XX:MaxPermSize=128M
-```
 
 ## No levanta el IDE con exit code 13 ##
 Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguiente:
