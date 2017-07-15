@@ -18,10 +18,10 @@ month, to catch up with every development (and also to have our good conversatio
 </p>
 
 <div style="float: left;" class="slideLeft">
-<img src="/images/WollokMeeting2017_1.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/WollokMeeting2017_2.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/WollokMeeting2017_3.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/WollokMeeting2017_4.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/comunidad/WollokMeeting2017_1.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/comunidad/WollokMeeting2017_2.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/comunidad/WollokMeeting2017_3.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
+<img src="/images/comunidad/WollokMeeting2017_4.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
 </div>
 
 

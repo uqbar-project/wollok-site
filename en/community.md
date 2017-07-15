@@ -10,11 +10,11 @@ lang: 'en'
 <h2>&nbsp;&nbsp;Contact us!</h2>
 </div>
 
-<img src="/images/comunidad/community_collage.jpg" style="
+<img src="/images/comunidad/community_collage2.jpg" style="
 	position: absolute;
 	top: 2em;
 	right: 1em;
-	height: 40em;
+	height: 30em;
 	width: 8em;
 	z-index: -1;"/>
 
