@@ -10,12 +10,12 @@ lang: 'es'
 <h2>&nbsp;&nbsp;Para contactarte</h2>
 </div>
 
-<img src="/images/comunidad/Community2.jpg" style="
+<img src="/images/comunidad/community_collage.jpg" style="
 	position: absolute;
 	top: 2em;
 	right: 1em;
-	height: 28em;
-	width: 7em;
+	height: 40em;
+	width: 8em;
 	z-index: -1;"/>
 
 <ul>
