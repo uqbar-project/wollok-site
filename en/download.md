@@ -39,6 +39,8 @@ As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip
 * [IDE does not start (exit code 13)](#ide-does-not-start-with-exit-code-13)
 * [Missing dependencies to Wollok plugins (org.uqbar.project.wollok.launch) while executing a file](#missing-dependencies-to-wollok-plugins-while-executing-a-file)
 * [Warning message: Install Java 6 for Mac users](#warning-message-install-java-6-for-mac-users)
+* [Executing non signed application (Mac)](#executing-non-signed-application-mac)
+* [App Translocation Problem (Mac)](#app-translocation-problem-mac)
 * [JDK Checks](#jdk-checks)
 
 <hr> 
@@ -84,6 +86,26 @@ In Mac operating systems there is a weird message advising us to install Java 6
 Well, that's not true, you have to install JDK 1.8. We will correct it soon.
 
 <hr>
+
+
+## Executing non signed application (Mac) ##
+
+Mac OS X implements a new security system only allowing the execution of application developed by registered developers. Also the applications should be distributed by Apple validated channels, as App Store. As Wollok development team is not register an exception should be created in order to run Wollok.
+
+<div class="slide">
+	<img src="/images/troubleshooting/aplicacionNoFirmada.png"/>
+</div>
+
+More details of how to configure the exception to run Wollok is available in Apple support site: (https://support.apple.com/kb/PH21769?locale=en_EN&viewlocale=en_EN)
+
+## App Translocation Problem (Mac) ##
+
+Version 10.12 of OS X introduces a new security system called Gatekeeper. This new system has as objective avoiding the undesired execution of programs. So that, the downloaded applications cannot be executed from the Download folder, or any other folder where the browser originally put it. To be able to execute the application, it should be moved to another folder. This operation should be performed using Finder. Once it has done, Wollok is able to execute normally.
+
+<div class="slide">
+	<img src="/images/troubleshooting/gatekeeper.png"/>
+</div>
+
 
 ## JDK checks
 

@@ -40,6 +40,8 @@ Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el 
 * [No levanta el IDE (exit code 13)](#no-levanta-el-ide-con-exit-code-13)
 * [Falta la dependencia a plugins de Wollok (org.uqbar.project.wollok.launch) al ejecutar un archivo](#falta-la-dependencia-a-plugins-de-wollok-al-ejecutar-un-archivo)
 * [Cartel de advertencia para instalar Java 6 (solo en Mac)](#cartel-de-advertencia-para-instalar-java-6-en-mac)
+* [Ejecución de aplicación no firmada en Mac](#ejecución-de-aplicación-no-firmada-en-mac)
+* [Problema con App Translocation (Mac)](#problema-con-app-translocation-mac)
 * [Chequeos de la JDK](#chequeos-de-la-jdk)
 
 <hr> 
@@ -84,6 +86,26 @@ En máquinas Mac aparece un extraño cartel que indica que instalemos la versió
 Esto no es cierto, hay que instalar JDK 1.8. A futuro solucionaremos este tema que puede prestar a confusión.
 
 <hr>
+
+
+## Ejecución de aplicación no firmada en Mac ##
+
+Mac OS X implementa un sistema de seguridad que solo permite ejecutar aplicaciones desarrolladas por desarrolladores registrados en Apple, y estas aplicaciones deben estar distribuidas por el App Store. Como este no es el caso con Wollok, es necesario permitir ejecutar una aplicación no firmada. 
+
+<div class="slide">
+	<img src="/images/troubleshooting/aplicacionNoFirmada.png"/>
+</div>
+
+La forma de realizar esta operación esta explicado en la documentación de OS X. Existente en (https://support.apple.com/kb/PH21769?locale=es_ES&viewlocale=es_ES)
+
+## Problema con App Translocation (Mac) ##
+
+En la versión 10.12 de OS X se introdujo un sistema de seguridad llamado Gatekeeper. Este sistema tiene como objetivo evitar la ejecución de programas de forma no deseada. Por lo tanto los programas no ejecutan si son ejecutados o descomprimidos en la carpeta Download o donde los guarda el browser. Para poder ejecutarlo es solamente necesario mover la aplicación a otra carpeta, todo haciendolo desde Finder. De esta manera Wollok va a funcionar correctamente.
+
+<div class="slide">
+	<img src="/images/troubleshooting/gatekeeper.png"/>
+</div>
+
 
 ## Chequeos de la JDK
 
