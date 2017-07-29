@@ -185,6 +185,11 @@ b -= 1          // b = b - 1
 b *= 3          // b = b * 3
 b %= 2          // b = b % 2
 b /= 2          // b = b / 2
+5.between(2, 7) // whether 5 is between 2 and 7 ==> true
+3.min(6)        // the smaller of 3 and 6 ==> 3
+3.max(6)        // the greater of 3 and 6 ==> 6
+(3.1416).truncate(0)  // integer part of 3.1416 ==> 3 -- (3.1416).truncate(2) = 3.14
+(3.1416).roundUp(0)   // the smallest integer greater than 3.1416 ==> 4  -- (3.1416).roundUp(2) = 3.15
 ```
 
 ## Booleans ##
