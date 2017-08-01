@@ -30,6 +30,25 @@ As Wollok is an Eclipse-based platform, you install Wollok IDE uncompressing Zip
 * Windows [32](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip)
 
 
+## Updates
+
+As soon as a new version is available, IDE will ask you to update your environment:
+
+![image](/images/updates/update_01.png)
+
+In this case double-click notification message to activate Update Process. You can also do this manually by activating Help > Check for Updates option. 
+
+A Wizard is shown:
+
+![image](/images/updates/update_02.png)
+
+Go forward and finish update wizard. Before upgrade installation is complete a confirmation dialog will appear:
+
+![image](/images/updates/update_03.png)
+
+Click Ok, restart Wollok environment and then you will have last upgrade correctly installed.
+
+
 <hr> 
 
 # Troubleshooting

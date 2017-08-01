@@ -31,6 +31,22 @@ Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el 
 * Mac [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip)
 * Windows [32](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip) / [64 bits](http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip)
 
+## Actualizaciones
+
+Cada vez que se libere una nueva versión, el IDE te notificará que hay una actualización disponible:
+
+![image](/images/updates/update_01.png)
+
+En ese caso podés hacer click sobre la notificación para activar el proceso de actualización. Otra forma es desde el menú Help > Check for Updates (Ayuda > Buscar actualizaciones). En cualquiera de los dos casos aparece el siguiente asistente:
+
+![image](/images/updates/update_02.png)
+
+Hay que avanzar los pasos hasta Finalizar. Antes de instalar aparecerá una ventana de confirmación:
+
+![image](/images/updates/update_03.png)
+
+Aceptamos la acción, reiniciamos el entorno y ahora sí tendremos la última versión de Wollok.
+
 <hr> 
 
 # Problemas comunes al instalar Wollok
