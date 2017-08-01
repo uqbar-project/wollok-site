@@ -23,7 +23,6 @@ aprender del trabajo de los demás. Si te interesa participar ¡<a href="/comuni
 
 Podés ver <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=1">en este link</a> el resumen de todos los issues (más de 100) que fueron resueltos. Pero para que sea más amena la introducción te contamos qué cosas nuevas trae:
 
-* [Sistema de inferencia de tipos](#sistema-de-inferencia-de-tipos)
 * [Soporte para generar un conjunto de tests con estado compartido](#conjunto-de-tests)
 * [Mejoras al lenguaje](#mejoras-al-lenguaje)
 * [Nuevas Validaciones](#nuevas-validaciones)
@@ -36,6 +35,7 @@ Podés ver <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=
 
 <hr>
 
+<!--
 ## Sistema de inferencia de tipos ##
 
 Wollok permite configurar un sistema propio de inferencia de tipos, que agrega
@@ -57,6 +57,7 @@ Y en la solapa Outline (Resumen) tenés un resumen de los tipos encontrados por 
 
 Para configurar el sistema de tipos, tenés la opción Ventana > Preferencias...
 
+-->
 
 ## Conjunto de tests ##
 
@@ -74,7 +75,7 @@ Anteriormente solo podíamos generar un archivo con tests aislados. Ahora se inc
 
 ![image](/images/news-freire/allTests.gif)
 
-En la solapa Outline (Resumen) vemos la conformación de un *describe*
+En la solapa Outline (Resumen) vemos cómo es la estructura de un *describe*
 
 ![image](/images/news-freire/testSuite2.png)
 
@@ -99,7 +100,7 @@ Recordá que podés buscar clases de la librería nativa Wollok presionando Ctrl
 
 El feedback que recibimos de la herramienta nos permitió agregar nuevos controles para detectar tempranamente problemas en los programas:
 
-* Se detectan referencias cíclicas de jerarquías (A hereda de B, B hereda de A por ejemplo) para evitar un *loop infinito*
+* Se encuentran referencias cíclicas de jerarquías (A hereda de B, B hereda de A por ejemplo) para evitar un *loop infinito*
 
 * Se detectan errores de concepto como redefinir un método para solamente llamar a super
 
@@ -115,7 +116,7 @@ Se mejoró la experiencia de usuario respecto a los quick fixes, como podemos ap
 
 * Se castellanizaron los mensajes para facilitar la lectura al estudiante de habla española
 
-* Los quick fixes trabajan ahora hacia cualquier archivo al que necesiten acceder (en versiones anteriores fallaba la creación de clases, objetos y métodos cuando eso involucraba un archivo diferente del que se estaba manipulando)
+* Los quick fixes trabajan ahora hacia cualquier archivo al que necesiten acceder (en versiones anteriores fallaba la creación de métodos, entre otros elementos, cuando eso involucraba un archivo diferente del que se estaba manipulando)
 
 * Se mejoraron quick fixes en tests, *describes*, y dentro de clases la creación de constructores, métodos redefinidos, nuevas referencias.
 
@@ -124,20 +125,22 @@ Se mejoró la experiencia de usuario respecto a los quick fixes, como podemos ap
 
 Wollok permite organizar proyectos en packages, cuando éstos empiezan a tornarse voluminosos.
 
-La forma de refenciar los objetos y clases en las sentencias imports es agregando como prefijo los nombres de los *packages* o carpetas terminando con un punto:
+La forma de referenciar los objetos y clases en las sentencias imports es agregando como prefijo los nombres de los *packages* o carpetas terminando con un punto:
 
 ![image](/images/news-freire/packages.png)
 
 
 ## Mejoras al Diagrama estático
 
-Wollok trae un diagrama estático que se integra con las demás herramientas del entorno:
+Wollok ofrece un diagrama estático que se integra con las demás herramientas del entorno:
 
 ![image](/images/news-freire/staticDiagram.gif)
 
 Ahora tenés muchas más funcionalidades disponibles:
 
-* Tiene una forma inteligente de dibujar el diagrama, pero si movés alguna clase o le cambiás el tamaño lo recuerda
+* Los ajustes manuales y la configuración en general se almacena para que nunca pierdas tus cambios
+
+* Tiene una forma inteligente de dibujar el diagrama
 
 * Podés configurar qué clases, variables o métodos mostrar en el diagrama (por defecto no muestra las variables ni los getters, ni los constructores)
 
@@ -148,6 +151,10 @@ Ahora tenés muchas más funcionalidades disponibles:
 * Todas las acciones pueden deshacerse, de manera de volver a mostrar elementos ocultos, o volver a definir relaciones entre elementos.
 
 ![image](/images/news-freire/staticDiagram2.gif)
+
+* Y en la versión 1.6.1 se incorporó la posibilidad de agregar cualquier clase externa que esté en el mismo proyecto
+
+![image](/images/news-freire/staticDiagram3.gif)
 
 ## Mejoras en la Consola REPL ##
 

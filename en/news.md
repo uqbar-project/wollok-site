@@ -7,118 +7,193 @@ lang: 'en'
 
 <div>
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;Ready, set...</h1>
+
+<h1>&nbsp;&nbsp;New Wollok Freire version released!</h1>
 </div>
 
-## 2017 Hackatons
+<img src="/images/news-freire/paulo-freire.jpg" height="170" width="170" align="left" style="padding: 0rem 0.5rem 0rem 0.5rem !important; margin-bottom: 0rem;"/>
 
-<p>Coming soon, new "Freire" Wollok Release 1.6. But on the very beginning of this year,
-we had to define our roadmap, new features and bug fixing. So, we decided to meet once a
-month, to catch up with every development (and also to have our good conversations). If you want to be part of the team, <a href="/en/community/index.html">just join us</a>!
-</p>
+There is a new Wollok release: 1.6 version, a tribute to an outstanding educator and philosopher: <a href="https://es.wikipedia.org/wiki/Paulo_Freire">Paulo Freire</a>. His work is a source of inspiration for every teacher in this world.
 
-<div style="float: left;" class="slideLeft">
-<img src="/images/comunidad/WollokMeeting2017_1.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/comunidad/WollokMeeting2017_2.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/comunidad/WollokMeeting2017_3.jpg" alt="image" height="50%" width="50%" align="left" style="padding: 5px; border-radius: 40px;"/>
-<img src="/images/comunidad/WollokMeeting2017_4.jpg" alt="image" height="50%" width="50%" align="right" style="padding: 5px; border-radius: 40px;"/>
-</div>
+This year several teacher and developer joined into a broader team, leading to a new product. Monthly we do *hackatons* and *meetings*, to work together and catch up with each other.
+
+If you like to join us, <a href="/comunidad/index.html">stay tuned</a>!
 
 
+## Meet Freire!
 
-<h1 style="padding: 5px;">&nbsp;&nbsp;Wollok 1.5 Epicuro Released!</h1>
+You can see <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=1">in this link</a> a brief resume of closed issues (100+) for this milestone. Let's see in plain english what's new:
+
+* [Test suite with fixtures](#test-suite-with-fixtures)
+* [Language enhancements](#language-enhancements)
+* [New Validations](#new-validations)
+* [Quick Fixes](#quick-fixes)
+* [Project organization](#project-organization)
+* [Static diagram enhancements](#static-diagram-enhancements)
+* [REPL Console enhancements](#repl-console-enhancements)
+* [Plugins changes](#plugins-changes)
+* [External Libraries Support](#external-libraries-support)
 
 <hr>
 
-## New Features
-There are several new classes:
+<!--
+## Sistema de inferencia de tipos ##
 
-* **Date**
-* **Interval:** a continuous set of real numbers
-* **Dictionary:** a key/value implementation
+Wollok permite configurar un sistema propio de inferencia de tipos, que agrega
 
-![image](https://cloud.githubusercontent.com/assets/4549002/17170349/fe20ee22-53c1-11e6-87e1-2517003a5490.png)
+* detección de tipos para las referencias (variables y parámetros)
+* validación de uso de tipos adecuado para los mensajes de cada objeto
 
-But also, there are new helpful methods in several classes:
-* **String**
-* **numbers**
-* **collections**
+Esto permite que no tengas que escribirlos explícitamente, sino dejar que Wollok los infiera por vos, como ocurre en otros lenguajes como Scala, Go, Haskell, Swift, entre otros.
 
-Remember, you can search it by pressing Ctrl + Shift + F3 and entering a Class Name
+<img src="/images/news-freire/typeSystem10.png"/>
+
+Al posicionarte sobre una variable o parámetro, podés ver cuál es el tipo inferido. De la misma manera cuando buscás con Ctrl + Barra qué mensajes podés enviar a un objeto, se visualizan solo los métodos que dicho objeto entiende:
+
+![image](/images/news-freire/typeSystem3.png)
+
+Y en la solapa Outline (Resumen) tenés un resumen de los tipos encontrados por el sistema de tipos de Wollok:
+
+![image](/images/news-freire/typeSystem5.png)
+
+Para configurar el sistema de tipos, tenés la opción Ventana > Preferencias...
+
+-->
+
+## Test suite with fixtures
+
+Now in wollok you can define
+
+- individual tests (as usual)
+- and also *describe tests*, with instance variables initialized in a *fixture*, so state is shared among them. 
+
+<img src="/images/news-freire/testSuite.gif" width="120%" />
+
+Both kind of tests are still isolated, automatic and repetitive.
+
+* Tests results and editor are fully integrated, so you can navigate stack trace errors and failures.
+
+* A new *Show only failures and errors* toggle button allows to focus only  in tests we should correct. 
+
+* Now you can run all tests in a specific project (it works for individual and *describe* tests):
+
+![image](/images/news-freire/allTests.gif)
+
+In Outline View we can see the structure of a *describe*
+
+![image](/images/news-freire/testSuite2.png)
+
+
+## Language enhancements ##
+
+Beyond minor corrections, there is an important change in Wollok Freire about constructors:
+
+* every class inherits constructors from its superclass, so now you don't have to define a constructor that simply delegates to super
+
+* unless explicitly defining one constructor: in this case superclass constructors will be overriden
+
+![image](/images/news-freire/constructors.png)
+
+
+Remember you can search any Wollok library class by pressing Ctrl + Shift + F3 and typing the name of the looked class:
 
 ![image](https://cloud.githubusercontent.com/assets/4549002/17170623/5d5d3cbe-53c3-11e6-8086-c47df70caf3d.png)
 
-## Wollokdoc
-(Almost) every class & method is now documented in (Wollok)doc, with examples
 
-![image](https://cloud.githubusercontent.com/assets/4549002/17155608/2dff4762-535c-11e6-92e7-733bf93d880d.png)
+## New Validations ##
 
-## Libraries
-There was a major refactor in built-in wollok libraries. Now you have several extensible and shorter .wlk libs:
+Student's feedback helped us to add new validations to early detect code smells:
 
-* lang.wlk
-* lib.wlk
-* game.wlk
+* Cyclic loops in hierarchy (like A inherits from B, and viceversa)
 
-## Checks
+* Conceptual errors like overriden methods that only calls to super
 
-Now Wollok validates that you should use 'self' word inside a WKO and not the name of the referenced WKO:
+* Spanish speaking users now can enjoy internationalization of validation messages
 
-![image](https://cloud.githubusercontent.com/assets/4549002/17172042/b5bd609a-53c9-11e6-8c8b-e37c519652f8.png)
-
-It also warns the developer when using a variable just to return a value:
-
-![image](https://cloud.githubusercontent.com/assets/4549002/17172301/c8e34dbe-53ca-11e6-8211-994bb0042f8c.png)
-
-Common bad smells like if (true) return true else false are now marked as errors: :smile_cat: 
-
-![image](https://cloud.githubusercontent.com/assets/4549002/17172426/71f868b2-53cb-11e6-8c05-30167eeecc32.png)
+So, several checks were added and we expect to add more in a near future.
 
 
-# IDE
+## Quick Fixes ##
 
-## Editor
-In version 1.4.x there was a strange behavior when editing a Wollok class, object, program or test. Duplicate lines appeared or extra newlines where inserted between lines. This issue is fixed.
+User experience is better, as this demo shows:
 
-## SVN Integration
-Now Wollok comes with SVN integration through subversive plugin.
+![image](/images/news-freire/quickFix.gif)
 
-![image](https://cloud.githubusercontent.com/assets/4549002/17162413/36a110a0-538c-11e6-9939-0cd22683bd34.png)
+* Spanish speaking users now can enjoy internationalization of quick fixes descriptions
 
-![image](https://cloud.githubusercontent.com/assets/4549002/17162432/80088f5c-538c-11e6-95a9-f2f7b830b0c0.png)
+* Enhanced context dependent quick fixes for classes and objects, tests and *describes* were developed
 
-## REPL
-**New features:**
+* Quick fixes don't require to manipulate elements in same file. Now you can add a wko's method defined in a .wlk file while editing a test
 
-* Now REPL allows pasting text from clipboard
-* It also copies plain text and RTF without adding ANSI escape characters
-* You can run a REPL without needing a Wollok file
 
-## Diagrams
-You can activate Static Diagrams by selecting Window > Show View > Other... Static Diagram
+## Project organization ##
 
-**New Features:**
+As soon as you realize you have a large project, Wollok allows you to organize your definitions in *packages*.
 
-* You can now export diagram to PNG
-![image](https://cloud.githubusercontent.com/assets/4549002/17155290/cff20804-535a-11e6-85da-2dfad3f9a7e3.png)
-* WKO & Mixins are located at first row
- * Classes are below that line, but if no objects and mixins are found, classes take their place
- * WKO locate left-side Mixins
-* Now WKO don't show inheritance line to _Object class_. 
- * But if a WKO inherits from another class, this connector appears in the diagram. 
- * Inheritance connections between WKO and mixins are always shown
-* Superclasses located in a centered-align position based on how many subclasses they have
-* **Accessors methods** are now filtered, checking a method that has same name as a variable, as Wollok convention establishes (not checking for set/get methods)
+All you have to do is import objects and classes using package names as prefixes, separating each folder with a dot:
 
-**Fixed bugs:**
+![image](/images/news-freire/packages.png)
 
-* connections were in a weird position if you scrolled down or resized the diagram. 
-* If a WKO & a class shared the same mixin, it appeared twice. 
-* Instance variable names didn't appear in diagram. 
+
+## Static diagram enhancements
+
+Wollok static diagram has full integration with environment tools:
+
+![image](/images/news-freire/staticDiagram.gif)
+
+Now a lot of features are available:
+
+* Every manual adjustment and configuration is saved, so you never lose your changes.
+
+* Diagram has a smart drawing algorithm to place elements. Nevertheless, you can change size or location of them. 
+
+* You can show and hide classes, variables or methods in the diagram, so it is easy for the student to add this diagram as an additional documentation artifact (constructors and accessors are never shown)
+
+* Remember that you can navigate to editor by double clicking any element, and you can export diagram to a png image file
+
+* All inheritance relationships are automatically detected. Until now association and dependency relationships must be manually defined, using Palette Toolbar at the right of the diagram. 
+ 
+* You can dismiss any action: show hidden elements, show hidden variables/methods of a certain element, delete association / dependency relationships. 
+
+![image](/images/news-freire/staticDiagram2.gif)
+
+* In 1.6.1 version you can add external elements if they are in the same project!
+
+![image](/images/news-freire/staticDiagram3.gif)
+
+## REPL Console enhancements ##
+
+* You can (finally!) paste any text from the clipboard, without having to press a space key
+
+* You can run REPL console without any open project
+
+* When an error occurs, you can navigate stack trace directly to editor
+
+![image](/images/news-freire/replConsole.gif)
+
+## Plugins changes
+
+* Default Version Control System plugin in Wollok is now [EGit](http://www.eclipse.org/egit/), a widely used plugin that integrates Git with Eclipse.
+
+* SVN plugin no longer comes with Wollok installation. If you need to use it, you can install it manually [from Marketplace](https://marketplace.eclipse.org/content/subclipse), **like any other Eclipse plugin**
+
+
+
+## External Libraries Support ##
+
+From now on, you can run a .wlk, .wtest or .wpgm by passing any JDK 1.8-compatible external library.
+
+So you can configure your Running environment to use any .jar libraries.
+
+<hr>
 
 <div>
 <img src="/images/bug.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;Issues solved</h1>
+<h1>&nbsp;&nbsp;Solved Issues</h1>
 </div>
 
-You can see [here](https://github.com/uqbar-project/wollok/milestone/6?closed=1) a list of all issues solved in this release.
+You can see the solved issues for 
+
+* [1.6.0 release](https://github.com/uqbar-project/wollok/milestone/11?closed=1)
+
+* [1.6.1 release](https://github.com/uqbar-project/wollok/milestone/15?closed=1)

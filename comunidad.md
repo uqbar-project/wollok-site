@@ -31,7 +31,7 @@ lang: 'es'
 <h2>&nbsp;&nbsp;¿Querés sumarte y contribuir?</h2>
 </div>
 <ul>
-<li>¡Entrá al proyecto <a href="https://github.com/uqbar-project/wollok">Github!</a></li>
+<li>¡Entrá al proyecto en <a href="https://github.com/uqbar-project/wollok">Github!</a></li>
 <li>Si necesitás documentación para desarrollar entrá a nuestra <a href="https://github.com/uqbar-project/wollok/wiki">wiki</a></li>
 </ul>
 
