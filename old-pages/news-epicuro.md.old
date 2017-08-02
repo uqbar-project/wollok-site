@@ -40,7 +40,7 @@ También tenés una gran variedad de **nuevos** métodos en estas clases:
 * **números**
 * **collections**
 
-Recordá que podés buscar clases de la librería nativa Wollok presionando Ctrl + Shift + F3 y escribiendo el nombre de la clase deseada:
+Recordá que podés buscar clases de la bibliotecas nativa Wollok presionando Ctrl + Shift + F3 y escribiendo el nombre de la clase deseada:
 
 ![image](https://cloud.githubusercontent.com/assets/4549002/17170623/5d5d3cbe-53c3-11e6-8086-c47df70caf3d.png)
 
@@ -49,8 +49,8 @@ Recordá que podés buscar clases de la librería nativa Wollok presionando Ctrl
 
 ![image](https://cloud.githubusercontent.com/assets/4549002/17155608/2dff4762-535c-11e6-92e7-733bf93d880d.png)
 
-## Librerías
-Hubo un gran cambio en las librerías nativas de Wollok. Ahora tenés varios archivos .wlk más cortos y extensibles:
+## Bibliotecas
+Hubo un gran cambio en las bibliotecas nativas de Wollok. Ahora tenés varios archivos .wlk más cortos y extensibles:
 
 * lang.wlk
 * lib.wlk

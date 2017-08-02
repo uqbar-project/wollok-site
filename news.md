@@ -31,7 +31,7 @@ Podés ver <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=
 * [Mejoras al Diagrama estático](#mejoras-al-diagrama-estatico)
 * [Mejoras en la consola REPL](#mejoras-en-la-consola-repl)
 * [Cambios en los Plugins](#cambios-en-los-plugins)
-* [Soporte para librerías externas](#soporte-para-librerias-externas)
+* [Soporte para bibliotecas externas](#soporte-para-bibliotecas-externas)
 
 <hr>
 
@@ -91,7 +91,7 @@ Más allá de correcciones menores, lo más interesante que trae Wollok Freire e
 ![image](/images/news-freire/constructors.png)
 
 
-Recordá que podés buscar clases de la librería nativa Wollok presionando Ctrl + Shift + F3 y escribiendo el nombre de la clase deseada:
+Recordá que podés buscar clases de la biblioteca nativa Wollok presionando Ctrl + Shift + F3 y escribiendo el nombre de la clase deseada:
 
 ![image](https://cloud.githubusercontent.com/assets/4549002/17170623/5d5d3cbe-53c3-11e6-8086-c47df70caf3d.png)
 
@@ -176,11 +176,11 @@ En esta versión
 
 
 
-## Soporte para librerias externas ##
+## Soporte para bibliotecas externas ##
 
-A partir de esta versión, Wollok permite correr cualquier archivo .wlk, .wtest o .wpgm pasándole cualquier librería externa que pueda compilar una JDK 1.8. 
+A partir de esta versión, Wollok permite correr cualquier archivo .wlk, .wtest o .wpgm pasándole cualquier biblioteca externa que pueda compilar una JDK 1.8. 
 
-Esto habilita a que cualquier proyecto tuyo tenga librerías .jar y que en la configuración de ejecución (Run Configuration) vos puedas indicar que use dichas librerías. 
+Esto habilita a que cualquier proyecto tuyo tenga bibliotecas .jar y que en la configuración de ejecución (Run Configuration) vos puedas indicar que use dichas bibliotecas. 
 
 
 <hr>

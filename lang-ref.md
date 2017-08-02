@@ -1016,7 +1016,7 @@ Además de las clases, puede haber polimorfismo entre clases y objetos:
 
 # Modularización
 
-Wollok provee una serie de reglas y construcciones del lenguaje para fomentar programas modulares: separar clases y programas para ser usado por otros programas / librerías.
+Wollok provee una serie de reglas y construcciones del lenguaje para fomentar programas modulares: separar clases y programas para ser usado por otros programas / bibliotecas.
 
 ## Packages
 
@@ -1077,7 +1077,7 @@ Al codificar dentro de un package, podemos referirnos a las clases por su **nomb
 Para referirnos a una clase que está fuera del package DEBEMOS usar su FQN. Para evitar escribir una y otra vez los FQN de la clase, podemos usar los [imports](imports), como se describe a continuación.
 
 
-## Librerías vs Programas ##
+## Bibliotecas vs Programas ##
 
 // TODO
 
