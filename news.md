@@ -18,6 +18,9 @@ Tenemos un nuevo release de Wollok: la versión 1.6 que homenajea al gran educad
 Este nuevo producto es fruto de un gran equipo de docentes de programación y desarrolladores, donde una vez al mes nos juntamos para contarnos novedades, hacer sociales y 
 aprender del trabajo de los demás. Si te interesa participar ¡<a href="/comunidad/index.html">contactanos</a>!
 
+## ¡Salió el último release: 1.6.3!
+
+En [este link](https://github.com/uqbar-project/wollok/milestone/18?closed=1) podés ver los últimos arreglos y funcionalidades que sacamos en la versión **1.6.3** el 04/10/2017
 
 ## ¡Conocé lo nuevo!
 
