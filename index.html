@@ -1,69 +1,123 @@
----
-layout: hyde
-title: 'Inicio'
-weight: 1
-lang: 'es'
+--- 
+layout: hyde 
+title: 'Inicio' 
+weight: 1 
+lang: 'es' 
 ---
 
 <section id="main_content">
-    <h3>
-       	<a id="qué-es-wollok" class="anchor" href="#qu%C3%A9-es-wollok" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Qué es Wollok?
-    </h3>
 
-<p>Wollok es un lenguaje de programación y entorno de desarrollo integrado (IDE) para ser utilizado en el dictado de materias iniciales de programación a objetos. 
-Es ideal ya que permite ir agregando los detalles y conceptos de forma incremental y programando desde el primer día. </p>
+    <div class="card card-body">
+        <h4 class="card-title">¿Qué es Wollok?</h4>
+        <p class="card-text">Wollok es un lenguaje de programación y entorno de desarrollo integrado (IDE) para ser utilizado en el dictado de materias
+                iniciales de programación a objetos. Es ideal ya que permite ir agregando los detalles y conceptos de forma incremental
+                y programando desde el primer día. </p>
+    </div>
 
-<div class="slideLeft">
-<img src="/images/Wollok_Home4_Touched.jpg" width="100%"/>
-</div>
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <img class="d-block w-100 z-depth-1" src="/images/inicio/home1_final.jpg" alt="First slide">
+            </div>
+            <!--/First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100 z-depth-1" src="/images/inicio/home2_final.jpg" alt="Second slide">
+            </div>
+            <!--/Second slide-->
+            <!--Third slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100 z-depth-1" src="/images/inicio/home3_final.jpg" alt="Third slide">
+            </div>
+            <!--/Third slide-->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
 
-<h3>
-<a id="cómo-es-el-lenguaje" class="anchor" href="#c%C3%B3mo-es-el-lenguaje" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Cómo es el Lenguaje?</h3>
 
-<ul>
-<li>Orientado a Objetos</li>
-<li>No está centrado en clases, lo que permite crear objetos como <i>first-class citizens</i> sin la necesidad de clases. Esto permite comenzar a programar en objetos sin tener que introducir conceptos más complejos como son <i>Packages, Herencia, Sobrecarga</i>, etc.</li>
-<li>Tiene una sintaxis simple y limpia, basada en los conceptos fundamentales de objetos, fácil de adquirir. </li>
-<li>Es un lenguaje dinámico, sin necesidad de agregarle anotaciones de tipos.</li>
-<li>Posee un sistema de tipos implícito, que permite maximizar los chequeos en tiempo de compilación sin perder el poder de un lenguaje dinámico..</li>
-<li>Es interpretado.</li>
-</ul>
+    <div class="card card-body">
+        <h4 class="card-title">¿Cómo es el Lenguaje?</h4>
+        <p class="card-text">
+            <ul>
+                <li>Orientado a Objetos</li>
+                <li>No está centrado en clases, lo que permite crear objetos como
+                    <i>first-class citizens</i> sin la necesidad de clases. Esto permite comenzar a programar en objetos sin tener que
+                    introducir conceptos más complejos como son
+                    <i>Packages, Herencia, Sobrecarga</i>, etc.</li>
+                <li>Tiene una sintaxis simple y limpia, basada en los conceptos fundamentales de objetos, fácil de adquirir. </li>
+                <li>Es un lenguaje dinámico, sin necesidad de agregarle anotaciones de tipos.</li>
+                <li>Posee un sistema de tipos implícito, que permite maximizar los chequeos en tiempo de compilación sin perder el poder
+                    de un lenguaje dinámico..</li>
+                <li>Es interpretado.</li>
+            </ul>
+        </p>
+    </div>
 
-<h3>
-<a id="cómo-es-el-ambiente-de-desarrollo" class="anchor" href="#c%C3%B3mo-es-el-ambiente-de-desarrollo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>&nbsp;&nbsp;¿Cómo es el ambiente de desarrollo?
+    <br>
 
-<a href="{{ site.baseurl }}/instalacion/index.html"><img src="/images/download.ico" align="left" height="48" width="48" title="¡Probalo y descargátelo!"/></a>
-<br>
+    <div class="card card-body">
+        <h4 class="card-title">
+            <a href="{{ site.baseurl }}/instalacion/index.html">
+                <img src="/images/download.ico" align="left" height="48" width="48" title="¡Probalo y descargátelo!" />
+            </a>&nbsp;&nbsp;
+            ¿Cómo es el ambiente de desarrollo?
+        </h4>
+        <p class="card-text">
+            <img src="/images/screencasts/wollok-init.gif" height="90%" width="90%" style="align: center" />
+            
+            <ul>
+                <li>Completamente integrado al Eclipse y sus plugins.</li>
+                <li>Chequeos y Quick-Fixes como los de Java en Eclipse.</li>
+                <li>Con un Reporte de errores en tiempo de compilación.</li>
+                <li>Consola interactiva integrada (REPL).</li>
+                <li>Con un Debugger propio.</li>
+                <li>Con Diagramas estáticos y dinámicos.</li>
+                <li>Con un entorno de desarrollo gráfico para pequeños juegos (en desarrollo).</li>
+            </ul>
+        </p>
+    </div>
 
-</h3>
+    <br>
 
-<img src="/images/screencasts/wollok-init.gif" height="90%" width="90%" style="align: center"/>
+    <div class="card">
+            <div class="card-header red darken-1 white-text">
+                    ¿Querés conocer más?
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <ul>
+                        <li>Te invitamos a hacer un  <a href="{{ site.baseurl }}/tour/index.html">tour</a> a través de todas las herramientas que te ofrece Wollok</li>
+                        <li><a href="{{ site.baseurl }}/comunidad/index.html">&nbsp;&nbsp;¡Vení y animate a participar en la comunidad!</a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
 
-<ul>
-<li>Completamente integrado al Eclipse y sus plugins.</li>
-<li>Chequeos y Quick-Fixes como los de Java en Eclipse.</li>
-<li>Con un Reporte de errores en tiempo de compilación.</li>
-<li>Consola interactiva integrada (REPL).</li>
-<li>Con un Debugger propio.</li>
-<li>Con Diagramas estáticos y dinámicos.</li>
-<li>Con un entorno de desarrollo gráfico para pequeños juegos (en desarrollo).</li>
-</ul>
+    <hr>
 
-<div class="center-content">
-   <img src="/images/screencasts/wollok-tools.gif" height="90%" width="90%" style="align: center"/>
-</div>
-
-<h3>
-<a href="{{ site.baseurl }}/comunidad/index.html">
-<img src="/images/community.png" align="left" height="64" width="64" title="¡Entrá en la comunidad Wollok!"/></a>
-<a id="contacto" class="anchor" href="#contacto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>&nbsp;&nbsp;Comunidad</h3>
-
-<p><a href="{{ site.baseurl }}/comunidad/index.html">&nbsp;&nbsp;¡Vení y animate a participar en la comunidad!</a></p>
-
-<h3>
-<a id="licencia" class="anchor" href="#licencia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licencia</h3>
-
-<p>Copyright © {{ site.time | date: '%Y' }}, <a href="http://www.uqbar.org">Uqbar Project Foundation</a>, Todos los derechos reservados. Distribuido según licencia LGPLv3 <a href="https://www.gnu.org/licenses/lgpl-3.0.txt">https://www.gnu.org/licenses/lgpl-3.0.txt</a></p>
+    <p>Copyright © {{ site.time | date: '%Y' }},
+        <a href="http://www.uqbar.org">Uqbar Project Foundation</a>, Todos los derechos reservados. Distribuido según licencia LGPLv3
+        <a href="https://www.gnu.org/licenses/lgpl-3.0.txt">https://www.gnu.org/licenses/lgpl-3.0.txt</a>
+    </p>
 
 </section>
-

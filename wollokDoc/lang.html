@@ -1,0 +1,1486 @@
+<h2 id="Exception"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Exception</h2>
+
+
+<p> Base class for all Exceptions.<br>Every exception and its subclasses indicates conditions that a reasonable application might want to catch.<br><br><b>author</b> jfernandes<br><b>since</b> 1.0</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>()
+<p> Constructs a new exception with no detailed message.</p>
+<b>constructor</b>(_message)
+<p> Constructs a new exception with the specified detail message.</p>
+<b>constructor</b>(_message, _cause)
+<p> Constructs a new exception with the specified detail message and cause.</p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Exception_createStackTraceElement_2"><b>createStackTraceElement</b>(contextDescription, location)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Exception_equals_1"><b>equals</b>(other)     </td><td>Overrides the behavior to compare exceptions</td>
+</tr>
+<tr>
+<td id="Exception_getCause_0"><b>getCause</b>()     </td><td>Answers the cause of the exception, if present</td>
+</tr>
+<tr>
+<td id="Exception_getFullStackTrace_0"><b>getFullStackTrace</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Provides programmatic access to the stack trace information printed by printStackTrace() with full path files for linking</td>
+</tr>
+<tr>
+<td id="Exception_getMessage_0"><b>getMessage</b>()     </td><td>Answers the detail message string of this exception.</td>
+</tr>
+<tr>
+<td id="Exception_getStackTrace_0"><b>getStackTrace</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Provides programmatic access to the stack trace information printed by printStackTrace().</td>
+</tr>
+<tr>
+<td id="Exception_getStackTraceAsString_0"><b>getStackTraceAsString</b>()     </td><td>Prints this exception and its backtrace as a string value</td>
+</tr>
+<tr>
+<td id="Exception_printStackTrace_0"><b>printStackTrace</b>()     </td><td>Prints this exception and its backtrace to the console</td>
+</tr>
+<tr>
+<td id="Exception_printStackTrace_1"><b>printStackTrace</b>(printer)     </td><td>Prints this exception and its backtrace to the specified printer</td>
+</tr>
+<tr>
+<td id="Exception_printStackTraceWithPreffix_2"><b>printStackTraceWithPreffix</b>(preffix, printer)     </td><td><b>private</b></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="StackOverflowException"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ StackOverflowException</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Exception')">Exception</a>
+	</li>
+</ul>
+
+<p> Thrown when a stack overflow occurs because an application<br>recurses too deeply.<br><br><b>author</b> jfernandes<br><b>since</b> 1.5.1</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>()
+<p> </p>
+</table>
+<hr>
+<hr>
+<h2 id="ElementNotFoundException"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ ElementNotFoundException</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Exception')">Exception</a>
+	</li>
+</ul>
+
+<p> An exception that is thrown when a specified element cannot be found</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>(_message)
+<p> </p>
+<b>constructor</b>(_message, _cause)
+<p> </p>
+</table>
+<hr>
+<hr>
+<h2 id="MessageNotUnderstoodException"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ MessageNotUnderstoodException</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Exception')">Exception</a>
+	</li>
+</ul>
+
+<p> An exception that is thrown when an object cannot understand a certain message</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>()
+<p> </p>
+<b>constructor</b>(_message)
+<p> </p>
+<b>constructor</b>(_message, _cause)
+<p> </p>
+</table>
+<hr>
+<hr>
+<h2 id="StackTraceElement"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ StackTraceElement</h2>
+
+
+<p> An element in a stack trace, represented by a context and a location of a method where a message was sent</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>(_contextDescription, _location)
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="StackTraceElement_contextDescription_0"><b>contextDescription</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="StackTraceElement_location_0"><b>location</b>()     </td><td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Object"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Object</h2>
+
+
+<p> Representation of Wollok Object<br><br>Class Object is the root of the class hierarchy. Every class has Object as a superclass.<br><br><b>author</b> jfernandes<br>since 1.0</p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Object_!=_1"><b>!=</b>(other)     </td><td>Tells whether self object is not equal to the given one</td>
+</tr>
+<tr>
+<td id="Object_!==_1"><b>!==</b>(other)     </td><td>Tells whether self object is not identical (the same) to the given one.<br>@See === message.</td>
+</tr>
+<tr>
+<td id="Object_->_1"><b>-></b>(other)     </td><td>Generates a Pair key-value association. <b>see</b> Pair.</td>
+</tr>
+<tr>
+<td id="Object_==_1"><b>==</b>(other)     </td><td>Tells whether self object is "equal" to the given object<br>The default behavior compares them in terms of identity (===)</td>
+</tr>
+<tr>
+<td id="Object_===_1"><b>===</b>(other)     </td><td>Tells whether self object is identical (the same) to the given one.<br>It does it by comparing their identities.<br>So self basically relies on the wollok.lang.Integer equality (which is native)</td>
+</tr>
+<tr>
+<td id="Object_className_0"><b>className</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Full name of Wollok object class</td>
+</tr>
+<tr>
+<td id="Object_equals_1"><b>equals</b>(other)     </td><td>o1.equals(o2) is a synonym for o1 == o2</td>
+</tr>
+<tr>
+<td id="Object_error_1"><b>error</b>(message)     </td><td>Builds an exception with a message</td>
+</tr>
+<tr>
+<td id="Object_generateDoesNotUnderstandMessage_3"><b>generateDoesNotUnderstandMessage</b>(target, messageName, parametersSize)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Object_identity_0"><b>identity</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers object identity of a Wollok object, represented by a unique number in Wollok environment</td>
+</tr>
+<tr>
+<td id="Object_instanceVariableFor_1"><b>instanceVariableFor</b>(name)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Retrieves a specific variable. Expects a name</td>
+</tr>
+<tr>
+<td id="Object_instanceVariables_0"><b>instanceVariables</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a list of instance variables for this Wollok object</td>
+</tr>
+<tr>
+<td id="Object_internalToSmartString_1"><b>internalToSmartString</b>(alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Object_kindName_0"><b>kindName</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Object description in english/spanish/... (depending on i18n configuration)<br><br>Examples:<br>		"2".kindName()  => Answers "a String"<br> 	2.kindName()    => Answers "a Integer"</td>
+</tr>
+<tr>
+<td id="Object_messageNotUnderstood_2"><b>messageNotUnderstood</b>(messageName, parameters)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Object_printString_0"><b>printString</b>()     </td><td>Provides a visual representation of Wollok Object<br>By default, same as toString but can be overriden<br>like in String</td>
+</tr>
+<tr>
+<td id="Object_resolve_1"><b>resolve</b>(name)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Accesses a variable by name, in a reflexive way.</td>
+</tr>
+<tr>
+<td id="Object_simplifiedToSmartString_0"><b>simplifiedToSmartString</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Object_toSmartString_1"><b>toSmartString</b>(alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Object_toString_0"><b>toString</b>()     </td><td>String representation of Wollok object</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="void"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ void</h2>
+
+
+<p> Representation for methods that only have side effects</p>
+<hr>
+<h2 id="Pair"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Pair</h2>
+
+
+<p> Representation of a Key/Value Association.<br>It is also useful if you want to model a Point.</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>(_x, _y)
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Pair_getKey_0"><b>getKey</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Pair_getValue_0"><b>getValue</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Pair_getX_0"><b>getX</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Pair_getY_0"><b>getY</b>()     </td><td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Collection"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Collection</h2>
+
+
+<p> The root class in the collection hierarchy.<br>A collection represents a group of objects, known as its elements.</p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Collection_+_1"><b>+</b>(elements)     </td><td>Concatenates this collection to all elements from the given collection parameter giving a new collection<br>(no side effect)</td>
+</tr>
+<tr>
+<td id="Collection_absolute_2"><b>absolute</b>(closure, criteria)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Collection_add_1"><b>add</b>(element)     </td><td></td>
+</tr>
+<tr>
+<td id="Collection_addAll_1"><b>addAll</b>(elements)     </td><td>Adds all elements from the given collection parameter to self collection. This is a side-effect operation.</td>
+</tr>
+<tr>
+<td id="Collection_all_1"><b>all</b>(predicate)     </td><td>Answers whether all the elements of self collection satisfy a given condition<br>The condition is a closure argument that takes a single element and Answers a boolean value.<br><b>returns</b> true/false<br>Example:<br>     plants.all({ plant => plant.hasFlowers() })</td>
+</tr>
+<tr>
+<td id="Collection_any_1"><b>any</b>(predicate)     </td><td>Tells whether at least one element of self collection satisfies a given condition.<br>The condition is a closure argument that takes a single element and Answers a boolean value.<br><b>returns</b> true/false<br>Example:<br>     plants.any({ plant => plant.hasFlowers() })</td>
+</tr>
+<tr>
+<td id="Collection_anyOne_0"><b>anyOne</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Collection_asList_0"><b>asList</b>()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td>Converts a collection to a list</td>
+</tr>
+<tr>
+<td id="Collection_asSet_0"><b>asSet</b>()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td>Converts a collection to a set (no duplicates)</td>
+</tr>
+<tr>
+<td id="Collection_contains_1"><b>contains</b>(e)     </td><td>Answers whether this collection contains the specified element.</td>
+</tr>
+<tr>
+<td id="Collection_copy_0"><b>copy</b>()     </td><td>Answers a new collection of the same type and with the same content<br>as self.<br><b>returns</b> a new collection<br>Example:<br>     const usersCopy = users.copy()</td>
+</tr>
+<tr>
+<td id="Collection_count_1"><b>count</b>(predicate)     </td><td>Counts all elements of self collection that satisfies a given condition<br>The condition is a closure argument that takes a single element and Answers a number.<br><b>returns</b> an integer number<br>Example:<br>     plants.count { plant => plant.hasFlowers() }</td>
+</tr>
+<tr>
+<td id="Collection_filter_1"><b>filter</b>(closure)     </td><td>Answers a new collection that contains the elements that meet a given condition.<br>The condition is a closure argument that takes a single element and Answers a boolean.<br><b>returns</b> another collection (same type as self one)<br>Example:<br>     const overageUsers = users.filter({ user => user.age() >= 18 })</td>
+</tr>
+<tr>
+<td id="Collection_find_1"><b>find</b>(predicate)     </td><td>Answers the element of self collection that satisfies a given condition.<br>If more than one element satisfies the condition then it depends on the specific collection class which element<br>will be returned<br><b>returns</b> the element that complies the condition<br><b>throws</b> ElementNotFoundException if no element matched the given predicate<br>Example:<br>     users.find { user => user.name() == "Cosme Fulanito" }</td>
+</tr>
+<tr>
+<td id="Collection_findOrDefault_2"><b>findOrDefault</b>(predicate, value)     </td><td>Answers the element of self collection that satisfies a given condition,<br>or the given default otherwise, if no element matched the predicate.<br>If more than one element satisfies the condition then it depends on the specific<br>collection class which element<br>will be returned<br><b>returns</b> the element that complies the condition or the default value<br>Example:<br>     users.findOrDefault({ user => user.name() == "Cosme Fulanito" }, homer)</td>
+</tr>
+<tr>
+<td id="Collection_findOrElse_2"><b>findOrElse</b>(predicate, continuation)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the element of self collection that satisfies a given condition,<br>or the the result of evaluating the given continuation.<br>If more than one element satisfies the condition then it depends on the<br>specific collection class which element<br>will be returned<br><b>returns</b> the element that complies the condition or the result of evaluating the continuation<br>Example:<br>     users.findOrElse({ user => user.name() == "Cosme Fulanito" }, { homer })</td>
+</tr>
+<tr>
+<td id="Collection_flatMap_1"><b>flatMap</b>(closure)     </td><td>Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example<br>		object klaus {	var languages = ["c", "cobol", "pascal"]<br> 		method languages() = languages<br>		}<br>		object fritz {	var languages = ["java", "perl"]<br>			method languages() = languages<br>		}<br>		program abc {<br>			console.println([klaus, fritz].flatMap({ person => person.languages() }))<br>				=> Answers ["c", "cobol", "pascal", "java", "perl"]<br>		}</td>
+</tr>
+<tr>
+<td id="Collection_flatten_0"><b>flatten</b>()     </td><td>Flattens a collection of collections<br><br>Example:<br>		[ [1, 2], [3], [4, 0] ].flatten()  => Answers [1, 2, 3, 4, 0]</td>
+</tr>
+<tr>
+<td id="Collection_fold_2"><b>fold</b>(element, closure)     </td><td></td>
+</tr>
+<tr>
+<td id="Collection_forEach_1"><b>forEach</b>(closure)     </td><td>Performs an operation on every element of self collection.<br>The logic to execute is passed as a closure that takes a single parameter.<br><b>returns</b> nothing<br>Example:<br>     plants.forEach { plant => plant.takeSomeWater() }</td>
+</tr>
+<tr>
+<td id="Collection_internalToSmartString_1"><b>internalToSmartString</b>(alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Collection_isEmpty_0"><b>isEmpty</b>()     </td><td>Tells whether self collection has no elements</td>
+</tr>
+<tr>
+<td id="Collection_map_1"><b>map</b>(closure)     </td><td>Answers a new collection that contains the result of transforming each of self collection's elements<br>using a given closure.<br>The condition is a closure argument that takes a single element and Answers an object.<br><b>returns</b> another list<br>Example:<br>     const ages = users.map({ user => user.age() })</td>
+</tr>
+<tr>
+<td id="Collection_max_1"><b>max</b>(closure)     </td><td>Answers the element that is considered to be/have the maximum value.<br>The criteria is given by a closure that receives a single element as input (one of the element)<br>The closure must return a comparable value (something that understands the >, >= messages).<br>If collection is empty, an ElementNotFound exception is thrown.<br><br>Example:<br>      ["a", "ab", "abc", "d" ].max({ e => e.length() })    =>  Answers "abc"</td>
+</tr>
+<tr>
+<td id="Collection_max_0"><b>max</b>()     </td><td>Answers the element that represents the maximum value in the collection.<br>The criteria is by direct comparison of the elements.<br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].max()    =>  Answers 15</td>
+</tr>
+<tr>
+<td id="Collection_min_1"><b>min</b>(closure)     </td><td>Answers the element that is considered to be/have the minimum value.<br>The criteria is given by a closure that receives a single element as input (one of the element)<br>The closure must return a comparable value (something that understands the <, <= messages).<br>Example:<br>      ["ab", "abc", "hello", "wollok world"].min({ e => e.length() })    =>  Answers "ab"</td>
+</tr>
+<tr>
+<td id="Collection_min_0"><b>min</b>()     </td><td>Answers the element that represents the minimum value in the collection.<br>The criteria is by direct comparison of the elements.<br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].min()    =>  Answers 1</td>
+</tr>
+<tr>
+<td id="Collection_newInstance_0"><b>newInstance</b>()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td>Answers a new, empty collection of the same type as self.<br><b>returns</b> a new collection<br>Example:<br>     const newCollection = users.newInstance()</td>
+</tr>
+<tr>
+<td id="Collection_occurrencesOf_1"><b>occurrencesOf</b>(element)     </td><td>Counts the occurrences of a given element in self collection.<br><b>returns</b> an integer number<br>Example:<br>     [1, 8, 4, 1].occurrencesOf(1)	=> Answers 2</td>
+</tr>
+<tr>
+<td id="Collection_remove_1"><b>remove</b>(element)     </td><td></td>
+</tr>
+<tr>
+<td id="Collection_removeAll_1"><b>removeAll</b>(elements)     </td><td>Removes all elements of the given collection parameter from self collection. This is a side-effect operation.</td>
+</tr>
+<tr>
+<td id="Collection_removeAllSuchThat_1"><b>removeAllSuchThat</b>(closure)     </td><td>Removes those elements that meet a given condition. This is a side-effect operation.</td>
+</tr>
+<tr>
+<td id="Collection_size_0"><b>size</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Collection_sortedBy_1"><b>sortedBy</b>(closure)     </td><td>Answers a new List that contains the elements of self collection<br>sorted by a criteria given by a closure. The closure receives two objects<br>X and Y and Answers a boolean, true if X should come before Y in the<br>resulting collection.<br><b>returns</b> a new List<br>Example:<br>     const usersByAge = users.sortedBy({ a, b => a.age() < b.age() })</td>
+</tr>
+<tr>
+<td id="Collection_sum_1"><b>sum</b>(closure)     </td><td>Collects the sum of each value for all elements.<br>This is similar to call a map {} to transform each element into a number object and then adding all those numbers.<br>The condition is a closure argument that takes a single element and Answers a boolean value.<br><b>returns</b> an integer<br>Example:<br>     const totalNumberOfFlowers = plants.sum{ plant => plant.numberOfFlowers() }</td>
+</tr>
+<tr>
+<td id="Collection_sum_0"><b>sum</b>()     </td><td>Sums all elements in the collection.<br><b>returns</b> an integer<br>Example:<br>     const total = [1, 2, 3, 4, 5].sum()</td>
+</tr>
+<tr>
+<td id="Collection_toStringPrefix_0"><b>toStringPrefix</b>()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Collection_toStringSufix_0"><b>toStringSufix</b>()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td><b>private</b></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Set"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Set</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Collection')">Collection</a>
+	</li>
+</ul>
+
+<p> A collection that contains no duplicate elements.<br>It models the mathematical set abstraction. A Set guarantees no order of elements.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>(elements)
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Set_==_1"><b>==</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>see</b> Object#==</td>
+</tr>
+<tr>
+<td id="Set_add_1"><b>add</b>(element)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Adds the specified element to this set if it is not already present</td>
+</tr>
+<tr>
+<td id="Set_anyOne_0"><b>anyOne</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers any element of this collection</td>
+</tr>
+<tr>
+<td id="Set_asList_0"><b>asList</b>()     </td><td>Converts this set to a list<br><b>see</b> List</td>
+</tr>
+<tr>
+<td id="Set_asSet_0"><b>asSet</b>()     </td><td>Converts an object to a Set. No effect on Sets.</td>
+</tr>
+<tr>
+<td id="Set_clear_0"><b>clear</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes all of the elements from this set</td>
+</tr>
+<tr>
+<td id="Set_difference_1"><b>difference</b>(another)     </td><td>Answers a new Set with the elements of self that don't exist in another collection<br><b>returns</b> a Set</td>
+</tr>
+<tr>
+<td id="Set_equals_1"><b>equals</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Two sets are equals if they have the same elements</td>
+</tr>
+<tr>
+<td id="Set_findOrElse_2"><b>findOrElse</b>(predicate, continuation)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Tries to find an element in a collection (based on a closure) or<br>applies a continuation closure.<br><br>Examples:<br>		#{1, 9, 3, 8}.findOrElse({ n => n.even() }, { 100 })  => Answers  8<br>		#{1, 5, 3, 7}.findOrElse({ n => n.even() }, { 100 })  => Answers  100</td>
+</tr>
+<tr>
+<td id="Set_fold_2"><b>fold</b>(initialValue, closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Reduce a collection to a certain value, beginning with a seed or initial value<br><br>Examples<br>		#{1, 9, 3, 8}.fold(0, {acum, each => acum + each}) => Answers 21, the sum of all elements<br><br>		var numbers = #{3, 2, 9, 1, 7}<br>		numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) }) => Answers 9, the maximum of all elements</td>
+</tr>
+<tr>
+<td id="Set_intersection_1"><b>intersection</b>(another)     </td><td>Answers a new Set with the elements of self that exist in another collection<br><b>returns</b> a Set</td>
+</tr>
+<tr>
+<td id="Set_join_1"><b>join</b>(separator)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>		[1, 5, 3, 7].join(":") => Answers "1:5:3:7"<br>		["you","will","love","wollok"].join(" ") => Answers "you will love wollok"<br>		["you","will","love","wollok"].join()    => Answers "you,will,love,wollok"</td>
+</tr>
+<tr>
+<td id="Set_join_0"><b>join</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Set_newInstance_0"><b>newInstance</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Set_remove_1"><b>remove</b>(element)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes the specified element from this set if it is present</td>
+</tr>
+<tr>
+<td id="Set_size_0"><b>size</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the number of elements in this set (its cardinality)</td>
+</tr>
+<tr>
+<td id="Set_toStringPrefix_0"><b>toStringPrefix</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Set_toStringSufix_0"><b>toStringSufix</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Set_union_1"><b>union</b>(another)     </td><td>Answers a new Set with the elements of both self and another collection.<br><b>returns</b> a Set</td>
+</tr>
+</tbody>
+</table>
+<div class="card card-body">
+    <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
+    <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_contains_1')">contains(e)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_filter_1')">filter(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_find_1')">find(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_flatten_0')">flatten()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_forEach_1')">forEach(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_removeAllSuchThat_1')">removeAllSuchThat(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_removeAll_1')">removeAll(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sortedBy_1')">sortedBy(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sum_0')">sum()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sum_1')">sum(closure)</a>
+    </p>
+</div>
+
+<hr>
+<h2 id="List"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ List</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Collection')">Collection</a>
+	</li>
+</ul>
+
+<p> An ordered collection (also known as a sequence).<br>You iterate the list the same order elements are inserted.<br>The user can access elements by their integer index (position in the list).<br>A List can contain duplicate elements.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="List_==_1"><b>==</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>A list is == another list if all elements are equal (defined by == message)</td>
+</tr>
+<tr>
+<td id="List_add_1"><b>add</b>(element)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Adds the specified element as last one</td>
+</tr>
+<tr>
+<td id="List_anyOne_0"><b>anyOne</b>()     </td><td>Answers any element of this collection</td>
+</tr>
+<tr>
+<td id="List_asList_0"><b>asList</b>()     </td><td>Converts this collection to a list. No effect on Lists.<br><b>see</b> List</td>
+</tr>
+<tr>
+<td id="List_asSet_0"><b>asSet</b>()     </td><td>Converts this list to a set (removing duplicate elements)<br><b>see</b> List</td>
+</tr>
+<tr>
+<td id="List_clear_0"><b>clear</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes all of the mappings from this Dictionary. This is a side-effect operation.</td>
+</tr>
+<tr>
+<td id="List_drop_1"><b>drop</b>(n)     </td><td>Answers a new list dropping first n elements of a list.<br>This operation has no side effect.<br><br>Examples:<br>		[1, 9, 2, 3].drop(3)  ==> Answers [3]<br>		[1, 9, 2, 3].drop(1)  ==> Answers [9, 2, 3]<br>		[1, 9, 2, 3].drop(-2) ==> Answers [1, 9, 2, 3]</td>
+</tr>
+<tr>
+<td id="List_equals_1"><b>equals</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>see</b> == message</td>
+</tr>
+<tr>
+<td id="List_findOrElse_2"><b>findOrElse</b>(predicate, continuation)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Finds the first element matching the boolean closure,<br>or evaluates the continuation block closure if no element is found</td>
+</tr>
+<tr>
+<td id="List_first_0"><b>first</b>()     </td><td>Answers first element of the non-empty list<br><b>returns</b> first element<br><br>Example:<br>		[1, 2, 3, 4].first()	=> Answers 1</td>
+</tr>
+<tr>
+<td id="List_fold_2"><b>fold</b>(initialValue, closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Reduce a collection to a certain value, beginning with a seed or initial value<br><br>Examples<br>		#{1, 9, 3, 8}.fold(0, {acum, each => acum + each}) => Answers 21, the sum of all elements<br><br>		var numbers = #{3, 2, 9, 1, 7}<br>		numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) }) => Answers 9, the maximum of all elements</td>
+</tr>
+<tr>
+<td id="List_get_1"><b>get</b>(index)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the element at the specified position in this list.<br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.</td>
+</tr>
+<tr>
+<td id="List_head_0"><b>head</b>()     </td><td>Synonym for first method</td>
+</tr>
+<tr>
+<td id="List_join_1"><b>join</b>(separator)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>		[1, 5, 3, 7].join(":") => Answers "1:5:3:7"<br>		["you","will","love","wollok"].join(" ") => Answers "you will love wollok"<br>		["you","will","love","wollok"].join()    => Answers "you,will,love,wollok"</td>
+</tr>
+<tr>
+<td id="List_join_0"><b>join</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="List_last_0"><b>last</b>()     </td><td>Answers the last element of the non-empty list.<br><b>returns</b> last element<br>Example:<br>		[1, 2, 3, 4].last()		=> Answers 4</td>
+</tr>
+<tr>
+<td id="List_newInstance_0"><b>newInstance</b>()     </td><td>Creates a new list</td>
+</tr>
+<tr>
+<td id="List_remove_1"><b>remove</b>(element)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes an element in this list</td>
+</tr>
+<tr>
+<td id="List_reverse_0"><b>reverse</b>()     </td><td>Answers a new list reversing the elements, so that first element becomes last element of the new list and so on.<br>This operation has no side effect.<br><br>Example:<br> 	[1, 9, 2, 3].reverse()  ==> Answers [3, 2, 9, 1]</td>
+</tr>
+<tr>
+<td id="List_size_0"><b>size</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the number of elements</td>
+</tr>
+<tr>
+<td id="List_sortBy_1"><b>sortBy</b>(closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>see</b> List#sortedBy</td>
+</tr>
+<tr>
+<td id="List_subList_2"><b>subList</b>(start, end)     </td><td>Answers a view of the portion of this list between the specified fromIndex<br>and toIndex, both inclusive. Remember first element is position 0, second is position 1, and so on.<br>If toIndex exceeds length of list, no error is thrown.<br><br>Example:<br>		[1, 5, 3, 2, 7, 9].subList(2, 3)		=> Answers [3, 2]<br>		[1, 5, 3, 2, 7, 9].subList(4, 6)		=> Answers [7, 9]</td>
+</tr>
+<tr>
+<td id="List_take_1"><b>take</b>(n)     </td><td>Takes first n elements of a list<br><br>Examples:<br>		[1,9,2,3].take(5)  ==> Answers [1, 9, 2, 3]<br> 	[1,9,2,3].take(2)  ==> Answers [1, 9]<br> 	[1,9,2,3].take(-2)  ==> Answers []</td>
+</tr>
+<tr>
+<td id="List_toStringPrefix_0"><b>toStringPrefix</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="List_toStringSufix_0"><b>toStringSufix</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="List_withoutDuplicates_0"><b>withoutDuplicates</b>()     </td><td>Answers the list without duplicate elements<br>[1, 3, 1, 5, 1, 3, 2, 5].withoutDuplicates() => Answers [1, 2, 3, 5]</td>
+</tr>
+</tbody>
+</table>
+<div class="card card-body">
+    <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
+    <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_contains_1')">contains(e)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_filter_1')">filter(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_find_1')">find(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_flatten_0')">flatten()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_forEach_1')">forEach(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_removeAllSuchThat_1')">removeAllSuchThat(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_removeAll_1')">removeAll(elements)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sortedBy_1')">sortedBy(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sum_0')">sum()</a>
+    , <a href="javascript:selectFile('lang', 'Collection_sum_1')">sum(closure)</a>
+    </p>
+</div>
+
+<hr>
+<h2 id="Dictionary"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Dictionary</h2>
+
+
+<p> Represents a set of key -> values</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>()
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Dictionary_basicGet_1"><b>basicGet</b>(_key)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the value to which the specified key is mapped, or null if this Dictionary contains no mapping for the key.</td>
+</tr>
+<tr>
+<td id="Dictionary_clear_0"><b>clear</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes all of the mappings from this Dictionary. This is a side-effect operation.</td>
+</tr>
+<tr>
+<td id="Dictionary_containsKey_1"><b>containsKey</b>(_key)     </td><td>Answers whether this Dictionary contains a mapping for the specified key.</td>
+</tr>
+<tr>
+<td id="Dictionary_containsValue_1"><b>containsValue</b>(_value)     </td><td>Answers whether if this Dictionary maps one or more keys to the specified value.</td>
+</tr>
+<tr>
+<td id="Dictionary_forEach_1"><b>forEach</b>(closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Performs the given action for each entry in this Dictionary until all entries have been<br>processed or the action throws an exception.<br><br>Expected closure with two parameters: the first associated with key and second with value.<br><br>Example:<br>		mapaTelefonos.forEach({ k, v => result += k.size() + v.size() })</td>
+</tr>
+<tr>
+<td id="Dictionary_get_1"><b>get</b>(_key)     </td><td>Answers the value to which the specified key is mapped.<br>If this Dictionary contains no mapping for the key, an error is thrown.</td>
+</tr>
+<tr>
+<td id="Dictionary_getOrElse_2"><b>getOrElse</b>(_key, _closure)     </td><td>Answers the value to which the specified key is mapped, or evaluates a non-parameter closure otherwise</td>
+</tr>
+<tr>
+<td id="Dictionary_isEmpty_0"><b>isEmpty</b>()     </td><td>Answers whether the dictionary has no elements</td>
+</tr>
+<tr>
+<td id="Dictionary_keys_0"><b>keys</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a list of the keys contained in this Dictionary.</td>
+</tr>
+<tr>
+<td id="Dictionary_put_2"><b>put</b>(_key, _value)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Adds or updates a value based on a key</td>
+</tr>
+<tr>
+<td id="Dictionary_remove_1"><b>remove</b>(_key)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Removes the mapping for a key from this Dictionary if it is present</td>
+</tr>
+<tr>
+<td id="Dictionary_size_0"><b>size</b>()     </td><td>Answers the number of key-value mappings in this Dictionary.</td>
+</tr>
+<tr>
+<td id="Dictionary_values_0"><b>values</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a list of the values contained in this Dictionary.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Number"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Number</h2>
+
+
+<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Number_*_1"><b>*</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_+_1"><b>+</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_-_1"><b>-</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_/_1"><b>/</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_<_1"><b><</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_<=_1"><b><=</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_>_1"><b>></b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_>=_1"><b>>=</b>(other)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td></td>
+</tr>
+<tr>
+<td id="Number_between_2"><b>between</b>(min, max)     </td><td>Answers whether self is between min and max</td>
+</tr>
+<tr>
+<td id="Number_even_0"><b>even</b>()     </td><td>Answers whether self is an even number (divisible by 2, mathematically 2k)</td>
+</tr>
+<tr>
+<td id="Number_internalToSmartString_1"><b>internalToSmartString</b>(alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Number_limitBetween_2"><b>limitBetween</b>(limitA, limitB)     </td><td>Given self and a range of integer values, Answers self if it is in that range<br>or nearest value from self to that range<br><br>Examples<br>4.limitBetween(2, 10)   ==> Answers 4, because 4 is in the range<br>4.limitBetween(6, 10)   ==> Answers 6, because 4 is not in range 6..10, and 6 is nearest value to 4<br>4.limitBetween(1, 2)    ==> Answers 2, because 4 is not in range 1..2, but 2 is nearest value to 4</td>
+</tr>
+<tr>
+<td id="Number_max_1"><b>max</b>(other)     </td><td>Answers the greater number between two<br>Example:<br>		5.max(8)    ==> Answers 8</td>
+</tr>
+<tr>
+<td id="Number_min_1"><b>min</b>(other)     </td><td>Answers the lower number between two. <b>see</b> max</td>
+</tr>
+<tr>
+<td id="Number_odd_0"><b>odd</b>()     </td><td>Answers whether self is an odd number (not divisible by 2, mathematically 2k + 1)</td>
+</tr>
+<tr>
+<td id="Number_plus_0"><b>plus</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Number_rem_1"><b>rem</b>(other)     </td><td>Answers remainder between self and other<br>Example:<br>		5.rem(3) ==> Answers 2</td>
+</tr>
+<tr>
+<td id="Number_roundUp_1"><b>roundUp</b>(_decimals)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td>Rounds up self up to a certain amount of decimals.<br>Amount of decimals must be positive<br>1.223445.roundUp(3) ==> 1.224<br>-1.223445.roundUp(3) ==> -1.224<br>14.6165.roundUp(3) ==> 14.617<br>5.roundUp(3) ==> 5</td>
+</tr>
+<tr>
+<td id="Number_simplifiedToSmartString_0"><b>simplifiedToSmartString</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Number_square_0"><b>square</b>()     </td><td>Answers square of self<br>		3.square() => Answers 9</td>
+</tr>
+<tr>
+<td id="Number_squareRoot_0"><b>squareRoot</b>()     </td><td>Answers squareRoot of self<br>		9.squareRoot() => Answers 3</td>
+</tr>
+<tr>
+<td id="Number_stringValue_0"><b>stringValue</b>()     </td><td></td>
+</tr>
+<tr>
+<td id="Number_truncate_1"><b>truncate</b>(_decimals)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td>Truncates self up to a certain amount of decimals.<br>Amount of decimals must be positive<br>1.223445.truncate(3) ==> 1.223<br>14.6165.truncate(3) ==> 14.616<br>-14.6165.truncate(3) ==> -14.616<br>5.truncate(3) ==> 5</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Integer"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Integer</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Number')">Number</a>
+	</li>
+</ul>
+
+<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Integer_%_1"><b>%</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers remainder of division between self and other</td>
+</tr>
+<tr>
+<td id="Integer_*_1"><b>*</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_**_1"><b>**</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>raisedTo<br>		3 ** 2 ==> Answers 9</td>
+</tr>
+<tr>
+<td id="Integer_+_1"><b>+</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_-_1"><b>-</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_.._1"><b>..</b>(end)     </td><td>Builds a Range between self and end<br><br>Example:<br>		1..4   Answers ==> a new Range object from 1 to 4</td>
+</tr>
+<tr>
+<td id="Integer_/_1"><b>/</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_<_1"><b><</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_<=_1"><b><=</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_===_1"><b>===</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>The whole wollok identity implementation is based on self method</td>
+</tr>
+<tr>
+<td id="Integer_>_1"><b>></b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_>=_1"><b>>=</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Integer_abs_0"><b>abs</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers absolute value of self<br><br>Example:<br>		2.abs() ==> 2<br>		(-3).abs() ==> 3 (be careful with parentheses)</td>
+</tr>
+<tr>
+<td id="Integer_digits_0"><b>digits</b>()     </td><td>number of digits of self (without sign)</td>
+</tr>
+<tr>
+<td id="Integer_div_1"><b>div</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Integer division between self and other<br><br>Example:<br>		8.div(3)  ==> Answers 2<br>		15.div(5) ==> Answers 3</td>
+</tr>
+<tr>
+<td id="Integer_gcd_1"><b>gcd</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>greater common divisor<br><br>Example:<br>		8.gcd(12) ==> Answers 4<br>		5.gcd(10) ==> Answers 5</td>
+</tr>
+<tr>
+<td id="Integer_invert_0"><b>invert</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Inverts sign of self<br><br>Example:<br>		3.invert() ==> Answers -3<br>		(-2).invert() ==> Answers 2 (be careful with parentheses)</td>
+</tr>
+<tr>
+<td id="Integer_isPrime_0"><b>isPrime</b>()     </td><td>Answers whether self is a prime number, like 2, 3, 5, 7, 11 ...</td>
+</tr>
+<tr>
+<td id="Integer_lcm_1"><b>lcm</b>(other)     </td><td>least common multiple<br><br>Example:<br>		3.lcm(4) ==> Answers 12<br>		6.lcm(12) ==> Answers 12</td>
+</tr>
+<tr>
+<td id="Integer_randomUpTo_1"><b>randomUpTo</b>(max)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a random between self and max</td>
+</tr>
+<tr>
+<td id="Integer_roundUp_1"><b>roundUp</b>(_decimals)     </td><td></td>
+</tr>
+<tr>
+<td id="Integer_stringValue_0"><b>stringValue</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Self as a String value. Equivalent: toString()</td>
+</tr>
+<tr>
+<td id="Integer_times_1"><b>times</b>(action)     </td><td>Executes the given action n times (n = self)<br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
+</tr>
+<tr>
+<td id="Integer_toString_0"><b>toString</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>String representation of self number</td>
+</tr>
+<tr>
+<td id="Integer_truncate_1"><b>truncate</b>(_decimals)     </td><td></td>
+</tr>
+</tbody>
+</table>
+<div class="card card-body">
+    <h5 class="card-header blue-grey lighten-4">Methods inherited from Number</h5>
+    <p class="card-text"><a href="javascript:selectFile('lang', 'Number_between_2')">between(min, max)</a>
+    , <a href="javascript:selectFile('lang', 'Number_even_0')">even()</a>
+    , <a href="javascript:selectFile('lang', 'Number_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
+    , <a href="javascript:selectFile('lang', 'Number_limitBetween_2')">limitBetween(limitA, limitB)</a>
+    , <a href="javascript:selectFile('lang', 'Number_max_1')">max(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_min_1')">min(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_odd_0')">odd()</a>
+    , <a href="javascript:selectFile('lang', 'Number_plus_0')">plus()</a>
+    , <a href="javascript:selectFile('lang', 'Number_rem_1')">rem(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_simplifiedToSmartString_0')">simplifiedToSmartString()</a>
+    , <a href="javascript:selectFile('lang', 'Number_squareRoot_0')">squareRoot()</a>
+    , <a href="javascript:selectFile('lang', 'Number_square_0')">square()</a>
+    </p>
+</div>
+
+<hr>
+<h2 id="Double"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Double</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Number')">Number</a>
+	</li>
+</ul>
+
+<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Double_%_1"><b>%</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers remainder of division between self and other</td>
+</tr>
+<tr>
+<td id="Double_*_1"><b>*</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_**_1"><b>**</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>raisedTo<br>3.2 ** 2 ==> Answers 10.24</td>
+</tr>
+<tr>
+<td id="Double_+_1"><b>+</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_-_1"><b>-</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_/_1"><b>/</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_<_1"><b><</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_<=_1"><b><=</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_===_1"><b>===</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>the whole wollok identity impl is based on self method</td>
+</tr>
+<tr>
+<td id="Double_>_1"><b>></b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_>=_1"><b>>=</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_abs_0"><b>abs</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers absolute value of self<br><br>Example:<br>		2.7.abs() ==> Answers 2.7<br>		(-3.2).abs() ==> Answers 3.2 (be careful with parentheses)</td>
+</tr>
+<tr>
+<td id="Double_div_1"><b>div</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Integer division between self and other<br><br>Example:<br>		8.2.div(3.3)  ==> Answers 2<br>		15.0.div(5) ==> Answers 3</td>
+</tr>
+<tr>
+<td id="Double_invert_0"><b>invert</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>3.2.invert() ==> -3.2<br>(-2.4).invert() ==> 2.4 (be careful with parentheses)</td>
+</tr>
+<tr>
+<td id="Double_randomUpTo_1"><b>randomUpTo</b>(max)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a random between self and max</td>
+</tr>
+<tr>
+<td id="Double_roundUp_0"><b>roundUp</b>()     </td><td>Answers the next integer greater than self<br>13.224.roundUp() ==> 14<br>-13.224.roundUp() ==> -14<br>15.942.roundUp() ==> 16</td>
+</tr>
+<tr>
+<td id="Double_roundUp_1"><b>roundUp</b>(_decimals)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Double_stringValue_0"><b>stringValue</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Self as a String value. Equivalent: toString()</td>
+</tr>
+<tr>
+<td id="Double_toString_0"><b>toString</b>()     </td><td>String representation of a self number</td>
+</tr>
+<tr>
+<td id="Double_truncate_1"><b>truncate</b>(_decimals)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+</tbody>
+</table>
+<div class="card card-body">
+    <h5 class="card-header blue-grey lighten-4">Methods inherited from Number</h5>
+    <p class="card-text"><a href="javascript:selectFile('lang', 'Number_between_2')">between(min, max)</a>
+    , <a href="javascript:selectFile('lang', 'Number_even_0')">even()</a>
+    , <a href="javascript:selectFile('lang', 'Number_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
+    , <a href="javascript:selectFile('lang', 'Number_limitBetween_2')">limitBetween(limitA, limitB)</a>
+    , <a href="javascript:selectFile('lang', 'Number_max_1')">max(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_min_1')">min(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_odd_0')">odd()</a>
+    , <a href="javascript:selectFile('lang', 'Number_plus_0')">plus()</a>
+    , <a href="javascript:selectFile('lang', 'Number_rem_1')">rem(other)</a>
+    , <a href="javascript:selectFile('lang', 'Number_simplifiedToSmartString_0')">simplifiedToSmartString()</a>
+    , <a href="javascript:selectFile('lang', 'Number_squareRoot_0')">squareRoot()</a>
+    , <a href="javascript:selectFile('lang', 'Number_square_0')">square()</a>
+    </p>
+</div>
+
+<hr>
+<h2 id="String"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ String</h2>
+
+
+<p> Strings are constant; their values cannot be changed after they are created.<br><br><b>author</b> jfernandes<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="String_+_1"><b>+</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Concatenates the specified string to the end of this string.<br>Example:<br>		"cares" + "s" => Answers "caress"</td>
+</tr>
+<tr>
+<td id="String_<_1"><b><</b>(aString)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="String_<=_1"><b><=</b>(aString)     </td><td></td>
+</tr>
+<tr>
+<td id="String_==_1"><b>==</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Compares this string to the specified object. The result is true if and only if the<br>argument is not null and is a String object that represents the same sequence of characters as this object.</td>
+</tr>
+<tr>
+<td id="String_>_1"><b>></b>(aString)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="String_>=_1"><b>>=</b>(aString)     </td><td></td>
+</tr>
+<tr>
+<td id="String_capitalize_0"><b>capitalize</b>()     </td><td>Changes the first letter of every word to upper case in this string</td>
+</tr>
+<tr>
+<td id="String_charAt_1"><b>charAt</b>(index)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the char value at the specified index. An index ranges from 0 to length() - 1.<br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.</td>
+</tr>
+<tr>
+<td id="String_contains_1"><b>contains</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers whether this string contains the specified sequence of char values.<br>It is a case sensitive test.<br><br>Examples:<br>		"unusual".contains("usual")  ==> Answers true<br>		"become".contains("CO")      ==> Answers false</td>
+</tr>
+<tr>
+<td id="String_drop_1"><b>drop</b>(n)     </td><td>Answers a new string dropping first n characters of this string</td>
+</tr>
+<tr>
+<td id="String_endsWith_1"><b>endsWith</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Tests if this string ends with the specified suffix. It is case sensitive.<br><b>see</b> startsWith</td>
+</tr>
+<tr>
+<td id="String_equalsIgnoreCase_1"><b>equalsIgnoreCase</b>(aString)     </td><td>Compares this String to another String, ignoring case considerations.<br><br>Example:<br>		"WoRD".equalsIgnoreCase("Word")  ==> Answers true</td>
+</tr>
+<tr>
+<td id="String_indexOf_1"><b>indexOf</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the index within this string of the first occurrence of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>		"pototo".indexOf("o")  ==> Answers 1<br>		"unpredictable".indexOf("o")  ==> Answers -1</td>
+</tr>
+<tr>
+<td id="String_isEmpty_0"><b>isEmpty</b>()     </td><td>Answers whether this string has no characters</td>
+</tr>
+<tr>
+<td id="String_lastIndexOf_1"><b>lastIndexOf</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the index within this string of the last occurrence of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>		"pototo".lastIndexOf("o")  ==> Answers 5<br>		"unpredictable".lastIndexOf("o")  ==> Answers -1</td>
+</tr>
+<tr>
+<td id="String_length_0"><b>length</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the number of elements</td>
+</tr>
+<tr>
+<td id="String_printString_0"><b>printString</b>()     </td><td>String implementation of printString,<br>simply adds quotation marks</td>
+</tr>
+<tr>
+<td id="String_replace_2"><b>replace</b>(expression, replacement)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a string resulting from replacing all occurrences of expression in this string with replacement<br><br>Example:<br>		 "stupid is what stupid does".replace("stupid", "genius") ==> Answers "genius is what genius does"</td>
+</tr>
+<tr>
+<td id="String_size_0"><b>size</b>()     </td><td>A synonym for length</td>
+</tr>
+<tr>
+<td id="String_split_1"><b>split</b>(expression)     </td><td>Splits this string around matches of the given string.<br>Answers a list of strings.<br><br>Example:<br>		"this,could,be,a,list".split(",")   ==> Answers ["this", "could", "be", "a", "list"]</td>
+</tr>
+<tr>
+<td id="String_startsWith_1"><b>startsWith</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Tests if this string starts with the specified prefix. It is case sensitive.<br><br>Examples:<br>		"mother".startsWith("moth")  ==> Answers true<br>     "mother".startsWith("Moth")  ==> Answers false</td>
+</tr>
+<tr>
+<td id="String_substring_1"><b>substring</b>(length)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a substring of this string beginning from an inclusive index.<br><br>Examples:<br>		"substitute".substring(6)  ==> Answers "tute", because second "t" is in position 6<br>		"effect".substring(0)      ==> Answers "effect", has no effect at all</td>
+</tr>
+<tr>
+<td id="String_substring_2"><b>substring</b>(startIndex, length)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a substring of this string beginning from an inclusive index up to another inclusive index<br><br>Examples:<br>		"walking".substring(2, 4)   ==> Answers "lk"<br>		"walking".substring(3, 5)   ==> Answers "ki"<br>		"walking".substring(0, 5)	==> Answers "walki"<br>		"walking".substring(0, 45)	==> throws an out of range exception</td>
+</tr>
+<tr>
+<td id="String_take_1"><b>take</b>(n)     </td><td>Takes first n characters of this string</td>
+</tr>
+<tr>
+<td id="String_toLowerCase_0"><b>toLowerCase</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Converts all of the characters in this String to lower case</td>
+</tr>
+<tr>
+<td id="String_toSmartString_1"><b>toSmartString</b>(alreadyShown)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="String_toString_0"><b>toString</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>This object (which is already a string!) is itself returned</td>
+</tr>
+<tr>
+<td id="String_toUpperCase_0"><b>toUpperCase</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Converts all of the characters in this String to upper case</td>
+</tr>
+<tr>
+<td id="String_trim_0"><b>trim</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a string whose value is this string, with any leading and trailing whitespace removed<br><br>Example:<br>		"   emptySpace  ".trim()  ==> "emptySpace"</td>
+</tr>
+<tr>
+<td id="String_words_0"><b>words</b>()     </td><td>Splits this strings into several words</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Boolean"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Boolean</h2>
+
+
+<p> Represents a Boolean value (true or false)<br><br><b>author</b> jfernandes<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Boolean_&&_1"><b>&&</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>A synonym for and operation</td>
+</tr>
+<tr>
+<td id="Boolean_==_1"><b>==</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Compares this string to the specified object. The result is true if and only if the<br>argument is not null and represents same value (true or false)</td>
+</tr>
+<tr>
+<td id="Boolean_and_1"><b>and</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the result of applying the logical AND operator to the specified boolean operands self and other</td>
+</tr>
+<tr>
+<td id="Boolean_negate_0"><b>negate</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>NOT logical operation</td>
+</tr>
+<tr>
+<td id="Boolean_or_1"><b>or</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the result of applying the logical OR operator to the specified boolean operands self and other</td>
+</tr>
+<tr>
+<td id="Boolean_toSmartString_1"><b>toSmartString</b>(alreadyShown)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Boolean_toString_0"><b>toString</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a String object representing this Boolean's value.</td>
+</tr>
+<tr>
+<td id="Boolean_||_1"><b>||</b>(other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>A synonym for or operation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Range"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Range</h2>
+
+
+<p> Represents a finite arithmetic progression of integer numbers with optional step<br>If start = 1, end = 8, Range will represent [1, 2, 3, 4, 5, 6, 7, 8]<br>If start = 1, end = 8, step = 3, Range will represent [1, 4, 7]<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>(_start, _end)
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Range_all_1"><b>all</b>(closure)     </td><td><b>see</b> List#all(closure)</td>
+</tr>
+<tr>
+<td id="Range_any_1"><b>any</b>(closure)     </td><td><b>see</b> List#any(closure)</td>
+</tr>
+<tr>
+<td id="Range_anyOne_0"><b>anyOne</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a random integer contained in the range</td>
+</tr>
+<tr>
+<td id="Range_asList_0"><b>asList</b>()     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Range_contains_1"><b>contains</b>(e)     </td><td>Tests whether a number e is contained in the range</td>
+</tr>
+<tr>
+<td id="Range_count_1"><b>count</b>(closure)     </td><td>Counts how many elements match the boolean closure<br><br>Example:<br>		(1..9).count({ i => i.even() }) ==> Answers 4 (2, 4, 6 and 8 are even)</td>
+</tr>
+<tr>
+<td id="Range_filter_1"><b>filter</b>(closure)     </td><td><b>see</b> List#filter(closure)</td>
+</tr>
+<tr>
+<td id="Range_find_1"><b>find</b>(closure)     </td><td><b>see</b> List#find(closure)</td>
+</tr>
+<tr>
+<td id="Range_findOrDefault_2"><b>findOrDefault</b>(predicate, value)     </td><td><b>see</b> List#findOrDefault(predicate, value)</td>
+</tr>
+<tr>
+<td id="Range_findOrElse_2"><b>findOrElse</b>(closure, continuation)     </td><td><b>see</b> List#findOrElse(predicate, continuation)</td>
+</tr>
+<tr>
+<td id="Range_fold_2"><b>fold</b>(seed, foldClosure)     </td><td><b>see</b> List#fold(seed, foldClosure)</td>
+</tr>
+<tr>
+<td id="Range_forEach_1"><b>forEach</b>(closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Iterates over a Range from start to end, based on step</td>
+</tr>
+<tr>
+<td id="Range_internalToSmartString_1"><b>internalToSmartString</b>(alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Range_isEmpty_0"><b>isEmpty</b>()     </td><td>Answers whether this range contains no elements</td>
+</tr>
+<tr>
+<td id="Range_map_1"><b>map</b>(closure)     </td><td>Answers a new collection that contains the result of transforming each of self collection's elements<br>using a given closure.<br>The condition is a closure argument that takes an integer and Answers an object.<br><b>returns</b> another list<br>Example:<br>     (1..10).map({ n => n * 2}) ==> Answers [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]</td>
+</tr>
+<tr>
+<td id="Range_max_0"><b>max</b>()     </td><td><b>see</b> List#max()</td>
+</tr>
+<tr>
+<td id="Range_min_0"><b>min</b>()     </td><td><b>see</b> List#min()</td>
+</tr>
+<tr>
+<td id="Range_size_0"><b>size</b>()     </td><td>Answers the number of elements</td>
+</tr>
+<tr>
+<td id="Range_sortedBy_1"><b>sortedBy</b>(closure)     </td><td><b>see</b> List#sortBy</td>
+</tr>
+<tr>
+<td id="Range_step_1"><b>step</b>(_step)     </td><td></td>
+</tr>
+<tr>
+<td id="Range_sum_0"><b>sum</b>()     </td><td><b>see</b> List#sum()</td>
+</tr>
+<tr>
+<td id="Range_sum_1"><b>sum</b>(closure)     </td><td>Sums all elements that match the boolean closure<br><br>Example:<br>		(1..9).sum({ i => if (i.even()) i else 0 }) ==> Answers 20</td>
+</tr>
+<tr>
+<td id="Range_validate_1"><b>validate</b>(_limit)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Closure"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Closure</h2>
+
+
+<p> Represents an executable piece of code. You can create a closure, assign it to a reference,<br>evaluate it many times, send it as parameter to another object, and many useful things.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Closure_apply_1"><b>apply</b>(parameters)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Evaluates this closure passing its parameters<br><br>Example:<br>		{ number => number + 1 }.apply(8) ==> Answers 9 // 1 parameter<br>		{ "screw" + "driver" }.apply() ==> Answers "screwdriver" // no parameter</td>
+</tr>
+<tr>
+<td id="Closure_toString_0"><b>toString</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a string representation of this closure object</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Date"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Date</h2>
+
+
+<p> Represents a Date (without time). A Date is immutable, once created you can not change it.<br><br><b>since</b> 1.4.5</p>
+<h3> Constructors</h3>
+<table class="table table-striped table-hover table-sm">
+<b>constructor</b>()
+<p> </p>
+<b>constructor</b>(_day, _month, _year)
+<p> </p>
+</table>
+<hr>
+<h3> Behavior</h3>
+<table class="table table-striped table-hover table-sm">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td id="Date_-_1"><b>-</b>(_aDate)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the difference in days between two dates, in absolute values.<br><br>Examples:<br>		new Date().plusDays(4) - new Date() ==> Answers 4<br>		new Date() - new Date().plusDays(2) ==> Answers 2</td>
+</tr>
+<tr>
+<td id="Date_<_1"><b><</b>(_aDate)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Date_<=_1"><b><=</b>(_aDate)     </td><td></td>
+</tr>
+<tr>
+<td id="Date_==_1"><b>==</b>(_aDate)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Two dates are equals if they represent the same date</td>
+</tr>
+<tr>
+<td id="Date_>_1"><b>></b>(_aDate)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Date_>=_1"><b>>=</b>(_aDate)     </td><td></td>
+</tr>
+<tr>
+<td id="Date_between_2"><b>between</b>(_startDate, _endDate)     </td><td>Answers whether self is between two dates (both inclusive comparison)</td>
+</tr>
+<tr>
+<td id="Date_day_0"><b>day</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the day number of the Date</td>
+</tr>
+<tr>
+<td id="Date_dayOfWeek_0"><b>dayOfWeek</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the day of week of the Date, where<br>1 = MONDAY<br>2 = TUESDAY<br>3 = WEDNESDAY<br>...<br>7 = SUNDAY</td>
+</tr>
+<tr>
+<td id="Date_initialize_3"><b>initialize</b>(_day, _month, _year)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Date_isLeapYear_0"><b>isLeapYear</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Checks if the year is a leap year, like 2000, 2004, 2008, 2012, 2016...</td>
+</tr>
+<tr>
+<td id="Date_minusDays_1"><b>minusDays</b>(_days)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this date with the specified number of days subtracted.<br>For example, 2009-01-01 minus one day would result in 2008-12-31.<br>This instance is immutable and unaffected by this method call.</td>
+</tr>
+<tr>
+<td id="Date_minusMonths_1"><b>minusMonths</b>(_months)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this date with the specified number of months subtracted.</td>
+</tr>
+<tr>
+<td id="Date_minusYears_1"><b>minusYears</b>(_years)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this date with the specified number of years subtracted.</td>
+</tr>
+<tr>
+<td id="Date_month_0"><b>month</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the month number of the Date</td>
+</tr>
+<tr>
+<td id="Date_plusDays_1"><b>plusDays</b>(_days)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this Date with the specified number of days added.</td>
+</tr>
+<tr>
+<td id="Date_plusMonths_1"><b>plusMonths</b>(_months)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this Date with the specified number of months added.</td>
+</tr>
+<tr>
+<td id="Date_plusYears_1"><b>plusYears</b>(_years)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a copy of this Date with the specified number of years added.</td>
+</tr>
+<tr>
+<td id="Date_toString_0"><b>toString</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Date_year_0"><b>year</b>()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers the year number of the Date</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="container">
+</div>
+<p>Last update: 23/11/2017 22:01:38</p>

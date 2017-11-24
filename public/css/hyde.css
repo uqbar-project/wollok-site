@@ -90,19 +90,20 @@ html {
 }
 
 /* Sidebar nav */
-.sidebar-nav {
+.sidebar-nav-hyde {
   padding-left: 0;
+  width: 15rem;
   list-style: none;
   text-align: center;
 }
-.sidebar-nav-item {
+.sidebar-nav-hyde-item {
   display: block;
 }
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
+a.sidebar-nav-hyde-item:hover,
+a.sidebar-nav-hyde-item:focus {
   text-decoration: underline;
 }
-.sidebar-nav-item.active {
+.sidebar-nav-hyde-item.active {
   font-weight: bold;
   background-color: rgba(162,55,56,1);
   border-radius: 10px;
@@ -194,6 +195,14 @@ a.sidebar-nav-item:focus {
 .theme-base-08 .content a,
 .theme-base-08 .related-posts li a:hover {
   color: #ac4142;
+}
+
+.theme-base-08 .sidebar-nav-hyde a {
+  color: #f0f0f0;
+}
+
+.theme-base-08 .sidebar-nav-hyde a:hover {
+  color: #d8d8d8;
 }
 
 /* Orange */

@@ -15,7 +15,7 @@
       <p class="lead">{{ site.description }}</p>
     </div>
 
-    <ul class="sidebar-nav">
+    <ul class="sidebar-nav-hyde">
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: hyde` in the front-matter. See readme for usage.
@@ -23,13 +23,15 @@
 
       {% assign pages_list = (site.pages | where: "lang" , 'es' | sort:"weight") %}
       {% for node in pages_list %}
-        {% if node.title != null && node.weight > 0 %}
-          <li class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}">
+        {% if (node.title != null) && (node.title != "") && (node.weight > 0) %}
+          <li class="sidebar-nav-hyde-item{% if page.url == node.url %} active{% endif %}">
             <a href="{{ node.url }}">{{ node.title }}</a>
           </li>
         {% endif %}
       {% endfor %}
-
+      <li class="sidebar-nav-hyde-item">
+        <a href="wollokDoc/index.html">Referencia del lenguaje</a>
+      </li>
     </ul>
 
     <div class="copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</div>
