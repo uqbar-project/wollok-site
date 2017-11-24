@@ -6,6 +6,7 @@ layout: none
 
 * [Colecciones](#colecciones)
     * [Conjuntos](#conjuntos)
+    * [Diccionarios](#diccionarios)
     * [Closures](#closures)
     * [Closures y colecciones](#closures-y-colecciones)
 
@@ -53,9 +54,23 @@ const numeros = #{2, 23, 25}
 
 Nótese tanto el numeral inicial como las llaves que encierran los elementos del conjunto.
 
+### Diccionarios ###
+
+Los diccionarios (también conocidos como _mapas_ en otros lenguajes) son colecciones de pares clave-valor, útiles para poder acceder rápidamente a los elementos por algún valor conocido.
+
+```scala
+>>> const telefonos = new Dictionary()
+a Dictionary[]
+>>> telefonos.put("ricky", "15-21...")
+>>> telefonos.put("poly", "15-42...")
+>>> telefonos.get("ricky")
+```
+
+Pueden estudiar otros mensajes interesantes como keys(), values(), etc.
+
 ### Closures ###
 
-Un _closure_ es un objeto que representa una _porción de código_ que puede evaluarse en cualquier momento, todas las veces que uno quiera. También pueden asignarse a referencia, pasarse como parémtros y ser devueltas como resultado de los métodos.
+Un _closure_ es un objeto que representa una _porción de código_ que puede evaluarse en cualquier momento, todas las veces que uno quiera. También pueden asignarse a referencia, pasarse como parámetros y ser devueltos como resultado de los métodos.
 
 Para una explicación más detallada véase [wikipedia](http://en.wikipedia.org/wiki/Closure_(computer_programming)).
 
@@ -126,7 +141,18 @@ En el caso de que el único parámetro que se envíe sea un closure, se pueden e
 numeros.forEach { n => sum += n }
 ```
 
-Para saber si todos los elementos cumplen una determinada condición, existe el mensaje "all"
+El **forEach** de un Diccionario trabaja con un par clave junto con su valor.
+
+```scala
+>>> const telefonos = new Dictionary()
+>>> telefonos.put("ricky", "15-21...")
+>>> telefonos.put("poly", "15-42...")
+>>> telefonos.forEach { persona, tel => console.println(persona + " tiene " + tel) }
+poly tiene 15-42...
+ricky tiene 15-21...
+```
+
+Para saber si todos los elementos cumplen una determinada condición, existe el mensaje **all**
 
 ```javascript
 [3, 1].all { n => n > 0 } // true
