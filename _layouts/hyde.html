@@ -3,7 +3,7 @@
 
   {% include es/head.html %}
 
-  <body class="theme-base-08">
+  <body class="container">
     <script src="/mdb/js/jquery-3.2.1.min.js"></script>
     <script src="/mdb/js/popper.min.js"></script>
     <script src="/mdb/js/bootstrap.min.js"></script>
@@ -13,10 +13,16 @@
 
     {% include es/forkme.html %}
 
-    <div class="content container">
-      {% include es/language.html %}
-      {{ content | toc_generate }}
-    </div>
+    <!-- Main -->
+    <main class="mt-5">
+      <div class="container">
+          <div class="row" style="padding-top: 2rem;">
+            {% include es/language.html %}
+            {{ content | toc_generate }}
+          </div>
+      </div>
+    </main>
+    <!-- /.Main -->
 
   </body>
 </html>

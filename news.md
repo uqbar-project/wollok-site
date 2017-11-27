@@ -1,7 +1,7 @@
 ---
 layout: hyde
 title: 'Novedades'
-weight: 10
+weight: 60
 lang: 'es'
 ---
 

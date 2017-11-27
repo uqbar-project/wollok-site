@@ -1,13 +1,13 @@
 ---
 layout: hyde
-title: 'Empezando a programar'
+title: 'Conceptos'
 weight: 30
 lang: 'es'
 ---
 
 <h1>
 <img src="/images/langref.png" align="left" height="64" width="64"/>
-&nbsp;&nbsp;Empezando a programar
+&nbsp;&nbsp;Tutorial de conceptos - Empezando a programar
 </h1>
 
 <br>

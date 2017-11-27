@@ -1,6 +1,6 @@
 ---
 layout: hyde
-title: 'Tour de herramientas'
+title: 'Tour'
 weight: 25
 lang: 'es'
 ---
