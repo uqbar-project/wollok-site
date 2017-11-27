@@ -24,7 +24,7 @@ pre {
 }
 
 .fondo {
-  background-color: #ac4142;
+  background-color: #ac4142 !important;
 }
 
 .tourLink {
