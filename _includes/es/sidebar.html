@@ -1,8 +1,8 @@
 <!--Navigation-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-red">
-  <a class="navbar-brand" href="#" style="padding-left: 6rem;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark fondo">
+  <a class="navbar-brand" href="#" style="padding-left: 6.5rem;">
     <img src="/images/WollokLogo.png" class="d-inline-block align-center" title="Un lenguaje y entorno de aprendizaje de Programación Orientada a Objetos."
-      style="height: 50px;"/>
+      style="height: 45px;"/>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -14,17 +14,17 @@
       {% for node in pages_list %}
         {% if (node.title != null) && (node.title != "") && (node.weight > 0) %}
           <li class="nav-item{% if page.url == node.url %} active{% endif %}">
-            <a class="nav-link" href="{{ node.url }}">{% if page.url == node.url %}<span class="sr-only">(current)</span>{% endif %}{{ node.title }}</a>
+            <a class="nav-link" href="{{ node.url }}"><i class="fa fa-{{ node.icon }}" aria-hidden="true"></i>{% if page.url == node.url %}<span class="sr-only">(current)</span>{% endif %}{{ node.title }}</a>
           </li>
         {% endif %}
       {% endfor %}
       <div>
       <li class="nav-item">
-        <a class="nav-link" href="/wollokDoc/index.html">Guía del lenguaje</a>
+        <a class="nav-link" href="/wollokDoc/index.html"><i class="fa fa-book" aria-hidden="true"></i>Guía completa</a>
       </li>
     </ul>
     <div>
-      <a href="https://twitter.com/@Wollok" title="Buscá Wollok en twitter"><span class="badge badge-pill indigo lighten-1 hoverable"><i class="fa fa-twitter"></i></span></a>
+      <a href="https://twitter.com/@WollokLang" title="Seguinos en twitter"><span class="badge badge-pill indigo lighten-1 hoverable"><i class="fa fa-twitter"></i></span></a>
       <a href="mailto:wollok@uqbar.org" title="Envianos un mail"><span class="badge badge-pill red darken-5 hoverable"><i class="fa fa-mail-reply" aria-hidden="true"></i></span></a>
       <a href="http://github.com/uqbar-project/wollok" title="Accedé a nuestro repositorio de github"><span class="badge badge-pill red darken-4 hoverable"><i class="fa fa-github"></i></span></a>
     </div>

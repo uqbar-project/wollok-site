@@ -1,17 +1,18 @@
 ---
 layout: hyde
-title: 'Novedades'
+title: 'Lo nuevo'
 weight: 60
 lang: 'es'
+icon: 'podcast'
 ---
 
-<div>
+<div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
 
 <h1>&nbsp;&nbsp;¡En 2017 Wollok salió de gira!</h1>
+<br>
 </div>
 
-<br>
 
 2017 ha sido un año de madurez y de salir al mundo:
 
@@ -117,13 +118,15 @@ lang: 'es'
     </div>
     <!-- Grid column -->
 </div>
-    
 
+
+
+<div class="container">
+<br>
 <hr>
-
-<div>
 <img src="/images/bug.png" height="64" width="64" align="left"/>
 <h1>&nbsp;&nbsp;¿En qué estamos trabajando?</h1>
+<br/>
 </div>
 
 Podés ver [aquí](https://github.com/uqbar-project/wollok/milestone/19) la lista de issues que estamos encarando para el próximo release y lo que [ya hicimos](https://github.com/uqbar-project/wollok/milestone/19?closed=1). 

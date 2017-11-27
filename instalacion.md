@@ -3,6 +3,7 @@ layout: hyde
 title: 'Instalación'
 weight: 20
 lang: 'es'
+icon: 'cloud-download' 
 ---
 
 <div class="container">
@@ -142,9 +143,7 @@ lang: 'es'
 			de JDK 1.8 correcta. En ese caso o <a href="#apuntando-la-jdk-correcta-en-tu-entorno">apuntás la JDK correcta en tu entorno</a>
 			o <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok">debés apuntar la JDK correcta en el archivo ini de Wollok</a>.
 			</p>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">No puedo crear un proyecto Wollok</h4>
 			<p>
 			Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok 
@@ -153,9 +152,7 @@ lang: 'es'
 			Una vez más o <a href="#apuntando-la-jdk-correcta-en-tu-entorno">apuntás la JDK correcta en tu entorno</a> o 
 			<a href="#apuntando-la-jdk-correcta-en-ini-de-wollok">debés apuntar la JDK correcta en el archivo ini de Wollok</a>
 			</p>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">No levanta el IDE con exit code 13</h4>
 			<p>
 			Si al tratar de levantar Eclipse te aparece una pantalla de error como la siguiente:
@@ -171,9 +168,7 @@ lang: 'es'
 				<li>utilizaste la aplicación <i>"Java Updates"</i> en lugar de descargarlo de la página del JDK, como está documentado <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13">en este link</a>. 
 				En ese caso la solución es desinstalar la JDK actual, instalar la JDK según se sugiere en esta página y levantar el Wollok normalmente.</li>
 			</ul>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">Falta la dependencia a plugins de Wollok al ejecutar un archivo</h4>
 			<p>
 			Aunque el error no es muy descriptivo -y trabajaremos para mejorar eso- el problema es que estás tratando de
@@ -186,9 +181,7 @@ lang: 'es'
 				<img src="/images/troubleshooting/wollok-launch.png" class="hoverable img-fluid z-depth-1"/>
 			</div>
 			<br>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">Cartel de advertencia para instalar Java 6 en Mac</h4>
 			<p>
 				En máquinas Mac aparece un extraño cartel que indica que instalemos la versión de Java 6
@@ -198,9 +191,7 @@ lang: 'es'
 				<br>
 				Esto no es cierto, hay que instalar JDK 1.8. 				
 			</p>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">Ejecución de aplicación no firmada en Mac</h4>
 			<p>
 				Mac OS X implementa un sistema de seguridad que solo permite ejecutar aplicaciones desarrolladas por desarrolladores registrados en Apple, y estas aplicaciones deben estar distribuidas por el App Store. Como este no es el caso con Wollok, es necesario permitir ejecutar una aplicación no firmada. 
@@ -215,9 +206,7 @@ lang: 'es'
 				<a href="https://support.apple.com/kb/PH21769?locale=es_ES&viewlocale=es_ES">la documentación de <i>OS X</i> existente</a>
 					
 			</p>
-		</div>
-		<hr>
-		<div class="card-body">
+			<hr>
 			<h4 class="card-title">Problema con App Translocation (Mac)</h4>
 			<p>
 				En la versión 10.12 de OS X se introdujo un sistema de seguridad llamado Gatekeeper. Este sistema tiene como objetivo evitar la ejecución de programas de forma no deseada. Por lo tanto los programas no ejecutan si son ejecutados o descomprimidos en la carpeta Download o donde los guarda el browser. 
@@ -254,10 +243,8 @@ lang: 'es'
 				La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo 
 				<a href="https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html">estos pasos.</a>
 			</p>
-		</div>
-		<hr>
-		<div class="card-body" id="apuntando-la-jdk-correcta-en-ini-de-wollok">
-			<h4 class="card-title">Apuntando la JDK correcta en ini de Wollok</h4>
+			<hr>
+			<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Apuntando la JDK correcta en ini de Wollok</h4>
 			<p>
 				Ingresá al directorio de instalación de Wollok y abrir en un editor de texto el archivo wollok.ini. 
 				Entonces especificá el directorio de la JDK 1.8 mediante el parámetro -vm, por ejemplo:
@@ -272,10 +259,8 @@ lang: 'es'
 			<p>Es importante que no agregues un espacio ni un enter de más en el .ini, 
 				porque de lo contrario no van a funcionar los updates de versiones posteriores de Wollok 
 				(da un error al parsear el .ini)</p>
-		</div>
-		<hr>		
-		<div class="card-body" id="apuntando-la-jdk-correcta-en-ini-de-wollok">
-			<h4 class="card-title">Configuración de la JDK desde Eclipse</h4>
+			<hr>
+			<h4 id="apuntando-la-jdk-correcta-en-ini-de-wollok" class="card-title">Configuración de la JDK desde Eclipse</h4>
 			<p>
 				Si en el entorno Wollok ingresás a esta configuración: 
 				Windows > Preferences > java > Installed JREs y no ves ninguna JDK o bien una JDK que no es 1.8, 
@@ -286,9 +271,7 @@ lang: 'es'
 					<li>Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)</li>
 				</ul>
 			</p>
-		</div>
-		<hr>		
-		<div class="card-body" id="apuntando-la-jdk-correcta-en-ini-de-wollok">
+			<hr>
 			<h4 class="card-title">Configuración en inglés</h4>
 			<p>
 				Si querés configurar Wollok para que levante el IDE en inglés, es necesario agregar una <b>nueva línea al final</b> del archivo de configuración <i>wollok.ini</i>, localizado en el mismo directorio donde descargaste Wollok, con la siguiente instrucción:
@@ -306,11 +289,14 @@ lang: 'es'
 
 
 <hr>
+</div>
 
-<div>
-<img src="/images/bug.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;Encontré un Bug... ¿qué hago?</h1>
-</div><br>
+<div class="container">
+	<img src="/images/bug.png" height="64" width="64" align="left"/>
+		<h1>&nbsp;&nbsp;Encontré un Bug... ¿qué hago?</h1>
+	<br/>
+</div>
+
 Wollok es una pieza de Software en constante mejora y crecimiento. Como todas las cosas que están en constante evolución es probable que encuentres problemas o se te ocurra una mejora posible que te gustaría ver. 
 
 En caso de encontrar un error, es de mucha ayuda que lo reportes en la página de GitHub de Wollok. Para eso estamos usando un [Issue Tracker](https://github.com/uqbar-project/wollok/issues) (o sea un gestor de errores / incidentes). 
@@ -328,4 +314,3 @@ Para hacerlo, algunas recomendaciones:
 	* *Nice to have*: características deseadas pero menos prioritarias
 	* *Question*: dudas, por ejemplo algo que no estamos seguros si es un bug
 
-</div>

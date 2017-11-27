@@ -3,6 +3,7 @@ layout: hyde
 title: 'Conceptos'
 weight: 30
 lang: 'es'
+icon: 'dot-circle-o'
 ---
 
 <h1>
@@ -15,7 +16,7 @@ Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo 
 
 
 <!-- Nav tabs -->
-<ul class="nav nav-tabs nav-justified md-pills pills-secondary">
+<ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#introduccion" role="tab">Intro</a>
     </li>

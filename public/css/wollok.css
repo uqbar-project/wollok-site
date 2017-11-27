@@ -22,3 +22,11 @@ pre {
     border-width: thin 1px;
     border-color: #8d8989;
 }
+
+.fondo {
+  background-color: #ac4142;
+}
+
+.tourLink {
+  color: #863131;
+}
