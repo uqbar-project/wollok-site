@@ -1,16 +1,7 @@
 ---
-layout: hyde
-title: 'Apuntes'
-weight: 35
-lang: 'es'
-icon: 'clipboard'
+layout: none
 ---
 
-<h1>
-<img src="/images/documentation.ico" align="left" height="64" width="64"/>
-&nbsp;&nbsp;Apuntes y papers de Wollok
-</h1>
-<br>
 <p>A continuación presentamos una serie de capítulos que integran los principales conceptos de Wollok:
 </p>
 

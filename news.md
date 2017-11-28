@@ -38,7 +38,7 @@ icon: 'podcast'
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>CONAIISI '17</strong></h4>
+                <h4 class="card-title"><strong>CONAIISI</strong></h4>
                 <p class="card-text">Lucas Spigariol expuso Wollok Freire en el marco del último <a href="http://conaiisi2017.frsf.utn.edu.ar/">Congreso de Ingeniería en Sistemas de Información</a>, realizado en la Universidad Tecnológica de Santa Fe. Rescatamos de este evento el interés que despertó Wollok en varios docentes de las áreas de programación.</p>
             </div>
             <!--/.Card content-->
@@ -61,7 +61,7 @@ icon: 'podcast'
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>Workshop en la UTN FRD '17</strong></h4>
+                <h4 class="card-title"><strong>Workshop en la UTN FRD</strong></h4>
                 <p class="card-text">Nicolás Passerini estuvo en el <a href="https://sites.google.com/site/workshopsistemasdelta/home">III Workshop de Ingeniería en Sistemas de Información</a> que fue organizado por la UTN - Facultad Regional Delta, donde contó la motivación
                 general del proyecto Wollok, que es <b>repensar los objetivos y el proceso general de la enseñanza de la programación</b></p>
             </div>
@@ -86,7 +86,7 @@ icon: 'podcast'
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>CiaCiAr 2017</strong></h4>
+                <h4 class="card-title"><strong>CiaCiAr</strong></h4>
                 <p class="card-text">Carlos Lombardi, Nicolás Passerini y Fernando Dodino presentaron el poster de Wollok dentro del <a href="https://www.cientopolis.org/workshop/">primer congreso de Ciencia Abierta y Ciudadana</a>, celebrado en la ciudad de La Plata. Allí estuvieron contando sobre el proyecto a docentes y estudiantes secundarios y universitarios de diferentes partes de Latinoamérica.</p>
             </div>
             <!--/.Card content-->
@@ -109,7 +109,7 @@ icon: 'podcast'
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>LACLO '17</strong></h4>
+                <h4 class="card-title"><strong>LACLO</strong></h4>
                 <p class="card-text">Nicolás Passerini, Carlos Lombardi, Javier Fernándes, Pablo Tesone y Fernando Dodino presentaron el paper "Wollok: language + IDE for a gentle and industry-aware introduction to OOP" que fue <b>aprobado y expuesto</b> en el <a href="http://laclo2017.lifia.info.unlp.edu.ar/">Congreso 2017 de Latin-American Conference on Learning Technologies</a>, desarrollado en la Universidad Nacional de La Plata.</p>
             </div>
             <!--/.Card content-->

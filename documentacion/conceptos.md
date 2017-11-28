@@ -1,19 +1,8 @@
 ---
-layout: hyde
-title: 'Conceptos'
-weight: 30
-lang: 'es'
-icon: 'dot-circle-o'
+layout: none
 ---
 
-<h1>
-<img src="/images/langref.png" align="left" height="64" width="64"/>
-&nbsp;&nbsp;Tutorial de conceptos - Empezando a programar
-</h1>
-
-<br>
 Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo de la programación con Wollok.
-
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-justified">
@@ -57,14 +46,10 @@ Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo 
 </div>
 
 <script>
-    loadHtml("introduccion", "elements/index.html")
-    loadHtml("objetos", "objetos/index.html")
-    loadHtml("colecciones", "colecciones/index.html")
-    loadHtml("clases", "clases/index.html")
-    loadHtml("avanzados", "avanzados/index.html")
-    loadHtml("game", "game/index.html")
-
-    function loadHtml(id, page) {
-        $("#" + id).load(page)
-    }
+    loadHtml("introduccion", "conceptos/elements/index.html")
+    loadHtml("objetos", "conceptos/objetos/index.html")
+    loadHtml("colecciones", "conceptos/colecciones/index.html")
+    loadHtml("clases", "conceptos/clases/index.html")
+    loadHtml("avanzados", "conceptos/avanzados/index.html")
+    loadHtml("game", "conceptos/game/index.html")
 </script>
