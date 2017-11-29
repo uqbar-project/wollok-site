@@ -1,8 +1,8 @@
 .flag {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  width: 1.5rem; 
-  vertical-align: middle; 
+  width: 1.5rem;
+  vertical-align: middle;
 }
 
 .language {
@@ -10,23 +10,45 @@
 }
 
 .center-content {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 pre {
-    padding: .25em .5em;
-    color: #bf616a;
-    background-color: #f9f9f9;
-    border: solid;
-    border-width: thin 1px;
-    border-color: #8d8989;
+  padding: .25em .5em;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border: solid;
+  border-width: thin 1px;
+  border-color: #8d8989;
 }
 
 .fondo {
-  background-color: #ac4142 !important;
+  background-color: #ac4142;
 }
 
-.wollokNavLink {
+.nav-link {
+  font-size: 0.9rem;
+}
+
+a.wollokNavLink {
   color: #863131;
+}
+
+a.wollokNavLink:hover {
+  color: #bd4242;
+  font-weight: bold;
+}
+
+.navbar .btn-group .dropdown-menu a:hover {
+  background-color: #bd4242 !important;
+  color: white !important;
+}
+
+.navbar .btn-group .dropdown-menu a:active {
+  color: #fff !important;
+}
+
+body {
+  font-family: Montserrat, Roboto !important;
 }

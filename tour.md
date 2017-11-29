@@ -4,7 +4,7 @@ title: 'Tour'
 weight: 25
 lang: 'es'
 icon: 'bus'
----
+--- 
 
 <div class="container">
     <h1>Un tour por Wollok</h1>
@@ -14,28 +14,27 @@ icon: 'bus'
 
 <!-- Nav tabs -->
 <div class="container">
-    
     <ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active tourLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-user"></i> Editor</a>
+            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-user"></i> Editor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel6" role="tab"><i class="fa fa-heart"></i> Validador</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel6" role="tab"><i class="fa fa-heart"></i> Validador</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Quick Fix</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Quick Fix</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Formatter</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Formatter</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Consola</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Consola</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Test runner</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Test runner</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link tourLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Outline</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-envelope"></i> Outline</a>
         </li>
     </ul>
     <!-- Tab panels -->

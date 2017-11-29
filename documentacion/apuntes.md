@@ -1,6 +1,15 @@
 ---
-layout: none
+layout: hyde
+title: 'Apuntes'
+lang: 'es'
 ---
+
+<div class="container">
+<img src="/images/documentation/documentation.ico" height="64" width="64" align="left" style="padding: 0px;"/>
+<br>
+<h2>&nbsp;&nbsp;Apuntes</h2>
+<br>
+</div>
 
 <p>A continuación presentamos una serie de capítulos que integran los principales conceptos de Wollok:
 </p>

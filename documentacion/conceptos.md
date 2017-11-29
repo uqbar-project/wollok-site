@@ -1,31 +1,42 @@
 ---
-layout: none
+layout: hyde
+title: 'Conceptos'
+lang: 'es'
 ---
+
+<div class="container">
+    <img src="/images/documentation/tutorial.png" height="64" width="64" align="left" style="padding: 0px;"/>
+    <br>
+    <h2>&nbsp;&nbsp;Tutorial breve de conceptos básicos</h2>
+    <br>
+</div>
 
 Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo de la programación con Wollok.
 
 <!-- Nav tabs -->
-<ul class="nav nav-tabs nav-justified">
-    <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#introduccion" role="tab">Intro</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#objetos" role="tab">Objetos</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#colecciones" role="tab">Colecciones</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#clases" role="tab">Clases</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#avanzados" role="tab">Avanzados</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#game" role="tab">Game</a>
-    </li>
-</ul>
-
+<div class="container">
+    <ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#introduccion" role="tab">Intro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#objetos" role="tab">Objetos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#colecciones" role="tab">Colecciones</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#clases" role="tab">Clases</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#avanzados" role="tab">Avanzados</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#game" role="tab">Game</a>
+        </li>
+    </ul>
+</div>
+    
 
 <!-- Tab panels -->
 <div class="tab-content card">
@@ -46,10 +57,10 @@ Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo 
 </div>
 
 <script>
-    loadHtml("introduccion", "conceptos/elements/index.html")
-    loadHtml("objetos", "conceptos/objetos/index.html")
-    loadHtml("colecciones", "conceptos/colecciones/index.html")
-    loadHtml("clases", "conceptos/clases/index.html")
-    loadHtml("avanzados", "conceptos/avanzados/index.html")
-    loadHtml("game", "conceptos/game/index.html")
+    loadHtml("introduccion", "elements/index.html")
+    loadHtml("objetos", "objetos/index.html")
+    loadHtml("colecciones", "colecciones/index.html")
+    loadHtml("clases", "clases/index.html")
+    loadHtml("avanzados", "avanzados/index.html")
+    loadHtml("game", "game/index.html")
 </script>

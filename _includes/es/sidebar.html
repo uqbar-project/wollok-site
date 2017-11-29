@@ -8,24 +8,83 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      {% assign pages_list = (site.pages | where: "lang" , 'es' | sort:"weight") %}
-      {% for node in pages_list %}
-        {% if (node.title != null) && (node.title != "") && (node.weight > 0) %}
-          <li class="nav-item{% if page.url == node.url %} active{% endif %}">
-            <a class="nav-link" href="{{ node.url }}"><i class="fa fa-{{ node.icon }}" aria-hidden="true"></i>{% if page.url == node.url %}<span class="sr-only">(current)</span>{% endif %}{{ node.title }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-      <div>
+        <li class="nav-item{% if page.url == '/' %} active{% endif %}">
+          <a class="nav-link" href="/">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            {% if page.url == '/' %}<span class="sr-only">(current)</span>{% endif %}
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item{% if location == 'instalacion' %} active{% endif %}">
+          <a class="nav-link" href="/instalacion/">
+            <i class="fa fa-cloud-download" aria-hidden="true"></i>
+            {% if location == 'instalacion' %}<span class="sr-only">(current)</span>{% endif %}
+            Instalación
+          </a>
+        </li>
+        <li class="nav-item{% if location == 'tour' %} active{% endif %}">
+          <a class="nav-link" href="/tour/">
+            <i class="fa fa-bus" aria-hidden="true"></i>
+            {% if location == 'tour' %}<span class="sr-only">(current)</span>{% endif %}
+            Tour
+          </a>
+        </li> 
+        <li class="nav-item{% if location == 'documentation/conceptos' %} active{% endif %}">
+            <!-- Dropdown -->
+            <li class="nav-item btn-group">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Documentación</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="wollokNavLink dropdown-item" href="/documentacion/conceptos">
+                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    {% if location == 'documentacion/conceptos' %}<span class="sr-only">(current)</span>{% endif %}
+                    Explicación de conceptos
+                  </a>
+                  <a class="wollokNavLink dropdown-item" href="/documentacion/apuntes">
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    {% if location == 'documentacion/apuntes' %}<span class="sr-only">(current)</span>{% endif %}
+                    Apuntes
+                  </a>
+                  <a class="wollokNavLink dropdown-item" href="/documentacion/wollokDoc">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    {% if location == 'documentacion/wollokDoc' %}<span class="sr-only">(current)</span>{% endif %}
+                    Guía completa del lenguaje
+                  </a>
+                </div>
+            </li>
+        </li>
+        <li class="nav-item{% if location == 'ejemplos' %} active{% endif %}">
+          <a class="nav-link" href="/ejemplos/">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            {% if location == 'ejemplos' %}<span class="sr-only">(current)</span>{% endif %}
+            Ejemplos
+          </a>
+        </li>
+        <li class="nav-item{% if location == 'comunidad' %} active{% endif %}">
+          <a class="nav-link" href="/comunidad/">
+            <i class="fa fa-group" aria-hidden="true"></i>
+            {% if location == 'comunidad' %}<span class="sr-only">(current)</span>{% endif %}
+            Comunidad
+          </a>
+        </li>
+        <li class="nav-item{% if location == 'novedades' %} active{% endif %}">
+          <a class="nav-link" href="/novedades/">
+            <i class="fa fa-podcast" aria-hidden="true"></i>
+            {% if location == 'novedades' %}<span class="sr-only">(current)</span>{% endif %}
+            Novedades
+          </a>
+        </li> 
     </ul>
-    <div>
-      <a href="https://twitter.com/@WollokLang" title="Seguinos en twitter"><span class="badge badge-pill indigo lighten-1 hoverable"><i class="fa fa-twitter"></i></span></a>
-      <a href="mailto:wollok@uqbar.org" title="Envianos un mail"><span class="badge badge-pill red darken-5 hoverable"><i class="fa fa-mail-reply" aria-hidden="true"></i></span></a>
-      <a href="http://github.com/uqbar-project/wollok" title="Accedé a nuestro repositorio de github"><span class="badge badge-pill red darken-4 hoverable"><i class="fa fa-github"></i></span></a>
-    </div>
-  </ul>
+    <ul>
+      <div>
+        <a href="https://twitter.com/@WollokLang" title="Seguinos en twitter"><span class="badge badge-pill indigo lighten-1 hoverable"><i class="fa fa-twitter"></i></span></a>
+        <a href="mailto:wollok@uqbar.org" title="Envianos un mail"><span class="badge badge-pill red darken-5 hoverable"><i class="fa fa-mail-reply" aria-hidden="true"></i></span></a>
+        <a href="http://github.com/uqbar-project/wollok" title="Accedé a nuestro repositorio de github"><span class="badge badge-pill red darken-4 hoverable"><i class="fa fa-github"></i></span></a>
+      </div>
+    </ul>
   </div>
 </nav>
 <!--/.Navigation-->
