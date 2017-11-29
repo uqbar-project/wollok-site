@@ -28,5 +28,5 @@ github:
   repo:           http://github.org/uqbar-project/wollok
 
 gems: 
-#  - jekyll-paginate
-#  - jekyll-watch
+  - jekyll-paginate
+  - jekyll-watch
