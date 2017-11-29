@@ -17,28 +17,30 @@ lang: 'es'
 </p>
 </div>
 
-<ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
-	<li class="nav-item" id="lib">
-		<a class="nav-link wollokNavLink " href="javascript:selectWollokDocFile('lib')">lib.wlk <span class="sr-only">(current)</span></a>
-	</li>
-	 <li class="nav-item" id="vm">
-		<a class="nav-link wollokNavLink " href="javascript:selectWollokDocFile('vm')">vm.wlk <span class="sr-only">(current)</span></a>
-	</li>
-	 <li class="nav-item" id="lang">
-		<a class="nav-link wollokNavLink active" href="javascript:selectWollokDocFile('lang')">lang.wlk <span class="sr-only">(current)</span></a>
-	</li>
-	 <li class="nav-item" id="mirror">
-		<a class="nav-link wollokNavLink " href="javascript:selectWollokDocFile('mirror')">mirror.wlk <span class="sr-only">(current)</span></a>
-	</li>
-	 <li class="nav-item" id="game">
-		<a class="nav-link wollokNavLink " href="javascript:selectWollokDocFile('game')">game.wlk <span class="sr-only">(current)</span></a>
-	</li>
-</ul>
+<div class="container">
+	<ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
+		<li class="nav-item">
+			<a id="lib" class="nav-link wollokNavLink" href="javascript:selectFile('lib')">lib.wlk <span class="sr-only">(current)</span></a>
+		</li>
+		 <li class="nav-item">
+			<a id="vm" class="nav-link wollokNavLink" href="javascript:selectFile('vm')">vm.wlk <span class="sr-only">(current)</span></a>
+		</li>
+		 <li class="nav-item">
+			<a id="lang" class="nav-link wollokNavLink" href="javascript:selectFile('lang')">lang.wlk <span class="sr-only">(current)</span></a>
+		</li>
+		 <li class="nav-item">
+			<a id="mirror" class="nav-link wollokNavLink" href="javascript:selectFile('mirror')">mirror.wlk <span class="sr-only">(current)</span></a>
+		</li>
+		 <li class="nav-item">
+			<a id="game" class="nav-link wollokNavLink" href="javascript:selectFile('game')">game.wlk <span class="sr-only">(current)</span></a>
+		</li>
+	</ul>
+</div>
 
-<div class="tab-content card">
-	<div id="content" class="container" style="padding-top: 1rem;"/>
+<div class="tab-content card container">
+	<div id="content" style="padding-top: 1rem;"/>
 </div>
 
 <script>
-selectWollokFile("lang")
+selectFile("lang")
 </script>

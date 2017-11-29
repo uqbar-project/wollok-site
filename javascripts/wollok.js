@@ -2,9 +2,9 @@ function loadHtml(id, page) {
     $("#" + id).load(page)
 }
 
-function selectWollokDocFile(fileName, anchor) {
-    $('.nav-item').removeClass("active")
-    $("#" + fileName).addClass("navItem active")
+function selectFile(fileName, anchor) {
+    $('.nav-link').removeClass("active")
+    $("#" + fileName).addClass("active")
     $('#content').load(fileName + ".html", function () {
         if (anchor != undefined) {
             var href = $("#" + anchor).get(0)
