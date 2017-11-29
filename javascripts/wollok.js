@@ -19,3 +19,10 @@ function selectFile(folder, fileName, anchor) {
         scrollBy(0, -120)
     })
 }
+
+$(document).ready(function() {
+    $('a').click(function(e) {
+      scrollBy(0, -120)
+    })
+})
+

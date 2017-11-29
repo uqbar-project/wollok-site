@@ -1,6 +1,6 @@
 ---
 layout: hyde
-title: 'Lo nuevo'
+title: 'Novedades'
 weight: 60
 lang: 'es'
 icon: 'podcast'
