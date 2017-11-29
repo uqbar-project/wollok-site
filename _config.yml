@@ -27,6 +27,6 @@ version:          1.6.3
 github:
   repo:           http://github.org/uqbar-project/wollok
 
-plugins: 
+gems: 
   - jekyll-paginate
   - jekyll-watch
