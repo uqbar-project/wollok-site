@@ -44,7 +44,7 @@ icon: 'cloud-download'
 	<div class="accordion" id="accordionInstalacion" role="tablist" aria-multiselectable="true">
 		<div class="card">
 			<!-- Card header -->
-			<div class="card-header mdb-color lighten-2 white-text" id="jdk-18" role="tab" id="headingOne">
+			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingOne">
 				<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<h4 class="card-header mdb-color lighten-2 white-text" id="jdk-18">
 						Java Development Kit 1.8 (pre-requisito)
@@ -73,7 +73,7 @@ icon: 'cloud-download'
 
 		<div class="card">
 			<!-- Card header -->
-			<div class="card-header mdb-color lighten-2 white-text" id="instalar-wollok" role="tab" id="headingTwo">
+			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingTwo">
 				<a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseThree">
 					<h4 class="card-header mdb-color lighten-2 white-text" id="jdk-18">
 						Bajar localmente el entorno Wollok
@@ -84,7 +84,7 @@ icon: 'cloud-download'
 
 			<!-- Card body -->
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
-				<div class="card-body grey lighten-5 transparent">
+				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">Primera vez</h4>
 					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
 					</p>
@@ -146,9 +146,9 @@ icon: 'cloud-download'
 
 		<div class="card">
 			<!-- Card header -->
-			<div class="card-header mdb-color lighten-2 white-text" id="troubleshooting" role="tab" id="headingThree">
+			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingThree">
 				<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					<h4 class="card-header mdb-color lighten-2 white-text" id="jdk-18">
+					<h4 id="troubleshooting" class="card-header mdb-color lighten-2 white-text">
 						Problemas comunes al instalar Wollok
 						<i class="fa fa-angle-down rotate-icon"></i>
 					</h4>

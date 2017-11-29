@@ -39,7 +39,7 @@ icon: 'github'
     <li class="list-group-item"><a href="https://github.com/wollok/03-polimorfismo-empanadasGimenez">Empanadas Giménez. Polimorfismo.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/07-excepciones-monedero">Monedero. Excepciones. Testing de excepciones.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/Colecciones-bloques_Colecciones-de-jaloguin">Colecciones de Jalogüin. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/colecciones-Willy-Wonka">Willy Wonca y la fabrica de software. Colecciones. Polimorfismo</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/colecciones-Willy-Wonka">Willy Wonka y la fabrica de software. Colecciones. Polimorfismo</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/Colecciones-Sin-Bloques-Naufrago">El naufrago. Colecciones sin bloques</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. Colecciones</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/Polimorfismo-Colecciones-Huevos-de-Pascua">Huevos de pascua. Objetos Polimorfismo. 2° parte Colecciones</a></li>
