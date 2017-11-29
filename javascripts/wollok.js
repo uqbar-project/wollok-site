@@ -16,9 +16,10 @@ function selectFile(fileName, anchor) {
     })
 }
 
+/*
 $(document).ready(function() {
     $('a').click(function(e) {
       scrollBy(0, -120)
     })
 })
-
+*/
