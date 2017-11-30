@@ -209,7 +209,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         </div>
 
         <!--/.Panel 1-->
-        <!--Panel 2-->
+
+        <!-- *****************************  VALIDATORS ****************************************-->
         <div class="tab-pane fade" id="validador" role="tabpanel">
             <br>
             <p>
@@ -290,13 +291,96 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 </div>
             </div>
         </div>
-        <!--/.Panel 2-->
-        <!--Panel 3-->
-        <div class="tab-pane fade" id="panel7" role="tabpanel">
+
+
+        <!-- *****************************  QUICK FIXES ****************************************-->
+        <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+            Detectar los errores es el primer paso, Wollok trae soluciones
+            más comunes ante problemas frecuentes. Para activarlo, basta con ubicarse en la parte subrayada en rojo
+            dentro del código y presionar <b>Ctrl + 1</b>, o bien dejar que se active el menú contextual. Entonces se
+            habilita una serie de opciones (<i>quick fixes</i>) que permiten resolver ese conflicto.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/quickFixes.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Desde un test podemos crear un wko, o una clase,
+                        e inclusive agregarle métodos. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            <br>
+            Crear una clase, un wko, agregar métodos, referencias (locales, de instancia, parámetros), eliminar
+            construcciones redundantes, corregir llamadas a constructores, son solo alguna de las posibilidades
+            que tenés, que te permiten concentrarte en el diseño y automatizar tareas repetitivas de implementación.
+            <br>
+            <br> 
         </div>
-        <!--/.Panel 3-->
+
+        <!-- *****************************  QUICK FIXES ****************************************-->
+        <div class="tab-pane fade" id="formatter" role="tabpanel">
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/formatter.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Formateo básico de una clase. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            Wollok tiene un formateador basado en su sintaxis que estiliza el código y le da un formato homogéneo,
+            algo necesario en un lenguaje educativo que propone proyectos donde se conforma un grupo de trabajo.
+            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format):
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/formatter2.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Formateando <i>closures</i> e if con o sin llaves.</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <!-- *****************************  QUICK FIXES ****************************************-->
+        <div class="tab-pane fade" id="consola" role="tabpanel">
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/consola.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. En la imagen se ve 
+                        que la consola nos avisa si el contexto de ejecución está sincronizado con la última versión 
+                        del archivo. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            Una de las primeras herramientas para trabajar es la consola REPL (nombre que surge del acrónimo
+            <b>R</b>ead, <b>E</b>valuate, <b>P</b>rint, <b>L</b>oop), que permite la interacción inicial entre
+            el usuario y el intérprete Wollok. 
+            <br>
+            <br>
+            Si bien tiene algunos alcances limitados (no posee por el momento opciones de autocompletado, y requiere
+            reiniciarse cada vez que hagamos un cambio en el archivo original), es una forma de comenzar a conocer
+            cómo responden los objetos ante el envío de un mensaje.
+            <br>
+            <br>
+            Para utilizarla, basta con hacer click derecho sobre un archivo .wlk y elegir la opción "Ejecutar en consola REPL".
+            También existe el botón "Play" en la barra de herramientas.
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
+            </div>
+            <br><br>
+        </div>
+
     </div>
 
 </div>
