@@ -23,15 +23,15 @@ icon: 'cloud-download'
 			<!--Text-->
 			<p>A continuación te dejamos las instrucciones para poder instalar Wollok en tu máquina. Los pasos normales son</p>
 			<ul>
-				<li><a href="#jdk-18">Instalar Java 1.8 para desarrollar</a></li>
-				<li><a href="#instalar-wollok">Instalar el entorno Wollok completo</a> 
-					(o bien <a href="#actualizar-wollok">actualizarlo</a> o <a href="#actualizar-desde-eclipse">incorporarlo a un Eclipse que tengas</a>)
+				<li><a href="#jdk-18" class="wollokLink">Instalar Java 1.8 para desarrollar</a></li>
+				<li><a href="#instalar-wollok" class="wollokLink">Instalar el entorno Wollok completo</a> 
+					(o bien <a href="#actualizar-wollok" class="wollokLink">actualizarlo</a> o <a href="#actualizar-desde-eclipse" class="wollokLink">incorporarlo a un Eclipse que tengas</a>)
 				</li>
 				<li>
-					Si tenés problemas en la instalación <a href="#troubleshooting">hay una guía de solución de problemas rápidos</a>
+					Si tenés problemas en la instalación <a href="#troubleshooting" class="wollokLink">hay una guía de solución de problemas rápidos</a>
 				</li>
 				<li>
-					Y por último te contamos <a href="#configuraciones-extras">qué otras cosas podés configurar</a>
+					Y por último te contamos <a href="#configuraciones-extras" class="wollokLink">qué otras cosas podés configurar</a>
 				</li>
 			</ul>
 		</div>
@@ -161,8 +161,8 @@ icon: 'cloud-download'
 					<h4 class="card-title">El IDE muestra la pantalla de bienvenida y no levanta</h4>
 					<p>
 					Si el IDE se queda trabado en la pantalla de bienvenida, puede ser que no estés apuntando a una instalación
-					de JDK 1.8 correcta. En ese caso o <a href="#apuntando-la-jdk-correcta-en-tu-entorno">apuntás la JDK correcta en tu entorno</a>
-					o <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok">debés apuntar la JDK correcta en el archivo ini de Wollok</a>.
+					de JDK 1.8 correcta. En ese caso o <a href="#apuntando-la-jdk-correcta-en-tu-entorno" class="wollokLink">apuntás la JDK correcta en tu entorno</a>
+					o <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">debés apuntar la JDK correcta en el archivo ini de Wollok</a>.
 					</p>
 					<hr>
 					<h4 class="card-title">No puedo crear un proyecto Wollok</h4>
@@ -170,8 +170,8 @@ icon: 'cloud-download'
 					Si no te aparece la opción para crear un proyecto Wollok, ni tampoco una clase, hay que revisar si el entorno Wollok 
 					está apuntando a una JDK que además sea de Java 8 ó superior. Una JDK viene con el compilador, mientras que una JRE
 					solo trae la versión "runtime" o de ejecución de los programas Java compilados previamente (los archivos _.class_). 
-					Una vez más o <a href="#apuntando-la-jdk-correcta-en-tu-entorno">apuntás la JDK correcta en tu entorno</a> o 
-					<a href="#apuntando-la-jdk-correcta-en-ini-de-wollok">debés apuntar la JDK correcta en el archivo ini de Wollok</a>
+					Una vez más o <a href="#apuntando-la-jdk-correcta-en-tu-entorno" class="wollokLink">apuntás la JDK correcta en tu entorno</a> o 
+					<a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">debés apuntar la JDK correcta en el archivo ini de Wollok</a>
 					</p>
 					<hr>
 					<h4 class="card-title">No levanta el IDE con exit code 13</h4>
@@ -185,7 +185,7 @@ icon: 'cloud-download'
 					el problema puede darse porque 
 					
 					<ul>
-						<li>estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok">seguí estos pasos.</a>..</li>
+						<li>estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">seguí estos pasos.</a>..</li>
 						<li>utilizaste la aplicación <i>"Java Updates"</i> en lugar de descargarlo de la página del JDK, como está documentado <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13">en este link</a>. 
 						En ese caso la solución es desinstalar la JDK actual, instalar la JDK según se sugiere en esta página y levantar el Wollok normalmente.</li>
 					</ul>
@@ -256,8 +256,8 @@ icon: 'cloud-download'
 
 			<!-- Card body -->
 			<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-				<div class="card-body grey lighten-5 transparent" id="apuntando-la-jdk-correcta-en-tu-entorno">
-						<h4 class="card-title">Apuntando la JDK correcta en tu entorno</h4>
+				<div class="card-body grey lighten-5 transparent">
+						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-tu-entorno">Apuntando la JDK correcta en tu entorno</h4>
 						<p>
 							A veces pese a instalar correctamente la JDK 1.8, el sistema operativo sigue utilizando por defecto otra instalación de Java, basado en la variable del entorno JAVA_HOME (y por ende, también la variable PATH). 
 							Para chequear esto, abrí una línea de comandos y revisá adónde apunta dicha variable:

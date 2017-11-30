@@ -39,7 +39,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         </li>
     </ul>
     <!-- Tab panels -->
-    <div class="tab-content">
+    <div class="tab-content card container">
         <!--Panel 1-->
         <div class="tab-pane fade in show active" id="editor" role="tabpanel">
             <br>
@@ -90,9 +90,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Ctrl + R: busca un recurso (archivo), filtrando por nombre o extensión. 
-                            <br> Ctrl + Shift + F3: busca cualquier elemento, puede ser un objeto o clase que creaste vos o bien 
-                        cualquier otro elemento que esté dentro del ambiente (como la clase Date, o la clase Set que vienen con 
-                    la biblioteca de Wollok).</figcaption>
+                            <br> Ctrl + Shift + F3: busca cualquier objeto, clase o mixin creado por vos o que venga con
+                            la biblioteca de Wollok, como Date, Set o String.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -223,7 +222,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             inicializadas que la mayoría de los entornos modernos manejan, pero Wollok lleva las validaciones a un nivel
             extra: evita malas prácticas como las construcciones "if (expresion) return true else false", 
             redefinir métodos que solo llamen a super, definir constructores que no inicialicen referencias constantes,
-            tener referencias circulares entre jerarquías de clases, etc.
+            tener referencias circulares en una jerarquías de clases, etc.
             </p>
             <p>
             Y lo más importante, cada año se incorporan y se revisan esas validaciones de acuerdo a los estándares 
@@ -246,8 +245,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             ¿Cómo visualizar la solapa Problemas?   
             </h3>
             <p>
-            Para activarla, se debe ir al menú Ventana > Mostrar vista > Problemas. Allí se agrupan los diferentes tipos
-            de problema (error, advertencia, información)
+            Para activarla, se debe ir al menú Ventana > Mostrar vista > Otras > y buscamos "Problemas". 
+            Allí se agrupan los diferentes tipos de problema (error, advertencia, información).
             </p>
             <hr>
             <h3>
@@ -264,8 +263,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </h3>
             <p>
             Si en algún momento querés armar una solución "de compromiso" o que te parece que se puede mejorar, podés
-            escribir en el comentario las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Tareas)
-            tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al 
+            escribir en el comentario las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Otras > 
+            buscamos Tareas) tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al 
             código.
             </p>
             <br>
@@ -280,7 +279,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <hr>
             Para configurar otros valores, podés hacerlo desde
-            Ventana > Preferencias > Tareas y agregar o modificar los tags existentes.
+            Ventana > Preferencias > Etiquetas de Tareas (Task tags) y agregar o modificar los tags existentes.
             <br><br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">

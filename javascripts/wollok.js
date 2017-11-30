@@ -17,7 +17,9 @@ function selectFile(fileName, anchor) {
 }
 
 $(document).ready(function() {
-    $('a[href^="#"]').on('click', function(event) {
+    $('a.wollokLink').on('click', function(event) {
+        $("#collapseThree").addClass('show')
+        $("#collapseFour").addClass('show')
         var target = $(this.getAttribute('href'))
         if( target.length ) {
             event.preventDefault()
