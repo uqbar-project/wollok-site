@@ -70,7 +70,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
 
             Aquí utilizamos asistentes de contenido un tanto más elaborados. Por eso es conveniente probar qué sugerencias
             tenemos, por ejemplo, para enviar mensajes a un objeto:
-
+            <br>
             <br>
             
             <div class="container text-center">
@@ -348,7 +348,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
         </div>
 
-        <!-- *****************************  QUICK FIXES ****************************************-->
+        <!-- *****************************  CONSOLE ****************************************-->
         <div class="tab-pane fade" id="consola" role="tabpanel">
             <br>
             <div class="row text-center">
@@ -379,7 +379,105 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
             </div>
             <br><br>
+            Podés enviar mensajes a objetos, crear referencias constantes o variables,
+            probar cómo funcionan los números, las fechas y otros objetos que vienen con Wollok, etc. Para ello escribís
+            la línea y al final presionás la tecla Enter. Con la flecha arriba te irán apareciendo
+            los mensajes que enviaste anteriormente.
+            <br><br>
+            Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
+            los cambios. En la barra de herramientas a la derecha te dice si la consola está 
+            sincronizada.
+            <br>
+            <hr>
+            <h4>Exportar una sesión a un test</h4>
+            Podemos exportar una sesión de nuestra consola a un test, mediante el botón específico
+            en la barra de herramientas como se muestra a continuación:
+            <br>
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/console2.gif" class="img-fluid z-depth-1">
+            </div>
+            <br>
+            <hr>
+            <h4>Ejecutar una sesión sin un archivo asociado</h4>
+            <br>
+            Por último, tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
+            un archivo particular, mediante una opción específica en la barra:
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/runConsole2.png" class="img-fluid z-depth-1">
+            </div>
+            <br><br>
         </div>
+
+        <!-- *****************************  TEST RUNNER ****************************************-->
+        <div class="tab-pane fade" id="testRunner" role="tabpanel">
+            <br>
+            La consola interactiva es útil para dar los primeros pasos, pero cuando necesitamos
+            poder automatizar nuestras pruebas, el Test Runner de Wollok es la herramienta más
+            adecuada para poder validar el software que construís.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Ejecutando un conjunto
+                            de tests, vemos cómo se puede filtrar solo errores y fallas,
+                            cómo se visualizan los errores y podemos navegar directamente
+                            al código donde se originó el error, y cómo la ejecución de 
+                            los tests es un proceso iterativo e incremental. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            Si querés conocer más acerca del testeo unitario de Wollok te recomendamos que leas
+             <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#">este apunte</a>. 
+            <br>
+            <hr>
+            <h4>Ejecutando todos los tests de un proyecto o directorio</h4>
+            Es posible ejecutar todos los tests de un proyecto, o bien los tests de un
+            directorio (si organizaste en una carpeta varios .wlk), para eso tenés la opción
+            desde el menú de opciones del navegador del proyecto (Package Explorer):
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/runAllTests.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
+                        proyecto. Aquí vemos que corren además de los 3 tests del archivo
+                    example.wtest, también se ejecutan los del archivo test.wtest</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>  
+
+        <!-- *****************************  DIAGRAMAS ****************************************-->
+        <div class="tab-pane fade" id="diagramas" role="tabpanel">
+            <br>
+            Wollok trae también herramientas para comunicar el diseño, como el diagrama
+            estático que está totalmente integrado con el editor. A medida que vayamos 
+            escribiendo el diagrama estático se regenera y se guarda junto con el proyecto,
+            y además podemos configurar qué variables, métodos y clases mostrar.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/staticDiagram.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Una pequeña demostración
+                        del diagrama estático de Wollok</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            Para conocer en detalle todas las funcionalidades te recomendamos que leas
+            <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">este apunte</a>.
+            <br>
+            <br>
+        </div>  
+                
 
     </div>
 
