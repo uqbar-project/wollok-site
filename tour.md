@@ -382,7 +382,14 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             Podés enviar mensajes a objetos, crear referencias constantes o variables,
             probar cómo funcionan los números, las fechas y otros objetos que vienen con Wollok, etc. Para ello escribís
             la línea y al final presionás la tecla Enter. Con la flecha arriba te irán apareciendo
-            los mensajes que enviaste anteriormente.
+            los mensajes que enviaste anteriormente. También podés pegar código del portapapeles, y los errores
+            se integran directamente con el editor.
+            <br>
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/replConsoleEditor.gif" class="img-fluid z-depth-1">
+            </div>
+            <br>
             <br><br>
             Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
             los cambios. En la barra de herramientas a la derecha te dice si la consola está 
