@@ -18,6 +18,8 @@ Para comenzar un juego, y poder visualizar el tablero, basta con ejecutar:
 >>> game.start()
 ```
 Esto deberá levantar otra ventana del sistema operativo mostrando el tablero.
+<br>
+
 ![Tablero vacío](https://image.prntscr.com/image/DJ2AwqP6RTyOexB0yJO3xA.png)
 
 ## El tablero
@@ -39,7 +41,11 @@ Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agrega
 >>> game.start()
 ```
 
-![Juego con celdas](https://image.prntscr.com/image/7B5VH1VtQEK7DS6M7aBiMw.png)
+<div class="container text-center">
+	<img src="https://image.prntscr.com/image/7B5VH1VtQEK7DS6M7aBiMw.png" class="img-fluid z-depth-1">
+</div>
+<br>
+
 
 ## Las posiciones
 
@@ -132,7 +138,10 @@ Para elegir la imagen de un determinado objeto es necesario:
 
 #### Ejemplo
 
-![img en explorador](https://image.prntscr.com/image/hoOjvbugTRy2nUsUkgX01A.png)
+<div class="container text-center">
+	<img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
+</div>
+<br>
 
 ###### En example.wlk
 

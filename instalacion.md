@@ -264,8 +264,8 @@ icon: 'cloud-download'
 							<div class="language-javascript">	
 									<div>
 										<pre>
-			<span class="kd">$</span><span class="nx"> env | grep JAVA</span><span class="c"> // Linux & Mac</span>
-			<span class="kd">></span><span class="nx"> SET JAVA_HOME</span><span class="c"> // Windows</span></pre>
+<span class="kd">$</span><span class="nx"> env | grep JAVA</span><span class="c"> // Linux & Mac</span>
+<span class="kd">></span><span class="nx"> SET JAVA_HOME</span><span class="c"> // Windows</span></pre>
 									</div>
 								</div>
 							La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo 
@@ -274,14 +274,14 @@ icon: 'cloud-download'
 						<hr>
 						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Apuntando la JDK correcta en ini de Wollok</h4>
 						<p>
-							Ingresá al directorio de instalación de Wollok y abrir en un editor de texto el archivo wollok.ini. 
+							Ingresá al directorio de instalación de Wollok y abrí en un editor de texto el archivo wollok.ini. 
 							Entonces especificá el directorio de la JDK 1.8 mediante el parámetro -vm, por ejemplo:
 						</p>
 						<div class="language-javascript">
 							<div>
 								<pre>
-			<span class="kd">-vm</span>
-			<span class="nx">D:\java8\bin\javaw.exe</span></pre>
+<span class="kd">-vm</span>
+<span class="nx">D:\java8\bin\javaw.exe</span></pre>
 							</div>
 						</div>
 						<p>Es importante que no agregues un espacio ni un enter de más en el .ini, 
@@ -307,7 +307,7 @@ icon: 'cloud-download'
 							<div class="language-javascript">
 									<div>
 										<pre>
-			<span class="kd">-D</span><span class="nx">user.language=en</span></pre>
+<span class="kd">-D</span><span class="nx">user.language=en</span></pre>
 									</div>
 								</div>
 						</p>

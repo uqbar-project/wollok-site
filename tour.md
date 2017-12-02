@@ -60,7 +60,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                     <img src="/images/tour/editor2.gif" class="img-fluid z-depth-1" alt="Responsive image">
                         <figcaption class="figure-caption"><br>
-                        También hay construcciones más interesantes, que nos permiten crear una estructura de control try/catch o una clase Ave
+                        También hay construcciones más interesantes, que nos permiten crear una estructura de control de selección<i>(if)</i>  o una clase Ave
                         </figcaption>
                     </figure>
                 </div>
@@ -218,16 +218,16 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             con mayor robustez. En Wollok este rol lo cumple el validador que está integrado totalmente con el editor.
             </p>
             <p>
-            Por supuesto que detecta construcciones erróneas (constructores en objetos, referencias inválidas, nombres
-            con minúsculas o mayúsculas, y muchas otras más), también el chequeo de uso de variables o de referencias
-            inicializadas que la mayoría de los entornos modernos manejan, pero Wollok lleva las validaciones a un nivel
+            Por supuesto que detecta construcciones erróneas (constructores en objetos o tests, referencias inválidas, 
+            envíos de mensajes incorrectos, entre otros), también chequea el uso o inicialización de variables y 
+            constantes como la mayoría de los entornos modernos. Pero Wollok lleva las validaciones a un nivel
             extra: evita malas prácticas como las construcciones "if (expresion) return true else false", 
             redefinir métodos que solo llamen a super, definir constructores que no inicialicen referencias constantes,
-            tener referencias circulares en una jerarquías de clases, etc.
+            definir una estructura de clases con referencias circulares, etc.
             </p>
             <p>
             Y lo más importante, cada año se incorporan y se revisan esas validaciones de acuerdo a los estándares 
-            de los trabajos de los estudiantes que practican sobre el lenguaje.
+            de los trabajos prácticos que realizan los estudiantes. Sí, el código escrito retroalimenta al lenguaje.
             </p>
             <br>
             <div class="row text-center">
@@ -278,9 +278,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     </figure>
                 </div>
             </div>
-            <hr>
-            Para configurar otros valores, podés hacerlo desde
-            Ventana > Preferencias > Etiquetas de Tareas (Task tags) y agregar o modificar los tags existentes.
+            <br>
+            Para configurar que otras palabras clave aparezcan en la solapa Tasks, activás el menú
+            Ventana > Preferencias > Etiquetas de Tareas (Task tags) y agregás o modificás las etiquetas existentes.
             <br><br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
@@ -296,8 +296,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
-            Detectar los errores es el primer paso, Wollok trae soluciones
-            más comunes ante problemas frecuentes. Para activarlo, basta con ubicarse en la parte subrayada en rojo
+            Detectar los errores es el primer paso, Wollok permite aplicar soluciones
+            predefinidas a problemas frecuentes. Para activarlo, basta con ubicarse en la parte subrayada en rojo
             dentro del código y presionar <b>Ctrl + 1</b>, o bien dejar que se active el menú contextual. Entonces se
             habilita una serie de opciones (<i>quick fixes</i>) que permiten resolver ese conflicto.
             <br>
@@ -306,12 +306,13 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/quickFixes.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Desde un test podemos crear un wko, o una clase,
-                        e inclusive agregarle métodos. </figcaption>
+                        <figcaption class="figure-caption"><br>En el ejemplo vemos cómo desde un test podemos crear un wko, o una clase,
+                        y agregarle métodos nuevos. 
+                        <br>
+                        Esto podés hacerlo desde cualquier definición (wko, clase, etc.) </figcaption>
                     </figure>
                 </div>
             </div>
-            <br>
             <br>
             Crear una clase, un wko, agregar métodos, referencias (locales, de instancia, parámetros), eliminar
             construcciones redundantes, corregir llamadas a constructores, son solo alguna de las posibilidades
@@ -355,7 +356,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/consola.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. En la imagen se ve 
+                        <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. 
+                        <br>
+                        En la imagen se ve 
                         que la consola nos avisa si el contexto de ejecución está sincronizado con la última versión 
                         del archivo. </figcaption>
                     </figure>
@@ -390,7 +393,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <img src="/images/tour/replConsoleEditor.gif" class="img-fluid z-depth-1">
             </div>
             <br>
-            <br><br>
             Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
             los cambios. En la barra de herramientas a la derecha te dice si la consola está 
             sincronizada.
@@ -422,7 +424,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             La consola interactiva es útil para dar los primeros pasos, pero cuando necesitamos
             poder automatizar nuestras pruebas, el Test Runner de Wollok es la herramienta más
-            adecuada para poder validar el software que construís.
+            adecuada para poder validar el software que construimos.
             <br>
             <br>
             <div class="row text-center">
@@ -430,9 +432,11 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                         <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests, vemos cómo se puede filtrar solo errores y fallas,
-                            cómo se visualizan los errores y podemos navegar directamente
-                            al código donde se originó el error, y cómo la ejecución de 
+                            de tests: vemos que se puede filtrar solo errores y fallas,
+                            <br>
+                            que podemos navegar directamente al código donde se originó el error, 
+                            <br> 
+                            y cómo la ejecución de 
                             los tests es un proceso iterativo e incremental. </figcaption>
                     </figure>
                 </div>
@@ -464,7 +468,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <div class="tab-pane fade" id="diagramas" role="tabpanel">
             <br>
             Wollok trae también herramientas para comunicar el diseño, como el diagrama
-            estático que está totalmente integrado con el editor. A medida que vayamos 
+            estático que está totalmente integrado con el editor. A medida que vamos 
             escribiendo el diagrama estático se regenera y se guarda junto con el proyecto,
             y además podemos configurar qué variables, métodos y clases mostrar.
             <br>
