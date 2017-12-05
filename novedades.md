@@ -17,9 +17,7 @@ icon: 'podcast'
 2017 ha sido un año de madurez y de salir al mundo:
 
 * en julio salió el nuevo release, llamado **Wollok Freire** en honor al gran educador Paulo Freire. [Te invitamos a conocer sus novedades](/old-pages/news-freire/index.html)
-
-* organizamos más de 5 eventos abiertos a la comunidad (a veces con el formato de reunión, otras con la idea de tener una hackaton). De allí surgieron numerosas inquietudes y la conformación de un hermoso equipo de trabajo.
-
+* organizamos más de diez eventos abiertos a la comunidad (a veces con el formato de reunión, otras con la idea de tener una hackaton). De allí surgieron numerosas inquietudes y la conformación de un hermoso equipo de trabajo.
 * y también mostramos Wollok en importantes conferencias y eventos para que la comunidad educativa y el mercado laboral nos conozcan. 
 
 <br>
