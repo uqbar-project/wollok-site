@@ -8,15 +8,22 @@
     <script src="/mdb/js/popper.min.js"></script>
     <script src="/mdb/js/bootstrap.min.js"></script>
     <script src="/mdb/js/mdb.min.js"></script>
+    <script src="/javascripts/wollok.js"></script>
       
     {% include en/sidebar.html %}
 
     {% include en/forkme.html %}
 
-    <div class="content container">
-      {% include en/language.html %}
-      {{ content | toc_generate }}
-    </div>
+    <!-- Main -->
+    <main class="mt-5">
+        <div class="container">
+            <div class="row" style="padding-top: 2rem;">
+              {% include en/language.html %}
+              {{ content | toc_generate }}
+            </div>
+        </div>
+      </main>
+      <!-- /.Main -->
 
   </body>
 </html>

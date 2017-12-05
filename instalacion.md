@@ -120,30 +120,30 @@ icon: 'cloud-download'
 						<br>
 						<br>
 						Aceptamos la acción, reiniciamos el entorno y ahora sí tendremos la última versión de Wollok.</p>
-					<hr>
-					<h4 class="card-title" id="actualizar-desde-eclipse">Instalación desde el Update Site</h4>
-					<p>
-					Esta opción es para aquellos usuarios avanzados que ya poseen una instalación de Eclipse y desean agregar 
-					la posibilidad de trabajar con Wollok (<b>no es necesario hacerlo si descargaste el entorno Wollok comprimido</b>).
-							
-					El Update Site requiere instalarse en una instalación de JDT de Eclipse (o sea que tenga Java). Para hacer eso agregar como Software Update Site:
-					
-					<ul>
-						<li>
-							<a href="http://update.uqbar.org/wollok/stable">http://update.uqbar.org/wollok/stable</a> para acceder a la última versión estable. Esta es la opción <b>recomendada</b>.
-						</li>
-						<li>
-							<a href="http://update.uqbar.org/wollok/dev">http://update.uqbar.org/wollok/dev</a> si querés tener los últimos cambios en proceso (pueden aparecer errores hasta que la versión se estabilice)
-						</li>
-					</ul>|
-		
-					<img src="/images/screencasts/Wollok-UpdateSite.gif" width="100%"/>
-							
-					</p>
+						<hr>
+						<h4 class="card-title" id="actualizar-desde-eclipse">Instalación desde el Update Site</h4>
+						<p>
+						Esta opción es para aquellos usuarios avanzados que ya poseen una instalación de Eclipse y desean agregar 
+						la posibilidad de trabajar con Wollok (<b>no es necesario hacerlo si descargaste el entorno Wollok comprimido</b>).
+								
+						El Update Site requiere instalarse en una instalación de JDT de Eclipse (o sea que tenga Java). Para hacer eso agregar como Software Update Site:
+						
+						<ul>
+							<li>
+								<a href="http://update.uqbar.org/wollok/stable">http://update.uqbar.org/wollok/stable</a> para acceder a la última versión estable. Esta es la opción <b>recomendada</b>.
+							</li>
+							<li>
+								<a href="http://update.uqbar.org/wollok/dev">http://update.uqbar.org/wollok/dev</a> si querés tener los últimos cambios en proceso (pueden aparecer errores hasta que la versión se estabilice)
+							</li>
+						</ul>|
+			
+						<img src="/images/screencasts/Wollok-UpdateSite.gif" width="100%"/>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingThree">
@@ -185,7 +185,7 @@ icon: 'cloud-download'
 					el problema puede darse porque 
 					
 					<ul>
-						<li>estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">seguí estos pasos.</a>..</li>
+						<li>estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">seguí estos pasos</a>.</li>
 						<li>utilizaste la aplicación <i>"Java Updates"</i> en lugar de descargarlo de la página del JDK, como está documentado <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13">en este link</a>. 
 						En ese caso la solución es desinstalar la JDK actual, instalar la JDK según se sugiere en esta página y levantar el Wollok normalmente.</li>
 					</ul>
