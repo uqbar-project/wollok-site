@@ -16,7 +16,7 @@ icon: 'podcast'
 
 2017 has been a special year: we brought Wollok Project to all the world:
 
-* in july, a new release was published: **Wollok Freire**, a tribute to this great educator. [Meet what's new!](/old-pages/news-freire/index.html)
+* in july, a new release was published: **Wollok Freire**, a tribute to this great educator. [Meet what's new!](/en/old-pages/news-freire/index.html)
 * more than ten open meetings and hackatons organized, so we are right now a wonderful work team.
 * and we attended many conferences and events to let Wollok be known 
 

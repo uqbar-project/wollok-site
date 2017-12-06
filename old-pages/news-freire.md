@@ -277,4 +277,12 @@ Esto habilita a que cualquier proyecto tuyo tenga bibliotecas .jar y que en la c
 <br>
 </div>
 
-Podés ver [aquí](https://github.com/uqbar-project/wollok/milestone/11?closed=1) la lista de issues resueltos para este release. 
+Podés ver la lista de issues resueltos de cada release de 1.6:
+
+* [1.6.0](https://github.com/uqbar-project/wollok/milestone/11?closed=1)
+
+* [1.6.1](https://github.com/uqbar-project/wollok/milestone/15?closed=1)
+
+* [1.6.2](https://github.com/uqbar-project/wollok/milestone/16?closed=1)
+
+* [1.6.3](https://github.com/uqbar-project/wollok/milestone/18?closed=1) 
