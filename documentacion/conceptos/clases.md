@@ -14,6 +14,7 @@ layout: none
         * [Constructor por defecto](#constructor-por-defecto)
         * [Múltiples constructores](#multiples-constructores)
         * [Constructor delegation](#constructor-delegation)
+        * [Herencia de constructores](#herencia-de-constructores)
         * [Inicialización de variables en los constructores](#incializacion-de-variables-en-los-constructores)
     * [Herencia de objetos](#herencia-de-objetos)
 * [Polimorfismo con clases](#polimorfismo-con-clases)  

@@ -11,69 +11,70 @@
     {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item{% if page.url == '/' %} active{% endif %}">
-            <a class="nav-link" href="/">
+          <li class="nav-item{% if page.url == '/en/' %} active{% endif %}">
+            <a class="nav-link" href="/en/">
               <i class="fa fa-home" aria-hidden="true"></i>
-              {% if page.url == '/' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == '/en/' %}<span class="sr-only">(current)</span>{% endif %}
               Home
             </a>
           </li>
-          <li class="nav-item{% if location == '/en/download' %} active{% endif %}">
+          <li class="nav-item{% if page.url == '/en/download/' %} active{% endif %}">
             <a class="nav-link" href="/en/download/">
               <i class="fa fa-cloud-download" aria-hidden="true"></i>
-              {% if location == '/en/download' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == '/en/download/' %}<span class="sr-only">(current)</span>{% endif %}
               Download
             </a>
           </li>
-          <li class="nav-item{% if location == 'tour' %} active{% endif %}">
+          <li class="nav-item{% if page.url == '/en/tour/' %} active{% endif %}">
             <a class="nav-link" href="/en/tour/">
               <i class="fa fa-bus" aria-hidden="true"></i>
-              {% if location == 'en/tour' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == '/en/tour/' %}<span class="sr-only">(current)</span>{% endif %}
               Tour
             </a>
           </li> 
-          <li class="nav-item{% if location == 'documentation/en/concepts' %} active{% endif %}">
+          <li class="nav-item{% if page.title == 'documentation' %} active{% endif %}">
               <!-- Dropdown -->
               <li class="nav-item btn-group">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                      aria-expanded="false">
                       <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Documentation</a>
                   <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="wollokNavLink dropdown-item" href="/documentation/en/concepts">
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/concepts">
                       <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                      {% if location == 'documentation/en/concepts' %}<span class="sr-only">(current)</span>{% endif %}
+                      {% if page.url == '/en/documentation/concepts' %}<span class="sr-only">(current)</span>{% endif %}
                       Concepts
                     </a>
-                    <a class="wollokNavLink dropdown-item" href="/documentation/en/notes">
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/notes">
                       <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      {% if location == 'documentation/en/notes' %}<span class="sr-only">(current)</span>{% endif %}
+                      {% if page.url == '/en/documentation/notes' %}<span class="sr-only">(current)</span>{% endif %}
                       Notes
                     </a>
-                    <a class="wollokNavLink dropdown-item" href="/documentacion/wollokDoc">
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/wollokDoc">
                       <i class="fa fa-book" aria-hidden="true"></i>
-                      {% if location == 'documentacion/wollokDoc' %}<span class="sr-only">(current)</span>{% endif %}
+                      {% if page.url == '/en/documentation/wollokDoc' %}<span class="sr-only">(current)</span>{% endif %}
                       Complete Language Reference
                     </a>
                   </div>
               </li>
           </li>
-          <li class="nav-item{% if location == 'ejemplos' %} active{% endif %}">
+          <li class="nav-item{% if page.url == '/en/examples/' %} active{% endif %}">
             <a class="nav-link" href="/en/examples/">
               <i class="fa fa-github" aria-hidden="true"></i>
-              {% if location == 'en/examples' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == 'en/examples/' %}<span class="sr-only">(current)</span>{% endif %}
               Examples
             </a>
           </li>
-          <li class="nav-item{% if location == '/en/community' %} active{% endif %}">
+          <li class="nav-item{% if page.url == '/en/community/' %} active{% endif %}">
             <a class="nav-link" href="/en/community/">
               <i class="fa fa-group" aria-hidden="true"></i>
-              {% if location == '/en/community' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == '/en/community/' %}<span class="sr-only">(current)</span>{% endif %}
               Community
             </a>
           </li>
-          <li class="nav-item{% if location == '/en/news' %} active{% endif %}">
+          <li class="nav-item{% if page.url == '/en/news/' %} active{% endif %}">
             <a class="nav-link" href="/en/news/">
               <i class="fa fa-podcast" aria-hidden="true"></i>
-              {% if location == '/en/news' %}<span class="sr-only">(current)</span>{% endif %}
+              {% if page.url == '/en/news/' %}<span class="sr-only">(current)</span>{% endif %}
               News
             </a>
           </li> 
