@@ -128,8 +128,8 @@ class Ave {
 
 class AveEficiente inherits Ave {
 
-    override method energiaGain(comida) {
-        super(comida) / 2
+    override method energiaObtenida(comida) {
+        return super(comida) / 2
     }
 }
 ```
