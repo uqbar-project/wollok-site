@@ -4,22 +4,22 @@ layout: none
 
 ## Index ##
 
-1. [Classes](#classes)  
-    1. [Inheritance](#inheritance)
-    1. [Abstract Methods and Classes](#abstract-methods-and-classes)  
-    1. [Overriding and Super](#overriding-and-super)
-    1. [Constructors](#constructors)  
-        1. [Simple Constructor](#simple-constructor) 
-        1. [Default Constructor](#default-constructor) 
-        1. [Multiple Constructor](#multiple-constructor) 
-        1. [Constructor Delegation](#constructor-delegation) 
-        1. [Constructor Inheritance](#constructor-inheritance) 
-        1. [Constants Initialisation in Constructors](#constants-initialisation-in-constructors) 
-    1. [Object Inheritance](#objects-inheritance)  
-1. [Polymorphism - Part II: now with Classes](#polymorphism---part-ii)
-1. [Modularization](#modularization)  
-    1. [Packages](#packages)  
-    1. [Imports and Namespaces](#imports-and-namespaces)  
+1. <a href="#classes" class="wollokLink">Classes</a>  
+    1. <a href="#inheritance" class="wollokLink">Inheritance</a>
+    1. <a href="#abstract-methods-and-classes" class="wollokLink">Abstract Methods and Classes</a>
+    1. <a href="#overriding-and-super" class="wollokLink">Overriding and Super</a>
+    1. <a href="#constructors" class="wollokLink">Constructors</a>
+        1. <a href="#simple-constructor" class="wollokLink">Simple Constructor</a>
+        1. <a href="#default-constructor" class="wollokLink">Default Constructor</a>
+        1. <a href="#multiple-constructors" class="wollokLink">Multiple constructors</a>
+        1. <a href="#constructor-delegation" class="wollokLink">Constructor delegation</a>
+        1. <a href="#constructor-inheritance" class="wollokLink">Constructor inheritance</a>
+        1. <a href="#constants-initialisation-in-constructors" class="wollokLink">Constants Initialisation in Constructors</a>
+    1. <a href="#objects-inheritance" class="wollokLink">Object Inheritance</a>
+1. <a href="#polymorphism---part-ii" class="wollokLink">Polymorphism - Part II: now with Classes</a>
+1. <a href="#modularization" class="wollokLink">Modularization</a>
+    1. <a href="#packages" class="wollokLink">Packages</a>
+    1. <a href="#imports-and-namespaces" class="wollokLink">Imports and Namespaces</a>
 
 ___
 
@@ -200,7 +200,7 @@ That's why in both cases this works fine
 
 Once you specify one constructor then you are on your own, and there are no implicit constructors anymore.
 
-### Multiple Constructor ###
+### Multiple Constructors ###
 
 Now you can have as many constructors as you want. Just that you won't be able to define two constructors with the same number of arguments !
 

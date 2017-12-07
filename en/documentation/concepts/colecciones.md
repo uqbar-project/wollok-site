@@ -4,12 +4,11 @@ layout: none
 
 ## Quick index ##
 
-1. [Collections](#collections)  
-    1. [Sets](#sets)
-    1. [Dictionaries](#dictionaries)
-    1. [Closures](#closures)
-    1. [Closures and Collections](#closures-and-collections) 
-
+1. <a href="#collections" class="wollokLink">Collections</a>
+    1. <a href="#sets" class="wollokLink">Sets</a>
+    1. <a href="#dictionaries" class="wollokLink">Dictionaries</a>
+    1. <a href="#closures" class="wollokLink">Closures</a>
+    1. <a href="#closures-and-collections" class="wollokLink">Closures and Collections</a>
 
 <hr>
 

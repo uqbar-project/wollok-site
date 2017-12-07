@@ -4,18 +4,18 @@ layout: none
 
 ## Index ##
 
-1. [Advanced Features](#advanced-features)
-    1. [Mixins](#mixins)
-    1. [WollokDocs](#wollokdocs)  
-    1. [Exception Handling Mechanism](#exception-handling-mechanism)  
-        1. [Throw](#throw)
-        1. [Try-Catch](#try-catch) 
-        1. [Then Always](#then-always) 
-        1. [Multiple Catchs](#multiple-catchs) 
-        1. [Default Catch](#default-catch) 
-    1. [Operators Overloading](#operators-overloading)  
-    1. [Identity vs Equality](#identity-vs-equality)
-    1. [Type System](#type-system)
+1. Advanced Features
+    1. <a href="#mixins" class="wollokLink">Mixins</a>
+    1. <a href="#wollokdocs" class="wollokLink">Wollokdocs</a>  
+    1. <a href="#exception-handling-mechanism" class="wollokLink">Exception handling mechanism</a>
+        1. <a href="#throw" class="wollokLink">Throw</a>
+        1. <a href="#try-catch" class="wollokLink">Try Catch</a> 
+        1. <a href="#then-always" class="wollokLink">Then Always</a> 
+        1. <a href="#multiple-catchs" class="Multiple catchs">Throw</a> 
+        1. <a href="#default-catch" class="wollokLink">Default catch</a> 
+    1. <a href="#operators-overloading" class="wollokLink">Operators overloading</a>  
+    1. <a href="#identity-vs-equality" class="wollokLink">Identity vs Equality</a>
+    1. <a href="#type-system" class="wollokLink">Type system</a>
 
 ___
 
@@ -685,7 +685,7 @@ Here method m1() always throw a new exception instance of MyException.
 Notices that you cannot throw any object. They must be instances of a **wollok.lang.Exception* subclass.
 
 
-### Try-Catch ###
+### Try Catch ###
 
 Here is a sample code to catch an exception:
 
@@ -738,7 +738,7 @@ then always
 }
 ```
 
-### Multiple Catch's ###
+### Multiple Catchs ###
 
 A try block can have more than one catch, in case you need to handle different types of exception in different ways:
 

@@ -4,17 +4,19 @@ layout: none
 
 ## Index
 
-1. [Wollok Files](#wollok-files)
-1. [Wollok Programs](#wollok-programs)
-1. [References: Variables and Constants](#references-variables-and-constants)
-1. [Comments](#comments)
-1. [Basic Objects](#basic-objects)  
-    1. [Numbers](#numbers)
-    1. [Booleans](#booleans)
-    1. [Strings](#strings)
-    1. [Dates](#dates)
-    1. [Equality](#equality-expressions)
-    1. [Comparisons](#comparing-expressions)
+* Language elements
+    * <a href="#wollok-files" class="wollokLink">Wollok Files</a>
+    * <a href="#wollok-programs" class="wollokLink">Wollok Programs</a>
+    * <a href="#references-variables-and-constants" class="wollokLink">References: Variables and Constants</a>
+    * <a href="#comments" class="wollokLink">Comments</a>
+* Basic objects
+    * <a href="#numbers" class="wollokLink">Numbers</a>
+    * <a href="#booleans" class="wollokLink">Booleans</a>
+    * <a href="#strings" class="wollokLink">Strings</a>
+    * <a href="#dates" class="wollokLink">Dates</a>
+* Object comparison
+    * <a href="#equality-expressions" class="wollokLink">Equality expressions</a>
+    * <a href="#comparing-expressions" class="wollokLink">Comparing expressions</a>
 
 ___
 

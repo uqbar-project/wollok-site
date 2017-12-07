@@ -4,15 +4,17 @@ layout: none
 
 ## Index ##
 
-1. [User Objects](#user-objects)  
-    1. [Named Objects (WKO: Well-Known Objects)](#named-objects-aka-well-known-objects-or-just-wkos)
-    1. [Object Literals](#object-literals)
-    1. [Methods](#methods) 
-    1. [Instance Variables](#instance-variables)  
-1. [Messages](#messages)  
-    1. [Self](#self)
-1. [Polymorphism - Part I: Just Objects](#polymorphism---part-i-just-objects)
-1. [If](#if-expression)
+* <a href="#user-objects" class="wollokLink">User objects</a>
+    * <a href="#named-objects-aka-well-known-objects-or-just-wkos" class="wollokLink">Named Objects (WKO: Well-Known Objects)</a>
+    * <a href="#object-literals" class="wollokLink">Object Literals</a>
+* Object definition in Wollok
+    * <a href="#methods" class="wollokLink">Methods</a>
+    * <a href="#instance-variables" class="wollokLink">Instance variables</a>
+* Messages
+    * <a href="#messages" class="wollokLink">Messages</a>
+    * <a href="#self" class="wollokLink">Self</a>
+    * <a href="#polymorphism---part-i-just-objects" class="wollokLink">Polymorphism - Part I: Just Objects</a>
+    * <a href="#if-expression" class="wollokLink">If</a>
 
 ___
 

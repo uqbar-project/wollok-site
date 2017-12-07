@@ -4,6 +4,22 @@ layout: none
 
 # Wollok Game
 
+## Index
+
+1. <a href="#the-game" class="wollokLink">The game</a>
+1. <a href="#the-board" class="wollokLink">The board</a>
+1. <a href="#positions" class="wollokLink">Positions</a>
+	1. <a href="#drawing-objects" class="wollokLink">Drawing objects</a>
+	1. <a href="#moving-objects" class="wollokLink">Moving objects</a>
+1. <a href="#the-character" class="wollokLink">The character</a>
+1. <a href="#visuals" class="wollokLink">Visuals</a>
+1. <a href="#an-interactive-game" class="wollokLink">An interactive game</a>
+	1. <a href="#collisions" class="wollokLink">Collisions</a>
+
+
+____
+
+
 ## Objectives and Use
 
 Wollok-Game allows you to create games, building a board where you put different visual characters (objects). 
@@ -109,7 +125,7 @@ Positions are **mutable** properties, so its components _(x, y)_ can change in t
 
 ![Moviendo los objetos](https://image.prntscr.com/image/osdht-GhRJKY9wsLGhWZgA.png)
 
-##### The character
+## The character
 Wollok Game allows you to define a _main character_, movable with arrow keys of the keyboard. You just set **the character** of the game before it starts.
 
 ```js
@@ -121,7 +137,7 @@ Wollok Game allows you to define a _main character_, movable with arrow keys of 
 ![wollok-character](https://user-images.githubusercontent.com/4098184/32724281-6a76e6be-c84f-11e7-849d-3e8ac90a4742.gif)
 
 
-#### Look who's talking!
+### Look who's talking!
 
 **Game objects can talk, too**, if you send a message `game.say(visualObject, textToSay)`:
 ```js
