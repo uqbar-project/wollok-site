@@ -11,7 +11,7 @@ icon: 'bus'
     <br>
 </div>
 
-A continuación te vamos a contar cuáles son las principales herramientas con las que cuenta el entorno integrado de Wollok.
+A continuación te vamos a contar cuáles son las principales herramientas con las que cuenta el entorno integrado de Wollok. También tenés [este tutorial paso a paso que te ayudará a conocer las herramientas](https://docs.google.com/document/d/1LGJIRgLH_mRKXCYF4ztzgeNL0cjm0fD0BqjiAR84emY/edit#)
 
 <!-- Nav tabs -->
 <div class="container">
@@ -45,38 +45,31 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <p>
             El editor de Wollok ofrece desde ya coloreado de sintaxis, pero también viene con capacidades de autocompletado.
-            
             <br>
-
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor1.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Por ejemplo, podemos crear a pepita, un ave que tiene energía y que sabe volar. Activamos el autocompletado
-                                mediante las teclas <b>Ctrl + Barra</b> que habilita el autocomplete de los elementos sintácticos que tiene Wollok.</figcaption>
+                        <figcaption class="figure-caption"><br>Por ejemplo, podemos crear a pepita, un ave que tiene energía y que sabe volar. Activamos el autocompletado de los elementos sintácticos de Wollok 
+                                mediante las teclas <b>Ctrl + Barra</b>.</figcaption>
                     </figure>
                 </div>
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                     <img src="/images/tour/editor2.gif" class="img-fluid z-depth-1" alt="Responsive image">
                         <figcaption class="figure-caption"><br>
-                        También hay construcciones más interesantes, que nos permiten crear una estructura de control de selección<i>(if)</i>  o una clase Ave
+                        También con las teclas <b>Ctrl + Barra</b> podemos activar <i>autocompletes</i> más elaborados, como las estructuras de selección<i>(if)</i> o la creación de una clase
                         </figcaption>
                     </figure>
                 </div>
             </div>
-
             <br>
-
-            Aquí utilizamos asistentes de contenido un tanto más elaborados. Por eso es conveniente probar qué sugerencias
-            tenemos, por ejemplo, para enviar mensajes a un objeto:
+            Aquí utilizamos asistentes de contenido más específicos para, por ejemplo, saber qué mensajes enviar a un objeto:
             <br>
             <br>
-            
             <div class="container text-center">
                 <img src="/images/tour/editor3.gif" class="img-fluid z-depth-1"/>
             </div>
-                
             <br>
             <br>
             Familiarizarse con el editor es fundamental para sentirnos cómodos en el ambiente de trabajo. Por eso te queremos
@@ -84,7 +77,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </p>
             <hr>
             <h3>Herramientas para buscar...</h3>
-
             <div class="row">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
@@ -116,12 +108,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <h3>
                     Resumen de shortcuts útiles
                 </h3>
-                
                 <div class="card">
                     <div class="card-body">
                         <!--Table-->
                         <table class="table table-striped">
-                
                             <!--Table head-->
                             <thead class="mdb-color lighten-4">
                                 <tr>
@@ -130,7 +120,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                                 </tr>
                             </thead>
                             <!--Table head-->
-                
                             <!--Table body-->
                             <tbody>
                                 <tr>
@@ -179,7 +168,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + S</td>
-                                    <td>Guarda todos los archivos</td>
+                                    <td>Guarda todos los archivos modificados</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + M</td>
@@ -187,11 +176,11 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift +/-</td>
-                                    <td>Manejo de zoom de la ventana (Agranda o achica el font).</td>
+                                    <td>Manejo de zoom de la ventana (Agranda o achica el font)</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + PageDown / PageUp</td>
-                                    <td>Avanza / Retrocede un tab en los archivos abiertos dentro del Editor.</td>
+                                    <td>Avanza / Retrocede un tab en los archivos abiertos dentro del Editor</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + L</td>
@@ -201,15 +190,11 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                             <!--Table body-->
                         </table>
                         <!--Table-->
-                
                     </div>
                 </div>
             </div>
-
         </div>
-
         <!--/.Panel 1-->
-
         <!-- *****************************  VALIDATORS ****************************************-->
         <div class="tab-pane fade" id="validador" role="tabpanel">
             <br>
@@ -218,7 +203,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             con mayor robustez. En Wollok este rol lo cumple el validador que está integrado totalmente con el editor.
             </p>
             <p>
-            Por supuesto que detecta construcciones erróneas (constructores en objetos o tests, referencias inválidas, 
+            Detecta construcciones erróneas (constructores en objetos o tests, referencias inválidas, 
             envíos de mensajes incorrectos, entre otros), también chequea el uso o inicialización de variables y 
             constantes como la mayoría de los entornos modernos. Pero Wollok lleva las validaciones a un nivel
             extra: evita malas prácticas como las construcciones "if (expresion) return true else false", 
@@ -226,8 +211,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             definir una estructura de clases con referencias circulares, etc.
             </p>
             <p>
-            Y lo más importante, cada año se incorporan y se revisan esas validaciones de acuerdo a los estándares 
-            de los trabajos prácticos que realizan los estudiantes. Sí, el código escrito retroalimenta al lenguaje.
+            Y lo más importante, cada año se incorporan y se revisan esas validaciones de acuerdo a los  
+            trabajos prácticos que realizan los estudiantes. Sí, el código escrito retroalimenta al lenguaje.
             </p>
             <br>
             <div class="row text-center">
@@ -263,10 +248,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             Tareas pendientes en el IDE 
             </h3>
             <p>
-            Si en algún momento querés armar una solución "de compromiso" o que te parece que se puede mejorar, podés
-            escribir en el comentario las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Otras > 
-            buscamos Tareas) tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al 
-            código.
+            Si en algún momento escribís código y no quedás del todo conforme, o bien querés avanzar y pensás mejorarlo más
+            adelante, podés generar un recordatorio escribiendo un comentario con las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Otras > buscamos Tareas) tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al código.
             </p>
             <br>
             <div class="row text-center">
@@ -291,8 +274,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 </div>
             </div>
         </div>
-
-
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
@@ -309,7 +290,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                         <figcaption class="figure-caption"><br>En el ejemplo vemos cómo desde un test podemos crear un wko, o una clase,
                         y agregarle métodos nuevos. 
                         <br>
-                        Esto podés hacerlo desde cualquier definición (wko, clase, etc.) </figcaption>
+                        Esto podés hacerlo desde un WKO, clase o mixin.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -320,7 +302,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br> 
         </div>
-
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="formatter" role="tabpanel">
             <br>
@@ -348,7 +329,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br>
         </div>
-
         <!-- *****************************  CONSOLE ****************************************-->
         <div class="tab-pane fade" id="consola" role="tabpanel">
             <br>
@@ -418,7 +398,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br><br>
         </div>
-
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
             <br>
@@ -432,7 +411,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                         <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests: vemos que se puede filtrar solo errores y fallas,
+                            de tests: vemos que se puede filtrar errores y fallas,
                             <br>
                             que podemos navegar directamente al código donde se originó el error, 
                             <br> 
@@ -463,14 +442,13 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 </div>
             </div>
         </div>  
-
         <!-- *****************************  DIAGRAMAS ****************************************-->
         <div class="tab-pane fade" id="diagramas" role="tabpanel">
             <br>
             Wollok trae también herramientas para comunicar el diseño, como el diagrama
             estático que está totalmente integrado con el editor. A medida que vamos 
-            escribiendo el diagrama estático se regenera y se guarda junto con el proyecto,
-            y además podemos configurar qué variables, métodos y clases mostrar.
+            escribiendo el diagrama estático se regenera y se guarda junto con el proyecto.
+            Podemos configurar qué variables, métodos y elementos (WKO, clases, mixins) mostrar.
             <br>
             <br>
             <div class="row text-center">

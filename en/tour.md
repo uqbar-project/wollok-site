@@ -11,8 +11,7 @@ icon: 'bus'
     <br>
 </div>
 
-
-A continuación te vamos a contar cuáles son las principales herramientas con las que cuenta el entorno integrado de Wollok.
+These are the main tools of Wollok Integrated Development Environment.
 
 <!-- Nav tabs -->
 <div class="container">
@@ -21,7 +20,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <a class="nav-link active wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-edit"></i> Editor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link wollokNavLink" data-toggle="tab" href="#validador" role="tab"><i class="fa fa-check-circle"></i> Validador</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#validador" role="tab"><i class="fa fa-check-circle"></i> Validator</a>
         </li>
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#quickFix" role="tab"><i class="fa fa-medkit"></i> Quick Fix</a>
@@ -30,13 +29,13 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#formatter" role="tab"><i class="fa fa-indent"></i> Formatter</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link wollokNavLink" data-toggle="tab" href="#consola" role="tab"><i class="fa fa-toggle-right"></i> Consola</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#consola" role="tab"><i class="fa fa-toggle-right"></i> Console</a>
         </li>
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#testRunner" role="tab"><i class="fa fa-gear"></i> Test runner</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link wollokNavLink" data-toggle="tab" href="#diagramas" role="tab"><i class="fa fa-sitemap"></i> Diagramas</a>
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#diagramas" role="tab"><i class="fa fa-sitemap"></i> Diagrams</a>
         </li>
     </ul>
     <!-- Tab panels -->
@@ -45,32 +44,26 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <div class="tab-pane fade in show active" id="editor" role="tabpanel">
             <br>
             <p>
-            El editor de Wollok ofrece desde ya coloreado de sintaxis, pero también viene con capacidades de autocompletado.
-            
+            Wollok editor comes not only with syntax colouring but also with autocompletion. 
             <br>
-
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor1.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Por ejemplo, podemos crear a pepita, un ave que tiene energía y que sabe volar. Activamos el autocompletado
-                                mediante las teclas <b>Ctrl + Barra</b> que habilita el autocomplete de los elementos sintácticos que tiene Wollok.</figcaption>
+                        <figcaption class="figure-caption"><br>We can create 'pepita', a bird with energy and fly capabilities. We activate 
+                            syntactic elements autocomplete by pressing <b>Ctrl + Space</b> keys.</figcaption>
                     </figure>
                 </div>
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                     <img src="/images/tour/editor2.gif" class="img-fluid z-depth-1" alt="Responsive image">
                         <figcaption class="figure-caption"><br>
-                        También hay construcciones más interesantes, que nos permiten crear una estructura de control de selección<i>(if)</i>  o una clase Ave
-                        </figcaption>
+                        There are also more complex autocomplete actions, such as control structures<i>(if)</i> or class creation                     </figcaption>
                     </figure>
                 </div>
             </div>
-
             <br>
-
-            Aquí utilizamos asistentes de contenido un tanto más elaborados. Por eso es conveniente probar qué sugerencias
-            tenemos, por ejemplo, para enviar mensajes a un objeto:
+            Here we use autocomplete to send a message to a well-known object:
             <br>
             <br>
             
@@ -80,19 +73,19 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 
             <br>
             <br>
-            Familiarizarse con el editor es fundamental para sentirnos cómodos en el ambiente de trabajo. Por eso te queremos
-            contar algunos de los <i>shortcuts</i> que va a hacerte más feliz la estadía.
+            Getting used to editor is essential to feel comfortable in your everyday work. That's why we want to 
+            tell you most common <i>shortcuts</i> of Wollok's environment.
             </p>
             <hr>
-            <h3>Herramientas para buscar...</h3>
+            <h3>Search tools...</h3>
 
             <div class="row">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Ctrl + R: busca un recurso (archivo), filtrando por nombre o extensión. 
-                            <br> Ctrl + Shift + F3: busca cualquier objeto, clase o mixin creado por vos o que venga con
-                            la biblioteca de Wollok, como Date, Set o String.</figcaption>
+                        <figcaption class="figure-caption"><br> Ctrl + R: looks for a resource / file, filtering by name or extension. 
+                            <br> Ctrl + Shift + F3: looks for any object, class or mixin, including Wollok's library, such as
+                            Date, Set o String.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -101,21 +94,21 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor5.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ctrl + O permite buscar dentro de un archivo todo tipo de elementos: 
-                            definiciones de objetos, clases, variables o métodos.</figcaption>
+                        <figcaption class="figure-caption"><br>Ctrl + O looks inside a file all kind of definitions: 
+                            objects, classes, variables or methods.</figcaption>
                     </figure>
                 </div>
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor6.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Un popurri de uso de shortcuts para borrar, intercalar líneas o comentar/descomentarlas.</figcaption>
+                        <figcaption class="figure-caption"><br>Several uses of shortcuts: deleting or mvoing lines, add comments, etc.</figcaption>
                     </figure>
                 </div>                
             </div>
             <hr>
             <div class="container">
                 <h3>
-                    Resumen de shortcuts útiles
+                    Useful shortcuts guide
                 </h3>
                 
                 <div class="card">
@@ -126,8 +119,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                             <!--Table head-->
                             <thead class="mdb-color lighten-4">
                                 <tr>
-                                    <th><b>Teclas</b></th>
-                                    <th><b>¿Qué hacen?</b></th>
+                                    <th><b>Keys</b></th>
+                                    <th><b>What do they do</b></th>
                                 </tr>
                             </thead>
                             <!--Table head-->
@@ -135,68 +128,68 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                             <!--Table body-->
                             <tbody>
                                 <tr>
-                                    <td>Ctrl + Espacio</td>
-                                    <td>Autocompletado</td>
+                                    <td>Ctrl + Space</td>
+                                    <td>Autocomplete</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + 1</td>
-                                    <td>Ayuda contextual para resolver un problema (ver Quick Fixes)</td>
+                                    <td>Contextual help. Quick Fix.</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + F3</td>
-                                    <td>Busca un elemento (objeto, clase, etc.) dentro del ambiente</td>
+                                    <td>Looks for an element (object, class, etc.) in whole environment</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + O</td>
-                                    <td>Busca una definición dentro de un archivo</td>
+                                    <td>Looks for a definition inside a file</td>
                                 </tr>
                                 <tr>
                                     <td>F3</td>
-                                    <td>Va de una referencia a su definición</td>
+                                    <td>Goes from a reference to its definition</td>
                                 </tr>                                
                                 <tr>
-                                    <td>Alt + Flecha Arriba | Flecha Abajo</td>
-                                    <td>Mueve toda la línea hacia arriba o abajo</td>
+                                    <td>Alt + Arrow Up | Arrow Down</td>
+                                    <td>Moves the whole line up or down</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + D</td>
-                                    <td>Elimina una línea</td>
+                                    <td>Deletes current line</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + C</td>
-                                    <td>Comenta una línea</td>
+                                    <td>Adds a comment to current line</td>
                                 </tr>
                                 <tr>
                                     <td>Alt + Shift + R</td>
-                                    <td>Renombra una referencia</td>
+                                    <td>Renames a reference</td>
                                 </tr>
                                 <tr>
                                     <td>F2</td>
-                                    <td>Renombra un archivo</td>
+                                    <td>Renames a file</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + S</td>
-                                    <td>Guarda un archivo</td>
+                                    <td>Saves a file</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + S</td>
-                                    <td>Guarda todos los archivos</td>
+                                    <td>Saves all modified files</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + M</td>
-                                    <td>Maximiza la ventana activa</td>
+                                    <td>Maximizes current window</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift +/-</td>
-                                    <td>Manejo de zoom de la ventana (Agranda o achica el font).</td>
+                                    <td>Window Zoom in / out (font size increases / decreases)</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + PageDown / PageUp</td>
-                                    <td>Avanza / Retrocede un tab en los archivos abiertos dentro del Editor.</td>
+                                    <td>Goes next / previous files of editor</td>
                                 </tr>
                                 <tr>
                                     <td>Ctrl + Shift + L</td>
-                                    <td>Muestra la lista de shortcuts activos</td>
+                                    <td>Shows list of active shortcuts</td>
                                 </tr>
                             </tbody>
                             <!--Table body-->
@@ -215,73 +208,71 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <div class="tab-pane fade" id="validador" role="tabpanel">
             <br>
             <p>
-            La detección temprana de errores es una herramienta que va orientando al desarrollador a construir software
-            con mayor robustez. En Wollok este rol lo cumple el validador que está integrado totalmente con el editor.
+            Wollok's validator is fully integrated with editor. 
+            It has an early error detection that helps developers to build better and robust software. 
             </p>
             <p>
-            Por supuesto que detecta construcciones erróneas (constructores en objetos o tests, referencias inválidas, 
-            envíos de mensajes incorrectos, entre otros), también chequea el uso o inicialización de variables y 
-            constantes como la mayoría de los entornos modernos. Pero Wollok lleva las validaciones a un nivel
-            extra: evita malas prácticas como las construcciones "if (expresion) return true else false", 
-            redefinir métodos que solo llamen a super, definir constructores que no inicialicen referencias constantes,
-            definir una estructura de clases con referencias circulares, etc.
+            Invalid constructions (like constuctors in objects or tests, invalid references, missing methods, 
+            among others), and also variables and constants uses and initialization are some of this static checks.
+            But Wollok enforces good programming practices, avoiding "if (expression) return true else false" bad 
+            smell, overriding methods just to call super, define constructors without initializating constants 
+            references, define a cyclic hierarchy of classes, etc.
             </p>
             <p>
-            Y lo más importante, cada año se incorporan y se revisan esas validaciones de acuerdo a los estándares 
-            de los trabajos prácticos que realizan los estudiantes. Sí, el código escrito retroalimenta al lenguaje.
+            And most importantly, every year we review and add new validations according to the work of our
+            students, so written code gives feedback to the language. 
             </p>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/validator1.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Una muestra de cómo funciona el validador. Al posicionarnos
-                        con el mouse sobre la parte izquierda, se expande la descripción de la advertencia (en amarillo)
-                        o el error (en rojo). En la solapa Problemas tenemos un resumen de todos los <i>issues</i> de
-                        cada uno de los proyectos.</figcaption>
+                        <figcaption class="figure-caption"><br>This is how the validator works. Locating the mouse
+                        over left border, you can see warning and error messages. In Problems view we can see
+                        all projects issues.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
             <hr>
             <h3>
-            ¿Cómo visualizar la solapa Problemas?   
+            How to show Problems view?
             </h3>
             <p>
-            Para activarla, se debe ir al menú Ventana > Mostrar vista > Otras > y buscamos "Problemas". 
-            Allí se agrupan los diferentes tipos de problema (error, advertencia, información).
+            To activate it, go menu Window > Show View > Other... and search "Problems". There you will
+            see every kind of problem (error, warning, information).
             </p>
             <hr>
             <h3>
-            ¿Puedo ejecutar un programa con errores o advertencias?   
+            Can I execute a program if it has errors or warning?   
             </h3>
             <p>
-            La respuesta es sí: en el caso de las advertencias, se pasan por alto al ejecutar un programa, un test o 
-            la consola REPL. En el caso del error, te aparecerá un mensaje de confirmación, ya que el error puede ser
-            que impida la normal ejecución del software que creaste.
+            Short answer: yes, you can. In case of warnings, they may be just a bad smell indication or the
+            origin of a future problem. In case of an error, you have to confirm your execution, because this
+            error could lead to undesired behavior of your program, test or REPL console.
             </p>
             <hr>
             <h3>
-            Tareas pendientes en el IDE 
+            Pending tasks
             </h3>
             <p>
-            Si en algún momento querés armar una solución "de compromiso" o que te parece que se puede mejorar, podés
-            escribir en el comentario las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Otras > 
-            buscamos Tareas) tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al 
-            código.
+            If you would like to record reminders to follow up something later, add it to the Tasks view using
+            a comment with a TODO or FIXME keyword. When you open Tasks view (Window > Show view > Other ... and search for
+            Tasks), you'll have the full list of pending tasks. Double click on each element will lead you directly to the code. 
             </p>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/todo.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Escribimos en el código los tags TODO (pendiente) o
-                        FIXME (solucionar o mejorar) y aparecerá automáticamente en la vista Tareas.</figcaption>
+                        <figcaption class="figure-caption"><br> Writing down in code TODO and FIXME tags will add a task
+                         in Tasks View.</figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Para configurar que otras palabras clave aparezcan en la solapa Tasks, activás el menú
-            Ventana > Preferencias > Etiquetas de Tareas (Task tags) y agregás o modificás las etiquetas existentes.
+            If you want to configure new keywords for tasks view, go menu Window > Preferences > Task tags and add or 
+            update existing tags.
             <br><br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
@@ -297,27 +288,26 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
-            Detectar los errores es el primer paso, Wollok permite aplicar soluciones
-            predefinidas a problemas frecuentes. Para activarlo, basta con ubicarse en la parte subrayada en rojo
-            dentro del código y presionar <b>Ctrl + 1</b>, o bien dejar que se active el menú contextual. Entonces se
-            habilita una serie de opciones (<i>quick fixes</i>) que permiten resolver ese conflicto.
+            Error detection is our first step. Wollok has common solutions to frequent problems.
+            You just have to point your mouse over red line in code and press <b>Ctrl + 1</b>, or 
+            let the contextual menu appear. All feasible options to fix this conflict will be shown.
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/quickFixes.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>En el ejemplo vemos cómo desde un test podemos crear un wko, o una clase,
-                        y agregarle métodos nuevos. 
+                        <figcaption class="figure-caption"><br>In this example we create a wko / class from a test,
+                        and then we add new methods to it. 
                         <br>
-                        Esto podés hacerlo desde cualquier definición (wko, clase, etc.) </figcaption>
+                        This can be done from any WKO, class or mixin. </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Crear una clase, un wko, agregar métodos, referencias (locales, de instancia, parámetros), eliminar
-            construcciones redundantes, corregir llamadas a constructores, son solo alguna de las posibilidades
-            que tenés, que te permiten concentrarte en el diseño y automatizar tareas repetitivas de implementación.
+            Create a class, a WKO, add methods, local or instance references, parameters, delete redundant 
+            expressions, correct or adapt constructor calls, are only one of many possibilities you have,
+            to automate tedious implementation tasks and let you focus on design and modeling activities.
             <br>
             <br> 
         </div>
@@ -329,21 +319,20 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/formatter.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateo básico de una clase. </figcaption>
+                        <figcaption class="figure-caption"><br>Basic formatting of a class. </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Wollok tiene un formateador basado en su sintaxis que estiliza el código y le da un formato homogéneo,
-            algo necesario en un lenguaje educativo que propone proyectos donde se conforma un grupo de trabajo.
-            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format):
+            Wollok has a formatter based on its syntax, so code will be stylized and homogeneous, something
+            very useful while working in a programming team. You can use it by pressing <b>Ctrl + Shift + F</b> keys:
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/formatter2.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateando <i>closures</i> e if con o sin llaves.</figcaption>
+                        <figcaption class="figure-caption"><br>Formatting <i>closures</i> & if with and without braces.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -357,51 +346,47 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/consola.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. 
+                        <figcaption class="figure-caption"><br>Executing a .wlk file in REPL console. 
                         <br>
-                        En la imagen se ve 
-                        que la consola nos avisa si el contexto de ejecución está sincronizado con la última versión 
-                        del archivo. </figcaption>
+                        In image you can see console warns us if execution context is synchronized with last version
+                        of wlk file.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Una de las primeras herramientas para trabajar es la consola REPL (nombre que surge del acrónimo
-            <b>R</b>ead, <b>E</b>valuate, <b>P</b>rint, <b>L</b>oop), que permite la interacción inicial entre
-            el usuario y el intérprete Wollok. 
+            One of the first tools we use to test our definitions is REPL console. REPL stands for  
+            <b>R</b>ead, <b>E</b>valuate, <b>P</b>rint, <b>L</b>oop) acronym, so user can interact with Wollok interpreter
+            easily. 
             <br>
             <br>
-            Si bien tiene algunos alcances limitados (no posee por el momento opciones de autocompletado, y requiere
-            reiniciarse cada vez que hagamos un cambio en el archivo original), es una forma de comenzar a conocer
-            cómo responden los objetos ante el envío de un mensaje.
+            It has some limitations: it has no autocomplete options, and you must restart console every time you make a 
+            change in a file. Nevertheless it is a good start to know how objects respond to messages.
             <br>
             <br>
-            Para utilizarla, basta con hacer click derecho sobre un archivo .wlk y elegir la opción "Ejecutar en consola REPL".
-            También existe el botón "Play" en la barra de herramientas.
+            If you want to use it, right click over a .wlk file and choose "Run in REPL console" option. You can also
+            use "Play" button in toolbar.
             <br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
             </div>
             <br><br>
-            Podés enviar mensajes a objetos, crear referencias constantes o variables,
-            probar cómo funcionan los números, las fechas y otros objetos que vienen con Wollok, etc. Para ello escribís
-            la línea y al final presionás la tecla Enter. Con la flecha arriba te irán apareciendo
-            los mensajes que enviaste anteriormente. También podés pegar código del portapapeles, y los errores
-            se integran directamente con el editor.
+            You can send messages to any object, create constant or variable references, test how numbers, dates and
+            other Wollok library objects work, etc. You just have to write a line and press Enter. If you press Arrow Up
+            key you will get last line written, and clipboard facilities are also provided. All errors are directly linked
+            to editor.
             <br>
             <br>
             <div class="container text-center">
                 <img src="/images/tour/replConsoleEditor.gif" class="img-fluid z-depth-1">
             </div>
             <br>
-            Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
-            los cambios. En la barra de herramientas a la derecha te dice si la consola está 
-            sincronizada.
+            Reminder: every time you change a .wlk file, you must restart console to consider this updates. 
+            Console's toolbar shows synchronization status of .wlk file.
             <br>
             <hr>
-            <h4>Exportar una sesión a un test</h4>
-            Podemos exportar una sesión de nuestra consola a un test, mediante el botón específico
-            en la barra de herramientas como se muestra a continuación:
+            <h4>Exporting console session to a test</h4>
+            We can export a console session into a test file, by pressing a specific button in toolbar, as showed below:
             <br>
             <br>
             <div class="container text-center">
@@ -409,10 +394,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br>
             <hr>
-            <h4>Ejecutar una sesión sin un archivo asociado</h4>
+            <h4>Executing a session without a file</h4>
             <br>
-            Por último, tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
-            un archivo particular, mediante una opción específica en la barra:
+            Last, you can execute REPL console without selecting a file at all. Just press this button in toolbar
             <br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole2.png" class="img-fluid z-depth-1">
@@ -423,43 +407,41 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
             <br>
-            La consola interactiva es útil para dar los primeros pasos, pero cuando necesitamos
-            poder automatizar nuestras pruebas, el Test Runner de Wollok es la herramienta más
-            adecuada para poder validar el software que construimos.
+            Interactive console is useful at first beginning, but soon we discover that test
+            automation is a need. Wollok Test Runner is the more suitable tool to validate the software we build.
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests: vemos que se puede filtrar solo errores y fallas,
+                        <figcaption class="figure-caption"><br>Executing a test suite: 
+                            we can filter failures and errors,
                             <br>
-                            que podemos navegar directamente al código donde se originó el error, 
+                            stack trace leads to the code in editor,  
                             <br> 
-                            y cómo la ejecución de 
-                            los tests es un proceso iterativo e incremental. </figcaption>
+                            that tests execution is an iterative and incremental process.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Si querés conocer más acerca del testeo unitario de Wollok te recomendamos que leas
-             <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#">este apunte</a>. 
+            If you want to get deep into unit testing we recommend you to read 
+             <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#">this article</a> (in spanish). 
             <br>
             <hr>
-            <h4>Ejecutando todos los tests de un proyecto o directorio</h4>
-            Es posible ejecutar todos los tests de un proyecto, o bien los tests de un
-            directorio (si organizaste en una carpeta varios .wlk), para eso tenés la opción
-            desde el menú de opciones del navegador del proyecto (Package Explorer):
+            <h4>Executing all project or folder tests</h4>
+            You can execute all tests of a certain project, or all tests of .wtest files grouped in a folder, 
+            from contextual menu in Package Explorer:
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/runAllTests.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
-                        proyecto. Aquí vemos que corren además de los 3 tests del archivo
-                    example.wtest, también se ejecutan los del archivo test.wtest</figcaption>
+                        <figcaption class="figure-caption"><br>Executing all project tests: there are 5 tests,
+                        3 from example.wtest and 2 from test.wtest 
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -468,24 +450,24 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
         <!-- *****************************  DIAGRAMAS ****************************************-->
         <div class="tab-pane fade" id="diagramas" role="tabpanel">
             <br>
-            Wollok trae también herramientas para comunicar el diseño, como el diagrama
-            estático que está totalmente integrado con el editor. A medida que vamos 
-            escribiendo el diagrama estático se regenera y se guarda junto con el proyecto,
-            y además podemos configurar qué variables, métodos y clases mostrar.
+            Wollok has also design communication tools, like the static diagram, fully integrated with editor.
+            As soon as you write in editor, static diagram is updated and saved into the project.
+            We can configure which variables, methods and elements (WKO, classes, mixins) must appear.
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/staticDiagram.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Una pequeña demostración
-                        del diagrama estático de Wollok</figcaption>
+                        <figcaption class="figure-caption">
+                            <br>A small static diagram demo
+                        </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            Para conocer en detalle todas las funcionalidades te recomendamos que leas
-            <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">este apunte</a>.
+            If you want to know all static diagram features you can read
+            <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">this article</a> (in spanish).
             <br>
             <br>
         </div>  
