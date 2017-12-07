@@ -5,11 +5,11 @@ layout: none
 ## Indice rápido ##
 
 * Funcionalidades avanzadas
-    * [Mixins](#mixins)
-    * [Type system](#type-system)
-    * [Wollokdocs](#wollokdocs)
-    * [Mecanismo de excepciones](#mecanismo-de-excepciones)
-    * [Identidad vs. igualdad](#identidad-vs-igualdad)
+    * <a href="#mixins" class="wollokLink">Mixins</a>
+    * <a href="#type-system" class="wollokLink">Type system</a>
+    * <a href="#wollokdocs" class="wollokLink">Wollokdocs</a>
+    * <a href="#mecanismo-de-excepciones" class="wollokLink">Mecanismo de excepciones</a>
+    * <a href="#identidad-vs-igualdad" class="wollokLink">Identidad vs. igualdad</a>
 
 ___
 

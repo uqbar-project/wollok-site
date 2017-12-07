@@ -25,15 +25,15 @@ If you like to join us, <a href="/comunidad/index.html">stay tuned</a>!
 
 You can see <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=1">in this link</a> a brief resume of closed issues (100+) for this milestone. Let's see in plain english what's new:
 
-* [Test suite with fixtures](#test-suite-with-fixtures)
-* [Language enhancements](#language-enhancements)
-* [New Validations](#new-validations)
-* [Quick Fixes](#quick-fixes)
-* [Project organization](#project-organization)
-* [Static diagram enhancements](#static-diagram-enhancements)
-* [REPL Console enhancements](#repl-console-enhancements)
-* [Plugins changes](#plugins-changes)
-* [External Libraries Support](#external-libraries-support)
+* <a href="#test-suite-with-fixtures" class="wollokLink">Test suite with fixtures</a>
+* <a href="#language-enhancements" class="wollokLink">Language enhancements</a>
+* <a href="#new-validations" class="wollokLink">New Validations</a>
+* <a href="#quick-fixes" class="wollokLink">Quick Fixes</a>
+* <a href="#project-organization" class="wollokLink">Project organization</a>
+* <a href="#static-diagram-enhancements" class="wollokLink">Static diagram enhancements</a>
+* <a href="#repl-console-enhancements" class="wollokLink">REPL console enhancements</a>
+* <a href="#plugins-changes" class="wollokLink">Plugins changes</a>
+* <a href="#external-libraries-support" class="wollokLink">External libraries support</a>
 
 <hr>
 
@@ -137,7 +137,7 @@ User experience is better, as this demo shows:
 
 <div class="container">
     <div class="view overlay hm-white-slight">
-        <img src="/images/news-freire/quickFixs.gif" class="img-fluid z-depth-2"/>
+        <img src="/images/news-freire/quickFix.gif" class="img-fluid z-depth-2"/>
         <a>
             <div class="mask flex-center waves-effect waves-light hoverable">
         </div>
@@ -263,9 +263,6 @@ So you can configure your Running environment to use any .jar libraries.
 You can see the solved issues for 
 
 * [1.6.0 release](https://github.com/uqbar-project/wollok/milestone/11?closed=1)
-
 * [1.6.1 release](https://github.com/uqbar-project/wollok/milestone/15?closed=1)
-
 * [1.6.2 release](https://github.com/uqbar-project/wollok/milestone/16?closed=1)
-
 * [1.6.3 release](https://github.com/uqbar-project/wollok/milestone/18?closed=1)

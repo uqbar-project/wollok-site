@@ -4,17 +4,17 @@ layout: none
 
 ## Indice rápido ##
 
-* [Objetos definidos por el desarrollador](#user-objects)
-    * [WKO](#wko)
-    * [Objetos literales](#objetos-como-literales)
+* <a href="#user-objects" class="wollokLink">Objetos definidos por el desarrollador</a>
+    * <a href="#wko" class="wollokLink">WKO</a>
+    * <a href="#objetos-como-literales" class="wollokLink">Objetos literales</a>
 * Definición de un objeto Wollok
-    * [Métodos](#metodos)
-    * [Simple return method](#simple-return-method) 
-    * [Variables de instancia](#variables-de-instancia)
-    * [Mensajes](#mensajes)
-    * [Self](#self)
-    * [Polimorfismo con objetos](#polimorfismo-con-objetos)
-    * [If](#if)
+    * <a href="#metodos" class="wollokLink">Métodos</a>
+        * <a href="#simple-return-method" class="wollokLink">Simple return method</a> 
+    * <a href="#variables-de-instancia" class="wollokLink">Variables de instancia</a>
+    * <a href="#mensajes" class="wollokLink">Mensajes</a>
+    * <a href="#self" class="wollokLink">Self</a>
+    * <a href="#polimorfismo-con-objetos" class="wollokLink">Polimorfismo con objetos</a>
+    * <a href="#if" class="wollokLink">If</a>
 
 ___
 

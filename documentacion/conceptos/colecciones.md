@@ -4,11 +4,11 @@ layout: none
 
 ## Indice rápido ##
 
-* [Colecciones](#colecciones)
-    * [Conjuntos](#conjuntos)
-    * [Diccionarios](#diccionarios)
-    * [Closures](#closures)
-    * [Closures y colecciones](#closures-y-colecciones)
+* <a href="#colecciones" class="wollokLink">Colecciones</a>
+    * <a href="#conjuntos" class="wollokLink">Conjuntos</a>
+    * <a href="#diccionarios" class="wollokLink">Diccionarios</a>
+    * <a href="#closures" class="wollokLink">Closures</a>
+    * <a href="#closures-y-colecciones" class="wollokLink">Closures y colecciones</a>
 
 <hr>
 

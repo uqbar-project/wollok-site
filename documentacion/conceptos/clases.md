@@ -5,22 +5,22 @@ layout: none
 ## Indice rápido ##
 
 
-* [Clases](#clases)
-    * [Herencia](#herencia)
-    * [Métodos abstractos y clases](#metodos-abstractos-y-clases)
-    * [Redefinición y super](#redefinicion-y-super)
-    * [Constructores](#constructores)
-        * [Constructor simple](#constructor-simple)
-        * [Constructor por defecto](#constructor-por-defecto)
-        * [Múltiples constructores](#multiples-constructores)
-        * [Constructor delegation](#constructor-delegation)
-        * [Herencia de constructores](#herencia-de-constructores)
-        * [Inicialización de variables en los constructores](#incializacion-de-variables-en-los-constructores)
-    * [Herencia de objetos](#herencia-de-objetos)
-* [Polimorfismo con clases](#polimorfismo-con-clases)  
-* [Modularización](#modularizacion)
-    * [Packages](#packages)
-    * [Imports](#imports)
+* <a href="#clases" class="wollokLink">Clases</a>
+    * <a href="#herencia" class="wollokLink">Herencia</a>
+    * <a href="#metodos-abstractos-y-clases" class="wollokLink">Métodos abstractos y clases</a>
+    * <a href="#redefinicion-y-super" class="wollokLink">Redefinición y super</a>
+    * <a href="#constructores" class="wollokLink">Constructores</a>
+        * <a href="#constructor-simple" class="wollokLink">Constructor simple</a>
+        * <a href="#constructor-por-defecto" class="wollokLink">Constructor por defecto</a>
+        * <a href="#multiples-constructores" class="wollokLink">Múltiples constructores</a>
+        * <a href="#constructor-delegation" class="wollokLink">Constructor delegation</a>
+        * <a href="#herencia-de-constructores" class="wollokLink">Herencia de constructores</a>
+        * <a href="#inicializacion-de-variables-en-los-constructores" class="wollokLink">Inicialización de variables en los constructores</a>
+    * <a href="#herencia-de-objetos" class="wollokLink">Herencia de objetos</a>
+* <a href="#polimorfismo-con-clases" class="wollokLink">Polimorfismo con clases</a>
+* <a href="#modularizacion" class="wollokLink">Modularización</a>
+    * <a href="#packages" class="wollokLink">Packages</a>
+    * <a href="#imports" class="wollokLink">Imports</a>
 
 ___
 
@@ -346,7 +346,7 @@ new PelotaFutbol("azul", "Juan")    // correcto
 ```
 
 
-#### Inicialización de variables en los constructores ####
+#### Inicializacion de variables en los constructores ####
 
 Hemos visto que hay un tipo de referencia inmutable: los **const**.
 Al definir una clase, podemos esperar al momento de la construcción para asignar las referencias constantes. Entonces el objeto construye sus referencias inmutables en la instanciación y luego no las modifica más.

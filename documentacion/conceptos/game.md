@@ -4,6 +4,19 @@ layout: none
 
 # Wollok Game
 
+## Indice rápido ##
+
+* <a href="#el-juego" class="wollokLink">El juego</a>
+* <a href="#el-tablero" class="wollokLink">El tablero</a>
+* <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
+	* <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
+	* <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
+* <a href="#el-personaje" class="wollokLink">El personaje</a>
+* <a href="#visuales" class="wollokLink">Visuales</a>
+* <a href="#un-juego-interactivo" class="wollokLink">Un juego interactivo</a>
+	* <a href="#colisiones" class="wollokLink">Colisiones</a>
+
+___
 ## ¿Qué es y cómo se usa?
 
 Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
@@ -108,7 +121,7 @@ Eso nos permite poder **mover los objetos** en pantalla sin tener que cambiar el
 
 ![Moviendo los objetos](https://image.prntscr.com/image/osdht-GhRJKY9wsLGhWZgA.png)
 
-##### El personaje
+## El personaje
 Wollok Game te permite tener un _personaje principal_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo.
 
 ```js
@@ -128,7 +141,7 @@ Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `o
 ![Los objetos hablan](https://image.prntscr.com/image/m9aRcwxPQCK5cnFKy0YLwQ.png)
 
 
-## Visuales
+### Visuales
 
 ¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
 Para elegir la imagen de un determinado objeto es necesario:

@@ -26,15 +26,15 @@ En [este link](https://github.com/uqbar-project/wollok/milestone/18?closed=1) po
 
 Podés ver <a href="https://github.com/uqbar-project/wollok/milestone/11?closed=1">en este link</a> el resumen de todos los issues (más de 100) que fueron resueltos. Pero para que sea más amena la introducción te contamos qué cosas nuevas trae:
 
-* [Soporte para generar un conjunto de tests con estado compartido](#conjunto-de-tests)
-* [Mejoras al lenguaje](#mejoras-al-lenguaje)
-* [Nuevas Validaciones](#nuevas-validaciones)
-* [Quick Fixes](#quick-fixes)
-* [Organización general del Proyecto](#organizacion-general-del-proyecto)
-* [Mejoras al Diagrama estático](#mejoras-al-diagrama-estatico)
-* [Mejoras en la consola REPL](#mejoras-en-la-consola-repl)
-* [Cambios en los Plugins](#cambios-en-los-plugins)
-* [Soporte para bibliotecas externas](#soporte-para-bibliotecas-externas)
+* <a href="#conjunto-de-tests" class="wollokLink">Soporte para generar un conjunto de tests con estado compartido</a>
+* <a href="#mejoras-al-lenguaje" class="wollokLink">Mejoras al lenguaje</a>
+* <a href="#nuevas-validaciones" class="wollokLink">Nuevas validaciones</a>
+* <a href="#quick-fixes" class="wollokLink">Quick Fixes</a>
+* <a href="#organizacion-general-del-proyecto" class="wollokLink">Organización general del Proyecto</a>
+* <a href="#mejoras-al-diagrama-estatico" class="wollokLink">Mejoras al Diagrama estático</a>
+* <a href="#mejoras-en-la-consola-repl" class="wollokLink">Mejoras en la consola REPL</a>
+* <a href="#cambios-en-los-plugins" class="wollokLink">Cambios en los Plugins</a>
+* <a href="#soporte-para-bibliotecas-externas" class="wollokLink">Soporte para bibliotecas externas</a>
 
 <hr>
 
@@ -168,7 +168,7 @@ Se mejoró la experiencia de usuario respecto a los quick fixes, como podemos ap
 * Se mejoraron quick fixes en tests, *describes*, y dentro de clases la creación de constructores, métodos redefinidos, nuevas referencias.
 
 
-## Organización general del proyecto
+## Organizacion general del proyecto
 
 Wollok permite organizar proyectos en packages, cuando éstos empiezan a tornarse voluminosos.
 
@@ -186,7 +186,7 @@ La forma de referenciar los objetos y clases en las sentencias imports es agrega
 <br>
 
 
-## Mejoras al Diagrama estático
+## Mejoras al Diagrama estatico
 
 Wollok ofrece un diagrama estático que se integra con las demás herramientas del entorno:
 
@@ -280,9 +280,6 @@ Esto habilita a que cualquier proyecto tuyo tenga bibliotecas .jar y que en la c
 Podés ver la lista de issues resueltos de cada release de 1.6:
 
 * [1.6.0](https://github.com/uqbar-project/wollok/milestone/11?closed=1)
-
 * [1.6.1](https://github.com/uqbar-project/wollok/milestone/15?closed=1)
-
 * [1.6.2](https://github.com/uqbar-project/wollok/milestone/16?closed=1)
-
 * [1.6.3](https://github.com/uqbar-project/wollok/milestone/18?closed=1) 

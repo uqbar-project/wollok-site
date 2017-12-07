@@ -2,17 +2,21 @@
 layout: none
 ---
 
-## Indice rápido
+## Indice rápido ##
 
 * Elementos del lenguaje
-    * [Programas Wollok](#programas-wollok)
-    * [Referencias variables y constantes](#referencias-variables-y-constantes)
-    * [Comentarios](#comentarios)
+    * <a href="#archivos-wollok" class="wollokLink">Archivos Wollok</a>
+    * <a href="#programas-wollok" class="wollokLink">Programas Wollok</a>
+    * <a href="#referencias-variables-y-constantes" class="wollokLink">Referencias variables y constantes</a>
+    * <a href="#comentarios" class="wollokLink">Comentarios</a>
 * Objetos básicos
-    * [Números](#numeros)
-    * [Booleanos](#booleanos)
-    * [Strings](#strings)
-    * [Fechas](#fechas)
+    * <a href="#numeros" class="wollokLink">Números</a>
+    * <a href="#booleanos" class="wollokLink">Booleanos</a>
+    * <a href="#strings" class="wollokLink">Strings</a>
+    * <a href="#fechas" class="wollokLink">Fechas</a>
+* Comparación de objetos
+    * <a href="#comparar-objetos-iguales" class="wollokLink">Comparar objetos iguales</a>
+    * <a href="#comparar-objetos-en-general" class="wollokLink">Comparar objetos en general</a>
 
 ___
 
