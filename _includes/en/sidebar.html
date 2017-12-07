@@ -1,37 +1,92 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-
-  <!-- social networks -->
-  <ul class="soc">
-      <li><a class="soc-twitter" href="https://twitter.com/@WollokLang"></a></li>
-      <li><a class="soc-google" href="https://groups.google.com/d/forum/wollok "></a></li>
-      <li><a class="soc-email2" href="mailto:wollok@uqbar.org "></a></li>
-      <li><a class="soc-github soc-icon-last" href="http://github.com/uqbar-project/wollok"></a></li>
-  </ul>
-  <!-- social networks -->
-
-    <div class="sidebar-about">
-      <img src="{{ site.logo }}" height="80%" width="80%"/>
-      <p class="lead">{{ site.en_description }}</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: hyde` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = (site.pages | where: "lang" , 'en' | sort:"weight") %}
-      {% for node in pages_list %}
-        {% if node.title != null && node.weight > 0 %}
-          <li class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}">
-            <a href="{{ node.url }}">{{ node.title }}</a>
+<!--Navigation-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark fondo">
+    <a class="navbar-brand" href="#" style="padding-left: 6.5rem;">
+      <img src="/images/WollokLogo.png" class="d-inline-block align-center" title="Un lenguaje y entorno de aprendizaje de Programación Orientada a Objetos."
+        style="height: 45px;"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item{% if page.url == '/en/' %} active{% endif %}">
+            <a class="nav-link" href="/en/">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              {% if page.url == '/en/' %}<span class="sr-only">(current)</span>{% endif %}
+              Home
+            </a>
           </li>
-        {% endif %}
-      {% endfor %}
-
-    </ul>
-
-    <div class="copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</div>
-  </div>
-</div>
+          <li class="nav-item{% if page.url == '/en/download/' %} active{% endif %}">
+            <a class="nav-link" href="/en/download/">
+              <i class="fa fa-cloud-download" aria-hidden="true"></i>
+              {% if page.url == '/en/download/' %}<span class="sr-only">(current)</span>{% endif %}
+              Download
+            </a>
+          </li>
+          <li class="nav-item{% if page.url == '/en/tour/' %} active{% endif %}">
+            <a class="nav-link" href="/en/tour/">
+              <i class="fa fa-bus" aria-hidden="true"></i>
+              {% if page.url == '/en/tour/' %}<span class="sr-only">(current)</span>{% endif %}
+              Tour
+            </a>
+          </li> 
+          <li class="nav-item{% if page.title == 'documentation' %} active{% endif %}">
+              <!-- Dropdown -->
+              <li class="nav-item btn-group">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                      aria-expanded="false">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Documentation</a>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/concepts">
+                      <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                      {% if page.url == '/en/documentation/concepts' %}<span class="sr-only">(current)</span>{% endif %}
+                      Concepts
+                    </a>
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/notes">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      {% if page.url == '/en/documentation/notes' %}<span class="sr-only">(current)</span>{% endif %}
+                      Notes
+                    </a>
+                    <a class="wollokNavLink dropdown-item" href="/en/documentation/wollokDoc">
+                      <i class="fa fa-book" aria-hidden="true"></i>
+                      {% if page.url == '/en/documentation/wollokDoc' %}<span class="sr-only">(current)</span>{% endif %}
+                      Complete Language Reference
+                    </a>
+                  </div>
+              </li>
+          </li>
+          <li class="nav-item{% if page.url == '/en/examples/' %} active{% endif %}">
+            <a class="nav-link" href="/en/examples/">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              {% if page.url == 'en/examples/' %}<span class="sr-only">(current)</span>{% endif %}
+              Examples
+            </a>
+          </li>
+          <li class="nav-item{% if page.url == '/en/community/' %} active{% endif %}">
+            <a class="nav-link" href="/en/community/">
+              <i class="fa fa-group" aria-hidden="true"></i>
+              {% if page.url == '/en/community/' %}<span class="sr-only">(current)</span>{% endif %}
+              Community
+            </a>
+          </li>
+          <li class="nav-item{% if page.url == '/en/news/' %} active{% endif %}">
+            <a class="nav-link" href="/en/news/">
+              <i class="fa fa-podcast" aria-hidden="true"></i>
+              {% if page.url == '/en/news/' %}<span class="sr-only">(current)</span>{% endif %}
+              News
+            </a>
+          </li> 
+      </ul>
+      <ul>
+        <div>
+          <a href="https://twitter.com/@WollokLang" title="Seguinos en twitter"><span class="badge badge-pill indigo lighten-1 hoverable"><i class="fa fa-twitter"></i></span></a>
+          <a href="mailto:wollok@uqbar.org" title="Envianos un mail"><span class="badge badge-pill red darken-5 hoverable"><i class="fa fa-mail-reply" aria-hidden="true"></i></span></a>
+          <a href="http://github.com/uqbar-project/wollok" title="Accedé a nuestro repositorio de github"><span class="badge badge-pill red darken-4 hoverable"><i class="fa fa-github"></i></span></a>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navigation-->
+  
