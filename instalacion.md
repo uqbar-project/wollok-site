@@ -37,9 +37,7 @@ icon: 'cloud-download'
 		</div>
 	</div>
 	<!--/.Card-->
-
 	<br>
-
 	<!--Panel-->
 	<div class="accordion" id="accordionInstalacion" role="tablist" aria-multiselectable="true">
 		<div class="card">
@@ -52,7 +50,6 @@ icon: 'cloud-download'
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 				<div class="card-body grey lighten-5 transparent">
@@ -70,7 +67,6 @@ icon: 'cloud-download'
 				</div>
 			</div>
 		</div>
-
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingTwo">
@@ -81,7 +77,6 @@ icon: 'cloud-download'
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
 				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
@@ -125,9 +120,7 @@ icon: 'cloud-download'
 						<p>
 						Esta opción es para aquellos usuarios avanzados que ya poseen una instalación de Eclipse y desean agregar 
 						la posibilidad de trabajar con Wollok (<b>no es necesario hacerlo si descargaste el entorno Wollok comprimido</b>).
-								
 						El Update Site requiere instalarse en una instalación de JDT de Eclipse (o sea que tenga Java). Para hacer eso agregar como Software Update Site:
-						
 						<ul>
 							<li>
 								<a href="http://update.uqbar.org/wollok/stable">http://update.uqbar.org/wollok/stable</a> para acceder a la última versión estable. Esta es la opción <b>recomendada</b>.
@@ -135,15 +128,12 @@ icon: 'cloud-download'
 							<li>
 								<a href="http://update.uqbar.org/wollok/dev">http://update.uqbar.org/wollok/dev</a> si querés tener los últimos cambios en proceso (pueden aparecer errores hasta que la versión se estabilice)
 							</li>
-						</ul>|
-			
+						</ul>
 						<img src="/images/screencasts/Wollok-UpdateSite.gif" width="100%"/>
-						</p>
-					</div>
+					</p>
 				</div>
 			</div>
 		</div>
-		
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingThree">
@@ -154,7 +144,6 @@ icon: 'cloud-download'
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
 				<div class="card-body grey lighten-5 transparent">
@@ -183,7 +172,6 @@ icon: 'cloud-download'
 					</div>
 					<br>
 					el problema puede darse porque 
-					
 					<ul>
 						<li>estás apuntando en el wollok.ini a una JDK inexistente (fijate qué dice el parámetro -vm). Para corregirlo <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">seguí estos pasos</a>.</li>
 						<li>utilizaste la aplicación <i>"Java Updates"</i> en lugar de descargarlo de la página del JDK, como está documentado <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13">en este link</a>. 
@@ -206,43 +194,42 @@ icon: 'cloud-download'
 					<h4 class="card-title">Cartel de advertencia para instalar Java 6 en Mac</h4>
 					<p>
 						En máquinas Mac aparece un extraño cartel que indica que instalemos la versión de Java 6
-						<div class="text-center">
-							<img src="/images/troubleshooting/java6.png" class="hoverable img-fluid z-depth-1"/>
-						</div>
-						<br>
-						Esto no es cierto, hay que instalar JDK 1.8. 				
+					</p>
+					<div class="text-center">
+						<img src="/images/troubleshooting/java6.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
+					Esto no es cierto, hay que instalar JDK 1.8. 				
 					</p>
 					<hr>
 					<h4 class="card-title">Ejecución de aplicación no firmada en Mac</h4>
 					<p>
 						Mac OS X implementa un sistema de seguridad que solo permite ejecutar aplicaciones desarrolladas por desarrolladores registrados en Apple, y estas aplicaciones deben estar distribuidas por el App Store. Como este no es el caso con Wollok, es necesario permitir ejecutar una aplicación no firmada. 
-						
-						<br>
-						<div class="text-center">
-							<img src="/images/troubleshooting/aplicacionNoFirmada.png" class="hoverable img-fluid z-depth-1"/>
-						</div>
-						<br>
-		
+					</p>
+					<br>
+					<div class="text-center">
+						<img src="/images/troubleshooting/aplicacionNoFirmada.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
 						La forma de realizar esta operación esta explicado en 
 						<a href="https://support.apple.com/kb/PH21769?locale=es_ES&viewlocale=es_ES">la documentación de <i>OS X</i> existente</a>
-							
 					</p>
 					<hr>
 					<h4 class="card-title">Problema con App Translocation (Mac)</h4>
 					<p>
 						En la versión 10.12 de OS X se introdujo un sistema de seguridad llamado Gatekeeper. Este sistema tiene como objetivo evitar la ejecución de programas de forma no deseada. Por lo tanto los programas no ejecutan si son ejecutados o descomprimidos en la carpeta Download o donde los guarda el browser. 
 						Para poder ejecutarlo es solamente necesario mover la aplicación a otra carpeta, todo haciendolo desde Finder. De esta manera Wollok va a funcionar correctamente.
-							
-						<br>
-						<div class="text-center">
-							<img src="/images/troubleshooting/gatekeeper.png" class="hoverable img-fluid z-depth-1"/>
-						</div>
-						<br>
 					</p>
+					<br>
+					<div class="text-center">
+						<img src="/images/troubleshooting/gatekeeper.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
 				</div>
 			</div>
 		</div>
-
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" id="troubleshooting" role="tab" id="headingFour">
@@ -253,68 +240,63 @@ icon: 'cloud-download'
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
 				<div class="card-body grey lighten-5 transparent">
-						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-tu-entorno">Apuntando la JDK correcta en tu entorno</h4>
-						<p>
-							A veces pese a instalar correctamente la JDK 1.8, el sistema operativo sigue utilizando por defecto otra instalación de Java, basado en la variable del entorno JAVA_HOME (y por ende, también la variable PATH). 
-							Para chequear esto, abrí una línea de comandos y revisá adónde apunta dicha variable:
-							<div class="language-javascript">	
-									<div>
-										<pre>
+					<h4 class="card-title" id="apuntando-la-jdk-correcta-en-tu-entorno">Apuntando la JDK correcta en tu entorno</h4>
+					<p>
+						A veces pese a instalar correctamente la JDK 1.8, el sistema operativo sigue utilizando por defecto otra instalación de Java, basado en la variable del entorno JAVA_HOME (y por ende, también la variable PATH). 
+						Para chequear esto, abrí una línea de comandos y revisá adónde apunta dicha variable:
+					</p>
+					<div class="language-javascript">	
+							<pre>
 <span class="kd">$</span><span class="nx"> env | grep JAVA</span><span class="c"> // Linux & Mac</span>
-<span class="kd">></span><span class="nx"> SET JAVA_HOME</span><span class="c"> // Windows</span></pre>
-									</div>
-								</div>
-							La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo 
-							<a href="https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html">estos pasos.</a>
-						</p>
-						<hr>
-						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Apuntando la JDK correcta en ini de Wollok</h4>
-						<p>
-							Ingresá al directorio de instalación de Wollok y abrí en un editor de texto el archivo wollok.ini. 
-							Entonces especificá el directorio de la JDK 1.8 mediante el parámetro -vm, por ejemplo:
-						</p>
-						<div class="language-javascript">
-							<div>
-								<pre>
+<span class="kd">></span><span class="nx"> SET JAVA_HOME</span><span class="c"> // Windows</span>
+							</pre>
+					</div>
+					La podés cambiar para que apunte a tu instalación JDK 1.8, siguiendo 
+					<a href="https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html">estos pasos.</a>
+					<hr>
+					<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Apuntando la JDK correcta en ini de Wollok</h4>
+					<p>
+						Ingresá al directorio de instalación de Wollok y abrí en un editor de texto el archivo wollok.ini. 
+						Entonces especificá el directorio de la JDK 1.8 mediante el parámetro -vm, por ejemplo:
+					</p>
+					<div class="language-javascript">
+						<pre>
 <span class="kd">-vm</span>
-<span class="nx">D:\java8\bin\javaw.exe</span></pre>
-							</div>
-						</div>
-						<p>Es importante que no agregues un espacio ni un enter de más en el .ini, 
-							porque de lo contrario no van a funcionar los updates de versiones posteriores de Wollok 
-							(da un error al parsear el .ini)</p>
-						<hr>
-						<h4 id="apuntando-la-jdk-correcta-en-ini-de-wollok" class="card-title">Configuración de la JDK desde Eclipse</h4>
-						<p>
-							Si en el entorno Wollok ingresás a esta configuración: 
-							Windows > Preferences > java > Installed JREs y no ves ninguna JDK o bien una JDK que no es 1.8, 
-							podés cambiarla de la siguiente manera:
-							
-							<ul>
-								<li>Add  > Standard VM > next</li>
-								<li>Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)</li>
-							</ul>
-						</p>
-						<hr>
-						<h4 class="card-title">Configuración en inglés</h4>
-						<p>
-							Si querés configurar Wollok para que levante el IDE en inglés, es necesario agregar una <b>nueva línea al final</b> del archivo de configuración <i>wollok.ini</i>, localizado en el mismo directorio donde descargaste Wollok, con la siguiente instrucción:
-			
-							<div class="language-javascript">
-									<div>
-										<pre>
-<span class="kd">-D</span><span class="nx">user.language=en</span></pre>
-									</div>
-								</div>
-						</p>
+<span class="nx">D:\java8\bin\javaw.exe</span>
+						</pre>
+					</div>
+					<p>Es importante que no agregues un espacio ni un enter de más en el .ini, 
+						porque de lo contrario no van a funcionar los updates de versiones posteriores de Wollok 
+						(da un error al parsear el .ini)
+					</p>
+					<hr>
+					<h4 id="apuntando-la-jdk-correcta-en-ini-de-wollok" class="card-title">Configuración de la JDK desde Eclipse</h4>
+					<p>
+						Si en el entorno Wollok ingresás a esta configuración: 
+						Windows > Preferences > java > Installed JREs y no ves ninguna JDK o bien una JDK que no es 1.8, 
+						podés cambiarla de la siguiente manera:
+						<ul>
+							<li>Add  > Standard VM > next</li>
+							<li>Elegir el directorio donde instalaron la JDK 1.8. Ej: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home (eso dependerá del path donde lo descargaste)</li>
+						</ul>
+					</p>
+					<hr>
+					<h4 class="card-title">Configuración en inglés</h4>
+					<p>
+						Si querés configurar Wollok para que levante el IDE en inglés, es necesario agregar una <b>nueva línea al final</b> del archivo de configuración <i>wollok.ini</i>, localizado en el mismo directorio donde descargaste Wollok, con la siguiente instrucción:
+					</p>
+					<div class="language-javascript">
+						<pre>
+<span class="kd">-D</span><span class="nx">user.language=en</span>
+						</pre>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </div>
 
 <div class="container">
