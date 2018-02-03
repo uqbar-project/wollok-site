@@ -178,7 +178,7 @@
 </tr>
 <tr>
 <td id="Object_generateDoesNotUnderstandMessage_3"><b>generateDoesNotUnderstandMessage</b> (target, messageName, parametersSize)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
+ </td><td><b>private</b><br><br>internal method: generates a does not understand message<br>parametersSize must be an integer value</td>
 </tr>
 <tr>
 <td id="Object_identity_0"><b>identity</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -585,7 +585,7 @@
 </tr>
 <tr>
 <td id="List_get_1"><b>get</b> (index)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers the element at the specified position in this list.<br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.</td>
+ </td><td>Answers the element at the specified position in this list.<br><br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.<br>Index must be a positive and integer value.</td>
 </tr>
 <tr>
 <td id="List_head_0"><b>head</b> ()     </td><td>Synonym for first method</td>
@@ -742,7 +742,7 @@
  Number</h2>
 
 
-<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<p> In Wollok we have numbers as immutable representation. You can customize<br>how many decimals you want to work with, and printing strategies. So<br>number two could be printed as "2", "2,00000", "2,000", etc.<br><br>Coercing strategy for numbers can be<br>1) rounding up: 2,3258 using 3 decimals will result in 2,326<br>2) rounding down or truncation: 2,3258 using 3 decimals will result in 2,325<br>3) not allowed: 2,3258 using 3 decimals will throw an exception since decimals exceeds maximum allowed<br><br><b>author</b> jfernandes<br><b>author</b> dodain (unification between Double and Integer in a single Number class)<br><br><b>since</b> 1.3<br><b>noInstantiate</b></p>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <thead>
@@ -753,45 +753,95 @@
 </thread>
 <tbody>
 <tr>
-<td id="Number_*_1"><b>*</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_%_1"><b>%</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers remainder of division between self and other</td>
 </tr>
 <tr>
-<td id="Number_+_1"><b>+</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_*_1"><b>*</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
 </tr>
 <tr>
-<td id="Number_-_1"><b>-</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_**_1"><b>**</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>raisedTo operation<br><br>Example:<br>     3.2 ** 2 ==> Answers 10.24<br>		3 ** 2 ==> Answers 9</td>
 </tr>
 <tr>
-<td id="Number_/_1"><b>/</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_+_1"><b>+</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
 </tr>
 <tr>
-<td id="Number_<_1"><b><</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_-_1"><b>-</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
 </tr>
 <tr>
-<td id="Number_<=_1"><b><=</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_.._1"><b>..</b> (end)     </td><td>Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
 </tr>
 <tr>
-<td id="Number_>_1"><b>></b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_/_1"><b>/</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
 </tr>
 <tr>
-<td id="Number_>=_1"><b>>=</b> (other)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td></td>
+<td id="Number_<_1"><b><</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Number_<=_1"><b><=</b> (other)     </td><td></td>
+</tr>
+<tr>
+<td id="Number_===_1"><b>===</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Two references are identical if they are the same number</td>
+</tr>
+<tr>
+<td id="Number_>_1"><b>></b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td></td>
+</tr>
+<tr>
+<td id="Number_>=_1"><b>>=</b> (other)     </td><td></td>
+</tr>
+<tr>
+<td id="Number_abs_0"><b>abs</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers absolute value of self<br><br>Example:<br>		2.abs() ==> 2<br>		(-3).abs() ==> 3 (be careful with parentheses)<br>		2.7.abs() ==> Answers 2.7<br>		(-3.2).abs() ==> Answers 3.2 (be careful with parentheses)</td>
 </tr>
 <tr>
 <td id="Number_between_2"><b>between</b> (min, max)     </td><td>Answers whether self is between min and max</td>
 </tr>
 <tr>
-<td id="Number_even_0"><b>even</b> ()     </td><td>Answers whether self is an even number (divisible by 2, mathematically 2k)</td>
+<td id="Number_checkNotNull_2"><b>checkNotNull</b> (value, operation)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Number_coerceToInteger_0"><b>coerceToInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td><b>private</b><br><br>Applies coercing strategy to integer. If it is an integer, nothing happens. Otherwise,<br>if it is a decimal, defined coercing algorithm is applied (see definition of class Number)</td>
+</tr>
+<tr>
+<td id="Number_digits_0"><b>digits</b> ()     </td><td>number of digits of self (without sign)</td>
+</tr>
+<tr>
+<td id="Number_div_1"><b>div</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Integer division between self and other<br><br>Example:<br>		8.div(3)  ==> Answers 2<br>		15.div(5) ==> Answers 3<br>		8.2.div(3.3)  ==> Answers 2</td>
+</tr>
+<tr>
+<td id="Number_even_0"><b>even</b> ()     </td><td>Answers whether self is an even number (divisible by 2, mathematically 2k)<br>Self must be an integer value</td>
+</tr>
+<tr>
+<td id="Number_gcd_1"><b>gcd</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>greater common divisor. Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>		8.gcd(12) ==> Answers 4<br>		5.gcd(10) ==> Answers 5</td>
 </tr>
 <tr>
 <td id="Number_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td><b>private</b></td>
+</tr>
+<tr>
+<td id="Number_invert_0"><b>invert</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Inverts sign of self<br><br>Example:<br>		3.invert() ==> Answers -3<br>		(-2).invert() ==> Answers 2 (be careful with parentheses)<br>		3.2.invert() ==> -3.2<br>		(-2.4).invert() ==> 2.4 (be careful with parentheses)</td>
+</tr>
+<tr>
+<td id="Number_isInteger_0"><b>isInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Tells if this number can be considered an integer number.<br><br>Examples:<br>             2.isInteger() ==> Answers true<br>             (2.0).isInteger() ==> Answers true<br>             (2.3).isInteger() ==> Answers false<br><br>This could depend also on the rounding strategy, for example:<br>             (2.0001).isInteger() ==> Answers false if the rounding strategy is set to 5 decimal places (default)<br>             (2.0001).isInteger() ==> Answers true if the rounding strategy is set to 3 decimal places</td>
+</tr>
+<tr>
+<td id="Number_isPrime_0"><b>isPrime</b> ()     </td><td>Answers whether self is a prime number, like 2, 3, 5, 7, 11 ...<br>Self must be an integer positive value</td>
+</tr>
+<tr>
+<td id="Number_lcm_1"><b>lcm</b> (other)     </td><td>least common multiple. Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>		3.lcm(4) ==> Answers 12<br>		6.lcm(12) ==> Answers 12</td>
 </tr>
 <tr>
 <td id="Number_limitBetween_2"><b>limitBetween</b> (limitA, limitB)     </td><td>Given self and a range of integer values, Answers self if it is in that range<br>or nearest value from self to that range<br><br>Examples<br>4.limitBetween(2, 10)   ==> Answers 4, because 4 is in the range<br>4.limitBetween(6, 10)   ==> Answers 6, because 4 is not in range 6..10, and 6 is nearest value to 4<br>4.limitBetween(1, 2)    ==> Answers 2, because 4 is not in range 1..2, but 2 is nearest value to 4</td>
@@ -803,17 +853,24 @@
 <td id="Number_min_1"><b>min</b> (other)     </td><td>Answers the lower number between two. <b>see</b> max</td>
 </tr>
 <tr>
-<td id="Number_odd_0"><b>odd</b> ()     </td><td>Answers whether self is an odd number (not divisible by 2, mathematically 2k + 1)</td>
+<td id="Number_odd_0"><b>odd</b> ()     </td><td>Answers whether self is an odd number (not divisible by 2, mathematically 2k + 1)<br>Self must be an integer value</td>
 </tr>
 <tr>
-<td id="Number_plus_0"><b>plus</b> ()     </td><td></td>
+<td id="Number_plus_0"><b>plus</b> ()     </td><td>Allows users to define a positive number with 1 or +1</td>
 </tr>
 <tr>
-<td id="Number_rem_1"><b>rem</b> (other)     </td><td>Answers remainder between self and other<br>Example:<br>		5.rem(3) ==> Answers 2</td>
+<td id="Number_randomUpTo_1"><b>randomUpTo</b> (max)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a random number between self and max</td>
 </tr>
 <tr>
-<td id="Number_roundUp_1"><b>roundUp</b> (_decimals)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td>Rounds up self up to a certain amount of decimals.<br>Amount of decimals must be positive<br>1.223445.roundUp(3) ==> 1.224<br>-1.223445.roundUp(3) ==> -1.224<br>14.6165.roundUp(3) ==> 14.617<br>5.roundUp(3) ==> 5</td>
+<td id="Number_rem_1"><b>rem</b> (other)     </td><td>Answers remainder between self and other<br>Example:<br>		5.rem(3) 	==> Answers 2<br>     5.5.rem(3) 	==> Answers 2</td>
+</tr>
+<tr>
+<td id="Number_roundUp_1"><b>roundUp</b> (_decimals)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Rounds up self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>1.223445.roundUp(3) ==> 1.224<br>-1.223445.roundUp(3) ==> -1.224<br>14.6165.roundUp(3) ==> 14.617<br>5.roundUp(3) ==> 5</td>
+</tr>
+<tr>
+<td id="Number_roundUp_0"><b>roundUp</b> ()     </td><td>Answers the next integer greater than self<br>13.224.roundUp() ==> 14<br>-13.224.roundUp() ==> -14<br>15.942.roundUp() ==> 16</td>
 </tr>
 <tr>
 <td id="Number_simplifiedToSmartString_0"><b>simplifiedToSmartString</b> ()     </td><td><b>private</b></td>
@@ -825,261 +882,21 @@
 <td id="Number_squareRoot_0"><b>squareRoot</b> ()     </td><td>Answers squareRoot of self<br>		9.squareRoot() => Answers 3</td>
 </tr>
 <tr>
-<td id="Number_stringValue_0"><b>stringValue</b> ()     </td><td></td>
+<td id="Number_stringValue_0"><b>stringValue</b> ()     </td><td>Self as String value. Equivalent: toString()</td>
 </tr>
 <tr>
-<td id="Number_truncate_1"><b>truncate</b> (_decimals)  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td>Truncates self up to a certain amount of decimals.<br>Amount of decimals must be positive<br>1.223445.truncate(3) ==> 1.223<br>14.6165.truncate(3) ==> 14.616<br>-14.6165.truncate(3) ==> -14.616<br>5.truncate(3) ==> 5</td>
-</tr>
-</tbody>
-</table></div>
-<hr>
-<h2 id="Integer"><img src="images/class.png" height="24px" width="24px" title="class"/>
- Integer</h2>
-
-<ul>
-	<li>inherits from <a href="javascript:selectFile('lang', 'Number')">Number</a>
-	</li>
-</ul>
-
-<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
-<h3> Behavior</h3>
-<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
-<thead>
-<tr>
-<th class="blue-grey lighten-2">Method</th>
-<th class="blue-grey lighten-2">Description</th>
-</tr>
-</thread>
-<tbody>
-<tr>
-<td id="Integer_%_1"><b>%</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers remainder of division between self and other</td>
+<td id="Number_times_1"><b>times</b> (action)     </td><td>Executes the given action n times (n = self)<br><br>Self must be a positive integer value.<br><br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
 </tr>
 <tr>
-<td id="Integer_*_1"><b>*</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_**_1"><b>**</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>raisedTo<br>		3 ** 2 ==> Answers 9</td>
-</tr>
-<tr>
-<td id="Integer_+_1"><b>+</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_-_1"><b>-</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_.._1"><b>..</b> (end)     </td><td>Builds a Range between self and end<br><br>Example:<br>		1..4   Answers ==> a new Range object from 1 to 4</td>
-</tr>
-<tr>
-<td id="Integer_/_1"><b>/</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_<_1"><b><</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_<=_1"><b><=</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_===_1"><b>===</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>The whole wollok identity implementation is based on self method</td>
-</tr>
-<tr>
-<td id="Integer_>_1"><b>></b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_>=_1"><b>>=</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Integer_abs_0"><b>abs</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers absolute value of self<br><br>Example:<br>		2.abs() ==> 2<br>		(-3).abs() ==> 3 (be careful with parentheses)</td>
-</tr>
-<tr>
-<td id="Integer_digits_0"><b>digits</b> ()     </td><td>number of digits of self (without sign)</td>
-</tr>
-<tr>
-<td id="Integer_div_1"><b>div</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Integer division between self and other<br><br>Example:<br>		8.div(3)  ==> Answers 2<br>		15.div(5) ==> Answers 3</td>
-</tr>
-<tr>
-<td id="Integer_gcd_1"><b>gcd</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>greater common divisor<br><br>Example:<br>		8.gcd(12) ==> Answers 4<br>		5.gcd(10) ==> Answers 5</td>
-</tr>
-<tr>
-<td id="Integer_invert_0"><b>invert</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Inverts sign of self<br><br>Example:<br>		3.invert() ==> Answers -3<br>		(-2).invert() ==> Answers 2 (be careful with parentheses)</td>
-</tr>
-<tr>
-<td id="Integer_isPrime_0"><b>isPrime</b> ()     </td><td>Answers whether self is a prime number, like 2, 3, 5, 7, 11 ...</td>
-</tr>
-<tr>
-<td id="Integer_lcm_1"><b>lcm</b> (other)     </td><td>least common multiple<br><br>Example:<br>		3.lcm(4) ==> Answers 12<br>		6.lcm(12) ==> Answers 12</td>
-</tr>
-<tr>
-<td id="Integer_randomUpTo_1"><b>randomUpTo</b> (max)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a random between self and max</td>
-</tr>
-<tr>
-<td id="Integer_roundUp_1"><b>roundUp</b> (_decimals)     </td><td></td>
-</tr>
-<tr>
-<td id="Integer_stringValue_0"><b>stringValue</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Self as a String value. Equivalent: toString()</td>
-</tr>
-<tr>
-<td id="Integer_times_1"><b>times</b> (action)     </td><td>Executes the given action n times (n = self)<br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
-</tr>
-<tr>
-<td id="Integer_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
+<td id="Number_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
  </td><td>String representation of self number</td>
 </tr>
 <tr>
-<td id="Integer_truncate_1"><b>truncate</b> (_decimals)     </td><td></td>
+<td id="Number_truncate_1"><b>truncate</b> (_decimals)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Truncates self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>1.223445.truncate(3) ==> 1.223<br>14.6165.truncate(3) ==> 14.616<br>-14.6165.truncate(3) ==> -14.616<br>5.truncate(3) ==> 5</td>
 </tr>
 </tbody>
 </table></div>
-<div class="card card-body">
-    <h5 class="card-header blue-grey lighten-4">Methods inherited from Number</h5>
-    <p class="card-text"><a href="javascript:selectFile('lang', 'Number_between_2')">between(min, max)</a>
-    , <a href="javascript:selectFile('lang', 'Number_even_0')">even()</a>
-    , <a href="javascript:selectFile('lang', 'Number_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
-    , <a href="javascript:selectFile('lang', 'Number_limitBetween_2')">limitBetween(limitA, limitB)</a>
-    , <a href="javascript:selectFile('lang', 'Number_max_1')">max(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_min_1')">min(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_odd_0')">odd()</a>
-    , <a href="javascript:selectFile('lang', 'Number_plus_0')">plus()</a>
-    , <a href="javascript:selectFile('lang', 'Number_rem_1')">rem(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_simplifiedToSmartString_0')">simplifiedToSmartString()</a>
-    , <a href="javascript:selectFile('lang', 'Number_squareRoot_0')">squareRoot()</a>
-    , <a href="javascript:selectFile('lang', 'Number_square_0')">square()</a>
-    </p>
-</div>
-
-<hr>
-<h2 id="Double"><img src="images/class.png" height="24px" width="24px" title="class"/>
- Double</h2>
-
-<ul>
-	<li>inherits from <a href="javascript:selectFile('lang', 'Number')">Number</a>
-	</li>
-</ul>
-
-<p> <b>author</b> jfernandes<br><b>since</b> 1.3<br><b>noInstantiate</b></p>
-<h3> Behavior</h3>
-<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
-<thead>
-<tr>
-<th class="blue-grey lighten-2">Method</th>
-<th class="blue-grey lighten-2">Description</th>
-</tr>
-</thread>
-<tbody>
-<tr>
-<td id="Double_%_1"><b>%</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers remainder of division between self and other</td>
-</tr>
-<tr>
-<td id="Double_*_1"><b>*</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_**_1"><b>**</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>raisedTo<br>3.2 ** 2 ==> Answers 10.24</td>
-</tr>
-<tr>
-<td id="Double_+_1"><b>+</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_-_1"><b>-</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_/_1"><b>/</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_<_1"><b><</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_<=_1"><b><=</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_===_1"><b>===</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>the whole wollok identity impl is based on self method</td>
-</tr>
-<tr>
-<td id="Double_>_1"><b>></b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_>=_1"><b>>=</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_abs_0"><b>abs</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers absolute value of self<br><br>Example:<br>		2.7.abs() ==> Answers 2.7<br>		(-3.2).abs() ==> Answers 3.2 (be careful with parentheses)</td>
-</tr>
-<tr>
-<td id="Double_div_1"><b>div</b> (other)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Integer division between self and other<br><br>Example:<br>		8.2.div(3.3)  ==> Answers 2<br>		15.0.div(5) ==> Answers 3</td>
-</tr>
-<tr>
-<td id="Double_invert_0"><b>invert</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>3.2.invert() ==> -3.2<br>(-2.4).invert() ==> 2.4 (be careful with parentheses)</td>
-</tr>
-<tr>
-<td id="Double_randomUpTo_1"><b>randomUpTo</b> (max)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a random between self and max</td>
-</tr>
-<tr>
-<td id="Double_roundUp_0"><b>roundUp</b> ()     </td><td>Answers the next integer greater than self<br>13.224.roundUp() ==> 14<br>-13.224.roundUp() ==> -14<br>15.942.roundUp() ==> 16</td>
-</tr>
-<tr>
-<td id="Double_roundUp_1"><b>roundUp</b> (_decimals)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-<tr>
-<td id="Double_stringValue_0"><b>stringValue</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Self as a String value. Equivalent: toString()</td>
-</tr>
-<tr>
-<td id="Double_toString_0"><b>toString</b> ()     </td><td>String representation of a self number</td>
-</tr>
-<tr>
-<td id="Double_truncate_1"><b>truncate</b> (_decimals)    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
-</tr>
-</tbody>
-</table></div>
-<div class="card card-body">
-    <h5 class="card-header blue-grey lighten-4">Methods inherited from Number</h5>
-    <p class="card-text"><a href="javascript:selectFile('lang', 'Number_between_2')">between(min, max)</a>
-    , <a href="javascript:selectFile('lang', 'Number_even_0')">even()</a>
-    , <a href="javascript:selectFile('lang', 'Number_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
-    , <a href="javascript:selectFile('lang', 'Number_limitBetween_2')">limitBetween(limitA, limitB)</a>
-    , <a href="javascript:selectFile('lang', 'Number_max_1')">max(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_min_1')">min(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_odd_0')">odd()</a>
-    , <a href="javascript:selectFile('lang', 'Number_plus_0')">plus()</a>
-    , <a href="javascript:selectFile('lang', 'Number_rem_1')">rem(other)</a>
-    , <a href="javascript:selectFile('lang', 'Number_simplifiedToSmartString_0')">simplifiedToSmartString()</a>
-    , <a href="javascript:selectFile('lang', 'Number_squareRoot_0')">squareRoot()</a>
-    , <a href="javascript:selectFile('lang', 'Number_square_0')">square()</a>
-    </p>
-</div>
-
 <hr>
 <h2 id="String"><img src="images/class.png" height="24px" width="24px" title="class"/>
  String</h2>
@@ -1122,7 +939,7 @@
 </tr>
 <tr>
 <td id="String_charAt_1"><b>charAt</b> (index)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers the char value at the specified index. An index ranges from 0 to length() - 1.<br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.</td>
+ </td><td>Answers the char value at the specified index. An index ranges from 0 to length() - 1.<br>The first char value of the sequence is at index 0, the next at index 1, and so on, as for array indexing.<br>Parameter index must be a positive integer value.</td>
 </tr>
 <tr>
 <td id="String_contains_1"><b>contains</b> (other)    <span class="badge badge-pill indigo">native</span><br>
@@ -1171,8 +988,8 @@
  </td><td>Tests if this string starts with the specified prefix. It is case sensitive.<br><br>Examples:<br>		"mother".startsWith("moth")  ==> Answers true<br>     "mother".startsWith("Moth")  ==> Answers false</td>
 </tr>
 <tr>
-<td id="String_substring_1"><b>substring</b> (length)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a substring of this string beginning from an inclusive index.<br><br>Examples:<br>		"substitute".substring(6)  ==> Answers "tute", because second "t" is in position 6<br>		"effect".substring(0)      ==> Answers "effect", has no effect at all</td>
+<td id="String_substring_1"><b>substring</b> (index)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td>Answers a substring of this string beginning from an inclusive index.<br>Parameter index must be a positive integer value.<br><br>Examples:<br>		"substitute".substring(6)  ==> Answers "tute", because second "t" is in position 6<br>		"effect".substring(0)      ==> Answers "effect", has no effect at all</td>
 </tr>
 <tr>
 <td id="String_substring_2"><b>substring</b> (startIndex, length)    <span class="badge badge-pill indigo">native</span><br>
@@ -1264,7 +1081,7 @@
 <h3> Constructors</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>(_start, _end)
-<p> </p>
+<p> Instantiates a Range. Both _start and _end must be integer values.</p>
 </table></div>
 <hr>
 <h3> Behavior</h3>
@@ -1344,10 +1161,6 @@
 <tr>
 <td id="Range_sum_1"><b>sum</b> (closure)     </td><td>Sums all elements that match the boolean closure<br><br>Example:<br>		(1..9).sum({ i => if (i.even()) i else 0 }) ==> Answers 20</td>
 </tr>
-<tr>
-<td id="Range_validate_1"><b>validate</b> (_limit)    <span class="badge badge-pill indigo">native</span><br>
- </td><td><b>private</b></td>
-</tr>
 </tbody>
 </table></div>
 <hr>
@@ -1384,9 +1197,9 @@
 <h3> Constructors</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>()
-<p> </p>
+<p> Default constructor instantiates the current day</p>
 <b>constructor</b>(_day, _month, _year)
-<p> </p>
+<p> Constructor: you should pass the day, month and year (integer values only).</p>
 </table></div>
 <hr>
 <h3> Behavior</h3>
@@ -1400,7 +1213,7 @@
 <tbody>
 <tr>
 <td id="Date_-_1"><b>-</b> (_aDate)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers the difference in days between two dates, in absolute values.<br><br>Examples:<br>		new Date().plusDays(4) - new Date() ==> Answers 4<br>		new Date() - new Date().plusDays(2) ==> Answers 2</td>
+ </td><td>Answers the difference in days between two dates, assuming self is minuend and _aDate is subtrahend.<br><br>Examples:<br>		new Date().plusDays(4) - new Date() ==> Answers 4<br>		new Date() - new Date().plusDays(2) ==> Answers -2</td>
 </tr>
 <tr>
 <td id="Date_<_1"><b><</b> (_aDate)    <span class="badge badge-pill indigo">native</span><br>
@@ -1441,15 +1254,15 @@
 </tr>
 <tr>
 <td id="Date_minusDays_1"><b>minusDays</b> (_days)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this date with the specified number of days subtracted.<br>For example, 2009-01-01 minus one day would result in 2008-12-31.<br>This instance is immutable and unaffected by this method call.</td>
+ </td><td>Answers a copy of this date with the specified number of days subtracted.<br>For example, 2009-01-01 minus one day would result in 2008-12-31.<br>This instance is immutable and unaffected by this method call.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
 <td id="Date_minusMonths_1"><b>minusMonths</b> (_months)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this date with the specified number of months subtracted.</td>
+ </td><td>Answers a copy of this date with the specified number of months subtracted.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
 <td id="Date_minusYears_1"><b>minusYears</b> (_years)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this date with the specified number of years subtracted.</td>
+ </td><td>Answers a copy of this date with the specified number of years subtracted.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
 <td id="Date_month_0"><b>month</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1457,19 +1270,21 @@
 </tr>
 <tr>
 <td id="Date_plusDays_1"><b>plusDays</b> (_days)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this Date with the specified number of days added.</td>
+ </td><td>Answers a copy of this Date with the specified number of days added.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
 <td id="Date_plusMonths_1"><b>plusMonths</b> (_months)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this Date with the specified number of months added.</td>
+ </td><td>Answers a copy of this Date with the specified number of months added.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
 <td id="Date_plusYears_1"><b>plusYears</b> (_years)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Answers a copy of this Date with the specified number of years added.</td>
+ </td><td>Answers a copy of this Date with the specified number of years added.<br>Parameter must be an integer value.</td>
 </tr>
 <tr>
-<td id="Date_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td></td>
+<td id="Date_toSmartString_1"><b>toSmartString</b> (alreadyShown)     </td><td>Shows nicely an internal representation of a date</td>
+</tr>
+<tr>
+<td id="Date_toString_0"><b>toString</b> ()     </td><td></td>
 </tr>
 <tr>
 <td id="Date_year_0"><b>year</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1480,4 +1295,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 01/12/2017 10:34:44</p>
+<p>Last update: 02/02/2018 21:27:31</p>

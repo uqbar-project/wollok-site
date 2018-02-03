@@ -32,8 +32,8 @@ icon: 'github'
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/00-teaching">Basics</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/01-intro-pepita">Our first example: pepita</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/initial-learning">Basics</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/intro-pepita">Our first example: pepita</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/Polimorfismo-sueldoDePepe">Pepe's salary. Polymorphism.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/03-heroes-con-objetos">Shrek. Polymorphism. Collections.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/03-polimorfismo-empanadasGimenez">Employees salary. Polymorphism.</a></li>
