@@ -60,7 +60,7 @@ Examples with classes
 <div class="container">
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/herencia-aves-pepita">Birds. Inheritance.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herencia-constructores">2D & 3D Points. Constructor Inheritance.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herencia-constructores">2D & 3D Points. Balls Constructor Inheritance.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/heroes-con-clases">Heroes with classes. Polymorphism. Collections.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/testing-empleados">Employees. Basic testing.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/testing-cliente-stub">Customers with dummy invoices. Testing with Stubs</a></li>
