@@ -39,11 +39,11 @@ icon: 'github'
     <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoEmpanadasGimenez">Empanadas Giménez. Polimorfismo.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonedero">Monedero. Excepciones. Testing de excepciones.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/coleccionesBloquesJaloguin">Colecciones de Jalogüin. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesWillyWonka">Willy Wonka y la fabrica de software. Colecciones. Polimorfismo</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">El naufrago. Colecciones sin bloques</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesWillyWonka">Willy Wonka y la fábrica de software. Colecciones. Polimorfismo</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">El náufrago. Colecciones sin bloques</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. Colecciones</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesHuevosDePascua">Huevos de pascua. Objetos Polimorfismo. 2° parte Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Mensajeros de pelicula. Objetos. Polimorfismo. 2° parte Colecciones</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Mensajeros de película. Objetos. Polimorfismo. 2° parte Colecciones</a></li>
     </ul>
 </div>
 
@@ -107,13 +107,13 @@ Ejemplos integradores
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/examenTareas">Tareas de un proyecto</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejericioIntegradorNiUnaMenos">Ni una menos</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorStarWars">The Forks Awaken</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorStarWars">The Forks Awakens</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAngryBirds">Angry Birds</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorVolverAlFuturo">Volver al futuro</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorFlixnet">Flexnit</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorFlixnet">Flixnet</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorElegidos">Elegidos</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorIntensamente">Intensamente</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAsterixa">Asterix</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAsterix">Asterix</a></li>
     </ul>
 </div>
 

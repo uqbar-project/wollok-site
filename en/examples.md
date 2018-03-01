@@ -107,10 +107,10 @@ All-inclusive examples
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/examenTareas">Project tasks</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorNiUnaMenos">No one less</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorStarWars">The Forks Awaken</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorStarWars">The Forks Awakens</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorAngryBirds">Angry Birds</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorVolverAlFuturo">Back to the Future</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorFlixnet">Flexnit</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorFlixnet">Flixnet</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorElegidos">Chosen</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorIntensamente">Inside Out</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorAsterix">Asterix</a></li>
