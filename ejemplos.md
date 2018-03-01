@@ -32,18 +32,18 @@ icon: 'github'
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/initial-learning">Inicial / Básico</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/intro-pepita">Ejemplo introductorio: Pepita</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Polimorfismo-sueldoDePepe">Sueldo de Pepe. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/heroes-con-objetos">Shrek. Polimorfismo. Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismo-empanadasGimenez">Empanadas Giménez. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/excepciones-monedero">Monedero. Excepciones. Testing de excepciones.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Colecciones-bloques_Colecciones-de-jaloguin">Colecciones de Jalogüin. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/colecciones-Willy-Wonka">Willy Wonka y la fabrica de software. Colecciones. Polimorfismo</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Colecciones-Sin-Bloques-Naufrago">El naufrago. Colecciones sin bloques</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/initialLearning">Inicial / Básico</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/introPepita">Ejemplo introductorio: Pepita</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/PolimorfismoSueldoDePepe">Sueldo de Pepe. Polimorfismo.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/heroesConObjetos">Shrek. Polimorfismo. Colecciones</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoEmpanadasGimenez">Empanadas Giménez. Polimorfismo.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonedero">Monedero. Excepciones. Testing de excepciones.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesBloquesJaloguin">Colecciones de Jalogüin. Polimorfismo.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesWillyWonka">Willy Wonka y la fábrica de software. Colecciones. Polimorfismo</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">El náufrago. Colecciones sin bloques</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Polimorfismo-Colecciones-Huevos-de-Pascua">Huevos de pascua. Objetos Polimorfismo. 2° parte Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Polimorfismo-Colecciones-Mensajeros-de-pelicula">Mensajeros de pelicula. Objetos. Polimorfismo. 2° parte Colecciones</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesHuevosDePascua">Huevos de pascua. Objetos Polimorfismo. 2° parte Colecciones</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Mensajeros de película. Objetos. Polimorfismo. 2° parte Colecciones</a></li>
     </ul>
 </div>
 
@@ -59,20 +59,20 @@ Ejemplos con clases
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/herencia-aves-pepita">Herencia de Aves</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herencia-constructores">Puntos 2D y 3D. Pelotas. Herencia de Constructores.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/heroes-con-clases">Héroes con clases. Polimorfismo. Colecciones.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/testing-empleados">Empleados. Testing básico</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/testing-cliente-stub">Clientes con facturas ficticias. Testing con Stubs</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/excepciones-monedero-clases">Monedero con clases. Excepciones. Testing de excepciones. Fixture.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/igualdad-identidad-domicilios">Domicilios de personas. Igualdad e identidad</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/cohesion-alumnos">Alumnos. Cohesión. Testing con fixture compartido</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herencia-pepita-WKO">Pepita. Herencia de WKO-Clases.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Clases-Coliseo">El coliseo. Clases Constructores</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Herencia-lego-la-primavera">Primavera. Herencia Constructores</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Clases-El-Celu">Se me cuelga el celu. Clases</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Clases-bots">Robots en todos lados. Clases</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/dictionary-totales">Ejemplo Totalizadores de Gastos. Clases (Uso de Dictionary y Date)</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaAvesPepita">Herencia de Aves</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaConstructores">Puntos 2D y 3D. Pelotas. Herencia de Constructores.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/heroesConClases">Héroes con clases. Polimorfismo. Colecciones.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/testingEmpleados">Empleados. Testing básico</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/testingClienteStub">Clientes con facturas ficticias. Testing con Stubs</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonederoClases">Monedero con clases. Excepciones. Testing de excepciones. Fixture.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/igualdadIdentidadDomicilios">Domicilios de personas. Igualdad e identidad</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/cohesionAlumnos">Alumnos. Cohesión. Testing con fixture compartido</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaPepitaWKO">Pepita. Herencia de WKO-Clases.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">El coliseo. Clases Constructores</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaLegoLaPrimavera">Primavera. Herencia Constructores</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesElCelu">Se me cuelga el celu. Clases</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesBots">Robots en todos lados. Clases</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/dictionaryTotales">Ejemplo Totalizadores de Gastos. Clases (Uso de Dictionary y Date)</a></li>
     </ul>
 </div>
 
@@ -88,8 +88,8 @@ Ejemplos de Wollok Game
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/pepita-game">Pepita</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/tamagotchi-game-composicion">Tamagotchi</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
     </ul>
 </div>
 
@@ -105,15 +105,15 @@ Ejemplos integradores
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/examen-tareas">Tareas de un proyecto</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejericio-integrador-Ni-Una-Menos">Ni una menos</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-integrador-star-wars">The Forks Awaken</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-Integrador-Angry-Birds">Angry Birds</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorVolverAlFuturo">Volver al futuro</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-Integrador-Flixnet">Flexnit</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-Integrador-Elegidos">Elegidos</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-Integrador-Intensamente">Intensamente</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/Ejercicio-Integrador-Asterixa">Asterix</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/examenTareas">Tareas de un proyecto</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejericioIntegradorNiUnaMenos">Ni una menos</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorStarWars">The Forks Awakens</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAngryBirds">Angry Birds</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorVolverAlFuturo">Volver al futuro</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorFlixnet">Flixnet</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorElegidos">Elegidos</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorIntensamente">Intensamente</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAsterix">Asterix</a></li>
     </ul>
 </div>
 
