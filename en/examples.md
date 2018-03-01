@@ -43,7 +43,7 @@ icon: 'github'
     <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">Shipwrecked. Collections without closures.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. Collections.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesHuevosDePascua">Easter eggs. Collections (Part I, II). Polymorphism.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Movies Messengers. Objects. Polymorphism. Collections.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Movies. Objects. Polymorphism. Collections.</a></li>
     </ul>
 </div>
 
