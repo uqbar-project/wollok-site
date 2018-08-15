@@ -52,7 +52,7 @@
 <td id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td>Prints this exception and its backtrace to the specified printer</td>
 </tr>
 <tr>
-<td id="Exception_printStackTraceWithPreffix_2"><b>printStackTraceWithPreffix</b> (preffix, printer)     </td><td><b>private</b></td>
+<td id="Exception_printStackTraceWithPrefix_2"><b>printStackTraceWithPrefix</b> (prefix, printer)     </td><td><b>private</b></td>
 </tr>
 </tbody>
 </table></div>
@@ -66,11 +66,6 @@
 </ul>
 
 <p> Thrown when a stack overflow occurs because an application<br>recurses too deeply.<br><br><b>author</b> jfernandes<br><b>since</b> 1.5.1</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
-<b>constructor</b>()
-<p> </p>
-</table></div>
 <hr>
 <h2 id="ElementNotFoundException"><img src="images/class.png" height="24px" width="24px" title="class"/>
  ElementNotFoundException</h2>
@@ -117,24 +112,6 @@
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>(_contextDescription, _location)
 <p> </p>
-</table></div>
-<hr>
-<h3> Behavior</h3>
-<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
-<thead>
-<tr>
-<th class="blue-grey lighten-2">Method</th>
-<th class="blue-grey lighten-2">Description</th>
-</tr>
-</thread>
-<tbody>
-<tr>
-<td id="StackTraceElement_contextDescription_0"><b>contextDescription</b> ()     </td><td></td>
-</tr>
-<tr>
-<td id="StackTraceElement_location_0"><b>location</b> ()     </td><td></td>
-</tr>
-</tbody>
 </table></div>
 <hr>
 <h2 id="Object"><img src="images/class.png" height="24px" width="24px" title="class"/>
@@ -248,16 +225,10 @@
 </thread>
 <tbody>
 <tr>
-<td id="Pair_getKey_0"><b>getKey</b> ()     </td><td></td>
+<td id="Pair_key_0"><b>key</b> ()     </td><td></td>
 </tr>
 <tr>
-<td id="Pair_getValue_0"><b>getValue</b> ()     </td><td></td>
-</tr>
-<tr>
-<td id="Pair_getX_0"><b>getX</b> ()     </td><td></td>
-</tr>
-<tr>
-<td id="Pair_getY_0"><b>getY</b> ()     </td><td></td>
+<td id="Pair_value_0"><b>value</b> ()     </td><td></td>
 </tr>
 </tbody>
 </table></div>
@@ -393,7 +364,7 @@
     </td><td><b>private</b></td>
 </tr>
 <tr>
-<td id="Collection_toStringSufix_0"><b>toStringSufix</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
+<td id="Collection_toStringSuffix_0"><b>toStringSuffix</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
     </td><td><b>private</b></td>
 </tr>
 </tbody>
@@ -486,7 +457,7 @@
 <td id="Set_toStringPrefix_0"><b>toStringPrefix</b> ()     </td><td><b>private</b></td>
 </tr>
 <tr>
-<td id="Set_toStringSufix_0"><b>toStringSufix</b> ()     </td><td><b>private</b></td>
+<td id="Set_toStringSuffix_0"><b>toStringSuffix</b> ()     </td><td><b>private</b></td>
 </tr>
 <tr>
 <td id="Set_union_1"><b>union</b> (another)     </td><td>Answers a new Set with the elements of both self and another collection.<br><b>returns</b> a Set</td>
@@ -535,6 +506,14 @@
 </ul>
 
 <p> An ordered collection (also known as a sequence).<br>You iterate the list the same order elements are inserted.<br>The user can access elements by their integer index (position in the list).<br>A List can contain duplicate elements.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
+<h3> Constructors</h3>
+<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
+<b>constructor</b>()
+<p> </p>
+<b>constructor</b>(head, tail)
+<p> </p>
+</table></div>
+<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <thead>
@@ -629,7 +608,7 @@
 <td id="List_toStringPrefix_0"><b>toStringPrefix</b> ()     </td><td><b>private</b></td>
 </tr>
 <tr>
-<td id="List_toStringSufix_0"><b>toStringSufix</b> ()     </td><td><b>private</b></td>
+<td id="List_toStringSuffix_0"><b>toStringSuffix</b> ()     </td><td><b>private</b></td>
 </tr>
 <tr>
 <td id="List_withoutDuplicates_0"><b>withoutDuplicates</b> ()     </td><td>Answers the list without duplicate elements<br>[1, 3, 1, 5, 1, 3, 2, 5].withoutDuplicates() => Answers [1, 2, 3, 5]</td>
@@ -674,12 +653,6 @@
 
 
 <p> Represents a set of key -> values</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
-<b>constructor</b>()
-<p> </p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <thead>
@@ -730,6 +703,9 @@
 </tr>
 <tr>
 <td id="Dictionary_size_0"><b>size</b> ()     </td><td>Answers the number of key-value mappings in this Dictionary.</td>
+</tr>
+<tr>
+<td id="Dictionary_toString_0"><b>toString</b> ()     </td><td></td>
 </tr>
 <tr>
 <td id="Dictionary_values_0"><b>values</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -885,7 +861,7 @@
 <td id="Number_stringValue_0"><b>stringValue</b> ()     </td><td>Self as String value. Equivalent: toString()</td>
 </tr>
 <tr>
-<td id="Number_times_1"><b>times</b> (action)     </td><td>Executes the given action n times (n = self)<br><br>Self must be a positive integer value.<br><br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
+<td id="Number_times_1"><b>times</b> (action)     </td><td>Executes the given action n times (n = self)<br><br>Self must be a positive integer value.<br>The closure must have one argument (index goes from 1 to self)<br><br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
 </tr>
 <tr>
 <td id="Number_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1295,4 +1271,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 02/02/2018 21:27:31</p>
+<p>Last update: 14/08/2018 22:58:30</p>
