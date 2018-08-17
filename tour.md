@@ -218,7 +218,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/validator1.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/validator1Es.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Una muestra de cómo funciona el validador. Al posicionarnos
                         con el mouse sobre la parte izquierda, se expande la descripción de la advertencia (en amarillo)
                         o el error (en rojo). En la solapa Problemas tenemos un resumen de todos los <i>issues</i> de
@@ -255,7 +255,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/todo.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/todoEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Escribimos en el código los tags TODO (pendiente) o
                         FIXME (solucionar o mejorar) y aparecerá automáticamente en la vista Tareas.</figcaption>
                     </figure>
@@ -263,12 +263,12 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br>
             Para configurar que otras palabras clave aparezcan en la solapa Tasks, activás el menú
-            Ventana > Preferencias > Etiquetas de Tareas (Task tags) y agregás o modificás las etiquetas existentes.
+            Ventana > Preferencias > Buscas Códigos de Tarea (Task tags) y agregás o modificás las etiquetas existentes.
             <br><br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/tasks.png" class="img-fluid z-depth-1">
+                        <img src="/images/tour/tasksEs.png" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br></figcaption>
                     </figure>
                 </div>
@@ -302,7 +302,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br> 
         </div>
-        <!-- *****************************  QUICK FIXES ****************************************-->
+        <!-- *****************************  FORMATTER ****************************************-->
         <div class="tab-pane fade" id="formatter" role="tabpanel">
             <br>
             <div class="row text-center">
@@ -335,7 +335,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/consola.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/consolaEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. 
                         <br>
                         En la imagen se ve 
@@ -356,7 +356,8 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br>
             Para utilizarla, basta con hacer click derecho sobre un archivo .wlk y elegir la opción "Ejecutar en consola REPL".
-            También existe el botón "Play" en la barra de herramientas.
+            También te aparecerá el botón "Play" en la barra de herramientas cuando estés en el
+            Explorador de Paquetes.
             <br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
@@ -370,7 +371,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/replConsoleEditor.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/replConsoleEditorEs.gif" class="img-fluid z-depth-1">
             </div>
             <br>
             Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
@@ -384,7 +385,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/console2.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/console2Es.gif" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>
@@ -394,7 +395,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             un archivo particular, mediante una opción específica en la barra:
             <br>
             <div class="container text-center">
-                <img src="/images/tour/runConsole2.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/runConsole2Es.png" class="img-fluid z-depth-1">
             </div>
             <br><br>
         </div>
@@ -409,7 +410,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
                             de tests: vemos que se puede filtrar errores y fallas,
                             <br>
@@ -434,7 +435,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/runAllTests.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/runAllTestsEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
                         proyecto. Aquí vemos que corren además de los 3 tests del archivo
                     example.wtest, también se ejecutan los del archivo test.wtest</figcaption>
