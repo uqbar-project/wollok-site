@@ -8,8 +8,28 @@ icon: 'podcast'
 
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
+<h1>&nbsp;&nbsp;New Wollok Gramsci released!</h1>
+<br>
+</div>
 
-<h1>&nbsp;&nbsp;Wollok did a long ride!</h1>
+Wollok 1.7.0 version is here, with several enhancements
+
+- [**properties**](https://docs.google.com/document/d/1wziW1YY-t94UUAUApydrt-OZ5roq1uY6DT6FduwNGx0/edit?usp=sharing) concept allows to remove _boilerplate_ code (no need for getters and setters anymore)
+- [**named parameters**](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit#heading=h.vj2ax6a4f7xh) simplify object initialization (constructors still exist for more complex cases)
+- [**decimal numbers**](https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit#heading=h.8kav0aq8r3c3) have now many configuration, such as how many decimal positions you want to use, decimal coercion strategy (rounding, truncating or error) and also how will a number be printed
+- great performance improvements to **Wollok Game** framework were made, many students will practice its UI interface this year
+- improved error reporting in console and tests
+- environment interface is minimalist without loosing functionality. User doesn't get overwhelmed by a bunch of options he never uses.
+
+Here you can check all issues solved for versions [1.6.7](https://github.com/uqbar-project/wollok/milestone/17?closed=1) (pre-release) and [1.7.0](https://github.com/uqbar-project/wollok/milestone/20?closed=1)
+
+
+<br/>
+<br/>
+<hr>
+<br/>
+<div class="container">
+<h1>Wollok did a long ride!</h1>
 <br>
 </div>
 

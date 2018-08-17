@@ -8,8 +8,28 @@ icon: 'podcast'
 
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
+<h1>&nbsp;&nbsp;¡Nuevo release: Wollok Gramsci!</h1>
+<br>
+</div>
 
-<h1>&nbsp;&nbsp;¡En 2017 Wollok salió de gira!</h1>
+La versión 1.7.0 de Wollok está en la nube, con varias mejoras
+
+- se incorporaron las [**properties**](https://docs.google.com/document/d/1wziW1YY-t94UUAUApydrt-OZ5roq1uY6DT6FduwNGx0/edit?usp=sharing) para eliminar código _boilerplate_ de getters y setters
+- agregamos los [**parámetros nombrados**](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit#heading=h.vj2ax6a4f7xh) para facilitar la inicialización de valores de los objetos (complementando los constructores que sirven para instanciaciones más complejas)
+- el tratamiento de [**números decimales**](https://docs.google.com/document/d/1HiYxLswd4O0MBqnT3jGo2K9e_4FE73RXF_lf8NWVOSE/edit#heading=h.8kav0aq8r3c3) permite configurar cantidad de decimales, estrategias para trabajar exceso de decimales (redondeo, truncamiento o error) y formas de imprimir un número decimal
+- hubo notables mejoras de performance y nuevas funcionalidades para la plataforma **Wollok Game**, que "saldrá a la cancha" como trabajo práctico en muchos cursos
+- se mejoró el reporte de errores tanto en la consola como en los tests
+- la interfaz del entorno es ahora minimalista sin perder funcionalidad, lo que permite al estudiante tener el conjunto de herramientas que necesita y no visualizar opciones que no utiliza nunca
+
+El resumen de issues resueltos las tenés aquí: para la [1.6.7](https://github.com/uqbar-project/wollok/milestone/17?closed=1) (versión pre-release) y [1.7.0](https://github.com/uqbar-project/wollok/milestone/20?closed=1)
+
+
+<br/>
+<br/>
+<hr>
+<br/>
+<div class="container">
+<h1>¡En 2017 Wollok salió de gira!</h1>
 <br>
 </div>
 
