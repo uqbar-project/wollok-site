@@ -39,7 +39,7 @@
 	</li>
 </ul>
 
-<p> Exception to handle other values in assert.throwException</p>
+<p> Exception to handle other values expected in assert.throwsException... methods</p>
 <h3> Constructors</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>(_message)
@@ -56,7 +56,7 @@
 	</li>
 </ul>
 
-<p> </p>
+<p> Exception to handle difference between current and expected values<br>in assert.throwsException... methods</p>
 <h3> Constructors</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>(message)
@@ -82,34 +82,34 @@
 </thread>
 <tbody>
 <tr>
-<td id="assert_equals_2"><b>equals</b> (expected, actual)     </td><td>Tests whether two values are equal, based on wollok ==, != methods<br><br>Example:<br>		 assert.equals(10, 100.div(10)) ==> no effect, ok<br>		 assert.equals(10.0, 100.div(10)) ==> no effect, ok<br>		 assert.equals(10.01, 100.div(10)) ==> throws an exception</td>
+<td id="assert_equals_2"><b>equals</b> (expected, actual)     </td><td>Tests whether two values are equal, based on wollok ==, != methods<br><br>Examples:<br>		 assert.equals(10, 100.div(10)) ==> ok, nothing happens<br>		 assert.equals(10.0, 100.div(10)) ==> ok, nothing happens<br>		 assert.equals(10.01, 100.div(10)) ==> throws an exception</td>
 </tr>
 <tr>
-<td id="assert_fail_1"><b>fail</b> (message)     </td><td>Throws an exception with a custom message. Useful when you reach an unwanted code in a test.</td>
+<td id="assert_fail_1"><b>fail</b> (message)     </td><td>Throws an exception with a custom message.<br>Useful when you reach an unwanted code in a test.</td>
 </tr>
 <tr>
-<td id="assert_notEquals_2"><b>notEquals</b> (expected, actual)     </td><td>Tests whether two values are equal, based on wollok ==, != methods</td>
+<td id="assert_notEquals_2"><b>notEquals</b> (expected, actual)     </td><td>Tests whether two values are equal, based on wollok ==, != methods<br><br>Examples:<br>      const value = 5<br>		 assert.notEquals(10, value * 3) ==> ok, nothing happens<br>		 assert.notEquals(10, value)     ==> throws an exception</td>
 </tr>
 <tr>
 <td id="assert_notThat_1"><b>notThat</b> (value)     </td><td>Tests whether value is false. Otherwise throws an exception.<br><b>see</b> assert#that(value)</td>
 </tr>
 <tr>
-<td id="assert_that_1"><b>that</b> (value)     </td><td>Tests whether value is true. Otherwise throws an exception.<br>Example:<br>		var number = 7<br>		assert.that(number.even())   ==> throws an exception "Value was not true"<br>		var anotherNumber = 8<br>		assert.that(anotherNumber.even())   ==> no effect, ok</td>
+<td id="assert_that_1"><b>that</b> (value)     </td><td>Tests whether value is true. Otherwise throws an exception.<br><br>Example:<br>		assert.that(7.even())   ==> throws an exception "Value was not true"<br>		assert.that(8.even())   ==> ok, nothing happens</td>
 </tr>
 <tr>
-<td id="assert_throwsException_1"><b>throwsException</b> (block)     </td><td>Tests whether a block throws an exception. Otherwise an exception is thrown.<br><br>Example:<br>		assert.throwsException({ 7 / 0 })  ==> Division by zero error, it is expected, ok<br>		assert.throwsException({ "hola".length() }) ==> throws an exception "Block should have failed"</td>
+<td id="assert_throwsException_1"><b>throwsException</b> (block)     </td><td>Tests whether a block throws an exception. Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsException({ 7 / 0 })<br>        ==> Division by zero error, it is expected, ok<br><br>		assert.throwsException({ "hola".length() })<br>        ==> throws an exception "Block should have failed"</td>
 </tr>
 <tr>
-<td id="assert_throwsExceptionByComparing_2"><b>throwsExceptionByComparing</b> (block, comparison)     </td><td>Tests whether a block throws an exception and compare this exception with other block called comparison. Otherwise an exception is thrown.<br>The block comparison have to receive a value (an exception thrown) that is compared in a boolean expression returning the result.<br><br>Example:<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => "hola".equals(a.getMessage())}} => Works!.<br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => new BusinessException("lele").className().equals(a.className())} } => Works again!<br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => "chau!".equals(a.getMessage())} } => Doesn't work. The block evaluation resolve a false value.</td>
+<td id="assert_throwsExceptionByComparing_2"><b>throwsExceptionByComparing</b> (block, comparison)     </td><td>Tests whether a block throws an exception and compare this exception with other block<br>called comparison. Otherwise an exception is thrown. The block comparison have to<br>receive a value (an exception thrown) that is compared in a boolean expression<br>returning the result.<br><br>Examples:<br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => "hola".equals(a.getMessage())}}<br>         => Works!.<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => new BusinessException("lele").className().equals(a.className())} }<br>         => Works again!<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{a => "chau!".equals(a.getMessage())} }<br>         => Doesn't work. The block evaluation resolve a false value.</td>
 </tr>
 <tr>
-<td id="assert_throwsExceptionLike_2"><b>throwsExceptionLike</b> (exceptionExpected, block)     </td><td>Tests whether a block throws an exception and this is the same expected. Otherwise an exception is thrown.<br><br>Example:<br><br>		assert.throwsExceptionLike(new BusinessException("hola"),{ => throw new BusinessException("hola") } => Works! this is the same exception class and same message.<br>		assert.throwsExceptionLike(new BusinessException("chau"),{ => throw new BusinessException("hola") } => Doesn't work. This is the same exception class but got a different message.<br>		assert.throwsExceptionLike(new OtherException("hola"),{ => throw new BusinessException("hola") } => Doesn't work. This isn't the same exception class although it contains the same message.</td>
+<td id="assert_throwsExceptionLike_2"><b>throwsExceptionLike</b> (exceptionExpected, block)     </td><td>Tests whether a block throws an exception and this is the same expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionLike(new BusinessException("hola"),<br>           { => throw new BusinessException("hola") }<br>           => Works! this is the same exception class and same message.<br><br>		assert.throwsExceptionLike(new BusinessException("chau"),<br>           { => throw new BusinessException("hola") }<br>           => Doesn't work. This is the same exception class but got a different message.<br><br>		assert.throwsExceptionLike(new OtherException("hola"),<br>           { => throw new BusinessException("hola") }<br>           => Doesn't work. This isn't the same exception class although it contains the same message.</td>
 </tr>
 <tr>
-<td id="assert_throwsExceptionWithMessage_2"><b>throwsExceptionWithMessage</b> (errorMessage, block)     </td><td>Tests whether a block throws an exception and it have the error message as is expected. Otherwise an exception is thrown.<br><br>Example:<br><br>		assert.throwsExceptionWithMessage("hola",{ => throw new BusinessException("hola") } => Works! this is the same message.<br>		assert.throwsExceptionWithMessage("hola",{ => throw new OtherException("hola") } => Works! this is the same message.<br>		assert.throwsExceptionWithMessage("chau",{ => throw new BusinessException("hola") } => Doesn't work. This is the same exception class but got a different message.</td>
+<td id="assert_throwsExceptionWithMessage_2"><b>throwsExceptionWithMessage</b> (errorMessage, block)     </td><td>Tests whether a block throws an exception and it have the error message as is expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionWithMessage("hola",{ => throw new BusinessException("hola") }<br>          => Works! both have the same message.<br><br>		assert.throwsExceptionWithMessage("hola",{ => throw new OtherException("hola") }<br>          => Works! both have the same message.<br><br>		assert.throwsExceptionWithMessage("chau",{ => throw new BusinessException("hola") }<br>          => Doesn't work. Both are BusinessException class but their messages differ.</td>
 </tr>
 <tr>
-<td id="assert_throwsExceptionWithType_2"><b>throwsExceptionWithType</b> (exceptionExpected, block)     </td><td>Tests whether a block throws an exception and this is the same exception class expected. Otherwise an exception is thrown.<br><br>Example:<br><br>		assert.throwsExceptionWithType(new BusinessException("hola"),{ => throw new BusinessException("hola") } => Works! this is the same exception class.<br>		assert.throwsExceptionWithType(new BusinessException("chau"),{ => throw new BusinessException("hola") } => Works again! this is the same exception class.<br>		assert.throwsExceptionWithType(new OtherException("hola"),{ => throw new BusinessException("hola") } => Doesn't work. This isn't the same exception class although it contains the same message.</td>
+<td id="assert_throwsExceptionWithType_2"><b>throwsExceptionWithType</b> (exceptionExpected, block)     </td><td>Tests whether a block throws an exception and this is the same exception class expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionWithType(new BusinessException("hola"),{ => throw new BusinessException("hola") }<br>         => Works! Both exception class are equals.<br><br>		assert.throwsExceptionWithType(new BusinessException("chau"),{ => throw new BusinessException("hola") }<br>         => Works again! Both exception class are equals.<br><br>		assert.throwsExceptionWithType(new OtherException("hola"),{ => throw new BusinessException("hola") }<br>         => Doesn't work. Exception classes differ although they contain the same message.</td>
 </tr>
 </tbody>
 </table></div>
@@ -141,7 +141,7 @@
  game</h2>
 
 
-<p> </p>
+<p> Wollok Game main object</p>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <thead>
@@ -153,19 +153,19 @@
 <tbody>
 <tr>
 <td id="game_addVisual_1"><b>addVisual</b> (positionable)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds an object to the board for drawing it.<br>That object should known a position (by reference or getter method).</td>
+ </td><td>Adds an object to the board for drawing it.<br>That object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisual(pepita) ==> pepita should have a position property</td>
 </tr>
 <tr>
 <td id="game_addVisualCharacter_1"><b>addVisualCharacter</b> (positionable)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds an object to the board for drawing it. It can be moved with arrow keys.<br>That object should known a position (by reference or getter method).</td>
+ </td><td>Adds an object to the board for drawing it. It can be moved with arrow keys.<br>That object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisualCharacter(pepita) ==> pepita should have a position property</td>
 </tr>
 <tr>
 <td id="game_addVisualCharacterIn_2"><b>addVisualCharacterIn</b> (element, position)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds an object to the board for drawing it on a specific position. It can be moved with arrow keys.</td>
+ </td><td>Adds an object to the board for drawing it on a specific position. It can be moved with arrow keys.<br><br>Example:<br>    game.addVisualCharacterIn(pepita, game.origin()) ==> pepita should have a position property</td>
 </tr>
 <tr>
 <td id="game_addVisualIn_2"><b>addVisualIn</b> (element, position)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds an object to the board for drawing it on a specific position.</td>
+ </td><td>Adds an object to the board for drawing it on a specific position.<br>That object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisual(pepita, game.origin()) ==> pepita should have a position property<br>    game.addVisual(pepita, game.at(2, 2))</td>
 </tr>
 <tr>
 <td id="game_at_2"><b>at</b> (x, y)     </td><td>Returns a position for given coordinates.</td>
@@ -195,7 +195,7 @@
 </tr>
 <tr>
 <td id="game_getObjectsIn_1"><b>getObjectsIn</b> (position)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Returns all objects in given position.</td>
+ </td><td>Returns all objects in given position.<br><br>Example:<br>    game.getObjectsIn(game.origin())</td>
 </tr>
 <tr>
 <td id="game_ground_1"><b>ground</b> (image)    <span class="badge badge-pill indigo">native</span><br>
@@ -215,18 +215,18 @@
 </tr>
 <tr>
 <td id="game_onTick_2"><b>onTick</b> (milliseconds, action)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds a block that will be executed every n milliseconds.<br>Block expects no argument.<br>Be careful not to set it too often :)</td>
+ </td><td>Adds a block that will be executed every n milliseconds.<br>Block expects no argument.<br>Be careful not to set it too often :)<br><br>Example:<br>    	game.onTick(5000, { => pepita.position().x(0.randomUpTo(4)) })</td>
 </tr>
 <tr>
 <td id="game_origin_0"><b>origin</b> ()     </td><td>Returns the position (0,0).</td>
 </tr>
 <tr>
 <td id="game_removeVisual_1"><b>removeVisual</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Removes an object from the board for stop drawing it.</td>
+ </td><td>Removes an object from the board for stop drawing it.<br><br>Example:<br>    game.removeVisual(pepita)</td>
 </tr>
 <tr>
 <td id="game_say_2"><b>say</b> (visual, message)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Draw a dialog balloon with given message in given visual object position.</td>
+ </td><td>Draw a dialog balloon with given message in given visual object position.<br><br>Example:<br>    game.say(pepita, "hola!")</td>
 </tr>
 <tr>
 <td id="game_showAttributes_1"><b>showAttributes</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
@@ -249,11 +249,11 @@
 </tr>
 <tr>
 <td id="game_whenCollideDo_2"><b>whenCollideDo</b> (visual, action)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds a block that will be executed always the given object collides with other. Two objects collide when are in the same position.<br>The block should expect the other object as parameter.</td>
+ </td><td>Adds a block that will be executed always the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.whenCollideDo(pepita, { comida => pepita.comer(comida) })</td>
 </tr>
 <tr>
 <td id="game_whenKeyPressedDo_2"><b>whenKeyPressedDo</b> (key, action)    <span class="badge badge-pill indigo">native</span><br>
- </td><td>Adds a block that will be executed always the specific key is pressed.</td>
+ </td><td>Adds a block that will be executed always the specific key is pressed.<br><b>see</b> keyboard.onPressDo()</td>
 </tr>
 <tr>
 <td id="game_width_1"><b>width</b> (width)    <span class="badge badge-pill indigo">native</span><br>
@@ -270,7 +270,7 @@
  Position</h2>
 
 
-<p> </p>
+<p> Represents a position in a two-dimension gameboard.<br>It is an mutable object, but it will be an immutable one in a near future.</p>
 <h3> Constructors</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <b>constructor</b>()
@@ -289,7 +289,7 @@
 </thread>
 <tbody>
 <tr>
-<td id="Position_==_1"><b>==</b> (other)     </td><td>Two positions are equals if have same coordinates.</td>
+<td id="Position_==_1"><b>==</b> (other)     </td><td>Two positions are equals if they have same coordinates.</td>
 </tr>
 <tr>
 <td id="Position_allElements_0"><b>allElements</b> ()     </td><td>Returns all objects in self.</td>
@@ -319,13 +319,13 @@
 <td id="Position_left_1"><b>left</b> (n)     </td><td>Returns a new Position n steps left from this one.</td>
 </tr>
 <tr>
-<td id="Position_moveDown_1"><b>moveDown</b> (n)     </td><td>Substract n to y coordinate.</td>
+<td id="Position_moveDown_1"><b>moveDown</b> (n)     </td><td>Substracts n to y coordinate.</td>
 </tr>
 <tr>
-<td id="Position_moveLeft_1"><b>moveLeft</b> (n)     </td><td>Substract n to x coordinate.</td>
+<td id="Position_moveLeft_1"><b>moveLeft</b> (n)     </td><td>Substracts n to x coordinate. This is a side effect operation.</td>
 </tr>
 <tr>
-<td id="Position_moveRight_1"><b>moveRight</b> (n)     </td><td>Sums n to x coordinate.</td>
+<td id="Position_moveRight_1"><b>moveRight</b> (n)     </td><td>Sums n to x coordinate. This is a side effect operation.</td>
 </tr>
 <tr>
 <td id="Position_moveUp_1"><b>moveUp</b> (n)     </td><td>Sums n to y coordinate.</td>
@@ -337,16 +337,16 @@
 <td id="Position_say_2"><b>say</b> (element, message)     </td><td>Draw a dialog balloon with given message in given visual object position.</td>
 </tr>
 <tr>
-<td id="Position_toString_0"><b>toString</b> ()     </td><td></td>
+<td id="Position_toString_0"><b>toString</b> ()     </td><td>String representation of a position</td>
 </tr>
 <tr>
 <td id="Position_up_1"><b>up</b> (n)     </td><td>Returns a new Position n steps up from this one.</td>
 </tr>
 <tr>
-<td id="Position_validateX_0"><b>validateX</b> ()     </td><td>Validates x position (avoiding outside gameboard)</td>
+<td id="Position_validateX_0"><b>validateX</b> ()     </td><td>Validates x position (avoids going outside gameboard).<br>This is a side effect operation.</td>
 </tr>
 <tr>
-<td id="Position_validateY_0"><b>validateY</b> ()     </td><td>Validates y position (avoiding outside gameboard)</td>
+<td id="Position_validateY_0"><b>validateY</b> ()     </td><td>Validates y position (avoids going outside gameboard)<br>This is a side effect operation.</td>
 </tr>
 </tbody>
 </table></div>
@@ -355,7 +355,7 @@
  error</h2>
 
 
-<p> </p>
+<p> Simplified algorithm for throwing an exception</p>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm table-responsive w-auto">
 <thead>
@@ -373,4 +373,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 16/08/2018 17:59:13</p>
+<p>Last update: 16/08/2018 23:47:58</p>
