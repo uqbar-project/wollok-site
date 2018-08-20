@@ -15,7 +15,13 @@ layout: none
 1. <a href="#visuals" class="wollokLink">Visuals</a>
 1. <a href="#an-interactive-game" class="wollokLink">An interactive game</a>
 	1. <a href="#collisions" class="wollokLink">Collisions</a>
-
+1. <a href="#programs" class="wollokLink">Programs</a>
+	1. <a href="#changing-board-background" class="wollokLink">Changing board background</a>
+	1. <a href="#reporting-errors" class="wollokLink">Reporting errors</a>
+	1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
+	1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
+	1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
+1. <a href="#more-info" class="wollokLink">More info</a>
 
 ____
 
@@ -35,7 +41,7 @@ Main object is `game` object, located in Wollok _lib_ file. To start a game, jus
 Now you should see a board in another window of your operating system.
 <br>
 
-![Tablero vacío](https://image.prntscr.com/image/DJ2AwqP6RTyOexB0yJO3xA.png)
+![Tablero vacío](../../../documentacion/conceptos/images/tableroVacio.png)
 
 ## The board
 
@@ -58,7 +64,7 @@ Here you will add your game objects. Board has the following properties:
 ```
 
 <div class="container text-center">
-	<img src="https://image.prntscr.com/image/7B5VH1VtQEK7DS6M7aBiMw.png" class="img-fluid z-depth-1">
+	<img src="../../../documentacion/conceptos/images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
@@ -84,6 +90,7 @@ To put objects in the board we need to specify its **location**. In Wollok we ha
 ```
 
 #### Drawing objects
+
 Positions allow us to add an object in the board.
 ```js
 >>> var position = game.origin()
@@ -107,9 +114,9 @@ object wollok {
 >>> game.addVisual(wollok)
 ```
 
-...Object is shown in board!
+...visual object is shown in board!
 
-![Tablero con wollok](https://image.prntscr.com/image/KO5vo8RcSkSV5rjYN0b6_g.png)
+![Tablero con wollok](../../../documentacion/conceptos/images/tableroConWollok.png)
 
 
 #### Moving objects
@@ -117,24 +124,25 @@ object wollok {
 Positions are **mutable** properties, so its components _(x, y)_ can change in time. Then, we can **move objects** in board without changing its position object (or even worse, having to remove and add it again).
 
 ```js
+>>> position   // remember position reference is defined below
+(0,0)
 >>> position.moveRight(2)
 >>> position.moveUp(3)
 >>> position
 (2,3)
 ```
 
-![Moviendo los objetos](https://image.prntscr.com/image/osdht-GhRJKY9wsLGhWZgA.png)
-
 ## The character
+
 Wollok Game allows you to define a _main character_, movable with arrow keys of the keyboard. You just set **the character** of the game before it starts.
 
 ```js
->>> game.origin().drawCharacter(wollok)
-//or game.addVisualCharacter(wollok)
+>>> game.addVisualCharacter(wollok)
+//or game.origin().drawCharacter(wollok)
 >>> game.start()
 ```
 
-![wollok-character](https://user-images.githubusercontent.com/4098184/32724281-6a76e6be-c84f-11e7-849d-3e8ac90a4742.gif)
+![wollok-character](../../../documentacion/conceptos/images/wollokCharacter.gif)
 
 
 ### Look who's talking!
@@ -143,7 +151,9 @@ Wollok Game allows you to define a _main character_, movable with arrow keys of 
 ```js
 >>> game.say(wollok, wollok.howAreYou())
 ```
-![Los objetos hablan](https://image.prntscr.com/image/m9aRcwxPQCK5cnFKy0YLwQ.png)
+![Los objetos hablan](../../../documentacion/conceptos/images/objetosHablan.png)
+
+**Tip:** visual objects can scream too, just try `scream()` message instead of `say()`
 
 
 ## Visuals
@@ -156,7 +166,7 @@ By now, we can show objects in the board as _wollok objects_. To change default 
 #### Example
 
 <div class="container text-center">
-	<img src="/images/tour/imgExplorerGameEn.png" class="img-fluid z-depth-1">
+	<img src="images/imgExplorerGame.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
@@ -164,10 +174,8 @@ By now, we can show objects in the board as _wollok objects_. To change default 
 
 ```js
 object box {
-	method image() {
-		return "box.png"
-	} 
-} 
+	method image() = "box.png"
+}
 ```
 
 ###### Let's execute it
@@ -176,9 +184,10 @@ object box {
 >>> game.start()
 >>> game.center().drawElement(box)
 ```
-![Caja Game](https://image.prntscr.com/image/eyT9BiHzR2ei2O5OgEVDuA.png)
 
-> ![Warning](http://d2mxabrykbl1km.cloudfront.net/img/icons/ico_warning.png) IMPORTANT MESSAGE : Wollok Game doesn't resize the images you show, so you have to manually adjust **size** and **orientation** according to your game.
+![Caja Game](../../../documentacion/conceptos/images/cajaGame.png)
+
+> ![Warning](../../../documentacion/conceptos/images/warning.png) IMPORTANT MESSAGE : Wollok Game doesn't resize the images you show, so you have to manually adjust **size** and **orientation** according to your game.
 
 ## An interactive game
 
@@ -191,12 +200,12 @@ An easy way is to send messages through **REPL console**. You can change size, p
 When two objects share the same position, Wollok Game throws a _collision_ event. A collision is implemented as a **closure (piece of code)** added to a certain object: `game.whenCollideDo(object, actionClosure)`.
 
 #### Example
-![colision-caja](https://user-images.githubusercontent.com/4098184/32722971-87bee42e-c84a-11e7-8f66-649e9acdb84a.gif)
+![colision-caja](../../../documentacion/conceptos/images/colisionCaja.gif)
 
 ###### In example.wlk
 ```js
 object wollok {
-	const position = game.origin()
+	const property position = game.origin()
 	
 	method goHome() {
 		position.x(0)
@@ -205,11 +214,13 @@ object wollok {
 }
 
 object box {
-	method image() {
-		return "box.png"
-	} 
+	var property position = game.center()
+	method imagen() = "box.png"
 } 
 ```
+
+**Tip:** if you need the box image you can download it in assets folder of [sokoban project](https://github.com/wollok/sokobanGame) and rename "caja.png" to "box.png".
+
 
 ###### Executing
 ```js
@@ -219,3 +230,170 @@ object box {
 	// When a character collides with box, it goes to initial position
 >>> game.start()
 ```
+
+
+### Programs
+
+You can also generate a Wollok program (.wpgm extension), where a main _character_ moves over the board when events are fired from keyboard, and several things happens...
+
+Lets code out REPL example into a program, importing wollok wko and box definitions:
+
+```js
+program firstWollokGameProgram {
+	game.addVisualCharacter(wollok)
+	game.center().drawElement(box)
+	game.whenCollideDo(box, { character => character.goHome() })
+	game.start()
+}
+```
+
+#### Changing board background
+
+You can change out board background, replacing default one with [any picture you like](https://www.google.com.ar/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwimy6fJtvTcAhVFxpAKHRdhBK4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Download it to a new source folder, in this case called `assets`, and add in your program a message to `game` object:
+
+```js
+program firstWollokGameProgram {
+	game.width(10)
+	game.height(10)
+	game.boardGround("beach.jpg") // replace here beach.jpg with the name you used
+```
+
+Now we see a new image in game board:
+
+![tablero con fondo especial](../../../documentacion/conceptos/images/tableroConFondoEspecial.png)
+
+From now on we will go back to default and less distracting background.
+
+
+#### Reporting errors
+
+When things go wrong, our main character catches error messages and alert us. Lets suppose we change collider block between our main character wollok and the box:
+
+```js
+program firstWollokGameProgram {
+	game.addVisualCharacter(wollok)
+	game.center().drawElement(box)
+	game.whenCollideDo(box, { 
+		character => character.goHome()
+		const a = 1 / 0
+	})
+	game.start()
+}
+```
+
+When wollok and box collides, wollok reports a "division by zero" error:
+
+![wollok reporta error](../../../documentacion/conceptos/images/errorReporter1.gif)
+
+In Wollok Game, if there is a main character, it is responsible to catch and report any error inside the game. Otherwise, any visual object in board will do that.
+
+Anyway, we can configure _error reporter object_ to another object, such as the box:
+
+```js
+program firstWollokGameProgram {
+	game.addVisualCharacter(wollok)
+	game.center().drawElement(box)
+	game.errorReporter(box)
+	...
+```
+
+So lets see what happens now when wollok and the box collides and an error is thrown:
+
+![caja reporta error](../../../documentacion/conceptos/images/errorReporter2.gif)
+
+
+#### Automatic events
+
+You can configure an automatic event, such as **box should move every 2 seconds**, if you send `onTick()` message which expects a block to be called every n milliseconds:
+
+```js
+program firstWollokGameProgram {
+	game.addVisualCharacter(wollok)
+	game.addVisual(box)  // see warning below
+	//
+	// moving box every 2 seconds
+	game.onTick(2000, { box.moveOn() })
+	//
+	game.whenCollideDo(box, { character => character.goHome() })
+	game.start()
+}
+```
+
+> VERY IMPORTANT: the box should be added into the game using `game.addVisual(box)` and not like before: `game.center().drawElement(box)`, it will listen all kind of events (and eventually will be able to move).
+
+`moveOn()` method in box object will randomly update its position, based on board height and width:
+
+```js
+object box {
+	var property position = game.center()
+	method image() = "box.png"
+	method moveOn() {
+		const x = 0.randomUpTo(game.width() - 1).truncate(0)
+		const y = 0.randomUpTo(game.height() - 1).truncate(0)
+		self.position().x(x)
+		self.position().y(y)
+	}
+}
+```
+
+When program is executed, we'll see a box movement every 2 seconds (and wollok object should be more careful):
+
+![on tick](../../../documentacion/conceptos/images/onTick.gif)
+
+
+#### Keyboard events
+
+Every time the user hits a key, an event is fired, so it is a good starting point to read `keyboard` wko documentation. Lets see this example, where we activate/deactivate box automatic movement when the user presses ENTER key:
+
+```java
+import example.*
+import wollok.game.*
+
+program firstWollokGameProgram {
+	var boxMoves = true
+	game.addVisualCharacter(wollok)
+	game.addVisual(box)
+	game.onTick(2000, { if (boxMoves) box.moveOn() })
+	//
+	// ENTER key is caught
+	keyboard.enter().onPressDo { boxMoves = !boxMoves }	
+	//
+	game.whenCollideDo(box, { character => character.goHome() })
+	game.start()
+}
+```
+
+Here is our live demo:
+
+![keyboard](../../../documentacion/conceptos/images/keyboard.gif)
+
+
+#### Show or hide visual objects attributes
+
+Lets add some attributes to wollok wko:
+
+```js
+object wollok {
+	var property position = game.origin()
+	var version = "1.7.0"
+	var lastUpdated = new Date()
+	...
+```
+
+When we pass mouse over wollok, we can see its internal state:
+
+![attributes](../../../documentacion/conceptos/images/attributes.png)
+
+If we don't want to show overwhelming information to user, we can send `hideAttributes()` message to `game`:
+
+```js
+program firstWollokGameProgram {
+	var boxMoves = true
+	game.addVisualCharacter(wollok)
+	game.hideAttributes(wollok)
+	...
+```
+
+### More info
+
+You can download [all these Wollok Game examples](https://github.com/wollok?utf8=%E2%9C%93&q=game&type=&language=) from Wollok repository. Enjoy them!

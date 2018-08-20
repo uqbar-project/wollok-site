@@ -24,6 +24,7 @@ layout: none
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
 
 ___
+
 ## ¿Qué es y cómo se usa?
 
 Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
@@ -186,6 +187,7 @@ object caja {
 >>> game.start()
 >>> game.center().drawElement(caja)
 ```
+
 ![Caja Game](images/cajaGame.png)
 
 
@@ -308,14 +310,12 @@ Entonces cuando hay un error en un bloque de código que maneja Wollok Game, ser
 
 #### Eventos automaticos
 
-Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick` al objeto `game` y pasándole el bloque de código que debe ejecutar:
+Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game` y pasándole el bloque de código que debe ejecutar:
 
 ```js
 program firstWollokGameProgram {
 	game.addVisualCharacter(wollok)
-	game.addVisual(caja)  // importante definirlo de esta manera 
-	                      // y no como antes para que se pueda mover
-	//
+	game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
 	// cada dos segundos muevo la caja
 	game.onTick(2000, { caja.movete() })
 	//
@@ -323,6 +323,8 @@ program firstWollokGameProgram {
 	game.start()
 }
 ```
+
+> Es importante agregar el objeto visual caja mediante `game.addVisual(caja)` en lugar de como lo hacíamos anteriormente: `game.center().drawElement(caja)` para que escuche eventos que la hagan moverse
 
 El método `movete()` en caja actualiza la posición en base a un valor al azar, tomando en cuenta el ancho y alto del tablero:
 
@@ -387,7 +389,7 @@ Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado inter
 
 ![attributes](images/attributes.png)
 
-Si no queremos que ocurra esto (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
+Si no queremos que ocurra esto (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes()` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
 
 ```js
 program firstWollokGameProgram {
