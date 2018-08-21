@@ -858,4 +858,4 @@ aString === anotherString ==> true, now they do
 
 In general, numbers, strings, booleans, and [constue objects](https://en.wikipedia.org/wiki/constue_object) (objects that represents constues) override == operator based on their internal state.
 
-For further information see Wollok paper explaining [Equality & Identity](https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#heading=h.hryrt6t60c2h) among other concepts.
+For further information see Wollok paper explaining [Equality & Identity](https://docs.google.com/document/d/18QtQCs91tXX1e4kpEPs4sLU-TRJsxcoEKVngMDf278c/edit#heading=h.hryrt6t60c2h) among other concepts.

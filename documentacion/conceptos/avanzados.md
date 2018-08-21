@@ -766,4 +766,4 @@ unString === otroString  ==> true (ahora sí)
 
 En general, hay objetos que representan valores: los números, los strings, los booleanos, y los [value objects](https://en.wikipedia.org/wiki/Value_object), a ellos se les suele redefinir el == / equals en base a su estado. 
 
-Para más información ver el paper de Wollok en el que se habla de [igualdad e identidad](https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit#heading=h.hryrt6t60c2h) entre otros conceptos.
+Para más información ver el paper de Wollok en el que se habla de [igualdad e identidad](https://docs.google.com/document/d/18QtQCs91tXX1e4kpEPs4sLU-TRJsxcoEKVngMDf278c/edit#heading=h.hryrt6t60c2h) entre otros conceptos.
