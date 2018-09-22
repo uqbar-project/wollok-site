@@ -21,6 +21,7 @@ layout: none
 	1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
 	1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
 	1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
+1. <a href="#troubleshooting" class="wollokLink">Troubleshooting</a>
 1. <a href="#more-info" class="wollokLink">More info</a>
 
 ____
@@ -393,6 +394,48 @@ program firstWollokGameProgram {
 	game.hideAttributes(wollok)
 	...
 ```
+
+### Troubleshooting
+
+#### Error in Ubuntu
+
+Some Ubuntu installations may crash with this error message while opening a Wollok Game program:
+
+```
+LwjglApplication: Couldn't initialize audio, disabling audio
+java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper
+	at java.awt.Toolkit.loadAssistiveTechnologies(Toolkit.java:807)
+	at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:886)
+	at org.lwjgl.LinuxSysImplementation.<clinit>(LinuxSysImplementation.java:50)
+	at org.lwjgl.Sys.createImplementation(Sys.java:131)
+	at org.lwjgl.Sys.<clinit>(Sys.java:116)
+	at org.lwjgl.openal.AL.<clinit>(AL.java:59)
+	at com.badlogic.gdx.backends.lwjgl.audio.OpenALAudio.<init>(OpenALAudio.java:72)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:83)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:64)
+	at org.uqbar.project.wollok.game.gameboard.WollokGDXApplication.<init>(WollokGDXApplication.java:12)
+	at org.uqbar.project.wollok.game.helpers.Application.start(Application.java:28)
+	at org.uqbar.project.wollok.game.gameboard.Gameboard.start(Gameboard.java:86)
+```
+
+Or just a shorter `Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper` error message. Should this happen, follow [these steps](https://askubuntu.com/questions/695560/assistive-technology-not-found-awterror). Edit accessibility.properties file
+
+```bash
+$ sudo edit /etc/java-8-openjdk/accessibility.properties\ # or any other text editor you choose
+```
+
+and comment out this configuration
+
+```bash
+#assistive_technologies=org.GNOME.Accessibility.AtkWrapper
+```
+
+Close and reopen Wollok environment and everything should work normally.
+
+#### Wollok Game problem in MacOS HighSierra
+
+Wollok Game uses SWT, an Eclipse component [with issues reported using in a MacOS High Sierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). This problem will be solved in next version, meanwhile as a workaround you can install a VM in another operating system and work with it.
+
 
 ### More info
 
