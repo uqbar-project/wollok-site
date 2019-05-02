@@ -6,7 +6,7 @@ lang: 'es'
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
 
-<h1>&nbsp;&nbsp;¡Tenemos una nueva versión: Wollok Freire!</h1>
+<h1>&nbsp;&nbsp;¡Tenemos una nueva versión: Wollok Hipatia!</h1>
 </div>
 
 <img src="/images/news-freire/paulo-freire.jpg" height="170" width="170" align="left" style="padding: 0rem 0.5rem 0rem 0.5rem !important; margin-bottom: 0rem;"/>
