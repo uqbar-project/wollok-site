@@ -7,7 +7,7 @@ icon: 'bus'
 --- 
 
 <div class="container">
-    <h1>Un tour por Wollok</h1>
+    <h1>Un tour por el Wollok IDE</h1>
     <br>
 </div>
 
