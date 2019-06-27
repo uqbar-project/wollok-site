@@ -67,7 +67,7 @@ lang: 'es'
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1VPKwf_cHcFTCj9JSYZ-xJmchX_n10bSJwxTUcmpd3w0/edit?usp=sharing" target="_blank">
             <span class="badge mdb-color lighten-1 badge-pill">17</span> Herencia vs. composición. El proceso de Diseño.
         </a></ul>        
-        <ul class="list-group-item"><a href="https://docs.google.com/document/d/1p4W1wwzzdvzfdGbvXexbE3arwyAAg1xirYW68Twkatc/edit#" target="_blank">
+        <ul class="list-group-item"><a href="https://docs.google.com/document/d/1A6JB4EretksCyMDvOj4NzfiEzX8yfboDTZnER7x_xJI/edit" target="_blank">
             <span class="badge blue-grey lighten-1 badge-pill">Anexo 1</span> Guía de shortcuts del entorno Wollok.
         </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1p4W1wwzzdvzfdGbvXexbE3arwyAAg1xirYW68Twkatc/edit#" target="_blank">
