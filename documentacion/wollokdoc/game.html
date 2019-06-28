@@ -1,8 +1,209 @@
+<h2 id="game"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ game</h2>
+
+
+<p> Wollok Game main object</p>
+<h3> Behavior</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td width="30%"id="game_addVisual_1"><b>addVisual</b> (positionable)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds an object to the board for drawing it.<br>Object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisual(pepita) ==> pepita should have a position property</td>
+</tr>
+<tr>
+<td width="30%"id="game_addVisualCharacter_1"><b>addVisualCharacter</b> (positionable)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds an object to the board for drawing it. It can be moved with arrow keys.<br>That object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisualCharacter(pepita) ==> pepita should have a position property</td>
+</tr>
+<tr>
+<td width="30%"id="game_addVisualCharacterIn_2"><b>addVisualCharacterIn</b> (element, position)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds an object to the board for drawing it on a specific position. It can be moved with arrow keys.<br><br>Example:<br>    game.addVisualCharacterIn(pepita, game.origin()) ==> no need for pepita to have a position property</td>
+</tr>
+<tr>
+<td width="30%"id="game_addVisualIn_2"><b>addVisualIn</b> (element, position)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds an object to the board for drawing it on a specific position.<br><br>Example:<br>    game.addVisual(pepita, game.origin()) ==> no need for pepita to have a position property<br>    game.addVisual(pepita, game.at(2, 2))</td>
+</tr>
+<tr>
+<td width="30%"id="game_at_2"><b>at</b> (x, y)     </td><td width="70%;">Returns a position for given coordinates.</td>
+</tr>
+<tr>
+<td width="30%"id="game_boardGround_1"><b>boardGround</b> (image)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Sets full background image.</td>
+</tr>
+<tr>
+<td width="30%"id="game_center_0"><b>center</b> ()     </td><td width="70%;">Returns the center board position (rounded down).</td>
+</tr>
+<tr>
+<td width="30%"id="game_clear_0"><b>clear</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Removes all visual objects on board and configurations (colliders, keys, etc).</td>
+</tr>
+<tr>
+<td width="30%"id="game_colliders_1"><b>colliders</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Returns all objects that are in same position of given object.</td>
+</tr>
+<tr>
+<td width="30%"id="game_doStart_1"><b>doStart</b> (isRepl)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>private</b></td>
+</tr>
+<tr>
+<td width="30%"id="game_errorReporter_1"><b>errorReporter</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Allows to configure a visual component as "error reporter".<br>Then every error in game board will be reported by this visual component,<br>in a balloon message form.</td>
+</tr>
+<tr>
+<td width="30%"id="game_getObjectsIn_1"><b>getObjectsIn</b> (position)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Returns all objects in given position.<br><br>Example:<br>    game.getObjectsIn(game.origin())</td>
+</tr>
+<tr>
+<td width="30%"id="game_ground_1"><b>ground</b> (image)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Sets cells background image.</td>
+</tr>
+<tr>
+<td width="30%"id="game_height_1"><b>height</b> (height)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Sets board height (in cells).</td>
+</tr>
+<tr>
+<td width="30%"id="game_height_0"><b>height</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Returns board height (in cells).</td>
+</tr>
+<tr>
+<td width="30%"id="game_hideAttributes_1"><b>hideAttributes</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Attributes will not show when user mouse over a visual component.<br>Default behavior is to show them.</td>
+</tr>
+<tr>
+<td width="30%"id="game_onTick_3"><b>onTick</b> (milliseconds, name, action)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds a block with a specific name that will be executed every n milliseconds.<br>Block expects no argument.<br>Be careful not to set it too often :)<br><br>Example:<br>    	game.onTick(5000, "pepitaMoving", { => pepita.position().x(0.randomUpTo(4)) })</td>
+</tr>
+<tr>
+<td width="30%"id="game_origin_0"><b>origin</b> ()     </td><td width="70%;">Returns the position (0,0).</td>
+</tr>
+<tr>
+<td width="30%"id="game_removeTickEvent_1"><b>removeTickEvent</b> (name)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Remove a tick event created with onTick message<br><br>Example:<br>     game.removeTickEvent("pepitaMoving")</td>
+</tr>
+<tr>
+<td width="30%"id="game_removeVisual_1"><b>removeVisual</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Removes an object from the board for stop drawing it.<br><br>Example:<br>    game.removeVisual(pepita)</td>
+</tr>
+<tr>
+<td width="30%"id="game_say_2"><b>say</b> (visual, message)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Draws a dialog balloon with given message in given visual object position.<br><br>Example:<br>    game.say(pepita, "hola!")</td>
+</tr>
+<tr>
+<td width="30%"id="game_showAttributes_1"><b>showAttributes</b> (visual)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Attributes will appear again when user mouse over a visual component.<br>Default behavior is to show them, so this is not necessary.</td>
+</tr>
+<tr>
+<td width="30%"id="game_sound_1"><b>sound</b> (audioFile)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Plays once a .mp3, .ogg or .wav audio file</td>
+</tr>
+<tr>
+<td width="30%"id="game_start_0"><b>start</b> ()     </td><td width="70%;">Starts render the board in a new windows.</td>
+</tr>
+<tr>
+<td width="30%"id="game_stop_0"><b>stop</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Stops render the board and finish the game.</td>
+</tr>
+<tr>
+<td width="30%"id="game_title_1"><b>title</b> (title)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Sets game title.</td>
+</tr>
+<tr>
+<td width="30%"id="game_title_0"><b>title</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Returns game title.</td>
+</tr>
+<tr>
+<td width="30%"id="game_whenCollideDo_2"><b>whenCollideDo</b> (visual, action)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds a block that will be executed when the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.whenCollideDo(pepita, { comida => pepita.comer(comida) })</td>
+</tr>
+<tr>
+<td width="30%"id="game_whenKeyPressedDo_2"><b>whenKeyPressedDo</b> (key, action)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Adds a block that will be executed each time a specific key is pressed<br><b>see</b> keyboard.onPressDo()</td>
+</tr>
+<tr>
+<td width="30%"id="game_width_1"><b>width</b> (width)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Sets board width (in cells).</td>
+</tr>
+<tr>
+<td width="30%"id="game_width_0"><b>width</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Returns board width (in cells).</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="Position"><img src="images/class.png" height="24px" width="24px" title="class"/>
+ Position</h2>
+
+
+<p> Represents a position in a two-dimensional gameboard.<br>It is an immutable object since Wollok 1.8.0</p>
+<h3> Constructors</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<b>constructor</b>()
+<p> Returns the position at origin: (0,0).</p>
+<b>constructor</b>(_x, _y)
+<p> Returns a position with given x and y coordinates.<br>From now on, position is immutable.</p>
+</table></div>
+<hr>
+<h3> Behavior</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td width="30%"id="Position_==_1"><b>==</b> (other)     </td><td width="70%;">Two positions are equals if they have same coordinates.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_allElements_0"><b>allElements</b> ()     </td><td width="70%;">Returns all objects in self.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_clear_0"><b>clear</b> ()     </td><td width="70%;">Removes all objects in self from the board for stop drawing it.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_clone_0"><b>clone</b> ()     </td><td width="70%;">Returns a new position with same coordinates.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_distance_1"><b>distance</b> (position)     </td><td width="70%;">Returns the distance between given position and self.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_down_1"><b>down</b> (n)     </td><td width="70%;">Returns a new Position, n steps down from this one.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_drawCharacter_1"><b>drawCharacter</b> (element)     </td><td width="70%;">Adds an object to the board for drawing it in self. It can be moved with arrow keys.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_drawElement_1"><b>drawElement</b> (element)     </td><td width="70%;">Adds an object to the board for drawing it in self.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_left_1"><b>left</b> (n)     </td><td width="70%;">Returns a new Position n steps left from this one.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_right_1"><b>right</b> (n)     </td><td width="70%;">Returns a new Position n steps right from this one.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_say_2"><b>say</b> (element, message)     </td><td width="70%;">Draw a dialog balloon with given message in given visual object position.</td>
+</tr>
+<tr>
+<td width="30%"id="Position_toString_0"><b>toString</b> ()     </td><td width="70%;">String representation of a position</td>
+</tr>
+<tr>
+<td width="30%"id="Position_up_1"><b>up</b> (n)     </td><td width="70%;">Returns a new Position n steps up from this one.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
 <h2 id="keyboard"><img src="images/object.png" height="24px" width="24px" title="object"/>
  keyboard</h2>
 
 
-<p> Keyboard object handles all keys movements. There is a method for each key.<br><br>Examples:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"<br><br>    keyboard.any().onPressDo { game.say("you pressed a key!") }<br>        => any key pressed will activate its closure</p>
+<p> Keyboard object handles all keys movements. There is a method for each key.<br><br>Examples:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"<br><br>    keyboard.any().onPressDo { game.say(pepita, "you pressed a key!") }<br>        => any key pressed will activate its closure</p>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -83,6 +284,9 @@
 </tr>
 <tr>
 <td width="30%"id="keyboard_n_0"><b>n</b> ()     </td><td width="70%;"></td>
+</tr>
+<tr>
+<td width="30%"id="keyboard_num_1"><b>num</b> (n)     </td><td width="70%;"></td>
 </tr>
 <tr>
 <td width="30%"id="keyboard_num0_0"><b>num0</b> ()     </td><td width="70%;"></td>
@@ -199,4 +403,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 05/09/2018 17:16:17</p>
+<p>Last update: 30/05/2019 01:09:29</p>

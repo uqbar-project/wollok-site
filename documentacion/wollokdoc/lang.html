@@ -49,7 +49,7 @@
 <td width="30%"id="Exception_printStackTrace_0"><b>printStackTrace</b> ()     </td><td width="70%;">Prints this exception and its backtrace to the console</td>
 </tr>
 <tr>
-<td width="30%"id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td width="70%;">Prints this exception and its backtrace to the specified printer</td>
+<td width="30%"id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td width="70%;"><b>private</b><br>Prints this exception and its backtrace to the specified printer</td>
 </tr>
 <tr>
 <td width="30%"id="Exception_printStackTraceWithPrefix_2"><b>printStackTraceWithPrefix</b> (prefix, printer)     </td><td width="70%;"><b>private</b></td>
@@ -180,11 +180,14 @@
 <td width="30%"id="Object_messageNotUnderstood_2"><b>messageNotUnderstood</b> (messageName, parameters)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_printString_0"><b>printString</b> ()     </td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overriden<br>like in String</td>
+<td width="30%"id="Object_printString_0"><b>printString</b> ()     </td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overridden<br>like in String</td>
 </tr>
 <tr>
 <td width="30%"id="Object_resolve_1"><b>resolve</b> (name)    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;">Accesses a variable by name, in a reflexive way.</td>
+</tr>
+<tr>
+<td width="30%"id="Object_shortDescription_0"><b>shortDescription</b> ()     </td><td width="70%;">Shows a short, internal representation</td>
 </tr>
 <tr>
 <td width="30%"id="Object_simplifiedToSmartString_0"><b>simplifiedToSmartString</b> ()     </td><td width="70%;"><b>private</b></td>
@@ -251,7 +254,7 @@
 <td width="30%"id="Collection_+_1"><b>+</b> (elements)     </td><td width="70%;">Concatenates this collection to all elements from the given<br>collection parameter giving a new collection<br>(no side effect)<br><br>Example:<br>		[1, 2] + [3]   => Answers [1, 2, 3]<br>    [1, 2] + #{3}  => supports concatenation between lists and sets, answers [1, 2, 3]<br>    #{} + []       => Answers #{}</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_absolute_2"><b>absolute</b> (closure, criteria)     </td><td width="70%;"><b>private</b></td>
+<td width="30%"id="Collection_absolute_3"><b>absolute</b> (closure, criteria, emptyCaseClosure)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Collection_add_1"><b>add</b> (element)     </td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -277,6 +280,10 @@
     </td><td width="70%;">Converts a collection to a set (no duplicates)</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_clear_0"><b>clear</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br><b>see</b> subclasses implementations</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_contains_1"><b>contains</b> (e)     </td><td width="70%;">Answers whether this collection contains the specified element.<br><br>Example:<br>     [].contains(3)        => Answers false<br>     [1, 2, 3].contains(2) => Answers true</td>
 </tr>
 <tr>
@@ -299,7 +306,7 @@
  </td><td width="70%;">Answers the element of self collection that satisfies a given condition,<br>or the the result of evaluating the given continuation.<br>If more than one element satisfies the condition then it depends on the<br>specific collection class which element will be returned.<br><br><b>returns</b> the element that complies the condition or the result<br>of evaluating the continuation<br><br>Example:<br>     users.findOrElse({ user => user.name() == "Cosme Fulanito" }, { homer })<br>     [1, 3, 5].findOrElse({ number => number.even() }, { 6.max(4) }) => Answers 6<br>     [].findOrElse({ number => number.even() }, { false })           => Answers false</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example<br>		object klaus {<br> 		method languages() = ["c", "cobol", "pascal"]<br>		}<br><br>		object fritz {<br>			method languages() = ["java", "perl"]<br>		}<br><br>		program abc {<br>			console.println([klaus, fritz].flatMap({ person => person.languages() }))<br>				=> Answers ["c", "cobol", "pascal", "java", "perl"]<br>		}</td>
+<td width="30%"id="Collection_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>		object klaus {<br> 		method languages() = ["c", "cobol", "pascal"]<br>		}<br><br>		object fritz {<br>			method languages() = ["java", "perl"]<br>		}<br><br><br>		[klaus, fritz].flatMap({ person => person.languages() })<br>			=> Answers ["c", "cobol", "pascal", "java", "perl"]</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_flatten_0"><b>flatten</b> ()     </td><td width="70%;">Flattens a collection of collections<br><br>Example:<br>		[ [1, 2], [3], [4, 0], [] ].flatten()  => Answers [1, 2, 3, 4, 0]</td>
@@ -317,6 +324,14 @@
 <td width="30%"id="Collection_isEmpty_0"><b>isEmpty</b> ()     </td><td width="70%;">Tells whether self collection has no elements<br><br>Example:<br>		[1, 6, 5].isEmpty() => Answers false<br>    [].isEmpty()        => Answers true</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_join_1"><b>join</b> (separator)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_join_0"><b>join</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_map_1"><b>map</b> (closure)     </td><td width="70%;">Answers a new collection that contains the result of transforming<br>each of self collection's elements using a given closure.<br>The condition is a closure argument that takes a single element<br>and answers an object.<br><b>returns</b> another list<br><br>Example:<br>     const ages = users.map({ user => user.age() })<br>     [1, 2, 3].map { number => number.odd() }  => Answers [true, false, true]<br>     [].map { number => number.odd() }         => Answers []</td>
 </tr>
 <tr>
@@ -326,10 +341,22 @@
 <td width="30%"id="Collection_max_0"><b>max</b> ()     </td><td width="70%;">Answers the element that represents the maximum value in the collection.<br>The criteria is by direct comparison of the elements.<br>If collection is empty, an ElementNotFound exception is thrown.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].max() =>  Answers 15<br>      [].max()                      =>  Throws error, list must not be empty</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_maxIfEmpty_2"><b>maxIfEmpty</b> (toComparableClosure, emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the maximum value,<br>or applies a closure if the collection is empty.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the >, >= messages).<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      ["a", "ab", "abc", "d" ].maxIfEmpty({ e => e.length() }, { "default" })<br>           => Answers "abc"<br><br>      [].maxIfEmpty({ e => e.length() }, { "default" })<br>           => Answers "default"</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_maxIfEmpty_1"><b>maxIfEmpty</b> (emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the maximum value,<br>or applies a closure if the collection is empty.<br>The criteria is by direct comparison of the elements.<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].maxIfEmpty({ 99 }) =>  Answers 15<br>      [].maxIfEmpty({ 99 })                      =>  Answers 99</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_min_1"><b>min</b> (closure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the <, <= messages).<br><br>Example:<br>      ["ab", "abc", "hello", "wollok world"].min({ e => e.length() })<br>            =>  Answers "ab"<br><br>      [].min({ e => e.length() })<br>            => Throws error, list must not be empty</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_min_0"><b>min</b> ()     </td><td width="70%;">Answers the element that represents the minimum value in the<br>non-empty collection.<br>The criteria is by direct comparison of the elements.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].min()  => Answers 1<br>      [].min()                       => Throws error, list must not be empty</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_minIfEmpty_2"><b>minIfEmpty</b> (toComparableClosure, emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value,<br>or applies a closure if the collection is empty.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the >, >= messages).<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      ["ab", "abc", "hello", "wollok world"].minIfEmpty({ e => e.length() }, { "default" })<br>            =>  Answers "ab"<br><br>      [].minIfEmpty({ e => e.length() }, { "default" })<br>            => Answers "default"</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_minIfEmpty_1"><b>minIfEmpty</b> (emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value,<br>or applies a closure if the collection is empty.<br>The criteria is by direct comparison of the elements.<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].minIfEmpty({ 99 })  => Answers 1<br>      [].minIfEmpty({ 99 })                       => Answers 99</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_newInstance_0"><b>newInstance</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
@@ -467,7 +494,7 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
@@ -483,8 +510,12 @@
     , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_2')">maxIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
     , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_1')">minIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_2')">minIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
@@ -618,7 +649,7 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
@@ -634,8 +665,12 @@
     , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_2')">maxIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
     , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_1')">minIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_2')">minIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
@@ -1101,6 +1136,9 @@
 <td width="30%"id="Range_findOrElse_2"><b>findOrElse</b> (closure, continuation)     </td><td width="70%;"><b>see</b> List#findOrElse(predicate, continuation)</td>
 </tr>
 <tr>
+<td width="30%"id="Range_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>     (1..4).flatMap({ n => 1 .. n }) ==> Answers [1, 1, 2, 1, 2, 3, 1, 2, 3, 4]</td>
+</tr>
+<tr>
 <td width="30%"id="Range_fold_2"><b>fold</b> (seed, foldClosure)     </td><td width="70%;"><b>see</b> List#fold(seed, foldClosure)</td>
 </tr>
 <tr>
@@ -1257,6 +1295,9 @@
  </td><td width="70%;">Answers a copy of this Date with the specified number of years added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(31, 1, 2018).plusYears(1)<br>       ==> Answers a Date[day = 31, month = 1, year = 2019], a year forward<br><br>    new Date(12, 5, 2018).plusYears(-1)<br>       ==> Answers a Date[day = 12, month = 5, year = 2017], a year back</td>
 </tr>
 <tr>
+<td width="30%"id="Date_shortDescription_0"><b>shortDescription</b> ()     </td><td width="70%;">Shows a short, internal representation of a date<br><br>Example:<br>    new Date(2, 4, 2018).shortDescription()<br>        ==> Answers "2/4/2018"</td>
+</tr>
+<tr>
 <td width="30%"id="Date_toSmartString_1"><b>toSmartString</b> (alreadyShown)     </td><td width="70%;">Shows nicely an internal representation of a date</td>
 </tr>
 <tr>
@@ -1271,4 +1312,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 05/09/2018 17:16:17</p>
+<p>Last update: 30/05/2019 01:09:30</p>

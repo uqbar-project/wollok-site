@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: null
 ---
 
 ## Indice rápido ##

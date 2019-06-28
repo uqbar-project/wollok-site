@@ -16,17 +16,19 @@ url:              http://github.org/uqbar-project/wollok
 logo:             /images/WollokLogo.png
 
 author:
-  name:           'Javier Fernandes'
+  name:           'wollokbot'
   url:            https://ar.linkedin.com/in/javier-fernandes-0144414
 
 #paginate:         5
 
 # Custom vars
-version:          1.6.3
+version:          1.7.7
 
 github:
   repo:           http://github.org/uqbar-project/wollok
 
-gems: 
+plugins: 
   - jekyll-paginate
   - jekyll-watch
+
+github: [metadata]

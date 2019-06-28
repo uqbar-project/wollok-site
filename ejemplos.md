@@ -90,6 +90,7 @@ Ejemplos de Wollok Game
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/pacmanBasicGame">Pacman</a></li>
     </ul>
 </div>
 
