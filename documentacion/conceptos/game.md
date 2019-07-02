@@ -443,4 +443,6 @@ Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconven
 
 ### Para seguirla
 
-Podés investigar [todos estos ejemplos](https://github.com/wollok?utf8=%E2%9C%93&q=game&type=&language=) en el repositorio de Wollok. ¡Que lo disfrutes!
+Te dejamos [esta documentación avanzada](https://github.com/leodelgadodev/Documentacion-wollokGame) que hizo Leo Delgado al usar Wollok Game en su curso.
+
+También podés investigar [todos estos ejemplos](https://github.com/wollok?utf8=%E2%9C%93&q=game&type=&language=) en el repositorio de Wollok. ¡Que lo disfrutes!
