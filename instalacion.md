@@ -137,7 +137,7 @@ icon: 'cloud-download'
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingThree">
-				<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				<a data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
 					<h4 id="troubleshooting" class="card-header mdb-color lighten-2 white-text">
 						Problemas comunes al instalar Wollok
 						<i class="fa fa-angle-down rotate-icon"></i>
@@ -145,7 +145,7 @@ icon: 'cloud-download'
 				</a>
 			</div>
 			<!-- Card body -->
-			<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+			<div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
 				<div class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">El IDE muestra la pantalla de bienvenida y no levanta</h4>
 					<p>
@@ -233,7 +233,7 @@ icon: 'cloud-download'
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" id="troubleshooting" role="tab" id="headingFour">
-				<a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+				<a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
 					<h4 class="card-header mdb-color lighten-2 white-text" id="configuraciones-extras">
 						Configuraciones extras
 						<i class="fa fa-angle-down rotate-icon"></i>
@@ -241,7 +241,7 @@ icon: 'cloud-download'
 				</a>
 			</div>
 			<!-- Card body -->
-			<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+			<div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
 				<div class="card-body grey lighten-5 transparent">
 					<h4 class="card-title" id="apuntando-la-jdk-correcta-en-tu-entorno">Apuntando la JDK correcta en tu entorno</h4>
 					<p>

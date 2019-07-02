@@ -36,9 +36,7 @@ lang: 'en'
 		</div>
 	</div>
 	<!--/.Card-->
-
 	<br>
-
 	<!--Panel-->
 	<div class="accordion" id="accordionInstalacion" role="tablist" aria-multiselectable="true">
 		<div class="card">
@@ -51,7 +49,6 @@ lang: 'en'
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 				<div class="card-body grey lighten-5 transparent">
@@ -69,18 +66,16 @@ lang: 'en'
 				</div>
 			</div>
 		</div>
-
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingTwo">
-				<a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseThree">
+				<a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 					<h4 class="card-header mdb-color lighten-2 white-text" id="jdk-18">
 						Download Wollok
 						<i class="fa fa-angle-down rotate-icon"></i>
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
 				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
@@ -150,20 +145,18 @@ lang: 'en'
 				</div>
 			</div>
 		</div>
-
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" role="tab" id="headingThree">
-				<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				<a data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
 					<h4 id="troubleshooting" class="card-header mdb-color lighten-2 white-text">
 						Troubleshooting
 						<i class="fa fa-angle-down rotate-icon"></i>
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
-			<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+			<div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
 				<div class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">IDE shows splash screen but does not start</h4>
 					<p>
@@ -231,10 +224,8 @@ lang: 'en'
 							<img src="/images/troubleshooting/aplicacionNoFirmada.png" class="hoverable img-fluid z-depth-1"/>
 						</div>
 						<br>
-		
 						More details of how to configure the exception to run Wollok is available in  
 						<a href="https://support.apple.com/kb/PH21769?locale=en_EN&viewlocale=en_EN">Apple support site</a>.
-							
 					</p>
 					<hr>
 					<h4 class="card-title">App Translocation Problem (Mac)</h4>
@@ -253,20 +244,18 @@ lang: 'en'
 				</div>
 			</div>
 		</div>
-
 		<div class="card">
 			<!-- Card header -->
 			<div class="card-header mdb-color lighten-2 white-text" id="troubleshooting" role="tab" id="headingFour">
-				<a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+				<a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
 					<h4 class="card-header mdb-color lighten-2 white-text" id="configuraciones-extras">
 						Custom configurations
 						<i class="fa fa-angle-down rotate-icon"></i>
 					</h4>
 				</a>
 			</div>
-
 			<!-- Card body -->
-			<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+			<div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
 				<div class="card-body grey lighten-5 transparent">
 						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-tu-entorno">Pointing to the right JDK in your environment</h4>
 						<p>
