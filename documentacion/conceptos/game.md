@@ -123,7 +123,7 @@ object wollok {
 #### Moviendo objetos
 Una característica _importante_ de estos objetos posiciones es que son **mutables**, lo que implica que sus componentes _(x, y)_ pueden cambiar en el tiempo. Eso nos permite poder **mover los objetos** en pantalla sin tener que cambiar el objeto posición (o sin tener que sacarlo del tablero y volverlo a meter en otra posición).
 
-```js
+```wollok
 >>> posicion   // acordate que la referencia posicion está definido más arriba
 (0,0)
 >>> posicion.moveRight(2)  
@@ -165,7 +165,7 @@ Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `o
 Para elegir la imagen de un determinado objeto es necesario:
 
 1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras.. > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta.
-2. Agregar a tus objetos un método `imagen()` que **retorne el nombre del archivo de la imagen** como string.
+2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string.
 
 #### Ejemplo
 
@@ -176,15 +176,15 @@ Para elegir la imagen de un determinado objeto es necesario:
 
 ###### En example.wlk
 
-```js
+```wollok
 object caja {
-	method imagen() = "caja.png"
+	method image() = "caja.png"
 } 
 ```
 
 ###### Y al ejecutar
 
-```js
+```wollok
 >>> game.start()
 >>> game.center().drawElement(caja)
 ```
