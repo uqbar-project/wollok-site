@@ -106,7 +106,7 @@ Wollok provee objetos que representan a las posiciones, que también se encuentr
 
 La forma más simple de obtener una posición es pedírsela al **game** 
 
-Por ejemplo, teniendo corriendo cualquier archivo .wlk que incluya el import de wollok.game.* se puede probar en al consola:
+Por ejemplo, teniendo corriendo cualquier archivo `.wlk` que incluya el import de `wollok.game.*` se puede probar en al consola:
 
 ```wollok
 >>> game.at(2,3)
@@ -137,7 +137,7 @@ Otra forma es instanciando la clase `Position`
 ```
 
 #### Dibujando objetos
-Una forma es que el objeto tenga un método con nombre _position()_ que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir _position_ como propiedad.
+Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
 ```wollok
 // Con propiedad
@@ -165,14 +165,14 @@ game.addVisual(wollok)
 
 
 ##### Otra opción
-Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método _position()_ sino pasándole la posición inicial de la siguiente manera.
+Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
 
 ```wollok
 game.addVisualIn(wollok,game.center())
 ```
 
 ##### Otra opción más
-También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje _position()_.
+También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
 
 ```wollok
 var posicion = game.origin()
@@ -180,9 +180,9 @@ posicion.drawElement(wollok)
 ```
 
 #### Moviendo objetos
-Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo _position()_ y manipulando las referencias que se utilizan en él. 
-Las posiciones son objetos inmutables, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
-En un caso simple, con una propiedad o un método que simplemente retorna la variable _position_, si se setea en dicha variable una posición diferente, el objeto se mueve a la nueva posición.
+Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo `position()` y manipulando las referencias que se utilizan en él. 
+Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
+En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si se setea en dicha variable una posición diferente, el objeto se mueve a la nueva posición.
 
 ```wollok
 // Con propiedad
@@ -206,7 +206,7 @@ object wollok {
 
 ``` 
 
-Las posiciones entienden los mensajes _right(c)_, _left(c)_, _up(c)_, _down(c)_ que devuelven nuevas posiciones con un desplazamiento de _c_ casilleros en la dirección correspondiente. De esta forma, se facilita el desplazamiento de los objetos.
+Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. De esta forma, se facilita el desplazamiento de los objetos.
 
 ```wollok
 object wollok {
@@ -226,7 +226,7 @@ object wollok {
 ## El personaje
 
 Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo y su ubicación inicial.
-En este caso, no se le define el método _position()_ sino que el juego lo maneja por su cuenta. 
+En este caso, no se le define el método `position()` sino que el juego lo maneja por su cuenta. 
 
 ```wollok 
 game.addVisualCharacterIn(wollok, game.origin())
@@ -236,12 +236,12 @@ game.addVisualCharacterIn(wollok, game.origin())
 ![wollok-character](images/wollokCharacter.gif)
 
 ##### Otra opción
-Otra forma es ubicar el personaje especial mediante el método _addVisualCharacter(object)_ sin indicar la posición inicial, sino tomándola del mismo obejeto.
+Otra forma es ubicar el personaje especial mediante el método `addVisualCharacter(object)` sin indicar la posición inicial, sino tomándola del mismo obejeto.
 
 ```wollok 
 game.addVisualCharacter(wollok)
 ```
-En este caso, el objeto debe tener el método _position()_ que se utiliza sólo para determinar la posición inicial. Dado que las sucesivas posiciones surgen a partir del uso del teclado, se ignora luego su valor de retorno. 
+En este caso, el objeto debe tener el método `position()` que se utiliza sólo para determinar la posición inicial. Dado que las sucesivas posiciones surgen a partir del uso del teclado, se ignora luego su valor de retorno. 
 
 
 ### Visuales
@@ -262,6 +262,8 @@ Para elegir la imagen de un determinado objeto es necesario:
 ###### En example.wlk
 
 ```wollok
+import wollok.game.*
+
 object caja {
 	method image() = "caja.png"
 } 
@@ -345,7 +347,8 @@ Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cua
 En el programa agregamos el mensaje correspondiente al objeto game:
 
 ```wollok
-program firstWollokGameProgram {
+import wollok.game.*
+program ejemplo {
 	game.width(10)
 	game.height(10)
 	game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
@@ -385,9 +388,9 @@ Igualmente nosotros podemos decirle que otro sea el objeto que reporte los error
 
 ```wollok
 program ejemplo {
-	...
+	//...
 	game.errorReporter(caja)
-	...
+	//...
 }
 ```
 
@@ -398,7 +401,7 @@ Entonces cuando hay un error en un bloque de código que maneja Wollok Game, ser
 
 #### Eventos automaticos
 
-Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game`, pasándole un identificaor (sting descriptivo) y el bloque de código que debe ejecutar:
+Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game`, el lapso de repetición expresado en milisegundos, un identificaor (string descriptivo) y el bloque de código que debe ejecutar:
 
 ```wollok
 program ejemplo {
@@ -418,11 +421,11 @@ object caja {
 	var property position = game.center()
 	method image() = "caja.png"
 	method movete() {
-		const x = (0.. game.width()-1).anyOne() 
-		const y = (0.. game.height()-1).anyOne() 
+		const x = 0.randomUpTo(game.width()).truncate(0)
+		const y = 0.randomUpTo(game.height()).truncate(0)
 		//otra forma de generar números aleatorios
-		//const x = 0.randomUpTo(game.width()).truncate(0)
-		//const y = 0.randomUpTo(game.height()).truncate(0)
+		//const x = (0.. game.width()-1).anyOne() 
+		//const y = (0.. game.height()-1).anyOne() 
 		position = game.at(x,y) 
 	}
 }
@@ -445,20 +448,15 @@ program ejemplo {
 	game.addVisualCharacterIn(wollok,game.origin())
 	game.addVisual(caja)
 	
-	game.onTick(2000, "movimiento" { caja.movete() })
+	game.onTick(2000, "movimiento",{ caja.movete() })
 
 	// capturamos el evento ENTER del teclado
 	keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}	
 	// capturamos el evento de presionar la tecla p del teclado
-	keyboard.p().onPressDo {game.removeTick("movimiento")}	
+	keyboard.p().onPressDo {game.removeTick("movimiento")}	// Mensaje que detiene la acción repetitiva indicada
 	game.start()
 }
 ```
-
-Y aquí vemos cómo se queda quieta o se mueve la caja:
-
-![keyboard](images/keyboard.gif)
-
 
 #### Mostrar o no los atributos de los objetos visuales
 
@@ -482,7 +480,7 @@ Si no queremos que ocurra esto (porque nos distrae tanta información en el tabl
 program ejemplo {
 	game.addVisualCharacterIn(wollok,game.center())
 	game.hideAttributes(wollok)
-	...
+	//...
 }
 ```
 
