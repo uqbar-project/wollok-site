@@ -436,17 +436,17 @@ Cuando ejecutamos el programa, vemos cómo la caja cada 2 segundos cambia de pos
 #### Eventos del teclado
 
 Wollok Game permite capturar todos los eventos del teclado, para lo cual te recomendamos que leas la documentación del objeto autodefinido `keyboard`. En particular, podés definir qué tiene que pasar cuando un usuario presione una tecla. 
-Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ hace que el movimiento de la caja se detenga
+Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ hace que el movimiento de la caja se detenga.
 
 ```wollok
-import example.*
 import wollok.game.*
 
 program ejemplo {
 	game.addVisualCharacterIn(wollok,game.origin())
 	game.addVisual(caja)
 	
-	game.onTick(2000, "movimiento" { if (cajaDiscola) caja.movete() })
+	game.onTick(2000, "movimiento" { caja.movete() })
+
 	// capturamos el evento ENTER del teclado
 	keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}	
 	// capturamos el evento de presionar la tecla p del teclado
@@ -464,12 +464,12 @@ Y aquí vemos cómo se queda quieta o se mueve la caja:
 
 Incorporemos los siguientes atributos al objeto visual wollok:
 
-```js
+```wollok
 object wollok {
 	var property position = game.origin()
 	var version = "1.7.0"
 	var lastUpdated = new Date()
-	...
+}
 ```
 
 Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado interno:
@@ -478,12 +478,12 @@ Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado inter
 
 Si no queremos que ocurra esto (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes()` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
 
-```js
-program firstWollokGameProgram {
-	var cajaDiscola = true
-	game.addVisualCharacter(wollok)
+```wollok
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.center())
 	game.hideAttributes(wollok)
 	...
+}
 ```
 
 ### Problemas comunes
@@ -528,6 +528,8 @@ Con eso volvé a levantar el entorno Wollok y debería funcionar correctamente.
 Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconvenientes con la versión MacOS HighSierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). En la próxima versión este problema estará resuelto, pero hasta tanto eso no ocurra te aconsejamos para salir del paso instalar una Virtual Machine de otro sistema operativo.
 
 ### Para seguirla
+
+El código de los ejemplos mencionados está en  [este repositorio](https://github.com/wollok/ejemploGameSite) 
 
 Te dejamos [esta documentación avanzada](https://github.com/leodelgadodev/Documentacion-wollokGame) que hizo Leo Delgado al usar Wollok Game en su curso.
 
