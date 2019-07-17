@@ -252,6 +252,7 @@ Para elegir la imagen de un determinado objeto es necesario:
 1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
 2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión.
 
+
 #### Ejemplo
 
 <div class="container text-center">
@@ -263,7 +264,6 @@ Para elegir la imagen de un determinado objeto es necesario:
 
 ```wollok
 import wollok.game.*
-
 object caja {
 	method image() = "caja.png"
 } 
