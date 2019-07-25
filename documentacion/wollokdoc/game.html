@@ -26,7 +26,7 @@
 </tr>
 <tr>
 <td width="30%"id="game_addVisualIn_2"><b>addVisualIn</b> (element, position)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Adds an object to the board for drawing it on a specific position.<br><br>Example:<br>    game.addVisual(pepita, game.origin()) ==> no need for pepita to have a position property<br>    game.addVisual(pepita, game.at(2, 2))</td>
+ </td><td width="70%;">Adds an object to the board for drawing it on a specific position.<br><br>Example:<br>    game.addVisualIn(pepita, game.origin()) ==> no need for pepita to have a position property<br>    game.addVisualIn(pepita, game.at(2, 2))</td>
 </tr>
 <tr>
 <td width="30%"id="game_at_2"><b>at</b> (x, y)     </td><td width="70%;">Returns a position for given coordinates.</td>
@@ -140,14 +140,6 @@
 
 
 <p> Represents a position in a two-dimensional gameboard.<br>It is an immutable object since Wollok 1.8.0</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>()
-<p> Returns the position at origin: (0,0).</p>
-<b>constructor</b>(_x, _y)
-<p> Returns a position with given x and y coordinates.<br>From now on, position is immutable.</p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -380,12 +372,6 @@
 
 
 <p> </p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_keyCodes)
-<p> </p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -403,4 +389,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 30/05/2019 01:09:29</p>
+<p>Last update: 25/07/2019 22:30:19</p>

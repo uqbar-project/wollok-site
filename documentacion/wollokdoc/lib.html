@@ -40,13 +40,6 @@
 </ul>
 
 <p> Exception to handle other values expected in assert.throwsException... methods</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_message)
-<p> </p>
-<b>constructor</b>(_message, _cause)
-<p> </p>
-</table></div>
 <hr>
 <h2 id="AssertionException"><img src="images/class.png" height="24px" width="24px" title="class"/>
  AssertionException</h2>
@@ -57,15 +50,6 @@
 </ul>
 
 <p> Exception to handle difference between current and expected values<br>in assert.throwsException... methods</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(message)
-<p> </p>
-<b>constructor</b>(message, cause)
-<p> </p>
-<b>constructor</b>(message, _expected, _actual)
-<p> </p>
-</table></div>
 <hr>
 <h2 id="assert"><img src="images/object.png" height="24px" width="24px" title="object"/>
  assert</h2>
@@ -88,7 +72,7 @@
 <td width="30%"id="assert_equals_2"><b>equals</b> (expected, actual)     </td><td width="70%;">Tests whether two values are equal, based on wollok ==, != methods<br><br>Examples:<br>		 assert.equals(10, 100.div(10)) ==> ok, nothing happens<br>		 assert.equals(10.0, 100.div(10)) ==> ok, nothing happens<br>		 assert.equals(10.01, 100.div(10)) ==> throws an exception</td>
 </tr>
 <tr>
-<td width="30%"id="assert_fail_1"><b>fail</b> (message)     </td><td width="70%;">Throws an exception with a custom message.<br>Useful when you reach code that should not be reached.</td>
+<td width="30%"id="assert_fail_1"><b>fail</b> (aMessage)     </td><td width="70%;">Throws an exception with a custom message.<br>Useful when you reach code that should not be reached.</td>
 </tr>
 <tr>
 <td width="30%"id="assert_notEquals_2"><b>notEquals</b> (expected, actual)     </td><td width="70%;">Tests whether two values are equal, based on wollok ==, != methods<br><br>Examples:<br>      const value = 5<br>		 assert.notEquals(10, value * 3) ==> ok, nothing happens<br>		 assert.notEquals(10, value)     ==> throws an exception</td>
@@ -103,13 +87,13 @@
 <td width="30%"id="assert_throwsException_1"><b>throwsException</b> (block)     </td><td width="70%;">Tests whether a block throws an exception. Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsException({ 7 / 0 })<br>        ==> Division by zero error, it is expected, ok<br><br>		assert.throwsException({ "hola".length() })<br>        ==> throws an exception "Block should have failed"</td>
 </tr>
 <tr>
-<td width="30%"id="assert_throwsExceptionByComparing_2"><b>throwsExceptionByComparing</b> (block, comparison)     </td><td width="70%;">Tests whether a block throws an exception and compare this exception with other block<br>called comparison. Otherwise an exception is thrown. The block comparison<br>receives a value (an exception thrown) that is compared in a boolean expression<br>returning the result.<br><br>Examples:<br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => "hola".equals(ex.getMessage())}}<br>         => Works!.<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => new BusinessException("lele").className().equals(ex.className())} }<br>         => Works again!<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => "chau!".equals(ex.getMessage())} }<br>         => Doesn't work. The block evaluation resolves to a false value.</td>
+<td width="30%"id="assert_throwsExceptionByComparing_2"><b>throwsExceptionByComparing</b> (block, comparison)     </td><td width="70%;">Tests whether a block throws an exception and compare this exception with other block<br>called comparison. Otherwise an exception is thrown. The block comparison<br>receives a value (an exception thrown) that is compared in a boolean expression<br>returning the result.<br><br>Examples:<br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => "hola".equals(ex.message())}}<br>         => Works!.<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => new BusinessException("lele").className().equals(ex.className())} }<br>         => Works again!<br><br>		assert.throwsExceptionByComparing({ => throw new BusinessException("hola"),{ex => "chau!".equals(ex.message())} }<br>         => Doesn't work. The block evaluation resolves to a false value.</td>
 </tr>
 <tr>
 <td width="30%"id="assert_throwsExceptionLike_2"><b>throwsExceptionLike</b> (exceptionExpected, block)     </td><td width="70%;">Tests whether a block throws an exception and this is the same expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionLike(new BusinessException("hola"),<br>           { => throw new BusinessException("hola") }<br>           => Works! Exception class and message both match.<br><br>		assert.throwsExceptionLike(new BusinessException("chau"),<br>           { => throw new BusinessException("hola") }<br>           => Doesn't work. Exception class matches but messages are different.<br><br>		assert.throwsExceptionLike(new OtherException("hola"),<br>           { => throw new BusinessException("hola") }<br>           => Doesn't work. Messages matches but they are instances of different exceptions.</td>
 </tr>
 <tr>
-<td width="30%"id="assert_throwsExceptionWithMessage_2"><b>throwsExceptionWithMessage</b> (errorMessage, block)     </td><td width="70%;">Tests whether a block throws an exception and it has the error message as is expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionWithMessage("hola",{ => throw new BusinessException("hola") }<br>          => Works! Both have the same message.<br><br>		assert.throwsExceptionWithMessage("hola",{ => throw new OtherException("hola") }<br>          => Works! Both have the same message.<br><br>		assert.throwsExceptionWithMessage("chau",{ => throw new BusinessException("hola") }<br>          => Doesn't work. Both are instances of BusinessException but their messages differ.</td>
+<td width="30%"id="assert_throwsExceptionWithMessage_2"><b>throwsExceptionWithMessage</b> (errorMessage, block)     </td><td width="70%;">Tests whether a block throws an exception and it has the error message as is expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionWithMessage("hola",{ => throw new BusinessException(message = "hola") }<br>          => Works! Both have the same message.<br><br>		assert.throwsExceptionWithMessage("hola",{ => throw new OtherException(message = "hola") }<br>          => Works! Both have the same message.<br><br>		assert.throwsExceptionWithMessage("chau",{ => throw new BusinessException(message = "hola") }<br>          => Doesn't work. Both are instances of BusinessException but their messages differ.</td>
 </tr>
 <tr>
 <td width="30%"id="assert_throwsExceptionWithType_2"><b>throwsExceptionWithType</b> (exceptionExpected, block)     </td><td width="70%;">Tests whether a block throws an exception and this is the same exception class expected.<br>Otherwise an exception is thrown.<br><br>Examples:<br>		assert.throwsExceptionWithType(new BusinessException("hola"),{ => throw new BusinessException("hola") }<br>         => Works! Both exceptions are instances of the same class.<br><br>		assert.throwsExceptionWithType(new BusinessException("chau"),{ => throw new BusinessException("hola") }<br>         => Works again! Both exceptions are instances of the same class.<br><br>		assert.throwsExceptionWithType(new OtherException("hola"),{ => throw new BusinessException("hola") }<br>         => Doesn't work. Exception classes differ although they contain the same message.</td>
@@ -140,26 +124,6 @@
 </tbody>
 </table></div>
 <hr>
-<h2 id="error"><img src="images/object.png" height="24px" width="24px" title="object"/>
- error</h2>
-
-
-<p> This object simplifies exception throwing</p>
-<h3> Behavior</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<thead>
-<tr>
-<th class="blue-grey lighten-2">Method</th>
-<th class="blue-grey lighten-2">Description</th>
-</tr>
-</thread>
-<tbody>
-<tr>
-<td width="30%"id="error_throwWithMessage_1"><b>throwWithMessage</b> (aMessage)     </td><td width="70%;">Throws an exception with a given message.<br>This action alters the normal flow of the program.</td>
-</tr>
-</tbody>
-</table></div>
-<hr>
 <div class="container">
 </div>
-<p>Last update: 30/05/2019 01:09:30</p>
+<p>Last update: 25/07/2019 22:30:18</p>

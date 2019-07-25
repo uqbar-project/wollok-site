@@ -3,16 +3,6 @@
 
 
 <p> Base class for all Exceptions. Every exception and its subclasses<br>indicates conditions that a reasonable application might want to catch.<br><br><b>author</b> jfernandes<br><b>since</b> 1.0</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>()
-<p> Constructs a new exception with no detailed message.</p>
-<b>constructor</b>(_message)
-<p> Constructs a new exception with the specified detail message.</p>
-<b>constructor</b>(_message, _cause)
-<p> Constructs a new exception with the specified detail message and cause.</p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -29,14 +19,8 @@
 <td width="30%"id="Exception_equals_1"><b>equals</b> (other)     </td><td width="70%;">Overrides the behavior to compare exceptions</td>
 </tr>
 <tr>
-<td width="30%"id="Exception_getCause_0"><b>getCause</b> ()     </td><td width="70%;">Answers the cause of the exception, if present</td>
-</tr>
-<tr>
 <td width="30%"id="Exception_getFullStackTrace_0"><b>getFullStackTrace</b> ()    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;">Provides programmatic access to the stack trace information<br>printed by printStackTrace() with full path files for linking</td>
-</tr>
-<tr>
-<td width="30%"id="Exception_getMessage_0"><b>getMessage</b> ()     </td><td width="70%;">Answers the detail message string of this exception.</td>
 </tr>
 <tr>
 <td width="30%"id="Exception_getStackTrace_0"><b>getStackTrace</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -49,7 +33,7 @@
 <td width="30%"id="Exception_printStackTrace_0"><b>printStackTrace</b> ()     </td><td width="70%;">Prints this exception and its backtrace to the console</td>
 </tr>
 <tr>
-<td width="30%"id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td width="70%;">Prints this exception and its backtrace to the specified printer</td>
+<td width="30%"id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td width="70%;"><b>private</b><br>Prints this exception and its backtrace to the specified printer</td>
 </tr>
 <tr>
 <td width="30%"id="Exception_printStackTraceWithPrefix_2"><b>printStackTraceWithPrefix</b> (prefix, printer)     </td><td width="70%;"><b>private</b></td>
@@ -76,13 +60,6 @@
 </ul>
 
 <p> An exception that is thrown when a specified element cannot be found</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_message)
-<p> </p>
-<b>constructor</b>(_message, _cause)
-<p> </p>
-</table></div>
 <hr>
 <h2 id="MessageNotUnderstoodException"><img src="images/class.png" height="24px" width="24px" title="class"/>
  MessageNotUnderstoodException</h2>
@@ -93,26 +70,12 @@
 </ul>
 
 <p> An exception that is thrown when an object cannot understand a certain message</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>()
-<p> </p>
-<b>constructor</b>(_message)
-<p> </p>
-<b>constructor</b>(_message, _cause)
-<p> </p>
-</table></div>
 <hr>
 <h2 id="StackTraceElement"><img src="images/class.png" height="24px" width="24px" title="class"/>
  StackTraceElement</h2>
 
 
 <p> An element in a stack trace, represented by a context and a location<br>of a method where a message was sent</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_contextDescription, _location)
-<p> </p>
-</table></div>
 <hr>
 <h2 id="Object"><img src="images/class.png" height="24px" width="24px" title="class"/>
  Object</h2>
@@ -145,13 +108,13 @@
 </tr>
 <tr>
 <td width="30%"id="Object_className_0"><b>className</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Full name of Wollok object class</td>
+ </td><td width="70%;">Full name of Wollok object class<br><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_equals_1"><b>equals</b> (other)     </td><td width="70%;">o1.equals(o2) is a synonym for o1 == o2</td>
 </tr>
 <tr>
-<td width="30%"id="Object_error_1"><b>error</b> (message)     </td><td width="70%;">Builds an exception with a message</td>
+<td width="30%"id="Object_error_1"><b>error</b> (aMessage)     </td><td width="70%;">Builds an exception with a message</td>
 </tr>
 <tr>
 <td width="30%"id="Object_generateDoesNotUnderstandMessage_3"><b>generateDoesNotUnderstandMessage</b> (target, messageName, parametersSize)    <span class="badge badge-pill indigo">native</span><br>
@@ -163,28 +126,31 @@
 </tr>
 <tr>
 <td width="30%"id="Object_instanceVariableFor_1"><b>instanceVariableFor</b> (name)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Retrieves a specific variable. Expects a name</td>
+ </td><td width="70%;">Retrieves a specific variable. Expects a name<br><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_instanceVariables_0"><b>instanceVariables</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a list of instance variables for this Wollok object</td>
+ </td><td width="70%;">Answers a list of instance variables for this Wollok object<br><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_kindName_0"><b>kindName</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Object description in english/spanish/... (depending on i18n configuration)<br><br>Examples:<br>		"2".kindName()  => Answers "a String"<br> 	2.kindName()    => Answers "a Integer"</td>
+ </td><td width="70%;">Object description in english/spanish/... (depending on i18n configuration)<br><br>Examples:<br>		"2".kindName()  => Answers "a String"<br> 	2.kindName()    => Answers "a Integer"<br><br><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_messageNotUnderstood_2"><b>messageNotUnderstood</b> (messageName, parameters)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_printString_0"><b>printString</b> ()     </td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overriden<br>like in String</td>
+<td width="30%"id="Object_printString_0"><b>printString</b> ()     </td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overridden<br>like in String</td>
 </tr>
 <tr>
 <td width="30%"id="Object_resolve_1"><b>resolve</b> (name)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Accesses a variable by name, in a reflexive way.</td>
+ </td><td width="70%;"><b>private</b><br>Accesses a variable by name, in a reflexive way.</td>
+</tr>
+<tr>
+<td width="30%"id="Object_shortDescription_0"><b>shortDescription</b> ()     </td><td width="70%;">Shows a short, internal representation</td>
 </tr>
 <tr>
 <td width="30%"id="Object_simplifiedToSmartString_0"><b>simplifiedToSmartString</b> ()     </td><td width="70%;"><b>private</b></td>
@@ -251,7 +217,7 @@
 <td width="30%"id="Collection_+_1"><b>+</b> (elements)     </td><td width="70%;">Concatenates this collection to all elements from the given<br>collection parameter giving a new collection<br>(no side effect)<br><br>Example:<br>		[1, 2] + [3]   => Answers [1, 2, 3]<br>    [1, 2] + #{3}  => supports concatenation between lists and sets, answers [1, 2, 3]<br>    #{} + []       => Answers #{}</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_absolute_2"><b>absolute</b> (closure, criteria)     </td><td width="70%;"><b>private</b></td>
+<td width="30%"id="Collection_absolute_3"><b>absolute</b> (closure, criteria, emptyCaseClosure)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Collection_add_1"><b>add</b> (element)     </td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -277,6 +243,10 @@
     </td><td width="70%;">Converts a collection to a set (no duplicates)</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_clear_0"><b>clear</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br><b>see</b> subclasses implementations</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_contains_1"><b>contains</b> (e)     </td><td width="70%;">Answers whether this collection contains the specified element.<br><br>Example:<br>     [].contains(3)        => Answers false<br>     [1, 2, 3].contains(2) => Answers true</td>
 </tr>
 <tr>
@@ -299,7 +269,7 @@
  </td><td width="70%;">Answers the element of self collection that satisfies a given condition,<br>or the the result of evaluating the given continuation.<br>If more than one element satisfies the condition then it depends on the<br>specific collection class which element will be returned.<br><br><b>returns</b> the element that complies the condition or the result<br>of evaluating the continuation<br><br>Example:<br>     users.findOrElse({ user => user.name() == "Cosme Fulanito" }, { homer })<br>     [1, 3, 5].findOrElse({ number => number.even() }, { 6.max(4) }) => Answers 6<br>     [].findOrElse({ number => number.even() }, { false })           => Answers false</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example<br>		object klaus {<br> 		method languages() = ["c", "cobol", "pascal"]<br>		}<br><br>		object fritz {<br>			method languages() = ["java", "perl"]<br>		}<br><br>		program abc {<br>			console.println([klaus, fritz].flatMap({ person => person.languages() }))<br>				=> Answers ["c", "cobol", "pascal", "java", "perl"]<br>		}</td>
+<td width="30%"id="Collection_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>		object klaus {<br> 		method languages() = ["c", "cobol", "pascal"]<br>		}<br><br>		object fritz {<br>			method languages() = ["java", "perl"]<br>		}<br><br><br>		[klaus, fritz].flatMap({ person => person.languages() })<br>			=> Answers ["c", "cobol", "pascal", "java", "perl"]</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_flatten_0"><b>flatten</b> ()     </td><td width="70%;">Flattens a collection of collections<br><br>Example:<br>		[ [1, 2], [3], [4, 0], [] ].flatten()  => Answers [1, 2, 3, 4, 0]</td>
@@ -311,10 +281,18 @@
 <td width="30%"id="Collection_forEach_1"><b>forEach</b> (closure)     </td><td width="70%;">Performs an operation on every element of self collection.<br>The logic to execute is passed as a closure that takes a single parameter.<br>Supports empty collections.<br><b>returns</b> nothing<br><br>Example:<br>     plants.forEach { plant => plant.takeSomeWater() }</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
+<td width="30%"id="Collection_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;">Optimized version for long collections<br><br><b>see</b> Object#toString()</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_isEmpty_0"><b>isEmpty</b> ()     </td><td width="70%;">Tells whether self collection has no elements<br><br>Example:<br>		[1, 6, 5].isEmpty() => Answers false<br>    [].isEmpty()        => Answers true</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_join_1"><b>join</b> (separator)  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_join_0"><b>join</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
+    </td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_map_1"><b>map</b> (closure)     </td><td width="70%;">Answers a new collection that contains the result of transforming<br>each of self collection's elements using a given closure.<br>The condition is a closure argument that takes a single element<br>and answers an object.<br><b>returns</b> another list<br><br>Example:<br>     const ages = users.map({ user => user.age() })<br>     [1, 2, 3].map { number => number.odd() }  => Answers [true, false, true]<br>     [].map { number => number.odd() }         => Answers []</td>
@@ -326,10 +304,22 @@
 <td width="30%"id="Collection_max_0"><b>max</b> ()     </td><td width="70%;">Answers the element that represents the maximum value in the collection.<br>The criteria is by direct comparison of the elements.<br>If collection is empty, an ElementNotFound exception is thrown.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].max() =>  Answers 15<br>      [].max()                      =>  Throws error, list must not be empty</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_maxIfEmpty_2"><b>maxIfEmpty</b> (toComparableClosure, emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the maximum value,<br>or applies a closure if the collection is empty.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the >, >= messages).<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      ["a", "ab", "abc", "d" ].maxIfEmpty({ e => e.length() }, { "default" })<br>           => Answers "abc"<br><br>      [].maxIfEmpty({ e => e.length() }, { "default" })<br>           => Answers "default"</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_maxIfEmpty_1"><b>maxIfEmpty</b> (emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the maximum value,<br>or applies a closure if the collection is empty.<br>The criteria is by direct comparison of the elements.<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].maxIfEmpty({ 99 }) =>  Answers 15<br>      [].maxIfEmpty({ 99 })                      =>  Answers 99</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_min_1"><b>min</b> (closure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the <, <= messages).<br><br>Example:<br>      ["ab", "abc", "hello", "wollok world"].min({ e => e.length() })<br>            =>  Answers "ab"<br><br>      [].min({ e => e.length() })<br>            => Throws error, list must not be empty</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_min_0"><b>min</b> ()     </td><td width="70%;">Answers the element that represents the minimum value in the<br>non-empty collection.<br>The criteria is by direct comparison of the elements.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].min()  => Answers 1<br>      [].min()                       => Throws error, list must not be empty</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_minIfEmpty_2"><b>minIfEmpty</b> (toComparableClosure, emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value,<br>or applies a closure if the collection is empty.<br>The criteria is given by a closure that receives a single element<br>as input (one of the element). The closure must return a comparable<br>value (something that understands the >, >= messages).<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      ["ab", "abc", "hello", "wollok world"].minIfEmpty({ e => e.length() }, { "default" })<br>            =>  Answers "ab"<br><br>      [].minIfEmpty({ e => e.length() }, { "default" })<br>            => Answers "default"</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_minIfEmpty_1"><b>minIfEmpty</b> (emptyCaseClosure)     </td><td width="70%;">Answers the element that is considered to be/have the minimum value,<br>or applies a closure if the collection is empty.<br>The criteria is by direct comparison of the elements.<br>The closure to execute when the collection is empty is given as a second<br>argument.<br><br>Example:<br>      [11, 1, 4, 8, 3, 15, 6].minIfEmpty({ 99 })  => Answers 1<br>      [].minIfEmpty({ 99 })                       => Answers 99</td>
 </tr>
 <tr>
 <td width="30%"id="Collection_newInstance_0"><b>newInstance</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
@@ -379,12 +369,6 @@
 </ul>
 
 <p> A collection that contains no duplicate elements.<br>It models the mathematical set abstraction.<br>A Set guarantees no order of elements.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(elements)
-<p> </p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -417,11 +401,19 @@
  </td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br>Example:<br>		const set = #{2, 3}<br>		set.clear()         => set = #{}</td>
 </tr>
 <tr>
+<td width="30%"id="Set_contains_1"><b>contains</b> (other)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> List#contains(other)</td>
+</tr>
+<tr>
 <td width="30%"id="Set_difference_1"><b>difference</b> (another)     </td><td width="70%;">Answers a new Set with the elements of self that don't exist in another collection<br><br>Examples<br>		#{1, 2}.difference(#{5, 2}) => #{1}<br>		#{3}.difference(#{})        => #{3}<br><br><b>returns</b> a Set</td>
 </tr>
 <tr>
 <td width="30%"id="Set_equals_1"><b>equals</b> (other)    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;">Two sets are equals if they have the same elements<br><br>Examples:<br>		#{}.equals(#{})         => Answers true<br>     #{1, 2}.equals(#{2, 1}) => Answers true<br>     #{3, 2}.equals(#{2, 1}) => Answers false</td>
+</tr>
+<tr>
+<td width="30%"id="Set_filter_1"><b>filter</b> (closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> Collection#filter(closure)</td>
 </tr>
 <tr>
 <td width="30%"id="Set_findOrElse_2"><b>findOrElse</b> (predicate, continuation)    <span class="badge badge-pill indigo">native</span><br>
@@ -441,6 +433,10 @@
 <tr>
 <td width="30%"id="Set_join_0"><b>join</b> ()    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")<br><br>Example:<br>		#{"you","will","love","wollok"}.join()    => Answers "love,will,wollok,you"</td>
+</tr>
+<tr>
+<td width="30%"id="Set_max_0"><b>max</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> Collection#max()</td>
 </tr>
 <tr>
 <td width="30%"id="Set_newInstance_0"><b>newInstance</b> ()     </td><td width="70%;"><b>private</b></td>
@@ -467,14 +463,12 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_contains_1')">contains(e)</a>
     , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
     , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_filter_1')">filter(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
     , <a href="javascript:selectFile('lang', 'Collection_find_1')">find(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
@@ -483,8 +477,10 @@
     , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
-    , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_2')">maxIfEmpty(toComparableClosure, emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_1')">minIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_2')">minIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
@@ -506,14 +502,6 @@
 </ul>
 
 <p> An ordered collection (also known as a sequence).<br>You iterate the list the same order elements are inserted.<br>The user can access elements by their integer index (position in the list).<br>A List can contain duplicate elements.<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>()
-<p> </p>
-<b>constructor</b>(head, tail)
-<p> </p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -545,11 +533,19 @@
  </td><td width="70%;">Removes all of the mappings from this Dictionary.<br>This is a side effect operation.<br><br>Example:<br>		const list = [2, 3]<br>		list.clear()     => list = []</td>
 </tr>
 <tr>
+<td width="30%"id="List_contains_1"><b>contains</b> (obj)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> Collection#contains(obj)</td>
+</tr>
+<tr>
 <td width="30%"id="List_drop_1"><b>drop</b> (n)     </td><td width="70%;">Answers a new list dropping first n elements of a list.<br>This operation has no side effect.<br><br>Examples:<br>		[1, 9, 2, 3].drop(3)  ==> Answers [3]<br>		[1, 9, 2, 3].drop(1)  ==> Answers [9, 2, 3]<br>		[1, 9, 2, 3].drop(-2) ==> Answers [1, 9, 2, 3]<br>     [].drop(2)            ==> Answers []</td>
 </tr>
 <tr>
 <td width="30%"id="List_equals_1"><b>equals</b> (other)    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;"><b>see</b> == message</td>
+</tr>
+<tr>
+<td width="30%"id="List_filter_1"><b>filter</b> (closure)    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> Collection#filter(closure)</td>
 </tr>
 <tr>
 <td width="30%"id="List_findOrElse_2"><b>findOrElse</b> (predicate, continuation)    <span class="badge badge-pill indigo">native</span><br>
@@ -579,6 +575,10 @@
 </tr>
 <tr>
 <td width="30%"id="List_last_0"><b>last</b> ()     </td><td width="70%;">Answers the last element of the non-empty list.<br><br><b>returns</b> last element<br><br>Examples:<br>		[1, 2, 3, 4].last()  => Answers 4<br>     [].last()            => Throws error, list must not be empty</td>
+</tr>
+<tr>
+<td width="30%"id="List_max_0"><b>max</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>see</b> Collection#max()</td>
 </tr>
 <tr>
 <td width="30%"id="List_newInstance_0"><b>newInstance</b> ()     </td><td width="70%;">Creates a new list</td>
@@ -618,14 +618,12 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_2')">absolute(closure, criteria)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_contains_1')">contains(e)</a>
     , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
     , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_filter_1')">filter(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
     , <a href="javascript:selectFile('lang', 'Collection_find_1')">find(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
@@ -634,8 +632,10 @@
     , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_max_0')">max()</a>
-    , <a href="javascript:selectFile('lang', 'Collection_max_1')">max(closure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_2')">maxIfEmpty(toComparableClosure, emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_1')">minIfEmpty(emptyCaseClosure)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_minIfEmpty_2')">minIfEmpty(toComparableClosure, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_0')">min()</a>
     , <a href="javascript:selectFile('lang', 'Collection_min_1')">min(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_occurrencesOf_1')">occurrencesOf(element)</a>
@@ -749,7 +749,7 @@
  </td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="Number_.._1"><b>..</b> (end)     </td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
+<td width="30%"id="Number_.._1"><b>..</b> (_end)     </td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
 </tr>
 <tr>
 <td width="30%"id="Number_/_1"><b>/</b> (other)    <span class="badge badge-pill indigo">native</span><br>
@@ -787,6 +787,10 @@
 <tr>
 <td width="30%"id="Number_coerceToInteger_0"><b>coerceToInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;"><b>private</b><br><br>Applies coercing strategy to integer. If it is an integer, nothing happens.<br>Otherwise, if it is a decimal, defined coercing algorithm is applied<br>(see definition of class Number)</td>
+</tr>
+<tr>
+<td width="30%"id="Number_coerceToPositiveInteger_0"><b>coerceToPositiveInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;"><b>private</b><br><b>see</b> coerceToInteger<br><br>Applies coercing strategy to integer. And throws exception if it is negative.</td>
 </tr>
 <tr>
 <td width="30%"id="Number_digits_0"><b>digits</b> ()     </td><td width="70%;">Number of digits of self (without sign)<br><br>Examples:<br>    600.digits()  ==> Answers 3<br>    6.00012.digits() ==> Answers 6<br>    -100.digits() ==> Answers -3</td>
@@ -954,6 +958,10 @@
  </td><td width="70%;">Answers a string resulting from replacing all occurrences of<br>expression in this string with replacement<br><br>Example:<br>		 "stupid is what stupid does".replace("stupid", "genius")<br>          ==> Answers "genius is what genius does"</td>
 </tr>
 <tr>
+<td width="30%"id="String_reverse_0"><b>reverse</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Answers a string reversing this string,<br>so that first character becomes last character of the new string and so on.<br><br>Example:<br>		"hola".reverse()  ==> "aloh"</td>
+</tr>
+<tr>
 <td width="30%"id="String_size_0"><b>size</b> ()     </td><td width="70%;">A synonym for length</td>
 </tr>
 <tr>
@@ -973,6 +981,12 @@
 </tr>
 <tr>
 <td width="30%"id="String_take_1"><b>take</b> (n)     </td><td width="70%;">Takes first n characters of this string.<br>n must be zero-positive integer.<br><br>Examples:<br>    "lowercase".take(3)  ==> Answers "low"<br>    "lowercase".take(0)  ==> Answers ""<br>    "lowercase".take(-1) ==> Throws error<br>    "".take(2)           ==> Answers ""</td>
+</tr>
+<tr>
+<td width="30%"id="String_takeLeft_1"><b>takeLeft</b> (length)     </td><td width="70%;"><b>see</b> take<br><br>Example:<br>    "word".takeLeft(3)  ==> Answers "wor"<br>    "word".takeLeft(0)  ==> Answers ""<br>    "word".takeLeft(-1) ==> Throws error<br>    "".takeLeft(2)      ==> Answers ""</td>
+</tr>
+<tr>
+<td width="30%"id="String_takeRight_1"><b>takeRight</b> (_length)     </td><td width="70%;">Takes last n characters of this string.<br>n must be zero-positive integer.<br><br>Example:<br>    "word".takeRight(3)  ==> Answers "ord"<br>    "word".takeRight(0)  ==> Answers ""<br>    "word".takeRight(-1) ==> Throws error<br>    "".takeRight(2)      ==> Answers ""</td>
 </tr>
 <tr>
 <td width="30%"id="String_toLowerCase_0"><b>toLowerCase</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1054,12 +1068,6 @@
 
 
 <p> Represents a finite arithmetic progression<br>of integer numbers with optional step<br>If start = 1, end = 8, Range will represent [1, 2, 3, 4, 5, 6, 7, 8]<br>If start = 1, end = 8, step = 3, Range will represent [1, 4, 7]<br><br><b>author</b> jfernandes<br><b>since</b> 1.3</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_start, _end)
-<p> Instantiates a Range.<br>Both _start and _end must be integer values.</p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -1077,13 +1085,13 @@
 </tr>
 <tr>
 <td width="30%"id="Range_anyOne_0"><b>anyOne</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a random integer contained in the range<br><br>Example:<br>    new Range(1, 3).anyOne() ==> Answers 1 or 2 or 3</td>
+ </td><td width="70%;">Answers a random integer contained in the range<br><br>Example:<br>    new Range(start = 1, end = 3).anyOne() ==> Answers 1 or 2 or 3</td>
 </tr>
 <tr>
 <td width="30%"id="Range_asList_0"><b>asList</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Range_contains_1"><b>contains</b> (e)     </td><td width="70%;">Tests whether a number e is contained in the range<br><br>Examples:<br>    new Range(2, 5).contains(4) ==> Answers true<br>    new Range(2, 5).contains(0) ==> Answers false</td>
+<td width="30%"id="Range_contains_1"><b>contains</b> (e)     </td><td width="70%;">Tests whether a number e is contained in the range<br><br>Examples:<br>    new Range(start = 2, end = 5).contains(4) ==> Answers true<br>    new Range(start = 2, end = 5).contains(0) ==> Answers false</td>
 </tr>
 <tr>
 <td width="30%"id="Range_count_1"><b>count</b> (closure)     </td><td width="70%;">Counts how many elements match the boolean closure<br><br>Example:<br>		(1..9).count({ i => i.even() }) ==> Answers 4 (2, 4, 6 and 8 are even)</td>
@@ -1101,11 +1109,17 @@
 <td width="30%"id="Range_findOrElse_2"><b>findOrElse</b> (closure, continuation)     </td><td width="70%;"><b>see</b> List#findOrElse(predicate, continuation)</td>
 </tr>
 <tr>
+<td width="30%"id="Range_flatMap_1"><b>flatMap</b> (closure)     </td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>     (1..4).flatMap({ n => 1 .. n }) ==> Answers [1, 1, 2, 1, 2, 3, 1, 2, 3, 4]</td>
+</tr>
+<tr>
 <td width="30%"id="Range_fold_2"><b>fold</b> (seed, foldClosure)     </td><td width="70%;"><b>see</b> List#fold(seed, foldClosure)</td>
 </tr>
 <tr>
 <td width="30%"id="Range_forEach_1"><b>forEach</b> (closure)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Iterates over a Range from start to end, based on step.<br><br>Example:<br>    new Range(1, 3).forEach { value => console.println(value) }<br>    => prints 1, 2, 3</td>
+ </td><td width="70%;">Iterates over a Range from start to end, based on step.<br><br>Example:<br>    new Range(start = 1, end = 3).forEach { value => console.println(value) }<br>    => prints 1, 2, 3</td>
+</tr>
+<tr>
+<td width="30%"id="Range_initialize_0"><b>initialize</b> ()     </td><td width="70%;">Instantiates a Range.<br>Both start and end must be integer values.</td>
 </tr>
 <tr>
 <td width="30%"id="Range_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
@@ -1123,13 +1137,13 @@
 <td width="30%"id="Range_min_0"><b>min</b> ()     </td><td width="70%;"><b>see</b> List#min()</td>
 </tr>
 <tr>
-<td width="30%"id="Range_size_0"><b>size</b> ()     </td><td width="70%;">Answers the number of elements<br><br>Examples:<br>    new Range(0, 2).size() ==> Answers 3<br>    new Range(-2, 2).size() ==> Answers 5</td>
+<td width="30%"id="Range_size_0"><b>size</b> ()     </td><td width="70%;">Answers the number of elements<br><br>Examples:<br>    new Range(start = 0, end = 2).size() ==> Answers 3<br>    new Range(start = -2, end = 2).size() ==> Answers 5</td>
 </tr>
 <tr>
 <td width="30%"id="Range_sortedBy_1"><b>sortedBy</b> (closure)     </td><td width="70%;"><b>see</b> List#sortBy</td>
 </tr>
 <tr>
-<td width="30%"id="Range_step_1"><b>step</b> (_step)     </td><td width="70%;">Setter for step attribute.</td>
+<td width="30%"id="Range_step_1"><b>step</b> (_step)     </td><td width="70%;"></td>
 </tr>
 <tr>
 <td width="30%"id="Range_sum_0"><b>sum</b> ()     </td><td width="70%;"><b>see</b> List#sum()</td>
@@ -1165,19 +1179,53 @@
 </tbody>
 </table></div>
 <hr>
+<h2 id="monday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ monday</h2>
+
+
+<p> Represents days of week.</p>
+<hr>
+<h2 id="tuesday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ tuesday</h2>
+
+
+<p> </p>
+<hr>
+<h2 id="wednesday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ wednesday</h2>
+
+
+<p> </p>
+<hr>
+<h2 id="thursday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ thursday</h2>
+
+
+<p> </p>
+<hr>
+<h2 id="friday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ friday</h2>
+
+
+<p> </p>
+<hr>
+<h2 id="saturday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ saturday</h2>
+
+
+<p> </p>
+<hr>
+<h2 id="sunday"><img src="images/object.png" height="24px" width="24px" title="object"/>
+ sunday</h2>
+
+
+<p> </p>
+<hr>
 <h2 id="Date"><img src="images/class.png" height="24px" width="24px" title="class"/>
  Date</h2>
 
 
 <p> Represents a Date (without time). A Date is immutable, once created you can not change it.<br><br><b>since</b> 1.4.5</p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>()
-<p> Default constructor instantiates the current day</p>
-<b>constructor</b>(_day, _month, _year)
-<p> Constructor: you should pass the day, month and year (integer values only).</p>
-</table></div>
-<hr>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -1210,51 +1258,45 @@
 <td width="30%"id="Date_>=_1"><b>>=</b> (_aDate)     </td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="Date_between_2"><b>between</b> (_startDate, _endDate)     </td><td width="70%;">Answers whether self is between two dates (both inclusive comparison)<br><br>Example:<br>    new Date(2, 4, 2018).between(new Date(1, 4, 2018), new Date(2, 4, 2018))<br>        ==> Answers true</td>
+<td width="30%"id="Date_between_2"><b>between</b> (_startDate, _endDate)     </td><td width="70%;">Answers whether self is between two dates (both inclusive comparison)<br><br>Example:<br>    new Date(day = 2, month = 4, year = 2018).between(new Date(day = 1, month = 4, year = 2018), new Date(day = 2, month = 4, year = 2018))<br>        ==> Answers true</td>
 </tr>
 <tr>
-<td width="30%"id="Date_day_0"><b>day</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers the day number of the Date<br><br>Example:<br>    new Date(12, 7, 2019).day() ==> Answers 12</td>
+<td width="30%"id="Date_dayOfWeek_0"><b>dayOfWeek</b> ()     </td><td width="70%;">Answers the day of the week of the Date with an object representation.<br>There is a wko (well known object) for every day of the week.<br><br>Example:<br>    new Date(day = 24, month = 2, year = 2018).dayOfWeek() ==> Answers saturday object</td>
 </tr>
 <tr>
-<td width="30%"id="Date_dayOfWeek_0"><b>dayOfWeek</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers the day of week of the Date, where<br>1 = MONDAY<br>2 = TUESDAY<br>3 = WEDNESDAY<br>...<br>7 = SUNDAY<br><br>Example:<br>    new Date(24, 2, 2018).dayOfWeek() ==> Answers 6 (SATURDAY)</td>
-</tr>
-<tr>
-<td width="30%"id="Date_initialize_3"><b>initialize</b> (_day, _month, _year)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b></td>
+<td width="30%"id="Date_internalDayOfWeek_0"><b>internalDayOfWeek</b> ()    <span class="badge badge-pill indigo">native</span><br>
+ </td><td width="70%;">Answers the day of week of the Date, where<br>1 = MONDAY<br>2 = TUESDAY<br>3 = WEDNESDAY<br>...<br>7 = SUNDAY<br><br>Example:<br>    new Date(day = 24, month = 2, year = 2018).internalDayOfWeek() ==> Answers 6 (SATURDAY)</td>
 </tr>
 <tr>
 <td width="30%"id="Date_isLeapYear_0"><b>isLeapYear</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Checks if the year is a leap year, like 2000, 2004, 2008...<br><br>Example:<br>    new Date(12, 5, 2018).isLeapYear() ==> Answers false</td>
+ </td><td width="70%;">Checks if the year is a leap year, like 2000, 2004, 2008...<br><br>Example:<br>    new Date(day = 12, month = 5, year = 2018).isLeapYear() ==> Answers false</td>
 </tr>
 <tr>
 <td width="30%"id="Date_minusDays_1"><b>minusDays</b> (_days)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this date with the specified number of days subtracted.<br>This instance is immutable and unaffected by this method call.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(1, 1, 2009).minusDays(1)<br>         ==> Answers a Date[day = 31, month = 12, year = 2008], a day back<br><br>		new Date(1, 1, 2009).minusDays(-1)<br>         ==> Answers a Date[day = 2, month = 1, year = 2009], a day forward</td>
+ </td><td width="70%;">Answers a copy of this date with the specified number of days subtracted.<br>This instance is immutable and unaffected by this method call.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusDays(1)<br>         ==> Answers a Date[day = 31, month = 12, year = 2008], a day back<br><br>		new Date(day = 1, month = 1, year = 2009).minusDays(-1)<br>         ==> Answers a Date[day = 2, month = 1, year = 2009], a day forward</td>
 </tr>
 <tr>
 <td width="30%"id="Date_minusMonths_1"><b>minusMonths</b> (_months)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this date with the specified number of months subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(1, 1, 2009).minusMonths(1)<br>            ==> Answers a Date[day = 1, month = 12, year = 2008], a month back<br><br>		new Date(1, 1, 2009).minusMonths(-1)<br>            ==> Answers a Date[day = 1, month = 2, year = 2009], a month forward</td>
+ </td><td width="70%;">Answers a copy of this date with the specified number of months subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusMonths(1)<br>            ==> Answers a Date[day = 1, month = 12, year = 2008], a month back<br><br>		new Date(day = 1, month = 1, year = 2009).minusMonths(-1)<br>            ==> Answers a Date[day = 1, month = 2, year = 2009], a month forward</td>
 </tr>
 <tr>
 <td width="30%"id="Date_minusYears_1"><b>minusYears</b> (_years)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this date with the specified number of years subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(1, 1, 2009).minusYears(1)<br>            ==> Answers a Date[day = 1, month = 1, year = 2008], a year back<br><br>		new Date(1, 1, 2009).minusYears(-1)<br>            ==> Answers a Date[day = 1, month = 1, year = 2010], a year forward</td>
-</tr>
-<tr>
-<td width="30%"id="Date_month_0"><b>month</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers the month number of the Date<br><br>Example:<br>    new Date(12, 7, 2019).month() ==> Answers 7</td>
+ </td><td width="70%;">Answers a copy of this date with the specified number of years subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusYears(1)<br>            ==> Answers a Date[day = 1, month = 1, year = 2008], a year back<br><br>		new Date(day = 1, month = 1, year = 2009).minusYears(-1)<br>            ==> Answers a Date[day = 1, month = 1, year = 2010], a year forward</td>
 </tr>
 <tr>
 <td width="30%"id="Date_plusDays_1"><b>plusDays</b> (_days)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this Date with the specified number of days added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(12, 5, 2018).plusDays(1)<br>       ==> Answers a Date[day = 13, month = 5, year = 2018], a day forward<br><br>    new Date(12, 5, 2018).plusDays(-1)<br>       ==> Answers a Date[day = 11, month = 5, year = 2018], a day back</td>
+ </td><td width="70%;">Answers a copy of this Date with the specified number of days added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(day = 12, month = 5, year = 2018).plusDays(1)<br>       ==> Answers a Date[day = 13, month = 5, year = 2018], a day forward<br><br>    new Date(day = 12, month = 5, year = 2018).plusDays(-1)<br>       ==> Answers a Date[day = 11, month = 5, year = 2018], a day back</td>
 </tr>
 <tr>
 <td width="30%"id="Date_plusMonths_1"><b>plusMonths</b> (_months)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this Date with the specified number of months added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(31, 1, 2018).plusMonths(1)<br>       ==> Answers a Date[day = 28, month = 2, year = 2018], a month forward<br><br>    new Date(12, 5, 2018).plusMonths(-1)<br>       ==> Answers a Date[day = 12, month = 4, year = 2018], a month back</td>
+ </td><td width="70%;">Answers a copy of this Date with the specified number of months added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(day = 31, month = 1, year = 2018).plusMonths(1)<br>       ==> Answers a Date[day = 28, month = 2, year = 2018], a month forward<br><br>    new Date(day = 12, month = 5, year = 2018).plusMonths(-1)<br>       ==> Answers a Date[day = 12, month = 4, year = 2018], a month back</td>
 </tr>
 <tr>
 <td width="30%"id="Date_plusYears_1"><b>plusYears</b> (_years)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a copy of this Date with the specified number of years added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(31, 1, 2018).plusYears(1)<br>       ==> Answers a Date[day = 31, month = 1, year = 2019], a year forward<br><br>    new Date(12, 5, 2018).plusYears(-1)<br>       ==> Answers a Date[day = 12, month = 5, year = 2017], a year back</td>
+ </td><td width="70%;">Answers a copy of this Date with the specified number of years added.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Example:<br>    new Date(day = 31, month = 1, year = 2018).plusYears(1)<br>       ==> Answers a Date[day = 31, month = 1, year = 2019], a year forward<br><br>    new Date(day = 12, month = 5, year = 2018).plusYears(-1)<br>       ==> Answers a Date[day = 12, month = 5, year = 2017], a year back</td>
+</tr>
+<tr>
+<td width="30%"id="Date_shortDescription_0"><b>shortDescription</b> ()     </td><td width="70%;">Shows a short, internal representation of a date<br><br>Example:<br>    new Date(day = 2, month = 4, year = 2018).shortDescription()<br>        ==> Answers "2/4/2018"</td>
 </tr>
 <tr>
 <td width="30%"id="Date_toSmartString_1"><b>toSmartString</b> (alreadyShown)     </td><td width="70%;">Shows nicely an internal representation of a date</td>
@@ -1262,13 +1304,9 @@
 <tr>
 <td width="30%"id="Date_toString_0"><b>toString</b> ()     </td><td width="70%;">String representation of a date</td>
 </tr>
-<tr>
-<td width="30%"id="Date_year_0"><b>year</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers the year number of the Date<br><br>Example:<br>    new Date(12, 7, 2019).year() ==> Answers 2019</td>
-</tr>
 </tbody>
 </table></div>
 <hr>
 <div class="container">
 </div>
-<p>Last update: 17/08/2018 07:50:26</p>
+<p>Last update: 25/07/2019 22:30:20</p>
