@@ -13,7 +13,6 @@
 </thread>
 <tbody>
 <tr>
-<td width="30%"id="Exception_createStackTraceElement_2"><b>createStackTraceElement</b> (contextDescription, location)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Exception_equals_1"><b>equals</b> (other)     </td><td width="70%;">Overrides the behavior to compare exceptions</td>
@@ -33,10 +32,8 @@
 <td width="30%"id="Exception_printStackTrace_0"><b>printStackTrace</b> ()     </td><td width="70%;">Prints this exception and its backtrace to the console</td>
 </tr>
 <tr>
-<td width="30%"id="Exception_printStackTrace_1"><b>printStackTrace</b> (printer)     </td><td width="70%;"><b>private</b><br>Prints this exception and its backtrace to the specified printer</td>
 </tr>
 <tr>
-<td width="30%"id="Exception_printStackTraceWithPrefix_2"><b>printStackTraceWithPrefix</b> (prefix, printer)     </td><td width="70%;"><b>private</b></td>
 </tr>
 </tbody>
 </table></div>
@@ -107,12 +104,8 @@
 <td width="30%"id="Object_===_1"><b>===</b> (other)     </td><td width="70%;">Tells whether self object is identical (the same) to the given one.<br>It does it by comparing their identities.<br>So self basically relies on the wollok.lang.Integer equality (which is native)</td>
 </tr>
 <tr>
-<td width="30%"id="Object_checkNotNull_2"><b>checkNotNull</b> (value, message)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_className_0"><b>className</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Full name of Wollok object class<br><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_equals_1"><b>equals</b> (other)     </td><td width="70%;">o1.equals(o2) is a synonym for o1 == o2</td>
@@ -121,46 +114,32 @@
 <td width="30%"id="Object_error_1"><b>error</b> (aMessage)     </td><td width="70%;">Builds an exception with a message</td>
 </tr>
 <tr>
-<td width="30%"id="Object_generateDoesNotUnderstandMessage_3"><b>generateDoesNotUnderstandMessage</b> (target, messageName, parametersSize)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b><br><br>internal method: generates a does not understand message<br>parametersSize must be an integer value</td>
 </tr>
 <tr>
 <td width="30%"id="Object_identity_0"><b>identity</b> ()    <span class="badge badge-pill indigo">native</span><br>
  </td><td width="70%;">Answers object identity of a Wollok object, represented by<br>a unique number in Wollok environment</td>
 </tr>
 <tr>
-<td width="30%"id="Object_instanceVariableFor_1"><b>instanceVariableFor</b> (name)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Retrieves a specific variable. Expects a name<br><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_instanceVariables_0"><b>instanceVariables</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Answers a list of instance variables for this Wollok object<br><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_kindName_0"><b>kindName</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;">Object description in english/spanish/... (depending on i18n configuration)<br><br>Examples:<br>		"2".kindName()  => Answers "a String"<br> 	2.kindName()    => Answers "a Integer"<br><br><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_messageNotUnderstood_2"><b>messageNotUnderstood</b> (messageName, parameters)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_printString_0"><b>printString</b> ()     </td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overridden<br>like in String</td>
 </tr>
 <tr>
-<td width="30%"id="Object_resolve_1"><b>resolve</b> (name)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b><br>Accesses a variable by name, in a reflexive way.</td>
 </tr>
 <tr>
 <td width="30%"id="Object_shortDescription_0"><b>shortDescription</b> ()     </td><td width="70%;">Shows a short, internal representation</td>
 </tr>
 <tr>
-<td width="30%"id="Object_simplifiedToSmartString_0"><b>simplifiedToSmartString</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Object_toSmartString_1"><b>toSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Object_toString_0"><b>toString</b> ()     </td><td width="70%;">String representation of Wollok object</td>
@@ -221,7 +200,6 @@
 <td width="30%"id="Collection_+_1"><b>+</b> (elements)     </td><td width="70%;">Concatenates this collection to all elements from the given<br>collection parameter giving a new collection<br>(no side effect)<br><br>Example:<br>		[1, 2] + [3]   => Answers [1, 2, 3]<br>    [1, 2] + #{3}  => supports concatenation between lists and sets, answers [1, 2, 3]<br>    #{} + []       => Answers #{}</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_absolute_3"><b>absolute</b> (closure, criteria, emptyCaseClosure)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Collection_add_1"><b>add</b> (element)     </td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -354,12 +332,8 @@
 <td width="30%"id="Collection_sum_0"><b>sum</b> ()     </td><td width="70%;">Sums all elements in the collection.<br><b>returns</b> an integer<br><br>Example:<br>     [1, 2, 3, 4, 5].sum()  => Answers 15<br>     [].sum()               => Answers 0</td>
 </tr>
 <tr>
-<td width="30%"id="Collection_toStringPrefix_0"><b>toStringPrefix</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Collection_toStringSuffix_0"><b>toStringSuffix</b> ()  <span class="badge badge-pill light-blue">abstract</span><br>
-    </td><td width="70%;"><b>private</b></td>
 </tr>
 </tbody>
 </table></div>
@@ -443,7 +417,6 @@
  </td><td width="70%;"><b>see</b> Collection#max()</td>
 </tr>
 <tr>
-<td width="30%"id="Set_newInstance_0"><b>newInstance</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Set_remove_1"><b>remove</b> (element)    <span class="badge badge-pill indigo">native</span><br>
@@ -454,10 +427,8 @@
  </td><td width="70%;">Answers the number of elements in this set (its cardinality).<br><br>Example:<br>		#{2, 3}.size()   => Answers 2<br>		#{}.size()       => Answers 0</td>
 </tr>
 <tr>
-<td width="30%"id="Set_toStringPrefix_0"><b>toStringPrefix</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="Set_toStringSuffix_0"><b>toStringSuffix</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Set_union_1"><b>union</b> (another)     </td><td width="70%;">Answers a new Set with the elements of both self and another collection.<br><br>Examples<br>		#{1, 2}.union(#{5, 2})   => #{1, 2, 5}<br>		#{}.union(#{3})          => #{3}<br><br><b>returns</b> a Set</td>
@@ -467,7 +438,6 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
@@ -478,7 +448,6 @@
     , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_flatten_0')">flatten()</a>
     , <a href="javascript:selectFile('lang', 'Collection_forEach_1')">forEach(closure)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
@@ -609,10 +578,8 @@
 <td width="30%"id="List_take_1"><b>take</b> (n)     </td><td width="70%;">Takes first n elements of a list.<br><br>Examples:<br>		[1,9,2,3].take(5)  ==> Answers [1, 9, 2, 3]<br> 	[1,9,2,3].take(2)  ==> Answers [1, 9]<br> 	[1,9,2,3].take(-2) ==> Answers []<br>     [].take(2)         ==> Answers []</td>
 </tr>
 <tr>
-<td width="30%"id="List_toStringPrefix_0"><b>toStringPrefix</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
-<td width="30%"id="List_toStringSuffix_0"><b>toStringSuffix</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="List_withoutDuplicates_0"><b>withoutDuplicates</b> ()     </td><td width="70%;">Answers the list without duplicate elements<br><br>[1, 3, 1, 5, 1, 3, 2, 5].withoutDuplicates() => Answers [1, 2, 3, 5]<br>[].withoutDuplicates()                       => Answers []</td>
@@ -622,7 +589,6 @@
 <div class="card card-body">
     <h5 class="card-header blue-grey lighten-4">Methods inherited from Collection</h5>
     <p class="card-text"><a href="javascript:selectFile('lang', 'Collection_+_1')">+(elements)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_absolute_3')">absolute(closure, criteria, emptyCaseClosure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
@@ -633,7 +599,6 @@
     , <a href="javascript:selectFile('lang', 'Collection_flatMap_1')">flatMap(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_flatten_0')">flatten()</a>
     , <a href="javascript:selectFile('lang', 'Collection_forEach_1')">forEach(closure)</a>
-    , <a href="javascript:selectFile('lang', 'Collection_internalToSmartString_1')">internalToSmartString(alreadyShown)</a>
     , <a href="javascript:selectFile('lang', 'Collection_isEmpty_0')">isEmpty()</a>
     , <a href="javascript:selectFile('lang', 'Collection_map_1')">map(closure)</a>
     , <a href="javascript:selectFile('lang', 'Collection_maxIfEmpty_1')">maxIfEmpty(emptyCaseClosure)</a>
@@ -785,12 +750,8 @@
 <td width="30%"id="Number_between_2"><b>between</b> (min, max)     </td><td width="70%;">Answers whether self is between min and max<br><br>Example:<br>    2.between(2, 3) ==> Answers true<br>    6.between(4, 6) ==> Answers true<br>    3.between(4, 6) ==> Answers false</td>
 </tr>
 <tr>
-<td width="30%"id="Number_coerceToInteger_0"><b>coerceToInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b><br><br>Applies coercing strategy to integer. If it is an integer, nothing happens.<br>Otherwise, if it is a decimal, defined coercing algorithm is applied<br>(see definition of class Number)</td>
 </tr>
 <tr>
-<td width="30%"id="Number_coerceToPositiveInteger_0"><b>coerceToPositiveInteger</b> ()    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b><br><b>see</b> coerceToInteger<br><br>Applies coercing strategy to integer. And throws exception if it is negative.</td>
 </tr>
 <tr>
 <td width="30%"id="Number_digits_0"><b>digits</b> ()     </td><td width="70%;">Number of digits of self (without sign)<br><br>Examples:<br>    600.digits()  ==> Answers 3<br>    6.00012.digits() ==> Answers 6<br>    -100.digits() ==> Answers -3</td>
@@ -807,7 +768,6 @@
  </td><td width="70%;">greater common divisor.<br>Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>		8.gcd(12) ==> Answers 4<br>		5.gcd(10) ==> Answers 5</td>
 </tr>
 <tr>
-<td width="30%"id="Number_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Number_invert_0"><b>invert</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -853,7 +813,6 @@
 <td width="30%"id="Number_roundUp_0"><b>roundUp</b> ()     </td><td width="70%;">Answers the next integer greater than self<br>13.224.roundUp() ==> 14<br>-13.224.roundUp() ==> -14<br>15.942.roundUp() ==> 16</td>
 </tr>
 <tr>
-<td width="30%"id="Number_simplifiedToSmartString_0"><b>simplifiedToSmartString</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Number_square_0"><b>square</b> ()     </td><td width="70%;">Answers square of self<br><br>Example:<br>		3.square() => Answers 9</td>
@@ -993,8 +952,6 @@
  </td><td width="70%;">Converts all of the characters in this String to lower case<br><br>Examples:<br>		"Fer".toLowerCase()  ==> Answers "fer"<br>		"".toLowerCase()     ==> Answers ""</td>
 </tr>
 <tr>
-<td width="30%"id="String_toSmartString_1"><b>toSmartString</b> (alreadyShown)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="String_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1049,8 +1006,6 @@
  </td><td width="70%;">Answers the result of applying the logical OR operator<br>to the specified boolean operands self and other</td>
 </tr>
 <tr>
-<td width="30%"id="Boolean_toSmartString_1"><b>toSmartString</b> (alreadyShown)    <span class="badge badge-pill indigo">native</span><br>
- </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Boolean_toString_0"><b>toString</b> ()    <span class="badge badge-pill indigo">native</span><br>
@@ -1088,7 +1043,6 @@
  </td><td width="70%;">Answers a random integer contained in the range<br><br>Example:<br>    new Range(start = 1, end = 3).anyOne() ==> Answers 1 or 2 or 3</td>
 </tr>
 <tr>
-<td width="30%"id="Range_asList_0"><b>asList</b> ()     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Range_contains_1"><b>contains</b> (e)     </td><td width="70%;">Tests whether a number e is contained in the range<br><br>Examples:<br>    new Range(start = 2, end = 5).contains(4) ==> Answers true<br>    new Range(start = 2, end = 5).contains(0) ==> Answers false</td>
@@ -1125,7 +1079,6 @@
 <td width="30%"id="Range_initialize_0"><b>initialize</b> ()     </td><td width="70%;">Instantiates a Range.<br>Both start and end must be integer values.</td>
 </tr>
 <tr>
-<td width="30%"id="Range_internalToSmartString_1"><b>internalToSmartString</b> (alreadyShown)     </td><td width="70%;"><b>private</b></td>
 </tr>
 <tr>
 <td width="30%"id="Range_isEmpty_0"><b>isEmpty</b> ()     </td><td width="70%;">Answers whether this range contains no elements<br><b>see</b> Collection#isEmpty()</td>
@@ -1315,4 +1268,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 26/07/2019 03:06:31</p>
+<p>Last update: 27/07/2019 04:12:33</p>
