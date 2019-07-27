@@ -205,6 +205,12 @@
 <td width="30%"id="Collection_copy_0"><b>copy</b> ()     </td><td width="70%;">Answers a new collection of the same type and with the same content<br>as self. Supports empty collections.<br><br><b>returns</b> a new collection<br><br>Example:<br>     const usersCopy = users.copy()</td>
 </tr>
 <tr>
+<td width="30%"id="Collection_copyWith_1"><b>copyWith</b> (elementToAdd)     </td><td width="70%;">Answers a new collection with the added element which is received by parameter.<br><br><b>returns</b> a new Collection<br><br>Example:<br>     [1, 5, 9, 2, 4].copyWith(9) => Answers [1, 5, 2, 4, 9]</td>
+</tr>
+<tr>
+<td width="30%"id="Collection_copyWithout_1"><b>copyWithout</b> (elementToRemove)     </td><td width="70%;">Answers a new collection without element that is passed by parameter.<br>If the element occurs more than once in the collection, all occurrences<br>will be removed.<br><br><b>returns</b> a new Collection<br><br>Example:<br>     [1, 5, 9, 2, 4].copyWithout(9) => Answers [1, 5, 2, 4]<br>     [1, 5, 9, 2, 9].copyWithout(9) => Answers [1, 5, 2]</td>
+</tr>
+<tr>
 <td width="30%"id="Collection_count_1"><b>count</b> (predicate)     </td><td width="70%;">Counts all elements of self collection that satisfies a given condition<br>The condition is a closure argument that takes a single element and<br>answers a number.<br><b>returns</b> an integer number<br><br>Example:<br>     plants.count { plant => plant.hasFlowers() }<br>     #{1, 2, 3, 4, 5}.count { number => number.odd() }  => Answers 3<br>     #{}.count { number => number.odd() }               => Answers 0</td>
 </tr>
 <tr>
@@ -401,6 +407,8 @@
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copyWith_1')">copyWith(elementToAdd)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copyWithout_1')">copyWithout(elementToRemove)</a>
     , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
     , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
@@ -548,6 +556,8 @@
     , <a href="javascript:selectFile('lang', 'Collection_addAll_1')">addAll(elements)</a>
     , <a href="javascript:selectFile('lang', 'Collection_all_1')">all(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_any_1')">any(predicate)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copyWith_1')">copyWith(elementToAdd)</a>
+    , <a href="javascript:selectFile('lang', 'Collection_copyWithout_1')">copyWithout(elementToRemove)</a>
     , <a href="javascript:selectFile('lang', 'Collection_copy_0')">copy()</a>
     , <a href="javascript:selectFile('lang', 'Collection_count_1')">count(predicate)</a>
     , <a href="javascript:selectFile('lang', 'Collection_findOrDefault_2')">findOrDefault(predicate, value)</a>
@@ -643,7 +653,7 @@
  Number</h2>
 
 
-<p> In Wollok we have numbers as immutable representation. You can customize<br>how many decimals you want to work with, and printing strategies. So<br>number two could be printed as "2", "2,00000", "2,000", etc.<br><br>Coercing strategy for numbers can be<br>1) rounding up: 2,3258 using 3 decimals will result in 2,326<br>2) rounding down or truncation: 2,3258 using 3 decimals will<br>   result in 2,325<br>3) not allowed: 2,3258 using 3 decimals will throw an exception<br>   since decimals exceeds maximum allowed<br><br><b>author</b> jfernandes<br><b>author</b> dodain (unification between Double and Integer in a single Number class)<br><br><b>since</b> 1.3<br><b>noInstantiate</b></p>
+<p> In Wollok we have numbers as an immutable representation. You can customize<br>how many decimals you want to work with, and printing strategies. So<br>number two could be printed as "2", "2,00000", "2,000", etc.<br><br>Coercing strategy for numbers can be<br>1) rounding up: 2,3258 using 3 decimals will result in 2,326<br>2) rounding down or truncation: 2,3258 using 3 decimals will<br>   result in 2,325<br>3) not allowed: 2,3258 using 3 decimals will throw an exception<br>   since decimals exceeds maximum allowed<br><br><b>author</b> jfernandes<br><b>author</b> dodain (unification between Double and Integer in a single Number class)<br><br><b>since</b> 1.3<br><b>noInstantiate</b></p>
 <h3> Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -674,7 +684,7 @@
  </td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="Number_.._1"><b>..</b> (_end)     </td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
+<td width="30%"id="Number_.._1"><b>..</b> (end)     </td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
 </tr>
 <tr>
 <td width="30%"id="Number_/_1"><b>/</b> (other)    <span class="badge badge-pill indigo">native</span><br>
@@ -993,6 +1003,9 @@
 <td width="30%"id="Range_count_1"><b>count</b> (closure)     </td><td width="70%;">Counts how many elements match the boolean closure<br><br>Example:<br>		(1..9).count({ i => i.even() }) ==> Answers 4 (2, 4, 6 and 8 are even)</td>
 </tr>
 <tr>
+<td width="30%"id="Range_end_0"><b>end</b> ()     </td><td width="70%;">Getter for end attribute</td>
+</tr>
+<tr>
 <td width="30%"id="Range_filter_1"><b>filter</b> (closure)     </td><td width="70%;"><b>see</b> List#filter(closure)</td>
 </tr>
 <tr>
@@ -1036,7 +1049,10 @@
 <td width="30%"id="Range_sortedBy_1"><b>sortedBy</b> (closure)     </td><td width="70%;"><b>see</b> List#sortBy</td>
 </tr>
 <tr>
-<td width="30%"id="Range_step_1"><b>step</b> (_step)     </td><td width="70%;"></td>
+<td width="30%"id="Range_start_0"><b>start</b> ()     </td><td width="70%;">Getter for start attribute</td>
+</tr>
+<tr>
+<td width="30%"id="Range_step_1"><b>step</b> (_step)     </td><td width="70%;">Setter for step attribute.</td>
 </tr>
 <tr>
 <td width="30%"id="Range_sum_0"><b>sum</b> ()     </td><td width="70%;"><b>see</b> List#sum()</td>
@@ -1202,4 +1218,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 27/07/2019 04:32:46</p>
+<p>Last update: 27/07/2019 21:26:49</p>
