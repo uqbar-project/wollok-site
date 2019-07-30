@@ -391,13 +391,30 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <hr>
             <h4>Ejecutar una sesión sin un archivo asociado</h4>
             <br>
-            Por último, tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
+            También tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
             un archivo particular, mediante una opción específica en la barra:
             <br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole2Es.png" class="img-fluid z-depth-1">
             </div>
-            <br><br>
+            <br>
+            <hr>
+            <h4>
+            Importando archivos desde la consola
+            </h4>
+            <p>
+            Wollok es una herramienta de exploración, eso incluye hacer pruebas sobre un archivo de definiciones de un proyecto y luego ir importando otros archivos, como vemos en el ejemplo. Esta opción es válida si comenzás ejecutando la consola para un archivo de tu proyecto, de lo contrario no tendrás otro archivo para incorporar.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/console3.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br> Importando archivos dinámicamente (disponible desde la versión 1.8 Hypatia)</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
+            <br>
         </div>
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
@@ -473,7 +490,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/dynamicDiagram.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/dynamicDiagram2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Una pequeña demostración
                         del diagrama dinámico de Wollok</figcaption>
                     </figure>
