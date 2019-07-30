@@ -60,7 +60,7 @@ icon: 'cloud-download'
 					<h4><span class="badge badge-pill red darken-3">Cosas a tener en cuenta</span></h4>
 					<ul> 
 						<li>No uses la herramienta Java Updates sino el link de arriba.</li>
-						<li>Tiene que ser Java <b>1.8</b> (no puede ser una versión anterior)</li>
+						<li>Tiene que ser Java <b>1.8</b> (no puede ser una versión anterior ni superior, al menos por el momento)</li>
 						<li>Tiene que ser una <b>JDK</b> (Java Development Kit), que viene con el compilador de Java. Una JRE (Java Runtime Environment) no te va a funcionar correctamente.</li>
 						<li>Si ya estás usando Eclipse con Java 1.8, no hace falta que la descargues otra vez.</li>
 					</ul>
