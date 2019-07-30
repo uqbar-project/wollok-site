@@ -81,7 +81,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Ctrl + R: busca un recurso (archivo), filtrando por nombre o extensión. 
+                        <figcaption class="figure-caption"><br> Ctrl + Shift + R: busca un recurso (archivo), filtrando por nombre o extensión. 
                             <br> Ctrl + Shift + F3: busca cualquier objeto, clase o mixin creado por vos o que venga con
                             la biblioteca de Wollok, como Date, Set o String.</figcaption>
                     </figure>
@@ -101,7 +101,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                         <img src="/images/tour/editor6.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Un popurri de uso de shortcuts para borrar, intercalar líneas o comentar/descomentarlas.</figcaption>
                     </figure>
-                </div>                
+                </div>
             </div>
             <hr>
             <div class="container">
@@ -218,7 +218,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/validator1Es.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/validator1Es2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Una muestra de cómo funciona el validador. Al posicionarnos
                         con el mouse sobre la parte izquierda, se expande la descripción de la advertencia (en amarillo)
                         o el error (en rojo). En la solapa Problemas tenemos un resumen de todos los <i>issues</i> de
@@ -461,9 +461,27 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     </figure>
                 </div>
             </div>
-            <br>
+            <br>            
             Para conocer en detalle todas las funcionalidades te recomendamos que leas
             <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">este apunte</a>.
+            <br>
+            <hr/>
+            <br>
+            Y a partir de la versión 1.7.7, Wollok cuenta también con un <b>Diagrama dinámico</b> que se integra con la consola REPL, que permite mostrar las referencias entre los diferentes objetos que están en el ambiente.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/dynamicDiagram.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Una pequeña demostración
+                        del diagrama dinámico de Wollok</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            En azul aparecen los objetos creados por nosotros, en verde los números,
+            booleanos, strings, fechas y pares, en bordó y rectangular las colecciones, y el resto en rosado.
             <br>
             <br>
         </div>  
