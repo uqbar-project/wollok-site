@@ -308,25 +308,16 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/formatter.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateo básico de una clase. </figcaption>
+                        <img src="/images/tour/formatter3.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Formateo básico de un elemento de Wollok. </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
             Wollok tiene un formateador basado en su sintaxis que estiliza el código y le da un formato homogéneo,
             algo necesario en un lenguaje educativo que propone proyectos donde se conforma un grupo de trabajo.
-            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format):
+            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format).
             <br>
-            <br>
-            <div class="row text-center">
-                <div class="col-md-12 mb-6">
-                    <figure class="figure">
-                        <img src="/images/tour/formatter2.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateando <i>closures</i> e if con o sin llaves.</figcaption>
-                    </figure>
-                </div>
-            </div>
             <br>
         </div>
         <!-- *****************************  CONSOLE ****************************************-->

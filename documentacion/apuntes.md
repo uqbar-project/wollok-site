@@ -55,17 +55,14 @@ lang: 'es'
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web" target="_blank">
             <span class="badge mdb-color lighten-1 badge-pill">13</span> Herencia. Self, super. Redefinición.
         </a></ul>
-        <ul class="list-group-item"><a href="https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">14</span> Herencia de Constructores.
-        </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/18QtQCs91tXX1e4kpEPs4sLU-TRJsxcoEKVngMDf278c/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">15</span> Mutabilidad. Igualdad e identidad. 
+            <span class="badge mdb-color lighten-1 badge-pill">14</span> Mutabilidad. Igualdad e identidad. 
         </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1lRTDAcsOwy7hkAM-UvTZtMHzN5fitrWyk1JAM-6NVJI/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">16</span> Elementos de Diseño.
+            <span class="badge mdb-color lighten-1 badge-pill">15</span> Elementos de Diseño.
         </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1VPKwf_cHcFTCj9JSYZ-xJmchX_n10bSJwxTUcmpd3w0/edit?usp=sharing" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">17</span> Herencia vs. composición. El proceso de Diseño.
+            <span class="badge mdb-color lighten-1 badge-pill">16</span> Herencia vs. composición. El proceso de Diseño.
         </a></ul>        
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1A6JB4EretksCyMDvOj4NzfiEzX8yfboDTZnER7x_xJI/edit" target="_blank">
             <span class="badge blue-grey lighten-1 badge-pill">Anexo 1</span> Guía de shortcuts del entorno Wollok.
