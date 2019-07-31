@@ -427,13 +427,11 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunnerEs.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunner2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests: vemos que se puede filtrar errores y fallas,
-                            <br>
-                            que podemos navegar directamente al código donde se originó el error, 
-                            <br> 
-                            y cómo la ejecución de 
+                            de tests: vemos que se puede filtrar errores / fallas,
+                            que podemos navegar directamente al código donde se originó el error, copiar la pila de ejecución de un test que no terminó bien o ver el tiempo que demoró la ejecución de todos los tests.
+                            Y el ejercicio de modificar el código y ejecutar
                             los tests es un proceso iterativo e incremental. </figcaption>
                     </figure>
                 </div>
@@ -452,10 +450,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/runAllTestsEs.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerAllTests.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
                         proyecto. Aquí vemos que corren además de los 3 tests del archivo
-                    example.wtest, también se ejecutan los del archivo test.wtest</figcaption>
+                    fakeTest.wtest, también se ejecutan los del archivo testCelu.wtest</figcaption>
                     </figure>
                 </div>
             </div>
