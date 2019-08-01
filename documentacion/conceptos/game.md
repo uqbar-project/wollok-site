@@ -402,6 +402,8 @@ program firstWollokGameProgram {
 
 ### Problemas comunes
 
+Primero que nada, tené en cuenta que Wollok Game necesita Open GL 2.0 ó superior, si no lo tenés instalado, seguí [estas instrucciones](https://www.khronos.org/opengl/wiki/Getting_Started)
+
 #### Error en Ubuntu
 
 En algunas instalaciones de Ubuntu puede que te aparezca un mensaje de error como el siguiente al correr un programa de Wollok Game:
