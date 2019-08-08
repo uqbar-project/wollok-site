@@ -26,23 +26,84 @@ layout: null
 
 ___
 
-## ¿Qué es y cómo se usa?
+## ¿Qué es?
 
 Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
 A continuación se describe cómo utilizarlo y las funcionalidades que proporciona..
 
 ## El juego
 
-El objeto más importante para interactuar con Wollok Game es el objeto `game` que ya se encuentra en la _lib_ de Wollok.
-Para comenzar un juego, y poder visualizar el tablero, basta con ejecutar:
+El objeto más importante para interactuar con Wollok Game es el objeto `game` que para poder utilizarlo hay que importar la biblioteca _game_ de Wollok.
+Se debe incluir al inicio de cada archivo (.wlk o .wpgm):
 
-```js
->>> game.start()
+```wollok
+import wollok.game.*
 ```
-Esto deberá levantar otra ventana del sistema operativo mostrando el tablero.
-<br>
+
+Para comenzar un juego, y poder visualizar el tablero, basta con indicar:
+
+```wollok
+game.start()
+```
+
+Se levantar una ventana independiente del sistema operativo mostrando el tablero.
 
 ![Tablero vacío](images/tableroVacio.png)
+
+
+## ¿Cómo se usa?
+
+
+### Por consola
+
+La forma más básica es importar Wollok Game desde la consola (sin archivo asociado) haciendo
+
+```wollok
+>>> import wollok.game.*
+```
+
+Y luego enviar los mensajes uno a uno, como habitualmente se usa la consola. 
+
+```wollok
+>>> game.start()
+```
+
+### Por consola, con archivo de código .wlk
+
+Una forma frecuente es usar un archivo .wlk y definir allí el código inicial como cualquier otro código wollok válido, hacerlo ejecutar y enviar los mensajes por consola para que se realicen las acciones deseadas. 
+
+Archivo ejemplo.wlk
+
+```wollok
+import wollok.game.*
+
+object prueba{
+	method iniciar(){
+		game.start()
+	}
+}
+```
+
+Al ejercutar por consola este archivo, hacer
+
+```wollok
+>>> prueba.iniciar() 
+```
+
+### Con un programa
+
+Otra forma de trabajar es creando un archivo .wpgm, o Wollok program, donde se define el código del juego, que se ejecuta directamente al ejecutar el archivo, sin abrir la consola.
+
+Archivo ejemplo.wpgm
+
+```wollok
+import wollok.game.*
+
+program ejemplo{
+	game.start()
+}
+```
+
 
 ## El tablero
 Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agregar los objetos que queremos mostrar en el juego y tiene las siguientes características:
@@ -54,65 +115,72 @@ Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agrega
 - Tiene un **alto**, expresado en _cantidad de celdas_, manejado por la propiedad `game.height()`
 - Tiene una **imagen de celda**, que se settea por medio de `game.ground(imagen)`, en donde `imagen` es un string con el nombre del archivo de la imagen.
  
-#### Ejemplo
+### Ejemplo
 
-```js
->>> game.width(10)
->>> game.height(7)
->>> game.title("Juego")
->>> game.start()
+```wollok
+import wollok.game.*
+
+program ejemplo{
+	game.width(10)
+	game.height(7)
+	game.title("Juego")
+	game.start()
+}
 ```
 
 <div class="container text-center">
 	<img src="images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
-<br>
 
 
 ## Las posiciones
 
-Ahora que sabemos cómo ver el tablero del juego, seguramente queramos meter objetos dentro para interactuar. Para ello necesitamos indicar en qué **posición** del tablero queremos agregar el objeto, a través de un objeto que sepa informar las componentes _(x,y)_.
-Wollok provee la clase `Position` que también se encuentra en la _lib_. Hay varias formas de instanciar una posición:
+Ahora que sabemos cómo ver el tablero del juego, seguramente queramos meter objetos dentro para interactuar. Para ello necesitamos indicar en qué **posición** del tablero queremos agregar el objeto, a través de un objeto que sepa informar las coordenadas _(x,y)_.
+Wollok provee objetos que representan a las posiciones, que también se encuentran en la bibliotea _game_. 
 
-```js
-// Invocando al constructor
->>> new Position(2,3)
-(2,3) //-> (x=2; y=3)
->>> new Position()
-(0,0) //-> Como default tiene el origen de coordenadas
+La forma más simple de obtener una posición es pedírsela al **game** 
 
-// Pidiéndoselo al game
+Por ejemplo, teniendo corriendo cualquier archivo `.wlk` que incluya el import de `wollok.game.*` se puede probar en al consola:
+
+```wollok
 >>> game.at(2,3)
-(2,3)
+(2,3) // x = 2, y = 3 
 >>> game.origin()
 (0,0)
 >>> game.center()
 (2,2) //-> Se calcula a partir del height y width
 ```
 
-#### Dibujando objetos
-Lo más importante de estas posiciones es que saben agregar un objeto al tablero.
-```js
->>> var posicion = game.origin()
-(0,0)
->>> posicion.drawElement(wollok)
+Las posiciones entienden mensajes para cada coordenada
+
+```wollok
+>>> game.at(2,3).x()
+2
+>>> game.at(2,3).y()
+3
 ```
 
-##### Otra opción
-También puedes hacer que tu objeto conozca su propia posición (por medio de una referencia o mensaje con nombre _posicion_) y simplemente decirle al juego que lo quieres en el tablero:
-###### En example.wlk
+## Dibujando objetos
+Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
-```scala
+```wollok
+// Con propiedad
 object wollok {
-	var position = game.origin()
-	method howAreYou() = "I am Wolloktastic!"
+	var property position = game.origin()
 }
-```
 
-###### Y ejecutamos
+// Con método 
+object wollok {
+	var centrado = false
+	method position() = if (centrado) game.center() else game.origin()
+}
 
-```js
->>> game.addVisual(wollok)
+``` 
+
+Para que el objeto se muestre en el tablero de juego, se debe hacer
+
+```wollok
+game.addVisual(wollok)
 ```
 
 ¡Ya podemos visualizar nuestros objetos en pantalla!
@@ -120,37 +188,128 @@ object wollok {
 ![Tablero con wollok](images/tableroConWollok.png)
 
 
-#### Moviendo objetos
-Una característica _importante_ de estos objetos posiciones es que son **mutables**, lo que implica que sus componentes _(x, y)_ pueden cambiar en el tiempo. Eso nos permite poder **mover los objetos** en pantalla sin tener que cambiar el objeto posición (o sin tener que sacarlo del tablero y volverlo a meter en otra posición).
+### Otra opción
+Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
 
 ```wollok
->>> posicion   // acordate que la referencia posicion está definido más arriba
-(0,0)
->>> posicion.moveRight(2)  
->>> posicion.moveUp(3)
->>> posicion
-(2,3)
+game.addVisualIn(wollok,game.center())
+```
+
+### Otra opción más
+También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
+
+```wollok
+var posicion = game.origin()
+posicion.drawElement(wollok)
+```
+
+### Moviendo objetos
+Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo `position()` y manipulando las referencias que se utilizan en él. 
+Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
+En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
+
+```wollok
+// Con propiedad
+object wollok {
+	var property position = game.origin()
+
+	method centrar() {
+		position = game.center()
+	}
+}
+
+// Con método 
+object wollok {
+	var centrado = false
+	method position() = if (centrado) game.center() else game.origin()
+
+	method centrar() {
+		centrado = true
+	}
+}
+
+``` 
+
+Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. 
+
+```wollok
+object wollok {
+	var property position = game.origin()
+
+	method subir() {
+		position = position.up(1) 
+	}
+
+	method enDiagonal(cant) { // se mueve cant posiciones en diagonal principal
+		position = position.up(cant).right(cant) 
+	}
+
+}
 ```
 
 ## El personaje
 
-Wollok Game te permite tener un _personaje principal_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo.
+Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo y su ubicación inicial.
+En este caso, no se le define el método `position()` sino que el juego lo maneja por su cuenta. 
 
-```js
->>> game.addVisualCharacter(wollok)
+```wollok 
+game.addVisualCharacterIn(wollok, game.origin())
 //o game.origin().drawCharacter(wollok)
->>> game.start()
 ```
 
 ![wollok-character](images/wollokCharacter.gif)
 
+### Otra opción
+Otra forma es ubicar el personaje especial mediante el método `addVisualCharacter(object)` sin indicar la posición inicial, sino tomándola del mismo obejeto.
 
-#### ¡También hablan!
+```wollok 
+game.addVisualCharacter(wollok)
+```
+En este caso, el objeto debe tener el método `position()` que se utiliza sólo para determinar la posición inicial. Dado que las sucesivas posiciones surgen a partir del uso del teclado, se ignora luego su valor de retorno. 
+
+
+## Visuales
+
+¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
+Para elegir la imagen de un determinado objeto es necesario:
+
+1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
+2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión.
+
+### Ejemplo
+
+<div class="container text-center">
+	<img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
+</div>
+<br>
+
+### En example.wlk
+
+```wollok
+import wollok.game.*
+object caja {
+	method image() = "caja.png"
+} 
+```
+
+### Y al ejecutar
+
+```wollok
+>>> game.start()
+>>> game.addVisualIn(caja,game.center())
+```
+
+![Caja Game](images/cajaGame.png)
+
+
+> ![Warning](images/warning.png) AVISO IMPORTANTE : Wollok Game no hace ninguna modificación a las imágenes para mostrarlas. De modo que deberán tener el **tamaño** y **orientación** apropiado para tu juego.
+
+## ¡También hablan!
 
 Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `objeto` del juego y el `texto` que dirá por medio del mensaje `game.say(objeto, texto)`:
 
-```js
->>> game.say(wollok, wollok.howAreYou())
+```wollok
+game.say(wollok, wollok.howAreYou())
 ```
 
 ![Los objetos hablan](images/objetosHablan.png)
@@ -159,110 +318,65 @@ Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `o
 **Tip:** también saben gritar, fijate qué pasa si reemplazás `say` por `scream`.
 
 
-### Visuales
-
-¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
-Para elegir la imagen de un determinado objeto es necesario:
-
-1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras.. > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta.
-2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string.
-
-#### Ejemplo
-
-<div class="container text-center">
-	<img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
-</div>
-<br>
-
-###### En example.wlk
-
-```wollok
-object caja {
-	method image() = "caja.png"
-} 
-```
-
-###### Y al ejecutar
-
-```wollok
->>> game.start()
->>> game.center().drawElement(caja)
-```
-
-![Caja Game](images/cajaGame.png)
-
-
-> ![Warning](images/warning.png) AVISO IMPORTANTE : Wollok Game no hace ninguna modificación a las imágenes para mostrarlas. De modo que deberán tener el **tamaño** y **orientación** apropiado para tu juego.
-
 
 ## Un juego interactivo
 
 Ya podemos mostrar nuestros objetos en el tablero, dónde y con la imagen que queramos. Ahora falta poder interactuar con el juego para que sea divertido.
 
-### Usando el REPL
-Una forma fácil de interactuar con el juego es por medio de la **consola**. Siempre puedes mandar un mensaje y hacer que un objeto cambie lo que muestra el tablero.
 
-### Colisiones
+## Colisiones
 Una forma de hacer que tus objetos interactúen entre sí es por medio de colisiones. Estos son **bloques de código** que se agregan a un objeto del tablero y se ejecutará cuando otro objeto _colisione_ con éste (ocupe la misma posición). `game.whenCollideDo(objeto, accionConColisionado)`.
 
-#### Ejemplo
+### Ejemplo
 ![colision-caja](images/colisionCaja.gif)
 
-###### En example.wlk
+### En example.wpgm
 
-```js
+```wollok
+import wollok.game.*
+
 object wollok {
-	var property position = game.origin()
-	method howAreYou() = "I am fine!"
-	method irAlInicio() {
-		position.x(0)
-		position.y(0)
-	}
+	method howAreYou() = "I am Wolloktastik!"
 }
 
 object caja {
 	var property position = game.center()
-	method imagen() = "caja.png"
+	method image() = "caja.png"
+	method subir(){
+		position = position.up(1)
+	}
+}
+
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.origin())	//Para que se pueda mover con las flechas
+	game.addVisual(caja)
+//	Apenas el personaje wollok colisione con la caja, el personaje habla y la caja se desplaza
+	game.whenCollideDo(wollok, { elemento => 
+		elemento.subir()
+		game.say(wollok,wollok.howAreYou())
+	})
+	game.start()
 }
 ```
 
 **Tip:** si necesitás esa imagen la podés descargar en el directorio assets del ejemplo [sokoban](https://github.com/wollok/sokobanGame)
 
-###### Y al ejecutar
-```js
->>> game.addVisualCharacter(wollok) //Para que se pueda mover con las flechas
->>> game.center().drawElement(caja)
-    //Apenas un personaje colisione con la caja le va a decir que vaya al inicio
->>> game.whenCollideDo(caja, { personaje => personaje.irAlInicio() })
->>> game.start()
-```
 
-### Programas
 
-Otra forma de trabajar es creando un archivo wpgm, o Wollok program, donde definís un personaje principal y el juego cobra vida a partir de los eventos que va generando el usuario con los movimientos del personaje, las colisiones con otros objetos y algunas cosas que te iremos contando.
+### Cambiando el fondo
 
-Pasemos el mismo ejemplo que teníamos en el REPL a un programa, que importará las definiciones de wollok y caja:
-
-```js
-program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(caja)
-	game.whenCollideDo(caja, { personaje => personaje.irAlInicio() })
-	game.start()
-}
-```
-
-#### Cambiando el fondo
-
-Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](https://www.google.com.ar/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwimy6fJtvTcAhVFxpAKHRdhBK4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en la carpeta fuente de nuestro proyecto, que por convención suele llamarse `assets`.
+Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](www.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en una carpeta fuente de nuestro proyecto.
 
 En el programa agregamos el mensaje correspondiente al objeto game:
 
-```js
-program firstWollokGameProgram {
+```wollok
+import wollok.game.*
+program ejemplo {
 	game.width(10)
 	game.height(10)
 	game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
+	game.start()
+}
 ```
 
 Esto produce que en el tablero se visualice la imagen de fondo: 
@@ -272,17 +386,16 @@ Esto produce que en el tablero se visualice la imagen de fondo:
 De aquí en más volveremos con el fondo convencional para que distraiga menos la atención.
 
 
-#### Reportando errores
+### Reportando errores
 
-Cuando las cosas no salen como queremos y ocurre un error, el personaje principal es el que nos lo cuenta. Supongamos que modificamos el bloque que trabaja la colisión entre nuestro personaje wollok y la caja:
+Cuando las cosas no salen como queremos y ocurre un error, el personaje especial es el que nos lo cuenta. Supongamos que modificamos el bloque que trabaja la colisión entre nuestro personaje wollok y la caja:
 
-```js
-program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(caja)
-	game.whenCollideDo(caja, { personaje => 
-		personaje.irAlInicio()
-		const a = 1 / 0
+```wollok
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.origin())	
+	game.addVisual(caja)
+	game.whenCollideDo(wollok, { elemento => 
+		const a = 1 / 0 //Se produce un error
 	})
 	game.start()
 }
@@ -296,12 +409,12 @@ Por defecto, si hay un personaje es éste el responsable de avisar los errores q
 
 Igualmente nosotros podemos decirle que otro sea el objeto que reporte los errores de Wollok Game, como la caja:
 
-```js
-program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(caja)
+```wollok
+program ejemplo {
+	//...
 	game.errorReporter(caja)
-	...
+	//...
+}
 ```
 
 Entonces cuando hay un error en un bloque de código que maneja Wollok Game, será la caja la que nos esté reportando un error:
@@ -309,35 +422,34 @@ Entonces cuando hay un error en un bloque de código que maneja Wollok Game, ser
 ![caja reporta error](images/errorReporter2.gif)
 
 
-#### Eventos automaticos
+### Eventos automaticos
 
-Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game` y pasándole el bloque de código que debe ejecutar:
+Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game`, el lapso de repetición expresado en milisegundos, un identificador (string descriptivo) y el bloque de código que debe ejecutar:
 
-```js
-program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
+```wollok
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.origin())
 	game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
 	// cada dos segundos muevo la caja
-	game.onTick(2000, { caja.movete() })
+	game.onTick(2000, "movimiento", { caja.movete() })
 	//
-	game.whenCollideDo(caja, { personaje => personaje.irAlInicio() })
 	game.start()
 }
 ```
 
-> Es importante agregar el objeto visual caja mediante `game.addVisual(caja)` en lugar de como lo hacíamos anteriormente: `game.center().drawElement(caja)` para que escuche eventos que la hagan moverse
-
 El método `movete()` en caja actualiza la posición en base a un valor al azar, tomando en cuenta el ancho y alto del tablero:
 
-```js
+```wollok
 object caja {
 	var property position = game.center()
-	method imagen() = "caja.png"
+	method image() = "caja.png"
 	method movete() {
-		const x = 0.randomUpTo(game.width() - 1).truncate(0)
-		const y = 0.randomUpTo(game.height() - 1).truncate(0)
-		self.position().x(x)
-		self.position().y(y)
+		const x = 0.randomUpTo(game.width()).truncate(0)
+		const y = 0.randomUpTo(game.height()).truncate(0)
+		//otra forma de generar números aleatorios
+		//const x = (0.. game.width()-1).anyOne() 
+		//const y = (0.. game.height()-1).anyOne() 
+		position = game.at(x,y) 
 	}
 }
 ```
@@ -347,43 +459,38 @@ Cuando ejecutamos el programa, vemos cómo la caja cada 2 segundos cambia de pos
 ![on tick](images/onTick.gif)
 
 
-#### Eventos del teclado
+### Eventos del teclado
 
-Wollok Game permite capturar todos los eventos del teclado, para lo cual te recomendamos que leas la documentación del wko `keyboard`. En particular, podés definir qué tiene que pasar cuando un usuario presione una tecla. Así, un ENTER podría hacer que la caja deje de moverse o se active nuevamente:
+Wollok Game permite capturar todos los eventos del teclado, para lo cual te recomendamos que leas la documentación del objeto autodefinido `keyboard`. En particular, podés definir qué tiene que pasar cuando un usuario presione una tecla. 
+Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ que el movimiento de la caja se detenga.
 
-```java
-import example.*
+```wollok
 import wollok.game.*
 
-program firstWollokGameProgram {
-	var cajaDiscola = true
-	game.addVisualCharacter(wollok)
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.origin())
 	game.addVisual(caja)
-	game.onTick(2000, { if (cajaDiscola) caja.movete() })
-	//
+	
+	game.onTick(2000, "movimiento",{ caja.movete() })
+
 	// capturamos el evento ENTER del teclado
-	keyboard.enter().onPressDo { cajaDiscola = !cajaDiscola }	
-	//
-	game.whenCollideDo(caja, { personaje => personaje.irAlInicio() })
+	keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}	
+	// capturamos el evento de presionar la tecla p del teclado
+	keyboard.p().onPressDo {game.removeTick("movimiento")}	// Mensaje que detiene la acción repetitiva indicada
 	game.start()
 }
 ```
 
-Y aquí vemos cómo se queda quieta o se mueve la caja:
-
-![keyboard](images/keyboard.gif)
-
-
-#### Mostrar o no los atributos de los objetos visuales
+### Mostrar o no los atributos de los objetos visuales
 
 Incorporemos los siguientes atributos al objeto visual wollok:
 
-```js
+```wollok
 object wollok {
 	var property position = game.origin()
 	var version = "1.7.0"
 	var lastUpdated = new Date()
-	...
+}
 ```
 
 Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado interno:
@@ -392,15 +499,16 @@ Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado inter
 
 Si no queremos que ocurra esto (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes()` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
 
-```js
-program firstWollokGameProgram {
-	var cajaDiscola = true
-	game.addVisualCharacter(wollok)
+```wollok
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.center())
 	game.hideAttributes(wollok)
-	...
+	//...
+}
 ```
 
-### Problemas comunes
+## Problemas comunes
+
 
 Primero que nada, tené en cuenta que Wollok Game necesita Open GL 2.0 ó superior, si no lo tenés instalado, seguí [estas instrucciones](https://www.khronos.org/opengl/wiki/Getting_Started)
 
@@ -439,11 +547,13 @@ y comentá esta configuración
 
 Con eso volvé a levantar el entorno Wollok y debería funcionar correctamente.
 
-#### Problema para ejecutar Wollok Game en MacOS HighSierra
+### Problema para ejecutar Wollok Game en MacOS HighSierra
 
 Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconvenientes con la versión MacOS HighSierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). En la próxima versión este problema estará resuelto, pero hasta tanto eso no ocurra te aconsejamos para salir del paso instalar una Virtual Machine de otro sistema operativo.
 
-### Para seguirla
+## Para seguirla
+
+El código de los ejemplos mencionados está en  [este repositorio](https://github.com/wollok/ejemploGameSite) 
 
 Te dejamos [esta documentación avanzada](https://github.com/leodelgadodev/Documentacion-wollokGame) que hizo Leo Delgado al usar Wollok Game en su curso.
 
