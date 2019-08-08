@@ -26,33 +26,10 @@ layout: null
 
 ___
 
-## ¿Qué es ?
+## ¿Qué es?
 
 Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
 A continuación se describe cómo utilizarlo y las funcionalidades que proporciona..
-
-## ¿Cómo se usa?
-
-#### Un programa
-
-Una forma simple de trabajar es creando un archivo wpgm, o Wollok program, donde se define el código del juego, que se ejecuta directamente al ejecutar el archivo.
-
-```wollok
-import wollok.game.*
-
-program ejemplo{
-	game.start()
-}
-```
-Esto deberá levantar otra ventana del sistema operativo mostrando el tablero.
-<br>
-
-![Tablero vacío](images/tableroVacio.png)
-
-
-#### Por consola
-
-Otra forma es usar un archivo .wlk y definir el código como cualquier otro código wollok válido, hacerlo ejecutar y enviar los mensajes por consola para que se realicen las acciones.
 
 ## El juego
 
@@ -69,6 +46,64 @@ Para comenzar un juego, y poder visualizar el tablero, basta con indicar:
 game.start()
 ```
 
+Se levantar una ventana independiente del sistema operativo mostrando el tablero.
+
+![Tablero vacío](images/tableroVacio.png)
+
+
+## ¿Cómo se usa?
+
+
+### Por consola
+
+La forma más básica es importar Wollok Game desde la consola (sin archivo asociado) haciendo
+
+```wollok
+>>> import wollok.game.*
+```
+
+Y luego enviar los mensajes uno a uno, como habitualmente se usa la consola. 
+
+```wollok
+>>> game.start()
+```
+
+### Por consola, con archivo de código .wlk
+
+Una forma frecuente es usar un archivo .wlk y definir allí el código inicial como cualquier otro código wollok válido, hacerlo ejecutar y enviar los mensajes por consola para que se realicen las acciones deseadas. 
+
+Archivo ejemplo.wlk
+
+```wollok
+import wollok.game.*
+
+object prueba{
+	method iniciar(){
+		game.start()
+	}
+}
+```
+
+Al ejercutar por consola este archivo, hacer
+
+```wollok
+>>> prueba.iniciar() 
+```
+
+### Con un programa
+
+Otra forma de trabajar es creando un archivo .wpgm, o Wollok program, donde se define el código del juego, que se ejecuta directamente al ejecutar el archivo, sin abrir la consola.
+
+Archivo ejemplo.wpgm
+
+```wollok
+import wollok.game.*
+
+program ejemplo{
+	game.start()
+}
+```
+
 
 ## El tablero
 Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agregar los objetos que queremos mostrar en el juego y tiene las siguientes características:
@@ -80,7 +115,7 @@ Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agrega
 - Tiene un **alto**, expresado en _cantidad de celdas_, manejado por la propiedad `game.height()`
 - Tiene una **imagen de celda**, que se settea por medio de `game.ground(imagen)`, en donde `imagen` es un string con el nombre del archivo de la imagen.
  
-#### Ejemplo
+### Ejemplo
 
 ```wollok
 import wollok.game.*
@@ -96,7 +131,6 @@ program ejemplo{
 <div class="container text-center">
 	<img src="images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
-<br>
 
 
 ## Las posiciones
@@ -126,17 +160,7 @@ Las posiciones entienden mensajes para cada coordenada
 3
 ```
 
-##### Otra opción
-Otra forma es instanciando la clase `Position` 
-
-```wollok
->>> new Position(x=2,y=3)
-(2,3) 
->>> new Position()
-(0,0) //-> Como default tiene el origen de coordenadas
-```
-
-#### Dibujando objetos
+## Dibujando objetos
 Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
 ```wollok
@@ -164,14 +188,14 @@ game.addVisual(wollok)
 ![Tablero con wollok](images/tableroConWollok.png)
 
 
-##### Otra opción
+### Otra opción
 Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
 
 ```wollok
 game.addVisualIn(wollok,game.center())
 ```
 
-##### Otra opción más
+### Otra opción más
 También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
 
 ```wollok
@@ -179,10 +203,10 @@ var posicion = game.origin()
 posicion.drawElement(wollok)
 ```
 
-#### Moviendo objetos
+### Moviendo objetos
 Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo `position()` y manipulando las referencias que se utilizan en él. 
 Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
-En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si se setea en dicha variable una posición diferente, el objeto se mueve a la nueva posición.
+En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
 
 ```wollok
 // Con propiedad
@@ -206,7 +230,7 @@ object wollok {
 
 ``` 
 
-Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. De esta forma, se facilita el desplazamiento de los objetos.
+Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. 
 
 ```wollok
 object wollok {
@@ -235,7 +259,7 @@ game.addVisualCharacterIn(wollok, game.origin())
 
 ![wollok-character](images/wollokCharacter.gif)
 
-##### Otra opción
+### Otra opción
 Otra forma es ubicar el personaje especial mediante el método `addVisualCharacter(object)` sin indicar la posición inicial, sino tomándola del mismo obejeto.
 
 ```wollok 
@@ -244,7 +268,7 @@ game.addVisualCharacter(wollok)
 En este caso, el objeto debe tener el método `position()` que se utiliza sólo para determinar la posición inicial. Dado que las sucesivas posiciones surgen a partir del uso del teclado, se ignora luego su valor de retorno. 
 
 
-### Visuales
+## Visuales
 
 ¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
 Para elegir la imagen de un determinado objeto es necesario:
@@ -252,14 +276,14 @@ Para elegir la imagen de un determinado objeto es necesario:
 1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
 2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión.
 
-#### Ejemplo
+### Ejemplo
 
 <div class="container text-center">
 	<img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
-###### En example.wlk
+### En example.wlk
 
 ```wollok
 import wollok.game.*
@@ -269,7 +293,7 @@ object caja {
 } 
 ```
 
-###### Y al ejecutar
+### Y al ejecutar
 
 ```wollok
 >>> game.start()
@@ -301,13 +325,13 @@ game.say(wollok, wollok.howAreYou())
 Ya podemos mostrar nuestros objetos en el tablero, dónde y con la imagen que queramos. Ahora falta poder interactuar con el juego para que sea divertido.
 
 
-### Colisiones
+## Colisiones
 Una forma de hacer que tus objetos interactúen entre sí es por medio de colisiones. Estos son **bloques de código** que se agregan a un objeto del tablero y se ejecutará cuando otro objeto _colisione_ con éste (ocupe la misma posición). `game.whenCollideDo(objeto, accionConColisionado)`.
 
-#### Ejemplo
+### Ejemplo
 ![colision-caja](images/colisionCaja.gif)
 
-###### En example.wpgm
+### En example.wpgm
 
 ```wollok
 import wollok.game.*
@@ -340,7 +364,7 @@ program ejemplo {
 
 
 
-#### Cambiando el fondo
+### Cambiando el fondo
 
 Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](www.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en una carpeta fuente de nuestro proyecto.
 
@@ -363,7 +387,7 @@ Esto produce que en el tablero se visualice la imagen de fondo:
 De aquí en más volveremos con el fondo convencional para que distraiga menos la atención.
 
 
-#### Reportando errores
+### Reportando errores
 
 Cuando las cosas no salen como queremos y ocurre un error, el personaje especial es el que nos lo cuenta. Supongamos que modificamos el bloque que trabaja la colisión entre nuestro personaje wollok y la caja:
 
@@ -399,9 +423,9 @@ Entonces cuando hay un error en un bloque de código que maneja Wollok Game, ser
 ![caja reporta error](images/errorReporter2.gif)
 
 
-#### Eventos automaticos
+### Eventos automaticos
 
-Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game`, el lapso de repetición expresado en milisegundos, un identificaor (string descriptivo) y el bloque de código que debe ejecutar:
+Una funcionalidad interesante que podemos implementar es que **la caja se mueva cada n segundos** (por ejemplo, cada 2 segundos), enviando el mensaje `onTick()` al objeto `game`, el lapso de repetición expresado en milisegundos, un identificador (string descriptivo) y el bloque de código que debe ejecutar:
 
 ```wollok
 program ejemplo {
@@ -436,10 +460,10 @@ Cuando ejecutamos el programa, vemos cómo la caja cada 2 segundos cambia de pos
 ![on tick](images/onTick.gif)
 
 
-#### Eventos del teclado
+### Eventos del teclado
 
 Wollok Game permite capturar todos los eventos del teclado, para lo cual te recomendamos que leas la documentación del objeto autodefinido `keyboard`. En particular, podés definir qué tiene que pasar cuando un usuario presione una tecla. 
-Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ hace que el movimiento de la caja se detenga.
+Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ que el movimiento de la caja se detenga.
 
 ```wollok
 import wollok.game.*
@@ -458,7 +482,7 @@ program ejemplo {
 }
 ```
 
-#### Mostrar o no los atributos de los objetos visuales
+### Mostrar o no los atributos de los objetos visuales
 
 Incorporemos los siguientes atributos al objeto visual wollok:
 
@@ -484,9 +508,9 @@ program ejemplo {
 }
 ```
 
-### Problemas comunes
+## Problemas comunes
 
-#### Error en Ubuntu
+### Error en Ubuntu
 
 En algunas instalaciones de Ubuntu puede que te aparezca un mensaje de error como el siguiente al correr un programa de Wollok Game:
 
@@ -521,11 +545,11 @@ y comentá esta configuración
 
 Con eso volvé a levantar el entorno Wollok y debería funcionar correctamente.
 
-#### Problema para ejecutar Wollok Game en MacOS HighSierra
+### Problema para ejecutar Wollok Game en MacOS HighSierra
 
 Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconvenientes con la versión MacOS HighSierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). En la próxima versión este problema estará resuelto, pero hasta tanto eso no ocurra te aconsejamos para salir del paso instalar una Virtual Machine de otro sistema operativo.
 
-### Para seguirla
+## Para seguirla
 
 El código de los ejemplos mencionados está en  [este repositorio](https://github.com/wollok/ejemploGameSite) 
 
