@@ -81,7 +81,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Ctrl + R: busca un recurso (archivo), filtrando por nombre o extensión. 
+                        <figcaption class="figure-caption"><br> Ctrl + Shift + R: busca un recurso (archivo), filtrando por nombre o extensión. 
                             <br> Ctrl + Shift + F3: busca cualquier objeto, clase o mixin creado por vos o que venga con
                             la biblioteca de Wollok, como Date, Set o String.</figcaption>
                     </figure>
@@ -101,7 +101,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                         <img src="/images/tour/editor6.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Un popurri de uso de shortcuts para borrar, intercalar líneas o comentar/descomentarlas.</figcaption>
                     </figure>
-                </div>                
+                </div>
             </div>
             <hr>
             <div class="container">
@@ -218,7 +218,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/validator1Es.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/validator1Es2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Una muestra de cómo funciona el validador. Al posicionarnos
                         con el mouse sobre la parte izquierda, se expande la descripción de la advertencia (en amarillo)
                         o el error (en rojo). En la solapa Problemas tenemos un resumen de todos los <i>issues</i> de
@@ -308,25 +308,16 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/formatter.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateo básico de una clase. </figcaption>
+                        <img src="/images/tour/formatter3.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Formateo básico de un elemento de Wollok. </figcaption>
                     </figure>
                 </div>
             </div>
             <br>
             Wollok tiene un formateador basado en su sintaxis que estiliza el código y le da un formato homogéneo,
             algo necesario en un lenguaje educativo que propone proyectos donde se conforma un grupo de trabajo.
-            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format):
+            Para activarlo, ubicado sobre un archivo, presioná las teclas <b>Ctrl + Shift + F</b> (Format).
             <br>
-            <br>
-            <div class="row text-center">
-                <div class="col-md-12 mb-6">
-                    <figure class="figure">
-                        <img src="/images/tour/formatter2.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formateando <i>closures</i> e if con o sin llaves.</figcaption>
-                    </figure>
-                </div>
-            </div>
             <br>
         </div>
         <!-- *****************************  CONSOLE ****************************************-->
@@ -391,13 +382,30 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <hr>
             <h4>Ejecutar una sesión sin un archivo asociado</h4>
             <br>
-            Por último, tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
+            También tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
             un archivo particular, mediante una opción específica en la barra:
             <br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole2Es.png" class="img-fluid z-depth-1">
             </div>
-            <br><br>
+            <br>
+            <hr>
+            <h4>
+            Importando archivos desde la consola
+            </h4>
+            <p>
+            Wollok es una herramienta de exploración, eso incluye hacer pruebas sobre un archivo de definiciones de un proyecto y luego ir importando otros archivos, como vemos en el ejemplo. Esta opción es válida si comenzás ejecutando la consola para un archivo de tu proyecto, de lo contrario no tendrás otro archivo para incorporar.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/console3.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br> Importando archivos dinámicamente (disponible desde la versión 1.8 Hypatia)</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
+            <br>
         </div>
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
@@ -410,13 +418,11 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunnerEs.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunner2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests: vemos que se puede filtrar errores y fallas,
-                            <br>
-                            que podemos navegar directamente al código donde se originó el error, 
-                            <br> 
-                            y cómo la ejecución de 
+                            de tests: vemos que se puede filtrar errores / fallas,
+                            que podemos navegar directamente al código donde se originó el error, copiar la pila de ejecución de un test que no terminó bien o ver el tiempo que demoró la ejecución de todos los tests.
+                            Y el ejercicio de modificar el código y ejecutar
                             los tests es un proceso iterativo e incremental. </figcaption>
                     </figure>
                 </div>
@@ -435,10 +441,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/runAllTestsEs.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerAllTests.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
                         proyecto. Aquí vemos que corren además de los 3 tests del archivo
-                    example.wtest, también se ejecutan los del archivo test.wtest</figcaption>
+                    fakeTest.wtest, también se ejecutan los del archivo testCelu.wtest</figcaption>
                     </figure>
                 </div>
             </div>
@@ -461,9 +467,27 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     </figure>
                 </div>
             </div>
-            <br>
+            <br>            
             Para conocer en detalle todas las funcionalidades te recomendamos que leas
             <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">este apunte</a>.
+            <br>
+            <hr/>
+            <br>
+            Y a partir de la versión 1.7.7, Wollok cuenta también con un <b>Diagrama dinámico</b> que se integra con la consola REPL, que permite mostrar las referencias entre los diferentes objetos que están en el ambiente.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/dynamicDiagram2.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Una pequeña demostración
+                        del diagrama dinámico de Wollok</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            En azul aparecen los objetos creados por nosotros, en verde los números,
+            booleanos, strings, fechas y pares, en bordó y rectangular las colecciones, y el resto en rosado.
             <br>
             <br>
         </div>  

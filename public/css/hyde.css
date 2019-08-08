@@ -32,7 +32,7 @@
  */
 
 html {
-  font-family: 'Montserrat', "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: Blinker, 'Source Sans Pro', 'Montserrat', "PT Sans", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48rem) {
   html {

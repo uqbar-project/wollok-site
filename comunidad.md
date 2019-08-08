@@ -15,7 +15,9 @@ icon: 'group'
 
 <ul>
 <li>Twitter: <a href="https://twitter.com/@WollokLang">@WollokLang</a></li>
-<li>Google Groups de Usuarios: <a href="mailto:wollok@googlegroups.com">wollok@googlegroups.com</a> o <a href="https://groups.google.com/d/forum/wollok">https://groups.google.com/d/forum/wollok</a>
+<li>Lista de discusión de Docentes: <a href="mailto:wollok-docentes@googlegroups.com">wollok-docentes@googlegroups.com</a> o <a href="https://groups.google.com/d/forum/wollok-docentes">https://groups.google.com/d/forum/wollok-docentes</a>
+</li>
+<li>Lista de discusión de Desarrolladores: <a href="mailto:wollok-dev@googlegroups.com">wollok-dev@googlegroups.com</a> o <a href="https://groups.google.com/d/forum/wollok-dev">https://groups.google.com/d/forum/wollok-dev</a>
 </li>
 <li>Mail: <a href="mailto:wollok@uqbar.org">wollok@uqbar.org</a> </li>
 </ul>
@@ -43,12 +45,12 @@ icon: 'group'
 <div class="row">
 	<!-- Grid column -->
 	<div class="col-md-6 mb-3">
-		<img src="/images/comunidad/community1.jpg" class="img-fluid z-depth-1 rounded">
+		<img src="/images/comunidad/community6.jpg" class="img-fluid z-depth-1 rounded">
 	</div>
 	<!-- Grid column -->
 	<!-- Grid column -->
 	<div class="col-md-6 mb-3">
-		<img src="/images/comunidad/community2.jpg" class="img-fluid z-depth-1 rounded">
+		<img src="/images/comunidad/community5_1.jpg" class="img-fluid z-depth-1 rounded">
 	</div>
 	<!-- Grid column -->
 </div>
@@ -62,7 +64,7 @@ icon: 'group'
 	<!-- Grid column -->
 	<!-- Grid column -->
 	<div class="col-md-6 mb-3">
-		<img src="/images/comunidad/community4.jpg" class="img-fluid z-depth-1 rounded">
+		<img src="/images/comunidad/community1.jpg" class="img-fluid z-depth-1 rounded">
 	</div>
 	<!-- Grid column -->
 </div>

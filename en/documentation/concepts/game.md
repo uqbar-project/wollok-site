@@ -397,6 +397,9 @@ program firstWollokGameProgram {
 
 ### Troubleshooting
 
+Wollok Game works with Open GL 2.0 or greater. If you need to install or upgrade it, follow [this instructions](https://www.khronos.org/opengl/wiki/Getting_Started)
+
+
 #### Error in Ubuntu
 
 Some Ubuntu installations may crash with this error message while opening a Wollok Game program:

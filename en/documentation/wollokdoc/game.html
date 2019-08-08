@@ -1,9 +1,9 @@
-<h2 id="keyboard"><img src="images/object.png" height="24px" width="24px" title="object"/>
- keyboard</h2>
+<h2 id="game"><img src="images/object.png" height="24px" width="24px" title="object"/>
+&nbsp;game</h2>
 
 
-<p> Keyboard object handles all keys movements. There is a method for each key.<br><br>Examples:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"<br><br>    keyboard.any().onPressDo { game.say("you pressed a key!") }<br>        => any key pressed will activate its closure</p>
-<h3> Behavior</h3>
+<p>&nbsp;Wollok Game main object</p>
+<h3>&nbsp;Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
 <tr>
@@ -13,176 +13,362 @@
 </thread>
 <tbody>
 <tr>
-<td width="30%"id="keyboard_a_0"><b>a</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_addVisual_1"><code><b>addVisual</b>(positionable)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds an object to the board for drawing it.<br>Object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisual(pepita) ==> pepita should have a position property</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_alt_0"><b>alt</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_addVisualCharacter_1"><code><b>addVisualCharacter</b>(positionable)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds an object to the board for drawing it. It can be moved with arrow keys.<br>That object should understand a position property<br>(implemented by a reference or getter method).<br><br>Example:<br>    game.addVisualCharacter(pepita) ==> pepita should have a position property</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_any_0"><b>any</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_addVisualCharacterIn_2"><code><b>addVisualCharacterIn</b>(element, position)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds an object to the board for drawing it on a specific position. It can be moved with arrow keys.<br><br>Example:<br>    game.addVisualCharacterIn(pepita, game.origin()) ==> no need for pepita to have a position property</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_b_0"><b>b</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_addVisualIn_2"><code><b>addVisualIn</b>(element, position)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds an object to the board for drawing it on a specific position.<br><br>Example:<br>    game.addVisualIn(pepita, game.origin()) ==> no need for pepita to have a position property<br>    game.addVisualIn(pepita, game.at(2, 2))</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_backspace_0"><b>backspace</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_at_2"><code><b>at</b>(x, y)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a position for given coordinates.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_c_0"><b>c</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_boardGround_1"><code><b>boardGround</b>(image)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Sets full background image.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_center_0"><b>center</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_center_0"><code><b>center</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns the center board position (rounded down).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_control_0"><b>control</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Removes all visual objects on board and configurations (colliders, keys, etc).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_d_0"><b>d</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_colliders_1"><code><b>colliders</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns all objects that are in same position of given object.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_del_0"><b>del</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_errorReporter_1"><code><b>errorReporter</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Allows to configure a visual component as "error reporter".<br>Then every error in game board will be reported by this visual component,<br>in a balloon message form.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_down_0"><b>down</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_getObjectsIn_1"><code><b>getObjectsIn</b>(position)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns all objects in given position.<br><br>Example:<br>    game.getObjectsIn(game.origin())</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_e_0"><b>e</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_ground_1"><code><b>ground</b>(image)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Sets cells background image.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_enter_0"><b>enter</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_height_1"><code><b>height</b>(height)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Sets board height (in cells).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_f_0"><b>f</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_height_0"><code><b>height</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns board height (in cells).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_g_0"><b>g</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_hideAttributes_1"><code><b>hideAttributes</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Attributes will not show when user mouse over a visual component.<br>Default behavior is to show them.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_h_0"><b>h</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_onTick_3"><code><b>onTick</b>(milliseconds, name, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds a block with a specific name that will be executed every n milliseconds.<br>Block expects no argument.<br>Be careful not to set it too often :)<br><br>Example:<br>    	game.onTick(5000, "pepitaMoving", { => pepita.position().x(0.randomUpTo(4)) })</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_i_0"><b>i</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_origin_0"><code><b>origin</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns the position (0,0).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_j_0"><b>j</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_removeTickEvent_1"><code><b>removeTickEvent</b>(name)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Remove a tick event created with onTick message<br><br>Example:<br>     game.removeTickEvent("pepitaMoving")</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_k_0"><b>k</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_removeVisual_1"><code><b>removeVisual</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Removes an object from the board for stop drawing it.<br><br>Example:<br>    game.removeVisual(pepita)</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_l_0"><b>l</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_say_2"><code><b>say</b>(visual, message)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Draws a dialog balloon with given message in given visual object position.<br><br>Example:<br>    game.say(pepita, "hola!")</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_left_0"><b>left</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_showAttributes_1"><code><b>showAttributes</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Attributes will appear again when user mouse over a visual component.<br>Default behavior is to show them, so this is not necessary.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_m_0"><b>m</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_sound_1"><code><b>sound</b>(audioFile)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Plays once a .mp3, .ogg or .wav audio file</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_minusKey_0"><b>minusKey</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_start_0"><code><b>start</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Starts render the board in a new windows.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_n_0"><b>n</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_stop_0"><code><b>stop</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Stops render the board and finish the game.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num0_0"><b>num0</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_title_1"><code><b>title</b>(title)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Sets game title.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num1_0"><b>num1</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_title_0"><code><b>title</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns game title.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num2_0"><b>num2</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_whenCollideDo_2"><code><b>whenCollideDo</b>(visual, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds a block that will be executed when the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.whenCollideDo(pepita, { comida => pepita.comer(comida) })</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num3_0"><b>num3</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_whenKeyPressedDo_2"><code><b>whenKeyPressedDo</b>(key, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds a block that will be executed each time a specific key is pressed<br><b>see</b> keyboard.onPressDo()</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num4_0"><b>num4</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_width_1"><code><b>width</b>(width)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Sets board width (in cells).</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num5_0"><b>num5</b> ()     </td><td width="70%;"></td>
+<td title="game" width="30%"id="game_width_0"><code><b>width</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns board width (in cells).</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="Position"><img src="images/class.png" height="24px" width="24px" title="class"/>
+&nbsp;Position</h2>
+
+
+<p>&nbsp;Represents a position in a two-dimensional gameboard.<br>It is an immutable object since Wollok 1.8.0</p>
+<h3>&nbsp;Behavior</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td title="Position" width="30%"id="Position_==_1"><code><b>==</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Two positions are equals if they have same coordinates.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num6_0"><b>num6</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_allElements_0"><code><b>allElements</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns all objects in self.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num7_0"><b>num7</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes all objects in self from the board for stop drawing it.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num8_0"><b>num8</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_clone_0"><code><b>clone</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a new position with same coordinates.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_num9_0"><b>num9</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_distance_1"><code><b>distance</b>(position)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns the distance between given position and self.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_o_0"><b>o</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_down_1"><code><b>down</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a new Position, n steps down from this one.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_p_0"><b>p</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_drawCharacter_1"><code><b>drawCharacter</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Adds an object to the board for drawing it in self. It can be moved with arrow keys.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_plusKey_0"><b>plusKey</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_drawElement_1"><code><b>drawElement</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Adds an object to the board for drawing it in self.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_q_0"><b>q</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_left_1"><code><b>left</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a new Position n steps left from this one.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_r_0"><b>r</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_right_1"><code><b>right</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a new Position n steps right from this one.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_right_0"><b>right</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_say_2"><code><b>say</b>(element, message)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Draw a dialog balloon with given message in given visual object position.</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_s_0"><b>s</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_toString_0"><code><b>toString</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">String representation of a position</td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_shift_0"><b>shift</b> ()     </td><td width="70%;"></td>
+<td title="Position" width="30%"id="Position_up_1"><code><b>up</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Returns a new Position n steps up from this one.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="keyboard"><img src="images/object.png" height="24px" width="24px" title="object"/>
+&nbsp;keyboard</h2>
+
+
+<p>&nbsp;Keyboard object handles all keys movements. There is a method for each key.<br><br>Examples:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"<br><br>    keyboard.any().onPressDo { game.say(pepita, "you pressed a key!") }<br>        => any key pressed will activate its closure</p>
+<h3>&nbsp;Behavior</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_a_0"><code><b>a</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_slash_0"><b>slash</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_alt_0"><code><b>alt</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_space_0"><b>space</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_any_0"><code><b>any</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_t_0"><b>t</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_b_0"><code><b>b</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_u_0"><b>u</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_backspace_0"><code><b>backspace</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_up_0"><b>up</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_c_0"><code><b>c</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_v_0"><b>v</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_center_0"><code><b>center</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_w_0"><b>w</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_control_0"><code><b>control</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_x_0"><b>x</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_d_0"><code><b>d</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_y_0"><b>y</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_del_0"><code><b>del</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td width="30%"id="keyboard_z_0"><b>z</b> ()     </td><td width="70%;"></td>
+<td title="keyboard" width="30%"id="keyboard_down_0"><code><b>down</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_e_0"><code><b>e</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_enter_0"><code><b>enter</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_f_0"><code><b>f</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_g_0"><code><b>g</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_h_0"><code><b>h</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_i_0"><code><b>i</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_j_0"><code><b>j</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_k_0"><code><b>k</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_l_0"><code><b>l</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_left_0"><code><b>left</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_m_0"><code><b>m</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_minusKey_0"><code><b>minusKey</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_n_0"><code><b>n</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num_1"><code><b>num</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num0_0"><code><b>num0</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num1_0"><code><b>num1</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num2_0"><code><b>num2</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num3_0"><code><b>num3</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num4_0"><code><b>num4</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num5_0"><code><b>num5</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num6_0"><code><b>num6</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num7_0"><code><b>num7</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num8_0"><code><b>num8</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_num9_0"><code><b>num9</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_o_0"><code><b>o</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_p_0"><code><b>p</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_plusKey_0"><code><b>plusKey</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_q_0"><code><b>q</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_r_0"><code><b>r</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_right_0"><code><b>right</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_s_0"><code><b>s</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_shift_0"><code><b>shift</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_slash_0"><code><b>slash</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_space_0"><code><b>space</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_t_0"><code><b>t</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_u_0"><code><b>u</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_up_0"><code><b>up</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_v_0"><code><b>v</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_w_0"><code><b>w</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_x_0"><code><b>x</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_y_0"><code><b>y</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="keyboard" width="30%"id="keyboard_z_0"><code><b>z</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 </tbody>
 </table></div>
 <hr>
 <h2 id="Key"><img src="images/class.png" height="24px" width="24px" title="class"/>
- Key</h2>
+&nbsp;Key</h2>
 
 
-<p> </p>
-<h3> Constructors</h3>
-<div class="container"><table class="table table-striped table-hover table-sm w-auto">
-<b>constructor</b>(_keyCodes)
-<p> </p>
-</table></div>
-<hr>
-<h3> Behavior</h3>
+<p>&nbsp;</p>
+<h3>&nbsp;Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
 <tr>
@@ -192,11 +378,11 @@
 </thread>
 <tbody>
 <tr>
-<td width="30%"id="Key_onPressDo_1"><b>onPressDo</b> (action)     </td><td width="70%;">Adds a block that will be executed always self is pressed.<br><br>Examples:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"</td>
+<td title="Key" width="30%"id="Key_onPressDo_1"><code><b>onPressDo</b>(action)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Adds a block that will be executed always self is pressed.<br><br>Example:<br>    keyboard.i().onPressDo { game.say(pepita, "hola!") }<br>        => when user hits "i" key, pepita will say "hola!"</td>
 </tr>
 </tbody>
 </table></div>
 <hr>
 <div class="container">
 </div>
-<p>Last update: 17/08/2018 07:50:26</p>
+<p>Last update: 03/08/2019 03:24:13</p>
