@@ -287,7 +287,6 @@ Para elegir la imagen de un determinado objeto es necesario:
 
 ```wollok
 import wollok.game.*
-
 object caja {
 	method image() = "caja.png"
 } 
