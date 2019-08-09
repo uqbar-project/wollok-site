@@ -4947,6 +4947,7 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
   font-weight: 300; }
 
 h1,
@@ -5818,7 +5819,7 @@ button:focus {
   .card:not([class*="card-outline-"]) {
     border: 0; }
   .card img {
-    border-radius: 2px 2px 0 0; }
+    border-radius: 10px; }
   .card .card-body {
     position: relative; }
     .card .card-body h5 {
@@ -5839,11 +5840,10 @@ button:focus {
       -webkit-transition: 0.3s;
       transition: 0.3s; }
   .card .card-text {
-    font-size: 0.9rem;
     color: #747373;
     font-weight: 400; }
   .card .card-footer.links-light a {
-    font-size: 15px;
+    font-size: 1rem;
     color: #757575; }
     .card .card-footer.links-light a:hover {
       color: #d50000;
@@ -6607,7 +6607,7 @@ body.scrollable {
   .accordion .card .card-body {
     line-height: 1.7;
     color: #626262;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 300; }
   .accordion .card h5 {
     font-size: 1.1rem;
