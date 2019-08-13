@@ -36,7 +36,7 @@ Un programa es una pieza de código ejecutable que consiste en una serie de expr
 
 Por ejemplo:
 
-```javascript
+```wollok
 program helloWorld {
    console.println("Hola mundo")
 }
@@ -50,7 +50,7 @@ En Wollok existen dos tipos de referencias posibles: variables y constantes.
 
 Una **variable** es una referencia cuyo valor puede cambiar en cualquier momento. Lo que cambia no es el objeto en sí, sino a qué objeto estoy apuntando con mi referencia.
 
-```javascript
+```wollok
 var edad = 10
 edad = 11
 edad = edad + 1
@@ -60,7 +60,7 @@ Una **constante** es una referencia que siempre apunta al mismo objeto, por lo t
 
 Lo que es constante no es el objeto apuntado (que puede cambiar su estado interno) sino la referencia.
 
-```javascript
+```wollok
 const edadAdulta = 21
 
 edadAdulta = 18  // ¡ ESTO NO COMPILA !
@@ -76,7 +76,7 @@ Hay tres tipos de comentarios
 
 Ejemplos:
 
-```javascript
+```wollok
 const edadAdulta = 21   // comentario de una sola línea
 
 /*
@@ -87,25 +87,25 @@ const edadAdulta = 21   // comentario de una sola línea
 edadAdulta = 18
 ```
 
-## Objetos basicos ##
+## Objetos básicos ##
 
-Ahora hablaremos de los objetos básicos que vienen con la distribución de Wollok. 
+Existen objetos básicos que vienen con la distribución de Wollok. 
 
-### Numeros ###
+### Números ###
 
 Los números entienden una gran variedad de mensajes, como las operaciones matemáticas para sumar, restar, etc. Son objetos inmutables, esto quiere decir que 
 
-* una vez inicializado un número, su estado interno no cambia
-* la suma de 1 + 2 resulta en un nuevo número que representa al 3. 
+* su estado interno no cambia
+* por ejemplo, la suma de 1 + 2 resulta en un nuevo número que representa al 3. 
 
-```javascript
+```wollok
 const a = 1
 var b = a + 10  // suma
 b = b - 1       // resta
 b = b * 2       // multiplicación
 b = b / 2       // división
 b = b % 2       // resto
-b = b ** 3      // elevado a (3 en este caso)
+b = b ** 3      // elevado al cubo 
 5.between(2, 7) // preguntamos si 5 está entre 2 y 7 ==> sí
 3.min(6)        // el menor número entre 3 y 6 ==> 3
 3.max(6)        // el mayor número entre 3 y 6 ==> 6
@@ -115,10 +115,7 @@ b = b ** 3      // elevado a (3 en este caso)
 
 Además, Wollok soporta **operadores sufijos** así como también **la operación +=** entre otras tantas variantes, que son _shortcuts_ de otras expresiones.
 
-```javascript
-b++             // b = b + 1
-b--             // b = b - 1
-
+```wollok
 b += 2          // b = b + 2
 b -= 1          // b = b - 1
 b *= 3          // b = b * 3
@@ -128,9 +125,9 @@ b /= 2          // b = b / 2
 
 ### Booleanos ###
 
-Hay dos objetos booleanos representados con los literales "true" y "false". Al igual que los números también son objetos inmutables, la expresión ```(true || false)``` devuelve un nuevo objeto true.
+Hay dos objetos booleanos representados con los literales **true** y **false**. Son objetos inmutables, la expresión ```true || false``` devuelve un nuevo objeto true.
 
-```javascript
+```wollok
 const hecho = true and true
 const esTrue = true
 const esFalse = false
@@ -142,78 +139,64 @@ const seraTrue = esTrue or esFalse
 const seraTrue = not false
 ```
 
-Para aquellos que estén acostumbrados a los operadores con símbolos (en lenguajes como C o java) pueden usar esa sintaxis si se sienten más cómodos:
+Para aquellos que estén acostumbrados a los operadores con símbolos pueden usar esta otra sintaxis:
 
 * **and**: ```a && b```
 * **or**: ```a || b```
 * **not**: ```!a```
 
-Todas las [operaciones de igualdad](#comparar-objetos-iguales) y [comparación](#comparar-objetos-en-general) se evalúan con objetos booleanos.
+Todas las [operaciones de igualdad](#comparar-objetos-iguales) y [comparación](#comparar-objetos-en-general) retornan objetos booleanos.
 
 ### Strings ###
 
 Las cadenas de caracteres se delimitan con una o dos comillas. 
 
-```javascript
+```wollok
 const unString = "hola"
 const otroString = 'mundo'
 ```
 
 También son objetos inmutables (al concatenar "hola" y "mundo" tenemos un nuevo String "holamundo"). 
 
-```javascript
-const holaMundo = unString + otroString + " !"
+```wollok
+const holaMundo = unString + " " + otroString + "!"   // "hola mundo!"
 ```
 
 ### Fechas ###
 
 Una fecha es un objeto inmutable que representa un día, mes y año (sin horas ni minutos). Se crean de dos maneras posibles:
 
-```javascript
+```wollok
 const hoy = new Date()  
         // toma la fecha del día
-const unDiaCualquiera = new Date(30, 6, 1973)  
+const unDiaCualquiera = new Date(day = 30, month = 6, year = 1973)  
         // se ingresa en formato día, mes y año
 ```
 
 Algunas operaciones que podemos hacer con las fechas son:
 
-```javascript
->>> const hoy = new Date()
-Date[2017-11-24]
->>> hoy.plusYears(1)    // sumo un año
-Date[2018-11-24]        // devuelve una nueva fecha
->>> hoy.plusMonths(2)   // sumo 2 meses
-Date[2018-01-24]
->>> hoy.plusDays(20)
-Date[2017-12-14]
->>> hoy.isLeapYear()    // pregunto si el año es bisiesto
-false
->>> hoy.dayOfWeek()     // qué día de la semana es
-5                       // viernes, 0 es domingo...
->>> hoy.month()
-11
->>> hoy.year()
-2017
->>> const ayer = hoy.minusDays(1)
-                        // resto un día para obtener el día de ayer
-Date[2017-11-23]
->>> ayer < hoy          // comparo fechas
-true
->>> const haceUnMes = hoy.minusMonths(1)
-Date[2017-10-24]        
->>> ayer.between(haceUnMes, hoy)
-                        // ayer está entre hace un mes y hoy
-true
->>> ayer - hoy
-1                       // diferencia en días entre ayer y hoy (en absoluto)
+```wollok
+const hoy = new Date()
+hoy.plusYears(1)    // nueva fecha un año posterior
+hoy.plusMonths(2)   // nueva fecha 2 meses después
+hoy.plusDays(20)    // nueva fecha 20 días después.
+hoy.isLeapYear()    // si el año es bisiesto
+hoy.dayOfWeek()     // el día de la semana: monday, tuesday, etc. 
+hoy.month()         // el número de mes
+hoy.day()           // el número de día
+hoy.year()          // el año
+const ayer = hoy.minusDays(1)  //se resta un día para obtener el día de ayer
+ayer < hoy          // comparación de fechas => true
+const haceUnMes = hoy.minusMonths(1)  
+ayer.between(haceUnMes, hoy)  // ayer está entre hace un mes y hoy => true
+ayer - hoy         // diferencia en días entre ayer y hoy (en absoluto) => 1
 ```
 
 ### Comparar objetos iguales ###
 
 Las siguientes expresiones comparan si dos objetos son iguales resultan en valores booleanos:
 
-```javascript 
+```wollok 
 const uno = 1
 const dos = 2
 
@@ -233,7 +216,7 @@ Luego de introducir objetos y clases repasaremos este concepto.
 
 También tenemos otras expresiones que permiten comparar objetos (por lo general números, pero también Strings y fechas)
 
-```javascript
+```wollok
 const esCierto = 23 < 24      // menor que
 const esCierto = 23 <= 24     // menor o igual que
 const esCierto = 24 > 10      // mayor que
