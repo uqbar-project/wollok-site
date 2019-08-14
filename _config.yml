@@ -22,7 +22,7 @@ author:
 #paginate:         5
 
 # Custom vars
-version:          1.7.7
+version:          1.8.2
 
 github:
   repo:           http://github.org/uqbar-project/wollok
