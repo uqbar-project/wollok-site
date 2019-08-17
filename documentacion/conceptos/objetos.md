@@ -5,16 +5,17 @@ layout: null
 ## Indice rápido ##
 
 * <a href="#user-objects" class="wollokLink">Objetos definidos por el desarrollador</a>
-    * <a href="#wko" class="wollokLink">WKO</a>
-    * <a href="#objetos-como-literales" class="wollokLink">Objetos literales</a>
-* Definición de un objeto Wollok
+    * <a href="#objetos-autodefinidos" class="wollokLink">Objetos autodefinidos</a>
+    * <a href="#objetos-anonimos" class="wollokLink">Objetos anonimos</a>
+* Definicion de un objeto 
     * <a href="#metodos" class="wollokLink">Métodos</a>
         * <a href="#simple-return-method" class="wollokLink">Simple return method</a> 
-    * <a href="#variables-de-instancia" class="wollokLink">Variables de instancia</a>
+    * <a href="#atributos" class="wollokLink">Atributos</a>
     * <a href="#mensajes" class="wollokLink">Mensajes</a>
     * <a href="#self" class="wollokLink">Self</a>
-    * <a href="#polimorfismo-con-objetos" class="wollokLink">Polimorfismo con objetos</a>
+    * <a href="#polimorfismo" class="wollokLink">Polimorfismo</a>
     * <a href="#if" class="wollokLink">If</a>
+    * <a href="#propiedades" class="wollokLink">Propiedades</a>
 
 ___
 
@@ -132,7 +133,7 @@ pepita.energia = 200
 pepita.energia() //sería válido si se definiese un método llamado energia()
 ```
 
-## Mensajes ##
+### Mensajes ###
 
 Uno de los conceptos más importantes de la programación orientada a objetos son los **mensajes**. En Wollok, (casi) todo lo que uno hace es enviar mensajes a objetos.
 
@@ -180,7 +181,7 @@ object pepita {
 pepita.volarYComer(23, 10)
 ```
 
-## Polimorfismo  ##
+### Polimorfismo  ###
 
 El **polimorfismo** es la capacidad de un objeto de ser intercambiable con otro, sin que un tercero que los usa se vea afectado.
 
@@ -224,7 +225,7 @@ pepita.comer(object{method energia() = 1000}) // También puede ser un objeto an
 
 Aquí tanto **alpiste** como **arroz** son polimórficos respecto a **pepita** en el mensaje **comer()**.
 
-## If ##
+### If ###
 
 La expresión **if** permite evaluar una condición booleana y realizar diferentes acciones para el caso verdadero y falso respectivamente.
 
@@ -247,7 +248,7 @@ const transporte =
 self.irACasaEn(transporte)
 ```
 
-## Propiedades ##
+### Propiedades ###
 
 Una facilidad que ofrece wollok es definir los atributos como propiedades, lo que asume automáticamente la existencia de métodos de acceso, sin tener que explicitarlos en el código, (tarea que suele ser repetitiva para escribir y molesta para leer). Se declaran con la palabra **property** antes del nombre de la referencia. En el caso de las variables incluye **getters** y **setters**, en el caso de las constantes, solo los **getters**
 

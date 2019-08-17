@@ -6,18 +6,12 @@ layout: null
 
 
 * <a href="#clases" class="wollokLink">Clases</a>
-    * <a href="#herencia" class="wollokLink">Herencia</a>
-    * <a href="#metodos-abstractos-y-clases" class="wollokLink">Métodos abstractos y clases</a>
+    * <a href="#instanciacion" class="wollokLink">Instanciacion</a>
+* <a href="#herencia" class="wollokLink">Herencia</a>
+    * <a href="#clases-abstractas" class="wollokLink">Clases abstractas</a>
     * <a href="#redefinicion-y-super" class="wollokLink">Redefinición y super</a>
-    * <a href="#constructores" class="wollokLink">Constructores</a>
-        * <a href="#constructor-simple" class="wollokLink">Constructor simple</a>
-        * <a href="#constructor-por-defecto" class="wollokLink">Constructor por defecto</a>
-        * <a href="#multiples-constructores" class="wollokLink">Múltiples constructores</a>
-        * <a href="#constructor-delegation" class="wollokLink">Constructor delegation</a>
-        * <a href="#herencia-de-constructores" class="wollokLink">Herencia de constructores</a>
-        * <a href="#inicializacion-de-variables-en-los-constructores" class="wollokLink">Inicialización de variables en los constructores</a>
     * <a href="#herencia-de-objetos" class="wollokLink">Herencia de objetos</a>
-* <a href="#polimorfismo-con-clases" class="wollokLink">Polimorfismo con clases</a>
+* <a href="#polimorfismo" class="wollokLink">Polimorfismo</a>
 * <a href="#modularizacion" class="wollokLink">Modularización</a>
     * <a href="#packages" class="wollokLink">Packages</a>
     * <a href="#imports" class="wollokLink">Imports</a>
@@ -46,7 +40,7 @@ class Ave {
 }
 ```
 
-### Instanciación simple ###
+### Instanciacion ###
 
 Para crear un Ave instanciamos un objeto de esa clase con la palabra reservada **new**, la cual retorna un objeto de la clase Ave:
 
@@ -54,8 +48,6 @@ Para crear un Ave instanciamos un objeto de esa clase con la palabra reservada *
 const pepita = new Ave()
 pepita.volar(23)
 ```
-
-### Instanciación con parámetros ###
 
 Al crear un objeto, se le puede dar valores iniciales a cada una de sus atributos, para que el objeto que se obtiene quede completo y consistente.
 Entre los **( )** se indica el identificador de cada una de las referencias y su valor inicial. Como se indica el nombre de cada atributo, no es necesario mantener un orden en particular en el envío de parámetros.
@@ -87,7 +79,7 @@ const pepita = new Ave( )) // Error (Falta inicializar peso)
 
 ```
 
-### Herencia ###
+## Herencia ##
 
 Al definir una clase, se puede especificar que **hereda** de otra clase. A la nueva clase se la llama **subclase** y a la de cual se hereda, **superclase**. Esto permite que los objetos que se instancien de la subclase, además de tener los atributos y métodos definidos en ella, también cuenta con los definidos en la superclase.  
 
@@ -109,7 +101,7 @@ eva.volar(50) //el objeto eva entiende el mensaje, porque hereda el método de l
 
 Las subclases pueden agregar nuevos métodos y variables y pueden redefinir métodos existentes (para más información ver [Redefinición y super](#redefinicion-y-super)).
 
-## Metodos abstractos y clases ##
+### Clases abstractas ###
 
 Un **método abstracto** declara su nombre y sus parámetros, sin implementarse. Es tarea de cada subclase proveer una implementación del método mediante la [redefinición](#redefinicion-y-super)
 

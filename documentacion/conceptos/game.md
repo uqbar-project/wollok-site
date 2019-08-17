@@ -6,21 +6,26 @@ layout: null
 
 ## Indice rapido ##
 
+* <a href="#que-es" class="wollokLink">¿Que es?</a>
 * <a href="#el-juego" class="wollokLink">El juego</a>
+* <a href="#como-se-usa" class="wollokLink">¿Como se usa?</a>
+	* <a href="#por-consola" class="wollokLink">Por consola</a>
+	* <a href="#por-consola-con-archivo-de-codigo" class="wollokLink">Por consola, con archivo de codigo</a>
+	* <a href="#con-un-programa" class="wollokLink">Con un programa</a>
 * <a href="#el-tablero" class="wollokLink">El tablero</a>
 * <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
 	* <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
 	* <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
 * <a href="#el-personaje" class="wollokLink">El personaje</a>
 * <a href="#visuales" class="wollokLink">Visuales</a>
+* <a href="#tambien-hablan" class="wollokLink">Tambien hablan</a>
 * <a href="#un-juego-interactivo" class="wollokLink">Un juego interactivo</a>
 	* <a href="#colisiones" class="wollokLink">Colisiones</a>
-* <a href="#programas" class="wollokLink">Programas</a>
-	* <a href="#cambiando-el-fondo" class="wollokLink">Cambiando el fondo</a>
-	* <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 	* <a href="#eventos-automaticos" class="wollokLink">Eventos automáticos</a>
 	* <a href="#eventos-del-teclado" class="wollokLink">Eventos del teclado</a>
-	* <a href="#mostrar-o-no-los-atributos-de-los-objetos-visuales" class="wollokLink">Mostrar o no atributos de los objetos visuales</a>
+	* <a href="#mostrar-atributos-de-los-objetos-visuales" class="wollokLink">Mostrar atributos de los objetos visuales</a>
+* <a href="#cambiando-el-fondo" class="wollokLink">Cambiando el fondo</a>
+* <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
 
@@ -54,7 +59,7 @@ Se levantar una ventana independiente del sistema operativo mostrando el tablero
 ## ¿Cómo se usa?
 
 
-### Por consola
+### Por consola ###
 
 La forma más básica es importar Wollok Game desde la consola (sin archivo asociado) haciendo
 
@@ -68,7 +73,7 @@ Y luego enviar los mensajes uno a uno, como habitualmente se usa la consola.
 >>> game.start()
 ```
 
-### Por consola, con archivo de codigo .wlk
+### Por consola, con archivo de codigo ###
 
 Una forma frecuente es usar un archivo .wlk y definir allí el código inicial como cualquier otro código wollok válido, hacerlo ejecutar y enviar los mensajes por consola para que se realicen las acciones deseadas. 
 
@@ -160,7 +165,7 @@ Las posiciones entienden mensajes para cada coordenada
 3
 ```
 
-## Dibujando objetos
+### Dibujando objetos ###
 Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
 ```wollok
@@ -188,14 +193,14 @@ game.addVisual(wollok)
 ![Tablero con wollok](images/tableroConWollok.png)
 
 
-### Otra alternativa
+#### Otra alternativa
 Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
 
 ```wollok
 game.addVisualIn(wollok,game.center())
 ```
 
-### Otra alternativa adicional
+#### Otra alternativa adicional
 También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
 
 ```wollok
@@ -324,13 +329,13 @@ game.say(wollok, wollok.howAreYou())
 Ya podemos mostrar nuestros objetos en el tablero, dónde y con la imagen que queramos. Ahora falta poder interactuar con el juego para que sea divertido.
 
 
-## Colisiones
+### Colisiones
 Una forma de hacer que tus objetos interactúen entre sí es por medio de colisiones. Estos son **bloques de código** que se agregan a un objeto del tablero y se ejecutará cuando otro objeto _colisione_ con éste (ocupe la misma posición). `game.whenCollideDo(objeto, accionConColisionado)`.
 
-### Ejemplo
+#### Ejemplo
 ![colision-caja](images/colisionCaja.gif)
 
-### En example.wpgm
+#### En example.wpgm
 
 ```wollok
 import wollok.game.*
@@ -360,66 +365,6 @@ program ejemplo {
 ```
 
 **Tip:** si necesitás esa imagen la podés descargar en el directorio assets del ejemplo [sokoban](https://github.com/wollok/sokobanGame)
-
-
-
-### Cambiando el fondo
-
-Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](www.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en una carpeta fuente de nuestro proyecto.
-
-En el programa agregamos el mensaje correspondiente al objeto game:
-
-```wollok
-import wollok.game.*
-program ejemplo {
-	game.width(10)
-	game.height(10)
-	game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
-	game.start()
-}
-```
-
-Esto produce que en el tablero se visualice la imagen de fondo: 
-
-![tablero con fondo especial](images/tableroConFondoEspecial.png)
-
-De aquí en más volveremos con el fondo convencional para que distraiga menos la atención.
-
-
-### Reportando errores
-
-Cuando las cosas no salen como queremos y ocurre un error, el personaje especial es el que nos lo cuenta. Supongamos que modificamos el bloque que trabaja la colisión entre nuestro personaje wollok y la caja:
-
-```wollok
-program ejemplo {
-	game.addVisualCharacterIn(wollok,game.origin())	
-	game.addVisual(caja)
-	game.whenCollideDo(wollok, { elemento => 
-		const a = 1 / 0 //Se produce un error
-	})
-	game.start()
-}
-```
-
-lo que pasa es que ocurre un error, y wollok es el que nos informa:
-
-![wollok reporta error](images/errorReporter1.gif)
-
-Por defecto, si hay un personaje es éste el responsable de avisar los errores que ocurren en el juego, y en caso de no haber personaje será cualquier objeto visual que esté en el tablero.
-
-Igualmente nosotros podemos decirle que otro sea el objeto que reporte los errores de Wollok Game, como la caja:
-
-```wollok
-program ejemplo {
-	//...
-	game.errorReporter(caja)
-	//...
-}
-```
-
-Entonces cuando hay un error en un bloque de código que maneja Wollok Game, será la caja la que nos esté reportando un error:
-
-![caja reporta error](images/errorReporter2.gif)
 
 
 ### Eventos automaticos
@@ -481,7 +426,7 @@ program ejemplo {
 }
 ```
 
-### Mostrar o no los atributos de los objetos visuales
+### Mostrar atributos de los objetos visuales ###
 
 Incorporemos los siguientes atributos al objeto visual wollok:
 
@@ -506,6 +451,66 @@ program ejemplo {
 	//...
 }
 ```
+
+## Cambiando el fondo ##
+
+Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](www.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en una carpeta fuente de nuestro proyecto.
+
+En el programa agregamos el mensaje correspondiente al objeto game:
+
+```wollok
+import wollok.game.*
+program ejemplo {
+	game.width(10)
+	game.height(10)
+	game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
+	game.start()
+}
+```
+
+Esto produce que en el tablero se visualice la imagen de fondo: 
+
+![tablero con fondo especial](images/tableroConFondoEspecial.png)
+
+De aquí en más volveremos con el fondo convencional para que distraiga menos la atención.
+
+
+## Reportando errores
+
+Cuando las cosas no salen como queremos y ocurre un error, el personaje especial es el que nos lo cuenta. Supongamos que modificamos el bloque que trabaja la colisión entre nuestro personaje wollok y la caja:
+
+```wollok
+program ejemplo {
+	game.addVisualCharacterIn(wollok,game.origin())	
+	game.addVisual(caja)
+	game.whenCollideDo(wollok, { elemento => 
+		const a = 1 / 0 //Se produce un error
+	})
+	game.start()
+}
+```
+
+lo que pasa es que ocurre un error, y wollok es el que nos informa:
+
+![wollok reporta error](images/errorReporter1.gif)
+
+Por defecto, si hay un personaje es éste el responsable de avisar los errores que ocurren en el juego, y en caso de no haber personaje será cualquier objeto visual que esté en el tablero.
+
+Igualmente nosotros podemos decirle que otro sea el objeto que reporte los errores de Wollok Game, como la caja:
+
+```wollok
+program ejemplo {
+	//...
+	game.errorReporter(caja)
+	//...
+}
+```
+
+Entonces cuando hay un error en un bloque de código que maneja Wollok Game, será la caja la que nos esté reportando un error:
+
+![caja reporta error](images/errorReporter2.gif)
+
+
 
 ## Problemas comunes
 
