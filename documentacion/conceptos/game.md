@@ -4,7 +4,7 @@ layout: null
 
 # Wollok Game
 
-## Indice rápido ##
+## Indice rapido ##
 
 * <a href="#el-juego" class="wollokLink">El juego</a>
 * <a href="#el-tablero" class="wollokLink">El tablero</a>
@@ -26,7 +26,7 @@ layout: null
 
 ___
 
-## ¿Qué es?
+## ¿Que es?
 
 Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
 A continuación se describe cómo utilizarlo y las funcionalidades que proporciona..
@@ -68,7 +68,7 @@ Y luego enviar los mensajes uno a uno, como habitualmente se usa la consola.
 >>> game.start()
 ```
 
-### Por consola, con archivo de código .wlk
+### Por consola, con archivo de codigo .wlk
 
 Una forma frecuente es usar un archivo .wlk y definir allí el código inicial como cualquier otro código wollok válido, hacerlo ejecutar y enviar los mensajes por consola para que se realicen las acciones deseadas. 
 
@@ -188,14 +188,14 @@ game.addVisual(wollok)
 ![Tablero con wollok](images/tableroConWollok.png)
 
 
-### Otra opción
+### Otra alternativa
 Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
 
 ```wollok
 game.addVisualIn(wollok,game.center())
 ```
 
-### Otra opción más
+### Otra alternativa adicional
 También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
 
 ```wollok
@@ -259,7 +259,7 @@ game.addVisualCharacterIn(wollok, game.origin())
 
 ![wollok-character](images/wollokCharacter.gif)
 
-### Otra opción
+### Otra alternativa
 Otra forma es ubicar el personaje especial mediante el método `addVisualCharacter(object)` sin indicar la posición inicial, sino tomándola del mismo obejeto.
 
 ```wollok 
@@ -304,7 +304,7 @@ object caja {
 
 > ![Warning](images/warning.png) AVISO IMPORTANTE : Wollok Game no hace ninguna modificación a las imágenes para mostrarlas. De modo que deberán tener el **tamaño** y **orientación** apropiado para tu juego.
 
-## ¡También hablan!
+## ¡Tambien hablan!
 
 Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `objeto` del juego y el `texto` que dirá por medio del mensaje `game.say(objeto, texto)`:
 

@@ -22,7 +22,6 @@ Un mixin es una definición similar a la clase en el sentido en que define tanto
 Algunas características de los mixins:
 
 * **no puede instanciarse** (solo se instancian las clases)
-* **no puede definir constructores**
 * se "linealiza" en la jerarquía de clases para evitar el [problema de los diamantes](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
 * **hasta el momento no soporta herencia de otro mixin o clase**
 
@@ -35,7 +34,7 @@ Otros detalles técnicos
 
 Aquí hay un ejemplo del mixin más sencillo posible, que provee un método
 
-```scala
+```wollok
 mixin Flier {
 	method fly() {
 		console.println("I'm flying")
@@ -45,13 +44,13 @@ mixin Flier {
 
 Entonces se puede incorporar a una clase
 
-```scala
+```wollok
 class Bird mixed with Flier {}
 ```
 
 Luego podemos usarlo en un programa / test / biblioteca
 
-```scala
+```wollok
 program t {
 	const pepita = new Bird()
 	pepita.fly()
@@ -60,9 +59,9 @@ program t {
 
 ### Mixin con estado ###
 
-Además de comportamiento (métodos), un mixin puede definir variables de instancia.
+Además de comportamiento (métodos), un mixin puede definir atributos.
 
-```scala
+```wollok
 mixin Walks {
 	var walkedDistance = 0
 	method walk(distance) {
@@ -75,17 +74,17 @@ class WalkingBird mixed with Walks {}
 
 Y se puede usar así
 
-```scala
+```wollok
 const pepita = new WalkingBird()
 pepita.walk(10)
 assert.equals(10, pepita.walkedDistance())
 ```
 
-### Acceso a variables de instancia ###
+### Acceso a atributos ###
 
-Las variables de instancia declaradas en un mixin pueden ser accedidas desde una clase que utilice dicho mixin.
+Los atributos declarados en un mixin pueden ser accedidas desde una clase que utilice dicho mixin.
 
-```scala
+```wollok
 class WalkingBird mixed with Walks {
        method resetWalkingDistance() {
                walkedDistance = 0     // variable definida en el mixin
@@ -97,7 +96,7 @@ class WalkingBird mixed with Walks {
 
 Una clase puede incorporar varios mixins a la vez.
 
-```scala
+```wollok
 mixin M1 {}
 mixin M2 {}
 		
@@ -107,7 +106,7 @@ class C mixed with M1 and M2 {
 
 La lista de mixins se puede separar con un "and" o bien con comas.
 
-```scala
+```wollok
 class C mixed with M1, M2  {}
 ```
 
@@ -117,7 +116,7 @@ Un mixin puede ser abstracto si llama a un método que no tiene implementación.
 
 Aquí vemos un ejemplo de un Mixin abstracto que provee capacidades de volar:
 
-```scala
+```wollok
 mixin Flying {
 	var fliedMeters = 0
 	method fly(meters) {
@@ -125,6 +124,7 @@ mixin Flying {
 		fliedMeters += meters
 	}
 	method fliedMeters() = fliedMeters
+
 }
 ```
 
@@ -138,7 +138,7 @@ Hay tres posibles casos:
 
 En este caso la clase provee la implementación del método requerido:
 
-```scala
+```wollok
 class BirdWithEnergyThatFlies mixed with Flying {
 	var energy = 100
 	method energy() = energy
@@ -150,10 +150,9 @@ class BirdWithEnergyThatFlies mixed with Flying {
 
 #### Método implementado en una superclase ####
 
-```scala
+```wollok
 class Energy {
-	var energy = 100
-	method energy() = energy
+	var property energy = 100
 	method reduceEnergy(amount) {
 		energy -= amount
 	}
@@ -169,7 +168,7 @@ El método que el mixin requiere no está implementado en la clase que se mezcla
 
 Veamos qué sucede si convertimos la clase Energy en un mixin: 
 
-```scala
+```wollok
 mixin Energy {
 	var energy = 100
 	method energy() = energy
@@ -181,7 +180,7 @@ mixin Energy {
 
 Y la usamos de la siguiente manera:
 
-```scala
+```wollok
 class BirdWithEnergyThatFlies mixed with Energy, Flying {}
 ```
 
@@ -198,7 +197,7 @@ Este mecanismo "aplana" las relaciones entre clases y mixins, asegurando que sol
 
 Aquí hay algunos ejemplos de "linearizations":
 
-```scala
+```wollok
 mixin M1 {
 }
 class A {}
@@ -214,7 +213,7 @@ B -> M1 -> A
 
 Si agregamos un nuevo mixin:
 
-```scala
+```wollok
 class B inherits A mixed with M1, M2 {}
 ```
 
@@ -229,7 +228,7 @@ B -> M2 -> M1 -> A
 Los mixins del lado derecho tienen menos precedencia en la jerarquía, ya que el method lookup se resuelve de izquierda a derecha. 
 
 
-```scala
+```wollok
 mixin M1 { ... }
 mixin M2 { ... }
 mixin M3 { ... }
@@ -238,9 +237,9 @@ mixin M5 { ... }
 mixin M6 { ... }
 
 class A { ... }
-class B inherits A mixed with M1, with M2 { ... }
+class B inherits A mixed with M1 and M2 { ... }
 class C inherits B mixed with M3 { ... }
-class D inherits C mixed with M4, M5, M6 { ... }
+class D inherits C mixed with M4 and M5 and M6 { ... }
 ```
 
 La cadena de resolución para D queda
@@ -259,17 +258,18 @@ La clase tiene prioridad por sobre los mixins dado que está a la izquierda en e
 
 Dado el siguiente mixin
 
-```scala
+```wollok
 mixin Energy {
-	var energy = 100
+	var  energy = 100
 	method reduceEnergy(amount) { energy -= amount }
 	method energy() = energy
+
 }
 ``` 
 
 Una clase puede incorporar el mixin Energy y redefinir el método "reduceEnergy(amount)"
 
-```scala
+```wollok
 class Bird mixed with Energy {
 	override method reduceEnergy(amount) { 
 		// no hace nada
@@ -281,7 +281,7 @@ class Bird mixed with Energy {
 
 Como en cualquier otro método que redefine un método de una superclase, dentro del cuerpo podemos usar la palabra clave **super** para invocar al método original que estamos redefiniendo.
 
-```scala
+```wollok
 	class Bird mixed with Energy {
 		override method reduceEnergy(amount) { 
 			super(1)
@@ -297,7 +297,7 @@ Es complejo porque mirando solo la definición del mixin no podemos saber exacta
 
 Por ejemplo:
 
-```scala
+```wollok
 mixin M1 {
 	method doFoo(chain) { super(chain + " > M1") }
 }
@@ -307,17 +307,18 @@ mixin M1 {
 
 Dada esta clase
 
-```scala
+```wollok
 class C1 {
 	var foo = ""
 	method doFoo(chain) { foo = chain + " > C1" }
 	method foo() = foo
+
 }
 ```
 
 y esta definición
 
-```scala
+```wollok
 class C2 inherits C1 mixed with M1 { }
 ```
 
@@ -349,7 +350,7 @@ se produce entonces una situación llamada **stackable mixin pattern**. El efect
 
 Aquí vemos un ejemplo similar al anterior pero con algunos mixins adicionales
 
-```scala
+```wollok
 mixin M1 {
 	method doFoo(chain) { super(chain + " > M1") }
 }
@@ -365,20 +366,19 @@ mixin M3 {
 
 Y aquí tenemos las clases 
 
-```scala
+```wollok
 class C1 {
-	var foo = ""
+	var property foo = ""
 	method doFoo(chain) { foo = chain + " > C1" }
-	method foo() = foo
 }
 		
-class C2 inherits C1 mixed with M1, M2, M3 {
+class C2 inherits C1 mixed with M1 and M2 and M3 {
 }
 ```
 
 Al ejecutar este código
 
-```scala
+```wollok
 	const c = new C2()
 	c.doFoo("Test ")
 	console.println(c.foo())
@@ -394,9 +394,9 @@ es decir, la jerarquía lineal obtenida.
 
 ### Mixins con Objetos ###
 
-Los well-known objects (WKOs) también pueden combinarse con mixins
+Los objetos autodefinidos (WKOs) también pueden combinarse con mixins
 
-```scala
+```wollok
 mixin Flies {
 	var times = 0
 	method fly() {
@@ -418,7 +418,7 @@ Una vez más aplican las mismas reglas para la _"linearization"_, el objeto defi
 
 Lo complementamos ahora con herencia de clases
 
-```scala
+```wollok
 object pepita inherits Animal with Flies {}
 ```
 
@@ -428,7 +428,7 @@ Los mixins pueden definirse en el momento que instanciamos un nuevo objeto. Esto
 
 Aquí tenemos un ejemplo: dada la siguiente clase y el siguiente mixin
 
-```scala
+```wollok
 mixin Energy {
     var energy = 100
     method energy() = energy
@@ -440,13 +440,13 @@ class Warrior {
 
 En lugar de crear una nueva clase para combinarlos...
 
-```scala
+```wollok
 class WarriorWithEnergy inherits Warrior mixed with Energy {}
 ```
 
 podemos directamente instanciar un nuevo objeto que los combine
 
-```scala
+```wollok
 program t {
     const w = new Warrior() with Energy
     assert.equals(100, w.energy())
@@ -457,11 +457,9 @@ Las mismas reglas aplican a combinaciones de mixins.
 
 Aquí tenemos un ejemplo un poco más complejo
 
-```scala
+```wollok
 mixin Energy {
-    var energy = 100
-    method energy() = energy
-    method energy(e) { energy = e }
+    var property energy = 100
 }
 
 mixin GetsHurt {
@@ -473,13 +471,11 @@ mixin GetsHurt {
 }
 
 mixin Attacks {
-    var power = 10
+    var property power = 10
     method attack(other) {
         other.receiveDamage(power)
         self.energy(self.energy() - 1)
     }
-    method power() = power
-    method power(p) { power = p }
     
     method energy()
     method energy(newEnergy)
@@ -492,7 +488,7 @@ class Warrior {
 
 Luego lo usamos de la siguiente manera
 
-```scala
+```wollok
 program t {
     const warrior1 = new Warrior() with Attacks with Energy with GetsHurt
     assert.equals(100, warrior1.energy())
@@ -524,7 +520,7 @@ Wollok no provee clases anónimas, de manera que no es posible combinar mixins c
 
 **ESTO NO PUEDE HACERSE**: no se puede proveer el cuerpo de un método cuando se instancie
 
-```scala
+```wollok
 const pepitaFliesDouble = new Animal mixed with Flies {
     override method fly() {
         super()
@@ -538,8 +534,6 @@ const pepitaFliesDouble = new Animal mixed with Flies {
 
 El sistema de tipos de Wollok (Wollok Type System) es una funcionalidad opcional, que puede activarse o desactivarse. El sistema de tipos permite ocultar la información explícita de tipos, ya que para los desarrolladores novatos esto implica tener que explicar/entender un nuevo concepto.
 
-De esa manera los tipos se introducen gradualmente a lo largo de la cursada, lo que constituye un desafío importante.
-
 #### Type System - Parte I ####
 
 En un primer momento, se comienza a partir de un sistema de tipos que solo incluye objetos predefinidos, objetos definidos por el usuario y literales: números, strings, booleanos, listas, conjuntos, closures, entre otros.
@@ -552,60 +546,40 @@ Todo esto sin necesidad de anotar ningún tipo en las definiciones de las variab
 
 Por ejemplo 
 
-```scala
-   class Ave {
-       method volar() { ... }
-       method comer() { ... }
-   }
+```wollok
+class Ave {
+    method volar() { ... }
+    method comer() { ... }
+}
 
-   class AveQueNada inherits Ave {
-       method nadar() { ... }
-   }
+class AveQueNada inherits Ave {
+    method nadar() { ... }
+    override method volar() { ... } 
+}
 
-   const pepita = new Ave()
-   const pato = new AveQueNada()
+class Superman {
+    method volar() { ... }
+    method tirarLaserDeLosOjos() { ... }
+}
+const pepita = new Ave()
+const pato = new AveQueNada()
 
-   class Superman() {
-       method volar() { ... }
-       method tirarLaserDeLosOjos() { ... }
-   }
-
-  var volador = pepita
-  volador = new Superman()
+object juan {
+	var mascota 
+  	method hacerVolar() {
+  		mascota.volar()   
+  	}
+}
 ```
-
-**Aclaración:** Wollok obliga a definir el programa y las clases en diferentes archivos, pero sirve para la presente explicación ver todo el código en conjunto.
 
 Estos son los tipos que infiere Wollok:
 
 * pepita : se tipa a **Ave**
 * pato : se tipa a **AveQueNada**
-* volador : se tipa a **{ volar() }**, que significa "cualquier objeto que entienda el mensaje volar sin parámetros". Esto es básicamente los mensajes en común que tienen las clases Ave y Superman. El sistema de tipos infiere esto porque nuestra referencia a "volar" se asignar a "pepita" y "new Superman()" en nuestro programa. Entonces, enviar cualquier mensaje además de  "volar()" resultará en un error de compilación.
+* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia. 
 
-Esto compila
+Si en otra parte del código se asigna a la variable mascota un objeto de otra clase, se producirá una advertencia acerca de la inconsistencia de tipos de datos.
 
-```scala
-volador.volar()
-```
-
-mientras que esto no
-
-```scala
-volador.comer()
-// o
-volador.tirarLaserDeLosOjos()
-```
-
-Y esto compila perfecto:
-
-```scala
-volador = object {
-    method volar() { ... }
-    method otroMetodo() { ... }
-}
-```
-
-Ya que el objeto cumple con la definición del tipo estructural { volar() }
 
 ### WollokDocs ###
 
@@ -613,7 +587,7 @@ Wollok tiene una sintaxis especial para documentar los elementos del lenguaje.
 
 Por ejemplo, las clases:
 
-```scala
+```wollok
 /**
  * A bird knows how to fly and eat. 
  * It also has energy. 
@@ -645,7 +619,7 @@ Así que estas son las dos operaciones básicas que pueden hacerse con una excep
 
 Veamos un código de ejemplo de la sentencia throw:
 
-```scala
+```wollok
 class MyException inherits wollok.lang.Exception {}
 class A {
 	method m1() { 
@@ -663,10 +637,10 @@ Aquí el método m1() siempre tira una excepción, que es una instancia de MyExc
 
 Aquí tenemos un ejemplo de cómo atrapar una excepción:
 
-```scala
+```wollok
 program p {
 	const a = new A()
-    const otroA = new A(5)
+    const otroA = new A()
 	
 	try {
 		a.m1()
@@ -684,7 +658,7 @@ Este programa atrapa cualquier MyException que se tire dentro del código encerr
 
 Además del bloque "catch", un bloque "try" puede definir un bloque "always", que **siempre** se ejecutará sin importar si hubo un error o no.
 
-```scala
+```wollok
 try {
 	a.m1()
 }
@@ -699,7 +673,7 @@ then always
 
 Un bloque try puede tener más de un catch, en caso de necesitar manejar diferentes tipos de excepción de distinta manera:
 
-```scala
+```wollok
 try 
 	a.m1()
 catch e : MySubclassException
@@ -712,9 +686,9 @@ catch e : MyException
 
 Dado que Wollok no exige definiciones de tipos al usuario, no es posible definir dos mensajes con igual cantidad de parámetros y diferente tipo:
 
-```scala
+```wollok
 ave.volar(6)        // kilómetros
-const madrid = new Ciudad("Madrid")
+const madrid = new Ciudad(nombre = "Madrid")
 ave.volar(madrid)               
 ```
 
@@ -722,25 +696,25 @@ Ambos mensajes serán ejecutados por el mismo método.
 
 No obstante, sí es posible definir dos mensajes con diferente cantidad de argumentos:
 
-```scala
+```wollok
 ave.volar(6)
-const madrid = new Ciudad("Madrid")
-ave.volar(madrid, new Date(1, 1, 2019))               
+const madrid = new Ciudad(nombre = "Madrid")
+ave.volar(madrid, new Date())               
 ```
 
 ### Identidad vs Igualdad ###
 
 Wollok sigue las convenciones de igualdad e identidad que tienen Java / Smalltalk. Por defecto, dos objetos son iguales si son el mismo objeto.
 
-```scala
+```wollok
 var pepita = new Ave()
 const amiga = pepita
 amiga == pepita   ==> true, son el mismo objeto
 ```
 
-Pero la igualdad es posible redefinirse, por ejemplo dos strings son iguales si tienen los mismos caracteres:
+Pero para algunos objetos la igualdad está redefinida, por ejemplo dos strings son iguales si tienen los mismos caracteres:
 
-```scala
+```wollok
 var unString = "hola"
 var otroString = "hola"
 unString == otroString ==> true, tienen los mismos caracteres
@@ -748,7 +722,7 @@ unString == otroString ==> true, tienen los mismos caracteres
 
 El operador == es equivalente al mensaje equals:
 
-```scala
+```wollok
 var unString = "hola"
 var otroString = "hola"
 unString.equals(otroString) ==> true, tienen los mismos caracteres
@@ -756,7 +730,7 @@ unString.equals(otroString) ==> true, tienen los mismos caracteres
 
 Para saber si dos referencias apuntan al mismo objeto, se utiliza el operador ===
 
-```scala
+```wollok
 var unString = "hola"
 var otroString = "hola"
 unString === otroString  ==> false, no apuntan al mismo objeto
