@@ -87,11 +87,11 @@ const edadAdulta = 21   // comentario de una sola línea
 edadAdulta = 18
 ```
 
-## Objetos básicos ##
+## Objetos basicos ##
 
 Existen objetos básicos que vienen con la distribución de Wollok. 
 
-### Números ###
+### Numeros ###
 
 Los números entienden una gran variedad de mensajes, como las operaciones matemáticas para sumar, restar, etc. Son objetos inmutables, esto quiere decir que 
 

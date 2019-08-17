@@ -66,7 +66,7 @@ const pepita = new Ave(energia = 100)
 
 Hace que pepita quede inicializada con 100 de energía
 
-Para las referencias de la clase que tienen un valor seteado por defecto es opcional enviar por parámetro el valor, en cambio para las referencias sin inicilizar en la definición de la clase es obligatorio enviar por parámetro el valor inicial.
+Para las referencias de la clase que tienen un valor seteado por defecto es opcional enviar por parámetro el valor, en cambio para las referencias sin inicializar en la definición de la clase es obligatorio enviar por parámetro el valor inicial.
 
 ```wollok
 class Ave {
@@ -185,7 +185,7 @@ object lassie inherits Dog {
 
 Esto permite la migración natural de objetos a clases de un programa que inicialmente comienza con objetos y luego parte del comportamiento se muda a definiciones de clase para reutilizar código. A veces no es necesario convertir todos los objetos a clases, Wollok permite combinar ambos en conjunto.
 
-Si la instancición de la clase Dog requiere de parámetros, estos se inican en la definición del objeto, similar al new.
+Si la instanciación de la clase Dog requiere de parámetros, estos se inician en la definición del objeto, similar al new.
 
 ```wollok
 class Dog {

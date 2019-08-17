@@ -118,11 +118,13 @@ Aquí vemos un ejemplo de un Mixin abstracto que provee capacidades de volar:
 
 ```wollok
 mixin Flying {
-	var property fliedMeters = 0
+	var fliedMeters = 0
 	method fly(meters) {
 		self.reduceEnergy(meters)
 		fliedMeters += meters
 	}
+	method fliedMeters() = fliedMeters
+
 }
 ```
 
@@ -138,7 +140,8 @@ En este caso la clase provee la implementación del método requerido:
 
 ```wollok
 class BirdWithEnergyThatFlies mixed with Flying {
-	var property energy = 100
+	var energy = 100
+	method energy() = energy
 	method reduceEnergy(amount) {
 		energy -= amount
 	}
@@ -167,7 +170,8 @@ Veamos qué sucede si convertimos la clase Energy en un mixin:
 
 ```wollok
 mixin Energy {
-	var property energy = 100
+	var energy = 100
+	method energy() = energy
 	method reduceEnergy(amount) {
 		energy -= amount
 	}
@@ -233,9 +237,9 @@ mixin M5 { ... }
 mixin M6 { ... }
 
 class A { ... }
-class B inherits A mixed with M1, with M2 { ... }
+class B inherits A mixed with M1 and M2 { ... }
 class C inherits B mixed with M3 { ... }
-class D inherits C mixed with M4, M5, M6 { ... }
+class D inherits C mixed with M4 and M5 and M6 { ... }
 ```
 
 La cadena de resolución para D queda
@@ -256,8 +260,10 @@ Dado el siguiente mixin
 
 ```wollok
 mixin Energy {
-	var property energy = 100
+	var  energy = 100
 	method reduceEnergy(amount) { energy -= amount }
+	method energy() = energy
+
 }
 ``` 
 
@@ -303,8 +309,10 @@ Dada esta clase
 
 ```wollok
 class C1 {
-	var property foo = ""
+	var foo = ""
 	method doFoo(chain) { foo = chain + " > C1" }
+	method foo() = foo
+
 }
 ```
 
@@ -364,7 +372,7 @@ class C1 {
 	method doFoo(chain) { foo = chain + " > C1" }
 }
 		
-class C2 inherits C1 mixed with M1, M2, M3 {
+class C2 inherits C1 mixed with M1 and M2 and M3 {
 }
 ```
 
@@ -390,10 +398,11 @@ Los objetos autodefinidos (WKOs) también pueden combinarse con mixins
 
 ```wollok
 mixin Flies {
-	var property times = 0
+	var times = 0
 	method fly() {
 		times = 1
 	}
+	method times() = times
 }
 		
 object pepita mixed with Flies {}
@@ -421,7 +430,8 @@ Aquí tenemos un ejemplo: dada la siguiente clase y el siguiente mixin
 
 ```wollok
 mixin Energy {
-    var property energy = 100
+    var energy = 100
+    method energy() = energy
 }
 class Warrior {
     
@@ -538,18 +548,18 @@ Por ejemplo
 
 ```wollok
 class Ave {
-    method volar() { }
-    method comer() { }
+    method volar() { ... }
+    method comer() { ... }
 }
 
 class AveQueNada inherits Ave {
-    method nadar() { }
-    override method volar() { } 
+    method nadar() { ... }
+    override method volar() { ... } 
 }
 
 class Superman {
-    method volar() { }
-    method tirarLaserDeLosOjos() { }
+    method volar() { ... }
+    method tirarLaserDeLosOjos() { ... }
 }
 const pepita = new Ave()
 const pato = new AveQueNada()
@@ -566,9 +576,9 @@ Estos son los tipos que infiere Wollok:
 
 * pepita : se tipa a **Ave**
 * pato : se tipa a **AveQueNada**
-* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclaess) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia. 
+* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia. 
 
-Si en otra parte del codigo se asigna a la variable mascota un objeto de otra clase, se producirá una advertencia acerca de la inconsistencia de tipos de datos.
+Si en otra parte del código se asigna a la variable mascota un objeto de otra clase, se producirá una advertencia acerca de la inconsistencia de tipos de datos.
 
 
 ### WollokDocs ###
