@@ -68,8 +68,8 @@ Ejemplos con clases
     <li class="list-group-item"><a href="https://github.com/wollok/igualdadIdentidadDomicilios">Domicilios de personas. Igualdad e identidad</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/cohesionAlumnos">Alumnos. Cohesión. Testing con fixture compartido</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/herenciaPepitaWKO">Pepita. Herencia de WKO-Clases.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">El coliseo. Clases Constructores</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herenciaLegoLaPrimavera">Primavera. Herencia Constructores</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">El coliseo. Clases</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaLegoLaPrimavera">Primavera. Herencia</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesElCelu">Se me cuelga el celu. Clases</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesBots">Robots en todos lados. Clases</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/dictionaryTotales">Ejemplo Totalizadores de Gastos. Clases (Uso de Dictionary y Date)</a></li>
@@ -91,6 +91,13 @@ Ejemplos de Wollok Game
     <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/pacmanBasicGame">Pacman</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/Tateti-Game">Tateti</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejemploDhondt-Game">Sistema Dhondt</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/sokobanGame">Sokoban</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/granjaDeOrsonGame">Granja de Orson</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/bobEsponjaGame">Bob Esponja</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/farmvilleGame">Farmville</a></li>
+    
     </ul>
 </div>
 
@@ -115,6 +122,12 @@ Ejemplos integradores
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorElegidos">Elegidos</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorIntensamente">Intensamente</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAsterix">Asterix</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorPresidentesArgentinos">Presidentes</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/integradorVar">VAR</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorRestaurantes">Restaurantes</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorJaloguin">Jaloguin</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorFlixnet">Flixnet</a></li>
+
     </ul>
 </div>
 
