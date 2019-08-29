@@ -42,6 +42,10 @@ icon: 'github'
 </div>
 
 <div class="container">
+    <br>
+</div>
+
+<div class="container">
     <h2>
         Colecciones y bloques
     </h2>
