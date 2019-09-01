@@ -35,7 +35,7 @@ La versión 1.8 de Wollok está disponible, ¡y trae muchas novedades!
 - mejoramos el tratamiento de parámetros nulos para que sea más fácil de encontrar errores en tus programas
 - y seguimos incorporando quick fixes (como reemplazar `self` en lugar de llamar explícitamente al wko por su nombre)
 
-entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (versión pre-release) y [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1).
+entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (versión pre-release), [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1) y [1.8.2](https://github.com/uqbar-project/wollok/milestone/29?closed=1).
 
 ## Sumamos nuevas personas al equipo!!
 
