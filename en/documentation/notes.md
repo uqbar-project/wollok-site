@@ -56,17 +56,14 @@ lang: 'es'
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit?usp=drive_web" target="_blank">
             <span class="badge mdb-color lighten-1 badge-pill">13</span>&nbsp;&nbsp;&nbsp;Inheritance. Self, super. Overriding methods.
         </a></ul>
-        <ul class="list-group-item"><a href="https://docs.google.com/document/d/156PsLi7v5LPFJ5oVy6SPwH8cQRZaBqJh-aosZjUbE4s/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">14</span>&nbsp;&nbsp;&nbsp;Constructor inheritance.
-        </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/18QtQCs91tXX1e4kpEPs4sLU-TRJsxcoEKVngMDf278c/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">15</span>&nbsp;&nbsp;&nbsp;Mutability. Equality & Identity. 
+            <span class="badge mdb-color lighten-1 badge-pill">14</span>&nbsp;&nbsp;&nbsp;Mutability. Equality & Identity. 
         </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1lRTDAcsOwy7hkAM-UvTZtMHzN5fitrWyk1JAM-6NVJI/edit?usp=drive_web" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">16</span>&nbsp;&nbsp;&nbsp;Design principles.
+            <span class="badge mdb-color lighten-1 badge-pill">15</span>&nbsp;&nbsp;&nbsp;Design principles.
         </a></ul>
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1VPKwf_cHcFTCj9JSYZ-xJmchX_n10bSJwxTUcmpd3w0/edit?usp=sharing" target="_blank">
-            <span class="badge mdb-color lighten-1 badge-pill">17</span>&nbsp;&nbsp;&nbsp;Inheritance and composition. The design process.
+            <span class="badge mdb-color lighten-1 badge-pill">16</span>&nbsp;&nbsp;&nbsp;Inheritance and composition. The design process.
         </a></ul>        
         <ul class="list-group-item"><a href="https://docs.google.com/document/d/1p4W1wwzzdvzfdGbvXexbE3arwyAAg1xirYW68Twkatc/edit#" target="_blank">
             <span class="badge blue-grey lighten-1 badge-pill">BONUS 1</span>&nbsp;&nbsp;&nbsp;Wollok Shortcuts.
