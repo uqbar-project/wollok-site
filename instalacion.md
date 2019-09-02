@@ -55,7 +55,7 @@ icon: 'cloud-download'
 				<div class="card-body grey lighten-5 transparent">
 					<p>Wollok está implementado dentro de la plataforma Eclipse y necesita instalar una Máquina Virtual de Java 1.8. 
 					</p>
-					<a class="btn btn-primary" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Descargala aquí</a>
+					<a class="btn btn-primary" href="https://adoptopenjdk.net/">Descargala aquí</a>
 					<hr>
 					<h4><span class="badge badge-pill red darken-3">Cosas a tener en cuenta</span></h4>
 					<ul> 
