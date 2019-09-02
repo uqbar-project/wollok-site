@@ -53,3 +53,6 @@ body {
   font-family: Blinker, 'Source Sans Pro', Montserrat, Roboto !important;
 }
 
+div[class^="language"] {
+  width: 100%;
+}
