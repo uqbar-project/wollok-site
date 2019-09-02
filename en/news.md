@@ -22,7 +22,7 @@ This version is a tribute to [Hypatia](https://en.wikipedia.org/wiki/Hypatia), a
 Wollok 1.8 release is available, with so many features!
 
 - **type system inference** is already active when you launch Wollok for the very first time! You'll be able to get type information for variables, parameters, and detect earlier programming errors
-- [wollok-cli](https://github.com/uqbar-project/wollok-cli), a new project is born, allowing you to have [**Travis continuous integration**](../documentacion/apuntes#integracion-con-travis) in your Wollok projects. Tasks automation is easier now, give a try!
+- [wollok-cli](https://github.com/uqbar-project/wollok-cli), a new project is born, allowing you to have [**Travis continuous integration**](../documentation/notes#travis-integration) in your Wollok projects. Tasks automation is easier now, give a try!
 - enhanced **dynamic diagram** integrated with REPL console, a didactic tool for teaching OOP
 - better UX for REPL console, less resource-consuming. You can also **import any file of your project in the console**. If you want to get a deeper view, please take a look to the [tour](../tour) page
 - [**named parameters**](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit#heading=h.vj2ax6a4f7xh) is now the preferred and default way for object instantiation
