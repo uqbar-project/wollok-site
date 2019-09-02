@@ -41,7 +41,7 @@ Here you can check all issues solved for versions for [1.8.0](https://github.com
 
 Since july, two hackatons were made: [chinese-food](https://twitter.com/wollokLang/status/1150785337108680704) the first and [empanadas](https://twitter.com/wollokLang/status/1156572239241863169) the second. A lot of students from Universidad Nacional de San Martín and Universidad Nacional de Quilmes attended the meeting, joined the team, and they are currently working to improve our product day by day.
 
-[We are looking for you!](../comunidad)!
+[We are looking for you!](../community)
 
 <div class="container">
 <br>
