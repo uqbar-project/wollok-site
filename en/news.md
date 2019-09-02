@@ -29,17 +29,19 @@ Wollok 1.8 release is available, with so many features!
 - error reporting is more flexible now, which fosters the user to explore the language in an iterative way
 - smart autocomplete functionality, filtering private messages and prioritizing them
 - optimization for performance in Wollok lists and sets!
-- adding new methods in Wollok library objects (days of week, better `toString` for pairs and dates, `left(), right(), reverse()` in String, `copyWith(), copyWithout()` in Collection, etc.). Also null parameters are catched, for a better error detection in your programs.
+- adding new methods in Wollok library objects (days of week, better `toString` definition for pairs and dates, `left(), right(), reverse()` in String, `copyWith(), copyWithout()` in Collection, etc.). Also null parameters are catched, for a better error detection in your programs.
 - Stack trace copy and overall time elapsed in Test Runner
 - and new quick fixes were added!
 
-Here you can check all issues solved for versions for [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (pre-release version), [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1) & [1.8.2](https://github.com/uqbar-project/wollok/milestone/29?closed=1).
+Here you can check all issues solved for versions for [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (pre-release version), [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1) and [1.8.2](https://github.com/uqbar-project/wollok/milestone/29?closed=1).
+
+<div/><!-- just to clean up the markdown, don't remove it -->
 
 ## New "wollokers"!
 
 Since july, two hackatons were made: [chinese-food](https://twitter.com/wollokLang/status/1150785337108680704) the first and [empanadas](https://twitter.com/wollokLang/status/1156572239241863169) the second. A lot of students from Universidad Nacional de San Martín and Universidad Nacional de Quilmes attended the meeting, joined the team, and they are currently working to improve our product day by day.
 
-We are expecting you, [anytime](../comunidad)!
+[We are looking for you!](../comunidad)!
 
 <div class="container">
 <br>
