@@ -26,7 +26,7 @@ icon: 'github'
 
 <div class="container">
     <h2>
-        Ejemplos con objetos
+        Objetos, mensajes y polimorfismo
     </h2>
 </div>
 
@@ -34,16 +34,32 @@ icon: 'github'
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/initialLearning">Inicial / Básico</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/introPepita">Ejemplo introductorio: Pepita</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/PolimorfismoSueldoDePepe">Sueldo de Pepe. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/heroesConObjetos">Shrek. Polimorfismo. Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoEmpanadasGimenez">Empanadas Giménez. Polimorfismo.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/PolimorfismoSueldoDePepe">Sueldo de Pepe. </a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoEmpanadasGimenez">Empanadas Giménez.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesHuevosDePascua">Huevos de pascua. (2° parte Colecciones)</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Mensajeros de película. (2° parte Colecciones)</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <br>
+</div>
+
+<div class="container">
+    <h2>
+        Colecciones y bloques
+    </h2>
+</div>
+
+<div class="container">
+    <ul class="list-group">
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesBloquesJaloguin">Colecciones de Jalogüin. </a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/heroesConObjetos">Shrek. </a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesWillyWonka">Willy Wonka y la fábrica de software.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">El náufrago. (Colecciones sin bloques)</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. </a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonedero">Monedero. Excepciones. Testing de excepciones.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesBloquesJaloguin">Colecciones de Jalogüin. Polimorfismo.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesWillyWonka">Willy Wonka y la fábrica de software. Colecciones. Polimorfismo</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/coleccionesSinBloquesNaufrago">El náufrago. Colecciones sin bloques</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/ColeccionesMatrixElElegido">Matrix. Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesHuevosDePascua">Huevos de pascua. Objetos Polimorfismo. 2° parte Colecciones</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/polimorfismoColeccionesMensajerosDePelicula">Mensajeros de película. Objetos. Polimorfismo. 2° parte Colecciones</a></li>
+
     </ul>
 </div>
 
@@ -53,15 +69,14 @@ icon: 'github'
 
 <div class="container">
 <h2>
-Ejemplos con clases
+Clases y Herencia
 </h2>
 </div>
 
 <div class="container">
     <ul class="list-group">
     <li class="list-group-item"><a href="https://github.com/wollok/herenciaAvesPepita">Herencia de Aves</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herenciaConstructores">Puntos 2D y 3D. Pelotas. Herencia de Constructores.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/heroesConClases">Héroes con clases. Polimorfismo. Colecciones.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/heroesConClases">Héroes con clases.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/testingEmpleados">Empleados. Testing básico</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/testingClienteStub">Clientes con facturas ficticias. Testing con Stubs</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonederoClases">Monedero con clases. Excepciones. Testing de excepciones. Fixture.</a></li>
@@ -81,7 +96,7 @@ Ejemplos con clases
 
 <div class="container">
 <h2>
-Ejemplos de Wollok Game
+Wollok Game
 </h2>
 </div>
 
@@ -90,6 +105,13 @@ Ejemplos de Wollok Game
     <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/pacmanBasicGame">Pacman</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/Tateti-Game">Tateti</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejemploDhondt-Game">Sistema Dhondt</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/sokobanGame">Sokoban</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/granjaDeOrsonGame">Granja de Orson</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/bobEsponjaGame">Bob Esponja</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/farmvilleGame">Farmville</a></li>
+    
     </ul>
 </div>
 
@@ -114,6 +136,12 @@ Ejemplos integradores
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorElegidos">Elegidos</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorIntensamente">Intensamente</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorAsterix">Asterix</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorPresidentesArgentinos">Presidentes</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/integradorVar">VAR</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorRestaurantes">Restaurantes</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/EjercicioIntegradorJaloguin">Jaloguin</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/ejercicioIntegradorFlixnet">Flixnet</a></li>
+
     </ul>
 </div>
 
