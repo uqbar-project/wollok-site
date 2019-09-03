@@ -104,10 +104,10 @@ Hasta el momento pepita no hace cosas muy interesantes, retorna siempre lo mismo
 object pepita {
     var energia = 100
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - 2 + metros
     }
     method comer(gramos) {
-        energia += gramos
+        energia = energia + gramos
     }
     method estaFeliz() {
         return energia > 50
@@ -162,10 +162,10 @@ En ese caso utilizamos **self** que es una referencia que apunta al objeto donde
 object pepita {
     var energia = 100
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - 2 + metros
     }
     method comer(gramos) {
-        energia += gramos
+        energia = energia + gramos
     }
     method estaFeliz() {
         return energia > 50
@@ -193,10 +193,10 @@ Por ejemplo, cambiaremos la forma de comer de pepita. En vez de directamente dec
 object pepita {
     var energia = 100
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - 2 + metros
     }
     method comer(comida) {
-        energia += comida.energia() // una "comida" es algo que provee "energia"
+        energia = energia + comida.energia() // una "comida" es algo que provee "energia"
     }
     method estaFeliz() {
         return energia > 50

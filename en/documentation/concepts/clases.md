@@ -30,10 +30,10 @@ class Bird {
     var energy = 0
 
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - (2 + meters)
     }
     method eat(food) {
-        energy += food.energy
+        energy = energy + food.energy
     }
     method getEnergy() {
         return energy
@@ -90,7 +90,7 @@ Example:
 class SwimmingBird inherits Bird {
 
    method swim(meters) {
-       energy -= meters * 1.2
+       energy = energy - (meters * 1.2)
    }
 }
 
@@ -127,7 +127,7 @@ Subclasses might override already defined methods in any superclass. For this yo
 class EfficientBird inherits Bird {
 
     override method fly(meters) {
-        energy -= meters / 2
+        energy = energy - (meters / 2)
     }
 }
 ```
@@ -139,10 +139,10 @@ class Bird {
     var energy = 0
 
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - (2 + meters)
     }
     method eat(food) {
-        energy += self.energyGain(food)
+        energy = energy + self.energyGain(food)
     }
 
     method energyGain(food) {

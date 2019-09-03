@@ -29,10 +29,10 @@ class Ave {
     var energia = 0
 
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - (2 + metros)
     }
     method comer(comida) {
-        energia += comida.energia()
+        energia = energia + comida.energia()
     }
     method energia() {
         return energia
@@ -88,7 +88,7 @@ Ejemplos:
 class AveNadadora inherits Ave {
 
    method nadar(metros) {
-       energia -= metros * 1.2  // Utiliza la variable energia declarada en la superclase
+       energia = energia - (metros * 1.2)  // Utiliza la variable energia declarada en la superclase
    }
 }
 
@@ -123,7 +123,7 @@ Las subclases pueden redefinir métodos ya implementados por su superclase. Para
 class AveEficiente inherits Ave {
 
     override method volar(metros) {
-        energia -= metros / 2
+        energia = energia - (metros / 2)
     }
 
 }
@@ -136,10 +136,10 @@ class Ave {
     var energia = 0
 
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - (2 + metros)
     }
     method comer(comida) {
-        energia += self.energiaObtenida(comida)
+        energia = energia + self.energiaObtenida(comida)
     }
 
     method energiaObtenida(comida) {
@@ -322,7 +322,7 @@ Ejemplo: tenemos un archivo definiciones.wlk
 ```wollok
 object pepita {
    var energia = 0
-   method volar() { energia -= 10 }
+   method volar() { energia = energia - 10 }
 }
 ```
 
@@ -350,7 +350,7 @@ package aves {
     object pepita {
         var energia = 0
         method volar() {
-            energia -= 10   
+            energia = energia - 10
         }
     }
 }

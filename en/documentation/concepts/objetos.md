@@ -30,7 +30,7 @@ This can be done in two slightly different ways:
 
 There's a special language construction to define an object and assign a global name to it.
 
-```scala
+```wollok
 object myObject {
     // code here
 }
@@ -44,7 +44,7 @@ Another option is to use object literals which allow you to create a new object 
 Instead you can assign the resulting object to a new variable (or an existing one).
 Therefore having more control on the object's scope.
 
-```scala
+```wollok
 const myObject = object {
     // code here
 }
@@ -63,7 +63,7 @@ anObject{}
 Within the object's braces we can define methods. For example we will represent a Bird
 
 
-```scala
+```wollok
 const aBird = object {
     method fly(meters) {
         return 'flyed ' + meters +  ' meters'
@@ -83,7 +83,7 @@ Also in case the method returns a value you MUST explicitly write a **return** s
 
 There's a shortcut for simple methods which return values.
 
-```scala
+```wollok
 const aBird = object {
     method fly(meters) = 'flyed ' + meters +  ' meters'
 }
@@ -99,14 +99,14 @@ One will probably use this syntax for short methods which compute simple values.
 
 Our bird doesn't do much so far. We will add "state" to it, in the form of instance variables. And some methods that will mutate that state.
 
-```scala
+```wollok
 const aBird = object {
     var energy = 0
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - 2 + meters
     }
     method eat(grams) {
-        energy += grams
+        energy = energy + grams
     }
 }
 
@@ -122,22 +122,22 @@ As any other references we already saw, it can be either a **var** or a **const*
 This is not valid:
 
 
-```scala
+```wollok
 aBird.energy
 ```
 
 Instead, if you want to access the bird's energy, the object must publish that information via a new method.
 
-```scala
+```wollok
 const aBird = object {
     var energy = 0
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - (2 + meters)
     }
     method eat(grams) {
-        energy += grams
+        energy = energy + grams
     }
-    method getEnergy() {
+    method energy() {
         return energy
     }
 }
@@ -145,7 +145,7 @@ const aBird = object {
 aBird.fly(23)
 aBird.eat(10)
 
-const e = aBird.getEnergy()
+const e = aBird.energy()
 ```
 
 # Messages #
@@ -158,7 +158,7 @@ We saw that those objects could have methods within them that will get executed 
 The syntax to send messages is always:
 
 
-```scala
+```wollok
 object.messageName(param1, param2, ...)
 ```
 
@@ -166,7 +166,7 @@ ALWAYS!
 
 You **CANNOT** write any of these variants:
 
-```scala
+```wollok
 messageName(param1, param2)        // missing the object (receiver of the message)
 object.messageName                 // missing parenthesis
 ```
@@ -177,16 +177,16 @@ So, what if I'm in an object and I want to send a message to myself to reuse an 
 
 Then there's a special keyword to refer to yourself (object) called **self**
 
-```scala
+```wollok
 const aBird = object {
     var energy = 0
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - 2 + meters
     }
     method eat(grams) {
-        energy += grams
+        energy = energy + grams
     }
-    method getEnergy() {
+    method energy() {
         return energy
     }
     // NEW ONE 
@@ -208,25 +208,26 @@ This means that if two objects understand the same messages, then nothing else i
 
 For example, we'll change our Bird in order to add the concept of Food, instead of just eating some grams (number).
 
-```scala
+```wollok
 const aBird = object {
     var energy = 0
     method fly(meters) {
-        energy -= 2 + meters
+        energy = energy - 2 + meters
     }
     method eat(food) {
-        energy += food.energy()     // a "food" is something that provides "energy"
+        energy = energy + food.energy()     // a "food" is something that provides "energy"
     }
-    method getEnergy() {
+    method energy() {
         return energy
     }
 }
 ```
+
 Here a "food" then is any object that understands the "energy" message, and returns a number (the amount of energy it provides)
 
 Then we can have two other objects representing specific food:
 
-```scala
+```wollok
 const birdseed = object {
     method energy() = 5
 }
@@ -247,7 +248,7 @@ The **if** expression allows you evaluate a boolean condition and then perform d
 
 For example:
 
-```scala
+```wollok
 if (self.isRaining()) {
     self.goHome(self.getCar())
 }
@@ -261,7 +262,7 @@ Besides this usage, in Wollok the "if" is not actually a statement (controlling 
 
 So you can also use it in this other form:
 
-```scala
+```wollok
 const transport = if (self.isRaining()) self.getCar() else self.getByke()
 self.goHome(transport)
 ```

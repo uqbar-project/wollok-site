@@ -132,7 +132,7 @@ Por ejemplo, para realizar una cierta lógica en cada uno de los elementos, exis
 const numeros = [23, 2, 1]
 
 var suma = 0
-numeros.forEach({ n => suma += n })
+numeros.forEach({ n => suma = suma + n })
 			
 suma == 26      // true
 ```
@@ -140,7 +140,7 @@ suma == 26      // true
 En el caso de que el único parámetro que se envíe sea un closure, se pueden evitar los paréntesis. El ejemplo anterior también se puede escribir
 
 ```wollok
-numeros.forEach { n => suma += n }
+numeros.forEach { n => suma = suma + n }
 ```
 
 El **forEach** de un Diccionario trabaja con un par clave junto con su valor.

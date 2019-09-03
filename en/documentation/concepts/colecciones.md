@@ -17,13 +17,13 @@ layout: null
 Wollok provides literals for **List objects**.
 The syntax is:
 
-```javascript
+```wollok
 [ element1, element2, ..., elementN ]
 ```
 
 For example
 
-```javascript
+```wollok
 const numbers = [2, 23, 25]
 
 numbers.size() == 3   // true !
@@ -55,9 +55,9 @@ Notice that it uses _curly braces_
 
 ### Dictionaries ###
 
-Dictionaries (also known as _maps_) are key-value collections, very useful to access elements directly by key. 
+Dictionaries (also known as _maps_) are key-value collections, very useful to access elements directly by key.
 
-```javascript
+```wollok
 >>> const phones = new Dictionary()
 a Dictionary[]
 >>> phones.put("ricky", "15-21...")
@@ -77,9 +77,9 @@ Wollok support closures through literals.
 
 Here is an example:
 
-```javascript
+```wollok
 const helloWorld = { "helloWorld" }
-const response = helloWorld.apply()     
+const response = helloWorld.apply()
 
 response == "helloWorld"      // true
 ```
@@ -88,7 +88,7 @@ The first line defines a closure that doesn't take any parameter. The second one
 
 Here is one that receives a single parameter:
 
-```javascript
+```wollok
 const helloWorld = { to => "hello " + to }
 const response = helloWorld.apply("world")
 
@@ -104,12 +104,10 @@ There's a special fact about closures: they have access to their own parameters,
 This makes them really powerful.
 Here is a very simple example:
 
-```javascript
+```wollok
 var to = "world"
 const helloWorld = { "hello " + to }
-            
 helloWorld.apply() == "hello world"      // true
-        
 to = "someone else"
 helloWorld.apply() == "hello someone else"      // true
 ```
@@ -125,28 +123,27 @@ As many other languages, Wollok provides rich collection messages to operate wit
 
 For example, in order to perform a given logic on each element, the **forEach** method is available:
 
-```javascript
+```wollok
 const numbers = [23, 2, 1]
 
 var sum = 0
-numbers.forEach({ n => sum += n })
-            
+numbers.forEach({ n => sum = sum + n })
+
 sum == 26      // true
 ```
 
 There's also a short way to write it in case you are sending a message with a single parameter being a closure, you can avoid the parenthesis.
 So the previous example would be:
 
-```javascript
-numbers.forEach { n => sum += n }
+```wollok
+numbers.forEach { n => sum = sum + n }
 ```
 
 To evaluate if all elements comply a given condition, there's a "forAll"
 
-
-```javascript
+```wollok
 const numbers = [23, 2, 1]
-            
+
 var allPositives = numbers.forAll { n => n > 0 }
 
 allPositives == true      // true
@@ -154,27 +151,25 @@ allPositives == true      // true
 
 **filter** returns a new collection which only has the elements that are evaluated to true.
 
-```javascript
+```wollok
 const numbers = [23, 2, 1]
-            
+
 var greaterThanOneElements = numbers.filter { n => n > 1 }
-    
+
 greaterThanOneElements.size() == 2      // TRUE
 
 ```
 
 **map** returns a new collection whose elements are the result of performing a *transformation* on each element of the original collection through the given closure.
 
-```javascript
+```wollok
 const numbers = [10, 20, 30]
-            
+
 var halfs = numbers.map { n => n / 2 }
-    
+
 halfs.contains(5)       // TRUE
 halfs.contains(10)      // TRUE
 halfs.contains(15)      // TRUE
 ```
 
 Have in mind that *it doesn't actually transform the element*, but obtains a new object as a result of applying the closure to it.
-
-
