@@ -6,14 +6,14 @@ layout: null
 
 1. Advanced Features
     1. <a href="#mixins" class="wollokLink">Mixins</a>
-    1. <a href="#wollokdocs" class="wollokLink">Wollokdocs</a>  
+    1. <a href="#wollokdocs" class="wollokLink">Wollokdocs</a>
     1. <a href="#exception-handling-mechanism" class="wollokLink">Exception handling mechanism</a>
         1. <a href="#throw" class="wollokLink">Throw</a>
-        1. <a href="#try-catch" class="wollokLink">Try Catch</a> 
-        1. <a href="#then-always" class="wollokLink">Then Always</a> 
-        1. <a href="#multiple-catchs" class="Multiple catchs">Throw</a> 
-        1. <a href="#default-catch" class="wollokLink">Default catch</a> 
-    1. <a href="#operators-overloading" class="wollokLink">Operators overloading</a>  
+        1. <a href="#try-catch" class="wollokLink">Try Catch</a>
+        1. <a href="#then-always" class="wollokLink">Then Always</a>
+        1. <a href="#multiple-catchs" class="Multiple catchs">Throw</a>
+        1. <a href="#default-catch" class="wollokLink">Default catch</a>
+    1. <a href="#operators-overloading" class="wollokLink">Operators overloading</a>
     1. <a href="#identity-vs-equality" class="wollokLink">Identity vs Equality</a>
     1. <a href="#type-system" class="wollokLink">Type system</a>
 
@@ -47,47 +47,46 @@ Some other technical details
 
 Here is the simplest mixin providing a new method
 
-```scala
+```wollok
 mixin Flies {
-	method fly() {
-		console.println("I'm flying")
-	}
+  method fly() {
+    console.println("I'm flying")
+  }
 }
 ```
 Then it can be mixed in a class
 
-```scala
+```wollok
 class Bird mixed with Flies {}
 ```
 
 And later used in a program/test/library
 
-```scala
+```wollok
 program t {
-	const b = new Bird()
-	b.fly()
+  const b = new Bird()
+  b.fly()
 }
 ```
-
 
 ### Mixin with state ###
 
 Besides behavior (methods), a mixin can define instance variables.
 
-```scala
+```wollok
 mixin Walks {
-	var walkedDistance = 0
-	method walk(distance) {
-		walkedDistance += distance
-	}
-	method walkedDistance() = walkedDistance
+  var walkedDistance = 0
+  method walk(distance) {
+    walkedDistance = walkedDistance + distance
+  }
+  method walkedDistance() = walkedDistance
 }
 class WalkingBird mixed with Walks {}
 ```
 
 Then used
 
-```scala
+```wollok
 const b = new WalkingBird()
 b.walk(10)
 assert.equals(10, b.walkedDistance())
@@ -97,7 +96,7 @@ assert.equals(10, b.walkedDistance())
 
 Instance variables declared by a mixin can be accessed from the the class it is mixed in into.
 
-```scala
+```wollok
 class WalkingBird mixed with Walks {
        method resetWalkingDistance() {
                walkedDistance = 0     // variable defined in the mixin
@@ -109,17 +108,17 @@ class WalkingBird mixed with Walks {
 
 A class can mix more than one mixin.
 
-```scala
+```wollok
 mixin M1 {}
 mixin M2 {}
-		
+
 class C mixed with M1 and M2 {
 }
 ```
 
 The list of mixins can be separated either with "and" or with a comma character.
 
-```scala
+```wollok
 class C mixed with M1, M2  {}
 ```
 
@@ -132,14 +131,14 @@ It could be the class you are mixing it into, or other mixins (we will see that 
 
 Here is an abstract Mixin providing **flying** capabilities
 
-```scala
+```wollok
 mixin Flying {
-	var fliedMeters = 0
-	method fly(meters) {
-		self.reduceEnergy(meters)
-		fliedMeters += meters
-	}
-	method fliedMeters() = fliedMeters
+  var fliedMeters = 0
+  method fly(meters) {
+    self.reduceEnergy(meters)
+    fliedMeters = fliedMeters + meters
+  }
+  method fliedMeters() = fliedMeters
 }
 ```
 
@@ -153,25 +152,25 @@ There are 3 possible cases:
 
 In this case the class provides the implementation for the required method.
 
-```scala
+```wollok
 class BirdWithEnergyThatFlies mixed with Flying {
-	var energy = 100
-	method energy() = energy
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var energy = 100
+  method energy() = energy
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 ```
 
 #### Method implemented in a superclass ####
 
-```scala
+```wollok
 class Energy {
-	var energy = 100
-	method energy() = energy
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var energy = 100
+  method energy() = energy
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 
 class BirdWithEnergyThatFlies inherits Energy mixed with Flying {
@@ -187,19 +186,19 @@ Here we can see that the new method lookup doesn't affect regular class-based in
 It could be in a new mixin (notice that we converted the Energy **class** into
 a **mixin**)
 
-```scala
+```wollok
 mixin Energy {
-	var energy = 100
-	method energy() = energy
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var energy = 100
+  method energy() = energy
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 ```
 
 And then used
 
-```scala
+```wollok
 class BirdWithEnergyThatFlies mixed with Energy, Flying {}
 ```
 
@@ -217,7 +216,7 @@ So the hierarchy is a simple List and the method and variables lookup mechanism 
 
 Here are sample linearizations
 
-```scala
+```wollok
 mixin M1 {
 }
 class A {}
@@ -233,7 +232,7 @@ B -> M1 -> A
 
 If we add a new mixin:
 
-```scala
+```wollok
 class B inherits A mixed with M1, M2 {}
 ```
 
@@ -248,7 +247,7 @@ Mixins on the right side are lower in the hierarchy. Meaning that they have prec
 
 Having mixins up in the class hierarchy doesn't complicate this at all, since each classes mixins are resolved in the same way
 
-```scala
+```wollok
 mixin M1 { ... }
 mixin M2 { ... }
 mixin M3 { ... }
@@ -283,21 +282,21 @@ In the same way that a class can override a method defined in a super class
 
 Given this mixin
 
-```scala
+```wollok
 mixin Energy {
-	var energy = 100
-	method reduceEnergy(amount) { energy -= amount }
-	method energy() = energy
+  var energy = 100
+  method reduceEnergy(amount) { energy -= amount }
+  method energy() = energy
 }
-``` 
+```
 
 A class can be mixed and override the "reduceEnergy(amount)" method
 
-```scala
+```wollok
 class Bird mixed with Energy {
-	override method reduceEnergy(amount) { 
-		// does nothing
-	}
+  override method reduceEnergy(amount) {
+    // does nothing
+  }
 }
 ```
 
@@ -305,12 +304,12 @@ class Bird mixed with Energy {
 
 As with any method overriding a method in a super class its body can use the **super** keyword to execute the original method being overriding.
 
-```scala
-	class Bird mixed with Energy {
-		override method reduceEnergy(amount) { 
-			super(1)
-		}
-	}
+```wollok
+  class Bird mixed with Energy {
+    override method reduceEnergy(amount) {
+      super(1)
+    }
+  }
 ```
 
 #### Super call in mixin ####
@@ -321,9 +320,9 @@ For that case the super works like a **dynamic dispatch** (just "like").
 Because looking at the mixin code that calls super() is not enough to statically understand which method will be called by that "super" call.
 For example:
 
-```scala
+```wollok
 mixin M1 {
-	method doFoo(chain) { super(chain + " > M1") }
+  method doFoo(chain) { super(chain + " > M1") }
 }
 ```
 
@@ -332,17 +331,17 @@ But we do know once the mixin is combined (statically) into a class
 
 Given this class
 
-```scala
+```wollok
 class C1 {
-	var foo = ""
-	method doFoo(chain) { foo = chain + " > C1" }
-	method foo() = foo
+  var foo = ""
+  method doFoo(chain) { foo = chain + " > C1" }
+  method foo() = foo
 }
 ```
 
 And this mixup
 
-```scala
+```wollok
 class C2 inherits C1 mixed with M1 { }
 ```
 
@@ -369,45 +368,45 @@ This is called the "stackable mixin pattern", because mixins can be combined by 
 
 Here is the same example as before but with a couple more mixins
 
-```scala
+```wollok
 mixin M1 {
-	method doFoo(chain) { super(chain + " > M1") }
+  method doFoo(chain) { super(chain + " > M1") }
 }
-		
+
 mixin M2 {
-	method doFoo(chain) { super(chain + "> M2") }
+  method doFoo(chain) { super(chain + "> M2") }
 }
 
 mixin M3 {
-	method doFoo(chain) { super(chain + "> M3") }
+  method doFoo(chain) { super(chain + "> M3") }
 }
 ```
 
-And then the classes 
+And then the classes
 
-```scala
+```wollok
 class C1 {
-	var foo = ""
-	method doFoo(chain) { foo = chain + " > C1" }
-	method foo() = foo
+  var foo = ""
+  method doFoo(chain) { foo = chain + " > C1" }
+  method foo() = foo
 }
-		
+
 class C2 inherits C1 mixed with M1, M2, M3 {
 }
 ```
 
 Executing this code
 
-```scala
-	const c = new C2()
-	c.doFoo("Test ")
-	console.println(c.foo())
+```wollok
+  const c = new C2()
+  c.doFoo("Test ")
+  console.println(c.foo())
 ```
 
 Prints the following
 
 ```bash
-Test > M3 > M2 > M1 > C1 
+Test > M3 > M2 > M1 > C1
 ```
 
 Which is basically the linearized hierarchy
@@ -416,15 +415,15 @@ Which is basically the linearized hierarchy
 
 Named objects (WKOs) can also be combined with mixins
 
-```scala
+```wollok
 mixin Flies {
-	var times = 0
-	method fly() {
-		times = 1
-	}
-	method times() = times
+  var times = 0
+  method fly() {
+    times = 1
+  }
+  method times() = times
 }
-		
+
 object pepita mixed with Flies {}
 ```
 
@@ -439,7 +438,7 @@ priority since it is the lower end of the hierarchy, so it can override any meth
 
 This also can be combined with class inheritance
 
-```scala
+```wollok
 object pepita inherits Animal with Flies {}
 ```
 
@@ -455,25 +454,25 @@ a lot of classes.
 Here is an example.
 Given the following class and mixin
 
-```scala
+```wollok
 mixin Energy {
     var energy = 100
     method energy() = energy
 }
 class Warrior {
-    
+
 }
 ```
 
 Instead of creating a new class to combine like
 
-```scala
+```wollok
 class WarriorWithEnergy inherits Warrior mixed with Energy {}
 ```
 
 We can combine it directly while instantiating:
 
-```scala
+```wollok
 program t {
     const w = new Warrior() with Energy
     assert.equals(100, w.energy())
@@ -483,7 +482,7 @@ program t {
 All same rules apply to mixins combinations.
 Here is a more complex example
 
-```scala
+```wollok
 mixin Energy {
     var energy = 100
     method energy() = energy
@@ -505,27 +504,27 @@ mixin Attacks {
     }
     method power() = power
     method power(p) { power = p }
-    
+
     method energy()
     method energy(newEnergy)
 }
 class Warrior {
-    
+
 }
 ```
 
 Later used
 
-```scala
+```wollok
 program t {
     const warrior1 = new Warrior() with Attacks with Energy with GetsHurt
     assert.equals(100, warrior1.energy())
-    
+
     const warrior2 = new Warrior() with Attacks with Energy with GetsHurt
     assert.equals(100, warrior2.energy())
-    
+
     warrior1.attack(warrior2)
-    
+
     assert.equals(90, warrior2.energy())
     assert.equals(99, warrior1.energy())
 }
@@ -550,14 +549,14 @@ combine mixins with a class at instantiation time **and override behavior in pla
 
 **THIS CANNOT BE DONE** you cannot provide a body with content when instantiating.
 
-```scala
+```wollok
 const pepitaFliesDouble = new Animal mixed with Flies {
     override method fly() {
         super()
         super()
     }
 }
-    
+
 ```
 
 
@@ -582,7 +581,7 @@ All of this without type annotations (you don't need to specify types for parame
 
 For example (in Wollok this would be actually implemented in different files, since you cannot define classes within a program, you are forced to split them from the program. But here it allows us to see it all together)
 
-```scala
+```wollok
    class Bird {
        method fly() { ... }
        method eat() { ... }
@@ -612,13 +611,13 @@ This are the inferred types:
 
 This will compile
 
-```scala
+```wollok
 flier.fly()
 ```
 
 While this won't compile
 
-```scala
+```wollok
 flier.eat()
 // or
 flier. throwLaserFromEyes()
@@ -626,7 +625,7 @@ flier. throwLaserFromEyes()
 
 And this compiles fine:
 
-```scala
+```wollok
 flier = object {
     method fly() { ... }
     method anotherMethod() { ... }
@@ -637,14 +636,14 @@ Since the object complies with the structural type { fly() }
 
 ## WollokDocs ##
 
-Wollok has a special comment syntax for attaching documentation data to different elements of the language. 
+Wollok has a special comment syntax for attaching documentation data to different elements of the language.
 
-For example classes: 
+For example classes:
 
-```scala
+```wollok
 /**
- * A bird knows how to fly and eat. 
- * It also has energy. 
+ * A bird knows how to fly and eat.
+ * It also has energy.
  *
  * @author jfernandes
  */
@@ -672,10 +671,10 @@ So this are the two basic operations one can do with exceptions:
 
 Here's a sample code for throw statement
 
-```scala
+```wollok
 class MyException inherits wollok.lang.Exception {}
 class A {
-    method m1() { 
+    method m1() {
         throw new MyException()
     }
 }
@@ -689,11 +688,11 @@ Notices that you cannot throw any object. They must be instances of a **wollok.l
 
 Here is a sample code to catch an exception:
 
-```scala
+```wollok
 try {
     a.m1()
     assert.fail("Should have thrown exception")
-}   
+}
 catch e {
     // ok !
     assert.equals("hello you see", e.getMessage())
@@ -704,7 +703,7 @@ It will catch ANY exception.
 
 If you want to catch a particular exception you can specify its type like the following example:
 
-```scala
+```wollok
 program p {
     const a = new A()
     var counter = 0
@@ -727,7 +726,7 @@ This program catches any MyException raised by the code inside the **try** block
 
 Besides the "catch" block a try could have an "always" block whose code will always be executed no matter if there was or wasn't any exception thrown.
 
-```scala
+```wollok
 try {
     a.m1()
 }
@@ -742,8 +741,8 @@ then always
 
 A try block can have more than one catch, in case you need to handle different types of exception in different ways:
 
-```scala
-try 
+```wollok
+try
     a.m1()
 catch e : MySubclassException
     result = 3
@@ -757,25 +756,25 @@ This means that you are forced to declare the most specific catches at the top, 
 
 For example given the following exception hierarchy:
 
-```scala
-class AException inherits wollok.lang.Exception {  
-    constructor(m) = super(m) 
+```wollok
+class AException inherits wollok.lang.Exception {
+    constructor(m) = super(m)
 }
-class BException inherits AException {  
-    constructor(m) = super(m) 
+class BException inherits AException {
+    constructor(m) = super(m)
 }
-class CException inherits wollok.lang.Exception {  
-    constructor(m) = super(m) 
+class CException inherits wollok.lang.Exception {
+    constructor(m) = super(m)
 }
 ```
 
 You must write catches in the following order so they don't hide each other
 
-```scala
+```wollok
 try {
     a.m1()
     assert.fail("Should have thrown exception")
-}   
+}
 catch e : CException {
     // something
 }
@@ -792,14 +791,14 @@ catch e : CException {
 
 You can combine catches with types with a single "non-typed" catch, that MUST be the last one.
 
-```scala
-program p { 
+```wollok
+program p {
     const a = new A()
-    
+
     try {
         a.m1()
         assert.fail("Should have thrown exception")
-    }   
+    }
     catch e : BException {
         // something
     }
@@ -815,7 +814,6 @@ program p {
 This is because ase we said not declaring a particular exception means "any exception".
 As it is the most abstract case, it must only appear as the last case.
 
-
 ## Operators Overloading ##
 
 // TODO
@@ -824,7 +822,7 @@ As it is the most abstract case, it must only appear as the last case.
 
 Wollok follows equality and identity conventions from Java & Smalltalk. That means, by default, two objects are equal if they are the same object:
 
-```scala
+```wollok
 var pepita = new Bird()
 const friend = pepita
 friend == pepita   ==> true, they are the same object
@@ -832,7 +830,7 @@ friend == pepita   ==> true, they are the same object
 
 But equality can be overriden. For example, two strings are equal if they have the same characters:
 
-```scala
+```wollok
 var aString = "hello"
 var anotherString = "hello"
 aString == anotherString ==> true, they have the same internal state
@@ -840,7 +838,7 @@ aString == anotherString ==> true, they have the same internal state
 
 == operator and equals message are synonyms:
 
-```scala
+```wollok
 var aString = "hello"
 var anotherString = "hello"
 aString.equals(anotherString) ==> also true
@@ -848,7 +846,7 @@ aString.equals(anotherString) ==> also true
 
 If you want to know whether two references point to the same object, you should use === operator:
 
-```scala
+```wollok
 var aString = "hello"
 var anotherString = "hello"
 aString === anotherString ==> false, they do not point to same object

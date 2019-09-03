@@ -36,9 +36,9 @@ Aquí hay un ejemplo del mixin más sencillo posible, que provee un método
 
 ```wollok
 mixin Flier {
-	method fly() {
-		console.println("I'm flying")
-	}
+  method fly() {
+    console.println("I'm flying")
+  }
 }
 ```
 
@@ -52,8 +52,8 @@ Luego podemos usarlo en un programa / test / biblioteca
 
 ```wollok
 program t {
-	const pepita = new Bird()
-	pepita.fly()
+  const pepita = new Bird()
+  pepita.fly()
 }
 ```
 
@@ -63,11 +63,11 @@ Además de comportamiento (métodos), un mixin puede definir atributos.
 
 ```wollok
 mixin Walks {
-	var walkedDistance = 0
-	method walk(distance) {
-		walkedDistance += distance
-	}
-	method walkedDistance() = walkedDistance
+  var walkedDistance = 0
+  method walk(distance) {
+    walkedDistance = walkedDistance + distance
+  }
+  method walkedDistance() = walkedDistance
 }
 class WalkingBird mixed with Walks {}
 ```
@@ -99,7 +99,7 @@ Una clase puede incorporar varios mixins a la vez.
 ```wollok
 mixin M1 {}
 mixin M2 {}
-		
+
 class C mixed with M1 and M2 {
 }
 ```
@@ -118,13 +118,12 @@ Aquí vemos un ejemplo de un Mixin abstracto que provee capacidades de volar:
 
 ```wollok
 mixin Flying {
-	var fliedMeters = 0
-	method fly(meters) {
-		self.reduceEnergy(meters)
-		fliedMeters += meters
-	}
-	method fliedMeters() = fliedMeters
-
+  var fliedMeters = 0
+  method fly(meters) {
+    self.reduceEnergy(meters)
+    fliedMeters = fliedMeters + meters
+  }
+  method fliedMeters() = fliedMeters
 }
 ```
 
@@ -140,11 +139,11 @@ En este caso la clase provee la implementación del método requerido:
 
 ```wollok
 class BirdWithEnergyThatFlies mixed with Flying {
-	var energy = 100
-	method energy() = energy
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var energy = 100
+  method energy() = energy
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 ```
 
@@ -152,10 +151,10 @@ class BirdWithEnergyThatFlies mixed with Flying {
 
 ```wollok
 class Energy {
-	var property energy = 100
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var property energy = 100
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 
 class BirdWithEnergyThatFlies inherits Energy mixed with Flying {
@@ -166,15 +165,15 @@ El método que el mixin requiere no está implementado en la clase que se mezcla
 
 #### Método definido en otro mixin ####
 
-Veamos qué sucede si convertimos la clase Energy en un mixin: 
+Veamos qué sucede si convertimos la clase Energy en un mixin:
 
 ```wollok
 mixin Energy {
-	var energy = 100
-	method energy() = energy
-	method reduceEnergy(amount) {
-		energy -= amount
-	}
+  var energy = 100
+  method energy() = energy
+  method reduceEnergy(amount) {
+    energy -= amount
+  }
 }
 ```
 
@@ -225,8 +224,7 @@ B -> M2 -> M1 -> A
 
 > Aquí el orden en el que declaramos los mixins **no importa**.
 
-Los mixins del lado derecho tienen menos precedencia en la jerarquía, ya que el method lookup se resuelve de izquierda a derecha. 
-
+Los mixins del lado derecho tienen menos precedencia en la jerarquía, ya que el method lookup se resuelve de izquierda a derecha.
 
 ```wollok
 mixin M1 { ... }
@@ -260,20 +258,20 @@ Dado el siguiente mixin
 
 ```wollok
 mixin Energy {
-	var  energy = 100
-	method reduceEnergy(amount) { energy -= amount }
-	method energy() = energy
+  var  energy = 100
+  method reduceEnergy(amount) { energy -= amount }
+  method energy() = energy
 
 }
-``` 
+```
 
 Una clase puede incorporar el mixin Energy y redefinir el método "reduceEnergy(amount)"
 
 ```wollok
 class Bird mixed with Energy {
-	override method reduceEnergy(amount) { 
-		// no hace nada
-	}
+  override method reduceEnergy(amount) {
+    // no hace nada
+  }
 }
 ```
 
@@ -282,24 +280,24 @@ class Bird mixed with Energy {
 Como en cualquier otro método que redefine un método de una superclase, dentro del cuerpo podemos usar la palabra clave **super** para invocar al método original que estamos redefiniendo.
 
 ```wollok
-	class Bird mixed with Energy {
-		override method reduceEnergy(amount) { 
-			super(1)
-		}
-	}
+  class Bird mixed with Energy {
+    override method reduceEnergy(amount) {
+      super(1)
+    }
+  }
 ```
 
 #### Llamada a super en un mixin ####
 
-Este es el caso más complejo (y también el más flexible). Un mixin puede redefinir comportamiento y también usar la implementación original. En ese caso la palabra _super_ funciona como una especie de **dynamic dispatch** (si se nos permite la licencia). 
+Este es el caso más complejo (y también el más flexible). Un mixin puede redefinir comportamiento y también usar la implementación original. En ese caso la palabra _super_ funciona como una especie de **dynamic dispatch** (si se nos permite la licencia).
 
-Es complejo porque mirando solo la definición del mixin no podemos saber exactamente cuál es el código que estará ejecutando al invocar super(). 
+Es complejo porque mirando solo la definición del mixin no podemos saber exactamente cuál es el código que estará ejecutando al invocar super().
 
 Por ejemplo:
 
 ```wollok
 mixin M1 {
-	method doFoo(chain) { super(chain + " > M1") }
+  method doFoo(chain) { super(chain + " > M1") }
 }
 ```
 
@@ -309,9 +307,9 @@ Dada esta clase
 
 ```wollok
 class C1 {
-	var foo = ""
-	method doFoo(chain) { foo = chain + " > C1" }
-	method foo() = foo
+  var foo = ""
+  method doFoo(chain) { foo = chain + " > C1" }
+  method foo() = foo
 
 }
 ```
@@ -328,7 +326,7 @@ Esto implica tener esta jerarquía lineal:
 C2 -> M1 -> C1
 ```
 
-Ahora sabemos que la llamada a "super" en el mixin M1 llamará al método "doFoo(chain)" definido en la clase C1 (la superclase de C2). Pero **este es un caso particular**, no podemos generalizar a todos los usos posibles de M1.  
+Ahora sabemos que la llamada a "super" en el mixin M1 llamará al método "doFoo(chain)" definido en la clase C1 (la superclase de C2). Pero **este es un caso particular**, no podemos generalizar a todos los usos posibles de M1.
 
 > La forma de entender esto es que la jerarquía lineal se construye como hemos visto anteriormente, y entonces "super" implica encontrar la primera implementación existente a partir de la derecha del mixin donde estamos ubicados.
 
@@ -341,10 +339,10 @@ C2 -> M1 (doFoo()) -> C1 (doFoo())
 
 ### Stackable Mixin Pattern ###
 
-Si tenemos 
+Si tenemos
 
-- un conjunto de mixins que implementan un determinado comportamiento haciendo una llamada a super, 
-- y una clase que hereda ese mismo comportamiento de una superclase (sin llamar a super)
+* un conjunto de mixins que implementan un determinado comportamiento haciendo una llamada a super,
+* y una clase que hereda ese mismo comportamiento de una superclase (sin llamar a super)
 
 se produce entonces una situación llamada **stackable mixin pattern**. El efecto que tiene es que cada mixin se ubica como intermediario para "decorar" o agregar funcionalidad. "Stackable" implica que los mixins pueden apilarse o combinarse resultando en una implementación del [chain of responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern).
 
@@ -352,26 +350,26 @@ Aquí vemos un ejemplo similar al anterior pero con algunos mixins adicionales
 
 ```wollok
 mixin M1 {
-	method doFoo(chain) { super(chain + " > M1") }
+  method doFoo(chain) { super(chain + " > M1") }
 }
-		
+
 mixin M2 {
-	method doFoo(chain) { super(chain + "> M2") }
+  method doFoo(chain) { super(chain + "> M2") }
 }
 
 mixin M3 {
-	method doFoo(chain) { super(chain + "> M3") }
+  method doFoo(chain) { super(chain + "> M3") }
 }
 ```
 
-Y aquí tenemos las clases 
+Y aquí tenemos las clases
 
 ```wollok
 class C1 {
-	var property foo = ""
-	method doFoo(chain) { foo = chain + " > C1" }
+  var property foo = ""
+  method doFoo(chain) { foo = chain + " > C1" }
 }
-		
+
 class C2 inherits C1 mixed with M1 and M2 and M3 {
 }
 ```
@@ -379,15 +377,15 @@ class C2 inherits C1 mixed with M1 and M2 and M3 {
 Al ejecutar este código
 
 ```wollok
-	const c = new C2()
-	c.doFoo("Test ")
-	console.println(c.foo())
+  const c = new C2()
+  c.doFoo("Test ")
+  console.println(c.foo())
 ```
 
 se imprime por consola lo siguiente
 
 ```bash
-Test > M3 > M2 > M1 > C1 
+Test > M3 > M2 > M1 > C1
 ```
 
 es decir, la jerarquía lineal obtenida.
@@ -398,13 +396,13 @@ Los objetos autodefinidos (WKOs) también pueden combinarse con mixins
 
 ```wollok
 mixin Flies {
-	var times = 0
-	method fly() {
-		times = 1
-	}
-	method times() = times
+  var times = 0
+  method fly() {
+    times = 1
+  }
+  method times() = times
 }
-		
+
 object pepita mixed with Flies {}
 ```
 
@@ -434,7 +432,6 @@ mixin Energy {
     method energy() = energy
 }
 class Warrior {
-    
 }
 ```
 
@@ -476,13 +473,13 @@ mixin Attacks {
         other.receiveDamage(power)
         self.energy(self.energy() - 1)
     }
-    
+
     method energy()
     method energy(newEnergy)
 }
 
 class Warrior {
-    
+
 }
 ```
 
@@ -492,12 +489,12 @@ Luego lo usamos de la siguiente manera
 program t {
     const warrior1 = new Warrior() with Attacks with Energy with GetsHurt
     assert.equals(100, warrior1.energy())
-    
+
     const warrior2 = new Warrior() with Attacks with Energy with GetsHurt
     assert.equals(100, warrior2.energy())
-    
+
     warrior1.attack(warrior2)
-    
+
     assert.equals(90, warrior2.energy())
     assert.equals(99, warrior1.energy())
 }
@@ -516,7 +513,7 @@ No queda claro de qué manera los mixins pueden combinarse con clases nativas  :
 
 #### Clases anónimas ####
 
-Wollok no provee clases anónimas, de manera que no es posible combinar mixins con una clase en tiempo de instanciación **y redefinir el comportamiento en el mismo lugar**. 
+Wollok no provee clases anónimas, de manera que no es posible combinar mixins con una clase en tiempo de instanciación **y redefinir el comportamiento en el mismo lugar**.
 
 **ESTO NO PUEDE HACERSE**: no se puede proveer el cuerpo de un método cuando se instancie
 
@@ -529,7 +526,6 @@ const pepitaFliesDouble = new Animal mixed with Flies {
 }
 ```
 
-
 ### Type System ###
 
 El sistema de tipos de Wollok (Wollok Type System) es una funcionalidad opcional, que puede activarse o desactivarse. El sistema de tipos permite ocultar la información explícita de tipos, ya que para los desarrolladores novatos esto implica tener que explicar/entender un nuevo concepto.
@@ -540,11 +536,11 @@ En un primer momento, se comienza a partir de un sistema de tipos que solo inclu
 
 #### Type System - Parte II ####
 
-El sistema de tipos de Wollok permite combinar clases con objetos, chequear que los envíos de mensajes sean correctos y que los tipos en las asignaciones sean compatibles. 
+El sistema de tipos de Wollok permite combinar clases con objetos, chequear que los envíos de mensajes sean correctos y que los tipos en las asignaciones sean compatibles.
 
 Todo esto sin necesidad de anotar ningún tipo en las definiciones de las variables, los parámetros o los valores devueltos por los métodos.
 
-Por ejemplo 
+Por ejemplo
 
 ```wollok
 class Ave {
@@ -554,7 +550,7 @@ class Ave {
 
 class AveQueNada inherits Ave {
     method nadar() { ... }
-    override method volar() { ... } 
+    override method volar() { ... }
 }
 
 class Superman {
@@ -565,10 +561,10 @@ const pepita = new Ave()
 const pato = new AveQueNada()
 
 object juan {
-	var mascota 
-  	method hacerVolar() {
-  		mascota.volar()   
-  	}
+  var mascota
+    method hacerVolar() {
+      mascota.volar()
+    }
 }
 ```
 
@@ -576,10 +572,9 @@ Estos son los tipos que infiere Wollok:
 
 * pepita : se tipa a **Ave**
 * pato : se tipa a **AveQueNada**
-* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia. 
+* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia.
 
 Si en otra parte del código se asigna a la variable mascota un objeto de otra clase, se producirá una advertencia acerca de la inconsistencia de tipos de datos.
-
 
 ### WollokDocs ###
 
@@ -589,8 +584,8 @@ Por ejemplo, las clases:
 
 ```wollok
 /**
- * A bird knows how to fly and eat. 
- * It also has energy. 
+ * A bird knows how to fly and eat.
+ * It also has energy.
  *
  * @author jfernandes
  */
@@ -600,7 +595,6 @@ class Bird {
 ```
 
 Los métodos y las referencias (variables de instancia) también pueden tener este tipo de documentación. Esto facilita el entendimiento posterior para quien lo quiera usar después, ya que el IDE muestra esa documentación en los _tooltips_ y otras partes visuales.
-
 
 ### Mecanismo de excepciones ###
 
@@ -622,16 +616,15 @@ Veamos un código de ejemplo de la sentencia throw:
 ```wollok
 class MyException inherits wollok.lang.Exception {}
 class A {
-	method m1() { 
-		throw new MyException()
-	}
+  method m1() {
+    throw new MyException()
+  }
 }
 ```
 
-Aquí el método m1() siempre tira una excepción, que es una instancia de MyException. 
+Aquí el método m1() siempre tira una excepción, que es una instancia de MyException.
 
 **Importante:** solo puede hacerse throw de instancias que formen parte de la jerarquía de *wollok.lang.Exception* (esto es Exception o sus subclases).
-
 
 #### Try-Catch ####
 
@@ -639,16 +632,16 @@ Aquí tenemos un ejemplo de cómo atrapar una excepción:
 
 ```wollok
 program p {
-	const a = new A()
+  const a = new A()
     const otroA = new A()
-	
-	try {
-		a.m1()
-		...
-	}
-	catch e : MyException {
-		otroA.m1()
-	}
+
+  try {
+    a.m1()
+    ...
+  }
+  catch e : MyException {
+    otroA.m1()
+  }
 }
 ```
 
@@ -660,12 +653,12 @@ Además del bloque "catch", un bloque "try" puede definir un bloque "always", qu
 
 ```wollok
 try {
-	a.m1()
+  a.m1()
 }
 catch e : MyException
-	console.println("Exception raised!") // OK!
+  console.println("Exception raised!") // OK!
 then always
-	counter = counter + 1
+  counter = counter + 1
 }
 ```
 
@@ -674,12 +667,12 @@ then always
 Un bloque try puede tener más de un catch, en caso de necesitar manejar diferentes tipos de excepción de distinta manera:
 
 ```wollok
-try 
-	a.m1()
+try
+  a.m1()
 catch e : MySubclassException
-	result = 3
+  result = 3
 catch e : MyException
-	result = 2
+  result = 2
 ```
 
 ### Sobrecarga de operadores ###
@@ -689,7 +682,7 @@ Dado que Wollok no exige definiciones de tipos al usuario, no es posible definir
 ```wollok
 ave.volar(6)        // kilómetros
 const madrid = new Ciudad(nombre = "Madrid")
-ave.volar(madrid)               
+ave.volar(madrid)
 ```
 
 Ambos mensajes serán ejecutados por el mismo método.
@@ -699,7 +692,7 @@ No obstante, sí es posible definir dos mensajes con diferente cantidad de argum
 ```wollok
 ave.volar(6)
 const madrid = new Ciudad(nombre = "Madrid")
-ave.volar(madrid, new Date())               
+ave.volar(madrid, new Date())
 ```
 
 ### Identidad vs Igualdad ###
@@ -738,6 +731,6 @@ otroString = unString
 unString === otroString  ==> true (ahora sí)
 ```
 
-En general, hay objetos que representan valores: los números, los strings, los booleanos, y los [value objects](https://en.wikipedia.org/wiki/Value_object), a ellos se les suele redefinir el == / equals en base a su estado. 
+En general, hay objetos que representan valores: los números, los strings, los booleanos, y los [value objects](https://en.wikipedia.org/wiki/Value_object), a ellos se les suele redefinir el == / equals en base a su estado.
 
 Para más información ver el paper de Wollok en el que se habla de [igualdad e identidad](https://docs.google.com/document/d/18QtQCs91tXX1e4kpEPs4sLU-TRJsxcoEKVngMDf278c/edit#heading=h.hryrt6t60c2h) entre otros conceptos.

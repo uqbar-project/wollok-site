@@ -52,6 +52,16 @@
 
 <p>&nbsp;An exception that is thrown when a specified element cannot be found</p>
 <hr>
+<h2 id="DomainException"><img src="images/class.png" height="24px" width="24px" title="class"/>
+&nbsp;DomainException</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Exception')">Exception</a>
+	</li>
+</ul>
+
+<p>&nbsp;An exception that is thrown for domain propose</p>
+<hr>
 <h2 id="MessageNotUnderstoodException"><img src="images/class.png" height="24px" width="24px" title="class"/>
 &nbsp;MessageNotUnderstoodException</h2>
 
@@ -347,7 +357,8 @@
 <td title="Set" width="30%"id="Set_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this set to a list.<br><br>Examples<br>		#{1, 2, 3}.asList() => Answers [1, 2, 3]<br>		#{}.asList()        => Answers []<br><br><b>see</b> List</td>
 </tr>
 <tr>
-<td title="Set" width="30%"id="Set_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts an object to a Set. No effect on Sets.<br><br>Examples<br>		#{1, 2, 3}.asSet() => Answers #{1, 2, 3}<br>		#{}.asSet()        => Answers #{}</td>
+<td title="Set" width="30%"id="Set_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Returns a new copy of current Set.<br><br>Examples<br>		#{1, 2, 3}.asSet() => Answers #{1, 2, 3}, which is a copy of original set<br>		#{}.asSet()        => Answers #{}, also a copy of original #{}</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -470,7 +481,8 @@
 <td title="List" width="30%"id="List_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this collection to a list. No effect on Lists.<br><br><b>see</b> List</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this list to a set (removing duplicate elements)<br><br>Examples:<br>		[1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>     [].asSet()              => Answers #{}<br>     [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br><b>see</b> Set</td>
+<td title="List" width="30%"id="List_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Converts this list to a set (removing duplicate elements)<br><br>Examples:<br>		[1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>     [].asSet()              => Answers #{}<br>     [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br><b>see</b> Set</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -1222,4 +1234,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 03/08/2019 03:24:14</p>
+<p>Last update: 25/08/2019 21:44:25</p>

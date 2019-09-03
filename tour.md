@@ -82,7 +82,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Ctrl + Shift + R: busca un recurso (archivo), filtrando por nombre o extensión. 
-                            <br> Ctrl + Shift + F3: busca cualquier objeto, clase o mixin creado por vos o que venga con
+                            <br> Ctrl + Shift + F3: busca cualquier elemento creado por vos o que venga con
                             la biblioteca de Wollok, como Date, Set o String.</figcaption>
                     </figure>
                 </div>

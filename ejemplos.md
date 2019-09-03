@@ -82,9 +82,8 @@ Clases y Herencia
     <li class="list-group-item"><a href="https://github.com/wollok/excepcionesMonederoClases">Monedero con clases. Excepciones. Testing de excepciones. Fixture.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/igualdadIdentidadDomicilios">Domicilios de personas. Igualdad e identidad</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/cohesionAlumnos">Alumnos. Cohesión. Testing con fixture compartido</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herenciaPepitaWKO">Pepita. Herencia Objeto-Clase.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">El coliseo. Clases</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herenciaLegoLaPrimavera">Primavera. Herencia</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/herenciaPepitaWKO">Pepita. Herencia de WKO-Clases.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">El coliseo. Clases.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesElCelu">Se me cuelga el celu. Clases</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesBots">Robots en todos lados. Clases</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/dictionaryTotales">Ejemplo Totalizadores de Gastos. Clases (Uso de Dictionary y Date)</a></li>

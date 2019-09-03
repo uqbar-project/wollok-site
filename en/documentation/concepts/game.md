@@ -9,18 +9,18 @@ layout: null
 1. <a href="#the-game" class="wollokLink">The game</a>
 1. <a href="#the-board" class="wollokLink">The board</a>
 1. <a href="#positions" class="wollokLink">Positions</a>
-	1. <a href="#drawing-objects" class="wollokLink">Drawing objects</a>
-	1. <a href="#moving-objects" class="wollokLink">Moving objects</a>
+  1. <a href="#drawing-objects" class="wollokLink">Drawing objects</a>
+  1. <a href="#moving-objects" class="wollokLink">Moving objects</a>
 1. <a href="#the-character" class="wollokLink">The character</a>
 1. <a href="#visuals" class="wollokLink">Visuals</a>
 1. <a href="#an-interactive-game" class="wollokLink">An interactive game</a>
-	1. <a href="#collisions" class="wollokLink">Collisions</a>
+  1. <a href="#collisions" class="wollokLink">Collisions</a>
 1. <a href="#programs" class="wollokLink">Programs</a>
-	1. <a href="#changing-board-background" class="wollokLink">Changing board background</a>
-	1. <a href="#reporting-errors" class="wollokLink">Reporting errors</a>
-	1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
-	1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
-	1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
+  1. <a href="#changing-board-background" class="wollokLink">Changing board background</a>
+  1. <a href="#reporting-errors" class="wollokLink">Reporting errors</a>
+  1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
+  1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
+  1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
 1. <a href="#troubleshooting" class="wollokLink">Troubleshooting</a>
 1. <a href="#more-info" class="wollokLink">More info</a>
 
@@ -65,7 +65,7 @@ Here you will add your game objects. Board has the following properties:
 ```
 
 <div class="container text-center">
-	<img src="../../../documentacion/conceptos/images/tableroNuevo.png" class="img-fluid z-depth-1">
+  <img src="../../../documentacion/conceptos/images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
@@ -106,7 +106,7 @@ You can also define a position for any visual object (with a reference _position
 ###### In example.wlk
 ```js
 object wollok {
-	var position = game.origin()
+  var position = game.origin()
 }
 ```
 
@@ -167,7 +167,7 @@ By now, we can show objects in the board as _wollok objects_. To change default 
 #### Example
 
 <div class="container text-center">
-	<img src="images/imgExplorerGame.png" class="img-fluid z-depth-1">
+  <img src="images/imgExplorerGame.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
@@ -175,7 +175,7 @@ By now, we can show objects in the board as _wollok objects_. To change default 
 
 ```js
 object box {
-	method image() = "box.png"
+  method image() = "box.png"
 }
 ```
 
@@ -195,28 +195,31 @@ object box {
 Now we will see how objects interact with game, to be more challenging.
 
 ### Using REPL console
+
 An easy way is to send messages through **REPL console**. You can change size, position, etc. and this changes will be reflected in board.
 
 ### Collisions
+
 When two objects share the same position, Wollok Game throws a _collision_ event. A collision is implemented as a **closure (piece of code)** added to a certain object: `game.whenCollideDo(object, actionClosure)`.
 
 #### Example
+
 ![colision-caja](../../../documentacion/conceptos/images/colisionCaja.gif)
 
 ###### In example.wlk
 ```js
 object wollok {
-	const property position = game.origin()
-	
-	method goHome() {
-		position.x(0)
-		position.y(0)
-	}
+  const property position = game.origin()
+  
+  method goHome() {
+    position.x(0)
+    position.y(0)
+  }
 }
 
 object box {
-	var property position = game.center()
-	method imagen() = "box.png"
+  var property position = game.center()
+  method image() = "box.png"
 } 
 ```
 
@@ -228,10 +231,9 @@ object box {
 >>> game.addVisualCharacter(wollok) // Movable with arrow keys
 >>> game.center().drawElement(box)
 >>> game.whenCollideDo(box, { character => character.goHome() })
-	// When a character collides with box, it goes to initial position
+  // When a character collides with box, it goes to initial position
 >>> game.start()
 ```
-
 
 ### Programs
 
@@ -241,10 +243,10 @@ Lets code out REPL example into a program, importing wollok wko and box definiti
 
 ```js
 program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(box)
-	game.whenCollideDo(box, { character => character.goHome() })
-	game.start()
+  game.addVisualCharacter(wollok)
+  game.center().drawElement(box)
+  game.whenCollideDo(box, { character => character.goHome() })
+  game.start()
 }
 ```
 
@@ -254,9 +256,9 @@ You can change out board background, replacing default one with [any picture you
 
 ```js
 program firstWollokGameProgram {
-	game.width(10)
-	game.height(10)
-	game.boardGround("beach.jpg") // replace here beach.jpg with the name you used
+  game.width(10)
+  game.height(10)
+  game.boardGround("beach.jpg") // replace here beach.jpg with the name you used
 ```
 
 Now we see a new image in game board:
@@ -272,13 +274,13 @@ When things go wrong, our main character catches error messages and alert us. Le
 
 ```js
 program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(box)
-	game.whenCollideDo(box, { 
-		character => character.goHome()
-		const a = 1 / 0
-	})
-	game.start()
+  game.addVisualCharacter(wollok)
+  game.center().drawElement(box)
+  game.whenCollideDo(box, { 
+    character => character.goHome()
+    const a = 1 / 0
+  })
+  game.start()
 }
 ```
 
@@ -292,10 +294,10 @@ Anyway, we can configure _error reporter object_ to another object, such as the 
 
 ```js
 program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.center().drawElement(box)
-	game.errorReporter(box)
-	...
+  game.addVisualCharacter(wollok)
+  game.center().drawElement(box)
+  game.errorReporter(box)
+  ...
 ```
 
 So lets see what happens now when wollok and the box collides and an error is thrown:
@@ -309,14 +311,14 @@ You can configure an automatic event, such as **box should move every 2 seconds*
 
 ```js
 program firstWollokGameProgram {
-	game.addVisualCharacter(wollok)
-	game.addVisual(box)  // see warning below
-	//
-	// moving box every 2 seconds
-	game.onTick(2000, { box.moveOn() })
-	//
-	game.whenCollideDo(box, { character => character.goHome() })
-	game.start()
+  game.addVisualCharacter(wollok)
+  game.addVisual(box)  // see warning below
+  //
+  // moving box every 2 seconds
+  game.onTick(2000, { box.moveOn() })
+  //
+  game.whenCollideDo(box, { character => character.goHome() })
+  game.start()
 }
 ```
 
@@ -326,14 +328,14 @@ program firstWollokGameProgram {
 
 ```js
 object box {
-	var property position = game.center()
-	method image() = "box.png"
-	method moveOn() {
-		const x = 0.randomUpTo(game.width() - 1).truncate(0)
-		const y = 0.randomUpTo(game.height() - 1).truncate(0)
-		self.position().x(x)
-		self.position().y(y)
-	}
+  var property position = game.center()
+  method image() = "box.png"
+  method moveOn() {
+    const x = 0.randomUpTo(game.width() - 1).truncate(0)
+    const y = 0.randomUpTo(game.height() - 1).truncate(0)
+    self.position().x(x)
+    self.position().y(y)
+  }
 }
 ```
 
@@ -351,16 +353,16 @@ import example.*
 import wollok.game.*
 
 program firstWollokGameProgram {
-	var boxMoves = true
-	game.addVisualCharacter(wollok)
-	game.addVisual(box)
-	game.onTick(2000, { if (boxMoves) box.moveOn() })
-	//
-	// ENTER key is caught
-	keyboard.enter().onPressDo { boxMoves = !boxMoves }	
-	//
-	game.whenCollideDo(box, { character => character.goHome() })
-	game.start()
+  var boxMoves = true
+  game.addVisualCharacter(wollok)
+  game.addVisual(box)
+  game.onTick(2000, { if (boxMoves) box.moveOn() })
+  //
+  // ENTER key is caught
+  keyboard.enter().onPressDo { boxMoves = !boxMoves }  
+  //
+  game.whenCollideDo(box, { character => character.goHome() })
+  game.start()
 }
 ```
 
@@ -375,10 +377,10 @@ Lets add some attributes to wollok wko:
 
 ```js
 object wollok {
-	var property position = game.origin()
-	var version = "1.7.0"
-	var lastUpdated = new Date()
-	...
+  var property position = game.origin()
+  var version = "1.7.0"
+  var lastUpdated = new Date()
+  ...
 ```
 
 When we pass mouse over wollok, we can see its internal state:
@@ -389,10 +391,10 @@ If we don't want to show overwhelming information to user, we can send `hideAttr
 
 ```js
 program firstWollokGameProgram {
-	var boxMoves = true
-	game.addVisualCharacter(wollok)
-	game.hideAttributes(wollok)
-	...
+  var boxMoves = true
+  game.addVisualCharacter(wollok)
+  game.hideAttributes(wollok)
+  ...
 ```
 
 ### Troubleshooting
@@ -407,18 +409,18 @@ Some Ubuntu installations may crash with this error message while opening a Woll
 ```
 LwjglApplication: Couldn't initialize audio, disabling audio
 java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper
-	at java.awt.Toolkit.loadAssistiveTechnologies(Toolkit.java:807)
-	at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:886)
-	at org.lwjgl.LinuxSysImplementation.<clinit>(LinuxSysImplementation.java:50)
-	at org.lwjgl.Sys.createImplementation(Sys.java:131)
-	at org.lwjgl.Sys.<clinit>(Sys.java:116)
-	at org.lwjgl.openal.AL.<clinit>(AL.java:59)
-	at com.badlogic.gdx.backends.lwjgl.audio.OpenALAudio.<init>(OpenALAudio.java:72)
-	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:83)
-	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:64)
-	at org.uqbar.project.wollok.game.gameboard.WollokGDXApplication.<init>(WollokGDXApplication.java:12)
-	at org.uqbar.project.wollok.game.helpers.Application.start(Application.java:28)
-	at org.uqbar.project.wollok.game.gameboard.Gameboard.start(Gameboard.java:86)
+  at java.awt.Toolkit.loadAssistiveTechnologies(Toolkit.java:807)
+  at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:886)
+  at org.lwjgl.LinuxSysImplementation.<clinit>(LinuxSysImplementation.java:50)
+  at org.lwjgl.Sys.createImplementation(Sys.java:131)
+  at org.lwjgl.Sys.<clinit>(Sys.java:116)
+  at org.lwjgl.openal.AL.<clinit>(AL.java:59)
+  at com.badlogic.gdx.backends.lwjgl.audio.OpenALAudio.<init>(OpenALAudio.java:72)
+  at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:83)
+  at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:64)
+  at org.uqbar.project.wollok.game.gameboard.WollokGDXApplication.<init>(WollokGDXApplication.java:12)
+  at org.uqbar.project.wollok.game.helpers.Application.start(Application.java:28)
+  at org.uqbar.project.wollok.game.gameboard.Gameboard.start(Gameboard.java:86)
 ```
 
 Or just a shorter `Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper` error message. Should this happen, follow [these steps](https://askubuntu.com/questions/695560/assistive-technology-not-found-awterror). Edit accessibility.properties file

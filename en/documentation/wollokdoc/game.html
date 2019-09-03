@@ -71,6 +71,10 @@
 &nbsp;</td><td width="70%;">Attributes will not show when user mouse over a visual component.<br>Default behavior is to show them.</td>
 </tr>
 <tr>
+<td title="game" width="30%"id="game_onCollideDo_2"><code><b>onCollideDo</b>(visual, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds a block that will be executed exactly when the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.onCollideDo(pepita, { comida => pepita.comer(comida) })</td>
+</tr>
+<tr>
 <td title="game" width="30%"id="game_onTick_3"><code><b>onTick</b>(milliseconds, name, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
 &nbsp;</td><td width="70%;">Adds a block with a specific name that will be executed every n milliseconds.<br>Block expects no argument.<br>Be careful not to set it too often :)<br><br>Example:<br>    	game.onTick(5000, "pepitaMoving", { => pepita.position().x(0.randomUpTo(4)) })</td>
 </tr>
@@ -88,6 +92,10 @@
 <tr>
 <td title="game" width="30%"id="game_say_2"><code><b>say</b>(visual, message)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
 &nbsp;</td><td width="70%;">Draws a dialog balloon with given message in given visual object position.<br><br>Example:<br>    game.say(pepita, "hola!")</td>
+</tr>
+<tr>
+<td title="game" width="30%"id="game_schedule_2"><code><b>schedule</b>(milliseconds, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Adds a block that will be executed in n milliseconds.<br>Block expects no argument.<br><br>Example:<br>    	game.schedule(5000, { => pepita.position().x(0.randomUpTo(4)) })</td>
 </tr>
 <tr>
 <td title="game" width="30%"id="game_showAttributes_1"><code><b>showAttributes</b>(visual)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -114,7 +122,7 @@
 </tr>
 <tr>
 <td title="game" width="30%"id="game_whenCollideDo_2"><code><b>whenCollideDo</b>(visual, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Adds a block that will be executed when the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.whenCollideDo(pepita, { comida => pepita.comer(comida) })</td>
+&nbsp;</td><td width="70%;">Adds a block that will be executed while the given object collides with other.<br>Two objects collide when are in the same position.<br><br>The block should expect the other object as parameter.<br><br>Example:<br>    game.whenCollideDo(pepita, { comida => pepita.comer(comida) })</td>
 </tr>
 <tr>
 <td title="game" width="30%"id="game_whenKeyPressedDo_2"><code><b>whenKeyPressedDo</b>(key, action)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -385,4 +393,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 03/08/2019 03:24:13</p>
+<p>Last update: 25/08/2019 21:44:23</p>

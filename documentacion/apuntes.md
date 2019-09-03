@@ -94,7 +94,7 @@ language: generic
 sudo: required
 
 script:
-    - git clone https://github.com/uqbar-project/wollok-cli                                
+    - git clone https://github.com/uqbar-project/wollok-cli
     - export PATH="$PATH:./wollok-cli"
     - wollok test
 ```

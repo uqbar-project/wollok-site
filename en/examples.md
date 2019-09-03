@@ -68,8 +68,7 @@ Examples with classes
     <li class="list-group-item"><a href="https://github.com/wollok/igualdadIdentidadDomicilios">People addresses. Equality and identity.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/cohesionAlumnos">Students. Cohesion. Testing with shared fixture.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/herenciaPepitaWKO">Pepita reloaded. Inheritance between WKO and classes.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">Coliseum. Classes. Constructors.</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/herenciaLegoLaPrimavera">Spring. Inheritance. Constructors.</a></li>
+    <li class="list-group-item"><a href="https://github.com/wollok/clasesColiseo">Coliseum. Classes.</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesElCelu">Cellphones. Classes</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/clasesBots">Robots everywhere. Classes</a></li>
     <li class="list-group-item"><a href="https://github.com/wollok/dictionaryTotales">Expenses. Classes (Dictionary and Date use)</a></li>
@@ -88,8 +87,9 @@ Wollok Game examples
 
 <div class="container">
     <ul class="list-group">
-    <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
-    <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
+        <li class="list-group-item"><a href="https://github.com/wollok/pepitaGame">Pepita</a></li>
+        <li class="list-group-item"><a href="https://github.com/wollok/tamagotchiGameComposicion">Tamagotchi</a></li>
+        <li class="list-group-item"><a href="https://github.com/wollok/pacmanBasicGame">Pacman</a></li>
     </ul>
 </div>
 

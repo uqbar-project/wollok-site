@@ -193,21 +193,6 @@ game.addVisual(wollok)
 ![Tablero con wollok](images/tableroConWollok.png)
 
 
-#### Otra alternativa
-Tambíen se puede ubicar un objeto en el tablero sin necesidad de agregarle un método `position()` sino pasándole la posición inicial de la siguiente manera.
-
-```wollok
-game.addVisualIn(wollok,game.center())
-```
-
-#### Otra alternativa adicional
-También, las posiciones saben agregar un objeto al tablero. En este caso, tampoco hace falta que el objeto entienda el mensaje `position()`.
-
-```wollok
-var posicion = game.origin()
-posicion.drawElement(wollok)
-```
-
 ### Moviendo objetos
 Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo `position()` y manipulando las referencias que se utilizan en él. 
 Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
@@ -254,23 +239,14 @@ object wollok {
 
 ## El personaje
 
-Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo y su ubicación inicial.
-En este caso, no se le define el método `position()` sino que el juego lo maneja por su cuenta. 
-
-```wollok 
-game.addVisualCharacterIn(wollok, game.origin())
-//o game.origin().drawCharacter(wollok)
-```
-
-![wollok-character](images/wollokCharacter.gif)
-
-### Otra alternativa
-Otra forma es ubicar el personaje especial mediante el método `addVisualCharacter(object)` sin indicar la posición inicial, sino tomándola del mismo obejeto.
+Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo. 
+El objeto debe entender los mensajes `position()` y `position(nuevaPosition)`, lo que puede sustituirse definiendo `position` como propiedad. 
 
 ```wollok 
 game.addVisualCharacter(wollok)
 ```
-En este caso, el objeto debe tener el método `position()` que se utiliza sólo para determinar la posición inicial. Dado que las sucesivas posiciones surgen a partir del uso del teclado, se ignora luego su valor de retorno. 
+
+![wollok-character](images/wollokCharacter.gif)
 
 
 ## Visuales
@@ -294,6 +270,7 @@ Para elegir la imagen de un determinado objeto es necesario:
 import wollok.game.*
 object caja {
 	method image() = "caja.png"
+	method position() = game.center()
 } 
 ```
 
@@ -301,7 +278,7 @@ object caja {
 
 ```wollok
 >>> game.start()
->>> game.addVisualIn(caja,game.center())
+>>> game.addVisual(caja)
 ```
 
 ![Caja Game](images/cajaGame.png)
@@ -353,7 +330,7 @@ object caja {
 }
 
 program ejemplo {
-	game.addVisualCharacterIn(wollok,game.origin())	//Para que se pueda mover con las flechas
+	game.addVisualCharacter(wollok)	//Para que se pueda mover con las flechas
 	game.addVisual(caja)
 //	Apenas el personaje wollok colisione con la caja, el personaje habla y la caja se desplaza
 	game.whenCollideDo(wollok, { elemento => 
@@ -373,7 +350,7 @@ Una funcionalidad interesante que podemos implementar es que **la caja se mueva 
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacterIn(wollok,game.origin())
+	game.addVisualCharacter(wollok)
 	game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
 	// cada dos segundos muevo la caja
 	game.onTick(2000, "movimiento", { caja.movete() })
@@ -413,7 +390,7 @@ Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ que el mo
 import wollok.game.*
 
 program ejemplo {
-	game.addVisualCharacterIn(wollok,game.origin())
+	game.addVisualCharacter(wollok)
 	game.addVisual(caja)
 	
 	game.onTick(2000, "movimiento",{ caja.movete() })
@@ -446,7 +423,7 @@ Si no queremos que ocurra esto (porque nos distrae tanta información en el tabl
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacterIn(wollok,game.center())
+	game.addVisualCharacter(wollok)
 	game.hideAttributes(wollok)
 	//...
 }
@@ -481,7 +458,7 @@ Cuando las cosas no salen como queremos y ocurre un error, el personaje especial
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacterIn(wollok,game.origin())	
+	game.addVisualCharacter(wollok)	
 	game.addVisual(caja)
 	game.whenCollideDo(wollok, { elemento => 
 		const a = 1 / 0 //Se produce un error

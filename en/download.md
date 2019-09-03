@@ -54,7 +54,7 @@ lang: 'en'
 				<div class="card-body grey lighten-5 transparent">
 					<p>You need to install previously a Java Virtual Machine 1.8. 
 					</p>
-					<a class="btn btn-primary" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Download it!</a>
+					<a class="btn btn-primary" href="https://adoptopenjdk.net/">Download it!</a>
 					<hr>
 					<h4><span class="badge badge-pill red darken-3">FAQ</span></h4>
 					<ul> 

@@ -29,10 +29,10 @@ class Ave {
     var energia = 0
 
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - (2 + metros)
     }
     method comer(comida) {
-        energia += comida.energia()
+        energia = energia + comida.energia()
     }
     method energia() {
         return energia
@@ -56,33 +56,31 @@ Entre los **( )** se indica el identificador de cada una de las referencias y su
 const pepita = new Ave(energia = 100)
 ```
 
-Hace que pepita quede inicializada con 100 de energía
+Hace que pepita quede inicializada con 100 de energía.
 
 Para las referencias de la clase que tienen un valor seteado por defecto es opcional enviar por parámetro el valor, en cambio para las referencias sin inicializar en la definición de la clase es obligatorio enviar por parámetro el valor inicial.
 
 ```wollok
 class Ave {
     var energia = 0
-    var peso 
+    var peso
     //...
 }
 
 const pepita = new Ave(energia = 100, peso = 1) // Válido (energía se inicializa en 100, peso en 1)
 
-const pepita = new Ave( peso = 1, energia = 100) // Válido (idem)
+const pepita = new Ave(peso = 1, energia = 100) // Válido (idem)
 
-const pepita = new Ave( peso = 2) // Válido (energía se inicializa en 0, peso en 2)
+const pepita = new Ave(peso = 2) // Válido (energía se inicializa en 0, peso en 2)
 
-const pepita = new Ave( energia = 100) // Error (Falta inicializar peso)
+const pepita = new Ave(energia = 100) // Error (Falta inicializar peso)
 
-const pepita = new Ave( )) // Error (Falta inicializar peso)
-
+const pepita = new Ave()) // Error (Falta inicializar peso)
 ```
 
 ## Herencia ##
 
 Al definir una clase, se puede especificar que **hereda** de otra clase. A la nueva clase se la llama **subclase** y a la de cual se hereda, **superclase**. Esto permite que los objetos que se instancien de la subclase, además de tener los atributos y métodos definidos en ella, también cuenta con los definidos en la superclase.  
-
 
 Ejemplos:
 
@@ -90,7 +88,7 @@ Ejemplos:
 class AveNadadora inherits Ave {
 
    method nadar(metros) {
-       energia -= metros * 1.2  // Utiliza la variable energia declarada en la superclase
+       energia = energia - (metros * 1.2)  // Utiliza la variable energia declarada en la superclase
    }
 }
 
@@ -125,7 +123,7 @@ Las subclases pueden redefinir métodos ya implementados por su superclase. Para
 class AveEficiente inherits Ave {
 
     override method volar(metros) {
-        energia -= metros / 2
+        energia = energia - (metros / 2)
     }
 
 }
@@ -138,10 +136,10 @@ class Ave {
     var energia = 0
 
     method volar(metros) {
-        energia -= 2 + metros
+        energia = energia - (2 + metros)
     }
     method comer(comida) {
-        energia += self.energiaObtenida(comida)
+        energia = energia + self.energiaObtenida(comida)
     }
 
     method energiaObtenida(comida) {
@@ -324,7 +322,7 @@ Ejemplo: tenemos un archivo definiciones.wlk
 ```wollok
 object pepita {
    var energia = 0
-   method volar() { energia -= 10 }
+   method volar() { energia = energia - 10 }
 }
 ```
 
@@ -352,7 +350,7 @@ package aves {
     object pepita {
         var energia = 0
         method volar() {
-            energia -= 10   
+            energia = energia - 10
         }
     }
 }
