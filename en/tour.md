@@ -7,7 +7,7 @@ icon: 'bus'
 --- 
 
 <div class="container">
-    <h1>Take the Wollok tour!</h1>
+    <h1>Take the Wollok IDE tour!</h1>
     <br>
 </div>
 
@@ -66,11 +66,9 @@ These are the main tools of Wollok Integrated Development Environment.
             Here we use autocomplete to send a message to a well-known object:
             <br>
             <br>
-            
             <div class="container text-center">
                 <img src="/images/tour/editor3.gif" class="img-fluid z-depth-1"/>
             </div>
-                
             <br>
             <br>
             Getting used to editor is essential to feel comfortable in your everyday work. That's why we want to 
@@ -78,14 +76,12 @@ These are the main tools of Wollok Integrated Development Environment.
             </p>
             <hr>
             <h3>Search tools...</h3>
-
             <div class="row">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/editor4.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Ctrl + R: looks for a resource / file, filtering by name or extension. 
-                            <br> Ctrl + Shift + F3: looks for any object, class or mixin, including Wollok's library, such as
-                            Date, Set o String.</figcaption>
+                        <figcaption class="figure-caption"><br> Ctrl + Shift + R: looks for a resource / file, filtering by name or extension. 
+                            <br> Ctrl + Shift + F3: looks for any custom or library element, such as Date, Set o String.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -101,21 +97,19 @@ These are the main tools of Wollok Integrated Development Environment.
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor6.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Several uses of shortcuts: deleting or mvoing lines, add comments, etc.</figcaption>
+                        <figcaption class="figure-caption"><br>Several uses of shortcuts: deleting or moving lines, add comments, etc.</figcaption>
                     </figure>
-                </div>                
+                </div>
             </div>
             <hr>
             <div class="container">
                 <h3>
                     Useful shortcuts guide
                 </h3>
-                
                 <div class="card">
                     <div class="card-body">
                         <!--Table-->
                         <table class="table table-striped">
-                
                             <!--Table head-->
                             <thead class="mdb-color lighten-4">
                                 <tr>
@@ -124,7 +118,6 @@ These are the main tools of Wollok Integrated Development Environment.
                                 </tr>
                             </thead>
                             <!--Table head-->
-                
                             <!--Table body-->
                             <tbody>
                                 <tr>
@@ -145,8 +138,8 @@ These are the main tools of Wollok Integrated Development Environment.
                                 </tr>
                                 <tr>
                                     <td>F3</td>
-                                    <td>Goes from a reference to its definition</td>
-                                </tr>                                
+                                    <td>Goes to the definition of a reference</td>
+                                </tr>
                                 <tr>
                                     <td>Alt + Arrow Up | Arrow Down</td>
                                     <td>Moves the whole line up or down</td>
@@ -195,15 +188,11 @@ These are the main tools of Wollok Integrated Development Environment.
                             <!--Table body-->
                         </table>
                         <!--Table-->
-                
                     </div>
                 </div>
             </div>
-
         </div>
-
         <!--/.Panel 1-->
-
         <!-- *****************************  VALIDATORS ****************************************-->
         <div class="tab-pane fade" id="validador" role="tabpanel">
             <br>
@@ -226,7 +215,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/validator1.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/validator1Es2.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>This is how the validator works. Locating the mouse
                         over left border, you can see warning and error messages. In Problems view we can see
                         all projects issues.
@@ -283,8 +272,6 @@ These are the main tools of Wollok Integrated Development Environment.
                 </div>
             </div>
         </div>
-
-
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
@@ -311,7 +298,6 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <br> 
         </div>
-
         <!-- *****************************  QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="formatter" role="tabpanel">
             <br>
@@ -338,7 +324,6 @@ These are the main tools of Wollok Integrated Development Environment.
             </div>
             <br>
         </div>
-
         <!-- *****************************  CONSOLE ****************************************-->
         <div class="tab-pane fade" id="consola" role="tabpanel">
             <br>
@@ -403,7 +388,6 @@ These are the main tools of Wollok Integrated Development Environment.
             </div>
             <br><br>
         </div>
-
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
             <br>
@@ -446,8 +430,7 @@ These are the main tools of Wollok Integrated Development Environment.
                 </div>
             </div>
         </div>  
-
-        <!-- *****************************  DIAGRAMAS ****************************************-->
+        <!-- *****************************  DIAGRAMS ****************************************-->
         <div class="tab-pane fade" id="diagramas" role="tabpanel">
             <br>
             Wollok has also design communication tools, like the static diagram, fully integrated with editor.
@@ -470,10 +453,23 @@ These are the main tools of Wollok Integrated Development Environment.
             <a href="https://docs.google.com/document/d/1K3A5kSZHZH7QmPHAQ-Hwt_t_5OKweeeaqF670DLS9Y0/edit">this article</a> (in spanish).
             <br>
             <br>
+            <hr/>
+            <br>
+            Since 1.7.7 version, Wollok has a <b>Dynamic Diagram</b> fully integrated with REPL console. Here you can see all objects and references in Wollok environment.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/dynamicDiagram2.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Small demo showing the dynamic diagram</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            Custom objects are blue-colored, numbers, booleans, strings, dates and pairs are appear in green, crimson is the color for collections (rectangle-shaped) and pink is the color for the remaining objects.
+            <br>
+            <br>
         </div>  
-                
-
     </div>
-
 </div>
-
