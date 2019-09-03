@@ -5,16 +5,10 @@ layout: null
 ## Index ##
 
 1. <a href="#classes" class="wollokLink">Classes</a>  
+    1. <a href="#instantiation" class="wollokLink">Instantiation</a>
     1. <a href="#inheritance" class="wollokLink">Inheritance</a>
     1. <a href="#abstract-methods-and-classes" class="wollokLink">Abstract Methods and Classes</a>
     1. <a href="#overriding-and-super" class="wollokLink">Overriding and Super</a>
-    1. <a href="#constructors" class="wollokLink">Constructors</a>
-        1. <a href="#simple-constructor" class="wollokLink">Simple Constructor</a>
-        1. <a href="#default-constructor" class="wollokLink">Default Constructor</a>
-        1. <a href="#multiple-constructors" class="wollokLink">Multiple constructors</a>
-        1. <a href="#constructor-delegation" class="wollokLink">Constructor delegation</a>
-        1. <a href="#constructor-inheritance" class="wollokLink">Constructor inheritance</a>
-        1. <a href="#constants-initialisation-in-constructors" class="wollokLink">Constants Initialisation in Constructors</a>
     1. <a href="#objects-inheritance" class="wollokLink">Object Inheritance</a>
 1. <a href="#polymorphism---part-ii" class="wollokLink">Polymorphism - Part II: now with Classes</a>
 1. <a href="#modularization" class="wollokLink">Modularization</a>
@@ -27,14 +21,11 @@ ___
 
 # Classes #
 
-Classes share some characteristics with object literals: they define instance variables, as well as methods.
-But they are not expressions (cannot be assigned to variables).
-Instead they are just like **definitions**.
+Classes share some characteristics with object literals: they define instance variables, as well as methods. But they are not expressions (cannot be assigned to variables). Instead they are just like **definitions**.
 
 Here's a sample:
 
-
-```scala
+```wollok
 class Bird {
     var energy = 0
 
@@ -49,12 +40,42 @@ class Bird {
     }
 }
 ```
-Then you create new objects by instantiating the class
 
+### Instantiation ###
 
-```scala
+In order to create a Bird, you need to use **new** reserved keyword followed by the name of the class. Evaluating this expression returns a new instance of Bird class:
+
+```wollok
 const aBird = new Bird()
 aBird.fly(23)
+```
+
+Anytime you create an object, you can pass initial values for each attribute. This is the way you can assure the object is fully consistent. Parameters should not preserve any order at all:
+
+```wollok
+const pepita = new Bird(energy = 100)
+```
+
+After evaluating this expression, `pepita` has a reference `energy` pointing to `100`.
+
+You must set a specific value for each attribute that does not have a default value in its original definition:
+
+```wollok
+class Bird {
+    var energy = 0
+    var weight
+    //...
+}
+
+const pepita = new Bird(energy = 100, weight = 1) // Valid (energy = 100, weight = 1)
+
+const pepita = new Bird(weight = 1, energy = 100) // Valid (energy = 100, weight = 1)
+
+const pepita = new Bird(weight = 2)   // Valid (energy = 0, weight = 2)
+
+const pepita = new Bird(energy = 100) // Error (weight is not initialized)
+
+const pepita = new Bird())            // Error (weight is not initialized)
 ```
 
 ## Inheritance ##
@@ -65,7 +86,7 @@ Methods in Wollok are always "public".
 
 Example:
 
-```scala
+```wollok
 class SwimmingBird inherits Bird {
 
    method swim(meters) {
@@ -86,8 +107,7 @@ An **abstract method** is one that declares its name and parameters, but that it
 It will be up to the subclasses of this class to implement this method by **overriding** (see next section).
 In Wollok there's no **abstract** keyword, just a method without a body.
 
-
-```scala
+```wollok
 class MyClass {
 
    method anAbstractMethod(param)
@@ -103,7 +123,7 @@ It's all inferred.
 
 Subclasses might override already defined methods in any superclass. For this you will need to explicitly use the "override" keyword before the method definition.
 
-```scala
+```wollok
 class EfficientBird inherits Bird {
 
     override method fly(meters) {
@@ -114,7 +134,7 @@ class EfficientBird inherits Bird {
 
 If while overriding you also need to invoke the original method, then you can use the **super** keyword:
 
-```scala
+```wollok
 class Bird {
     var energy = 0
 
@@ -142,240 +162,11 @@ class EfficientBird inherits Bird {
 Notice that you don't need to specify the method name. In Wollok you can only invoke the overridden method using **super**.
 You cannot use super to call any other method in the superclass. This keeps the language and programs easier. Also notice that super can only be used within an overriding method.
 
-## Constructors ##
-
-A constructor is kind of a special method that is called in order to create and initialise a new instance of a class.
-Wollok allows:
-
-* **Multiple constructors:** meaning that you can provide more than one constructor with different numbers of arguments.
-* **Constructors delegation**: meaning that one constructor may invoke another one to reuse code.
-* **Implicit constructors and delegation**: for non-arguments constructors.
-
-We will see this in details in following sections
-
-### Simple Constructor ###
-
-Here's a sample Point class with a constructor
-
-```scala
-class Point {
-    var x
-    var y
-
-    constructor(_x, _y) {
-        x = _x
-        y = _y
-    }
-}
-```
-
-Now you can do this:
-```scala
-   const p = new Point(2, 1)
-```
-
-### Default Constructor ###
-
-As you might already notice a class that doesn't define any constructor gets a no-arguments constructor for free
-
-This
-
-```scala
-class Point {
-}
-```
-
-Is the same as
-
-```scala
-class Point {
-    constructor() {}
-}
-```
-
-That's why in both cases this works fine
-```scala
-   const p = new Point()
-```
-
-Once you specify one constructor then you are on your own, and there are no implicit constructors anymore.
-
-### Multiple Constructors ###
-
-Now you can have as many constructors as you want. Just that you won't be able to define two constructors with the same number of arguments !
-
-Let's add a new constructor to our point
-
-```scala
-class Point {
-    var x
-    var y
-
-    constructor(_x, _y) {
-        x = _x
-        y = _y
-    }
-    constructor(p) {
-        x = p.getX()
-        y = p.getY()
-    }
-    method getX() { return x }
-    method getY() { return y }
-}
-```
-
-Now we can do:
-
-```scala
-   var p1 = new Point(1,2)
-   var p2 = new Point(p1)
-```
-
-### Constructor Delegation ###
-
-Now as you might have noticed the previous example with two constructor has a small amount of repeated code. In both constructors we are changing references of our instance variables.
-It's always a good practice to avoid repeated code, because it means we abstract away a piece of functionality that we will reuse following the D.R.Y. principle.
-
-So for that, Wollok provides a mechanism to reuse this code because a given constructor might "call" or delegate **first** to another constructor.
-
-There are two types of constructor delegation or situations:
-
-* **Delegating to another constructor in the same class**
-* **Delegating to constructor in the superclass**
-
-For our Point class we will see the first one:
-
-```scala
-class Point {
-    var x
-    var y
-
-    constructor(_x, _y) {
-        x = _x
-        y = _y
-    }
-    constructor(p) = self(p.getX(), p.getY()) {
-       // some behaviour here
-    }
-    method getX() { return x }
-    method getY() { return y }
-}
-```
-
-Notice the syntax here:
-
-```scala
-   constructor(...params...) =  self(...paramsToOther...) {
-      body
-   }
-```
-
-This means that the body of your constructor will be executed AFTER the execution of the delegated constructor.
-So delegation is the first thing that takes place.
-
-
-The second case is delegating to a superclass constructor.
-
-```scala
-class Point {
-    var x
-    var y
-
-    constructor(_x, _y) {
-        x = _x
-        y = _y
-    }
-}
-
-class Circle inherits Point {
-    var r
-    constructor(_x, _y_, _r) = super(_x, _y) {
-        r = _r
-    }
-}
-```
-
-Notice that the delegation is defined through the usage of the **super** keyword.
-This is not exactly the same as a super method invocation, but similar.
-
-Sometimes you are forced to explicitly declare a superclass constructor delegation if the superclass doesn't have a no-arguments constructor.
-
-### Constructor Inheritance ###
-
-Given this hierarchy 
-
-```scala
-class Ball {
-    var color
-    constructor() { }
-    constructor(_color) { color = _color }
-} 
-
-class Snitch inherits Ball {
-    var owner
-}
-```
-
-Snitch inherits constructors defined by Ball. This means both expressions will be valid:
-
-```scala
-new Snitch()
-new Snitch("blue")
-```
-
-Nevertheless, if we define any constructor in Snitch, Wollok will no longer support inherited constructors from Ball:
-
-```scala
-class Ball {
-    var color
-    constructor() { }
-    constructor(_color) { color = _color }
-} 
-
-class Snitch inherits Ball {
-    var owner
-    constructor(_color, _owner) = super(_color) {
-        owner = _owner
-    }
-}
-```
-
-In this case, we can only build a Snitch by passing two parameters:
-
-```scala
-new Snitch()                  // wrong
-new Snitch("blue")            // wrong
-new Snitch("blue", "Harry")   // correct
-```
-
-
-### Constants Initialisation in Constructors ###
-
-We have already seen that there is a special type of reference which is immutable: the **constants**.
-There's a special case when working with classes where you want to declare a constant reference that won't be assigned in that same line, but afterwards. That *doesn't mean anywhere*. These are "instance constants".
-This constants are references that are **assigned at construction time and cannot be modified after that**.
-Here is an example:
-
-```scala
-class ImmutablePoint {
-    const x
-    const y
-    
-    constructor(_x, _y) {
-        x = _x
-        y = _y
-    }
-}
-```
-
-It could sound weird because we are assigning a constant, but this is completely valid.
-Once assigned, the reference cannot be changed anymore. This gives flexibility avoiding boilerplate code (and state).
-
 ### Objects Inheritance ###
 
 Well-known named objects can be defined based on an already defined class.
 
-```scala
+```wollok
 object lassie inherits Dog {
    // ...
 }
@@ -385,7 +176,7 @@ This could be a natural place for migrating a program which initially started as
 
 In the special case where the class you want to inherit from defines constructors, the object must call that class constructor explicitly. Here is the syntax to do that:
 
-```scala
+```wollok
 object lassie inherits Dog("Lassie", 3) {
    // ...
 }
@@ -404,7 +195,7 @@ Polymorphism with classes work in the exact same way as when you only have objec
 
 **Two objects can be used polymorphically if they understand a common set of messages.**
 
-```scala
+```wollok
 package birds {
 
    class Bird {
@@ -424,7 +215,7 @@ package birds {
 
 Then:
 
-```scala
+```wollok
     const plane = new Plane()
     const bird = new Bird()
 
@@ -443,7 +234,7 @@ Now, besides classes, there could be polymorphism between classes and objects.
 
 Examples
 
-```scala
+```wollok
     const boomerang = object {
           method fly(to) {
                // ... it goes, and then it comes back here
@@ -464,7 +255,7 @@ Wollok provides a set of rules and language constructions in order to promote mo
 
 A package is logical unit that groups together several classes and/or WKOs.
 
-```scala
+```wollok
 package birds {
 
    class Bird {
@@ -483,7 +274,7 @@ package birds {
 A single Wollok file can actually define more than one package
 
 
-```scala
+```wollok
 package birds {
     // ...
 }
@@ -502,7 +293,7 @@ The package has a name (here "birds", "trainers", etc). Every class defined with
 That introduces what is called a class **fully qualified name** (or FQN).
 Example:
 
-```scala
+```wollok
 package birds {
 
    class SwimmingBird {
@@ -548,7 +339,7 @@ The basic example is when you have the following file structure:
 - src
   - model.wlk
 
-```scala
+```wollok
      object pepita {....}
      object alpiste {....}
 ```
@@ -561,14 +352,14 @@ Let's pass to a more complex example:
 * src
   * model.wlk
 
-```scala
+```wollok
      object pepita {....}
      object alpiste {....}
 ```
 
   * aProgram.pgm
 
-```scala
+```wollok
      import model.pepita
 
      program "aProgram" {
@@ -584,20 +375,20 @@ Let's see an even more complex example:
   * model/
      * trainers.wlk
 
-```scala
+```wollok
          class Trainer { ... }
 ```
 
   * model.wlk
 
-```scala
+```wollok
      object pepita {....}
      object alpiste {....}
 ```
 
   * aProgram.pgm
 
-```scala
+```wollok
      import model.pepita
      import model.trainers.Trainer
 
@@ -619,7 +410,7 @@ There is an alternative way of writing this solution, with the same power, but u
 * src
   * model.wlk
 
-```scala
+```wollok
      object pepita {....}
      object alpiste {....}
     
@@ -630,7 +421,7 @@ There is an alternative way of writing this solution, with the same power, but u
 
   * aProgram.pgm
 
-```scala
+```wollok
      import model.pepita
      import model.trainers.Trainer
 

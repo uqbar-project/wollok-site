@@ -455,7 +455,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <hr/>
             <br>
-            Since 1.7.7 version, Wollok has a <b>Dynamic Diagram</b> fully integrated with REPL console. Here you can see all objects and references in Wollok environment.
+            Since 1.7.7 version, Wollok has a <b>Dynamic Diagram</b> which is integrated with REPL console. Here you can see all objects and references in Wollok environment.
             <br>
             <br>
             <div class="row text-center">
