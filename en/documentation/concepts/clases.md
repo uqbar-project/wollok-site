@@ -177,7 +177,7 @@ This could be a natural place for migrating a program which initially started as
 In the special case where the class you want to inherit from defines constructors, the object must call that class constructor explicitly. Here is the syntax to do that:
 
 ```wollok
-object lassie inherits Dog("Lassie", 3) {
+object lassie inherits Dog(name = "Lassie", age = 3) {
    // ...
 }
 
@@ -235,16 +235,15 @@ Now, besides classes, there could be polymorphism between classes and objects.
 Examples
 
 ```wollok
-    const boomerang = object {
-          method fly(to) {
-               // ... it goes, and then it comes back here
-          }
+  const boomerang = object {
+    method fly(to) {
+      // ... it goes, and then it comes back here
     }
+  }
 
-    const flyingObjects = [ plane, bird, boomerang ]
+  const flyingObjects = [ plane, bird, boomerang ]
 
-    flyingObjects.forEach { o |  o.fly() }
-
+  flyingObjects.forEach { o => o.fly() }
 ```
 
 # Modularization #
