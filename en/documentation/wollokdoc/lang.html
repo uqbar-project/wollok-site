@@ -320,6 +320,12 @@
 <tr>
 <td title="Collection" width="30%"id="Collection_sum_0"><code><b>sum</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Sums all elements in the collection.<br><b>returns</b> an integer<br><br>Example:<br>     [1, 2, 3, 4, 5].sum()  => Answers 15<br>     [].sum()               => Answers 0</td>
 </tr>
+<tr>
+<td title="Collection" width="30%"id="Collection_unique_0"><code><b>unique</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the unique element in the collection.<br>If collection is empty, an error is thrown.<br>If collection has more than one element, an error is thrown.<br><br>Example:<br>      [1].unique() 	=>  Answers 1<br>      [].unique()  	=>  Throws error, list must not be empty<br>      [1, 2].unique()  	=>  Throws error, list must have one element</td>
+</tr>
+<tr>
+<td title="Collection" width="30%"id="Collection_validateNotEmpty_1"><code><b>validateNotEmpty</b>(operation)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Throws error if self collection is empty</td>
+</tr>
 </tbody>
 </table></div>
 <hr>
@@ -444,6 +450,8 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sortedBy_1')"><code>sortedBy(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_unique_0')"><code>unique()</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
 
@@ -594,6 +602,8 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sortedBy_1')"><code>sortedBy(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_unique_0')"><code>unique()</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
 
@@ -1234,4 +1244,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 25/08/2019 21:44:25</p>
+<p>Last update: 09/09/2019 17:58:29</p>
