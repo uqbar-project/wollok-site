@@ -156,6 +156,9 @@
 </thread>
 <tbody>
 <tr>
+<td title="Pair" width="30%"id="Pair_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Two pairs are equal if they have the same values<br><br>Example:<br>		new Pair(1, 2).equals(new Pair(1, 2))  ==> Answers true</td>
+</tr>
+<tr>
 <td title="Pair" width="30%"id="Pair_key_0"><code><b>key</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
@@ -204,8 +207,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a list</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_asSet_0"><code><b>asSet</b>()</code>&nbsp;<span class="badge badge-pill light-blue">abstract</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a set (no duplicates)</td>
+<td title="Collection" width="30%"id="Collection_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a set (removing duplicates if necessary)<br><br>Examples:<br>		[1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>     [].asSet()              => Answers #{}<br>     [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br>		#{1, 2, 3}.asSet() => Answers #{1, 2, 3}<br>		#{}.asSet()        => Answers #{}<br><br><b>see</b> Set</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_clear_0"><code><b>clear</b>()</code>&nbsp;<span class="badge badge-pill light-blue">abstract</span><br>
@@ -321,7 +323,7 @@
 <td title="Collection" width="30%"id="Collection_sum_0"><code><b>sum</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Sums all elements in the collection.<br><b>returns</b> an integer<br><br>Example:<br>     [1, 2, 3, 4, 5].sum()  => Answers 15<br>     [].sum()               => Answers 0</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_unique_0"><code><b>unique</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the unique element in the collection.<br>If collection is empty, an error is thrown.<br>If collection has more than one element, an error is thrown.<br><br>Example:<br>      [1].unique() 	=>  Answers 1<br>      [].unique()  	=>  Throws error, list must not be empty<br>      [1, 2].unique()  	=>  Throws error, list must have one element</td>
+<td title="Collection" width="30%"id="Collection_uniqueElement_0"><code><b>uniqueElement</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the unique element in the collection.<br>If collection is empty, an error is thrown.<br>If collection has more than one element, an error is thrown.<br><br>Example:<br>      [1].uniqueElement()    => Answers 1<br>      [].uniqueElement()     => Throws error, list must not be empty<br>      [1, 2].uniqueElement() => Throws error, list must have one element</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_validateNotEmpty_1"><code><b>validateNotEmpty</b>(operation)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Throws error if self collection is empty</td>
@@ -361,10 +363,6 @@
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this set to a list.<br><br>Examples<br>		#{1, 2, 3}.asList() => Answers [1, 2, 3]<br>		#{}.asList()        => Answers []<br><br><b>see</b> List</td>
-</tr>
-<tr>
-<td title="Set" width="30%"id="Set_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Returns a new copy of current Set.<br><br>Examples<br>		#{1, 2, 3}.asSet() => Answers #{1, 2, 3}, which is a copy of original set<br>		#{}.asSet()        => Answers #{}, also a copy of original #{}</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -427,6 +425,7 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_addAll_1')"><code>addAll(elements)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_all_1')"><code>all(predicate)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_any_1')"><code>any(predicate)</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_asSet_0')"><code>asSet()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copyWith_1')"><code>copyWith(elementToAdd)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copyWithout_1')"><code>copyWithout(elementToRemove)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copy_0')"><code>copy()</code></a>
@@ -450,7 +449,7 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sortedBy_1')"><code>sortedBy(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_unique_0')"><code>unique()</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_uniqueElement_0')"><code>uniqueElement()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
@@ -476,7 +475,7 @@
 <tbody>
 <tr>
 <td title="List" width="30%"id="List_==_1"><code><b>==</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">A list is == another list if all elements are equal (defined by == message)<br><br><br>Examples:<br>		[].equals([])         => Answers true<br>     [1, 2].equals([2, 1]) => Answers false<br>     [1, 2].equals([1, 2]) => Answers true</td>
+&nbsp;</td><td width="70%;">A list is == another list if all elements are equal (defined by == message)<br><br><br>Examples:<br>		[] == []         => Answers true<br>     [1, 2] == [2, 1] => Answers false<br>     [1, 2] == [1, 2] => Answers true</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_add_1"><code><b>add</b>(element)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -487,10 +486,6 @@
 </tr>
 <tr>
 <td title="List" width="30%"id="List_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this collection to a list. No effect on Lists.<br><br><b>see</b> List</td>
-</tr>
-<tr>
-<td title="List" width="30%"id="List_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Converts this list to a set (removing duplicate elements)<br><br>Examples:<br>		[1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>     [].asSet()              => Answers #{}<br>     [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br><b>see</b> Set</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -569,7 +564,8 @@
 <td title="List" width="30%"id="List_take_1"><code><b>take</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Takes first n elements of a list.<br><br>Examples:<br>		[1,9,2,3].take(5)  ==> Answers [1, 9, 2, 3]<br> 	[1,9,2,3].take(2)  ==> Answers [1, 9]<br> 	[1,9,2,3].take(-2) ==> Answers []<br>     [].take(2)         ==> Answers []</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_withoutDuplicates_0"><code><b>withoutDuplicates</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the list without duplicate elements<br><br>[1, 3, 1, 5, 1, 3, 2, 5].withoutDuplicates() => Answers [1, 2, 3, 5]<br>[].withoutDuplicates()                       => Answers []</td>
+<td title="List" width="30%"id="List_withoutDuplicates_0"><code><b>withoutDuplicates</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Answers the list without duplicate elements. Preserves order of elements.<br><br>[1, 3, 1, 5, 1, 3, 2, 5].withoutDuplicates() => Answers [1, 3, 5, 2]<br>[].withoutDuplicates()                       => Answers []</td>
 </tr>
 </tbody>
 </table></div>
@@ -579,6 +575,7 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_addAll_1')"><code>addAll(elements)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_all_1')"><code>all(predicate)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_any_1')"><code>any(predicate)</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_asSet_0')"><code>asSet()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copyWith_1')"><code>copyWith(elementToAdd)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copyWithout_1')"><code>copyWithout(elementToRemove)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_copy_0')"><code>copy()</code></a>
@@ -602,7 +599,7 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sortedBy_1')"><code>sortedBy(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_unique_0')"><code>unique()</code></a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_uniqueElement_0')"><code>uniqueElement()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
@@ -635,6 +632,9 @@
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_containsValue_1"><code><b>containsValue</b>(_value)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether if this Dictionary maps one or more keys to the specified value.<br><br>Example:<br>    const numbers = new Dictionary()<br>    numbers.put("one", 1)<br>    numbers.put("two", 2)<br>    numbers.containsValue(2)          => Answers true<br>    numbers.containsValue(5)          => Answers false<br>    new Dictionary().containsValue(3) => Answers false</td>
+</tr>
+<tr>
+<td title="Dictionary" width="30%"id="Dictionary_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Two dictionaries are equal if they have the same keys and values</td>
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_forEach_1"><code><b>forEach</b>(closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -1244,4 +1244,4 @@
 <hr>
 <div class="container">
 </div>
-<p>Last update: 14/09/2019 09:54:05</p>
+<p>Last update: 06/10/2019 15:50:36</p>
