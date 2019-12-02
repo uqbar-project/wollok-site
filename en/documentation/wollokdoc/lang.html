@@ -60,7 +60,17 @@
 	</li>
 </ul>
 
-<p>&nbsp;An exception that is thrown for domain propose</p>
+<p>&nbsp;An exception that is thrown for domain purpose</p>
+<hr>
+<h2 id="EvaluationError"><img src="images/class.png" height="24px" width="24px" title="class"/>
+&nbsp;EvaluationError</h2>
+
+<ul>
+	<li>inherits from <a href="javascript:selectFile('lang', 'Exception')">Exception</a>
+	</li>
+</ul>
+
+<p>&nbsp;(added by wollok-ts) An exception thrown whenever the interpreter fails to evaluate an expression</p>
 <hr>
 <h2 id="MessageNotUnderstoodException"><img src="images/class.png" height="24px" width="24px" title="class"/>
 &nbsp;MessageNotUnderstoodException</h2>
@@ -118,6 +128,9 @@
 &nbsp;</td><td width="70%;">Answers object identity of a Wollok object, represented by<br>a unique number in Wollok environment</td>
 </tr>
 <tr>
+<td title="Object" width="30%"id="Object_initialize_0"><code><b>initialize</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
 <td title="Object" width="30%"id="Object_printString_0"><code><b>printString</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Provides a visual representation of Wollok Object<br>By default, same as toString but can be overridden<br>like in String</td>
 </tr>
 <tr>
@@ -156,7 +169,7 @@
 </thread>
 <tbody>
 <tr>
-<td title="Pair" width="30%"id="Pair_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Two pairs are equal if they have the same values<br><br>Example:<br>		new Pair(1, 2).equals(new Pair(1, 2))  ==> Answers true</td>
+<td title="Pair" width="30%"id="Pair_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Two pairs are equal if they have the same values<br><br>Example:<br>   new Pair(1, 2).equals(new Pair(1, 2))  ==> Answers true</td>
 </tr>
 <tr>
 <td title="Pair" width="30%"id="Pair_key_0"><code><b>key</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
@@ -185,19 +198,19 @@
 </thread>
 <tbody>
 <tr>
-<td title="Collection" width="30%"id="Collection_+_1"><code><b>+</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Concatenates this collection to all elements from the given<br>collection parameter giving a new collection<br>(no side effect)<br><br>Example:<br>		[1, 2] + [3]   => Answers [1, 2, 3]<br>    [1, 2] + #{3}  => supports concatenation between lists and sets, answers [1, 2, 3]<br>    #{} + []       => Answers #{}</td>
+<td title="Collection" width="30%"id="Collection_+_1"><code><b>+</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Concatenates this collection to all elements from the given<br>collection parameter giving a new collection<br>(no side effect)<br><br>Example:<br>   [1, 2] + [3]   => Answers [1, 2, 3]<br>   [1, 2] + #{3}  => supports concatenation between lists and sets, answers [1, 2, 3]<br>   #{} + []       => Answers #{}</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_add_1"><code><b>add</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> subclasses implementations</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_addAll_1"><code><b>addAll</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Adds all elements from the given collection parameter to self collection.<br>This is a side effect operation.<br><br>Example:<br>		const list = []<br>    list.addAll(#{2, 4})  => list == [2, 4], always pointing to a list</td>
+<td title="Collection" width="30%"id="Collection_addAll_1"><code><b>addAll</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Adds all elements from the given collection parameter to self collection.<br>This is a side effect operation.<br><br>Example:<br>   const list = []<br>   list.addAll(#{2, 4})  => list == [2, 4], always pointing to a list</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_all_1"><code><b>all</b>(predicate)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether all the elements of self collection satisfy a given<br>condition. The condition is a closure argument that takes a single<br>element and answers a boolean value.<br><br><b>returns</b> true/false<br><br>Example:<br>     plants.all({ plant => plant.hasFlowers() })<br>     [1, 3, 5].all { number => number.odd() }    => Answers true<br>     [].all { number => number.odd() }           => Answers true</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_any_1"><code><b>any</b>(predicate)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tells whether at least one element of self collection satisfies a<br>given condition. The condition is a closure argument that takes a<br>single element and answers a boolean value.<br><b>returns</b> true/false<br><br>Example:<br>     plants.any({ plant => plant.hasFlowers() })<br>     [1, 2, 3].any { number => number.even() }   ==> Answers true<br>     [].any { number => number.even() }   ==> Answers false</td>
+<td title="Collection" width="30%"id="Collection_any_1"><code><b>any</b>(predicate)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tells whether at least one element of self collection satisfies a<br>given condition. The condition is a closure argument that takes a<br>single element and answers a boolean value.<br><b>returns</b> true/false<br><br>Example:<br>     plants.any({ plant => plant.hasFlowers() })<br>     [1, 2, 3].any { number => number.even() }   ==> Answers true<br>     [].any { number => number.even() }          ==> Answers false</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_anyOne_0"><code><b>anyOne</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -207,14 +220,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a list</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a set (removing duplicates if necessary)<br><br>Examples:<br>		[1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>     [].asSet()              => Answers #{}<br>     [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br>		#{1, 2, 3}.asSet() => Answers #{1, 2, 3}<br>		#{}.asSet()        => Answers #{}<br><br><b>see</b> Set</td>
+<td title="Collection" width="30%"id="Collection_asSet_0"><code><b>asSet</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts a collection to a set (removing duplicates if necessary)<br><br>Examples:<br>   [1, 2, 3].asSet()       => Answers #{1, 2, 3}<br>   [].asSet()              => Answers #{}<br>   [1, 2, 1, 1, 2].asSet() => Answers #{1, 2}<br><br>   #{1, 2, 3}.asSet()      => Answers #{1, 2, 3}<br>   #{}.asSet()             => Answers #{}<br><br><b>see</b> Set</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_clear_0"><code><b>clear</b>()</code>&nbsp;<span class="badge badge-pill light-blue">abstract</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br><b>see</b> subclasses implementations</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_contains_1"><code><b>contains</b>(e)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether this collection contains the specified element.<br><br>Example:<br>     [].contains(3)        => Answers false<br>     [1, 2, 3].contains(2) => Answers true</td>
+<td title="Collection" width="30%"id="Collection_contains_1"><code><b>contains</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether this collection contains the specified element.<br><br>Example:<br>     [].contains(3)        => Answers false<br>     [1, 2, 3].contains(2) => Answers true</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_copy_0"><code><b>copy</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new collection of the same type and with the same content<br>as self. Supports empty collections.<br><br><b>returns</b> a new collection<br><br>Example:<br>     const usersCopy = users.copy()</td>
@@ -242,10 +255,10 @@
 &nbsp;</td><td width="70%;">Answers the element of self collection that satisfies a given condition,<br>or the the result of evaluating the given continuation.<br>If more than one element satisfies the condition then it depends on the<br>specific collection class which element will be returned.<br><br><b>returns</b> the element that complies the condition or the result<br>of evaluating the continuation<br><br>Example:<br>     users.findOrElse({ user => user.name() == "Cosme Fulanito" }, { homer })<br>     [1, 3, 5].findOrElse({ number => number.even() }, { 6.max(4) }) => Answers 6<br>     [].findOrElse({ number => number.even() }, { false })           => Answers false</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_flatMap_1"><code><b>flatMap</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>		object klaus {<br> 		method languages() = ["c", "cobol", "pascal"]<br>		}<br><br>		object fritz {<br>			method languages() = ["java", "perl"]<br>		}<br><br><br>		[klaus, fritz].flatMap({ person => person.languages() })<br>			=> Answers ["c", "cobol", "pascal", "java", "perl"]</td>
+<td title="Collection" width="30%"id="Collection_flatMap_1"><code><b>flatMap</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Map + flatten operation<br><b>see</b> map<br><b>see</b> flatten<br><br>Example:<br>    object klaus {<br>      method languages() = ["c", "cobol", "pascal"]<br>    }<br><br>    object fritz {<br>      method languages() = ["java", "perl"]<br>    }<br><br><br>    [klaus, fritz].flatMap({ person => person.languages() })<br>      => Answers ["c", "cobol", "pascal", "java", "perl"]</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_flatten_0"><code><b>flatten</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Flattens a collection of collections<br><br>Example:<br>		[ [1, 2], [3], [4, 0], [] ].flatten()  => Answers [1, 2, 3, 4, 0]</td>
+<td title="Collection" width="30%"id="Collection_flatten_0"><code><b>flatten</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Flattens a collection of collections<br><br>Example:<br>    [ [1, 2], [3], [4, 0], [] ].flatten()<br>      => Answers [1, 2, 3, 4, 0]</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_fold_2"><code><b>fold</b>(element, closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -257,15 +270,13 @@
 <td title="Collection" width="30%"id="Collection_internalToSmartString_1"><code><b>internalToSmartString</b>(alreadyShown)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Optimized version for long collections<br><br><b>see</b> Object#toString()</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_isEmpty_0"><code><b>isEmpty</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tells whether self collection has no elements<br><br>Example:<br>		[1, 6, 5].isEmpty() => Answers false<br>    [].isEmpty()        => Answers true</td>
+<td title="Collection" width="30%"id="Collection_isEmpty_0"><code><b>isEmpty</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tells whether self collection has no elements<br><br>Example:<br>   [1, 6, 5].isEmpty() => Answers false<br>   [].isEmpty()        => Answers true</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_join_1"><code><b>join</b>(separator)</code>&nbsp;<span class="badge badge-pill light-blue">abstract</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")</td>
+<td title="Collection" width="30%"id="Collection_join_1"><code><b>join</b>(separator)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Example:<br>     ["hola", "como", "estas"].join(" ") ==> Answers "hola como estas"</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_join_0"><code><b>join</b>()</code>&nbsp;<span class="badge badge-pill light-blue">abstract</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")</td>
+<td title="Collection" width="30%"id="Collection_join_0"><code><b>join</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")<br><br>Example:<br>     ["hola", "como", "estas"].join()    ==> Answers "hola,como,estas"</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_map_1"><code><b>map</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new collection that contains the result of transforming<br>each of self collection's elements using a given closure.<br>The condition is a closure argument that takes a single element<br>and answers an object.<br><b>returns</b> another list<br><br>Example:<br>     const ages = users.map({ user => user.age() })<br>     [1, 2, 3].map { number => number.odd() }  => Answers [true, false, true]<br>     [].map { number => number.odd() }         => Answers []</td>
@@ -305,10 +316,10 @@
 <td title="Collection" width="30%"id="Collection_remove_1"><code><b>remove</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> subclasses implementations</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_removeAll_1"><code><b>removeAll</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes all elements of the given collection parameter from self collection.<br>This is a side effect operation.<br><br>Example:<br>		const list = [1, 6, 5]<br>    list.removeAll([6]) => list == [1, 5]</td>
+<td title="Collection" width="30%"id="Collection_removeAll_1"><code><b>removeAll</b>(elements)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes all elements of the given collection parameter from self collection.<br>This is a side effect operation.<br><br>Example:<br>   const list = [1, 6, 5]<br>   list.removeAll([6]) => list == [1, 5]</td>
 </tr>
 <tr>
-<td title="Collection" width="30%"id="Collection_removeAllSuchThat_1"><code><b>removeAllSuchThat</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes those elements that meet a given condition.<br>This is a side effect operation.<br>Supports empty collections.<br><br>Example:<br>		const list = [1, 6, 5]<br>    list.removeAllSuchThat { e => e.even() } => list == [1, 5]</td>
+<td title="Collection" width="30%"id="Collection_removeAllSuchThat_1"><code><b>removeAllSuchThat</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Removes those elements that meet a given condition.<br>This is a side effect operation.<br>Supports empty collections.<br><br>Example:<br>   const list = [1, 6, 5]<br>   list.removeAllSuchThat { e => e.even() } => list == [1, 5]</td>
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> subclasses implementations</td>
@@ -324,9 +335,6 @@
 </tr>
 <tr>
 <td title="Collection" width="30%"id="Collection_uniqueElement_0"><code><b>uniqueElement</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the unique element in the collection.<br>If collection is empty, an error is thrown.<br>If collection has more than one element, an error is thrown.<br><br>Example:<br>      [1].uniqueElement()    => Answers 1<br>      [].uniqueElement()     => Throws error, list must not be empty<br>      [1, 2].uniqueElement() => Throws error, list must have one element</td>
-</tr>
-<tr>
-<td title="Collection" width="30%"id="Collection_validateNotEmpty_1"><code><b>validateNotEmpty</b>(operation)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Throws error if self collection is empty</td>
 </tr>
 </tbody>
 </table></div>
@@ -355,29 +363,29 @@
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_add_1"><code><b>add</b>(element)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Adds the specified element to this set if it is not already present.<br><br>Example:<br>		const set = #{}<br>		set.add(3)   => set = #{3}<br>		set.add(2)   => set = #{2, 3}<br>		set.add(2)   => set = #{2, 3}, second add produces no effect</td>
+&nbsp;</td><td width="70%;">Adds the specified element to this set if it is not already present.<br><br>Example:<br>    const set = #{}<br>    set.add(3)   => set = #{3}<br>    set.add(2)   => set = #{2, 3}<br>    set.add(2)   => set = #{2, 3}, second add produces no effect</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_anyOne_0"><code><b>anyOne</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers any element of a non-empty collection<br><br>Examples<br>		#{1, 2, 3}.anyOne() => Answers 1, for example<br>		#{}.anyOne()        => Throws error, set must not be empty</td>
+&nbsp;</td><td width="70%;">Answers any element of a non-empty collection<br><br>Examples<br>   #{1, 2, 3}.anyOne() => Answers 1, for example<br>   #{}.anyOne()        => Throws error, set must not be empty</td>
 </tr>
 <tr>
-<td title="Set" width="30%"id="Set_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this set to a list.<br><br>Examples<br>		#{1, 2, 3}.asList() => Answers [1, 2, 3]<br>		#{}.asList()        => Answers []<br><br><b>see</b> List</td>
+<td title="Set" width="30%"id="Set_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this set to a list.<br><br>Examples<br>   #{1, 2, 3}.asList() => Answers [1, 2, 3]<br>   #{}.asList()        => Answers []<br><br><b>see</b> List</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br>Example:<br>		const set = #{2, 3}<br>		set.clear()         => set = #{}</td>
+&nbsp;</td><td width="70%;">Removes all of the elements from this set. This is a side effect operation.<br><br>Example:<br>    const set = #{2, 3}<br>    set.clear()         => set = #{}</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_contains_1"><code><b>contains</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
 &nbsp;</td><td width="70%;"><b>see</b> List#contains(other)</td>
 </tr>
 <tr>
-<td title="Set" width="30%"id="Set_difference_1"><code><b>difference</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of self that don't exist in another collection<br><br>Examples<br>		#{1, 2}.difference(#{5, 2}) => #{1}<br>		#{3}.difference(#{})        => #{3}<br><br><b>returns</b> a Set</td>
+<td title="Set" width="30%"id="Set_difference_1"><code><b>difference</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of self that don't exist in another collection<br><br>Examples<br>    #{1, 2}.difference(#{5, 2}) => #{1}<br>    #{3}.difference(#{})        => #{3}<br><br><b>returns</b> a Set</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Two sets are equals if they have the same elements<br><br>Examples:<br>		#{}.equals(#{})         => Answers true<br>     #{1, 2}.equals(#{2, 1}) => Answers true<br>     #{3, 2}.equals(#{2, 1}) => Answers false</td>
+&nbsp;</td><td width="70%;">Two sets are equals if they have the same elements, no matter<br>the order.<br><br>Examples:<br>    #{}.equals(#{})         => Answers true<br>    #{1, 2}.equals(#{2, 1}) => Answers true<br>    #{3, 2}.equals(#{2, 1}) => Answers false</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_filter_1"><code><b>filter</b>(closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -385,22 +393,22 @@
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_findOrElse_2"><code><b>findOrElse</b>(predicate, continuation)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Tries to find an element in a collection (based on a closure) or<br>applies a continuation closure.<br><br>Examples:<br>		#{1, 9, 3, 8}.findOrElse({ n => n.even() }, { 100 })  => Answers  8<br>		#{1, 5, 3, 7}.findOrElse({ n => n.even() }, { 100 })  => Answers  100</td>
+&nbsp;</td><td width="70%;">Tries to find an element in a collection (based on a closure) or<br>applies a continuation closure.<br><br>Examples:<br>    #{1, 9, 3, 8}.findOrElse({ n => n.even() }, { 100 })  => Answers  8<br>    #{1, 5, 3, 7}.findOrElse({ n => n.even() }, { 100 })  => Answers  100</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_fold_2"><code><b>fold</b>(initialValue, closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Reduce a collection to a certain value, beginning with a seed or initial value.<br><br>Examples<br>		#{1, 9, 3, 8}.fold(0, {acum, each => acum + each})<br>          => Answers 21, the sum of all elements<br><br>     #{}.fold(0, {acum, each => acum + each})<br>          => Answers 0, the seed.<br><br>		var numbers = #{3, 2, 9, 1, 7}<br>		numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) })<br>          => Answers 9, the maximum of all elements</td>
+&nbsp;</td><td width="70%;">Reduce a collection to a certain value, beginning with a seed or initial value.<br><br>Examples<br>    #{1, 9, 3, 8}.fold(0, {acum, each => acum + each})<br>          => Answers 21, the sum of all elements<br><br>     #{}.fold(0, {acum, each => acum + each})<br>          => Answers 0, the seed.<br><br>    var numbers = #{3, 2, 9, 1, 7}<br>    numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) })<br>          => Answers 9, the maximum of all elements</td>
 </tr>
 <tr>
-<td title="Set" width="30%"id="Set_intersection_1"><code><b>intersection</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of self that exist in another collection<br><br>Examples<br>		#{1, 2}.intersection(#{5, 2})   => #{2}<br>		#{}.intersection(#{3})          => #{}<br><br><b>returns</b> a Set</td>
+<td title="Set" width="30%"id="Set_intersection_1"><code><b>intersection</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of self that exist in another collection<br><br>Examples<br>    #{1, 2}.intersection(#{5, 2})   => #{2}<br>    #{}.intersection(#{3})          => #{}<br><br><b>returns</b> a Set</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_join_1"><code><b>join</b>(separator)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>		#{1, 5, 3, 7}.join(":")                   => Answers "1:5:3:7"<br>		#{"you","will","love","wollok"}.join(" ") => Answers "love will wollok you"<br>     #{}.join(",")                             => Answers ""</td>
+&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>    #{1, 5, 3, 7}.join(":")                   => Answers "1:5:3:7"<br>    #{"you","will","love","wollok"}.join(" ") => Answers "love will wollok you"<br>    #{}.join(",")                             => Answers ""</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_join_0"><code><b>join</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")<br><br>Example:<br>		#{"you","will","love","wollok"}.join()    => Answers "love,will,wollok,you"</td>
+&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set<br>with default element separator (",")<br><br>Example:<br>    #{"you","will","love","wollok"}.join()    => Answers "love,will,wollok,you"</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_max_0"><code><b>max</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -408,14 +416,14 @@
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_remove_1"><code><b>remove</b>(element)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Removes the specified element from this set if it is present.<br><br>Example:<br>		const set = #{2, 3}<br>		set.remove(3) => set = #{2}<br>		set.remove(4) => set = #{2}, remove operation produces no effect</td>
+&nbsp;</td><td width="70%;">Removes the specified element from this set if it is present.<br><br>Example:<br>    const set = #{2, 3}<br>    set.remove(3) => set = #{2}<br>    set.remove(4) => set = #{2}, remove operation produces no effect</td>
 </tr>
 <tr>
 <td title="Set" width="30%"id="Set_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the number of elements in this set (its cardinality).<br><br>Example:<br>		#{2, 3}.size()   => Answers 2<br>		#{}.size()       => Answers 0</td>
+&nbsp;</td><td width="70%;">Answers the number of elements in this set (its cardinality).<br><br>Example:<br>    #{2, 3}.size()   => Answers 2<br>    #{}.size()       => Answers 0</td>
 </tr>
 <tr>
-<td title="Set" width="30%"id="Set_union_1"><code><b>union</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of both self and another collection.<br><br>Examples<br>		#{1, 2}.union(#{5, 2})   => #{1, 2, 5}<br>		#{}.union(#{3})          => #{3}<br><br><b>returns</b> a Set</td>
+<td title="Set" width="30%"id="Set_union_1"><code><b>union</b>(another)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new Set with the elements of both self and another collection.<br><br>Examples<br>    #{1, 2}.union(#{5, 2})   => #{1, 2, 5}<br>    #{}.union(#{3})          => #{3}<br><br><b>returns</b> a Set</td>
 </tr>
 </tbody>
 </table></div>
@@ -450,7 +458,6 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_uniqueElement_0')"><code>uniqueElement()</code></a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
 
@@ -475,28 +482,28 @@
 <tbody>
 <tr>
 <td title="List" width="30%"id="List_==_1"><code><b>==</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">A list is == another list if all elements are equal (defined by == message)<br><br><br>Examples:<br>		[] == []         => Answers true<br>     [1, 2] == [2, 1] => Answers false<br>     [1, 2] == [1, 2] => Answers true</td>
+&nbsp;</td><td width="70%;">A list is == another list if all elements are equal (defined by == message)<br><br><br>Examples:<br>    [] == []         => Answers true<br>    [1, 2] == [2, 1] => Answers false<br>    [1, 2] == [1, 2] => Answers true</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_add_1"><code><b>add</b>(element)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Adds the specified element as last one<br><br>Example:<br>		const list = []<br>		list.add(3)   => list = [3]<br>		list.add(2)   => list = [3, 2]<br>		list.add(2)   => list = [3, 2, 2]</td>
+&nbsp;</td><td width="70%;">Adds the specified element as last one<br><br>Example:<br>    const list = []<br>    list.add(3)   => list = [3]<br>    list.add(2)   => list = [3, 2]<br>    list.add(2)   => list = [3, 2, 2]</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_anyOne_0"><code><b>anyOne</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers any element of a non-empty collection.<br><br>Examples<br>		#[1, 2, 3].anyOne() => Answers 3, for example<br>		#[].anyOne()        => Throws error, list must not be empty</td>
+<td title="List" width="30%"id="List_anyOne_0"><code><b>anyOne</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers any element of a non-empty collection.<br><br>Examples<br>   #[1, 2, 3].anyOne() => Answers 3, for example<br>   #[].anyOne()        => Throws error, list must not be empty</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_asList_0"><code><b>asList</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Converts this collection to a list. No effect on Lists.<br><br><b>see</b> List</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_clear_0"><code><b>clear</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Removes all of the mappings from this Dictionary.<br>This is a side effect operation.<br><br>Example:<br>		const list = [2, 3]<br>		list.clear()     => list = []</td>
+&nbsp;</td><td width="70%;">Removes all of the mappings from this Dictionary.<br>This is a side effect operation.<br><br>Example:<br>    const list = [2, 3]<br>    list.clear()     => list = []</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_contains_1"><code><b>contains</b>(obj)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
 &nbsp;</td><td width="70%;"><b>see</b> Collection#contains(obj)</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_drop_1"><code><b>drop</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new list dropping first n elements of a list.<br>This operation has no side effect.<br><br>Examples:<br>		[1, 9, 2, 3].drop(3)  ==> Answers [3]<br>		[1, 9, 2, 3].drop(1)  ==> Answers [9, 2, 3]<br>		[1, 9, 2, 3].drop(-2) ==> Answers [1, 9, 2, 3]<br>     [].drop(2)            ==> Answers []</td>
+<td title="List" width="30%"id="List_drop_1"><code><b>drop</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new list dropping first n elements of a list.<br>This operation has no side effect.<br><br>Examples:<br>    [1, 9, 2, 3].drop(3)  ==> Answers [3]<br>    [1, 9, 2, 3].drop(1)  ==> Answers [9, 2, 3]<br>    [1, 9, 2, 3].drop(-2) ==> Answers [1, 9, 2, 3]<br>    [].drop(2)            ==> Answers []</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_equals_1"><code><b>equals</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -508,32 +515,32 @@
 </tr>
 <tr>
 <td title="List" width="30%"id="List_findOrElse_2"><code><b>findOrElse</b>(predicate, continuation)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Finds the first element matching the boolean closure,<br>or evaluates the continuation block closure if no element is found<br><br>Examples:<br>		[1, 9, 3, 8].findOrElse({ n => n.even() }, { 100 })  => Answers  8<br>		[1, 5, 3, 7].findOrElse({ n => n.even() }, { 100 })  => Answers  100</td>
+&nbsp;</td><td width="70%;">Finds the first element matching the boolean closure,<br>or evaluates the continuation block closure if no element is found<br><br>Examples:<br>    [1, 9, 3, 8].findOrElse({ n => n.even() }, { 100 })  => Answers  8<br>    [1, 5, 3, 7].findOrElse({ n => n.even() }, { 100 })  => Answers  100</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_first_0"><code><b>first</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers first element of the non-empty list<br><br><b>returns</b> first element<br><br>Example:<br>		[1, 2, 3, 4].first()  => Answers 1<br>     [].first()            => Throws error, list must not be empty</td>
+<td title="List" width="30%"id="List_first_0"><code><b>first</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers first element of the non-empty list<br><br><b>returns</b> first element<br><br>Example:<br>   [1, 2, 3, 4].first()  => Answers 1<br>   [].first()            => Throws error, list must not be empty</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_fold_2"><code><b>fold</b>(initialValue, closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Reduce a collection to a certain value, beginning with a seed or initial value<br><br>Examples<br>		#{1, 9, 3, 8}.fold(0, {acum, each => acum + each})<br>          => Answers 21, the sum of all elements<br><br>     [].fold(0, {acum, each => acum + each})<br>          => Answers 0, the seed.<br><br>		var numbers = #{3, 2, 9, 1, 7}<br>		numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) })<br>          => Answers 9, the maximum of all elements</td>
+&nbsp;</td><td width="70%;">Reduce a collection to a certain value, beginning with a seed or initial value<br><br>Examples<br>    #{1, 9, 3, 8}.fold(0, {acum, each => acum + each})<br>          => Answers 21, the sum of all elements<br><br>     [].fold(0, {acum, each => acum + each})<br>          => Answers 0, the seed.<br><br>    const numbers = #{3, 2, 9, 1, 7}<br>    numbers.fold(numbers.anyOne(), { acum, number => acum.max(number) })<br>          => Answers 9, the maximum of all elements</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_get_1"><code><b>get</b>(index)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the element at the specified position in this non-empty list.<br><br>The first char value of the sequence is at index 0,<br>the next at index 1, and so on, as for array indexing.<br>Index must be a positive and integer value.<br><br>Examples:<br>		[].get(0)        => Throws error, list must not be empty<br>		[1].get(-1)      => Throws error, index must be 0 or positive<br>		[1, 2, 3].get(3) => Throws error, index exceeds list size<br>     [5, 2, 7].get(0) => Answers 5</td>
+&nbsp;</td><td width="70%;">Answers the element at the specified position in this non-empty list.<br><br>The first char value of the sequence is at index 0,<br>the next at index 1, and so on, as for array indexing.<br>Index must be a positive and integer value.<br><br>Examples:<br>    [].get(0)        => Throws error, list must not be empty<br>    [1].get(-1)      => Throws error, index must be 0 or positive<br>    [1, 2, 3].get(3) => Throws error, index exceeds list size<br>    [5, 2, 7].get(0) => Answers 5</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_head_0"><code><b>head</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Synonym for first method</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_join_1"><code><b>join</b>(separator)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>		[1, 5, 3, 7].join(":") => Answers "1:5:3:7"<br>		["you","will","love","wollok"].join(" ") => Answers "you will love wollok"</td>
+&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set.<br>You can pass an optional character as an element separator (default is ",")<br><br>Examples:<br>    [1, 5, 3, 7].join(":") => Answers "1:5:3:7"<br>    ["you","will","love","wollok"].join(" ") => Answers "you will love wollok"</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_join_0"><code><b>join</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set,<br>using default element separator (",")<br><br>Examples:<br>		["you","will","love","wollok"].join()    => Answers "you,will,love,wollok"</td>
+&nbsp;</td><td width="70%;">Answers the concatenated string representation of the elements in the given set,<br>using default element separator (",")<br><br>Examples:<br>    ["you","will","love","wollok"].join()    => Answers "you,will,love,wollok"</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_last_0"><code><b>last</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the last element of the non-empty list.<br><br><b>returns</b> last element<br><br>Examples:<br>		[1, 2, 3, 4].last()  => Answers 4<br>     [].last()            => Throws error, list must not be empty</td>
+<td title="List" width="30%"id="List_last_0"><code><b>last</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the last element of the non-empty list.<br><br><b>returns</b> last element<br><br>Examples:<br>   [1, 2, 3, 4].last()  => Answers 4<br>   [].last()            => Throws error, list must not be empty</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_max_0"><code><b>max</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -544,24 +551,27 @@
 </tr>
 <tr>
 <td title="List" width="30%"id="List_remove_1"><code><b>remove</b>(element)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Removes an element in this list, if it is present.<br><br>Example:<br>		const list = [2, 3]<br>		list.remove(3) => list = [2]<br>		list.remove(4) => list = [2], remove operation produces no effect</td>
+&nbsp;</td><td width="70%;">Removes an element in this list, if it is present.<br><br>Example:<br>    const list = [2, 3]<br>    list.remove(3) => list = [2]<br>    list.remove(4) => list = [2], remove operation produces no effect</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_reverse_0"><code><b>reverse</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new list reversing the elements,<br>so that first element becomes last element of the new list and so on.<br>This operation has no side effect.<br><br>Example:<br> 	[1, 9, 2, 3].reverse()  ==> Answers [3, 2, 9, 1]<br>     [1, 2].reverse()        ==> Answers [2, 1]<br>     [].reverse()            ==> Answers []</td>
+<td title="List" width="30%"id="List_reverse_0"><code><b>reverse</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new list reversing the elements,<br>so that first element becomes last element of the new list and so on.<br>This operation has no side effect.<br><br>Example:<br>   [1, 9, 2, 3].reverse()  ==> Answers [3, 2, 9, 1]<br>   [1, 2].reverse()        ==> Answers [2, 1]<br>   [].reverse()            ==> Answers []</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the number of elements<br><br>Example:<br>		[2, 3].size()   => Answers 2<br>		[].size()       => Answers 0</td>
+&nbsp;</td><td width="70%;">Answers the number of elements<br><br>Example:<br>    [2, 3].size()   => Answers 2<br>    [].size()       => Answers 0</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_sortBy_1"><code><b>sortBy</b>(closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Sorts elements of a list by a specific closure.<br>Order of elements is modified (produces effect).<br><br>Examples:<br>		const list = [2, 9, 3]<br>     list.sortBy { el1, el2 => el1 > el2 }<br>		list.get(0)           => Answers 9<br><br><b>see</b> List#sortedBy</td>
+&nbsp;</td><td width="70%;">Sorts elements of a list by a specific closure.<br>Order of elements is modified (produces effect).<br><br>Examples:<br>   const list = [2, 9, 3]<br>   list.sortBy { el1, el2 => el1 > el2 }<br>   list.get(0)            => Answers 9<br><br><b>see</b> List#sortedBy</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_subList_2"><code><b>subList</b>(start, end)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a view of the portion of this list between the specified fromIndex<br>and toIndex, both inclusive. Remember first element is position 0,<br>second is position 1, and so on.<br>If toIndex exceeds length of list, no error is thrown.<br><br>Example:<br>		[1, 5, 3, 2, 7, 9].subList(2, 3) => Answers [3, 2]<br>		[1, 5, 3, 2, 7, 9].subList(4, 6) => Answers [7, 9]<br>     [].subList(1, 2)                 => Answers []</td>
+<td title="List" width="30%"id="List_subList_1"><code><b>subList</b>(start)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a view of the portion of this list between the specified start index<br>and the end of the list. Remember first element is position 0,<br>second is position 1, and so on.<br>If toIndex exceeds length of list, no error is thrown.<br><br>Example:<br>   [1, 5, 3, 2, 7, 9].subList(2) => Answers [3, 2, 7, 9]<br>   [1, 5, 3, 2, 7, 9].subList(4) => Answers [7, 9]<br>   [].subList(1)                 => Answers []</td>
 </tr>
 <tr>
-<td title="List" width="30%"id="List_take_1"><code><b>take</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Takes first n elements of a list.<br><br>Examples:<br>		[1,9,2,3].take(5)  ==> Answers [1, 9, 2, 3]<br> 	[1,9,2,3].take(2)  ==> Answers [1, 9]<br> 	[1,9,2,3].take(-2) ==> Answers []<br>     [].take(2)         ==> Answers []</td>
+<td title="List" width="30%"id="List_subList_2"><code><b>subList</b>(start, end)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a view of the portion of this list between the specified fromIndex<br>and toIndex, both inclusive. Remember first element is position 0,<br>second is position 1, and so on.<br>If toIndex exceeds length of list, no error is thrown.<br><br>Example:<br>   [1, 5, 3, 2, 7, 9].subList(2, 3) => Answers [3, 2]<br>   [1, 5, 3, 2, 7, 9].subList(4, 6) => Answers [7, 9]<br>   [].subList(1, 2)                 => Answers []</td>
+</tr>
+<tr>
+<td title="List" width="30%"id="List_take_1"><code><b>take</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Takes first n elements of a list.<br><br>Examples:<br>   [1,9,2,3].take(5)  ==> Answers [1, 9, 2, 3]<br>   [1,9,2,3].take(2)  ==> Answers [1, 9]<br>   [1,9,2,3].take(-2) ==> Answers []<br>   [].take(2)         ==> Answers []</td>
 </tr>
 <tr>
 <td title="List" width="30%"id="List_withoutDuplicates_0"><code><b>withoutDuplicates</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -600,7 +610,6 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_0')"><code>sum()</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_sum_1')"><code>sum(closure)</code></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_uniqueElement_0')"><code>uniqueElement()</code></a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:selectFile('lang', 'Collection_validateNotEmpty_1')"><code>validateNotEmpty(operation)</code></a>
     </p>
 </div>
 
@@ -638,13 +647,17 @@
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_forEach_1"><code><b>forEach</b>(closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Performs the given action for each entry in this Dictionary<br>until all entries have been processed or the action throws an exception.<br><br>Expected closure with two parameters: the first associated with key and<br>second with value.<br><br>Example:<br>		mapaTelefonos.forEach({ k, v => result += k.size() + v.size() })</td>
+&nbsp;</td><td width="70%;">Performs the given action for each entry in this Dictionary<br>until all entries have been processed or the action throws an exception.<br><br>Expected closure with two parameters: the first associated with key and<br>second with value.<br><br>Example:<br>    mapaTelefonos.forEach({ k, v => result += k.size() + v.size() })</td>
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_get_1"><code><b>get</b>(_key)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the value to which the specified key is mapped.<br>If this Dictionary contains no mapping for the key, an error is thrown.<br><br>Example, assuming phones is the dictionary created in put example:<br>    phones.get("4004-4004")  => Answers rolo<br>    phones.get("4004-4005")  => Throws ElementNotFoundException</td>
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_getOrElse_2"><code><b>getOrElse</b>(_key, _closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the value to which the specified key is mapped,<br>or evaluates a non-parameter closure otherwise.<br><br>Example, assuming phones is the dictionary created in put example:<br>    phones.getOrElse("4004-4004", { 0 })  => Answers rolo<br>    phones.getOrElse("4004-4005", { 0 })  => Answers 0</td>
+</tr>
+<tr>
+<td title="Dictionary" width="30%"id="Dictionary_initialize_0"><code><b>initialize</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
 <td title="Dictionary" width="30%"id="Dictionary_isEmpty_0"><code><b>isEmpty</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether the dictionary has no elements<br><br>Example, assuming phones is the dictionary created in put example:<br>    phones.isEmpty()           => Answers false<br>    new Dictionary().isEmpty() => Answers true</td>
@@ -698,7 +711,7 @@
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_**_1"><code><b>**</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">raisedTo operation<br><br>Example:<br>     3.2 ** 2 ==> Answers 10.24<br>		3 ** 2 ==> Answers 9</td>
+&nbsp;</td><td width="70%;">raisedTo operation<br><br>Example:<br>    3.2 ** 2 ==> Answers 10.24<br>    3 ** 2   ==> Answers 9</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_+_1"><code><b>+</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -709,7 +722,7 @@
 &nbsp;</td><td width="70%;"></td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_.._1"><code><b>..</b>(end)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>		1..4   		Answers ==> a new Range object from 1 to 4</td>
+<td title="Number" width="30%"id="Number_.._1"><code><b>..</b>(end)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Builds a Range between self and end<br><br>Example:<br>    1..4       Answers ==> a new Range object from 1 to 4</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_/_1"><code><b>/</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -735,47 +748,46 @@
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_abs_0"><code><b>abs</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers absolute value of self<br><br>Example:<br>		2.abs() ==> 2<br>		(-3).abs() ==> 3 (be careful with parentheses)<br>		2.7.abs() ==> Answers 2.7<br>		(-3.2).abs() ==> Answers 3.2 (be careful with parentheses)</td>
+&nbsp;</td><td width="70%;">Answers absolute value of self<br><br>Example:<br>    2.abs()      ==> 2<br>    (-3).abs()   ==> 3 (be careful with parentheses)<br>    2.7.abs()    ==> Answers 2.7<br>    (-3.2).abs() ==> Answers 3.2 (be careful with parentheses)</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_between_2"><code><b>between</b>(min, max)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether self is between min and max<br><br>Example:<br>    2.between(2, 3) ==> Answers true<br>    6.between(4, 6) ==> Answers true<br>    3.between(4, 6) ==> Answers false</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_digits_0"><code><b>digits</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Number of digits of self (without sign)<br><br>Examples:<br>    600.digits()  ==> Answers 3<br>    6.00012.digits() ==> Answers 6<br>    -100.digits() ==> Answers -3</td>
+<td title="Number" width="30%"id="Number_digits_0"><code><b>digits</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Number of digits of self (without sign)<br><br>Examples:<br>    600.digits()     ==> Answers 3<br>    6.00012.digits() ==> Answers 6<br>    -100.digits()    ==> Answers -3</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_div_1"><code><b>div</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Integer division between self and other<br><br>Example:<br>		8.div(3)  ==> Answers 2<br>		15.div(5) ==> Answers 3<br>		8.2.div(3.3)  ==> Answers 2</td>
+<td title="Number" width="30%"id="Number_div_1"><code><b>div</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Integer division between self and other<br><br>Example:<br>   8.div(3)      ==> Answers 2<br>   15.div(5)     ==> Answers 3<br>   8.2.div(3.3)  ==> Answers 2</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_even_0"><code><b>even</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether self is an even number<br>(divisible by 2, mathematically 2k).<br><br>Self must be an integer value</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_gcd_1"><code><b>gcd</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">greater common divisor.<br>Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>		8.gcd(12) ==> Answers 4<br>		5.gcd(10) ==> Answers 5</td>
+&nbsp;</td><td width="70%;">greater common divisor.<br>Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>    8.gcd(12) ==> Answers 4<br>    5.gcd(10) ==> Answers 5</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_invert_0"><code><b>invert</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Inverts sign of self<br><br>Example:<br>		3.invert() ==> Answers -3<br>		(-2).invert() ==> Answers 2 (be careful with parentheses)<br>		3.2.invert() ==> -3.2<br>		(-2.4).invert() ==> 2.4 (be careful with parentheses)</td>
+&nbsp;</td><td width="70%;">Inverts sign of self<br><br>Example:<br>    3.invert()      ==> Answers -3<br>    (-2).invert()   ==> Answers 2 (be careful with parentheses)<br>    3.2.invert()    ==> -3.2<br>    (-2.4).invert() ==> 2.4 (be careful with parentheses)</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_isInteger_0"><code><b>isInteger</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Tells if this number can be considered an integer number.<br><br>Examples:<br>    2.isInteger() ==> Answers true<br>    (2.0).isInteger() ==> Answers true<br>    (2.3).isInteger() ==> Answers false<br><br>This could depend also on the rounding strategy, for example:<br>    (2.0001).isInteger() ==> Answers false if rounding strategy is set to 5 decimal places (default)<br>    (2.0001).isInteger() ==> Answers true if rounding strategy is set to 3 decimal places</td>
+&nbsp;</td><td width="70%;">Tells if this number can be considered an integer number.<br><br>Examples:<br>    2.isInteger()     ==> Answers true<br>    (2.0).isInteger() ==> Answers true<br>    (2.3).isInteger() ==> Answers false<br><br>This could depend also on the rounding strategy, for example:<br>    (2.0001).isInteger() ==> Answers false if rounding strategy is set to 5 decimal places (default)<br>    (2.0001).isInteger() ==> Answers true if rounding strategy is set to 3 decimal places</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_isPrime_0"><code><b>isPrime</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether self is a prime number,<br>like 2, 3, 5, 7, 11 ...<br>Self must be an integer positive value</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_lcm_1"><code><b>lcm</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">least common multiple.<br>Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>		3.lcm(4) ==> Answers 12<br>		6.lcm(12) ==> Answers 12</td>
+<td title="Number" width="30%"id="Number_lcm_1"><code><b>lcm</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">least common multiple.<br>Both self and "other" parameter are coerced to be integer values.<br><br>Example:<br>    3.lcm(4)  ==> Answers 12<br>    6.lcm(12) ==> Answers 12</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_limitBetween_2"><code><b>limitBetween</b>(limitA, limitB)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Given self and a range of integer values,<br>answers self if it is in that range<br>or nearest value from self to that range<br><br>Examples<br>4.limitBetween(2, 10) ==> Answers 4, because 4 is in the range<br>4.limitBetween(6, 10) ==> Answers 6, because 4 is not in range 6..10, and 6 is nearest value to 4<br>4.limitBetween(1, 2)  ==> Answers 2, because 4 is not in range 1..2, but 2 is nearest value to 4</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_max_1"><code><b>max</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the greater number between two<br>Example:<br>		5.max(8)    ==> Answers 8</td>
+<td title="Number" width="30%"id="Number_max_1"><code><b>max</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the greater number between two<br><br>Example:<br>    5.max(8)    ==> Answers 8</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_min_1"><code><b>min</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the lower number between two. <b>see</b> max<br>Example:<br>    5.min(8)    ==> Answers 5</td>
+<td title="Number" width="30%"id="Number_min_1"><code><b>min</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the lower number between two. <b>see</b> max<br><br>Example:<br>    5.min(8)    ==> Answers 5</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_odd_0"><code><b>odd</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether self is an odd number<br>(not divisible by 2, mathematically 2k + 1).<br><br>Self must be an integer value</td>
@@ -788,26 +800,26 @@
 &nbsp;</td><td width="70%;">Answers a random number between self and max</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_rem_1"><code><b>rem</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers remainder between self and other<br><br>Example:<br>    5.rem(3) 	==> Answers 2<br>    5.5.rem(3) 	==> Answers 2</td>
+<td title="Number" width="30%"id="Number_rem_1"><code><b>rem</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers remainder between self and other<br><br>Example:<br>    5.rem(3)   ==> Answers 2<br>    5.5.rem(3) ==> Answers 2</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_roundUp_1"><code><b>roundUp</b>(_decimals)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Rounds up self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>Example:<br>    1.223445.roundUp(3) ==> 1.224<br>    -1.223445.roundUp(3) ==> -1.224<br>    14.6165.roundUp(3) ==> 14.617<br>    5.roundUp(3) ==> 5</td>
+&nbsp;</td><td width="70%;">Rounds up self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>Example:<br>    1.223445.roundUp(3)  ==> 1.224<br>    -1.223445.roundUp(3) ==> -1.224<br>    14.6165.roundUp(3)   ==> 14.617<br>    5.roundUp(3)         ==> 5</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_roundUp_0"><code><b>roundUp</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the next integer greater than self<br>13.224.roundUp() ==> 14<br>-13.224.roundUp() ==> -14<br>15.942.roundUp() ==> 16</td>
+<td title="Number" width="30%"id="Number_roundUp_0"><code><b>roundUp</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the next integer greater than self<br><br>Example:<br>    13.224.roundUp()  ==> 14<br>    -13.224.roundUp() ==> -14<br>    15.942.roundUp()  ==> 16</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_square_0"><code><b>square</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers square of self<br><br>Example:<br>		3.square() => Answers 9</td>
+<td title="Number" width="30%"id="Number_square_0"><code><b>square</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers square of self<br><br>Example:<br>    3.square() => Answers 9</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_squareRoot_0"><code><b>squareRoot</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers squareRoot of self<br><br>Example:<br>		9.squareRoot() => Answers 3</td>
+<td title="Number" width="30%"id="Number_squareRoot_0"><code><b>squareRoot</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers squareRoot of self<br><br>Example:<br>    9.squareRoot() => Answers 3</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_stringValue_0"><code><b>stringValue</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Self as String value. Equivalent: toString()</td>
 </tr>
 <tr>
-<td title="Number" width="30%"id="Number_times_1"><code><b>times</b>(action)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Executes the given action n times (n = self)<br><br>Self must be a positive integer value.<br>The closure must have one argument (index goes from 1 to self)<br><br>Example:<br>		4.times({ i => console.println(i) }) ==> Answers<br>			1<br>			2<br>			3<br>			4</td>
+<td title="Number" width="30%"id="Number_times_1"><code><b>times</b>(action)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Executes the given action n times (n = self)<br><br>Self must be a positive integer value.<br>The closure must have one argument (index goes from 1 to self)<br><br>Example:<br>    4.times({ i => console.println(i) }) ==> Answers<br>      1<br>      2<br>      3<br>      4</td>
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_toString_0"><code><b>toString</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -815,7 +827,7 @@
 </tr>
 <tr>
 <td title="Number" width="30%"id="Number_truncate_1"><code><b>truncate</b>(_decimals)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Truncates self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>Example:<br>    1.223445.truncate(3) ==> 1.223<br>    14.6165.truncate(3) ==> 14.616<br>    -14.6165.truncate(3) ==> -14.616<br>    5.truncate(3) ==> 5</td>
+&nbsp;</td><td width="70%;">Truncates self up to a certain amount of decimals.<br>Amount of decimals must be a positive and integer value.<br><br>Example:<br>    1.223445.truncate(3) ==> 1.223<br>    14.6165.truncate(3)  ==> 14.616<br>    -14.6165.truncate(3) ==> -14.616<br>    5.truncate(3)        ==> 5</td>
 </tr>
 </tbody>
 </table></div>
@@ -835,8 +847,7 @@
 </thread>
 <tbody>
 <tr>
-<td title="String" width="30%"id="String_+_1"><code><b>+</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Concatenates the specified string to the end of this string.<br>Example:<br>		"cares" + "s" => Answers "caress"</td>
+<td title="String" width="30%"id="String_+_1"><code><b>+</b>(other)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Concatenates the specified string to the end of this string.<br>Example:<br>    "cares" + "s" => Answers "caress"</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_<_1"><code><b><</b>(aString)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -860,12 +871,15 @@
 <td title="String" width="30%"id="String_capitalize_0"><code><b>capitalize</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Changes the first letter of every word to<br>upper case in this string.<br><br>Example:<br>     "javier fernandes".capitalize() ==> Answers "Javier Fernandes"</td>
 </tr>
 <tr>
-<td title="String" width="30%"id="String_charAt_1"><code><b>charAt</b>(index)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the char value at the specified index. An index ranges<br>from 0 to length() - 1. The first char value of the sequence is<br>at index 0, the next at index 1, and so on, as for array indexing.<br>Parameter index must be a positive integer value.</td>
+<td title="String" width="30%"id="String_charAt_1"><code><b>charAt</b>(index)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the char value at the specified index. An index ranges<br>from 0 to length() - 1. The first char value of the sequence is<br>at index 0, the next at index 1, and so on, as for array indexing.<br>Parameter index must be a positive integer value.</td>
+</tr>
+<tr>
+<td title="String" width="30%"id="String_concat_1"><code><b>concat</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
+&nbsp;</td><td width="70%;">Concatenates the specified string to the end of this string. Same as +.<br>Example:<br>    "cares".concat("s") => Answers "caress"</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_contains_1"><code><b>contains</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers whether this string contains the specified sequence of char values.<br>It is a case sensitive test.<br><br>Examples:<br>		"unusual".contains("usual")  ==> Answers true<br>		"become".contains("CO")      ==> Answers false</td>
+&nbsp;</td><td width="70%;">Answers whether this string contains the specified sequence of char values.<br>It is a case sensitive test.<br><br>Examples:<br>    "unusual".contains("usual")  ==> Answers true<br>    "become".contains("CO")      ==> Answers false</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_drop_1"><code><b>drop</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers a new string dropping<br>first n characters of this string.<br>n must be zero-positive integer.<br><br>Examples:<br>     "caption".drop(4)    ==> Answers "ion"<br>     "caption".drop(0)    ==> Answers "caption"<br>     "caption".drop(-1)   ==> Throws error<br>     "".drop(2)           ==> Answers ""</td>
@@ -875,18 +889,18 @@
 &nbsp;</td><td width="70%;">Tests if this string ends with the specified suffix.<br>It is case sensitive.<br><b>see</b> startsWith</td>
 </tr>
 <tr>
-<td title="String" width="30%"id="String_equalsIgnoreCase_1"><code><b>equalsIgnoreCase</b>(aString)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Compares this String to another String, ignoring case considerations.<br><br>Example:<br>		"WoRD".equalsIgnoreCase("Word")  ==> Answers true</td>
+<td title="String" width="30%"id="String_equalsIgnoreCase_1"><code><b>equalsIgnoreCase</b>(aString)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Compares this String to another String, ignoring case considerations.<br><br>Example:<br>   "WoRD".equalsIgnoreCase("Word")  ==> Answers true</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_indexOf_1"><code><b>indexOf</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the index within this string of the first occurrence<br>of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>		"pototo".indexOf("o")  ==> Answers 1<br>		"unpredictable".indexOf("o")  ==> Answers -1</td>
+&nbsp;</td><td width="70%;">Answers the index within this string of the first occurrence<br>of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>    "pototo".indexOf("o")         ==> Answers 1<br>    "unpredictable".indexOf("o")  ==> Answers -1</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_isEmpty_0"><code><b>isEmpty</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers whether this string has no characters</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_lastIndexOf_1"><code><b>lastIndexOf</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the index within this string of the last<br>occurrence of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>		"pototo".lastIndexOf("o")  ==> Answers 5<br>		"unpredictable".lastIndexOf("o")  ==> Answers -1</td>
+&nbsp;</td><td width="70%;">Answers the index within this string of the last<br>occurrence of the specified character.<br>If character is not present, Answers -1<br><br>Examples:<br>    "pototo".lastIndexOf("o")         ==> Answers 5<br>    "unpredictable".lastIndexOf("o")  ==> Answers -1</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_length_0"><code><b>length</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -897,29 +911,29 @@
 </tr>
 <tr>
 <td title="String" width="30%"id="String_replace_2"><code><b>replace</b>(expression, replacement)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a string resulting from replacing all occurrences of<br>expression in this string with replacement<br><br>Example:<br>		 "stupid is what stupid does".replace("stupid", "genius")<br>          ==> Answers "genius is what genius does"</td>
+&nbsp;</td><td width="70%;">Answers a string resulting from replacing all occurrences of<br>expression in this string with replacement<br><br>Example:<br>    "stupid is what stupid does".replace("stupid", "genius")<br>          ==> Answers "genius is what genius does"</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_reverse_0"><code><b>reverse</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a string reversing this string,<br>so that first character becomes last character of the new string and so on.<br><br>Example:<br>		"hola".reverse()  ==> "aloh"</td>
+&nbsp;</td><td width="70%;">Answers a string reversing this string,<br>so that first character becomes last character of the new string and so on.<br><br>Example:<br>    "hola".reverse()  ==> "aloh"</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">A synonym for length</td>
 </tr>
 <tr>
-<td title="String" width="30%"id="String_split_1"><code><b>split</b>(expression)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Splits this string around matches of the given string.<br>Answers a list of strings.<br><br>Example:<br>		"this,could,be,a,list".split(",")<br>         ==> Answers ["this", "could", "be", "a", "list"]</td>
+<td title="String" width="30%"id="String_split_1"><code><b>split</b>(expression)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Splits this string around matches of the given string.<br>Answers a list of strings.<br><br>Example:<br>    "this,could,be,a,list".split(",")<br>         ==> Answers ["this", "could", "be", "a", "list"]<br>    "Esto Es una prueba".split(" ")<br>         ==> Answers ["Esto", "Es", "una", "prueba"]<br>    "Esto Es una".split("")<br>         ==> Answers ["E","s","t","o"," ","E","s"," ","u","n","a"] , splitting into a character list<br>    "Esto Es una".split("|")<br>         ==> Answers ["Esto Es una"], the same original string<br>    "texto de prueba".split("texto de prueba")<br>         ==> Answers ["",""]<br>    "a,b,,c,".split(",")<br>         ==> Answers ["a", "b", "", "c", ""]<br>    "texto de prueba".split("de")<br>         ==> Answers ["texto ", " prueba"]<br>    "aaaa".split("aa")<br>         ==> Answers ["", "", ""]</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_startsWith_1"><code><b>startsWith</b>(other)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Tests if this string starts with the specified prefix.<br>It is case sensitive.<br><br>Examples:<br>		"mother".startsWith("moth")  ==> Answers true<br>     "mother".startsWith("Moth")  ==> Answers false</td>
+&nbsp;</td><td width="70%;">Tests if this string starts with the specified prefix.<br>It is case sensitive.<br><br>Examples:<br>    "mother".startsWith("moth")  ==> Answers true<br>    "mother".startsWith("Moth")  ==> Answers false</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_substring_1"><code><b>substring</b>(index)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a substring of this string beginning from<br>an inclusive index. Parameter index must be a positive<br>integer value.<br><br>Examples:<br>		"substitute".substring(6)  ==> Answers "tute", second "t" is in position 6<br>		"effect".substring(0)      ==> Answers "effect", has no effect at all</td>
+&nbsp;</td><td width="70%;">Answers a substring of this string beginning from<br>an inclusive index. Parameter index must be a positive<br>integer value.<br><br>Examples:<br>    "substitute".substring(6)  ==> Answers "tute", second "t" is in position 6<br>    "effect".substring(0)      ==> Answers "effect", has no effect at all</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_substring_2"><code><b>substring</b>(startIndex, length)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a substring of this string beginning<br>from an inclusive index up to another inclusive index<br><br>Examples:<br>		"walking".substring(2, 4)   ==> Answers "lk"<br>		"walking".substring(3, 5)   ==> Answers "ki"<br>		"walking".substring(0, 5)	==> Answers "walki"<br>		"walking".substring(0, 45)	==> throws an out of range exception</td>
+&nbsp;</td><td width="70%;">Answers a substring of this string beginning<br>from an inclusive index up to another inclusive index<br><br>Examples:<br>    "walking".substring(2, 4)   ==> Answers "lk"<br>    "walking".substring(3, 5)   ==> Answers "ki"<br>    "walking".substring(0, 5)   ==> Answers "walki"<br>    "walking".substring(0, 45)  ==> throws an out of range exception</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_take_1"><code><b>take</b>(n)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Takes first n characters of this string.<br>n must be zero-positive integer.<br><br>Examples:<br>    "lowercase".take(3)  ==> Answers "low"<br>    "lowercase".take(0)  ==> Answers ""<br>    "lowercase".take(-1) ==> Throws error<br>    "".take(2)           ==> Answers ""</td>
@@ -932,7 +946,7 @@
 </tr>
 <tr>
 <td title="String" width="30%"id="String_toLowerCase_0"><code><b>toLowerCase</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Converts all of the characters in this String to lower case<br><br>Examples:<br>		"Fer".toLowerCase()  ==> Answers "fer"<br>		"".toLowerCase()     ==> Answers ""</td>
+&nbsp;</td><td width="70%;">Converts all of the characters in this String to lower case<br><br>Examples:<br>    "Fer".toLowerCase()  ==> Answers "fer"<br>    "".toLowerCase()     ==> Answers ""</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_toString_0"><code><b>toString</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -940,11 +954,11 @@
 </tr>
 <tr>
 <td title="String" width="30%"id="String_toUpperCase_0"><code><b>toUpperCase</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Converts all of the characters in this String to upper case<br><br>Examples:<br>		"Fer".toUpperCase()  ==> Answers "FER"<br>		"".toUpperCase()     ==> Answers ""</td>
+&nbsp;</td><td width="70%;">Converts all of the characters in this String to upper case<br><br>Examples:<br>    "Fer".toUpperCase()  ==> Answers "FER"<br>    "".toUpperCase()     ==> Answers ""</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_trim_0"><code><b>trim</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a string whose value is this string,<br>with any leading and trailing whitespace removed.<br><br>Example:<br>		"   emptySpace  ".trim()  ==> "emptySpace"</td>
+&nbsp;</td><td width="70%;">Answers a string whose value is this string,<br>with any leading and trailing whitespace removed.<br><br>Example:<br>    "   emptySpace  ".trim()  ==> "emptySpace"</td>
 </tr>
 <tr>
 <td title="String" width="30%"id="String_words_0"><code><b>words</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Splits this strings into several words.<br><br>Examples:<br>     "how does words work?".words()<br>           ==> Answers ["how", "does", "words", "work?"]<br><br>     "".words() ==> Answers []</td>
@@ -1022,10 +1036,10 @@
 &nbsp;</td><td width="70%;">Answers a random integer contained in the range<br><br>Example:<br>    new Range(start = 1, end = 3).anyOne() ==> Answers 1 or 2 or 3</td>
 </tr>
 <tr>
-<td title="Range" width="30%"id="Range_contains_1"><code><b>contains</b>(e)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tests whether a number e is contained in the range<br><br>Examples:<br>    new Range(start = 2, end = 5).contains(4) ==> Answers true<br>    new Range(start = 2, end = 5).contains(0) ==> Answers false</td>
+<td title="Range" width="30%"id="Range_contains_1"><code><b>contains</b>(element)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Tests whether a number e is contained in the range<br><br>Examples:<br>    new Range(start = 2, end = 5).contains(4) ==> Answers true<br>    new Range(start = 2, end = 5).contains(0) ==> Answers false</td>
 </tr>
 <tr>
-<td title="Range" width="30%"id="Range_count_1"><code><b>count</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Counts how many elements match the boolean closure<br><br>Example:<br>		(1..9).count({ i => i.even() }) ==> Answers 4 (2, 4, 6 and 8 are even)</td>
+<td title="Range" width="30%"id="Range_count_1"><code><b>count</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Counts how many elements match the boolean closure<br><br>Example:<br>    (1..9).count({ i => i.even() }) ==> Answers 4 (2, 4, 6 and 8 are even)</td>
 </tr>
 <tr>
 <td title="Range" width="30%"id="Range_end_0"><code><b>end</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Getter for end attribute</td>
@@ -1050,7 +1064,7 @@
 </tr>
 <tr>
 <td title="Range" width="30%"id="Range_forEach_1"><code><b>forEach</b>(closure)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Iterates over a Range from start to end, based on step.<br><br>Example:<br>    new Range(start = 1, end = 3).forEach { value => console.println(value) }<br>    => prints 1, 2, 3</td>
+&nbsp;</td><td width="70%;">Iterates over a Range from start to end, based on step.<br><br>Example:<br>    new Range(start = 1, end = 3).forEach { value => console.println(value) }<br>        => prints 1, 2, 3</td>
 </tr>
 <tr>
 <td title="Range" width="30%"id="Range_initialize_0"><code><b>initialize</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Instantiates a Range.<br>Both start and end must be integer values.</td>
@@ -1068,7 +1082,7 @@
 <td title="Range" width="30%"id="Range_min_0"><code><b>min</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> List#min()</td>
 </tr>
 <tr>
-<td title="Range" width="30%"id="Range_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the number of elements<br><br>Examples:<br>    new Range(start = 0, end = 2).size() ==> Answers 3<br>    new Range(start = -2, end = 2).size() ==> Answers 5</td>
+<td title="Range" width="30%"id="Range_size_0"><code><b>size</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Answers the number of elements<br><br>Examples:<br>    new Range(start = 0, end = 2).size()  ==> Answers 3<br>    new Range(start = -2, end = 2).size() ==> Answers 5</td>
 </tr>
 <tr>
 <td title="Range" width="30%"id="Range_sortedBy_1"><code><b>sortedBy</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> List#sortBy</td>
@@ -1083,7 +1097,7 @@
 <td title="Range" width="30%"id="Range_sum_0"><code><b>sum</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"><b>see</b> List#sum()</td>
 </tr>
 <tr>
-<td title="Range" width="30%"id="Range_sum_1"><code><b>sum</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Sums all elements that match the boolean closure<br><br>Example:<br>		(1..9).sum({ i => if (i.even()) i else 0 }) ==> Answers 20</td>
+<td title="Range" width="30%"id="Range_sum_1"><code><b>sum</b>(closure)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;">Sums all elements that match the boolean closure<br><br>Example:<br>    (1..9).sum({ i => if (i.even()) i else 0 }) ==> Answers 20</td>
 </tr>
 </tbody>
 </table></div>
@@ -1104,7 +1118,7 @@
 <tbody>
 <tr>
 <td title="Closure" width="30%"id="Closure_apply_1"><code><b>apply</b>(parameters)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Evaluates this closure passing its parameters<br><br>Example:<br>		{ number => number + 1 }.apply(8) ==> Answers 9 // 1 parameter<br>		{ "screw" + "driver" }.apply() ==> Answers "screwdriver" // no parameter</td>
+&nbsp;</td><td width="70%;">Evaluates this closure passing its parameters<br><br>Example:<br>    { number => number + 1 }.apply(8) ==> Answers 9 // 1 parameter<br>    { "screw" + "driver" }.apply()    ==> Answers "screwdriver" // no parameter</td>
 </tr>
 <tr>
 <td title="Closure" width="30%"id="Closure_toString_0"><code><b>toString</b>()</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -1159,7 +1173,7 @@
 &nbsp;Date</h2>
 
 
-<p>&nbsp;Represents a Date (without time). A Date is immutable, once created you can not change it.<br><br><b>since</b> 1.4.5</p>
+<p>&nbsp;Represents a Date (without time). A Date is immutable, once created you can not change it.<br><br><b>author</b> dodain<br><b>since</b> 1.4.5</p>
 <h3>&nbsp;Behavior</h3>
 <div class="container"><table class="table table-striped table-hover table-sm w-auto">
 <thead>
@@ -1171,7 +1185,7 @@
 <tbody>
 <tr>
 <td title="Date" width="30%"id="Date_-_1"><code><b>-</b>(_aDate)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers the difference in days between two dates, assuming self is minuend and _aDate is subtrahend.<br><br>Examples:<br>		new Date().plusDays(4) - new Date() ==> Answers 4<br>		new Date() - new Date().plusDays(2) ==> Answers -2</td>
+&nbsp;</td><td width="70%;">Answers the difference in days between two dates, assuming self is minuend and _aDate is subtrahend.<br><br>Examples:<br>    new Date().plusDays(4) - new Date() ==> Answers 4<br>    new Date() - new Date().plusDays(2) ==> Answers -2</td>
 </tr>
 <tr>
 <td title="Date" width="30%"id="Date_<_1"><code><b><</b>(_aDate)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -1207,15 +1221,15 @@
 </tr>
 <tr>
 <td title="Date" width="30%"id="Date_minusDays_1"><code><b>minusDays</b>(_days)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of days subtracted.<br>This instance is immutable and unaffected by this method call.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusDays(1)<br>         ==> Answers 31/12/2008, a day back<br><br>		new Date(day = 1, month = 1, year = 2009).minusDays(-1)<br>         ==> Answers 2/1/2009, a day forward</td>
+&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of days subtracted.<br>This instance is immutable and unaffected by this method call.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>    new Date(day = 1, month = 1, year = 2009).minusDays(1)<br>         ==> Answers 31/12/2008, a day back<br><br>    new Date(day = 1, month = 1, year = 2009).minusDays(-1)<br>         ==> Answers 2/1/2009, a day forward</td>
 </tr>
 <tr>
 <td title="Date" width="30%"id="Date_minusMonths_1"><code><b>minusMonths</b>(_months)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of months subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusMonths(1)<br>            ==> Answers 1/12/2008, a month back<br><br>		new Date(day = 1, month = 1, year = 2009).minusMonths(-1)<br>            ==> Answers 1/2/2009, a month forward</td>
+&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of months subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>    new Date(day = 1, month = 1, year = 2009).minusMonths(1)<br>            ==> Answers 1/12/2008, a month back<br><br>    new Date(day = 1, month = 1, year = 2009).minusMonths(-1)<br>            ==> Answers 1/2/2009, a month forward</td>
 </tr>
 <tr>
 <td title="Date" width="30%"id="Date_minusYears_1"><code><b>minusYears</b>(_years)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
-&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of years subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>		new Date(day = 1, month = 1, year = 2009).minusYears(1)<br>            ==> Answers 1/1/2008, a year back<br><br>		new Date(day = 1, month = 1, year = 2009).minusYears(-1)<br>            ==> Answers 1/1/2010, a year forward</td>
+&nbsp;</td><td width="70%;">Answers a copy of this date with the specified number of years subtracted.<br>Parameter must be an integer value.<br>This operation has no side effect (a new date is returned).<br><br>Examples:<br>    new Date(day = 1, month = 1, year = 2009).minusYears(1)<br>            ==> Answers 1/1/2008, a year back<br><br>    new Date(day = 1, month = 1, year = 2009).minusYears(-1)<br>            ==> Answers 1/1/2010, a year forward</td>
 </tr>
 <tr>
 <td title="Date" width="30%"id="Date_plusDays_1"><code><b>plusDays</b>(_days)</code>&nbsp;&nbsp;&nbsp;<span class="badge badge-pill indigo">native</span><br>
@@ -1242,6 +1256,32 @@
 </tbody>
 </table></div>
 <hr>
+<h2 id="io"><img src="images/object.png" height="24px" width="24px" title="object"/>
+&nbsp;io</h2>
+
+
+<p>&nbsp;Represents an Input/Output event handler.<br><br><b>author</b> nscarcella<br><b>since</b> 1.9.2</p>
+<h3>&nbsp;Behavior</h3>
+<div class="container"><table class="table table-striped table-hover table-sm w-auto">
+<thead>
+<tr>
+<th class="blue-grey lighten-2">Method</th>
+<th class="blue-grey lighten-2">Description</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<td title="io" width="30%"id="io_addHandler_2"><code><b>addHandler</b>(event, callback)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="io" width="30%"id="io_flushEvents_0"><code><b>flushEvents</b>()</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+<tr>
+<td title="io" width="30%"id="io_queueEvent_1"><code><b>queueEvent</b>(event)</code>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="70%;"></td>
+</tr>
+</tbody>
+</table></div>
+<hr>
 <div class="container">
 </div>
-<p>Last update: 06/10/2019 16:01:08</p>
+<p>Last update: 02/12/2019 21:44:30</p>
