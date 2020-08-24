@@ -8,7 +8,7 @@ icon: 'podcast'
 
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;¡Nuevo release: Wollok Hypatia!</h1>
+<h1>&nbsp;&nbsp;¡Nuevo release: Wollok Ingalls!</h1>
 <br>
 </div>
 

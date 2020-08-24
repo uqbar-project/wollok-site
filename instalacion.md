@@ -83,11 +83,17 @@ icon: 'cloud-download'
 					<h4 class="card-title">Primera vez</h4>
 					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
 					</p>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
 					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
+					<a class="btn btn-primary" href="https://wollokversions.s3-us-west-2.amazonaws.com/v1.9.2/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
 					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<br>
+					<p><i>La versión Wollok Ingalls (2.0.x) no es retrocompatible con la Wollok Hypatia o anteriores versiones, por lo que tenés que instalarla desde cero. Si tenés la versión 2.0.0 sí podés actualizar a la 2.0.1</i></p>
+					<hr>
+					<h4>Versión histórica 1.9.2 para 32 bits</h4>
+					<p>Si tenés un sistema operativo de 32 bits, la última versión disponible es la 1.9.2 (Hypatia). <b>Te recomendamos fuertemente que instales un sistema operativo de 64 bits</b> y el Wollok correspondiente para tener acceso a las últimas novedades.
+					</p>
+					<a class="btn btn-primary" href="https://wollokversions.s3-us-west-2.amazonaws.com/v1.9.2/wollok-win32.win32.x86.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
+					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
 					<hr>
 					<h4 class="card-title" id="actualizar-wollok">Actualizaciones</h4>
 					<p>
@@ -190,6 +196,26 @@ icon: 'cloud-download'
 						<img src="/images/troubleshooting/wollok-launch.png" class="hoverable img-fluid z-depth-1"/>
 					</div>
 					<br>
+					<hr>
+					<h4 class="card-title">Problema con MacOS Catalina</h4>
+					<p>
+						Al tratar de ejecutar el archivo wollok te va a aparecer este desagradable mensaje de error:
+					</p>
+					<div class="text-center">
+						<img src="/images/troubleshooting/wollok-mac-garbage.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
+					La forma de destrabarlo forma es abrir una consola y escribir el siguiente comando:
+					</p>
+					<div class="language-javascript">	
+							<pre>
+<span class="c">xattr</span><span class="kd"> -d </span><span class="c">com.apple.quarantine Wollok.app</span>
+							</pre>
+					</div>
+					<p>
+					Luego deberías poder abrir el archivo normalmente.
+					</p>					
 					<hr>
 					<h4 class="card-title">Cartel de advertencia para instalar Java 6 en Mac</h4>
 					<p>
