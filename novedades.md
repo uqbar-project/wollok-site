@@ -14,34 +14,24 @@ icon: 'podcast'
 
 
 <div class="container" style="text-align: center; margin-bottom: 1em;">
-    <img src="/images/news/hypatia.jpg"/>
+    <img src="/images/news/ingalls.png" width="30%" height="auto"/>
 </div>
 
 
-Esta versión homenajea a [Hypatia](https://es.wikipedia.org/wiki/Hipatia), una filósofa neoplatónica griega, que destacó en los campos de las matemáticas, la astronomía, el álgebra y la geometría.
+Esta versión homenajea a [Dan Ingalls](https://en.wikipedia.org/wiki/Dan_Ingalls), pionero de la programación orientada a objetos y el principal arquitecto de Smalltalk en Xerox Parc Place.
 
-La versión 1.8 de Wollok está disponible, ¡y trae muchas novedades!
+La versión 2.0 de Wollok está disponible, y además de la integración con Travis a partir de la herramienta [wollok-cli](https://github.com/uqbar-project/wollok-cli), el sistema de inferencia de tipos, las herramientas de detección y solución de errores,
 
-- ¡el **sistema de inferencia de tipos** ya viene activado por defecto en tu versión inicial de Wollok! De esa manera vas a poder tener información de los tipos de tus definiciones: variables, parámetros, y detectar errores más tempranamente
-- nació una nueva herramienta: [wollok-cli](https://github.com/uqbar-project/wollok-cli), que permite [**integración continua de tus proyectos con Travis**](../documentacion/apuntes#integracion-con-travis) y automatizar tus tareas. Hacé click en el link ¡y descubrí todas las opciones que tenés!
-- tenemos un renovado **diagrama dinámico** integrado con la consola REPL, para que veas cómo se relacionan los objetos en el ambiente
-- mejoramos la experiencia de la consola REPL para que además consuma menos recursos. Y le agregamos una nueva funcionalidad: **ahora podés importar cualquier archivo de tu proyecto en la consola**. Te lo contamos mejor en la solapa Console del [tour](../tour)
-- los [**parámetros nombrados**](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit#heading=h.vj2ax6a4f7xh) se utilizan por defecto para construir e inicializar todos los objetos
-- modificamos el reporte de errores del validador para que puedas explorar el lenguaje con más flexibilidad (bajando la severidad de varios errores a advertencias)
-- la función de autocompletado es más inteligente, filtrando mensajes privados de los objetos, y mostrando primero los que pertenecen al objeto
-- mejoramos la performance de las listas y de los conjuntos de Wollok
-- incorporamos nuevos métodos en la biblioteca de elementos que viene con Wollok (días de la semana como _objeto autodefinido_, `toString` para fechas y pares, métodos `left(), right(), reverse()` en String, `copyWith(), copyWithout()` en Collection, etc.)
-- el Test Runner te permite copiar la pila de ejecución de errores, para facilitar el envío por mail, y también te muestra el tiempo que tardaron en ejecutarse esos tests
-- mejoramos el tratamiento de parámetros nulos para que sea más fácil de encontrar errores en tus programas
-- y seguimos incorporando quick fixes (como reemplazar `self` en lugar de llamar explícitamente al wko por su nombre)
+- tenemos nueva iconografía, que diferencia mejor los archivos de definiciones, los de tests y los programas, y cada uno de los conceptos del lenguaje. Los íconos están adaptados para personas con capacidades visuales diferentes, para ayudarte en la experiencia de usuario.
+- mejoramos el **diagrama dinámico**, que podés integrarlo no solo con la consola REPL sino también con los tests, lo que te ayudará a detectar problemas con algún test en particular (si anotás al test con la palabra `only` ejecuta ese test solo). Si querés ver más podés buscar la solapa Test Runner del [tour](../tour)
+- tenés un aviso más claro en la consola REPL cuando modificás el archivo en medio de tus pruebas. Ahora podés reiniciar la consola desde cero, o incluso ejecutar todos los comandos de la última sesión. Te lo contamos mejor en la solapa Console del [tour](../tour)
+- podés tener varios describe en un mismo archivo
 
-entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (versión pre-release), [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1) y [1.8.2](https://github.com/uqbar-project/wollok/milestone/29?closed=1).
+entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.9.2](https://github.com/uqbar-project/wollok/milestone/32?closed=1) (versión pre-release), [2.0.0](https://github.com/uqbar-project/wollok/milestone/25?closed=1) y [2.0.1](https://github.com/uqbar-project/wollok/milestone/35?closed=1).
 
-## ¡Hay nuevos "wollokeros"!
+## ¡Seguimos avanzando!
 
-A partir de julio hicimos dos hackatones: [una con comida china](https://twitter.com/wollokLang/status/1150785337108680704) y [la segunda más tradicional, con empanadas](https://twitter.com/wollokLang/status/1156572239241863169), donde se incorporaron alumn@s de la Universidad Nacional de San Martín y de la Universidad Nacional de Quilmes, para ayudarnos a mejorar día a día el producto.
-
-¡Te esperamos a vos [cuando quieras](../comunidad)!
+Aun en un contexto mundial complejo, nos estamos encontrando virtualmente cada dos semanas a charlar sobre los próximos pasos de la herramienta: la interacción de wollok game, una nueva definición para los mixines, son algunas de las cuestiones en las que estamos trabajando. Si te interesa participar, ¡te esperamos a vos [cuando quieras](../comunidad)!
 
 <div class="container">
 <br>
@@ -51,4 +41,4 @@ A partir de julio hicimos dos hackatones: [una con comida china](https://twitter
 <br/>
 </div>
 
-Podés ver [aquí](https://github.com/uqbar-project/wollok/milestone/25) la lista de issues que estamos encarando para el próximo release y lo que [ya hicimos](https://github.com/uqbar-project/wollok/milestone/25?closed=1). 
+Podés ver [aquí](https://github.com/uqbar-project/wollok/issues) la lista de issues que estamos encarando para el próximo release. 
