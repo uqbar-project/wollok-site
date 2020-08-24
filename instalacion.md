@@ -9,12 +9,6 @@ icon: 'cloud-download'
 <div class="container">
 	<!--Card-->
 	<div class="card">
-		<!--Card image-->
-		<div class="view overlay hm-white-slight">
-			<img src="/images/Wollok_Installation.jpg" class="img-fluid " width="100%">
-			<div class="mask flex-center waves-effect waves-light">
-			</div>
-		</div>
 		<!--Card content-->
 		<div class="card-body" >
 			<!--Title-->
@@ -349,4 +343,3 @@ Para hacerlo, algunas recomendaciones:
 	* *Enhancement*: nuevas características que se solicitan
 	* *Nice to have*: características deseadas pero menos prioritarias
 	* *Question*: dudas, por ejemplo algo que no estamos seguros si es un bug
-
