@@ -49,7 +49,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
-                        <img src="/images/tour/editor1.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/editor1_1.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>We can create 'pepita', a bird with energy and fly capabilities. We activate 
                             syntactic elements autocomplete by pressing <b>Ctrl + Space</b> keys.</figcaption>
                     </figure>
@@ -67,7 +67,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/editor3.gif" class="img-fluid z-depth-1"/>
+                <img src="/images/tour/editor3_1.gif" class="img-fluid z-depth-1"/>
             </div>
             <br>
             <br>
@@ -89,7 +89,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
-                        <img src="/images/tour/editor5.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/editor5_1.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ctrl + O looks inside a file all kind of definitions: 
                             objects, classes, variables or methods.</figcaption>
                     </figure>
@@ -330,7 +330,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/consola.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/consoleIntroEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Executing a .wlk file in REPL console. 
                         <br>
                         In image you can see console warns us if execution context is synchronized with last version
@@ -363,7 +363,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/replConsoleEditor.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/consoleErrorsStackTrace.gif"  class="img-fluid z-depth-1">
             </div>
             <br>
             Reminder: every time you change a .wlk file, you must restart console to consider this updates. 
@@ -375,7 +375,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/console2.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/consoleExportSessionEs.gif" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>
@@ -384,7 +384,7 @@ These are the main tools of Wollok Integrated Development Environment.
             Last, you can execute REPL console without selecting a file at all. Just press this button in toolbar
             <br>
             <div class="container text-center">
-                <img src="/images/tour/runConsole2.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/runREPLWithoutFile.png" class="img-fluid z-depth-1">
             </div>
             <br><br>
         </div>

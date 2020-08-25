@@ -49,7 +49,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
-                        <img src="/images/tour/editor1.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/editor1_1.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Por ejemplo, podemos crear a pepita, un ave que tiene energía y que sabe volar. Activamos el autocompletado de los elementos sintácticos de Wollok 
                                 mediante las teclas <b>Ctrl + Barra</b>.</figcaption>
                     </figure>
@@ -68,7 +68,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/editor3.gif" class="img-fluid z-depth-1"/>
+                <img src="/images/tour/editor3_1.gif" class="img-fluid z-depth-1"/>
             </div>
             <br>
             <br>
@@ -91,7 +91,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
-                        <img src="/images/tour/editor5.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/editor5_1.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ctrl + O permite buscar dentro de un archivo todo tipo de elementos: 
                             definiciones de objetos, clases, variables o métodos.</figcaption>
                     </figure>
@@ -326,12 +326,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/consolaEs.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/consoleIntroEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando en la consola un archivo .wlk. 
                         <br>
-                        En la imagen se ve 
-                        que la consola nos avisa si el contexto de ejecución está sincronizado con la última versión 
-                        del archivo. </figcaption>
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -341,8 +339,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             el usuario y el intérprete Wollok. 
             <br>
             <br>
-            Si bien tiene algunos alcances limitados (no posee por el momento opciones de autocompletado, y requiere
-            reiniciarse cada vez que hagamos un cambio en el archivo original), es una forma de comenzar a conocer
+            Si bien tiene algunos alcances limitados (como las opciones de autocompletado), es una forma de comenzar a conocer
             cómo responden los objetos ante el envío de un mensaje.
             <br>
             <br>
@@ -355,19 +352,24 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br><br>
             Podés enviar mensajes a objetos, crear referencias constantes o variables,
-            probar cómo funcionan los números, las fechas y otros objetos que vienen con Wollok, etc. Para ello escribís
+            probar cómo funcionan los números, las fechas y otros objetos que vienen con Wollok, etc. Escribís
             la línea y al final presionás la tecla Enter. Con la flecha arriba te irán apareciendo
             los mensajes que enviaste anteriormente. También podés pegar código del portapapeles, y los errores
             se integran directamente con el editor.
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/replConsoleEditorEs.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/consoleErrorsStackTrace.gif" class="img-fluid z-depth-1">
             </div>
             <br>
             Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
-            los cambios. En la barra de herramientas a la derecha te dice si la consola está 
-            sincronizada.
+            los cambios, vas a ver el mensaje en rojo en la consola o bien en la barra de herramientas arriba a la derecha. Las opciones en ese caso son: reiniciar desde cero tomando los nuevos cambios, o ejecutar automáticamente los mismos comandos que la última sesión.
+            <br>
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/consoleRestart.gif" class="img-fluid z-depth-1">
+                </div>
+            </div>
             <br>
             <hr>
             <h4>Exportar una sesión a un test</h4>
@@ -376,7 +378,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <br>
             <div class="container text-center">
-                <img src="/images/tour/console2Es.gif" class="img-fluid z-depth-1">
+                <img src="/images/tour/consoleExportSessionEs.gif" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>
@@ -386,7 +388,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             un archivo particular, mediante una opción específica en la barra:
             <br>
             <div class="container text-center">
-                <img src="/images/tour/runConsole2Es.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/runREPLWithoutFileEs.png" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>
@@ -394,12 +396,12 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             Importando archivos desde la consola
             </h4>
             <p>
-            Wollok es una herramienta de exploración, eso incluye hacer pruebas sobre un archivo de definiciones de un proyecto y luego ir importando otros archivos, como vemos en el ejemplo. Esta opción es válida si comenzás ejecutando la consola para un archivo de tu proyecto, de lo contrario no tendrás otro archivo para incorporar.
+            Wollok es una herramienta de exploración, eso incluye hacer pruebas sobre un archivo de definiciones de un proyecto y luego ir importando otros archivos, como vemos en el ejemplo. Esta opción solo funciona si ejecutás la consola para un archivo .wlk de tu proyecto (no funciona cuando la consola no tiene asociado un archivo), y no podés importar archivos una vez que los modificaste, para eso te recomendamos que utilices los botones de reinicio.
             </p>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/console3.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/consoleImportEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br> Importando archivos dinámicamente (disponible desde la versión 1.8 Hypatia)</figcaption>
                     </figure>
                 </div>
