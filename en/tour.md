@@ -398,7 +398,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunner.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerIntroEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Executing a test suite: 
                             we can filter failures and errors,
                             <br>
@@ -422,9 +422,8 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/runAllTests.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Executing all project tests: there are 5 tests,
-                        3 from example.wtest and 2 from test.wtest 
+                        <img src="/images/tour/testRunnerRunningSeveralFilesEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Executing all project tests
                         </figcaption>
                     </figure>
                 </div>
@@ -441,7 +440,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/staticDiagram.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/staticDiagramEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption">
                             <br>A small static diagram demo
                         </figcaption>
@@ -455,13 +454,13 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             <hr/>
             <br>
-            Since 1.7.7 version, Wollok has a <b>Dynamic Diagram</b> which is integrated with REPL console. Here you can see all objects and references in Wollok environment.
+            Wollok has a <b>Dynamic Diagram</b> which is integrated with REPL console. Here you can see all objects and references in Wollok environment.
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/dynamicDiagram2.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/dynamicDiagramEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Small demo showing the dynamic diagram</figcaption>
                     </figure>
                 </div>

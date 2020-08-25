@@ -419,10 +419,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunner2.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerIntroEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando un conjunto
-                            de tests: vemos que se puede filtrar errores / fallas,
-                            que podemos navegar directamente al código donde se originó el error, copiar la pila de ejecución de un test que no terminó bien o ver el tiempo que demoró la ejecución de todos los tests.
+                            de tests: vemos que se puede navegar directamente al código donde se originó el error, copiar la pila de ejecución de un test que no terminó bien o ver el tiempo que demoró la ejecución de todos los tests.
                             Y el ejercicio de modificar el código y ejecutar
                             los tests es un proceso iterativo e incremental. </figcaption>
                     </figure>
@@ -432,20 +431,43 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             Si querés conocer más acerca del testeo unitario de Wollok te recomendamos que leas
              <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#">este apunte</a>. 
             <br>
+            <br>
+            <h4>Mostrar solo los tests con errores o fallas</h4>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/testRunnerFilterErrorsEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Cuando tenés muchos tests, podés filtrar solo aquellos que no anduvieron ok. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
             <hr>
-            <h4>Ejecutando todos los tests de un proyecto o directorio</h4>
-            Es posible ejecutar todos los tests de un proyecto, o bien los tests de un
-            directorio (si organizaste en una carpeta varios .wlk), para eso tenés la opción
-            desde el menú de opciones del navegador del proyecto (Package Explorer):
+            <h4>Ejecutar todos o algunos tests de un proyecto o directorio</h4>
+            Es posible ejecutar todos los tests de un proyecto, los tests de un
+            directorio o bien diferentes archivos .wtest, como te lo mostramos en este video:
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/testRunnerAllTests.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/testRunnerRunningSeveralFilesEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Ejecutando todos los tests de un 
-                        proyecto. Aquí vemos que corren además de los 3 tests del archivo
-                    fakeTest.wtest, también se ejecutan los del archivo testCelu.wtest</figcaption>
+                        proyecto, y luego seleccionamos dos de los tres archivos de test para ejecutarlos.</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
+            <hr>
+            <h4>Ejecutar un solo test de un archivo</h4>
+            Es posible ejecutar un solo test dentro de un archivo, escribiendo la palabra "only" antes del test en cuestión. Eso te permitirá concentrarte en ese test e incluso lo podrás integrar con el diagrama dinámico, que se explica en la siguiente solapa.
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/testRunnerOnlyEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Ejecutando un solo test en un archivo, eso activa la integración con el diagrama dinámico.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -462,7 +484,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/staticDiagram.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/staticDiagramEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Una pequeña demostración
                         del diagrama estático de Wollok</figcaption>
                     </figure>
@@ -474,27 +496,20 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <hr/>
             <br>
-            Y a partir de la versión 1.7.7, Wollok cuenta también con un <b>Diagrama dinámico</b> que se integra con la consola REPL, que permite mostrar las referencias entre los diferentes objetos que están en el ambiente.
+            Wollok cuenta también con un <b>Diagrama dinámico</b> que se integra con la consola REPL, que permite mostrar las referencias entre los diferentes objetos que están en el ambiente: los candados representan las referencias constantes, el diagrama permite ocultar objetos del diagrama y adaptarse mejor para personas con daltonismo.
             <br>
             <br>
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/dynamicDiagram2.gif" class="img-fluid z-depth-1">
+                        <img src="/images/tour/dynamicDiagramEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Una pequeña demostración
-                        del diagrama dinámico de Wollok</figcaption>
+                        del diagrama dinámico de Wollok: en azul aparecen los objetos creados por nosotros, en verde los que trae la biblioteca de Wollok.</figcaption>
                     </figure>
                 </div>
             </div>
             <br>
-            En azul aparecen los objetos creados por nosotros, en verde los números,
-            booleanos, strings, fechas y pares, en bordó y rectangular las colecciones, y el resto en rosado.
-            <br>
-            <br>
         </div>  
-                
-
     </div>
-
 </div>
 
