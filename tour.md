@@ -368,7 +368,6 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             <div class="container text-center">
                 <img src="/images/tour/consoleRestart.gif" class="img-fluid z-depth-1">
-                </div>
             </div>
             <br>
             <hr>
