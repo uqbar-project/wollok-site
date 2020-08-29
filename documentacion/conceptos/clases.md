@@ -4,9 +4,14 @@ layout: null
 
 ## Indice rápido ##
 
-
 * <a href="#clases" class="wollokLink">Clases</a>
-    * <a href="#instanciacion" class="wollokLink">Instanciacion</a>
+* <a href="#instanciacion" class="wollokLink">Instanciacion</a>
+* <a href="#inicializacion" class="wollokLink">Inicializacion</a>
+    * <a href="#valores-por-default" class="wollokLink">Valores por default</a>
+    * <a href="#instanciacion-con-parametros" class="wollokLink">Instanciacion con parametros</a>
+    * <a href="#inicializacion-complementaria" class="wollokLink">Inicializacion complementaria</a>
+* <a href="#referencias-a-los-objetos-intanciados" class="wollokLink">Referencias a los objetos intanciados</a>
+
 * <a href="#herencia" class="wollokLink">Herencia</a>
     * <a href="#clases-abstractas" class="wollokLink">Clases abstractas</a>
     * <a href="#redefinicion-y-super" class="wollokLink">Redefinición y super</a>
@@ -20,9 +25,10 @@ ___
 
 ## Clases ##
 
-Las clases comparten algunas características con los objetos literales: definen variables de instancia y métodos. Pero no son expresiones (no pueden asignarse a variables), sino **definiciones**.
+Una clase permite definir las características comunes a todos los objetos que se **instancien** a partir de ella. 
+La definición de la clase consta de la palabra reservada **class** seguida de un identificador (que comienza con mayúsculas) y luego, similar a los objetos autodefinidos, se especifican los atributos y métodos. 
 
-Veamos un ejemplo:
+Ejemplo:
 
 ```wollok
 class Ave {
@@ -40,25 +46,55 @@ class Ave {
 }
 ```
 
-### Instanciacion ###
+## Instanciacion ##
 
-Para crear un Ave instanciamos un objeto de esa clase con la palabra reservada **new**, la cual retorna un objeto de la clase Ave:
+Para obtener un objeto que sea instancia de una clase, se utiliza la palabra reservada **new** seguida del identificador de la clase. 
+Esto retorna un nuevo objeto de la clase.
+
+```wollok
+new Ave()
+```
+
+La forma más usual de utilizar el objeto creado es guardar una referencia a dicho objeto, para luego enviarle mensajes.
 
 ```wollok
 const pepita = new Ave()
 pepita.volar(23)
 ```
 
-Al crear un objeto, se le puede dar valores iniciales a cada una de sus atributos, para que el objeto que se obtiene quede completo y consistente.
-Entre los **( )** se indica el identificador de cada una de las referencias y su valor inicial. Como se indica el nombre de cada atributo, no es necesario mantener un orden en particular en el envío de parámetros.
+Pero también es posible utilizarlo en un contexto donde no es necesario definir una referencia. 
+
+```wollok
+entrenador.entrenar(new Ave())
+bandada = [new Ave(), new Ave(), new Ave()]
+```
+
+En el primer caso, es el *entrenador* quien tiene la responsabilidad de hacer algo con el ave creada.
+En el segundo caso, la coleccion *bandada* contiene a las tres aves creadas. Luego, se le puede enviar mensajes a dicha colección.
+
+
+## Inicializacion ##
+
+
+### Valores por default ###
+
+Al instanciar un objeto, sus atributos se inicializan con el valor asignado en la definición de la clase.
+Se pueden dejar atributos sin inicializar, para qeu se inicialicen mediante parámetros, como se explica a continuación. 
+
+
+### Instanciacion con parametros ###
+
+Al momento de instanciar un objeto se les puede dar valores iniciales particulares a cada una de sus atributos, que reemplazan a los definidos por default, para que el objeto que se obtiene quede creado de la manera que se desee. 
+
+Entre los **( )** se indica el identificador de cada una de las referencias, el signo **=** y su valor inicial. Como se indica el nombre de cada atributo, no es necesario mantener un orden en particular en el envío de parámetros.
 
 ```wollok
 const pepita = new Ave(energia = 100)
 ```
 
-Hace que pepita quede inicializada con 100 de energía.
+Hace que pepita quede inicializada con 100 de energía, en vez de 0.
 
-Para las referencias de la clase que tienen un valor seteado por defecto es opcional enviar por parámetro el valor, en cambio para las referencias sin inicializar en la definición de la clase es obligatorio enviar por parámetro el valor inicial.
+Para las referencias de la clase que tienen un valor seteado por defecto es opcional enviar por parámetro el valor, en cambio para las referencias sin inicializar en la definición de la clase es obligatorio enviar por parámetro el valor inicial, de manera de mantener la consistencia en el objeto creado.
 
 ```wollok
 class Ave {
@@ -68,15 +104,91 @@ class Ave {
 }
 
 const pepita = new Ave(energia = 100, peso = 1) // Válido (energía se inicializa en 100, peso en 1)
-
 const pepita = new Ave(peso = 1, energia = 100) // Válido (idem)
-
 const pepita = new Ave(peso = 2) // Válido (energía se inicializa en 0, peso en 2)
-
 const pepita = new Ave(energia = 100) // Error (Falta inicializar peso)
+const pepita = new Ave() // Error (Falta inicializar peso)
 
-const pepita = new Ave()) // Error (Falta inicializar peso)
 ```
+
+Hay situaciones donde no hay un valor por defecto razonable para un atributo o por algun motivo se quiere permitir que quede nulo. En este caso, se debe explicitar la asignación de **null**
+
+```wollok
+class Ave {
+    var energia = 0
+    var entrenador = null
+    //...
+}
+
+const pepita = new Ave(energia = 100, entrenador = cachito) 
+// Válido (energía se inicializa en 100, entrenador con el objeto cachito)
+const pepita = new Ave(peso = 1) // Válido (pepita comienza sin entrenador)
+
+```
+
+### Inicializacion complementaria ###
+
+Existe la posibilidad de realizar validaciones u otras tareas complementarias como parte de la instanciación. Para ello, en la clase se debe definir un método **initialize()** con el comportamiento que se desea realizar para completar la instanciación.
+
+Se ejecuta automáticamente cuando se hace **new()**, luego de la asignación de los valores pasados como parámetros en la instanciación y previo a devolver el objeto creado.
+
+
+```wollok
+class Ave {
+    var energia = 0
+    //...
+
+    method initialize(){
+        energia = energia.max(0)
+        mundo.hayUnAveMas(self)
+    }
+}
+
+const pepita = new Ave() // La energía queda en 0
+const pepita = new Ave(energia = 100) // La energía queda en 100
+const pepita = new Ave(energia = -100) // La energía vuelve a quedar en 0, 
+// en todos los casos, el objeto mundo realiza la accion solicitada con el objeto recientemente creado
+```
+
+Aparte de lo anterior, es un método que puede ser utilizado como cualquier otro. 
+
+
+## Referencias a los objetos intanciados ##
+
+Una característica a tener en cuenta es que un objeto instanciado a partir de una clase, a diferencia de un objeto autodefinido, no existe todo el tiempo ni es accesible desde cualquier lugar del código, sino que se deben manipular adecuadamente las referencias hacia él.
+
+Su existencia comienza con el **new()** y concluye cuando todas las referencias que precisamente hacían referencia a él dejan de hacerlo. 
+
+```wollok
+var pepita = new Ave(energia = 100)
+pepita.volar()
+pepita = otroObjeto
+
+```
+
+El *new()* hace que se intancie un objeto de la clase Ave y se inicializa su energía con 100.
+El primer *=* hace que la variable *pepita* haga referencia al objeto creado.
+Como *pepita* es una referencia al objeto, cuando recibe el mensaje *volar()*, pepita vuela.
+El siguiente *=* hace la variable *pepita* haga referencia a *otroObjeto* y por lo tanto deja de hacer referencia al ave creada anteriormente. De esta manera, ya no hay forma de poder enviarle mensajes al objeto instanciado y a fines prácticos dejó de existir. 
+Si por último se enviara nuevamente el mensaje *pepita.volar()*, lo que suceda dependerá de cómo esté definido el *otroObjeto* al que *pepita* ahora hace referencia.
+
+```wollok
+var pepita = new Ave(energia = 100)
+pepita.volar()
+var pepa = pepita
+var bandada = [pepita, new Ave(energia = 50), new Ave(energia = 60)]
+entrenador.entrenar(pepita)
+pepita = otroObjeto
+
+```
+
+Al igual que el ejemplo anterior, se instancia una nueva Ave, se la referencia desde la variable *pepita* y realiza la acción de volar.
+Luego, cuando se asigna a la variable *pepa*, no se está instanciando una nueva ave, sino que hay otra referencia al mismo objeto creado anteriormente.  
+En la coleccion *bandada* se guarda una tercera referencia al mismo objeto creado antes. (Que se se creen otras dos aves y se las guarde en la misma colección, no afecta en absoluto.)
+Por último, el objeto *entrenador* también podría conservar otra referencia al mismo objeto. 
+Luego de hacer la asignación de *otroObjeto* a *pepita*, si bien ya no se puede enviarle mensajes al ave creada mediante *pepita*, sí se puede  hacer mediante las otras referencias, haciendo por ejemplo *pepa.volar()* o *bandada.first().volar()* 
+Incluso luego de modificar estas dos referencias, por ejemplo si se hiciera *pepa = 0* y *bandada.clear()*, dependiendo de la implementación del objeto *entrenador*, en la medida que conserve una referencia hacia él, el objeto sigue existiendo, mantiene su estado y entiende mensajes. Cuando el *entrenador* deje de referenciarlo, entonces sí finalmente dejará de existir.
+
 
 ## Herencia ##
 
@@ -98,6 +210,7 @@ eva.volar(50) //el objeto eva entiende el mensaje, porque hereda el método de l
 ```
 
 Las subclases pueden agregar nuevos métodos y variables y pueden redefinir métodos existentes (para más información ver [Redefinición y super](#redefinicion-y-super)).
+
 
 ### Clases abstractas ###
 

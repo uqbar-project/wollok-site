@@ -2,7 +2,7 @@
 layout: null
 ---
 
-## Indice rápido ##
+## Índice rápido ##
 
 * Elementos del lenguaje
     * <a href="#archivos-wollok" class="wollokLink">Archivos Wollok</a>
