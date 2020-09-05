@@ -21,7 +21,7 @@ ___
 
 ## User Objects ##
 
-Además de los objetos predefinidos recientemente visto, cualquier lenguaje orientado a objetos debe permitir que el desarrollador puede crear sus propios objetos.
+Además de los objetos predefinidos recientemente vistos, cualquier lenguaje orientado a objetos debe permitir que el desarrollador puede crear sus propios objetos.
 
 Esto puede hacerse de dos maneras ligeramente diferentes:
 
@@ -39,29 +39,33 @@ object miObjeto {
     // aquí va el código del objeto miObjeto
 }
 
-console.println(miObjeto)
 ```
 
-A partir de aquí podemos acceder en cualquier parte del programa a la referencia "miObjeto".
+A partir de aquí podemos acceder en cualquier parte del programa al objeto "miObjeto".
 
-### Objetos anonimos ###
 
-Otra opción es utilizar objetos literales sin explícitamente darle un nombre. Esto permite usarlos en el momento sin utilizar una referencia o asignarlo a una variable de alcance más limitado que el global.
+### Mensajes ###
+
+Uno de los conceptos más importantes de la programación orientada a objetos son los **mensajes**. En Wollok, (casi) todo lo que uno hace es enviar mensajes a objetos.
+
+Al enviar el mensaje a un objeto se ejecuta la definición del método. 
+
+Para enviar un mensaje la sintaxis es:
 
 ```wollok
-console.println( object { /* código aquí*/ }
-)
+objeto.mensaje(param1, param2, ...)
 ```
 
-El objeto creado sirve a modo de ejemplo didáctico, ya que es un objeto vacío. En la consola sólo se verá
+Estas variantes **no son válidas**:
 
-```
-anObject{}
+```wollok
+mensaje(param1, param2)   // falta el objeto receptor
+objeto.mensaje            // faltan paréntesis
 ```
 
 ### Metodos ###
 
-Dentro de las llaves de un objeto se puede definir su comportamiento mediante la implementación de métodos. Por ejemplo representaremos un pájaro:
+Dentro de las llaves de un objeto se puede definir su comportamiento mediante la implementación de métodos. Por ejemplo representaremos a pepita:
 
 ```wollok
 object pepita{
@@ -74,26 +78,14 @@ object pepita{
 
 }
 
-console.println(pepita.estasFeliz())    // true
-console.println(pepita.saluda("pepona") // "hola pepona"
+pepita.estasFeliz()    // se obtiene true
+pepita.saluda("pepona") // se obtiene "hola pepona"
 ```
 
-Los métodos se definen mediante la palabra **method**. Pueden recibir de 0 a n parámetros y opcionalmente devolver un valor. Los tipos de los parámetros no hay que definirlos. En caso que tenga, cada parámetro es una referencia que estará presente en el contexto del método a evaluar.
-
-En el caso de que el método devuelva un valor es obligatorio escribir una sentencia **return**, a excepción de los [simple return method](#simple-return-method) explicados en la siguiente sección.
-
-#### Simple Return Method ####
-
-Hay un _shortcut_ para definir métodos simples de una línea que sólo devuelven valores.
-
-```wollok
-object pepita {
-    method estaFeliz() = true
-    method saluda(nombre) = hola " + nombre
-}
-```
-
-El lector podrá notar que no es necesario escribir return, ni tampoco las llaves que encierren el cuerpo del método. Las llaves se reemplazan por el símbolo =, que indica que la evaluación de la parte derecha del método será el valor devuelto.
+Los métodos se definen mediante la palabra **method**, seguida de un indentificador, los _()_ para agrupar los parámetros y luego entre _{}_ el código del método propiamente dicho.
+Los métodos especifican la forma en que un objeto reacciona frente a los mensajes que recibe. Para los mensajes que son _preguntas_, en los que se espera que el objeto devuelva un valor, se debe escribir una sentencia **return** seguida del valor a retornar. Se la indica generalmente como última sentencia, ya que interrumpe la ejecución del método. 
+En los mensajes que representan _órdenes_, es decir que indican que el objeto debe realizar alguna acción o causar algún efecto, no se espera que retornen nada. Suelen tener una sentencia de asignación, con un _=_, para modificar el valor de una referencia, o delegan en otro método que es donde finalmente se realiza la modificación del estado. 
+Los métodos pueden recibir o no parámetros. En caso afirmativo, entre los _()_ que siguen al identificador del método y separados por comas, se definen los parámetros con los que se hace referencia a cada uno de los valores que se reciben. La asociación se hace uno a uno según la posición y sin especificaciones de tipo, por lo que la cantidad de parámetros utilizados debe coincidir entre el envío del mensajes y la definición del método. Cada parámetro es una referencia constante que estará presente en el contexto del método.
 
 
 ### Atributos ###
@@ -121,7 +113,7 @@ pepita.estaFeliz()
 
 El atributo **energia** inicialmente tiene un valor de 100, cada vez que se le envía el mensaje **volar()** o **comer()** a pepita el valor al que hace referencia energía va cambiando y cuando se le pregunta por **estaFeliz()**, la respuesta depende del valor de energía del momento.
 
-Las referencias de la instancia se declaran en un objeto, justo antes del primer método. [Como hemos visto](#referencias-variables-y-constantes), las referencias pueden ser **var** o **const**.
+Los atributos se declaran en un objeto, justo antes del primer método. [Como hemos visto](#referencias-variables-y-constantes), las referencias pueden ser **var** o **const**.
 
 **Todas las referencias de instancia son sólo visibles dentro del mismo objeto**, se pueden acceder desde cualquiera de sus métodos.
 
@@ -131,25 +123,6 @@ Estas expresiones **no son válidas**.
 pepita.energia 
 pepita.energia = 200
 pepita.energia() //sería válido si se definiese un método llamado energia()
-```
-
-### Mensajes ###
-
-Uno de los conceptos más importantes de la programación orientada a objetos son los **mensajes**. En Wollok, (casi) todo lo que uno hace es enviar mensajes a objetos.
-
-Al enviar el mensaje a un objeto se ejecuta la definición del método. 
-
-Para enviar un mensaje la sintaxis es:
-
-```wollok
-objeto.mensaje(param1, param2, ...)
-```
-
-Estas variantes **no son válidas**:
-
-```wollok
-mensaje(param1, param2)   // falta el objeto receptor
-objeto.mensaje            // faltan paréntesis
 ```
 
 ### Self ###
@@ -286,4 +259,31 @@ En ambos casos es equivalente consultar:
 pepita.energia() 
 ```
 
+### Objetos anonimos ###
+
+Otra opción es utilizar objetos literales sin explícitamente darle un nombre. Esto permite usarlos en el momento sin utilizar una referencia o asignarlo a una variable de alcance más limitado que el global.
+
+```wollok
+console.println( object { /* código aquí*/ }
+)
+```
+
+El objeto creado sirve a modo de ejemplo didáctico, ya que es un objeto vacío. En la consola sólo se verá
+
+```
+anObject{}
+```
+
+#### Simple Return Method ####
+
+Hay un _shortcut_ para definir métodos simples de una línea que sólo devuelven valores.
+
+```wollok
+object pepita {
+    method estaFeliz() = true
+    method saluda(nombre) = "hola " + nombre
+}
+```
+
+El lector podrá notar que no es necesario escribir return, ni tampoco las llaves que encierren el cuerpo del método. Las llaves se reemplazan por el símbolo =, que indica que la evaluación de la parte derecha del método será el valor devuelto.
 

@@ -4,9 +4,12 @@ layout: null
 
 ## Índice rápido ##
 
+* <a href="#Archivos" class="wollokLink">Archivos</a>
+    * <a href="#modulos-o-bibliotecas" class="wollokLink">Módulos o Bibliotecas</a>
+    * <a href="#tests" class="wollokLink">Tests</a>
+    * <a href="#programas" class="wollokLink">Programas</a>
+    * <a href="#importar-archivos" class="wollokLink">Importar archivos</a>
 * Elementos del lenguaje
-    * <a href="#archivos-wollok" class="wollokLink">Archivos Wollok</a>
-    * <a href="#programas-wollok" class="wollokLink">Programas Wollok</a>
     * <a href="#referencias-variables-y-constantes" class="wollokLink">Referencias variables y constantes</a>
     * <a href="#comentarios" class="wollokLink">Comentarios</a>
 * Objetos básicos
@@ -20,29 +23,105 @@ layout: null
 
 ___
 
-## Archivos Wollok ##
+## Archivos ##
 
 Wollok tiene actualmente estos tipos de archivo, cada uno representa un concepto diferente:
 
-* un **Programa Wollok** (.wpgm)
 * un **Módulo o Biblioteca Wollok** (.wlk)
 * un **Test Wollok** (.wtest)
+* un **Programa Wollok** (.wpgm)
 
-En las siguientes secciones se explicarán más en detalle.
+Cuando se trabaja con diferentes archivos y desde uno de ellos se quiere utilizar lo definido en otros, se deben **importar**.
 
-## Programas Wollok ##
+### Módulos o Bibliotecas ###
 
-Un programa es una pieza de código ejecutable que consiste en una serie de expresiones que serán evaluadas en forma secuencial. Se puede pensar como el punto de entrada principal (o _main_) de un programa en otros lenguajes.
+En estos archivos se escribe el código principal, incluyendo la definicion de los objetos, clases y demás elementos que forman parte del programa.
+Dependiendo del tamaño y de las preferencias de organización, se pueden distribuir las definiciones en diferentes archivos o tener todo junto en uno solo. 
 
-Por ejemplo:
+Por ejemplo, el archivo _ejemplo.wlk_ puede tener las siguientes definiciones:
 
 ```wollok
-program helloWorld {
-   console.println("Hola mundo")
+object unObjeto{
+    method responderAlgo(){
+        // Código aquí
+    } 
+    method hacerAlgo(){
+        // Código aquí
+    } 
+}
+
+const otroObjeto = new Otro()
+
+class Otro{
+    method hacerAlgoCon(alguien){
+        // Código aquí
+    }
 }
 ```
 
-Este programa simplemente escribe "Hola mundo" en la consola. Las secciones siguientes explicarán cómo entender cada una de las partes que componen la expresión "console.println(...)". Por el momento, se puede pensar como una instrucción de alto nivel que está disponible en cualquier programa.
+Cuando se los ejecuta individualmente, se activa la consola (REPL) y queda disponible para enviar desde allí uno por uno los mensajes que se desea.
+
+### Tests ### 
+
+En estos archivos se escriben los tests unitarios a realizar sobre el programa. Se puede definir uno o varios archivos de tests.
+
+Por ejemplo, el archivo _prueba ejemplo.wtest_ puede contener:
+
+```wollok
+import ejemplo.*
+
+test "El objeto responde algo" {
+   const respuestaEsperada = 100
+   assert.equals(respuestaEsperada, unObjeto.responderAlgo())
+}
+
+test "otro test" {
+   otroObjeto.hacerAlgoCon(unObjeto) 
+   assert.that(otroObjeto.todoBien())
+}
+
+```
+
+Al ejecutar el archivo de test, se ejecutan individualemnte cada uno de los tests y se activa el panel de testing donde se muestran los resultados. 
+El _import_ permite incluir el archivo donde está el código que se quiere probar.
+
+
+### Programas ###
+
+Un programa es una pieza de código ejecutable que consiste en una serie de expresiones que serán evaluadas en forma secuencial, al iniciar la ejecución del programa. Se puede pensar como el punto de entrada principal  de un programa (similar al _main_ en otros lenguajes).
+
+Por ejemplo, el archivo _ejemplo.wpgm_ puede tener definido:
+
+```wollok
+import ejemplo.*
+
+program holaObjetos {
+   unObjeto.hacerAlgo() 
+   otroObjeto.hacerAlgoCon(unObjeto)
+   console.println(unObjeto.responderAlgo())
+}
+```
+
+Al ejecutar el programa se evalúa secuencialmente cada una de las sentencias. La forma de salida dependerá de que en el código se indique explicitamente el uso de la interfaz gráfica de wollok Game o la consola. En este caso, se mostrará en la consola la respuesta que da el objeto. 
+El _import_ inicial permite utilizar todas las definiciones del archivo correspondiente.
+
+### Importar archivos ###
+
+Para poder utilizar el código de un archivo desde otro, se lo debe importar, mediante la expresion _import_ seguida de lo que se desea importar. 
+Para importar todas las definiciones de un archivo, se especifica el nombre del archivo y un _*_:
+
+```wollok
+import ejemplo.*
+```
+
+Para importar sólo una definición particular del archivo, se indica el nombre del archivo y del elemento:
+
+```wollok
+import ejemplo.unObjeto
+```
+
+Un adecuado uso de _imports_ permite no sólo organizar el código más prolijamente sino tener en un mismo proyecto diferentes versiones de los mismos elementos y elegir la forma de combinarlos.
+
 
 ## Referencias variables y constantes ##
 
@@ -58,12 +137,18 @@ edad = edad + 1
 
 Una **constante** es una referencia que siempre apunta al mismo objeto, por lo tanto es necesario definir el objeto apuntado en el momento de inicializar la referencia. No es una operación válida tratar de cambiar la referencia para apuntar a otro objeto.
 
-Lo que es constante no es el objeto apuntado (que puede cambiar su estado interno) sino la referencia.
+Lo constante es la referencia, no implica que el objeto referenciado no pueda cambiar su estado interno.
 
 ```wollok
 const edadAdulta = 21
 
 edadAdulta = 18  // ¡ ESTO NO COMPILA !
+```
+
+```wollok
+const elementos = []
+
+elementos.add(18)  // ¡ ESTO COMPILA !
 ```
 
 ## Comentarios ##

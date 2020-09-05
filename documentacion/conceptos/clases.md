@@ -139,18 +139,18 @@ class Ave {
     //...
 
     method initialize(){
-        energia = energia.max(0)
+        self.otrasInicializaciones()
         mundo.hayUnAveMas(self)
     }
 }
 
-const pepita = new Ave() // La energía queda en 0
-const pepita = new Ave(energia = 100) // La energía queda en 100
-const pepita = new Ave(energia = -100) // La energía vuelve a quedar en 0, 
-// en todos los casos, el objeto mundo realiza la accion solicitada con el objeto recientemente creado
+const pepita = new Ave(energia = 100) // 
+// Se crea a pepita con energía en 100, 
+// luego se ejecutan las otras inicializaciones 
+// y mundo realiza la accion solicitada con el objeto recientemente creado
 ```
 
-Aparte de lo anterior, es un método que puede ser utilizado como cualquier otro. 
+Más allá de esta llamada automática en la instanciación, es un método que puede ser utilizado como cualquier otro. 
 
 
 ## Referencias a los objetos intanciados ##
