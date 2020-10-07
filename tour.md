@@ -17,7 +17,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
 <div class="container">
     <ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-edit"></i> Editor</a>
+            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#darkMode" role="tab"><i class="fa fa-adjust"></i> Dark Mode</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-edit"></i> Editor</a>
         </li>
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#validador" role="tab"><i class="fa fa-check-circle"></i> Validador</a>
@@ -40,8 +43,30 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
     </ul>
     <!-- Tab panels -->
     <div class="tab-content card container">
+        <!-- *****************************  DARK MODE ****************************************-->
+        <!--Panel 0-->
+        <div class="tab-pane fade in show active" id="darkMode" role="tabpanel">
+            <br>
+            <p>
+            Si querés trabajar con un tema oscuro, te recomendamos que te descargues <a href="/config/wollokDarkMode.epf">este archivo de configuración</a> y luego lo importes en tu entorno de trabajo, como lo muestra el siguiente video:
+            </p>
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/darkMode1.gif" class="img-fluid z-depth-1"/>
+            </div>
+            <br>
+            <p>
+            Una vez que importaste las preferencias, reiniciá Wollok, y al recargar vas a ver las herramientas adaptadas para visualizarse con un fondo oscuro:
+            </p>
+            <div class="container text-center">
+                <img src="/images/tour/darkMode2.gif" class="img-fluid z-depth-1"/>
+            </div>
+            <br>
+        </div>
+        <!--/.Panel 0-->
+        <!-- ********************************  EDITOR ****************************************-->
         <!--Panel 1-->
-        <div class="tab-pane fade in show active" id="editor" role="tabpanel">
+        <div class="tab-pane fade" id="editor" role="tabpanel">
             <br>
             <p>
             El editor de Wollok ofrece desde ya coloreado de sintaxis, pero también viene con capacidades de autocompletado.
