@@ -26,8 +26,9 @@ La versión 2.0 de Wollok está disponible, y además de la integración con Tra
 - mejoramos el **diagrama dinámico**, que podés integrarlo no solo con la consola REPL sino también con los tests, lo que te ayudará a detectar problemas con algún test en particular (si anotás al test con la palabra `only` ejecuta ese test solo). Si querés ver más podés buscar la solapa Test Runner del [tour](../tour)
 - tenés un aviso más claro en la consola REPL cuando modificás el archivo en medio de tus pruebas. Ahora podés reiniciar la consola desde cero, o incluso ejecutar todos los comandos de la última sesión. Te lo contamos mejor en la solapa Console del [tour](../tour)
 - podés tener varios describe en un mismo archivo
+- ¡y las herramientas se adaptan bien a los temas oscuros!
 
-entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.9.2](https://github.com/uqbar-project/wollok/milestone/32?closed=1) (versión pre-release), [2.0.0](https://github.com/uqbar-project/wollok/milestone/25?closed=1) y [2.0.1](https://github.com/uqbar-project/wollok/milestone/35?closed=1).
+entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.9.2](https://github.com/uqbar-project/wollok/milestone/32?closed=1) (versión pre-release), [2.0.0](https://github.com/uqbar-project/wollok/milestone/25?closed=1), [2.0.1](https://github.com/uqbar-project/wollok/milestone/35?closed=1) y la [2.0.2](https://github.com/uqbar-project/wollok/milestone/36?closed=1)
 
 ## ¡Seguimos avanzando!
 

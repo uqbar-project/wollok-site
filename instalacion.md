@@ -81,7 +81,7 @@ icon: 'cloud-download'
 					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
 					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
 					<br>
-					<p><i>La versión Wollok Ingalls (2.0.x) no es retrocompatible con la Wollok Hypatia o anteriores versiones, por lo que tenés que instalarla desde cero. Si tenés la versión 2.0.0 sí podés actualizar a la 2.0.1</i></p>
+					<p><i>La versión Wollok Ingalls (2.0.x) no es retrocompatible con la Wollok Hypatia o anteriores versiones, por lo que tenés que instalarla desde cero. Si tenés la versión 2.0.0 sí podés actualizar a la 2.0.1, ó 2.0.2</i></p>
 					<hr>
 					<h4>Versión histórica 1.9.2 para 32 bits</h4>
 					<p>Si tenés un sistema operativo de 32 bits, la última versión disponible es la 1.9.2 (Hypatia). <b>Te recomendamos fuertemente que instales un sistema operativo de 64 bits</b> y el Wollok correspondiente para tener acceso a las últimas novedades.
