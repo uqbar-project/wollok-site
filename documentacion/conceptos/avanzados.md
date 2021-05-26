@@ -124,6 +124,7 @@ mixin Flying {
     fliedMeters = fliedMeters + meters
   }
   method fliedMeters() = fliedMeters
+  method reduceEnergy(amount)
 }
 ```
 
