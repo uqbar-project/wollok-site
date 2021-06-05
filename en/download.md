@@ -82,11 +82,9 @@ lang: 'en'
 					<h4 class="card-title">First time</h4>
 					<p>As Wollok is an Eclipse-based platform, you install Wollok IDE by uncompressing Zip / Tar.Gz file (depending on your OS platform):
 					</p>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
 					<hr>
 					<h4 class="card-title" id="actualizar-wollok">Updates</h4>
 					<p>

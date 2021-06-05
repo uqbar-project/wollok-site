@@ -77,9 +77,9 @@ icon: 'cloud-download'
 					<h4 class="card-title">Primera vez</h4>
 					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
 					</p>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
 					<br>
 					<p><i>La versión Wollok Ingalls (2.0.x) no es retrocompatible con la Wollok Hypatia o anteriores versiones, por lo que tenés que instalarla desde cero. Si tenés la versión 2.0.0 sí podés actualizar a la 2.0.1, ó 2.0.2</i></p>
 					<hr>
