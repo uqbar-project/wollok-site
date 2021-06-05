@@ -86,8 +86,8 @@ icon: 'cloud-download'
 					<h4>Versión histórica 1.9.2 para 32 bits</h4>
 					<p>Si tenés un sistema operativo de 32 bits, la última versión disponible es la 1.9.2 (Hypatia). <b>Te recomendamos fuertemente que instales un sistema operativo de 64 bits</b> y el Wollok correspondiente para tener acceso a las últimas novedades.
 					</p>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-win32.win32.x86.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
-					<a class="btn btn-primary" href="http://download.uqbar.org/wollok/products/stable/wollok-linux.gtk.x86.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v1.9.2/wollok-win32.win32.x86.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v1.9.2/wollok-linux.gtk.x86.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
 					<hr>
 					<h4 class="card-title" id="actualizar-wollok">Actualizaciones</h4>
 					<p>
