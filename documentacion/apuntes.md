@@ -80,23 +80,38 @@ lang: 'es'
     <hr/>
 </div>
 
-## Integracion con Travis
+## Integracion con Github Actions
 
 <div class="container">
-Si estás buscando integrar tu proyecto con Travis, el archivo <code>.travis.yml</code> de un proyecto Wollok que tiene tests debería tener esta estructura
+Si estás buscando integrar tu proyecto con Github Actions, el archivo <code>build.yml</code> en la carpeta <code>.github/workflows</code> de un proyecto Wollok que tiene tests debería tener esta estructura
 </div>
 
 <br>
 
 ```yml
-language: generic
+# .github/workflows/build.yml
+# GitHub Actions documentation
+# => https://docs.github.com/en/actions
+name: build
 
-sudo: required
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: [push, pull_request]
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
 
-script:
-    - git clone https://github.com/uqbar-project/wollok-cli
-    - export PATH="$PATH:./wollok-cli"
-    - wollok test
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 14
+
+      # Execute Gradle commands in GitHub Actions workflows
+      - run: |
+          git clone https://github.com/uqbar-project/wollok-cli
+          wollok-cli/wollok test
+        shell: bash
 ```
 
 <br>

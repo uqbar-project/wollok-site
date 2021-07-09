@@ -8,38 +8,42 @@ icon: 'podcast'
 
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;¡Nuevo release: Wollok Ingalls!</h1>
+<h1>&nbsp;&nbsp;¡Nuevo release: Wollok Juana Azurduy!</h1>
 <br>
 </div>
 
 
 <div class="container" style="text-align: center; margin-bottom: 1em;">
-    <img src="/images/news/ingalls.png" width="30%" height="auto"/>
+    <img src="/images/news/juana_azurduy.png" width="16%" height="auto"/>
 </div>
 
 
-Esta versión homenajea a [Dan Ingalls](https://en.wikipedia.org/wiki/Dan_Ingalls), pionero de la programación orientada a objetos y el principal arquitecto de Smalltalk en Xerox Parc Place.
+La versión 3.0.0 homenajea a [Juana Azurduy](https://es.wikipedia.org/wiki/Juana_Azurduy), mariscal de la independencia del Alto Perú (honrada tanto en Bolivia como en Argentina).
 
-La versión 2.0 de Wollok está disponible, y además de la integración con Travis a partir de la herramienta [wollok-cli](https://github.com/uqbar-project/wollok-cli), el sistema de inferencia de tipos, las herramientas de detección y solución de errores,
+También tenemos una actualización de la herramienta [wollok-cli](https://github.com/uqbar-project/wollok-cli), la versión 3.2.0 para que lo integres con el CI que más te guste, como Github Actions.
 
 - tenemos nueva iconografía, que diferencia mejor los archivos de definiciones, los de tests y los programas, y cada uno de los conceptos del lenguaje. Los íconos están adaptados para personas con capacidades visuales diferentes, para ayudarte en la experiencia de usuario.
-- mejoramos el **diagrama dinámico**, que podés integrarlo no solo con la consola REPL sino también con los tests, lo que te ayudará a detectar problemas con algún test en particular (si anotás al test con la palabra `only` ejecuta ese test solo). Si querés ver más podés buscar la solapa Test Runner del [tour](../tour)
-- tenés un aviso más claro en la consola REPL cuando modificás el archivo en medio de tus pruebas. Ahora podés reiniciar la consola desde cero, o incluso ejecutar todos los comandos de la última sesión. Te lo contamos mejor en la solapa Console del [tour](../tour)
-- podés tener varios describe en un mismo archivo
-- ¡y las herramientas se adaptan bien a los temas oscuros!
 
-entre muchas otras cosas. El resumen de issues resueltos las tenés aquí: para la [1.9.2](https://github.com/uqbar-project/wollok/milestone/32?closed=1) (versión pre-release), [2.0.0](https://github.com/uqbar-project/wollok/milestone/25?closed=1), [2.0.1](https://github.com/uqbar-project/wollok/milestone/35?closed=1) y la [2.0.2](https://github.com/uqbar-project/wollok/milestone/36?closed=1)
+- tenés un ícono más claro y un aviso en la consola REPL cuando estás trabajando sin un archivo asociado:
 
-## ¡Seguimos avanzando!
+![consola REPL sin archivo](/images/news/jazurduy_console.gif)
 
-Aun en un contexto mundial complejo, nos estamos encontrando virtualmente cada dos semanas a charlar sobre los próximos pasos de la herramienta: la interacción de wollok game, una nueva definición para los mixines, son algunas de las cuestiones en las que estamos trabajando. Si te interesa participar, ¡te esperamos a vos [cuando quieras](../comunidad)!
+Recordá que podés reiniciar la consola desde cero, o incluso ejecutar todos los comandos de la última sesión. Te lo contamos mejor en la solapa Consola del [tour](../tour)
+
+- Desde la versión pasada tenés el **tema oscuro**, configuralo siguiendo las instrucciones en la solapa _Dark Mode_ el [tour](../tour)
+
+- hay una **nueva sintaxis simplificada para crear objetos y linearizar mixines** (podés conocerla en la documentación)
+
+- ¡también hicimos varias mejoras en Wollok Game para ayudarte a crear mejores juegos!
+
+- como parte de la simplificación del lenguaje, eliminamos los constructores, a favor de usar solamente parámetros nombrados y el método initialize que reemplaza a los anteriores fixtures para los _describes_
+
+entre muchas otras cosas. El resumen de issues resueltos están aquí: para la [3.0.0](https://github.com/uqbar-project/wollok/releases/tag/v3.0.0)
 
 <div class="container">
-<br>
-<hr>
-<img src="/images/bug.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;¿En qué estamos trabajando?</h1>
-<br/>
 </div>
 
-Podés ver [aquí](https://github.com/uqbar-project/wollok/issues) la lista de issues que estamos encarando para el próximo release. 
+## ¡Nos mudamos!
+
+A partir de junio del 2021, empezamos nuestro camino hacia un nuevo entorno: [wollok-ts](https://github.com/uqbar-project/wollok-ts). Estaremos jugando con muchas herramientas nuevas, pronto vas a tener novedades. Si te interesa participar, ¡te esperamos a vos [cuando quieras](../comunidad)!
+
