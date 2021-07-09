@@ -9,46 +9,43 @@ icon: 'podcast'
 
 <div class="container">
 <img src="/images/news.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;Wollok Hypatia released!</h1>
+<h1>&nbsp;&nbsp;Wollok Juana Azurduy released!</h1>
 <br>
 </div>
+
 
 <div class="container" style="text-align: center; margin-bottom: 1em;">
-    <img src="/images/news/hypatia.jpg"/>
+    <img src="/images/news/juana_azurduy.png" width="16%" height="auto"/>
 </div>
 
-This version is a tribute to [Hypatia](https://en.wikipedia.org/wiki/Hypatia), a Hellenistic Neoplatonist philosopher, astronomer, and mathematician.
 
-Wollok 1.8 release is available, with so many features!
+3.0.0 version is a tribute to [Juana Azurduy](https://es.wikipedia.org/wiki/Juana_Azurduy), marshal of Alto Peru, great leadership of the independence for both Argentina and Bolivia.
 
-- **type system inference** is already active when you launch Wollok for the very first time! You'll be able to get type information for variables, parameters, and detect earlier programming errors
-- [wollok-cli](https://github.com/uqbar-project/wollok-cli), a new project is born, allowing you to have [**Travis continuous integration**](../documentation/notes#travis-integration) in your Wollok projects. Tasks automation is easier now, give a try!
-- enhanced **dynamic diagram** integrated with REPL console, a didactic tool for teaching OOP
-- better UX for REPL console, less resource-consuming. You can also **import any file of your project in the console**. If you want to get a deeper view, please take a look to the [tour](../tour) page
-- [**named parameters**](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit#heading=h.vj2ax6a4f7xh) is now the preferred and default way for object instantiation
-- error reporting is more flexible now, which fosters the user to explore the language in an iterative way
-- smart autocomplete functionality, filtering private messages and prioritizing them
-- optimization for performance in Wollok lists and sets!
-- adding new methods in Wollok library objects (days of week, better `toString` definition for pairs and dates, `left(), right(), reverse()` in String, `copyWith(), copyWithout()` in Collection, etc.). Also null parameters are catched, for a better error detection in your programs.
-- Stack trace copy and overall time elapsed in Test Runner
-- and new quick fixes were added!
+There's also an upgrade for the [wollok-cli](https://github.com/uqbar-project/wollok-cli) tool, version 3.2.0. You can work with your preferred CI workflow, such as Github Actions.
 
-Here you can check all issues solved for versions for [1.8.0](https://github.com/uqbar-project/wollok/milestone/26?closed=1) (pre-release version), [1.8.1](https://github.com/uqbar-project/wollok/milestone/28?closed=1) and [1.8.2](https://github.com/uqbar-project/wollok/milestone/29?closed=1).
+- a new set of icons was chosen, taking into account visually impaired people and enhancing user experience
 
-<div/><!-- just to clean up the markdown, don't remove it -->
+- a clearer icon and a warning on the REPL console whenever you work without an associated file:
 
-## New "wollokers"!
+![consola REPL sin archivo](/images/news/jazurduy_console_en.gif)
 
-Since july, two hackatons were made: [chinese-food](https://twitter.com/wollokLang/status/1150785337108680704) the first and [empanadas](https://twitter.com/wollokLang/status/1156572239241863169) the second. A lot of students from Universidad Nacional de San Martín and Universidad Nacional de Quilmes attended the meeting, joined the team, and they are currently working to improve our product day by day.
+Remember that you can always restart REPL console from scratch, or rerun last session commands as shown in our [Wollok tour](../tour).
 
-[We are looking for you!](../community)
+- you can also work with **dark mode** theme, easily configured following instructions in [tour](../tour) page.
+
+- **new simplified syntax for object instantiation and mixin linearization** (check out our documentation)
+
+- enhancements made for Wollok Game will help you to create awesome games!
+
+- constructors were deleted, favoring only named parameters + initialize method also for _describes_ (replacing fixtures)
+
+You can check solved issues [here](https://github.com/uqbar-project/wollok/releases/tag/v3.0.0).
 
 <div class="container">
-<br>
-<hr>
-<img src="/images/bug.png" height="64" width="64" align="left"/>
-<h1>&nbsp;&nbsp;What are we working on?</h1>
-<br/>
 </div>
 
-You can see [here](https://github.com/uqbar-project/wollok/milestone/25) the complete list of "in-progress" issues for next release and [what we already did](https://github.com/uqbar-project/wollok/milestone/25?closed=1).
+## Moving on!
+
+Since June 2021, we started working on a new environment: : [wollok-ts](https://github.com/uqbar-project/wollok-ts). We'll enjoy developing a lot of new tools. If you wish to participate, [join us](../community)!
+
+
