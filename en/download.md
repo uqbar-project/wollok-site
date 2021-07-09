@@ -82,9 +82,9 @@ lang: 'en'
 					<h4 class="card-title">First time</h4>
 					<p>As Wollok is an Eclipse-based platform, you install Wollok IDE by uncompressing Zip / Tar.Gz file (depending on your OS platform):
 					</p>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
 					<hr>
 					<h4 class="card-title" id="actualizar-wollok">Updates</h4>
 					<p>
@@ -202,17 +202,36 @@ lang: 'en'
 					</div>
 					<br>
 					<hr>
-					<h4 class="card-title">Warning Message Install Java 6 for Mac users</h4>
+					<h4 class="card-title">Mac: Failed to create the Java Virtual Machine</h4>
+					<div class="text-center">
+						<img src="/images/troubleshooting/mac_vm_error.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
 					<p>
-						In Mac operating systems there is a weird message advising us to install Java 6
-						<div class="text-center">
-							<img src="/images/troubleshooting/java6.png" class="hoverable img-fluid z-depth-1"/>
-						</div>
-						<br>
-						Well, that’s not true, you have to install JDK 1.8. We will correct it soon.
+					<br>
+					If this error message appears on your Mac, follow <a href="https://www.pushing-pixels.org/2020/06/19/fixing-the-failed-to-create-the-java-virtual-machine-error-on-eclipse-startup-on-a-mac.html">this instructions</a>.
 					</p>
 					<hr>
-					<h4 class="card-title">Executing non signed application (Mac)</h4>
+					<h4 class="card-title">Mac: Wollok is damaged</h4>
+					<p>
+						First time you open Wollok executable program on your Mac, this window may show:
+					</p>
+					<div class="text-center">
+						<img src="/images/troubleshooting/wollok-mac-garbage.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
+					You can solve it opening a terminal and writing down:
+					</p>
+					<div class="language-javascript">	
+							<pre>
+<span class="c">xattr</span><span class="kd"> -d </span><span class="c">com.apple.quarantine Wollok.app</span>
+							</pre>
+					</div>
+					<p>
+					After that executable file should be opened without any issue.
+					</p>					
+					<hr>
+					<h4 class="card-title">Mac: Executing unsigned application</h4>
 					<p>
 					Mac OS X implements a new security system only allowing the execution of application developed by registered developers. 
 					Also the applications should be distributed by Apple validated channels, as App Store. As Wollok development team is 
@@ -226,7 +245,7 @@ lang: 'en'
 						<a href="https://support.apple.com/kb/PH21769?locale=en_EN&viewlocale=en_EN">Apple support site</a>.
 					</p>
 					<hr>
-					<h4 class="card-title">App Translocation Problem (Mac)</h4>
+					<h4 class="card-title">Mac: Translocation App Problem</h4>
 					<p>
 						Version 10.12 of OS X introduces a new security system called Gatekeeper. This new system has as objective
 						avoiding the undesired execution of programs. So that, the downloaded applications cannot be executed from the

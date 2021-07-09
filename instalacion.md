@@ -77,11 +77,11 @@ icon: 'cloud-download'
 					<h4 class="card-title">Primera vez</h4>
 					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma), en cualquier directorio. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
 					</p>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v2.0.2/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 64</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 64</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
 					<br>
-					<p><i>La versión Wollok Ingalls (2.0.x) no es retrocompatible con la Wollok Hypatia o anteriores versiones, por lo que tenés que instalarla desde cero. Si tenés la versión 2.0.0 sí podés actualizar a la 2.0.1, ó 2.0.2</i></p>
+					<p><i>Si tenés versiones anteriores, te recomendamos que borres la carpeta e instales la última desde cero.</i></p>
 					<hr>
 					<h4>Versión histórica 1.9.2 para 32 bits</h4>
 					<p>Si tenés un sistema operativo de 32 bits, la última versión disponible es la 1.9.2 (Hypatia). <b>Te recomendamos fuertemente que instales un sistema operativo de 64 bits</b> y el Wollok correspondiente para tener acceso a las últimas novedades.
@@ -191,7 +191,7 @@ icon: 'cloud-download'
 					</div>
 					<br>
 					<hr>
-					<h4 class="card-title">Problema con MacOS Catalina</h4>
+					<h4 class="card-title">Mac: Wollok está dañado / Wollok is damaged</h4>
 					<p>
 						Al tratar de ejecutar el archivo wollok te va a aparecer este desagradable mensaje de error:
 					</p>
@@ -211,19 +211,7 @@ icon: 'cloud-download'
 					Luego deberías poder abrir el archivo normalmente.
 					</p>					
 					<hr>
-					<h4 class="card-title">Cartel de advertencia para instalar Java 6 en Mac</h4>
-					<p>
-						En máquinas Mac aparece un extraño cartel que indica que instalemos la versión de Java 6
-					</p>
-					<div class="text-center">
-						<img src="/images/troubleshooting/java6.png" class="hoverable img-fluid z-depth-1"/>
-					</div>
-					<br>
-					<p>
-					Esto no es cierto, hay que instalar JDK 1.8. 				
-					</p>
-					<hr>
-					<h4 class="card-title">Ejecución de aplicación no firmada en Mac</h4>
+					<h4 class="card-title">Mac: Ejecución de aplicación no firmada</h4>
 					<p>
 						Mac OS X implementa un sistema de seguridad que solo permite ejecutar aplicaciones desarrolladas por desarrolladores registrados en Apple, y estas aplicaciones deben estar distribuidas por el App Store. Como este no es el caso con Wollok, es necesario permitir ejecutar una aplicación no firmada. 
 					</p>
@@ -237,7 +225,16 @@ icon: 'cloud-download'
 						<a href="https://support.apple.com/kb/PH21769?locale=es_ES&viewlocale=es_ES">la documentación de <i>OS X</i> existente</a>
 					</p>
 					<hr>
-					<h4 class="card-title">Problema con App Translocation (Mac)</h4>
+					<h4 class="card-title">Mac: Failed to create the Java Virtual Machine</h4>
+					<div class="text-center">
+						<img src="/images/troubleshooting/mac_vm_error.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<p>
+					<br>
+					Si al ejecutar Wollok en Mac te aparece este mensaje de error, seguí las instrucciones que están en <a href="https://www.pushing-pixels.org/2020/06/19/fixing-the-failed-to-create-the-java-virtual-machine-error-on-eclipse-startup-on-a-mac.html">esta página</a>.
+					</p>
+					<hr>
+					<h4 class="card-title">Mac: Problema con App Translocation</h4>
 					<p>
 						En la versión 10.12 de OS X se introdujo un sistema de seguridad llamado Gatekeeper. Este sistema tiene como objetivo evitar la ejecución de programas de forma no deseada. Por lo tanto los programas no ejecutan si son ejecutados o descomprimidos en la carpeta Download o donde los guarda el browser. 
 						Para poder ejecutarlo es solamente necesario mover la aplicación a otra carpeta, todo haciendolo desde Finder. De esta manera Wollok va a funcionar correctamente.
