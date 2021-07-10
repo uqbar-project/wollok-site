@@ -48,4 +48,7 @@ You can check solved issues [here](https://github.com/uqbar-project/wollok/relea
 
 Since June 2021, we started working on a new environment: : [wollok-ts](https://github.com/uqbar-project/wollok-ts). We'll enjoy developing a lot of new tools. If you wish to participate, [join us](../community)!
 
+![debugger](/images/news/debugger.png)
+
+![debugger2](/images/news/debugger2.png)
 

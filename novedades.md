@@ -47,3 +47,7 @@ entre muchas otras cosas. El resumen de issues resueltos están aquí: para la [
 
 A partir de junio del 2021, empezamos nuestro camino hacia un nuevo entorno: [wollok-ts](https://github.com/uqbar-project/wollok-ts). Estaremos jugando a desarrollar muchas herramientas, pronto vas a tener novedades. Si te interesa participar, ¡te esperamos a vos [cuando quieras](../comunidad)!
 
+
+![debugger](/images/news/debugger.png)
+
+![debugger2](/images/news/debugger2.png)
