@@ -151,7 +151,7 @@ Todas las [operaciones de igualdad](#comparar-objetos-iguales) y [comparación](
 
 Las cadenas de caracteres se delimitan con una o dos comillas. 
 
-```wollok
+```js
 const unString = "hola"
 const otroString = 'mundo'
 ```

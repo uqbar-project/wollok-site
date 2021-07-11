@@ -22,8 +22,15 @@ Un mixin es una definición similar a la clase en el sentido en que define tanto
 Algunas características de los mixins:
 
 * **no puede instanciarse** (solo se instancian las clases)
-* se "linealiza" en la jerarquía de clases para evitar el [problema de los diamantes](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
-* **hasta el momento no soporta herencia de otro mixin o clase**
+* se "lineariza" en la jerarquía de clases para evitar el [problema de los diamantes](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
+* **solo soporta herencia de otros mixines** (un mixin no puede heredar de una clase, aunque una clase puede heredar de una superclase y opcionalmente de muchos mixines)
+
+```wollok
+class Ave {}
+mixin Volador inherits Ave {}               // INCORRECTO: un mixin no puede heredar de una clase
+mixin Volador {}
+mixin Planeador inherits Volador {}         // CORRECTO: un mixin puede heredar de otro mixin
+```
 
 Otros detalles técnicos
 
@@ -45,7 +52,7 @@ mixin Flier {
 Entonces se puede incorporar a una clase
 
 ```wollok
-class Bird mixed with Flier {}
+class Bird inherits Flier {}
 ```
 
 Luego podemos usarlo en un programa / test / biblioteca
@@ -69,7 +76,7 @@ mixin Walks {
   }
   method walkedDistance() = walkedDistance
 }
-class WalkingBird mixed with Walks {}
+class WalkingBird inherits Walks {}
 ```
 
 Y se puede usar así
@@ -85,10 +92,10 @@ assert.equals(10, pepita.walkedDistance())
 Los atributos declarados en un mixin pueden ser accedidas desde una clase que utilice dicho mixin.
 
 ```wollok
-class WalkingBird mixed with Walks {
-       method resetWalkingDistance() {
-               walkedDistance = 0     // variable definida en el mixin
-       }
+class WalkingBird inherits Walks {
+  method resetWalkingDistance() {
+    walkedDistance = 0     // variable definida en el mixin
+  }
 }
 ```
 
@@ -100,14 +107,25 @@ Una clase puede incorporar varios mixins a la vez.
 mixin M1 {}
 mixin M2 {}
 
-class C mixed with M1 and M2 {
+class C inherits M1 and M2 {
 }
 ```
 
-La lista de mixins se puede separar con un "and" o bien con comas.
+La lista de mixins se debe separar con un "and", indicando el mecanismo de linearización de izquierda a derecha. Esto implica que en este ejemplo:
 
 ```wollok
-class C mixed with M1, M2  {}
+mixin M1 {
+  method saludar() = "holu"
+}
+mixin M2 {
+  method saludar() = "holis"
+}
+
+class C inherits M1 and M2 {}
+
+program saludin {
+  console.println(new C().saludar()) // imprime "holu", tiene precedencia M1 sobre M2
+}
 ```
 
 ### Mixins abstractos ###
@@ -139,7 +157,7 @@ Hay tres posibles casos:
 En este caso la clase provee la implementación del método requerido:
 
 ```wollok
-class BirdWithEnergyThatFlies mixed with Flying {
+class BirdWithEnergyThatFlies inherits Flying {
   var energy = 100
   method energy() = energy
   method reduceEnergy(amount) {
@@ -158,11 +176,18 @@ class Energy {
   }
 }
 
-class BirdWithEnergyThatFlies inherits Energy mixed with Flying {
+class BirdWithEnergyThatFlies inherits Flying and Energy {
 }
 ```
 
-El método que el mixin requiere no está implementado en la clase que se mezcla con Flying sino en la superclase. Aquí vemos que al agregar el mixin solo se agregan las definiciones propias del mixin a la clase. El _method lookup_ sigue partiendo desde el objeto receptor y subiendo a través de la jerarquía de clases.
+El método que el mixin requiere no está implementado en la clase que se mezcla con Flying sino en la superclase **que debe definirse al final de la jerarquía**:
+
+```wollok
+class BirdWithEnergyThatFlies inherits Flying and Energy {} // CORRECTO, mixins primero y superclase al final
+class BirdWithEnergyThatFlies inherits Energy and Flying {} // INCORRECTO, la superclase no está al final
+```
+
+Aquí vemos que al agregar el mixin solo se agregan las definiciones propias del mixin a la clase. El _method lookup_ sigue partiendo desde el objeto receptor y subiendo a través de la jerarquía de clases.
 
 #### Método definido en otro mixin ####
 
@@ -181,13 +206,12 @@ mixin Energy {
 Y la usamos de la siguiente manera:
 
 ```wollok
-class BirdWithEnergyThatFlies mixed with Energy, Flying {}
+class BirdWithEnergyThatFlies inherits Energy and Flying {}
 ```
 
 En este caso Flying necesita el método **reduceEnergy** que no es implementada por la clase ni por sus superclases, pero sí en el otro mixin (Energy) que forma parte del conjunto de mixins que incorpora BirdWithEnergyThatFlies.
 
-En este caso el orden en el que escribimos los mixins no es relevante, ya que al enviar un mensaje a self comenzamos la búsqueda a partir del objeto receptor que incorpora todas las definiciones de todos los mixins.
-__Más adelante veremos que el orden de las declaraciones puede ser importante para el method lookup en otras variantes__
+En este caso el orden en el que escribimos los mixins no es relevante, ya que al enviar un mensaje a self comenzamos la búsqueda a partir del objeto receptor que incorpora todas las definiciones de todos los mixins. __Más adelante veremos que el orden de las declaraciones puede ser importante para el method lookup en otras variantes__
 
 ### Linearization ###
 
@@ -202,10 +226,10 @@ mixin M1 {
 }
 class A {}
 
-class B inherits A mixed with M1 {}
+class B inherits M1 and A {}
 ```
 
-La jerarquía de B queda de la siguiente manera:
+La jerarquía de B es fácil de entender, porque queda en el mismo orden en que la escribimos:
 
 ```bash
 B -> M1 -> A
@@ -214,7 +238,7 @@ B -> M1 -> A
 Si agregamos un nuevo mixin:
 
 ```wollok
-class B inherits A mixed with M1, M2 {}
+class B inherits M2 and M1 and A {}
 ```
 
 La nueva jerarquía quedaría como
@@ -223,9 +247,7 @@ La nueva jerarquía quedaría como
 B -> M2 -> M1 -> A
 ```
 
-> Aquí el orden en el que declaramos los mixins **no importa**.
-
-Los mixins del lado derecho tienen menos precedencia en la jerarquía, ya que el method lookup se resuelve de izquierda a derecha.
+Como hemos visto en uno de los ejemplos anteriores, los mixins del lado derecho tienen menos precedencia en la jerarquía, ya que el method lookup se resuelve de izquierda a derecha.
 
 ```wollok
 mixin M1 { ... }
@@ -236,15 +258,15 @@ mixin M5 { ... }
 mixin M6 { ... }
 
 class A { ... }
-class B inherits A mixed with M1 and M2 { ... }
-class C inherits B mixed with M3 { ... }
-class D inherits C mixed with M4 and M5 and M6 { ... }
+class B inherits M2 and M1 and A { ... }
+class C inherits M3 and B { ... }
+class D inherits M4 and M5 and M6 and C { ... }
 ```
 
 La cadena de resolución para D queda
 
 ```bash
-D -> M6 -> M5 -> M4 -> C -> M3 -> B -> M2 -> M1 -> A
+D -> M4 -> M5 -> M6 -> C -> M3 -> B -> M2 -> M1 -> A
 ```
 
 ### Redefinición de métodos ###
@@ -259,33 +281,50 @@ Dado el siguiente mixin
 
 ```wollok
 mixin Energy {
-  var  energy = 100
+  var energy = 100
   method reduceEnergy(amount) { energy -= amount }
   method energy() = energy
-
 }
 ```
 
 Una clase puede incorporar el mixin Energy y redefinir el método "reduceEnergy(amount)"
 
 ```wollok
-class Bird mixed with Energy {
+class Bird inherits Energy {
   override method reduceEnergy(amount) {
     // no hace nada
   }
 }
 ```
 
+Si ejecutamos en la consola 
+
+```wollok
+const pepita = new Bird()
+pepita.reduceEnergy(10)
+pepita.energy()            // 100
+```
+
+Veremos que la energía de pepita quedará con el mismo valor.
+
 #### Llamada a super (en una clase que redefine un método de un mixin) ####
 
 Como en cualquier otro método que redefine un método de una superclase, dentro del cuerpo podemos usar la palabra clave **super** para invocar al método original que estamos redefiniendo.
 
 ```wollok
-  class Bird mixed with Energy {
-    override method reduceEnergy(amount) {
-      super(1)
-    }
+class Bird inherits Energy {
+  override method reduceEnergy(amount) {
+    super(1)
   }
+}
+```
+
+La misma ejecución en la consola produce el siguiente resultado:smile
+
+```wollok
+const pepita = new Bird()
+pepita.reduceEnergy(10)
+pepita.energy()            // 99
 ```
 
 #### Llamada a super en un mixin ####
@@ -311,14 +350,13 @@ class C1 {
   var foo = ""
   method doFoo(chain) { foo = chain + " > C1" }
   method foo() = foo
-
 }
 ```
 
 y esta definición
 
 ```wollok
-class C2 inherits C1 mixed with M1 { }
+class C2 inherits M1 and C1 { }
 ```
 
 Esto implica tener esta jerarquía lineal:
@@ -351,15 +389,15 @@ Aquí vemos un ejemplo similar al anterior pero con algunos mixins adicionales
 
 ```wollok
 mixin M1 {
-  method doFoo(chain) { super(chain + " > M1") }
+  method doFoo(chain) { super(chain + "> M1 ") }
 }
 
 mixin M2 {
-  method doFoo(chain) { super(chain + "> M2") }
+  method doFoo(chain) { super(chain + "> M2 ") }
 }
 
 mixin M3 {
-  method doFoo(chain) { super(chain + "> M3") }
+  method doFoo(chain) { super(chain + "> M3 ") }
 }
 ```
 
@@ -368,10 +406,10 @@ Y aquí tenemos las clases
 ```wollok
 class C1 {
   var property foo = ""
-  method doFoo(chain) { foo = chain + " > C1" }
+  method doFoo(chain) { foo = chain + "> C1 " }
 }
 
-class C2 inherits C1 mixed with M1 and M2 and M3 {
+class C2 inherits M1 and M2 and M3 and C1 {
 }
 ```
 
@@ -386,7 +424,7 @@ Al ejecutar este código
 se imprime por consola lo siguiente
 
 ```bash
-Test > M3 > M2 > M1 > C1
+Test > M1 > M2 > M3 > C1 
 ```
 
 es decir, la jerarquía lineal obtenida.
@@ -404,7 +442,7 @@ mixin Flies {
   method times() = times
 }
 
-object pepita mixed with Flies {}
+object pepita inherits Flies {}
 ```
 
 En este caso la cadena queda conformada de la siguiente manera:
@@ -418,7 +456,11 @@ Una vez más aplican las mismas reglas para la _"linearization"_, el objeto defi
 Lo complementamos ahora con herencia de clases
 
 ```wollok
-object pepita inherits Animal with Flies {}
+class Animal {
+  method run() { ... }
+}
+
+object pepita inherits Flies and Animal {}
 ```
 
 ### Mixins en la instanciación ###
@@ -439,15 +481,15 @@ class Warrior {
 En lugar de crear una nueva clase para combinarlos...
 
 ```wollok
-class WarriorWithEnergy inherits Warrior mixed with Energy {}
+class WarriorWithEnergy inherits Energy and Warrior {}
 ```
 
 podemos directamente instanciar un nuevo objeto que los combine
 
 ```wollok
 program t {
-    const w = new Warrior() with Energy
-    assert.equals(100, w.energy())
+  const w = object inherits Energy and Warrior {}
+  assert.equals(100, w.energy())
 }
 ```
 
@@ -480,7 +522,7 @@ mixin Attacks {
 }
 
 class Warrior {
-
+  var property name = "Leo"
 }
 ```
 
@@ -488,10 +530,10 @@ Luego lo usamos de la siguiente manera
 
 ```wollok
 program t {
-    const warrior1 = new Warrior() with Attacks with Energy with GetsHurt
+    const warrior1 = object inherits GetsHurt and Energy and Attacks and Warrior {}
     assert.equals(100, warrior1.energy())
 
-    const warrior2 = new Warrior() with Attacks with Energy with GetsHurt
+    const warrior2 = object inherits GetsHurt and Energy and Attacks and Warrior {}
     assert.equals(100, warrior2.energy())
 
     warrior1.attack(warrior2)
@@ -501,25 +543,86 @@ program t {
 }
 ```
 
+### Inicialización de referencias en la linearización ###
+
+El mecanismo de linearización permite inicializar las referencias de cada abstracción: solo debemos encargarnos de pasarle el valor en el lugar donde esté definida dicha referencia. En el ejemplo anterior:
+
+```scala
+// IMPORTANTE: no mezclar referencias, Wollok valida que existan en cada abstracción
+const warrior1 = object inherits GetsHurt and Energy(energy = 150) and Attacks(power = 20) and Warrior(name = "Mati") {
+  ...
+}
+```
+
+### Herencia de mixins ###
+
+Es posible que un mixin tome definiciones de otro. En el mismo ejemplo anterior, podríamos pedir que el mixin GetsHurt herede de Energy:
+
+```wollok
+mixin Energy {
+    var property energy = 100
+    method reduceEnergy(amount) {
+    	energy = energy - amount
+    }
+}
+
+mixin GetsHurt inherits Energy {
+    method receiveDamage(amount) {
+        self.reduceEnergy(amount) 
+        // hereda método del padre
+        // estamos corrigiendo un reporte de error incorrecto de Wollok
+        // https://github.com/uqbar-project/wollok/issues/2006
+        // pero el programa funciona perfectamente
+    }
+    method energy()
+    method energy(newEnergy)
+}
+
+mixin Attacks {
+    var property power = 10
+    method attack(other) {
+        other.receiveDamage(power)
+        self.energy(self.energy() - 1)
+    }
+
+    method energy()
+    method energy(newEnergy)
+}
+
+class Warrior {}
+```
+
+El programa queda: 
+
+```wollok
+const warrior1 = object inherits GetsHurt and Attacks and Warrior {}
+console.println(warrior1.energy())
+assert.equals(100, warrior1.energy())
+```
 
 ### Limitaciones ###
-
-#### Herencia de mixins ####
-
-Para aquellos que conozcan Scala, la implementación actual de mixins no soporta que un mixin herede de otro mixin o clase.
 
 #### Mixins de métodos nativos ####
 
 No queda claro de qué manera los mixins pueden combinarse con clases nativas  :^P
 
-#### Clases anónimas ####
+### Redefiniendo comportamiento sobre un objeto anónimo ###
 
-Wollok no provee clases anónimas, de manera que no es posible combinar mixins con una clase en tiempo de instanciación **y redefinir el comportamiento en el mismo lugar**.
+Podemos definir un objeto que linearice de mixines y clases y defina su propio comportamiento, como vemos en este ejemplo:
 
-**ESTO NO PUEDE HACERSE**: no se puede proveer el cuerpo de un método cuando se instancie
+```scala
+class Animal {
+	var property name
+}
 
-```wollok
-const pepitaFliesDouble = new Animal mixed with Flies {
+mixin Flies {
+	var property height = 100
+	method fly() {
+		height = height + 10
+	}	
+}
+
+const pepitaFliesDouble = object inherits Flies(height = 25) and Animal(name = "pepita") {
     override method fly() {
         super()
         super()
@@ -529,7 +632,7 @@ const pepitaFliesDouble = new Animal mixed with Flies {
 
 ### Type System ###
 
-El sistema de tipos de Wollok (Wollok Type System) es una funcionalidad opcional, que puede activarse o desactivarse. El sistema de tipos permite ocultar la información explícita de tipos, ya que para los desarrolladores novatos esto implica tener que explicar/entender un nuevo concepto.
+El sistema de tipos de Wollok (Wollok Type System) es una funcionalidad opcional, que por defecto está activado pero puede apagarse en la configuración. El sistema de tipos permite ocultar la información explícita de tipos, ya que para los desarrolladores novatos esto implica tener que explicar/entender un nuevo concepto.
 
 #### Type System - Parte I ####
 
@@ -563,17 +666,17 @@ const pato = new AveQueNada()
 
 object juan {
   var mascota
-    method hacerVolar() {
-      mascota.volar()
-    }
+  method hacerVolar() {
+    mascota.volar()
+  }
 }
 ```
 
 Estos son los tipos que infiere Wollok:
 
-* pepita : se tipa a **Ave**
-* pato : se tipa a **AveQueNada**
-* mascota : se tipa a **Ave|Superman**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia.
+* pepita : se tipa a **`Ave`**
+* pato : se tipa a **`AveQueNada`**
+* mascota : se tipa a **`Ave|Superman`**, que significa que puede ser una instancia de Ave (o sus subclases) o de Superman. Esto es porque los mensajes que se le envían a la mascota, en este caso **volar()**, es implementado en dichas clases. Que en AveQueNada se redefina **volar()** no altera la inferencia.
 
 Si en otra parte del código se asigna a la variable mascota un objeto de otra clase, se producirá una advertencia acerca de la inconsistencia de tipos de datos.
 
@@ -614,7 +717,7 @@ Así que estas son las dos operaciones básicas que pueden hacerse con una excep
 
 Veamos un código de ejemplo de la sentencia throw:
 
-```wollok
+```scala
 class MyException inherits wollok.lang.Exception {}
 class A {
   method m1() {
@@ -631,7 +734,7 @@ Aquí el método m1() siempre tira una excepción, que es una instancia de MyExc
 
 Aquí tenemos un ejemplo de cómo atrapar una excepción:
 
-```wollok
+```scala
 program p {
   const a = new A()
     const otroA = new A()
@@ -652,7 +755,7 @@ Este programa atrapa cualquier MyException que se tire dentro del código encerr
 
 Además del bloque "catch", un bloque "try" puede definir un bloque "always", que **siempre** se ejecutará sin importar si hubo un error o no.
 
-```wollok
+```scala
 try {
   a.m1()
 }
@@ -667,7 +770,7 @@ then always
 
 Un bloque try puede tener más de un catch, en caso de necesitar manejar diferentes tipos de excepción de distinta manera:
 
-```wollok
+```scala
 try
   a.m1()
 catch e : MySubclassException

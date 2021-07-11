@@ -60,7 +60,6 @@ Los diccionarios (también conocidos como _mapas_ en otros lenguajes) son colecc
 
 ```wollok
 >>> const telefonos = new Dictionary()
-a Dictionary[]
 >>> telefonos.put("ricky", "15-21...")
 >>> telefonos.put("poly", "15-42...")
 >>> telefonos.get("ricky")
@@ -70,9 +69,7 @@ Pueden estudiar otros mensajes interesantes como keys(), values(), etc.
 
 ### Closures ###
 
-Un _closure_ es un objeto que representa una _porción de código_ que puede evaluarse en cualquier momento, todas las veces que uno quiera. También pueden asignarse a referencia, pasarse como parámetros y ser devueltos como resultado de los métodos.
-
-Para una explicación más detallada véase [wikipedia](http://en.wikipedia.org/wiki/Closure_(computer_programming)).
+Un _closure_ es un objeto que representa una _porción de código_ que puede evaluarse en cualquier momento, todas las veces que uno quiera. También pueden asignarse a referencia, pasarse como parámetros y ser devueltos como resultado de los métodos. Para una explicación más detallada puede [verse este artículo de wikipedia](http://en.wikipedia.org/wiki/Closure_(computer_programming)).
 
 Wollok soporta closures mediante el uso de literales. 
 
@@ -111,15 +108,13 @@ Un dato importante de los closures es que no solo acceden a sus parámetros, sin
 var to = "world"
 const helloWorld = { "hello " + to }
 			
-helloWorld.apply() == "hello world"      // true
+helloWorld.apply() == "hello world"       // true
 		
 to = "wollok"
 helloWorld.apply() == "hello wollok"      // true
 ```
 
-Se podrá ver que el closure accede a la variable "to" que es definida fuera del contexto del closure mismo, dentro del programa. 
-
-Si cambiamos esta referencia, este efecto se propaga al closure (como se muestra en la segunda llamada, el valor devuelto es diferente).
+Se podrá ver que el closure accede a la variable "to" que es definida fuera del contexto del closure mismo, dentro del programa. Si cambiamos esta referencia, este efecto se propaga al closure (como se muestra en la segunda llamada, el valor devuelto es diferente).
 
 
 ### Closures y colecciones ###

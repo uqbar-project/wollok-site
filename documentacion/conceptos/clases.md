@@ -49,8 +49,7 @@ const pepita = new Ave()
 pepita.volar(23)
 ```
 
-Al crear un objeto, se le puede dar valores iniciales a cada una de sus atributos, para que el objeto que se obtiene quede completo y consistente.
-Entre los **( )** se indica el identificador de cada una de las referencias y su valor inicial. Como se indica el nombre de cada atributo, no es necesario mantener un orden en particular en el envío de parámetros.
+Al crear un objeto, se le puede dar valores iniciales a cada uno de sus atributos, para que el objeto que se obtiene quede completo y consistente. Entre los **( )** se indica el identificador de cada una de las referencias y su valor inicial. Como se indica el nombre de cada atributo, no es necesario mantener un orden en particular en el envío de parámetros.
 
 ```wollok
 const pepita = new Ave(energia = 100)
@@ -71,11 +70,11 @@ const pepita = new Ave(energia = 100, peso = 1) // Válido (energía se iniciali
 
 const pepita = new Ave(peso = 1, energia = 100) // Válido (idem)
 
-const pepita = new Ave(peso = 2) // Válido (energía se inicializa en 0, peso en 2)
+const pepita = new Ave(peso = 2)                // Válido (energía se inicializa en 0, peso en 2)
 
-const pepita = new Ave(energia = 100) // Error (Falta inicializar peso)
+const pepita = new Ave(energia = 100)           // Error (Falta inicializar peso)
 
-const pepita = new Ave()) // Error (Falta inicializar peso)
+const pepita = new Ave()                        // Error (Falta inicializar peso)
 ```
 
 ## Herencia ##
@@ -177,18 +176,18 @@ Esto permite la migración natural de objetos a clases de un programa que inicia
 
 Si la instanciación de la clase Dog requiere de parámetros, estos se inician en la definición del objeto, similar al new.
 
-```wollok
+```scala
 class Dog {
    var name
    var age
       // ...
    }
 }
-```
 
 object lassie inherits Dog(name = "Lassie", age = 3) {
    // ...
 }
+```
 
 
 ## Polimorfismo ##
@@ -217,12 +216,12 @@ package aves {
 Entonces:
 
 ```wollok
-    const avion = new Avion()
-    const pepita = new Ave()
+const avion = new Avion()
+const pepita = new Ave()
 
-    const objetosQueVuelan = [ avion, pepita ]
+const objetosQueVuelan = [ avion, pepita ]
 
-    objetosQueVuelan.forEach { o => o.volar() }
+objetosQueVuelan.forEach { volador => volador.volar() }
 ```
 
 No es necesario tener una superclase común para objetos para ser tratados polimórficamente. Como se dijo antes, lo único importante son los mensajes que entienden los objetos. *Olvídense de la clase, ¡podría ni siquiera tenerla!*
@@ -233,17 +232,16 @@ De todas maneras, el compilador es capaz de chequear si el mensaje que enviamos 
 
 Como ya se dijo, puede haber polimorfismo entre objetos definidos de diferente manera:
 
-```wollok
-    object boomerang {
-          method volar() {
-               // ... va, y viene
-          }
-    }
+```scala
+object boomerang {
+        method volar() {
+            // ... va, y viene
+        }
+}
 
-    const objetosQueVuelan = [ new Avion(), boomerang, object{ method volar(){/*hace algo*/ } } ]
+const objetosQueVuelan = [ new Avion(), boomerang, object { method volar() {/*hace algo*/ } } ]
 
-    objetosQueVuelan.forEach { o => o.volar() }
-
+objetosQueVuelan.forEach { volador => volador.volar() }
 ```
 
 ## Modularizacion ##
@@ -308,10 +306,6 @@ Al codificar dentro de un package, podemos referirnos a las clases por su **nomb
 
 Para referirnos a una clase que está fuera del package DEBEMOS usar su FQN. Para evitar escribir una y otra vez los FQN de la clase, podemos usar los imports, como se describe a continuación.
 
-
-### Bibliotecas vs Programas ###
-
-// TODO
 
 ### Imports ###
 

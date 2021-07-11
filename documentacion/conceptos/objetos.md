@@ -30,7 +30,7 @@ Esto puede hacerse de dos maneras ligeramente diferentes:
 
 ### Objetos autodefinidos ###
 
-Los objetos autodefinidos, también llamados _Named Objects_ o "Well-Known Objects", y más sintéticamente "WKOs". También se los puede denominar "singleton".
+Los objetos autodefinidos permiten hacer definiciones _custom_ con estado y comportamiento particular. Otros nombres con los que pueden encontrarse en diferente bibliografía son _Named Objects_, "Well-Known Objects" (wko) o "singleton".
 
 Para definir un objeto utilizamos esta construcción:
 
@@ -84,12 +84,12 @@ En el caso de que el método devuelva un valor es obligatorio escribir una sente
 
 #### Simple Return Method ####
 
-Hay un _shortcut_ para definir métodos simples de una línea que sólo devuelven valores.
+Hay un _shortcut_ para definir métodos simples de una línea que solo devuelven valores.
 
 ```wollok
 object pepita {
     method estaFeliz() = true
-    method saluda(nombre) = hola " + nombre
+    method saluda(nombre) = "hola " + nombre
 }
 ```
 
@@ -98,7 +98,7 @@ El lector podrá notar que no es necesario escribir return, ni tampoco las llave
 
 ### Atributos ###
 
-Hasta el momento pepita no hace cosas muy interesantes, retorna siempre lo mismo o sólo dependiendo de los parámetros que recibe en los mensajes. Así que le agregaremos "estado" al objeto, mediante atributos, también llamados variables de instancia, en los cuales va a guardar valores, recordar información y en definitiva hacer referencia a otros objetos. Algunos métodos harán que el estado del objeto cambie, asignándole nuevos valores a los atributos. A su vez, el mismo estado del objeto influirá en la respuesta de otros métodos.
+Hasta el momento pepita no hace cosas muy interesantes, retorna siempre lo mismo o solo dependiendo de los parámetros que recibe en los mensajes. Así que le agregaremos "estado" al objeto, mediante atributos, también llamados variables de instancia, en los cuales va a guardar valores, recordar información y en definitiva hacer referencia a otros objetos. Algunos métodos harán que el estado del objeto cambie, asignándole nuevos valores a los atributos. A su vez, el mismo estado del objeto influirá en la respuesta de otros métodos.
 
 ```wollok
 object pepita {
@@ -250,7 +250,7 @@ self.irACasaEn(transporte)
 
 ### Propiedades ###
 
-Una facilidad que ofrece wollok es definir los atributos como propiedades, lo que asume automáticamente la existencia de métodos de acceso, sin tener que explicitarlos en el código, (tarea que suele ser repetitiva para escribir y molesta para leer). Se declaran con la palabra **property** antes del nombre de la referencia. En el caso de las variables incluye **getters** y **setters**, en el caso de las constantes, solo los **getters**
+Una facilidad que ofrece Wollok es definir los atributos como propiedades, lo que asume automáticamente la existencia de métodos de acceso, sin tener que explicitarlos en el código (tarea que suele ser repetitiva para escribir y molesta para leer). Se declaran con la palabra **property** antes del nombre de la referencia. En el caso de las variables incluye **getters** y **setters**, en el caso de las constantes, solo los **getters**
 
 
 El siguiente ejemplo...
@@ -269,7 +269,7 @@ object pepita {
     method rendimiento() {
         return rendimiento
     }
-} 
+}
 ```
 ... sin perder funcionalidad, puede reescribirse así:
 
@@ -284,6 +284,5 @@ En ambos casos es equivalente consultar:
 
 ```wollok
 pepita.energia() 
+pepita.rendimiento()
 ```
-
-
