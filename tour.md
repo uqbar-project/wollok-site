@@ -412,7 +412,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             un archivo particular, mediante una opción específica en la barra:
             <br><br>
             <div class="container text-center">
-                <img src="/images/tour/replConsoleWithoutFile.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/runREPLConsoleWithoutFile.png" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>

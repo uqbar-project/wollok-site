@@ -382,9 +382,9 @@ These are the main tools of Wollok Integrated Development Environment.
             <h4>Executing a session without a file</h4>
             <br>
             Last, you can execute REPL console without selecting a file at all. Just press this button in toolbar
-            <br>
+            <br><br>
             <div class="container text-center">
-                <img src="/images/tour/runREPLWithoutFile.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/runREPLConsoleWithoutFile.png" class="img-fluid z-depth-1">
             </div>
             <br><br>
         </div>
