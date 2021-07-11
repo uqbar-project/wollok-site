@@ -371,7 +371,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             Para utilizarla, basta con hacer click derecho sobre un archivo .wlk y elegir la opción "Ejecutar en consola REPL".
             También te aparecerá el botón "Play" en la barra de herramientas cuando estés en el
             Explorador de Paquetes.
-            <br>
+            <br><br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
             </div>
@@ -410,9 +410,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br>
             También tenés la posibilidad de ejecutar la consola sin necesidad de asociarlo a
             un archivo particular, mediante una opción específica en la barra:
-            <br>
+            <br><br>
             <div class="container text-center">
-                <img src="/images/tour/runREPLWithoutFileEs.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/replConsoleWithoutFile.png" class="img-fluid z-depth-1">
             </div>
             <br>
             <hr>
