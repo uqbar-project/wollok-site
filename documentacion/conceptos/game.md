@@ -9,21 +9,21 @@ layout: null
 * <a href="#que-es" class="wollokLink">¿Que es?</a>
 * <a href="#el-juego" class="wollokLink">El juego</a>
 * <a href="#como-se-usa" class="wollokLink">¿Como se usa?</a>
-	* <a href="#por-consola" class="wollokLink">Por consola</a>
-	* <a href="#por-consola-con-archivo-de-codigo" class="wollokLink">Por consola, con archivo de codigo</a>
-	* <a href="#con-un-programa" class="wollokLink">Con un programa</a>
+  * <a href="#por-consola" class="wollokLink">Por consola</a>
+  * <a href="#por-consola-con-archivo-de-codigo" class="wollokLink">Por consola, con archivo de codigo</a>
+  * <a href="#con-un-programa" class="wollokLink">Con un programa</a>
 * <a href="#el-tablero" class="wollokLink">El tablero</a>
 * <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
-	* <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
-	* <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
+  * <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
+  * <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
 * <a href="#el-personaje" class="wollokLink">El personaje</a>
 * <a href="#visuales" class="wollokLink">Visuales</a>
 * <a href="#tambien-hablan" class="wollokLink">Tambien hablan</a>
 * <a href="#un-juego-interactivo" class="wollokLink">Un juego interactivo</a>
-	* <a href="#colisiones" class="wollokLink">Colisiones</a>
-	* <a href="#eventos-automaticos" class="wollokLink">Eventos automáticos</a>
-	* <a href="#eventos-del-teclado" class="wollokLink">Eventos del teclado</a>
-	* <a href="#mostrar-atributos-de-los-objetos-visuales" class="wollokLink">Mostrar atributos de los objetos visuales</a>
+  * <a href="#colisiones" class="wollokLink">Colisiones</a>
+  * <a href="#eventos-automaticos" class="wollokLink">Eventos automáticos</a>
+  * <a href="#eventos-del-teclado" class="wollokLink">Eventos del teclado</a>
+  * <a href="#mostrar-atributos-de-los-objetos-visuales" class="wollokLink">Mostrar atributos de los objetos visuales</a>
 * <a href="#cambiando-el-fondo" class="wollokLink">Cambiando el fondo</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
@@ -33,8 +33,8 @@ ___
 
 ## ¿Que es?
 
-Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan meter los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
-A continuación se describe cómo utilizarlo y las funcionalidades que proporciona..
+Wollok-Game es una biblioteca de Wollok que sirve para crear juegos. La idea que propone es tener una especie de "tablero" en donde se puedan ubicar los objetos de algún programa de Wollok y éste se mostrará automáticamente en la pantalla.
+A continuación se describe cómo utilizarlo y las funcionalidades que proporciona.
 
 ## El juego
 
@@ -83,13 +83,13 @@ Archivo ejemplo.wlk
 import wollok.game.*
 
 object prueba{
-	method iniciar(){
-		game.start()
-	}
+  method iniciar(){
+    game.start()
+  }
 }
 ```
 
-Al ejercutar por consola este archivo, hacer
+Al ejecutar por consola este archivo, hacer
 
 ```wollok
 >>> prueba.iniciar() 
@@ -105,7 +105,7 @@ Archivo ejemplo.wpgm
 import wollok.game.*
 
 program ejemplo{
-	game.start()
+  game.start()
 }
 ```
 
@@ -126,34 +126,33 @@ Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agrega
 import wollok.game.*
 
 program ejemplo{
-	game.width(10)
-	game.height(7)
-	game.title("Juego")
-	game.start()
+  game.width(10)
+  game.height(7)
+  game.title("Juego")
+  game.start()
 }
 ```
 
 <div class="container text-center">
-	<img src="images/tableroNuevo.png" class="img-fluid z-depth-1">
+  <img src="images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
 
 
 ## Las posiciones
 
-Ahora que sabemos cómo ver el tablero del juego, seguramente queramos meter objetos dentro para interactuar. Para ello necesitamos indicar en qué **posición** del tablero queremos agregar el objeto, a través de un objeto que sepa informar las coordenadas _(x,y)_.
-Wollok provee objetos que representan a las posiciones, que también se encuentran en la bibliotea _game_. 
+Ahora que sabemos cómo ver el tablero del juego, vamos a agregar objetos visuales que interactúen. Para ello necesitamos ubicar dichos objetos en una **posición**, a través de posiciones, objetos que se encuentran en la biblioteca _game_ de Wollok y definen coordenadas x e y. 
 
 La forma más simple de obtener una posición es pedírsela al **game** 
 
 Por ejemplo, teniendo corriendo cualquier archivo `.wlk` que incluya el import de `wollok.game.*` se puede probar en al consola:
 
-```wollok
+```scala
 >>> game.at(2,3)
-(2,3) // x = 2, y = 3 
+2@3 // x = 2, y = 3 
 >>> game.origin()
-(0,0)
+0@0
 >>> game.center()
-(2,2) //-> Se calcula a partir del height y width
+2@2 //-> Se calcula a partir del height y width
 ```
 
 Las posiciones entienden mensajes para cada coordenada
@@ -171,13 +170,13 @@ Una forma es que el objeto tenga un método con nombre `position()` que retorne 
 ```wollok
 // Con propiedad
 object wollok {
-	var property position = game.origin()
+  var property position = game.origin()
 }
 
 // Con método 
 object wollok {
-	var centrado = false
-	method position() = if (centrado) game.center() else game.origin()
+  var centrado = false
+  method position() = if (centrado) game.center() else game.origin()
 }
 
 ``` 
@@ -194,28 +193,28 @@ game.addVisual(wollok)
 
 
 ### Moviendo objetos
-Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el metodo `position()` y manipulando las referencias que se utilizan en él. 
+Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el método `position()` y manipulando las referencias que se utilizan en él. 
 Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
 En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
 
 ```wollok
 // Con propiedad
 object wollok {
-	var property position = game.origin()
+  var property position = game.origin()
 
-	method centrar() {
-		position = game.center()
-	}
+  method centrar() {
+    position = game.center()
+  }
 }
 
 // Con método 
 object wollok {
-	var centrado = false
-	method position() = if (centrado) game.center() else game.origin()
+  var centrado = false
+  method position() = if (centrado) game.center() else game.origin()
 
-	method centrar() {
-		centrado = true
-	}
+  method centrar() {
+    centrado = true
+  }
 }
 
 ``` 
@@ -224,15 +223,16 @@ Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devue
 
 ```wollok
 object wollok {
-	var property position = game.origin()
+  var property position = game.origin()
 
-	method subir() {
-		position = position.up(1) 
-	}
+  method subir() {
+    position = position.up(1) 
+  }
 
-	method enDiagonal(cant) { // se mueve cant posiciones en diagonal principal
-		position = position.up(cant).right(cant) 
-	}
+  // se mueve una determinada cantidad de posiciones en diagonal principal
+  method enDiagonal(cantidadPosiciones) { 
+    position = position.up(cantidadPosiciones).right(cant) 
+  }
 
 }
 ```
@@ -254,13 +254,13 @@ game.addVisualCharacter(wollok)
 ¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
 Para elegir la imagen de un determinado objeto es necesario:
 
-1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imagénes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
-2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión.
+1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imágenes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
+2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión. **Tené en cuenta que algunos sistemas operativos son case sensitive**, así que tené en cuenta mayúsculas y minúsculas.
 
 ### Ejemplo
 
 <div class="container text-center">
-	<img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
+  <img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
 </div>
 <br>
 
@@ -269,8 +269,8 @@ Para elegir la imagen de un determinado objeto es necesario:
 ```wollok
 import wollok.game.*
 object caja {
-	method image() = "caja.png"
-	method position() = game.center()
+  method image() = "caja.png"
+  method position() = game.center()
 } 
 ```
 
@@ -296,17 +296,12 @@ game.say(wollok, wollok.howAreYou())
 
 ![Los objetos hablan](images/objetosHablan.png)
 
-
-**Tip:** también saben gritar, fijate qué pasa si reemplazás `say` por `scream`.
-
-
-
 ## Un juego interactivo
 
 Ya podemos mostrar nuestros objetos en el tablero, dónde y con la imagen que queramos. Ahora falta poder interactuar con el juego para que sea divertido.
 
-
 ### Colisiones
+
 Una forma de hacer que tus objetos interactúen entre sí es por medio de colisiones. Estos son **bloques de código** que se agregan a un objeto del tablero y se ejecutará cuando otro objeto _colisione_ con éste (ocupe la misma posición). `game.whenCollideDo(objeto, accionConColisionado)`.
 
 #### Ejemplo
@@ -318,31 +313,32 @@ Una forma de hacer que tus objetos interactúen entre sí es por medio de colisi
 import wollok.game.*
 
 object wollok {
-	method howAreYou() = "I am Wolloktastik!"
+  var property position = game.origin()
+  method howAreYou() = "I am Wolloktastik!"
+  method image() = "wollok.png"
 }
 
 object caja {
-	var property position = game.center()
-	method image() = "caja.png"
-	method subir(){
-		position = position.up(1)
-	}
+  var property position = game.center()
+  method image() = "caja.png"
+  method subir(){
+    position = position.up(1)
+  }
 }
 
 program ejemplo {
-	game.addVisualCharacter(wollok)	//Para que se pueda mover con las flechas
-	game.addVisual(caja)
-//	Apenas el personaje wollok colisione con la caja, el personaje habla y la caja se desplaza
-	game.whenCollideDo(wollok, { elemento => 
-		elemento.subir()
-		game.say(wollok,wollok.howAreYou())
-	})
-	game.start()
+  game.addVisualCharacter(wollok)  //Para que se pueda mover con las flechas
+  game.addVisual(caja)
+  // Apenas el personaje wollok colisione con la caja, el personaje habla y la caja se desplaza
+  game.whenCollideDo(wollok, { elemento => 
+    elemento.subir()
+    game.say(wollok,wollok.howAreYou())
+  })
+  game.start()
 }
 ```
 
 **Tip:** si necesitás esa imagen la podés descargar en el directorio assets del ejemplo [sokoban](https://github.com/wollok/sokobanGame)
-
 
 ### Eventos automaticos
 
@@ -350,12 +346,12 @@ Una funcionalidad interesante que podemos implementar es que **la caja se mueva 
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacter(wollok)
-	game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
-	// cada dos segundos muevo la caja
-	game.onTick(2000, "movimiento", { caja.movete() })
-	//
-	game.start()
+  game.addVisualCharacter(wollok)
+  game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
+  // cada dos segundos muevo la caja
+  game.onTick(2000, "movimiento", { caja.movete() })
+  //
+  game.start()
 }
 ```
 
@@ -363,16 +359,16 @@ El método `movete()` en caja actualiza la posición en base a un valor al azar,
 
 ```wollok
 object caja {
-	var property position = game.center()
-	method image() = "caja.png"
-	method movete() {
-		const x = 0.randomUpTo(game.width()).truncate(0)
-		const y = 0.randomUpTo(game.height()).truncate(0)
-		//otra forma de generar números aleatorios
-		//const x = (0.. game.width()-1).anyOne() 
-		//const y = (0.. game.height()-1).anyOne() 
-		position = game.at(x,y) 
-	}
+  var property position = game.center()
+  method image() = "caja.png"
+  method movete() {
+    const x = 0.randomUpTo(game.width()).truncate(0)
+    const y = 0.randomUpTo(game.height()).truncate(0)
+    //otra forma de generar números aleatorios
+    //const x = (0.. game.width()-1).anyOne() 
+    //const y = (0.. game.height()-1).anyOne() 
+    position = game.at(x,y) 
+  }
 }
 ```
 
@@ -390,16 +386,16 @@ Así, un _ENTER_ podría hacer que el personaje salude, y la tecla _p_ que el mo
 import wollok.game.*
 
 program ejemplo {
-	game.addVisualCharacter(wollok)
-	game.addVisual(caja)
-	
-	game.onTick(2000, "movimiento",{ caja.movete() })
+  game.addVisualCharacter(wollok)
+  game.addVisual(caja)
+  
+  game.onTick(2000, "movimiento",{ caja.movete() })
 
-	// capturamos el evento ENTER del teclado
-	keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}	
-	// capturamos el evento de presionar la tecla p del teclado
-	keyboard.p().onPressDo {game.removeTick("movimiento")}	// Mensaje que detiene la acción repetitiva indicada
-	game.start()
+  // capturamos el evento ENTER del teclado
+  keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}  
+  // capturamos el evento de presionar la tecla p del teclado
+  keyboard.p().onPressDo {game.removeTickEvent("movimiento")}  // Mensaje que detiene la acción repetitiva indicada
+  game.start()
 }
 ```
 
@@ -409,39 +405,48 @@ Incorporemos los siguientes atributos al objeto visual wollok:
 
 ```wollok
 object wollok {
-	var property position = game.origin()
-	var version = "1.7.0"
-	var lastUpdated = new Date()
+  var property position = game.origin()
+  var version = "1.7.0"
+  var lastUpdated = new Date()
 }
+```
+
+También agregamos en el programa la configuración para ver las referencias de los objetos visuales (por defecto esta opción está deshabilitada):
+
+```wollok
+program ejemplo {
+  game.addVisualCharacter(wollok)
+  game.showAttributes(wollok)
+	// etc.
 ```
 
 Esto hace que cuando paremos el mouse sobre dicho objeto, veamos su estado interno:
 
 ![attributes](images/attributes.png)
 
-Si no queremos que ocurra esto (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes()` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
+Si no queremos deshabilitarlo una vez activado (porque nos distrae tanta información en el tablero), podemos enviar el mensaje `hideAttributes()` a `game` indicando cuál es el objeto visual al que no queremos que se le vean los atributos:
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacter(wollok)
-	game.hideAttributes(wollok)
-	//...
+  game.addVisualCharacter(wollok)
+  game.hideAttributes(wollok)
+  //...
 }
 ```
 
 ## Cambiando el fondo ##
 
-Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](www.todopaisajes.com%2Ffondos-de-pantalla-de-playas&psig=AOvVaw10Rdr1CY3aFnRTDZP9Pd-r&ust=1534606917743804). Lo descargamos en una carpeta fuente de nuestro proyecto.
+Es posible modificar el fondo de nuestro tablero, para lo cual podés buscar cualquier imagen que te guste, como [ésta](https://www.todopaisajes.com/fondos-de-pantalla-de-playas). Lo descargamos en una carpeta fuente de nuestro proyecto.
 
 En el programa agregamos el mensaje correspondiente al objeto game:
 
 ```wollok
 import wollok.game.*
 program ejemplo {
-	game.width(10)
-	game.height(10)
-	game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
-	game.start()
+  game.width(10)
+  game.height(10)
+  game.boardGround("playa.jpg") // o el nombre con el que lo hayas bajado
+  game.start()
 }
 ```
 
@@ -458,12 +463,12 @@ Cuando las cosas no salen como queremos y ocurre un error, el personaje especial
 
 ```wollok
 program ejemplo {
-	game.addVisualCharacter(wollok)	
-	game.addVisual(caja)
-	game.whenCollideDo(wollok, { elemento => 
-		const a = 1 / 0 //Se produce un error
-	})
-	game.start()
+  game.addVisualCharacter(wollok)  
+  game.addVisual(caja)
+  game.whenCollideDo(wollok, { elemento => 
+    const a = 1 / 0 //Se produce un error
+  })
+  game.start()
 }
 ```
 
@@ -477,9 +482,9 @@ Igualmente nosotros podemos decirle que otro sea el objeto que reporte los error
 
 ```wollok
 program ejemplo {
-	//...
-	game.errorReporter(caja)
-	//...
+  //...
+  game.errorReporter(caja)
+  //...
 }
 ```
 
@@ -488,31 +493,48 @@ Entonces cuando hay un error en un bloque de código que maneja Wollok Game, ser
 ![caja reporta error](images/errorReporter2.gif)
 
 
-
-## Problemas comunes
-
+## Problemas comunes ##
 
 Primero que nada, tené en cuenta que Wollok Game necesita Open GL 2.0 ó superior, si no lo tenés instalado, seguí [estas instrucciones](https://www.khronos.org/opengl/wiki/Getting_Started)
 
-#### Error en Ubuntu
+### Error al iniciar el juego ###
+
+Si en la consola REPL te aparece un mensaje de error como el siguiente:
+
+```
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.lwjgl.LWJGLUtil$3 (file:/C:/Users/tommy/Downloads/Groxar/desktop/desktop/app/desktop-1.0.jar) to method java.lang.ClassLoader.findLibrary(java.lang.String)
+WARNING: Please consider reporting this to the maintainers of org.lwjgl.LWJGLUtil$3
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+
+Seguramente estás usando una versión de Java 9 o posterior, la solución es instalar OpenJDK 1.8 en un directorio y apuntarla desde Eclipse:
+
+<div class="container text-center">
+  <img src="images/wollokGameFallaJava9En.gif" class="img-fluid z-depth-1">
+</div>
+<br>
+
+### Error en Ubuntu ###
 
 En algunas instalaciones de Ubuntu puede que te aparezca un mensaje de error como el siguiente al correr un programa de Wollok Game:
 
 ```
 LwjglApplication: Couldn't initialize audio, disabling audio
 java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper
-	at java.awt.Toolkit.loadAssistiveTechnologies(Toolkit.java:807)
-	at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:886)
-	at org.lwjgl.LinuxSysImplementation.<clinit>(LinuxSysImplementation.java:50)
-	at org.lwjgl.Sys.createImplementation(Sys.java:131)
-	at org.lwjgl.Sys.<clinit>(Sys.java:116)
-	at org.lwjgl.openal.AL.<clinit>(AL.java:59)
-	at com.badlogic.gdx.backends.lwjgl.audio.OpenALAudio.<init>(OpenALAudio.java:72)
-	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:83)
-	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:64)
-	at org.uqbar.project.wollok.game.gameboard.WollokGDXApplication.<init>(WollokGDXApplication.java:12)
-	at org.uqbar.project.wollok.game.helpers.Application.start(Application.java:28)
-	at org.uqbar.project.wollok.game.gameboard.Gameboard.start(Gameboard.java:86)
+  at java.awt.Toolkit.loadAssistiveTechnologies(Toolkit.java:807)
+  at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:886)
+  at org.lwjgl.LinuxSysImplementation.<clinit>(LinuxSysImplementation.java:50)
+  at org.lwjgl.Sys.createImplementation(Sys.java:131)
+  at org.lwjgl.Sys.<clinit>(Sys.java:116)
+  at org.lwjgl.openal.AL.<clinit>(AL.java:59)
+  at com.badlogic.gdx.backends.lwjgl.audio.OpenALAudio.<init>(OpenALAudio.java:72)
+  at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:83)
+  at com.badlogic.gdx.backends.lwjgl.LwjglApplication.<init>(LwjglApplication.java:64)
+  at org.uqbar.project.wollok.game.gameboard.WollokGDXApplication.<init>(WollokGDXApplication.java:12)
+  at org.uqbar.project.wollok.game.helpers.Application.start(Application.java:28)
+  at org.uqbar.project.wollok.game.gameboard.Gameboard.start(Gameboard.java:86)
 ```
 
 O simplemente el error `Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper`. En ese caso, seguí los pasos que plantea [este sitio web](https://askubuntu.com/questions/695560/assistive-technology-not-found-awterror). Editá el archivo accessibility.properties
@@ -529,14 +551,12 @@ y comentá esta configuración
 
 Con eso volvé a levantar el entorno Wollok y debería funcionar correctamente.
 
-### Problema para ejecutar Wollok Game en MacOS HighSierra
+### Problema para ejecutar Wollok Game en MacOS HighSierra ###
 
-Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconvenientes con la versión MacOS HighSierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). En la próxima versión este problema estará resuelto, pero hasta tanto eso no ocurra te aconsejamos para salir del paso instalar una Virtual Machine de otro sistema operativo.
+Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconvenientes con la versión MacOS HighSierra](https://bugs.eclipse.org/bugs/show_bug.cgi?id=525465). Para salir del paso te recomendamos que uses una versión más reciente (Mojave ó posterior), o bien que instales una VM de otro sistema operativo.
 
-## Para seguirla
+## Para seguirla ##
 
 El código de los ejemplos mencionados está en  [este repositorio](https://github.com/wollok/ejemploGameSite) 
-
-Te dejamos [esta documentación avanzada](https://github.com/leodelgadodev/Documentacion-wollokGame) que hizo Leo Delgado al usar Wollok Game en su curso.
 
 También podés investigar [todos estos ejemplos](https://github.com/wollok?utf8=%E2%9C%93&q=game&type=&language=) en el repositorio de Wollok. ¡Que lo disfrutes!
