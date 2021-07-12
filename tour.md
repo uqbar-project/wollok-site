@@ -388,7 +388,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <br>
             Recordá que cuando modifiques un archivo .wlk, debés reiniciar la consola para que tome
-            los cambios, vas a ver el mensaje en rojo en la consola o bien en la barra de herramientas arriba a la derecha. Las opciones en ese caso son: reiniciar desde cero tomando los nuevos cambios, o ejecutar automáticamente los mismos comandos que la última sesión.
+            los cambios, vas a ver el aviso en la consola o bien en la barra de herramientas arriba a la derecha. Las opciones en ese caso son: reiniciar desde cero tomando los nuevos cambios, o ejecutar automáticamente los mismos comandos que la última sesión.
             <br>
             <br>
             <div class="container text-center">

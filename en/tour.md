@@ -17,7 +17,10 @@ These are the main tools of Wollok Integrated Development Environment.
 <div class="container">
     <ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-edit"></i> Editor</a>
+            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#darkMode" role="tab"><i class="fa fa-adjust"></i> Dark Mode</a>
+        </li>    
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#editor" role="tab"><i class="fa fa-edit"></i> Editor</a>
         </li>
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#validador" role="tab"><i class="fa fa-check-circle"></i> Validator</a>
@@ -40,8 +43,27 @@ These are the main tools of Wollok Integrated Development Environment.
     </ul>
     <!-- Tab panels -->
     <div class="tab-content card container">
+        <!-- *****************************  DARK MODE ****************************************-->
+        <!--Panel 0-->
+        <div class="tab-pane fade in show active" id="darkMode" role="tabpanel">
+            <p>
+            Wollok has a dark mode theme. You can download <a href="/config/wollokDarkMode.epf">this config file</a> and import it in your local environment:
+            </p>
+            <div class="container text-center">
+                <img src="/images/tour/darkMode1.gif" class="img-fluid z-depth-1"/>
+            </div>
+            <br>
+            <p>
+            After importing these preferences, you can restart Wollok and _voilá_:
+            </p>
+            <div class="container text-center">
+                <img src="/images/tour/darkMode2.gif" class="img-fluid z-depth-1"/>
+            </div>
+            <br>
+        </div>
+        <!--/.Panel 0-->
         <!--Panel 1-->
-        <div class="tab-pane fade in show active" id="editor" role="tabpanel">
+        <div class="tab-pane fade in show" id="editor" role="tabpanel">
             <br>
             <p>
             Wollok editor comes not only with syntax colouring but also with autocompletion. 
@@ -304,24 +326,14 @@ These are the main tools of Wollok Integrated Development Environment.
             <div class="row text-center">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
-                        <img src="/images/tour/formatter.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Basic formatting of a class. </figcaption>
+                        <img src="/images/tour/formatter3.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Basic formatting of an element. </figcaption>
                     </figure>
                 </div>
             </div>
-            <br>
             Wollok has a formatter based on its syntax, so code will be stylized and homogeneous, something
-            very useful while working in a programming team. You can use it by pressing <b>Ctrl + Shift + F</b> keys:
+            very useful while working in a programming team. You can use it by pressing <b>Ctrl + Shift + F</b> keys.
             <br>
-            <br>
-            <div class="row text-center">
-                <div class="col-md-12 mb-6">
-                    <figure class="figure">
-                        <img src="/images/tour/formatter2.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Formatting <i>closures</i> & if with and without braces.</figcaption>
-                    </figure>
-                </div>
-            </div>
             <br>
         </div>
         <!-- *****************************  CONSOLE ****************************************-->
@@ -351,7 +363,7 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             If you want to use it, right click over a .wlk file and choose "Run in REPL console" option. You can also
             use "Play" button in toolbar.
-            <br>
+            <br><br>
             <div class="container text-center">
                 <img src="/images/tour/runConsole.png" class="img-fluid z-depth-1">
             </div>
@@ -367,7 +379,12 @@ These are the main tools of Wollok Integrated Development Environment.
             </div>
             <br>
             Reminder: every time you change a .wlk file, you must restart console to consider this updates. 
-            Console's toolbar shows synchronization status of .wlk file.
+            Console's toolbar shows synchronization status of .wlk file, as well as a warning message anytime you change a file. You can either restart repeating last session commands or just restart a fresh session.
+            <br>
+            <br>
+            <div class="container text-center">
+                <img src="/images/tour/consoleRestart.gif" class="img-fluid z-depth-1">
+            </div>
             <br>
             <hr>
             <h4>Exporting console session to a test</h4>
@@ -381,12 +398,29 @@ These are the main tools of Wollok Integrated Development Environment.
             <hr>
             <h4>Executing a session without a file</h4>
             <br>
-            Last, you can execute REPL console without selecting a file at all. Just press this button in toolbar
+            You can execute REPL console without selecting a file at all. Just press this button in toolbar.
             <br><br>
             <div class="container text-center">
                 <img src="/images/tour/runREPLConsoleWithoutFile.png" class="img-fluid z-depth-1">
             </div>
-            <br><br>
+            <br>
+            <hr>
+            <h4>
+            Importing files directly from REPL console
+            </h4>
+            <p>
+            You can manually import definitions from other files. This option will not work if you are running a REPL session without any associated wlk file, and unfortunately you cannot override existing definitions: in that case you must use restart buttons from the toolbar.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/consoleImportEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Manually importing files</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
+            <br>
         </div>
         <!-- *****************************  TEST RUNNER ****************************************-->
         <div class="tab-pane fade" id="testRunner" role="tabpanel">
@@ -400,11 +434,8 @@ These are the main tools of Wollok Integrated Development Environment.
                     <figure class="figure">
                         <img src="/images/tour/testRunnerIntroEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Executing a test suite: 
-                            we can filter failures and errors,
-                            <br>
                             stack trace leads to the code in editor,  
-                            <br> 
-                            that tests execution is an iterative and incremental process.
+                            tests execution is an iterative and incremental process.
                         </figcaption>
                     </figure>
                 </div>
@@ -412,7 +443,18 @@ These are the main tools of Wollok Integrated Development Environment.
             <br>
             If you want to get deep into unit testing we recommend you to read 
              <a href="https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#">this article</a> (in spanish). 
-            <br>
+            <br><br>
+            <hr>
+            <h4>Show only errors or failures</h4>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/testRunnerFilterErrorsEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>If you have several tests, you can filter only those who failed or errored. </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>            
             <hr>
             <h4>Executing all project or folder tests</h4>
             You can execute all tests of a certain project, or all tests of .wtest files grouped in a folder, 
@@ -425,6 +467,19 @@ These are the main tools of Wollok Integrated Development Environment.
                         <img src="/images/tour/testRunnerRunningSeveralFilesEs.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption"><br>Executing all project tests
                         </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <hr>
+            <h4>Execute a single test in a file</h4>
+            Writing "only" before your test allows to run a single test within a file. It will also allow you to integrate with dynamic diagram, as show below:
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-12 mb-6">
+                    <figure class="figure">
+                        <img src="/images/tour/testRunnerOnlyEs.gif" class="img-fluid z-depth-1">
+                        <figcaption class="figure-caption"><br>Executing a single file.</figcaption>
                     </figure>
                 </div>
             </div>

@@ -59,7 +59,7 @@ lang: 'en'
 					<h4><span class="badge badge-pill red darken-3">FAQ</span></h4>
 					<ul> 
 						<li>Don't use Java Updates tools. Use above link.</li>
-						<li>It has to be <b>1.8</b> version (neither 1.7 nor 1.9, at least for now)</li>
+						<li>JDK <b>1.8</b> recommended (there could be potential problems with Wollok Game running 1.9 or newer versions, check the specific troubleshooting page)</li>
 						<li>It has to be a <b>JDK</b> (Java Development Kit), since it has a compiler. A JRE (Java Runtime Environment) won't work.</li>
 						<li>If you are already using Eclipse and Java 1.8, you can ignore this step.</li>
 					</ul>
