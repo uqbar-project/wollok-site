@@ -80,7 +80,7 @@ mixin Walks {
   }
   method walkedDistance() = walkedDistance
 }
-class WalkingBird mixed with Walks {}
+class WalkingBird inherits Walks {}
 ```
 
 Then used
@@ -631,13 +631,13 @@ For example (in Wollok this would be actually implemented in different files, si
    }
 
    class SwimmingBird inherits Bird {
-       method swimg() { ... }
+       method swim() { ... }
    }
 
    const bird = new Bird()
    const duck = new SwimmingBird()
 
-   class Superman() {
+   class Superman {
        method fly() { ... }
        method throwLaserFromEyes() { ... }
    }
@@ -663,15 +663,15 @@ While this won't compile
 ```wollok
 flier.eat()
 // or
-flier. throwLaserFromEyes()
+flier.throwLaserFromEyes()
 ```
 
 And this compiles fine:
 
 ```wollok
 flier = object {
-    method fly() { ... }
-    method anotherMethod() { ... }
+  method fly() { ... }
+  method anotherMethod() { ... }
 }
 ```
 
