@@ -416,9 +416,9 @@ class C2 inherits M1 and M2 and M3 and C1 {
 Al ejecutar este código
 
 ```wollok
-  const c = new C2()
-  c.doFoo("Test ")
-  console.println(c.foo())
+const c = new C2()
+c.doFoo("Test ")
+console.println(c.foo())
 ```
 
 se imprime por consola lo siguiente

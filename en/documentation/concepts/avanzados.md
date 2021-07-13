@@ -34,9 +34,8 @@ They are used to model some charateristics of objects independent from a class h
 Some features of a mixin:
 
 * it **cannot be instantiated** (only classes)
-* it **cannot define constructors** (this might change in the future?)
 * gets linearized into the class hierarchy to avoid the [diamond issue](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
-* **currently doesn't support inheriting from another mixin/class**
+* **doesn't support inheriting from another class**, just another mixins
 
 Some other technical details
 
@@ -57,15 +56,15 @@ mixin Flies {
 Then it can be mixed in a class
 
 ```wollok
-class Bird mixed with Flies {}
+class Bird inherits Flies {}
 ```
 
 And later used in a program/test/library
 
 ```wollok
 program t {
-  const b = new Bird()
-  b.fly()
+  const pepita = new Bird()
+  pepita.fly()
 }
 ```
 
@@ -87,9 +86,9 @@ class WalkingBird mixed with Walks {}
 Then used
 
 ```wollok
-const b = new WalkingBird()
-b.walk(10)
-assert.equals(10, b.walkedDistance())
+const pepita = new WalkingBird()
+pepita.walk(10)
+assert.equals(10, pepita.walkedDistance())
 ```
 
 ### Instance Variables Access ###
@@ -97,7 +96,7 @@ assert.equals(10, b.walkedDistance())
 Instance variables declared by a mixin can be accessed from the the class it is mixed in into.
 
 ```wollok
-class WalkingBird mixed with Walks {
+class WalkingBird inherits Walks {
        method resetWalkingDistance() {
                walkedDistance = 0     // variable defined in the mixin
        }
@@ -112,16 +111,26 @@ A class can mix more than one mixin.
 mixin M1 {}
 mixin M2 {}
 
-class C mixed with M1 and M2 {
+class C inherits M1 and M2 {
 }
 ```
 
-The list of mixins can be separated either with "and" or with a comma character.
+Mixins linearization goes from left to right. That said, in this example
 
 ```wollok
-class C mixed with M1, M2  {}
-```
+mixin M1 {
+  method saludar() = "hi"
+}
+mixin M2 {
+  method saludar() = "howdy"
+}
 
+class C inherits M1 and M2 {}
+
+program helloWorld {
+  console.println(new C().saludar()) // prints "hi", M1 has precedence over M2
+}
+```
 ### Abstract Mixins ###
 
 A mixin can be abstract if it calls a method which has no implementation.
@@ -153,7 +162,7 @@ There are 3 possible cases:
 In this case the class provides the implementation for the required method.
 
 ```wollok
-class BirdWithEnergyThatFlies mixed with Flying {
+class BirdWithEnergyThatFlies inherits Flying {
   var energy = 100
   method energy() = energy
   method reduceEnergy(amount) {
@@ -173,13 +182,17 @@ class Energy {
   }
 }
 
-class BirdWithEnergyThatFlies inherits Energy mixed with Flying {
+class BirdWithEnergyThatFlies inherits Flying and Energy {
 }
 ```
 
 The required method by the mixins is not implemented in the class we are mixing it into
-but in its superclass.
-Here we can see that the new method lookup doesn't affect regular class-based inheritance.
+but in its superclass. Here we can see that the new method lookup doesn't affect regular class-based inheritance.
+
+```wollok
+class BirdWithEnergyThatFlies inherits Flying and Energy {} // RIGHT, mixins first, superclass at the end
+class BirdWithEnergyThatFlies inherits Energy and Flying {} // WRONG, superclass is not at the end
+```
 
 #### Method defined in another mixin ####
 
@@ -199,7 +212,7 @@ mixin Energy {
 And then used
 
 ```wollok
-class BirdWithEnergyThatFlies mixed with Energy, Flying {}
+class BirdWithEnergyThatFlies inherits Energy and Flying {}
 ```
 
 In this case Flying mixin requires **reduceEnergy** method which is not implemented
@@ -221,7 +234,7 @@ mixin M1 {
 }
 class A {}
 
-class B inherits A mixed with M1 {}
+class B inherits M1 and A {}
 ```
 
 B's hierarchy ends like this
@@ -233,7 +246,7 @@ B -> M1 -> A
 If we add a new mixin:
 
 ```wollok
-class B inherits A mixed with M1, M2 {}
+class B inherits M2 and M1 and A {}
 ```
 
 The new hierarchy would be
@@ -242,10 +255,7 @@ The new hierarchy would be
 B -> M2 -> M1 -> A
 ```
 
-**Notice here that the declaration order DOES MATTER**.
-Mixins on the right side are lower in the hierarchy. Meaning that they have precedence over the ones on the left
-
-Having mixins up in the class hierarchy doesn't complicate this at all, since each classes mixins are resolved in the same way
+**Notice here that the declaration order DOES MATTER**. Mixins on the left side are lower in the hierarchy. Meaning that they have precedence over the ones on the right. Having mixins up in the class hierarchy doesn't complicate this at all, since each classes mixins are resolved in the same way.
 
 ```wollok
 mixin M1 { ... }
@@ -256,18 +266,16 @@ mixin M5 { ... }
 mixin M6 { ... }
 
 class A { ... }
-class B inherits A mixed with M1, with M2 { ... }
-class C inherits B mixed with M3 { ... }
-class D inherits C mixed with M4, M5, M6 { ... }
+class B inherits M2 and M1 and A { ... }
+class C inherits M3 and B { ... }
+class D inherits M4 and M5 and M6 and C { ... }
 ```
 
 D's inheritance chain is
 
 ```bash
-D -> M6 -> M5 -> M4 -> C -> M3 -> B -> M2 -> M1 -> A
+D -> M4 -> M5 -> M6 -> C -> M3 -> B -> M2 -> M1 -> A
 ```
-
-This was resolved class by class
 
 ### Method Override ###
 
@@ -293,11 +301,19 @@ mixin Energy {
 A class can be mixed and override the "reduceEnergy(amount)" method
 
 ```wollok
-class Bird mixed with Energy {
+class Bird inherits Energy {
   override method reduceEnergy(amount) {
     // does nothing
   }
 }
+```
+
+Executing on REPL console:
+
+```wollok
+const pepita = new Bird()
+pepita.reduceEnergy(10)
+pepita.energy()            // 100
 ```
 
 #### Super call (in a class overriding a mixin method) ####
@@ -305,11 +321,11 @@ class Bird mixed with Energy {
 As with any method overriding a method in a super class its body can use the **super** keyword to execute the original method being overriding.
 
 ```wollok
-  class Bird mixed with Energy {
-    override method reduceEnergy(amount) {
-      super(1)
-    }
+class Bird inherits Energy {
+  override method reduceEnergy(amount) {
+    super(1)
   }
+}
 ```
 
 #### Super call in mixin ####
@@ -342,7 +358,7 @@ class C1 {
 And this mixup
 
 ```wollok
-class C2 inherits C1 mixed with M1 { }
+class C2 inherits M1 and C1 { }
 ```
 
 We now know that the "super" call in the mixin M1 will call the "doFoo(chain)" method defined in the C1 class (C2's super class).
@@ -391,22 +407,22 @@ class C1 {
   method foo() = foo
 }
 
-class C2 inherits C1 mixed with M1, M2, M3 {
+class C2 inherits M1 and M2 and M3 and C1 {
 }
 ```
 
 Executing this code
 
 ```wollok
-  const c = new C2()
-  c.doFoo("Test ")
-  console.println(c.foo())
+const c = new C2()
+c.doFoo("Test ")
+console.println(c.foo())
 ```
 
 Prints the following
 
 ```bash
-Test > M3 > M2 > M1 > C1
+Test > M1 > M2 > M3 > C1
 ```
 
 Which is basically the linearized hierarchy
@@ -424,7 +440,7 @@ mixin Flies {
   method times() = times
 }
 
-object pepita mixed with Flies {}
+object pepita inherits Flies {}
 ```
 
 In this case the inheritance chain will be:
@@ -439,12 +455,11 @@ priority since it is the lower end of the hierarchy, so it can override any meth
 This also can be combined with class inheritance
 
 ```wollok
-object pepita inherits Animal with Flies {}
+object pepita inherits Flies and Animal {}
 ```
 
 
 ### Mixins at instantiation time ###
-__(Since 1.6)__
 
 Mixins can be used at the time you instantiate a new object.
 This allows more flexibility since you don't need to create a new class
@@ -467,14 +482,14 @@ class Warrior {
 Instead of creating a new class to combine like
 
 ```wollok
-class WarriorWithEnergy inherits Warrior mixed with Energy {}
+class WarriorWithEnergy inherits Energy and Warrior {}
 ```
 
 We can combine it directly while instantiating:
 
 ```wollok
 program t {
-    const w = new Warrior() with Energy
+    const w = object inherits Energy and Warrior {}
     assert.equals(100, w.energy())
 }
 ```
@@ -517,10 +532,10 @@ Later used
 
 ```wollok
 program t {
-    const warrior1 = new Warrior() with Attacks with Energy with GetsHurt
+    const warrior1 = object inherits GetsHurt and Energy and Attacks and Warrior {}
     assert.equals(100, warrior1.energy())
 
-    const warrior2 = new Warrior() with Attacks with Energy with GetsHurt
+    const warrior2 = object inherits GetsHurt and Energy and Attacks and Warrior {}
     assert.equals(100, warrior2.energy())
 
     warrior1.attack(warrior2)
@@ -530,36 +545,64 @@ program t {
 }
 ```
 
+### Reference initialization in linearization ###
+
+Linearization mechanism allows you to initialize references for each mixin or class:
+
+```scala
+// IMPORTANT: put the reference initialization according to each abstraction
+const warrior1 = object inherits GetsHurt and Energy(energy = 150) and Attacks(power = 20) and Warrior(name = "Mati") {
+  ...
+}
+```
+
+### Mixin inheritance ###
+
+A mixin can inherit from another mixin. Let's change a bit our previous example:
+
+```wollok
+mixin Energy {
+    var property energy = 100
+    method reduceEnergy(amount) {
+    	energy = energy - amount
+    }
+}
+
+mixin GetsHurt inherits Energy {
+    method receiveDamage(amount) {
+        self.reduceEnergy(amount) 
+    }
+    method energy()
+    method energy(newEnergy)
+}
+
+mixin Attacks {
+    var property power = 10
+    method attack(other) {
+        other.receiveDamage(power)
+        self.energy(self.energy() - 1)
+    }
+
+    method energy()
+    method energy(newEnergy)
+}
+
+class Warrior {}
+```
+
+Program should change to:
+
+```wollok
+const warrior1 = object inherits GetsHurt and Attacks and Warrior {}
+console.println(warrior1.energy())
+assert.equals(100, warrior1.energy())
+```
 
 ### Limitations ###
-
-#### Mixin inheritance ####
-
-Current mixins implementation doesn't support a mixin extending another mixin or class.
-That's a difference from Scala mixins.
 
 #### Native mixins ####
 
 It is not clear how mixins can be combined with native classes :P
-
-#### Anonymous classes ####
-
-Wollok doesn't provide anonymous classes so it is currently not possible to
-combine mixins with a class at instantiation time **and override behavior in place**
-
-**THIS CANNOT BE DONE** you cannot provide a body with content when instantiating.
-
-```wollok
-const pepitaFliesDouble = new Animal mixed with Flies {
-    override method fly() {
-        super()
-        super()
-    }
-}
-
-```
-
-
 
 
 ## Type System ##
@@ -688,7 +731,7 @@ Notices that you cannot throw any object. They must be instances of a **wollok.l
 
 Here is a sample code to catch an exception:
 
-```wollok
+```scala
 try {
     a.m1()
     assert.fail("Should have thrown exception")
@@ -703,7 +746,7 @@ It will catch ANY exception.
 
 If you want to catch a particular exception you can specify its type like the following example:
 
-```wollok
+```scala
 program p {
     const a = new A()
     var counter = 0
@@ -726,7 +769,7 @@ This program catches any MyException raised by the code inside the **try** block
 
 Besides the "catch" block a try could have an "always" block whose code will always be executed no matter if there was or wasn't any exception thrown.
 
-```wollok
+```scala
 try {
     a.m1()
 }
@@ -741,7 +784,7 @@ then always
 
 A try block can have more than one catch, in case you need to handle different types of exception in different ways:
 
-```wollok
+```scala
 try
     a.m1()
 catch e : MySubclassException
@@ -770,7 +813,7 @@ class CException inherits wollok.lang.Exception {
 
 You must write catches in the following order so they don't hide each other
 
-```wollok
+```scala
 try {
     a.m1()
     assert.fail("Should have thrown exception")
@@ -791,7 +834,7 @@ catch e : CException {
 
 You can combine catches with types with a single "non-typed" catch, that MUST be the last one.
 
-```wollok
+```scala
 program p {
     const a = new A()
 
@@ -816,7 +859,23 @@ As it is the most abstract case, it must only appear as the last case.
 
 ## Operators Overloading ##
 
-// TODO
+Since Wollok does not requiere type annotations. it is not possible to define two different message with same parameters but different type:
+
+```wollok
+bird.fly(6)        // kilometers
+const madrid = new Ciudad(name = "Madrid")
+bird.fly(madrid)
+```
+
+Both messages will execute the same method.
+
+Nevertheless, you can define several message with different arguments:
+
+```wollok
+bird.fly(6)
+const madrid = new Ciudad(name = "Madrid")
+bird.fly(madrid, new Date())
+```
 
 ## Identity vs Equality ##
 
