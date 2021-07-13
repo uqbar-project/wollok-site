@@ -564,7 +564,7 @@ A mixin can inherit from another mixin. Let's change a bit our previous example:
 mixin Energy {
     var property energy = 100
     method reduceEnergy(amount) {
-    	energy = energy - amount
+      energy = energy - amount
     }
 }
 

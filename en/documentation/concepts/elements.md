@@ -179,43 +179,42 @@ const article = "This is the title" + console.newline() + "This is a very short 
 A date is an immutable object representing a day, month and year (without hours or minutes). You have two ways to build a date:
 
 ```javascript
-const today = new Date()  
+const hoy = new Date()  
         // takes the current day
-const someDay = new Date(30, 6, 1973)  
+const unDiaCualquiera = new Date(day = 30, month = 6, year = 1973)  
         // input is day, month, year
 ```
 
 Some operations with dates:
 
 ```javascript
->>> const today = new Date()
-Date[2017-11-24]
->>> today.plusYears(1)    // add a year
-Date[2018-11-24]          // returns a new date
->>> today.plusMonths(2)   // add 2 months
-Date[2018-01-24]
+>>> const today = new Date()  // Date[2017-11-24]
+>>> today.plusYears(1)        // add a year
+2018-11-24                    // returns a new date
+>>> today.plusMonths(2)       // add 2 months
+2018-01-24
 >>> today.plusDays(20)
-Date[2017-12-14]
->>> today.isLeapYear()    // is today a leap year?
+2017-12-14
+>>> today.isLeapYear()        // is today a leap year?
 false
->>> today.dayOfWeek()     // which day of week is this date?
-5                         // friday, because 0 is sunday...
+>>> today.dayOfWeek()         // which day of week is this date?
+5                             // friday, because 0 is sunday...
 >>> today.month()
 11
 >>> today.year()
 2017
 >>> const yesterday = today.minusDays(1)
-                          // to get yesterday, we just subtract a day to current date
-Date[2017-11-23]
->>> yesterday < today     // comparing dates
+                              // to get yesterday, we just subtract a day to current date
+2017-11-23
+>>> yesterday < today         // comparing dates
 true
 >>> const aMonthAgo = today.minusMonths(1)
-Date[2017-10-24]        
+2017-10-24
 >>> yesterday.between(aMonthAgo, today)
-                          // yesterday is in a range between a month ago and today
+                             // yesterday is in a range between a month ago and today
 true
 >>> yesterday - today
-1                         // absolute difference in days
+1                            // absolute difference in days
 ```
 
 ## Equality Expressions ##
