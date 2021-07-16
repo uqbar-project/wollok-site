@@ -109,7 +109,6 @@ program ejemplo{
 }
 ```
 
-
 ## El tablero
 Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agregar los objetos que queremos mostrar en el juego y tiene las siguientes características:
 
@@ -125,7 +124,7 @@ Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agrega
 ```wollok
 import wollok.game.*
 
-program ejemplo{
+program ejemplo {
   game.width(10)
   game.height(7)
   game.title("Juego")
@@ -165,6 +164,7 @@ Las posiciones entienden mensajes para cada coordenada
 ```
 
 ### Dibujando objetos ###
+
 Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
 ```wollok
@@ -175,10 +175,9 @@ object wollok {
 
 // Con método 
 object wollok {
-  var centrado = false
+  var property centrado = false
   method position() = if (centrado) game.center() else game.origin()
 }
-
 ``` 
 
 Para que el objeto se muestre en el tablero de juego, se debe hacer
@@ -193,6 +192,7 @@ game.addVisual(wollok)
 
 
 ### Moviendo objetos
+
 Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el método `position()` y manipulando las referencias que se utilizan en él. 
 Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
 En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
@@ -305,6 +305,7 @@ Ya podemos mostrar nuestros objetos en el tablero, dónde y con la imagen que qu
 Una forma de hacer que tus objetos interactúen entre sí es por medio de colisiones. Estos son **bloques de código** que se agregan a un objeto del tablero y se ejecutará cuando otro objeto _colisione_ con éste (ocupe la misma posición). `game.whenCollideDo(objeto, accionConColisionado)`.
 
 #### Ejemplo
+
 ![colision-caja](images/colisionCaja.gif)
 
 #### En example.wpgm
@@ -347,7 +348,7 @@ Una funcionalidad interesante que podemos implementar es que **la caja se mueva 
 ```wollok
 program ejemplo {
   game.addVisualCharacter(wollok)
-  game.addVisual(caja)  // IMPORTANTE: ver el cartel de abajo
+  game.addVisual(caja)
   // cada dos segundos muevo la caja
   game.onTick(2000, "movimiento", { caja.movete() })
   //
@@ -364,9 +365,9 @@ object caja {
   method movete() {
     const x = 0.randomUpTo(game.width()).truncate(0)
     const y = 0.randomUpTo(game.height()).truncate(0)
-    //otra forma de generar números aleatorios
-    //const x = (0.. game.width()-1).anyOne() 
-    //const y = (0.. game.height()-1).anyOne() 
+    // otra forma de generar números aleatorios
+    // const x = (0.. game.width()-1).anyOne() 
+    // const y = (0.. game.height()-1).anyOne() 
     position = game.at(x,y) 
   }
 }
@@ -392,9 +393,9 @@ program ejemplo {
   game.onTick(2000, "movimiento",{ caja.movete() })
 
   // capturamos el evento ENTER del teclado
-  keyboard.enter().onPressDo {game.say(wollok,wollok.howAreYou())}  
+  keyboard.enter().onPressDo { game.say(wollok, wollok.howAreYou()) }
   // capturamos el evento de presionar la tecla p del teclado
-  keyboard.p().onPressDo {game.removeTickEvent("movimiento")}  // Mensaje que detiene la acción repetitiva indicada
+  keyboard.p().onPressDo { game.removeTickEvent("movimiento") }  // Mensaje que detiene la acción repetitiva indicada
   game.start()
 }
 ```
@@ -429,8 +430,8 @@ Si no queremos deshabilitarlo una vez activado (porque nos distrae tanta informa
 ```wollok
 program ejemplo {
   game.addVisualCharacter(wollok)
-  game.hideAttributes(wollok)
   //...
+  game.hideAttributes(wollok)
 }
 ```
 
@@ -442,6 +443,7 @@ En el programa agregamos el mensaje correspondiente al objeto game:
 
 ```wollok
 import wollok.game.*
+
 program ejemplo {
   game.width(10)
   game.height(10)
@@ -557,6 +559,6 @@ Wollok Game utiliza SWT, un componente de Eclipse al que le [reportaron inconven
 
 ## Para seguirla ##
 
-El código de los ejemplos mencionados está en  [este repositorio](https://github.com/wollok/ejemploGameSite) 
+El código de los ejemplos mencionados está en [este repositorio](https://github.com/wollok/ejemploGameSite).
 
 También podés investigar [todos estos ejemplos](https://github.com/wollok?utf8=%E2%9C%93&q=game&type=&language=) en el repositorio de Wollok. ¡Que lo disfrutes!
