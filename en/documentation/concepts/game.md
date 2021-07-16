@@ -9,18 +9,16 @@ layout: null
 1. <a href="#the-game" class="wollokLink">The game</a>
 1. <a href="#the-board" class="wollokLink">The board</a>
 1. <a href="#positions" class="wollokLink">Positions</a>
-  1. <a href="#drawing-objects" class="wollokLink">Drawing objects</a>
-  1. <a href="#moving-objects" class="wollokLink">Moving objects</a>
+1. <a href="#drawing-objects" class="wollokLink">Drawing objects</a>
 1. <a href="#the-character" class="wollokLink">The character</a>
 1. <a href="#visuals" class="wollokLink">Visuals</a>
 1. <a href="#an-interactive-game" class="wollokLink">An interactive game</a>
-  1. <a href="#collisions" class="wollokLink">Collisions</a>
-1. <a href="#programs" class="wollokLink">Programs</a>
-  1. <a href="#changing-board-background" class="wollokLink">Changing board background</a>
-  1. <a href="#reporting-errors" class="wollokLink">Reporting errors</a>
-  1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
-  1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
-  1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
+1. <a href="#collisions" class="wollokLink">Collisions</a>
+1. <a href="#changing-board-background" class="wollokLink">Changing board background</a>
+1. <a href="#reporting-errors" class="wollokLink">Reporting errors</a>
+1. <a href="#automatic-events" class="wollokLink">Automatic events</a>
+1. <a href="#keyboard-events" class="wollokLink">Keyboard events</a>
+1. <a href="#show-or-hide-visual-objects-attributes" class="wollokLink">Show or hide visual objects attributes</a>
 1. <a href="#troubleshooting" class="wollokLink">Troubleshooting</a>
 1. <a href="#more-info" class="wollokLink">More info</a>
 

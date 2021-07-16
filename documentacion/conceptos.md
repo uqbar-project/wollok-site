@@ -17,7 +17,7 @@ Este tutorial explica conceptos básicos y cómo podemos iniciarnos en el mundo 
 <div class="container">
     <ul class="nav breadcrumb nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active wollokNavLink" data-toggle="tab" href="#introduccion" role="tab">Intro</a>
+            <a class="nav-link wollokNavLink active" data-toggle="tab" href="#introduccion" role="tab">Intro</a>
         </li>
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#objetos" role="tab">Objetos</a>
