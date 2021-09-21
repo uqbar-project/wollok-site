@@ -4,7 +4,7 @@ layout: null
 
 # Wollok Game
 
-## Indice rapido ##
+## Índice rápido ##
 
 * <a href="#que-es" class="wollokLink">¿Que es?</a>
 * <a href="#el-juego" class="wollokLink">El juego</a>
@@ -13,12 +13,13 @@ layout: null
   * <a href="#por-consola-con-archivo-de-codigo" class="wollokLink">Por consola, con archivo de codigo</a>
   * <a href="#con-un-programa" class="wollokLink">Con un programa</a>
 * <a href="#el-tablero" class="wollokLink">El tablero</a>
-* <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
 * <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
-* <a href="#visuales" class="wollokLink">Visuales</a>
+  * <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
+  * <a href="#visuales" class="wollokLink">Visuales</a>
+  * <a href="#agregando-objetos-al-juego" class="wollokLink">Agregando objetos al juego</a>
 * <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
 * <a href="#el-personaje" class="wollokLink">El personaje</a>
-* <a href="#tambien-hablan" class="wollokLink">Tambien hablan</a>
+* <a href="#tambien-hablan" class="wollokLink">También hablan</a>
 * <a href="#un-juego-interactivo" class="wollokLink">Un juego interactivo</a>
   * <a href="#colisiones" class="wollokLink">Colisiones</a>
   * <a href="#eventos-automaticos" class="wollokLink">Eventos automáticos</a>
@@ -55,12 +56,12 @@ Para comenzar un juego, y poder visualizar el tablero, basta con indicar:
 game.start()
 ```
 
-Se levantar una ventana independiente del sistema operativo mostrando el tablero.
+Se levantará una ventana independiente del sistema operativo mostrando el tablero.
 
 ![Tablero vacío](images/tableroVacio.png)
 
 
-## ¿Cómo se usa?
+## ¿Como se usa?
 
 
 ### Por consola ###
@@ -117,7 +118,7 @@ program ejemplo{
 Todo el mundo de Wollok Game pasa por el tablero. Aquí es donde se van a agregar los objetos que queremos mostrar en el juego y tiene las siguientes características:
 
 - Es **único**, de modo que solo podemos tener un tablero por juego
-- Todo el tablero **está dividido en celdas** de tamaño fijo (50 x 50 px), y todas las posiciones están en unidades de celdas.
+- Todo el tablero **está dividido en celdas** _cuadradas_ que se puede configurar usando `game.cellSize(px)` (por default: 50 x 50 px), y todas las posiciones del juego están en unidades de celdas (no se puede estar "en el medio" de una celda).
 - Tiene un **título**, manejado por la propiedad `game.title()`
 - Tiene un **ancho**, expresado en _cantidad de celdas_, manejado por la propiedad `game.width()`
 - Tiene un **alto**, expresado en _cantidad de celdas_, manejado por la propiedad `game.height()`
@@ -131,6 +132,7 @@ import wollok.game.*
 program ejemplo {
   game.width(10)
   game.height(7)
+  game.cellSize(50)
   game.title("Juego")
   game.start()
 }
@@ -140,12 +142,13 @@ program ejemplo {
   <img src="images/tableroNuevo.png" class="img-fluid z-depth-1">
 </div>
 
+## Dibujando objetos
 
-## Las posiciones
+Ahora que sabemos cómo ver el tablero del juego, vamos a agregar objetos visuales para que interactúen. Para dibujar algún objeto en Wollok Game es necesario saber _qué imágen_ dibujar y _dónde en la pantalla_, para ello es necesario utilizar las **posiciones** y **visuales**.
 
-Ahora que sabemos cómo ver el tablero del juego, vamos a agregar objetos visuales que interactúen. Para ello necesitamos ubicar dichos objetos en una **posición**, a través de posiciones, objetos que se encuentran en la biblioteca _game_ de Wollok y definen coordenadas x e y. 
+### Las posiciones
 
-La forma más simple de obtener una posición es pedírsela al **game** 
+Las **posiciones** son objetos que se encuentran en la biblioteca _game_ de Wollok y definen coordenadas x e y. La forma más simple de obtener una posición es pedírsela al **game** .
 
 Por ejemplo, teniendo corriendo cualquier archivo `.wlk` que incluya el import de `wollok.game.*` se puede probar en al consola:
 
@@ -167,9 +170,7 @@ Las posiciones entienden mensajes para cada coordenada
 3
 ```
 
-### Dibujando objetos ###
-
-Una forma es que el objeto tenga un método con nombre `position()` que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
+Para dibujar un objeto en una posición es necesario que entienda el mensaje `position()` y que retorne la posición en la que se quiere mostrar al objeto. Dicho método puede ser tan complejo o simple como se desee: puede tener una lógica específica que calcule la posición a partir de diversos factores o ser simplemente un método de acceso a una variable, en cuyo caso basta con definir `position` como propiedad.
 
 ```wollok
 // Con propiedad
@@ -186,18 +187,20 @@ object wollok {
 
 Pero para dibujar un objeto no es suficiente con definir en dónde mostrarlo. También debemos saber **qué** vamos a mostrar. Es decir, cuál será la _imagen_ de nuestro objeto.
 
-## Visuales
+### Visuales
 
 Para elegir la imagen de un determinado objeto es necesario:
 
 1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imágenes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
 2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión. **Tené en cuenta que algunos sistemas operativos son case sensitive**, así que tené en cuenta mayúsculas y minúsculas.
 
-### Siguiendo con nuestro ejemplo anterior:
+#### Siguiendo con nuestro ejemplo anterior:
 
 Su proyecto debería tener una estructura similar a la siguiente:
 
 ![Proyecto wollok](images/project.png)
+
+Y el código del objeto a mostrar podría ser
 
 ```wollok
 object wollok {
@@ -207,7 +210,9 @@ object wollok {
 }
 ```
 
-Para que el objeto se muestre en el tablero de juego, se debe hacer
+### Agregando objetos al juego
+
+Por último, para que el objeto se muestre en el tablero de juego, se debe hacer
 
 ```wollok
 game.addVisual(wollok)
@@ -216,6 +221,8 @@ game.addVisual(wollok)
 ¡Ya podemos visualizar nuestros objetos en pantalla!
 
 ![Tablero con wollok](images/tableroConWollok.png)
+
+Así como existe `game.addVisual(objeto)`, también se puede hacer `game.removeVisual(objeto)` cuando queremos dejar de tenerlo en el juego.
 
 ### Otro ejemplo
 
@@ -248,10 +255,13 @@ object caja {
 
 > ![Warning](images/warning.png) AVISO IMPORTANTE : Wollok Game no hace ninguna modificación a las imágenes para mostrarlas. De modo que deberán tener el **tamaño** y **orientación** apropiado para tu juego.
 
+-------
+
+> **¿Cómo funciona?**
+> Wollok game le consultará a los objetos cuál es la posición e imagen para mostrarlos _todo el tiempo_ (muchas veces por segundo). Esto significa que para que un objeto "se mueva" o "transforme su imagen" basta con hacer que responda cosas distintas a esos mensajes.
 
 
-
-### Moviendo objetos
+## Moviendo objetos
 
 Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el método `position()` y manipulando las referencias que se utilizan en él. 
 Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
@@ -527,7 +537,7 @@ Deberíamos poder ver el texto _¡Pepita!_ escrito en el medio del tablero:
 
 El color por defecto es **azul**, pero se puede modificar.
 
-## Coloreando textos
+### Coloreando textos
 
 Para poder cambiar el color del texto debemos agregarle a nuestro objeto un método `textColor()` que debe devolver un string con un valor RGBA en hexa.
 
@@ -559,7 +569,7 @@ Corriendo el mismo programa anterior deberíamos poder ver:
 
 ![Green pepita text](images/greenPepitaText.png)
 
-## Imagenes con texto
+### Imagenes con texto
 
 ¡Podemos combinar textos con imágenes! Para ello necesitamos que nuestro objeto defina qué _imagen_ va a mostrar, de la misma manera que veníamos haciendo antes. El texto siempre se dibujará por encima de la imagen.
 
