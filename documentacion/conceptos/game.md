@@ -14,10 +14,10 @@ layout: null
   * <a href="#con-un-programa" class="wollokLink">Con un programa</a>
 * <a href="#el-tablero" class="wollokLink">El tablero</a>
 * <a href="#las-posiciones" class="wollokLink">Las posiciones</a>
-  * <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
-  * <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
-* <a href="#el-personaje" class="wollokLink">El personaje</a>
+* <a href="#dibujando-objetos" class="wollokLink">Dibujando objetos</a>
 * <a href="#visuales" class="wollokLink">Visuales</a>
+* <a href="#moviendo-objetos" class="wollokLink">Moviendo objetos</a>
+* <a href="#el-personaje" class="wollokLink">El personaje</a>
 * <a href="#tambien-hablan" class="wollokLink">Tambien hablan</a>
 * <a href="#un-juego-interactivo" class="wollokLink">Un juego interactivo</a>
   * <a href="#colisiones" class="wollokLink">Colisiones</a>
@@ -180,6 +180,29 @@ object wollok {
 }
 ``` 
 
+Pero para dibujar un objeto no es suficiente con definir en dónde mostrarlo. También debemos saber **qué** vamos a mostrar. Es decir, cuál será la _imagen_ de nuestro objeto.
+
+## Visuales
+
+Para elegir la imagen de un determinado objeto es necesario:
+
+1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imágenes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
+2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión. **Tené en cuenta que algunos sistemas operativos son case sensitive**, así que tené en cuenta mayúsculas y minúsculas.
+
+### Siguiendo con nuestro ejemplo anterior:
+
+Su proyecto debería tener una estructura similar a la siguiente:
+
+![Proyecto wollok](images/project.png)
+
+```wollok
+object wollok {
+  var property position = game.origin()
+
+  method image() = "wollok.png"
+}
+```
+
 Para que el objeto se muestre en el tablero de juego, se debe hacer
 
 ```wollok
@@ -190,74 +213,9 @@ game.addVisual(wollok)
 
 ![Tablero con wollok](images/tableroConWollok.png)
 
+### Otro ejemplo
 
-### Moviendo objetos
-
-Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el método `position()` y manipulando las referencias que se utilizan en él. 
-Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
-En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
-
-```wollok
-// Con propiedad
-object wollok {
-  var property position = game.origin()
-
-  method centrar() {
-    position = game.center()
-  }
-}
-
-// Con método 
-object wollok {
-  var centrado = false
-  method position() = if (centrado) game.center() else game.origin()
-
-  method centrar() {
-    centrado = true
-  }
-}
-
-``` 
-
-Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. 
-
-```wollok
-object wollok {
-  var property position = game.origin()
-
-  method subir() {
-    position = position.up(1) 
-  }
-
-  // se mueve una determinada cantidad de posiciones en diagonal principal
-  method enDiagonal(cantidadPosiciones) { 
-    position = position.up(cantidadPosiciones).right(cant) 
-  }
-
-}
-```
-
-## El personaje
-
-Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo. 
-El objeto debe entender los mensajes `position()` y `position(nuevaPosition)`, lo que puede sustituirse definiendo `position` como propiedad. 
-
-```wollok 
-game.addVisualCharacter(wollok)
-```
-
-![wollok-character](images/wollokCharacter.gif)
-
-
-## Visuales
-
-¡Perfecto! Ya podemos mostrar nuestros objetos en pantalla, pero se muestran como un _wollok object_.
-Para elegir la imagen de un determinado objeto es necesario:
-
-1. Tener una **carpeta fuente** en el proyecto Wollok **con todas las imágenes del juego**. Se puede crear haciendo _click derecho sobre el proyecto > Nueva > Otras... > Java > y buscan "Carpeta fuente"_. Luego pueden agregan las imágenes arrastrando / copiando como cualquier carpeta. El nombre de la carpeta suele ser _img_ o _assets_ por convención, pero es válido cualquier otro nombre. 
-2. Agregar a tus objetos un método `image()` que **retorne el nombre del archivo de la imagen** como string, incluyendo la extensión. **Tené en cuenta que algunos sistemas operativos son case sensitive**, así que tené en cuenta mayúsculas y minúsculas.
-
-### Ejemplo
+La estructura del proyecto debería verse de la siguiente manera:
 
 <div class="container text-center">
   <img src="/images/tour/imgExplorerGame.png" class="img-fluid z-depth-1">
@@ -286,7 +244,73 @@ object caja {
 
 > ![Warning](images/warning.png) AVISO IMPORTANTE : Wollok Game no hace ninguna modificación a las imágenes para mostrarlas. De modo que deberán tener el **tamaño** y **orientación** apropiado para tu juego.
 
-## ¡Tambien hablan!
+
+
+
+### Moviendo objetos
+
+Una forma para que el objeto se mueva en el tablero es definiendo adecuacadamente el método `position()` y manipulando las referencias que se utilizan en él. 
+Las posiciones son **objetos inmutables**, por lo que no se les puede cambiar sus coordenadas. Para ubicar objetos en posiciones diferentes se deben obtener nuevos objetos posición. 
+En un caso simple, con una propiedad o un método que simplemente retorna la variable `position`, si modificamos la referencia a una posición diferente, el objeto se mueve a dicha ubicación.
+
+```wollok
+// Con propiedad
+object wollok {
+  var property position = game.origin()
+
+  method centrar() {
+    position = game.center()
+  }
+
+  method image() = "wollok.png"
+}
+
+// Con método 
+object wollok {
+  var centrado = false
+  method position() = if (centrado) game.center() else game.origin()
+
+  method centrar() {
+    centrado = true
+  }
+
+  method image() = "wollok.png"
+}
+
+``` 
+
+Las posiciones entienden los mensajes `right(c) left(c) up(c) down(c)` que devuelven nuevas posiciones con un desplazamiento de `c` casilleros en la dirección correspondiente. 
+
+```wollok
+object wollok {
+  var property position = game.origin()
+
+  method image() = "wollok.png"
+
+  method subir() {
+    position = position.up(1) 
+  }
+
+  // se mueve una determinada cantidad de posiciones en diagonal principal
+  method enDiagonal(cantidadPosiciones) { 
+    position = position.up(cantidadPosiciones).right(cant) 
+  }
+
+}
+```
+
+## El personaje
+
+Wollok Game te permite tener un _personaje especial_ y le da la capacidad de **moverlo con las flechas del teclado**. Basta con decirle al juego cuál objeto es el personaje a la hora de dibujarlo. 
+El objeto debe entender los mensajes `position()` y `position(nuevaPosition)`, lo que puede sustituirse definiendo `position` como propiedad. 
+
+```wollok 
+game.addVisualCharacter(wollok)
+```
+
+![wollok-character](images/wollokCharacter.gif)
+
+## ¡También hablan!
 
 Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `objeto` del juego y el `texto` que dirá por medio del mensaje `game.say(objeto, texto)`:
 
