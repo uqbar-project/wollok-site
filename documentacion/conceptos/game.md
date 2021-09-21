@@ -28,6 +28,7 @@ layout: null
 * <a href="#dibujando-textos" class="wollokLink">Dibujando textos</a>
   * <a href="#coloreando-textos" class="wollokLink">Coloreando textos</a>
   * <a href="#imagenes-con-texto" class="wollokLink">Imagenes con texto</a>
+* <a href="#objetos-invisibles" class="wollokLink">Objetos invisibles</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -313,7 +314,7 @@ game.addVisualCharacter(wollok)
 
 ![wollok-character](images/wollokCharacter.gif)
 
-## ¡También hablan!
+## ¡Tambien hablan!
 
 Así es, **los objetos del juego pueden hablar**. Para eso hay que indicar el `objeto` del juego y el `texto` que dirá por medio del mensaje `game.say(objeto, texto)`:
 
@@ -587,6 +588,47 @@ object pepita {
 Corriendo el mismo programa anterior deberíamos poder ver:
 
 ![Pepita with text](images/pepitaWithText.png)
+
+## Objetos invisibles
+
+También es posible definir objetos invisibles y agregarlos al tablero. Nos pueden servir, por ejemplo, para disparar colisiones. Es importante que estos objetos **no definan** los métodos `text()` e `image()`.
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object pepita {
+	
+	var property position = game.center()
+	
+	method image() = "pepita.png"
+}
+
+object invisible {
+	
+	method position() = game.origin()
+}
+```
+
+Al correr el siguiente programa:
+
+```wollok
+import wollok.game.*
+import pepita.*
+
+program ejemplo {
+
+	game.addVisualCharacter(pepita)
+	game.addVisual(invisible)
+	game.onCollideDo(invisible, {elemento => game.say(invisible, "¡Cuidado!")})
+	game.start()
+}
+```
+
+Deberíamos poder observar que cuando pepita pasa por el origen, el objeto invisible le dice: ¡Cuidado!
+
+![Invisible object](images/invisibleObject.gif)
 
 ## Reportando errores
 
