@@ -25,6 +25,8 @@ layout: null
   * <a href="#eventos-del-teclado" class="wollokLink">Eventos del teclado</a>
   * <a href="#mostrar-atributos-de-los-objetos-visuales" class="wollokLink">Mostrar atributos de los objetos visuales</a>
 * <a href="#cambiando-el-fondo" class="wollokLink">Cambiando el fondo</a>
+* <a href="#dibujando-textos" class="wollokLink">Dibujando textos</a>
+  * <a href="#coloreando-textos" class="wollokLink">Coloreando textos</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -433,6 +435,8 @@ object wollok {
   var property position = game.origin()
   var version = "1.7.0"
   var lastUpdated = new Date()
+
+  method image() = "wollok.png"
 }
 ```
 
@@ -482,6 +486,76 @@ Esto produce que en el tablero se visualice la imagen de fondo:
 
 De aquí en más volveremos con el fondo convencional para que distraiga menos la atención.
 
+## Dibujando textos
+
+¿Se acuerdan que dijimos que para dibujar un objeto era necesario definir su imagen? Bueno, esto no es del todo cierto. Es posible mostrar solamente texto. 
+
+Para ello es necesario agregarle a nuestro objeto un método `text()` **que devuelva el texto a mostrar** como string. Es importante definir la posición en la cual se debe mostrar de la misma manera que lo hacíamos antes. Pero nuestro objeto **no debe tener definido el método** `image()` (al menos por ahora).
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object pepita {
+	
+	method position() = game.center()
+	
+	method text() = "¡Pepita!"
+}
+```
+
+Al correr el siguiente programa:
+
+```wollok
+import wollok.game.*
+import pepita.*
+
+program ejemplo {
+
+	game.addVisual(pepita)
+	game.start()
+
+}
+```
+
+Deberíamos poder ver el texto _¡Pepita!_ escrito en el medio del tablero:
+
+![Pepita text](images/pepitaText.png)
+
+El color por defecto es **azul**, pero se puede modificar.
+
+## Coloreando textos
+
+Para poder cambiar el color del texto debemos agregarle a nuestro objeto un método `textColor()` que debe devolver un string con un valor RGBA en hexa.
+
+¿Qué es un valor RGBA? Es una forma de representar colores mediante la composición de rojo, verde y azul. Además, se agrega información sobre la opacidad. Para más información pueden visitar [esta página](https://rgbacolorpicker.com/). Explica con más detalle de qué se trata y además les genera un valor RGBA a partir del color que ustedes quieran.
+
+¿Cómo lo convierto a hexa? Muy fácil. Pueden utilizar cualquier página que, dado un valor RGBA, lo convierta en hexa. Les dejamos [esta página](https://rgbatohex.com/) como ejemplo.
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object paleta {
+	const property verde = "00FF00FF"
+	const property rojo = "FF0000FF"
+}
+
+object pepita {
+	
+	method position() = game.center()
+	
+	method text() = "¡Pepita!"
+	
+	method textColor() = paleta.verde()
+}
+```
+
+Corriendo el mismo programa anterior deberíamos poder ver:
+
+![Green pepita text](images/greenPepitaText.png)
 
 ## Reportando errores
 
