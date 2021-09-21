@@ -27,6 +27,7 @@ layout: null
 * <a href="#cambiando-el-fondo" class="wollokLink">Cambiando el fondo</a>
 * <a href="#dibujando-textos" class="wollokLink">Dibujando textos</a>
   * <a href="#coloreando-textos" class="wollokLink">Coloreando textos</a>
+  * <a href="#imagenes-con-texto" class="wollokLink">Imagenes con texto</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -556,6 +557,36 @@ object pepita {
 Corriendo el mismo programa anterior deberíamos poder ver:
 
 ![Green pepita text](images/greenPepitaText.png)
+
+## Imagenes con texto
+
+¡Podemos combinar textos con imágenes! Para ello necesitamos que nuestro objeto defina qué _imagen_ va a mostrar, de la misma manera que veníamos haciendo antes. El texto siempre se dibujará por encima de la imagen.
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object paleta {
+	const property verde = "00FF00FF"
+	const property rojo = "FF0000FF"
+}
+
+object pepita {
+	
+	method position() = game.center()
+	
+	method image() = "pepitaCanchera.png"
+	
+	method text() = "¡Pepita!"
+	
+	method textColor() = paleta.verde()
+}
+```
+
+Corriendo el mismo programa anterior deberíamos poder ver:
+
+![Pepita with text](images/pepitaWithText.png)
 
 ## Reportando errores
 
