@@ -307,7 +307,7 @@ object wollok {
 
   // se mueve una determinada cantidad de posiciones en diagonal principal
   method enDiagonal(cantidadPosiciones) { 
-    position = position.up(cantidadPosiciones).right(cant) 
+    position = position.up(cantidadPosiciones).right(cantidadPosiciones) 
   }
 
 }
@@ -587,7 +587,7 @@ object pepita {
 	
 	method position() = game.center()
 	
-	method image() = "pepitaCanchera.png"
+	method image() = "pepita.png"
 	
 	method text() = "¡Pepita!"
 	
