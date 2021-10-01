@@ -34,6 +34,9 @@ layout: null
   * <a href="#sonido-de-fondo" class="wollokLink">Sonido de fondo</a>
   * <a href="#pausar" class="wollokLink">Pausar</a>
   * <a href="#volumen" class="wollokLink">Volumen</a>
+* <a href="#testing" class="wollokLink">Testing</a>
+  * <a href="#game-mantiene-su-estado" class="wollokLink">Game mantiene su estado</a>
+  * <a href="#reproduccion-de-sonidos" class="wollokLink">Reproducción de sonidos</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -747,7 +750,112 @@ program soundProgram {
 }
 ```
 
-En este pequeño ejemplo mostramos cómo podemos *mutear* un sonido presionando la tecla **down**, llevarlo a su máximo volumen con la tecla **up** y dejarlo en un valor intermedio presionando la tecla **m**.
+En el ejemplo mostramos cómo podemos *mutear* un sonido presionando la tecla **down**, llevarlo a su máximo volumen con la tecla **up** y dejarlo en un valor intermedio presionando la tecla **m**.
+
+## Testing
+
+En este apartado mostraremos algunas consideraciones que deberán  tener en cuenta a la hora de hacer tests con `wollok game`. Pero antes de comenzar, les recomendamos que lean los apuntes sobre testing: [Introducción al testeo unitario automatizado]("https://docs.google.com/document/d/1Q_v48gZfRmVfLMvC0PBpmtZyMoALbh11AwmEllP__eY/edit?usp=drive_web") y [Testeo unitario automatizado avanzado]("https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#?usp=drive_web").
+
+### Game mantiene su estado
+
+Es probable que quieran agregar elementos al tablero para probar cierta funcionalidad mediante su interacción o movimiento. Pero, si agregan un elemento en un test, este mismo vivirá en los demás. Esto es problemático y puede romper sus tests.
+
+Para solucionarlo pueden enviarle el mensaje `clear()` al objeto `game`, de manera que el juego se limpie y quede libre de objetos. Pero, ¿dónde haríamos eso? Dentro del método `initialize()` del `describe`. De esta manera, nos aseguramos que `game` se reinicie antes de correr cada uno de nuestros tests.
+
+```wollok
+import wollok.game.*
+
+describe "Mi describe" {
+
+  method initialize(){
+    game.clear()
+    // Hago otras cosas...
+  }
+
+  test "Mi primer test" {
+    game.addVisual(miVisual)
+    ...
+  }
+
+  test "Mi segundo test"{
+    game.addVisual(otroVisual)
+    ...
+  }
+}
+```
+
+### Reproduccion de sonidos
+
+Ya vimos que los sonidos no se pueden reproducir si el juego no empezó. Y en los tests no nos interesa iniciar el juego. Entonces, ¿qué sucede si alguna funcionalidad que queramos testear reproduce un sonido por atrás? Se lanza una excepción y el test falla.
+
+Solucionar esto es un poco más complicado porque requiere de varios cambios. En un principio, el problema empieza cuando le enviamos el mensaje `play()` a un sonido. Lo que podríamos hacer es cambiar estos sonidos por otros objetos polimórficos que los "imiten". Es decir, estos nuevos objetos entenderán todos los mensajes que entienden los sonidos y cuando les mandemos el mensaje `play()` no harán nada. De esta manera no se lanzará una excepción y los test podrán pasar.
+
+```wollok
+object soundMock {
+	
+	method pause(){}
+	
+	method paused() = true
+	
+	method play(){}
+	
+	method played() = false
+	
+	method resume(){}
+	
+	method shouldLoop(looping){}
+	
+	method shouldLoop() = false
+	
+	method stop(){}
+	
+	method volume(newVolume){}
+	
+	method volume() = 0
+}
+```
+
+Pero los sonidos se los pedimos al objeto `game()`. Entonces, tenemos que cambiar el objeto al cual le pedimos los sonidos. Vamos a crear un nuevo objeto que se va a encargar de crearlos por nosotros. Lo llamaremos `soundProducer`. Dicho objeto, en un principio, se lo pedirá a `game` porque necesitamos los sonidos de verdad. Lo interesante es que vamos a poder intercambiar a quién le pide los sonidos. Entonces, podemos tener otro objeto que nos de los sonidos "de mentira" para poder hacer nuestros tests. A este último lo llamaremos `soundProviderMock`. Bajando esto a tierra, podríamos tener algo como lo siguiente:
+
+```wollok
+import wollok.game.*
+
+object soundProducer {
+	
+	var provider = game
+	
+	method provider(_provider){
+		provider = _provider
+	}
+	
+	method sound(audioFile) = provider.sound(audioFile)
+	
+}
+
+object soundProviderMock {
+	
+	method sound(audioFile) = soundMock
+	
+}
+```
+
+En nuestro código vamos a tener que modificar todos los lugares donde le pedíamos un sonido a `game`. Es decir, reemplazaremos `game.sound(audioFile)` por `soundProducer.sound(audioFile)` (o el nombre que ustedes hayan elegido).
+
+¿Y qué ganamos con esto? En el `describe` de nuestros tests vamos a poder configurar el proveedor de sonidos dentro del método `initialize()`, similar al caso anterior. Esto nos permitirá usar sonidos "de mentira" para que no rompan nuestros tests.
+
+```wollok
+describe "Mi describe" {
+
+  method initialize(){
+    soundProducer.provider(soundProviderMock)
+    // Hago otras cosas...
+  }
+
+  test "Mi primer test" {
+    ...
+  }
+}
+```
 
 ## Reportando errores
 
