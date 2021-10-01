@@ -30,6 +30,13 @@ layout: null
   * <a href="#coloreando-textos" class="wollokLink">Coloreando textos</a>
   * <a href="#imagenes-con-texto" class="wollokLink">Imagenes con texto</a>
 * <a href="#objetos-invisibles" class="wollokLink">Objetos invisibles</a>
+* <a href="#sonidos" class="wollokLink">Sonidos</a>
+  * <a href="#sonido-de-fondo" class="wollokLink">Sonido de fondo</a>
+  * <a href="#pausar" class="wollokLink">Pausar</a>
+  * <a href="#volumen" class="wollokLink">Volumen</a>
+* <a href="#testing" class="wollokLink">Testing</a>
+  * <a href="#game-mantiene-su-estado" class="wollokLink">Game mantiene su estado</a>
+  * <a href="#reproduccion-de-sonidos" class="wollokLink">Reproducción de sonidos</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -415,6 +422,18 @@ Cuando ejecutamos el programa, vemos cómo la caja cada 2 segundos cambia de pos
 
 ![on tick](images/onTick.gif)
 
+¿Y si queremos definir un evento que suceda una sola vez? También podemos hacerlo, enviando el mensaje `schedule(miliseconds, action)` al objeto `game` de la siguiente manera:
+
+```wollok
+program ejemplo {
+	game.schedule(3000, { game.say(wollok, "¡Hola!") })
+	game.start()
+}
+```
+
+![schedule](images/schedule.gif)
+
+Veremos otras aplicaciones más adelante.
 
 ### Eventos del teclado
 
@@ -639,6 +658,204 @@ program ejemplo {
 Deberíamos poder observar que cuando pepita pasa por el origen, el objeto invisible le dice: ¡Cuidado!
 
 ![Invisible object](images/invisibleObject.gif)
+
+## Sonidos
+
+¡Podemos reproducir sonidos! Para ello podemos pedirle un sonido a game, enviándole el mensaje: `game.sound(audioFile)`. El parámetro es el path al archivo de audio que quieren reproducir. Las extensiones aceptadas son: *.mp3, .ogg o .wav*.
+
+Al igual que las imágenes, podemos guardar nuestros sonidos dentro de la carpeta `assets`.
+
+¿Qué podemos hacer con un sonido? Podemos reproducirlo enviándole el mensaje `play`.
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object waterDrop {
+	
+	method play(){
+		game.sound("water-drop-sound.mp3").play()
+	}
+}
+
+program soundProgram {
+
+	keyboard.enter().onPressDo({waterDrop.play()})
+	game.start()
+
+}
+```
+
+Cada vez que apretemos la tecla `enter` se reproducirá nuestro sonido.
+
+**Importante:** los sonidos pueden reproducirse sólo una vez. Si queremos hacerlo de nuevo es necesario crear otro sonido.
+
+### Sonido de fondo
+
+También podemos definir música de ambiente o un sonido de fondo para el juego. Esto lo logramos enviándole el mensaje `shouldLoop(true)` al sonido.
+
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	game.schedule(500, { rain.play()} )
+	game.start()
+}
+```
+
+**Importante:** los sonidos sólo pueden reproducirse si el juego ya inició. Es por eso que debemos *planificar* su reproducción si queremos que suceda de manera automática al iniciar el juego.
+
+### Pausar
+
+Otras cosas que podríamos querer hacer con los sonidos es pausarlos, reanudarlos y detenerlos por completo. Para ello existen los mensajes `pause()`, `resume()` y `stop()` que entienden los sonidos.
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	keyboard.p().onPressDo({rain.pause()})
+	keyboard.r().onPressDo({rain.resume()})
+	keyboard.s().onPressDo({rain.stop()})
+	game.schedule(500, {rain.play()})
+	game.start()
+}
+```
+
+Esto nos permite *pausar* la lluvia con la letra **p**, volver a *reproducirla* con la letra **r** y *detenerla* con la letra **s**.
+
+### Volumen
+
+Por último queríamos mostrarles que los sonidos también tienen su propio volumen y son independientes unos de otros. Podemos consultarlo enviando el mensaje `volume()` a un sonido y también podemos modificarlo si así lo deseamos, mediante `volume(newVolume)`.
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	keyboard.up().onPressDo({rain.volume(1)})
+	keyboard.down().onPressDo({rain.volume(0)})
+	keyboard.m().onPressDo({rain.volume(0.5)})
+	game.schedule(500, {rain.play()})
+	game.start()
+}
+```
+
+En el ejemplo mostramos cómo podemos *mutear* un sonido presionando la tecla **down**, llevarlo a su máximo volumen con la tecla **up** y dejarlo en un valor intermedio presionando la tecla **m**.
+
+## Testing
+
+En este apartado mostraremos algunas consideraciones que deberán  tener en cuenta a la hora de hacer tests con `wollok game`. Pero antes de comenzar, les recomendamos que lean los apuntes sobre testing: [Introducción al testeo unitario automatizado]("https://docs.google.com/document/d/1Q_v48gZfRmVfLMvC0PBpmtZyMoALbh11AwmEllP__eY/edit?usp=drive_web") y [Testeo unitario automatizado avanzado]("https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#?usp=drive_web").
+
+### Game mantiene su estado
+
+Es probable que quieran agregar elementos al tablero para probar cierta funcionalidad mediante su interacción o movimiento. Pero, si agregan un elemento en un test, este mismo vivirá en los demás. Esto es problemático y puede romper sus tests.
+
+Para solucionarlo pueden enviarle el mensaje `clear()` al objeto `game`, de manera que el juego se limpie y quede libre de objetos. Pero, ¿dónde haríamos eso? Dentro del método `initialize()` del `describe`. De esta manera, nos aseguramos que `game` se reinicie antes de correr cada uno de nuestros tests.
+
+```wollok
+import wollok.game.*
+
+describe "Mi describe" {
+
+  method initialize(){
+    game.clear()
+    // Hago otras cosas...
+  }
+
+  test "Mi primer test" {
+    game.addVisual(miVisual)
+    ...
+  }
+
+  test "Mi segundo test"{
+    game.addVisual(otroVisual)
+    ...
+  }
+}
+```
+
+### Reproduccion de sonidos
+
+Ya vimos que los sonidos no se pueden reproducir si el juego no empezó. Y en los tests no nos interesa iniciar el juego. Entonces, ¿qué sucede si alguna funcionalidad que queramos testear reproduce un sonido por atrás? Se lanza una excepción y el test falla.
+
+Solucionar esto es un poco más complicado porque requiere de varios cambios. En un principio, el problema empieza cuando le enviamos el mensaje `play()` a un sonido. Lo que podríamos hacer es cambiar estos sonidos por otros objetos polimórficos que los "imiten". Es decir, estos nuevos objetos entenderán todos los mensajes que entienden los sonidos y cuando les mandemos el mensaje `play()` no harán nada. De esta manera no se lanzará una excepción y los test podrán pasar.
+
+```wollok
+object soundMock {
+	
+	method pause(){}
+	
+	method paused() = true
+	
+	method play(){}
+	
+	method played() = false
+	
+	method resume(){}
+	
+	method shouldLoop(looping){}
+	
+	method shouldLoop() = false
+	
+	method stop(){}
+	
+	method volume(newVolume){}
+	
+	method volume() = 0
+}
+```
+
+Pero los sonidos se los pedimos al objeto `game()`. Entonces, tenemos que cambiar el objeto al cual le pedimos los sonidos. Vamos a crear un nuevo objeto que se va a encargar de crearlos por nosotros. Lo llamaremos `soundProducer`. Dicho objeto, en un principio, se lo pedirá a `game` porque necesitamos los sonidos de verdad. Lo interesante es que vamos a poder intercambiar a quién le pide los sonidos. Entonces, podemos tener otro objeto que nos de los sonidos "de mentira" para poder hacer nuestros tests. A este último lo llamaremos `soundProviderMock`. Bajando esto a tierra, podríamos tener algo como lo siguiente:
+
+```wollok
+import wollok.game.*
+
+object soundProducer {
+	
+	var provider = game
+	
+	method provider(_provider){
+		provider = _provider
+	}
+	
+	method sound(audioFile) = provider.sound(audioFile)
+	
+}
+
+object soundProviderMock {
+	
+	method sound(audioFile) = soundMock
+	
+}
+```
+
+En nuestro código vamos a tener que modificar todos los lugares donde le pedíamos un sonido a `game`. Es decir, reemplazaremos `game.sound(audioFile)` por `soundProducer.sound(audioFile)` (o el nombre que ustedes hayan elegido).
+
+¿Y qué ganamos con esto? En el `describe` de nuestros tests vamos a poder configurar el proveedor de sonidos dentro del método `initialize()`, similar al caso anterior. Esto nos permitirá usar sonidos "de mentira" para que no rompan nuestros tests.
+
+```wollok
+describe "Mi describe" {
+
+  method initialize(){
+    soundProducer.provider(soundProviderMock)
+    // Hago otras cosas...
+  }
+
+  test "Mi primer test" {
+    ...
+  }
+}
+```
 
 ## Reportando errores
 
