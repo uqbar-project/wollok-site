@@ -30,6 +30,10 @@ layout: null
   * <a href="#coloreando-textos" class="wollokLink">Coloreando textos</a>
   * <a href="#imagenes-con-texto" class="wollokLink">Imagenes con texto</a>
 * <a href="#objetos-invisibles" class="wollokLink">Objetos invisibles</a>
+* <a href="#sonidos" class="wollokLink">Sonidos</a>
+  * <a href="#sonido-de-fondo" class="wollokLink">Sonido de fondo</a>
+  * <a href="#pausar" class="wollokLink">Pausar</a>
+  * <a href="#volumen" class="wollokLink">Volumen</a>
 * <a href="#reportando-errores" class="wollokLink">Reportando errores</a>
 * <a href="#problemas-comunes" class="wollokLink">Problemas comunes</a>
 * <a href="#para-seguirla" class="wollokLink">Para seguirla</a>
@@ -415,6 +419,18 @@ Cuando ejecutamos el programa, vemos cómo la caja cada 2 segundos cambia de pos
 
 ![on tick](images/onTick.gif)
 
+¿Y si queremos definir un evento que suceda una sola vez? También podemos hacerlo, enviando el mensaje `schedule(miliseconds, action)` al objeto `game` de la siguiente manera:
+
+```wollok
+program ejemplo {
+	game.schedule(3000, { game.say(wollok, "¡Hola!") })
+	game.start()
+}
+```
+
+![schedule](images/schedule.gif)
+
+Veremos otras aplicaciones más adelante.
 
 ### Eventos del teclado
 
@@ -639,6 +655,99 @@ program ejemplo {
 Deberíamos poder observar que cuando pepita pasa por el origen, el objeto invisible le dice: ¡Cuidado!
 
 ![Invisible object](images/invisibleObject.gif)
+
+## Sonidos
+
+¡Podemos reproducir sonidos! Para ello podemos pedirle un sonido a game, enviándole el mensaje: `game.sound(audioFile)`. El parámetro es el path al archivo de audio que quieren reproducir. Las extensiones aceptadas son: *.mp3, .ogg o .wav*.
+
+Al igual que las imágenes, podemos guardar nuestros sonidos dentro de la carpeta `assets`.
+
+¿Qué podemos hacer con un sonido? Podemos reproducirlo enviándole el mensaje `play`.
+
+### Ejemplo
+
+```wollok
+import wollok.game.*
+
+object waterDrop {
+	
+	method play(){
+		game.sound("water-drop-sound.mp3").play()
+	}
+}
+
+program soundProgram {
+
+	keyboard.enter().onPressDo({waterDrop.play()})
+	game.start()
+
+}
+```
+
+Cada vez que apretemos la tecla `enter` se reproducirá nuestro sonido.
+
+**Importante:** los sonidos pueden reproducirse sólo una vez. Si queremos hacerlo de nuevo es necesario crear otro sonido.
+
+### Sonido de fondo
+
+También podemos definir música de ambiente o un sonido de fondo para el juego. Esto lo logramos enviándole el mensaje `shouldLoop(true)` al sonido.
+
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	game.schedule(500, { rain.play()} )
+	game.start()
+}
+```
+
+**Importante:** los sonidos sólo pueden reproducirse si el juego ya inició. Es por eso que debemos *planificar* su reproducción si queremos que suceda de manera automática al iniciar el juego.
+
+### Pausar
+
+Otras cosas que podríamos querer hacer con los sonidos es pausarlos, reanudarlos y detenerlos por completo. Para ello existen los mensajes `pause()`, `resume()` y `stop()` que entienden los sonidos.
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	keyboard.p().onPressDo({rain.pause()})
+	keyboard.r().onPressDo({rain.resume()})
+	keyboard.s().onPressDo({rain.stop()})
+	game.schedule(500, {rain.play()})
+	game.start()
+}
+```
+
+Esto nos permite *pausar* la lluvia con la letra **p**, volver a *reproducirla* con la letra **r** y *detenerla* con la letra **s**.
+
+### Volumen
+
+Por último queríamos mostrarles que los sonidos también tienen su propio volumen y son independientes unos de otros. Podemos consultarlo enviando el mensaje `volume()` a un sonido y también podemos modificarlo si así lo deseamos, mediante `volume(newVolume)`.
+
+```wollok
+import wollok.game.*
+
+program soundProgram {
+	
+	const rain = game.sound("light-rain.mp3")
+	rain.shouldLoop(true)
+	keyboard.up().onPressDo({rain.volume(1)})
+	keyboard.down().onPressDo({rain.volume(0)})
+	keyboard.m().onPressDo({rain.volume(0.5)})
+	game.schedule(500, {rain.play()})
+	game.start()
+}
+```
+
+En este pequeño ejemplo mostramos cómo podemos *mutear* un sonido presionando la tecla **down**, llevarlo a su máximo volumen con la tecla **up** y dejarlo en un valor intermedio presionando la tecla **m**.
 
 ## Reportando errores
 
