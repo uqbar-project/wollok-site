@@ -521,7 +521,7 @@ De aquí en más volveremos con el fondo convencional para que distraiga menos l
 
 ¿Se acuerdan que dijimos que para dibujar un objeto era necesario definir su imagen? Bueno, esto no es del todo cierto. Es posible mostrar solamente texto. 
 
-Para ello es necesario agregarle a nuestro objeto un método `text()` **que devuelva el texto a mostrar** como string. Es importante definir la posición en la cual se debe mostrar de la misma manera que lo hacíamos antes. Pero nuestro objeto **no debe tener definido el método** `image()` (al menos por ahora).
+Para ello es necesario agregarle a nuestro objeto un método `text()` **que devuelva el texto a mostrar** como string. Es importante definir la posición en la cual se debe mostrar de la misma manera que lo hacíamos antes. El objeto puede no tener el método `image()`.
 
 ### Ejemplo
 
