@@ -754,7 +754,7 @@ En el ejemplo mostramos cómo podemos *mutear* un sonido presionando la tecla **
 
 ## Testing
 
-En este apartado mostraremos algunas consideraciones que deberán  tener en cuenta a la hora de hacer tests con `wollok game`. Pero antes de comenzar, les recomendamos que lean los apuntes sobre testing: [Introducción al testeo unitario automatizado]("https://docs.google.com/document/d/1Q_v48gZfRmVfLMvC0PBpmtZyMoALbh11AwmEllP__eY/edit?usp=drive_web") y [Testeo unitario automatizado avanzado]("https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#?usp=drive_web").
+En este apartado mostraremos algunas consideraciones que deberán  tener en cuenta a la hora de hacer tests con `wollok game`. Pero antes de comenzar, les recomendamos que lean los apuntes sobre testing: [Introducción al testeo unitario automatizado](https://docs.google.com/document/d/1Q_v48gZfRmVfLMvC0PBpmtZyMoALbh11AwmEllP__eY/edit?usp=drive_web) y [Testeo unitario automatizado avanzado](https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#?usp=drive_web).
 
 ### Game mantiene su estado
 
