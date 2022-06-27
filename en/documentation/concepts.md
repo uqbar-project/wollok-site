@@ -34,6 +34,9 @@ Meet basic concepts of Wollok in this quick tutorial.
         <li class="nav-item">
             <a class="nav-link wollokNavLink" data-toggle="tab" href="#game" role="tab">Game</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link wollokNavLink" data-toggle="tab" href="#test" role="tab">Tests</a>
+        </li>
     </ul>
 </div>
     
@@ -54,6 +57,8 @@ Meet basic concepts of Wollok in this quick tutorial.
     </div>
     <div class="tab-pane fade in show" id="game" role="tabpanel" style="padding: 1rem 1.5rem 1rem 1.5rem">
     </div>
+    <div class="tab-pane fade in show" id="test" role="tabpanel" style="padding: 1rem 1.5rem 1rem 1.5rem">
+    </div>
 </div>
 
 <script>
@@ -63,4 +68,5 @@ Meet basic concepts of Wollok in this quick tutorial.
     loadHtml("clases", "clases/index.html")
     loadHtml("avanzados", "avanzados/index.html")
     loadHtml("game", "game/index.html")
+    loadHtml("test", "test/index.html")
 </script>
