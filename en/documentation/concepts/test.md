@@ -13,7 +13,7 @@ layout: null
     * <a href="#describe" class="wollokLink">Describe</a>
     * <a href="#tests" class="wollokLink">Tests</a>
 * <a href="#test-execution" class="wollokLink">Test execution</a>
-* <a href="#advanced-testing" class="wollokLink">Advanced testing</a>
+* Advanced testing
     * <a href="#describe-initialization" class="wollokLink">Describe initialization</a>
     * <a href="#initialize" class="wollokLink">Initialize</a>
     * <a href="#helper-methods" class="wollokLink">Helper methods</a>
