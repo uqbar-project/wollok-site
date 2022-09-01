@@ -14,7 +14,7 @@ icon: 'bus'
 A continuación te vamos a contar cuáles son las principales herramientas con las que cuenta el entorno integrado de Wollok. También tenés [este tutorial paso a paso que te ayudará a conocer las herramientas](https://docs.google.com/document/d/1LGJIRgLH_mRKXCYF4ztzgeNL0cjm0fD0BqjiAR84emY/edit#)
 
 <!-- Nav tabs -->
-<div class="container">
+<div class="card">
     <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
             <a class="nav-link active wollokNavLink" data-toggle="tab" href="#darkMode" role="tab"><i class="fa fa-adjust"></i> Dark Mode</a>
@@ -84,7 +84,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <img src="/images/tour/editor2.gif" class="img-fluid z-depth-1" alt="Responsive image">
                         <figcaption class="figure-caption">
                             <br>
-                            También con las teclas <b>Ctrl + Barra</b> podemos activar <i>autocompletes</i> más elaborados, como las estructuras de selección <em>(if)</em> o la creación de una clase
+                            También con las teclas <b>Ctrl + Barra</b> podemos activar <em>autocompletes</em> más elaborados, como las estructuras de selección <em>(if)</em> o la creación de una clase
                         </figcaption>
                     </figure>
                 </div>
@@ -98,7 +98,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             <br/>
             <p>
             Familiarizarse con el editor es fundamental para sentirnos cómodos en el ambiente de trabajo. Por eso te queremos
-            contar algunos de los <i>shortcuts</i> que va a hacerte más feliz la estadía.
+            contar algunos de los <em>shortcuts</em> que va a hacerte más feliz la estadía.
             </p>
             <hr>
             <h4>Herramientas para buscar...</h4>

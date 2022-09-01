@@ -14,7 +14,7 @@ icon: 'bus'
 These are the main tools of Wollok Integrated Development Environment.
 
 <!-- Nav tabs -->
-<div class="container">
+<div class="card">
     <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
             <a class="nav-link active wollokNavLink" data-toggle="tab" href="#darkMode" role="tab"><i class="fa fa-adjust"></i> Dark Mode</a>
