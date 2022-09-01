@@ -9,7 +9,7 @@ Access it at : http://www.wollok.org
 
 **Install Ruby**: If you are in Linux, this is a good tutorial: http://tecadmin.net/install-ruby-on-rails-on-ubuntu/
 
-```
+```bash
 git checkout gh-pages
 gem install bundler
 bundle install
@@ -17,27 +17,13 @@ bundle install
 
 # Run locally 
 
-```
-jekyll server --incremental
+```bash
+jekyll server --incremental --livereload
 ```
 
 Incremental is important to reload changes in an active server :smile:
-Then you can navigate a local site in http://localhost:4000
-
-```
-fernando@dodain-pc ~/workspaces/wollok-dev/wollok $ jekyll server --incremental
-Configuration file: /home/fernando/workspaces/wollok-dev/wollok/_config.yml
-            Source: /home/fernando/workspaces/wollok-dev/wollok
-       Destination: /home/fernando/workspaces/wollok-dev/wollok/_site
- Incremental build: enabled
-      Generating... 
-   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
-                    done in 61.768 seconds.
- Auto-regeneration: enabled for '/home/fernando/workspaces/wollok-dev/wollok'
-Configuration file: /home/fernando/workspaces/wollok-dev/wollok/_config.yml
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
-```
+Livereload refreshes the content after saving the files
+You can navigate a local site in http://localhost:4000 or add the parameter `--open-url` so it opens automatically
 
 # Troubleshooting
 
@@ -52,23 +38,23 @@ If you see an error like "cannot load such file -- bundler (LoadError)" you shou
 An error like this in Linux is solved by setting "true" to "Run command as a login shell" in Terminal settings (Edit > Profile Preferences... Title and Command)
 
 ## RVM is not a function?
-Ok, see this pages:
-* [Linux Mint] (https://forums.linuxmint.com/viewtopic.php?t=151758)
-* [Ubuntu] (https://rvm.io/integration/gnome-terminal)
+Ok, see these pages:
+* [Linux Mint](https://forums.linuxmint.com/viewtopic.php?t=151758)
+* [Ubuntu](https://rvm.io/integration/gnome-terminal)
 
 ## Strange dependencies errors
 Something like
 
-```
-/home/fernando/.rvm/gems/ruby-2.3.0/gems/bundler-1.12.5/lib/bundler/spec_set.rb:95:in `block in materialize': Could not find minitest-5.9.0 in any of the sources (Bundler::GemNotFound)
+```bash
+~/.rvm/gems/ruby-2.3.0/gems/bundler-1.12.5/lib/bundler/spec_set.rb:95:in `block in materialize': Could not find minitest-5.9.0 in any of the sources (Bundler::GemNotFound)
 ```
 
 Try deleting Gemfile.lock and jekyll server afterwards.
 
 # Working with the site
 
-* Every time you make a change in a .md or .html file, it will be regenerate into _site folder.
-* Changes in _config.yml have no effect, you have to stop & start Jekyll server
+* Every time you make a change in a `.md` or `.html` file, it will be regenerate into _site folder.
+* Changes in `_config.yml` have no effect, you have to stop & start Jekyll server
 
 # Site Deployment 
 
