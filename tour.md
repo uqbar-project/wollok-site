@@ -350,23 +350,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </p>
             <p>
             Una alternativa a esto es activar la opción para que se formatée automáticamente el archivo al guardar.
-            Para esto debemos ir a Settings > Java > Editor > Save Actions; habilitarlas tildando la primer opción y 
-            luego las acciones que querramos que se hagan.
+            Para esto debemos ir a Settings > Wollok y habilitar la opción <b>Autoformat the source code on save</b>
             </p>
-            <ul>
-                <li>
-                    <b>Format source code:</b>: Es lo mismo que apretar Ctrl + Shift + F. Si elegimos la primer opción 
-                    debajo de esta, formateará todo el archivo. La segunda, sólo lo que se haya editado.
-                </li>
-                <li>
-                    <b>Organize imports:</b> Ordena los archivos importados según los criterios del IDE de Wollok
-                </li>
-                <li>
-                    <b>Additional Actions:</b> Acá podemos definir acciones extras que querramos que corran
-                </li>
-            </ul>
             <div class="container text-center">
-                <img src="/images/tour/save-actions.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/format-wollok.png" class="img-fluid z-depth-1">
             </div>
         </div>
         <!-- ***************************** CONSOLE ****************************************-->

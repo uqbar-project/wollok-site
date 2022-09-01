@@ -347,22 +347,10 @@ These are the main tools of Wollok Integrated Development Environment.
             </p>
             <p>
             There is another alternative, that is to enable this quick formatting on file save. For this, we need to go
-            to Settings > Java > Editor > Save Actions; enable the actions on save and all the other actions we want performed.
+            to Settings > Wollok and enable the option <b>Autoformat the source code on save</b>
             </p>
-            <ul>
-                <li>
-                    <b>Format source code:</b>: This is the same as pressing Ctrl + Shift + F. Chosing the first option below it will format the entire
-                    code, the second only the sections we edited.
-                </li>
-                <li>
-                    <b>Organize imports:</b> Orders imports according to the Wollok IDE preferences
-                </li>
-                <li>
-                    <b>Additional Actions:</b> Here we can specify any extra actions we want to run on save
-                </li>
-            </ul>
             <div class="container text-center">
-                <img src="/images/tour/save-actions.png" class="img-fluid z-depth-1">
+                <img src="/images/tour/format-wollok.png" class="img-fluid z-depth-1">
             </div>
         </div>
         <!-- ***************************** CONSOLE ****************************************-->
