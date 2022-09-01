@@ -81,7 +81,7 @@ lang: 'en'
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
 				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">First time</h4>
-					<p>As Wollok is an Eclipse-based platform, you cab install the Wollok IDE by uncompressing Zip / Tar.Gz file (depending on your OS platform) in a folder that <b>does not contain spaces in its name<b>, as this can lead to errors. Here are the compressed files ready to download:
+					<p>As Wollok is an Eclipse-based platform, you can install the Wollok IDE by uncompressing the <code>zip</code> or <code>tar.gz</code> file (depending on your OS platform) in a folder that <b>does not contain spaces in its name<b>, as this can lead to errors. Here are the compressed files ready to download:
 					</p>
 					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp;&nbsp;Win 32</a>
 					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;&nbsp;Linux 32</a>

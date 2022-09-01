@@ -79,7 +79,7 @@ icon: 'cloud-download'
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
 				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">Primera vez</h4>
-					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo Zip o Tar.Gz (depende de la plataforma) en cualquier directorio <b>que no contenga espacios</b>, ya que esto puede llevar a errores. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
+					<p>Una vez que tengamos la VM de Java, se puede instalar Wollok descomprimiendo el contenido del archivo <code>zip</code> o <code>tar.gz</code> (depende de la plataforma) en cualquier directorio <b>que no contenga espacios</b>, ya que esto puede llevar a errores. Te dejamos aquí las versiones ya empaquetadas (que solo hay que descomprimir): 
 					</p>
 					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp;&nbsp;Win 64</a>
 					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;&nbsp;Linux 64</a>
