@@ -82,8 +82,9 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                     <img src="/images/tour/editor2.gif" class="img-fluid z-depth-1" alt="Responsive image">
-                        <figcaption class="figure-caption"><br>
-                        También con las teclas <b>Ctrl + Barra</b> podemos activar <i>autocompletes</i> más elaborados, como las estructuras de selección <em>(if)</em> o la creación de una clase
+                        <figcaption class="figure-caption">
+                            <br>
+                            También con las teclas <b>Ctrl + Barra</b> podemos activar <i>autocompletes</i> más elaborados, como las estructuras de selección <em>(if)</em> o la creación de una clase
                         </figcaption>
                     </figure>
                 </div>
@@ -100,7 +101,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             contar algunos de los <i>shortcuts</i> que va a hacerte más feliz la estadía.
             </p>
             <hr>
-            <h3>Herramientas para buscar...</h3>
+            <h4>Herramientas para buscar...</h4>
             <div class="row">
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
@@ -119,8 +120,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-6 mb-3">
                     <figure class="figure">
                         <img src="/images/tour/editor5_1.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Ctrl + O permite buscar dentro de un archivo todo tipo de elementos: 
-                            definiciones de objetos, clases, variables o métodos.</figcaption>
+                        <figcaption class="figure-caption">
+                            <br>
+                            Ctrl + O permite buscar dentro de un archivo todo tipo de elementos: definiciones de objetos, clases, variables o métodos.
+                        </figcaption>
                     </figure>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -135,7 +138,7 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
             </div>
             <hr>
             <div class="container">
-                <h3>Resumen de shortcuts útiles </h3>
+                <h4>Resumen de shortcuts útiles </h4>
                 <div class="card">
                     <div class="card-body">
                         <!--Table-->
@@ -250,26 +253,26 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                             <br>
                             Una muestra de cómo funciona el validador. Al posicionarnos con el mouse sobre la parte 
                             izquierda, se expande la descripción de la advertencia (en amarillo) o el error (en rojo).
-                             En la solapa Problemas tenemos un resumen de todos los <em>issues</em> de cada uno de los proyectos.
-                             </figcaption>
+                            En la solapa Problemas tenemos un resumen de todos los <em>issues</em> de cada uno de los proyectos.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
             <hr>
-            <h3>¿Cómo visualizar la solapa Problemas?</h3>
+            <h4>¿Cómo visualizar la solapa Problemas?</h4>
             <p>
             Para activarla, se debe ir al menú Ventana > Mostrar vista > Otras > y buscamos "Problemas". 
             Allí se agrupan los diferentes tipos de problema (error, advertencia, información).
             </p>
             <hr>
-            <h3>¿Puedo ejecutar un programa con errores o advertencias?</h3>
+            <h4>¿Puedo ejecutar un programa con errores o advertencias?</h4>
             <p>
             La respuesta es sí: en el caso de las advertencias, se pasan por alto al ejecutar un programa, un test o 
             la consola REPL. En el caso del error, te aparecerá un mensaje de confirmación, ya que el error puede ser
             que impida la normal ejecución del software que creaste.
             </p>
             <hr>
-            <h3>Tareas pendientes en el IDE</h3>
+            <h4>Tareas pendientes en el IDE</h4>
             <p>
             Si en algún momento escribís código y no quedás del todo conforme, o bien querés avanzar y pensás mejorarlo más
             adelante, podés generar un recordatorio escribiendo un comentario con las palabras TODO o FIXME. Cuando abras la solapa Tareas (Ventana > Mostrar vista > Otras > buscamos Tareas) tendrás la lista completa de temas pendientes. Haciendo doble click sobre cada elemento te lleva directamente al código.
@@ -312,10 +315,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                     <figure class="figure">
                         <img src="/images/tour/quickFixes.gif" class="img-fluid z-depth-1">
                         <figcaption class="figure-caption">
-                        <br>
-                        En el ejemplo vemos cómo desde un test podemos crear un wko, o una clase, y agregarle métodos nuevos. 
-                        <br>
-                        Esto podés hacerlo desde un WKO, clase o mixin.
+                            <br>
+                            En el ejemplo vemos cómo desde un test podemos crear un wko, o una clase, y agregarle métodos nuevos. 
+                            <br>
+                            Esto podés hacerlo desde un WKO, clase o mixin.
                         </figcaption>
                     </figure>
                 </div>
@@ -443,7 +446,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/consoleImportEs.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br> Importando archivos dinámicamente (disponible desde la versión 1.8 Hypatia)</figcaption>
+                        <figcaption class="figure-caption">
+                            <br>
+                            Importando archivos dinámicamente (disponible desde la versión 1.8 Hypatia)
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -535,8 +541,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/staticDiagramEs.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Una pequeña demostración
-                        del diagrama estático de Wollok</figcaption>
+                        <figcaption class="figure-caption">
+                            <br>
+                            Una pequeña demostración del diagrama estático de Wollok
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -553,8 +561,10 @@ A continuación te vamos a contar cuáles son las principales herramientas con l
                 <div class="col-md-12 mb-6">
                     <figure class="figure">
                         <img src="/images/tour/dynamicDiagramEs.gif" class="img-fluid z-depth-1">
-                        <figcaption class="figure-caption"><br>Una pequeña demostración
-                        del diagrama dinámico de Wollok: en azul aparecen los objetos creados por nosotros, en verde los que trae la biblioteca de Wollok.</figcaption>
+                        <figcaption class="figure-caption">
+                            <br>
+                                Una pequeña demostración del diagrama dinámico de Wollok: en azul aparecen los objetos creados por nosotros, en verde los que trae la biblioteca de Wollok.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
