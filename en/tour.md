@@ -300,7 +300,7 @@ These are the main tools of Wollok Integrated Development Environment.
                 </div>
             </div>
         </div>
-        <!-- ***************************** FIXES ****************************************-->
+        <!-- ***************************** QUICK FIXES ****************************************-->
         <div class="tab-pane fade" id="quickFix" role="tabpanel">
             <br>
             <p>
@@ -327,7 +327,7 @@ These are the main tools of Wollok Integrated Development Environment.
             to automate tedious implementation tasks and let you focus on design and modeling activities.
             </p>
         </div>
-        <!-- ***************************** QUICK FIXES ****************************************-->
+        <!-- ***************************** FORMATTER ****************************************-->
         <div class="tab-pane fade" id="formatter" role="tabpanel">
             <br>
             <div class="row text-center">
