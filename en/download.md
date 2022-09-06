@@ -11,8 +11,6 @@ lang: 'en'
 		<!--Card image-->
 		<div class="view overlay hm-white-slight">
 			<img src="/images/Wollok_Installation.jpg" class="img-fluid " width="100%">
-			<div class="mask flex-center waves-effect waves-light">
-			</div>
 		</div>
 		<!--Card content-->
 		<div class="card-body" >
@@ -24,10 +22,10 @@ lang: 'en'
 			<ul>
 				<li><a href="#jdk-18" class="wollokLink">Install JDK 1.8</a></li>
 				<li><a href="#instalar-wollok" class="wollokLink">Install full Wollok environment</a> 
-					(o bien <a href="#actualizar-wollok" class="wollokLink">or update it</a> or <a href="#actualizar-desde-eclipse" class="wollokLink">add it as a plugin to an existing Eclipse installation</a>)
+					(<a href="#actualizar-wollok" class="wollokLink">or update it</a> or <a href="#actualizar-desde-eclipse" class="wollokLink">add it as a plugin to an existing Eclipse installation</a>)
 				</li>
 				<li>
-					Have you any problem? <a href="#troubleshooting" class="wollokLink">There is a quick troubleshooting</a>
+					Have you any problem? <a href="#troubleshooting" class="wollokLink">There is a quick troubleshooting guide</a>
 				</li>
 				<li>
 					And there are finally <a href="#configuraciones-extras" class="wollokLink">a few things you can configure</a>
@@ -52,9 +50,12 @@ lang: 'en'
 			<!-- Card body -->
 			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 				<div class="card-body grey lighten-5 transparent">
-					<p>You need to install previously a Java Virtual Machine 1.8. 
+					<p>You need to previously install a Java Virtual Machine 1.8.</p>
+					<a class="btn btn-primary" href="https://adoptium.net/temurin/releases/?version=8" target="_blank">Download it!</a>
+					<p>
+					<br/>
+					<b>Note:</b> for Linux/Mac OS, the best option is to download the <code>.pkg</code> file, and for Windows, the <code>.msi</code> one. These are packages for each Operating System, respectivelly, that allow an easy installation of their contents. They also simplify some steps, such as setting the JAVA_HOME environment variable on Windows, or putting the executables in an easy to reach location on Linux/Mac OS.
 					</p>
-					<a class="btn btn-primary" href="https://adoptopenjdk.net/">Download it!</a>
 					<hr>
 					<h4><span class="badge badge-pill red darken-3">FAQ</span></h4>
 					<ul> 
@@ -80,16 +81,14 @@ lang: 'en'
 			<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
 				<div id="instalar-wollok" class="card-body grey lighten-5 transparent">
 					<h4 class="card-title">First time</h4>
-					<p>As Wollok is an Eclipse-based platform, you install Wollok IDE by uncompressing Zip / Tar.Gz file (depending on your OS platform):
+					<p>As Wollok is an Eclipse-based platform, you can install the Wollok IDE by uncompressing the <code>zip</code> or <code>tar.gz</code> file (depending on your OS platform) in a folder that <b>does not contain spaces in its name<b>, as this can lead to errors. Here are the compressed files ready to download:
 					</p>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp; Win 32</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;Linux 32</a>
-					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;OS X</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-win32.win32.x86_64.zip"><i class="fa fa-windows" aria-hidden="true"></i>&nbsp;&nbsp;Win 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;&nbsp;Linux 32</a>
+					<a class="btn btn-primary" href="https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-macosx.cocoa.x86_64.zip"><i class="fa fa-apple" aria-hidden="true"></i>&nbsp;&nbsp;OS X</a>
 					<hr>
 					<h4 class="card-title" id="actualizar-wollok">Updates</h4>
-					<p>
-						As soon as a new version is available, IDE will ask you to update your environment:
-					</p>
+					<p>As soon as a new version is available, IDE will ask you to update your environment:</p>
 					<br><br>
 					<div class="text-center">
 						<img src="/images/updates/update_01.png" class="hoverable img-fluid z-depth-1"/>
@@ -117,7 +116,7 @@ lang: 'en'
 					<br>
 					<br>
 					<p>
-					Click Ok, restart Wollok environment and then you will have last upgrade correctly installed.
+					Click Ok, restart Wollok environment and then you will have the last upgrade correctly installed.
 					</p>
 					<hr>
 					<h4 class="card-title" id="actualizar-desde-eclipse">Update Site Installation</h4>
@@ -131,11 +130,11 @@ lang: 'en'
 					</p>
 					<ul>
 						<li>
-							<a href="http://update.uqbar.org/wollok/stable">http://update.uqbar.org/wollok/stable</a> 
+							<a href="http://update.uqbar.org/wollok/stable" target="_blank">http://update.uqbar.org/wollok/stable</a> 
 							last stable version (<b>recommended</b> for students)
 						</li>
 						<li>
-							<a href="http://update.uqbar.org/wollok/dev">http://update.uqbar.org/wollok/dev</a> 
+							<a href="http://update.uqbar.org/wollok/dev" target="_blank">http://update.uqbar.org/wollok/dev</a> 
 							if you want to get in process features (it may have errors until version gets stable)
 						</li>
 					</ul>
@@ -156,6 +155,12 @@ lang: 'en'
 			<!-- Card body -->
 			<div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
 				<div class="card-body grey lighten-5 transparent">
+					<h4 class="card-title">Installing in a folder with spaces/Failed to find a Main Class in...</h4>
+					<div class="text-center">
+						<img src="/images/troubleshooting/wollok-carpeta-con-espacios.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<p>This error happens when Wollok is installed in a folder that contains spaces in its name. Please unzip and install Wollok in a folder with no spaces on the name.</p>
+					<hr>
 					<h4 class="card-title">IDE shows splash screen but does not start</h4>
 					<p>
 					If splash screen is shown but IDE doesn’t start, maybe you are not pointing to the right JDK, 
@@ -183,10 +188,9 @@ lang: 'en'
 					<ul>
 						<li>you are pointing to an unexistent JDK in wollok.ini (check -vm parameter). 
 							Correct it <a href="#apuntando-la-jdk-correcta-en-ini-de-wollok" class="wollokLink">following this steps</a></li>
-						<li>you invoke <i>"Java Updates"</i> application. 
-						This is a <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13">known problem</a>. 
-						In this case, solution should be a) uninstall current JDK, 
-						b) install new JDK as shown in this page, and c) start Wollok normally.</li>
+						<li>you invoke <em>"Java Updates"</em> application. 
+						This is a <a href="http://stackoverflow.com/questions/27019786/eclipse-java-was-started-but-returned-error-code-13" target="_blank">known problem</a>. 
+						In this case, solution should uninstall the current JDK, install the 1.8 JDK as shown in this page and start Wollok normally.</li>
 					</ul>
 					<hr>
 					<h4 class="card-title">Missing dependencies to Wollok plugins while executing a file</h4>
@@ -199,17 +203,7 @@ lang: 'en'
 					</p>
 					<div class="text-center">
 						<img src="/images/troubleshooting/wollok-launch.png" class="hoverable img-fluid z-depth-1"/>
-					</div>
-					<br>
-					<hr>
-					<h4 class="card-title">Mac: Failed to create the Java Virtual Machine</h4>
-					<div class="text-center">
-						<img src="/images/troubleshooting/mac_vm_error.png" class="hoverable img-fluid z-depth-1"/>
-					</div>
-					<p>
-					<br>
-					If this error message appears on your Mac, follow <a href="https://www.pushing-pixels.org/2020/06/19/fixing-the-failed-to-create-the-java-virtual-machine-error-on-eclipse-startup-on-a-mac.html">this instructions</a>.
-					</p>
+					</div>		
 					<hr>
 					<h4 class="card-title">Mac: Wollok is damaged</h4>
 					<p>
@@ -220,29 +214,39 @@ lang: 'en'
 					</div>
 					<br>
 					<p>
-					You can solve it opening a terminal and writing down:
+					You can solve it opening a terminal and writing the following command, putting your path to the Wollok.app executable:
 					</p>
-					<div class="language-javascript">	
-							<pre>
-<span class="c">xattr</span><span class="kd"> -d </span><span class="c">com.apple.quarantine Wollok.app</span>
-							</pre>
+					<div>
+							<pre>xattr -d com.apple.quarantine /path/to/Wollok.app</pre>
 					</div>
 					<p>
-					After that executable file should be opened without any issue.
-					</p>					
+					After that the executable file should open without any issue.
+					</p>
+					<hr>
+					<h4 class="card-title">Mac: Failed to create the Java Virtual Machine</h4>
+					<div class="text-center">
+						<img src="/images/troubleshooting/mac_vm_error.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
+					If this error appears when executing Wollok, make sure you configured ######.
+					<br />
+					If this error persists, follow <a href="https://www.pushing-pixels.org/2020/06/19/fixing-the-failed-to-create-the-java-virtual-machine-error-on-eclipse-startup-on-a-mac.html" target="_blank">this instructions</a>.
+					</p>
 					<hr>
 					<h4 class="card-title">Mac: Executing unsigned application</h4>
 					<p>
-					Mac OS X implements a new security system only allowing the execution of application developed by registered developers. 
-					Also the applications should be distributed by Apple validated channels, as App Store. As Wollok development team is 
-					not registered an exception should be created in order to run Wollok.	
-						<br>
-						<div class="text-center">
-							<img src="/images/troubleshooting/aplicacionNoFirmada.png" class="hoverable img-fluid z-depth-1"/>
-						</div>
-						<br>
-						More details of how to configure the exception to run Wollok is available in  
-						<a href="https://support.apple.com/kb/PH21769?locale=en_EN&viewlocale=en_EN">Apple support site</a>.
+						Mac OS X implements a new security system only allowing the execution of application developed by registered developers. 
+						Also the applications should be distributed by Apple validated channels, as App Store. As Wollok development team is 
+						not registered an exception should be created in order to run Wollok.
+					</p>
+					<div class="text-center">
+						<img src="/images/troubleshooting/aplicacionNoFirmada.png" class="hoverable img-fluid z-depth-1"/>
+					</div>
+					<br>
+					<p>
+						More details of how to configure the exception to run Wollok is available in the
+						<a href="https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac" target="_blank">Apple support site</a>.
 					</p>
 					<hr>
 					<h4 class="card-title">Mac: Translocation App Problem</h4>
@@ -278,53 +282,52 @@ lang: 'en'
 						<p>
 						Sometimes, your Operating System is pointing to an old java installation. 
 						You have to check JAVA_HOME environment variable (and PATH variable too), in a command line tool:
-							<div class="language-javascript">	
-									<div>
-										<pre>
-<span class="kd">$</span><span class="nx"> env | grep JAVA</span><span class="c"> // Linux & Mac</span>
-<span class="kd">></span><span class="nx"> SET JAVA_HOME</span><span class="c"> // Windows</span></pre>
-									</div>
-								</div>
-								You can change to a JDK 1.8 installation, following 
-							<a href="https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html">this instructions.</a>
+						<pre>
+<span class="kd">$ </span>/usr/libexec/java_home -vm<span class="c"> // Linux & Mac</span>
+<span class="kd">> </span>echo %JAVA_HOME%<span class="c"> // Windows cmd</span>
+<span class="kd">> </span>echo $env:JAVA_HOME<span class="c"> // Windows PowerShell</span></pre>
+						You can change to a JDK 1.8 installation, following 
+						<a href="https://docs.oracle.com/cd/E21454_01/html/821-2532/inst_cli_jdk_javahome_t.html" target="_blank">this instructions.</a>
 						</p>
 						<hr>
-						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Pointing to the right JDK in Wollok ini file</h4>
+						<h4 class="card-title" id="apuntando-la-jdk-correcta-en-ini-de-wollok">Pointing to the right JDK in Wollok</h4>
 						<p>
-							In Wollok installation root folder, you can open a text editor for wollok.ini file. 
+						First, we need to know where is the Java executable located, which can be done following the <a href="#apuntando-la-jdk-correcta-en-tu-entorno">previous step</a>.
+						</p>
+						<p>
+							<b>Linux/Mac OS</b>
+							<br/>
+							First, you need to right click on the app and click on <em>"Show Package Contents"</em>. There, inside the <code>Contents</code> folder, open the file <code>Info.plist</code> where there is a commented section with an example of how to point to the previously installed JDK 1.8. To know where to point it to, check the <a href="#apuntando-la-jdk-correcta-en-tu-entorno">pointing to the right JDK section</a>.
+						</p>
+						<b>Be careful: In this step, at the end of the JDK path, you need to add <code>/bin/java</code></b>. The <code>Info.plist</code> file should look like this:
+						<img src="/images/troubleshooting/info-plist-en.svg" class="img-fluid"/>
+						<p>
+							<b>Windows</b>
+							<br/>
+							In the Wollok installation root folder, you can open a text editor for wollok.ini file. 
 							Then you can point to a specific JDK 1.8 with -vm option:
 						</p>
-						<div class="language-javascript">
-							<div>
-								<pre>
+						<pre>
 <span class="kd">-vm</span>
-<span class="nx">D:\java8\bin\javaw.exe</span></pre>
-							</div>
-						</div>
+C:\Program Files\Eclipse Adoptium\jdk8u345-b01\bin\javaw.exe</pre>
 						<p><b>Very important:</b> don't add any space or ENTER character in .ini file,
 							otherwise future Wollok updates won't work (there will be a parse error)</p>
 						<hr>
-						<h4 id="apuntando-la-jdk-correcta-en-ini-de-wollok" class="card-title">Eclipse JDK Configuration</h4>
+						<h4 id="configuracion-de-jdk-desde-eclipse" class="card-title">Eclipse JDK Configuration</h4>
 						<p>
 							Check this configuration: Windows > Preferences > java > Installed JREs. If you see no JDK at all, 
 							or a non-1.8 JDK, you can change it this way:
-							<ul>
-								<li>Add  > Standard VM > next</li>
+							<ol>
+								<li>Add > Standard VM > next</li>
 								<li>Choose a JDK 1.8 installation directory. Eg: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home</li>
-							</ul>
+							</ol>
 						</p>
 						<hr>
 						<h4 class="card-title">English language setting</h4>
 						<p>
 							If you would like to run Wollok IDE in the english version, it is necessary to add the following instruction
 							<b>as a new line at the end</b> of wollok.ini, located in same path where you downloaded Wollok:
-
-							<div class="language-javascript">
-									<div>
-										<pre>
-<span class="kd">-D</span><span class="nx">user.language=en</span></pre>
-									</div>
-								</div>
+							<pre><span class="kd">-D</span>user.language=en</pre>
 						</p>
 					</div>
 				</div>
@@ -340,7 +343,7 @@ lang: 'en'
 	<br/>
 </div>
 
-Wollok is a continuous evolving software, so it is likely you find problems, or enhancements to propose. Please feel free to report it in our  [Issue Tracker](https://github.com/uqbar-project/wollok/issues). 
+Wollok is a continuous evolving software, so it is likely you find problems, or enhancements to propose. Please feel free to report it in our [Issue Tracker](https://github.com/uqbar-project/wollok/issues). 
 
 Some tips before you open a new issue:
 
@@ -355,4 +358,3 @@ Some tips before you open a new issue:
 	* *Enhancement*: if you want to request a new feature
 	* *Nice to have*: for wished (but not prioritary) requirements
 	* *Question*: when you doubt whether certain situation could be a bug or not.
-
