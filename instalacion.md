@@ -251,6 +251,11 @@ icon: 'cloud-download'
 					<div class="text-center">
 						<img src="/images/troubleshooting/gatekeeper.png" class="hoverable img-fluid z-depth-1"/>
 					</div>
+					<hr>
+					<h4 class="card-title">Ubuntu: Problema con “Assistive Technology not found”</h4>
+					<p>
+						Si estás en Ubuntu y al correr un juego en Wollok Game no te levanta la ventana del juego, fijate <a href="[https://support.apple.com/es-es/guide/mac-help/mh40616/mac](https://devicetests.com/fix-assistive-technology-error-java-gnome)" target="_blank">este link</a>.
+					</p>
 					<br>
 				</div>
 			</div>
