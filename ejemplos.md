@@ -15,11 +15,12 @@ icon: 'github'
 </div>
 
 <div class="container">
-<p>Los ejemplos para descargar están en
-<a href="https://github.com/wollok">https://github.com/wollok</a>
-</p>
-<p>Como Wollok Xtext está en fase de solo mantenimiento, cada ejemplo se descarga como archivo zip para luego importarlo utilizando la opción File > Import > Archive File y luego seleccionando el archivo comprimido.
-</p>
+    <p>Los ejemplos para descargar están en
+    <a href="https://github.com/wollok">https://github.com/wollok</a>
+    </p>
+    <p>Como Wollok Xtext está en fase de solo mantenimiento, cada ejemplo se descarga como archivo zip para luego ser descomprimido y luego se importa utilizando la opción File > Import > Existing Projects into Workspace y luego seleccionando la carpeta.
+    </p>
+    <img src="/images/importExample.gif" style="padding: 0px;" />
 </div>
 
 <div class="container">
