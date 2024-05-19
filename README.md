@@ -1,9 +1,11 @@
 
 # <img src="https://github.com/uqbar-project/wollok/blob/master/org.uqbar.project.wollok.ui/icons/wollok-logo.iconset/icon_64x64.png?raw=true"/> Wollok Site
 
-Wollok Programming Language Web Site
+Wollok Programming Language Web Site - Xtext implementation
 
 Access it at : http://www.wollok.org
+
+> Since July 2024, this website will become in low maintenance mode. Please check out [our new website](https://github.com/uqbar-project/website-wollok-ts)
 
 # Environment Setup
 
