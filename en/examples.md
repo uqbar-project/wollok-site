@@ -20,7 +20,7 @@ icon: 'github'
     </p>
     <p>Wollok Xtext is in low-maintenance mode, so every example has a zip file you should uncompress locally. Then, go to the File menu > Import > Existing Projects into Workspace and finally select the folder.
     </p>
-    <img src="/images/importExample.gif" style="padding: 0px;" />
+    <img src="/images/importExample.gif" style="padding: 0px;" height="70%" width="70%" />
 </div>
 
 <div class="container">
