@@ -18,7 +18,7 @@ icon: 'github'
     <p>All examples can be downloaded in 
     <a href="https://github.com/wollok">https://github.com/wollok</a>
     </p>
-    <p>Wollok Xtext is in low-maintenance mode, so every example has a zip file you should uncompress locally. Then, go to the File menu > Import > Existing Projects into Workspace and finally select the folder.
+    <p>Each example has a zip file you should uncompress locally. Then, go to the File menu > Import > Existing Projects into Workspace and finally select the folder.
     </p>
     <img src="/images/importExample.gif" style="padding: 0px;" height="80%" width="80%" />
 </div>
