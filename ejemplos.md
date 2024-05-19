@@ -20,7 +20,7 @@ icon: 'github'
     </p>
     <p>Como Wollok Xtext está en fase de solo mantenimiento, cada ejemplo se descarga como archivo zip para luego ser descomprimido y luego se importa utilizando la opción File > Import > Existing Projects into Workspace y luego seleccionando la carpeta.
     </p>
-    <img src="/images/importExample.gif" style="padding: 0px;" height="90%" width="90%" />
+    <img src="/images/importExample.gif" style="padding: 0px;" height="80%" width="80%" />
 </div>
 
 <div class="container">
